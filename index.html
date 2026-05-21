@@ -4,13 +4,17 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>ETHAN DAILY</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+rel="stylesheet">
 
 <style>
 
@@ -20,103 +24,72 @@
     box-sizing:border-box;
 }
 
+:root{
+
+    --bg:#0b1120;
+
+    --card:#131c31;
+
+    --line:#1f2a44;
+
+    --hover:#1b2845;
+
+    --text:#f8fafc;
+
+    --sub:#94a3b8;
+
+    --accent:#22d3ee;
+}
+
 body{
 
-    font-family:'Poppins', sans-serif;
-
-    height:100vh;
-
-    overflow:hidden;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    color:white;
+    font-family:'Inter',sans-serif;
 
     background:
-    radial-gradient(circle at top left, #1e293b 0%, transparent 35%),
-    radial-gradient(circle at bottom right, #0f766e 0%, transparent 35%),
-    linear-gradient(135deg, #020617 0%, #0f172a 100%);
-}
-
-/* 움직이는 배경 */
-
-body::before{
-
-    content:'';
-
-    position:absolute;
-
-    width:200%;
-    height:200%;
-
-    background:
-    repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 80px,
-        rgba(255,255,255,0.03) 81px
+    linear-gradient(
+        135deg,
+        #020617 0%,
+        #0f172a 100%
     );
 
-    animation:gridMove 12s linear infinite;
+    color:var(--text);
+
+    min-height:100vh;
+
+    padding:60px 24px;
 }
 
-@keyframes gridMove{
-
-    0%{
-        transform:translateX(0);
-    }
-
-    100%{
-        transform:translateX(-80px);
-    }
-}
-
-/* 메인 카드 */
+/* 컨테이너 */
 
 .container{
 
-    position:relative;
+    max-width:880px;
 
-    z-index:2;
-
-    width:520px;
-
-    padding:55px;
-
-    border-radius:30px;
-
-    background:rgba(255,255,255,0.06);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,0.1);
-
-    box-shadow:
-    0 0 60px rgba(0,255,180,0.15);
-
-    text-align:center;
+    margin:auto;
 }
 
-/* 제목 */
+/* 헤더 */
+
+.header{
+
+    margin-bottom:50px;
+}
 
 .title{
 
-    font-size:56px;
+    font-size:54px;
 
     font-weight:700;
 
-    letter-spacing:5px;
+    letter-spacing:-2px;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 
-    background:linear-gradient(
+    background:
+    linear-gradient(
         90deg,
-        #00ffd0,
-        #ffffff
+        #ffffff,
+        #22d3ee
     );
 
     -webkit-background-clip:text;
@@ -126,13 +99,11 @@ body::before{
 
 .subtitle{
 
-    color:#94a3b8;
+    color:var(--sub);
 
     font-size:15px;
 
-    letter-spacing:3px;
-
-    margin-bottom:50px;
+    letter-spacing:1px;
 }
 
 /* 메뉴 */
@@ -143,109 +114,137 @@ body::before{
 
     flex-direction:column;
 
-    gap:24px;
+    gap:14px;
 }
 
-/* 버튼 */
+/* 카드 */
 
-.menu-btn{
+.card{
 
-    position:relative;
+    display:flex;
 
-    padding:24px;
+    align-items:center;
 
-    border-radius:22px;
+    justify-content:space-between;
 
     text-decoration:none;
 
-    color:white;
+    color:var(--text);
 
-    font-size:24px;
+    background:rgba(19,28,49,0.75);
+
+    border:1px solid var(--line);
+
+    border-radius:18px;
+
+    padding:24px 28px;
+
+    transition:0.25s;
+
+    backdrop-filter:blur(12px);
+}
+
+.card:hover{
+
+    background:var(--hover);
+
+    border-color:rgba(34,211,238,0.3);
+
+    transform:translateY(-3px);
+}
+
+/* 좌측 */
+
+.left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+}
+
+.icon{
+
+    font-size:28px;
+}
+
+.info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+}
+
+.name{
+
+    font-size:20px;
 
     font-weight:600;
-
-    background:rgba(255,255,255,0.05);
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    transition:0.35s;
-
-    overflow:hidden;
 }
 
-.menu-btn::before{
+.desc{
 
-    content:'';
+    color:var(--sub);
 
-    position:absolute;
-
-    top:0;
-    left:-100%;
-
-    width:100%;
-    height:100%;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,0.16),
-        transparent
-    );
-
-    transition:0.7s;
+    font-size:13px;
 }
 
-.menu-btn:hover::before{
+/* 우측 */
 
-    left:100%;
+.arrow{
+
+    font-size:22px;
+
+    color:var(--sub);
+
+    transition:0.25s;
 }
 
-.menu-btn:hover{
+.card:hover .arrow{
 
-    transform:
-    translateY(-6px)
-    scale(1.03);
+    transform:translateX(6px);
 
-    background:rgba(0,255,180,0.15);
-
-    box-shadow:
-    0 0 28px rgba(0,255,180,0.35);
+    color:var(--accent);
 }
 
-/* 하단 */
+/* footer */
 
 .footer{
 
-    margin-top:42px;
+    margin-top:40px;
 
-    color:#64748b;
+    color:#475569;
 
-    font-size:13px;
+    font-size:12px;
 
-    letter-spacing:2px;
+    letter-spacing:1px;
 }
 
-/* 모바일 대응 */
+/* 모바일 */
 
 @media(max-width:600px){
 
-    .container{
+    body{
 
-        width:90%;
-
-        padding:40px 25px;
+        padding:40px 18px;
     }
 
     .title{
 
-        font-size:42px;
+        font-size:40px;
     }
 
-    .menu-btn{
-
-        font-size:20px;
+    .card{
 
         padding:20px;
+    }
+
+    .name{
+
+        font-size:17px;
     }
 }
 
@@ -257,28 +256,113 @@ body::before{
 
 <div class="container">
 
-    <div class="title">
-        ETHAN DAILY
-    </div>
+    <div class="header">
 
-    <div class="subtitle">
-        ETHAN CONTROL CENTER
+        <div class="title">
+            ETHAN DAILY
+        </div>
+
+        <div class="subtitle">
+            CONTROL CENTER
+        </div>
+
     </div>
 
     <div class="menu">
 
-        <a class="menu-btn" href="ETHAN_DASHBOARD.html">
-            🚀 DASHBOARD
+        <a class="card"
+        href="ETHAN_DASHBOARD.html">
+
+            <div class="left">
+
+                <div class="icon">
+                    🚀
+                </div>
+
+                <div class="info">
+
+                    <div class="name">
+                        Dashboard
+                    </div>
+
+                    <div class="desc">
+                        Market · AI · Macro · Portfolio
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
         </a>
 
-        <a class="menu-btn" href="ETHAN_PRIVATE.html">
-            🔒 PRIVATE
+        <a class="card"
+        href="ETHAN_PRIVATE.html">
+
+            <div class="left">
+
+                <div class="icon">
+                    🔒
+                </div>
+
+                <div class="info">
+
+                    <div class="name">
+                        Private
+                    </div>
+
+                    <div class="desc">
+                        Personal strategy & tracking
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+        </a>
+
+        <a class="card"
+        href="briefings/">
+
+            <div class="left">
+
+                <div class="icon">
+                    📚
+                </div>
+
+                <div class="info">
+
+                    <div class="name">
+                        Briefings
+                    </div>
+
+                    <div class="desc">
+                        Auto indexed HTML reports
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
         </a>
 
     </div>
 
     <div class="footer">
+
         POWERED BY ETHAN SYSTEM
+
     </div>
 
 </div>
