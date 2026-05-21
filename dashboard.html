@@ -2,196 +2,368 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>ETHAN DAILY</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#111;--s1:#181818;--s2:#222;--bd:#2e2e2e;--t1:#f0f0f0;--t2:#bbb;--t3:#666;--t4:#444;
-  --gold:#f5c518;--red:#ff5f5f;--grn:#3ddc84;--blu:#5ba4f5;--cyan:#22d3ee;--prp:#b388ff;--org:#ffa040}
-body{background:var(--bg);color:var(--t1);font-family:-apple-system,'Noto Sans KR','Segoe UI',sans-serif;
-  font-size:14px;line-height:1.6;max-width:600px;margin:0 auto;padding-bottom:60px}
-.masthead{padding:16px 16px 0;border-bottom:1px solid var(--bd);background:var(--bg);position:sticky;top:0;z-index:100}
-.blog-title{font-size:20px;font-weight:900;color:var(--t1)}.blog-title span{color:var(--gold)}
-.blog-tagline{font-size:10px;color:var(--t3);margin-bottom:10px}
-.meta-bar{display:flex;align-items:center;justify-content:space-between;padding-bottom:8px;font-size:10px;color:var(--t3)}
-.mc-n{font-weight:800;color:var(--gold);font-size:13px}
-.editor-badge{background:var(--s2);border:1px solid var(--bd);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--t3);font-weight:700}
-.nav{display:flex;overflow-x:auto;background:var(--s1);border-bottom:1px solid var(--bd);scrollbar-width:none}
-.nav::-webkit-scrollbar{display:none}
-.ntab{flex-shrink:0;padding:12px 14px;font-size:12px;font-weight:700;color:var(--t3);cursor:pointer;
-  border-bottom:2px solid transparent;white-space:nowrap;-webkit-tap-highlight-color:transparent}
-.ntab.active{color:var(--gold);border-bottom-color:var(--gold)}
-.ntab[data-tab="채용"].active{color:var(--blu);border-bottom-color:var(--blu)}
-.ntab[data-tab="공부"].active{color:var(--cyan);border-bottom-color:var(--cyan)}
-.ntab[data-tab="알림"].active{color:var(--red);border-bottom-color:var(--red)}
-.section{display:none;padding:16px}.section.active{display:block}
-.card{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:14px;margin-bottom:10px}
-.card-title{font-size:13px;font-weight:700;color:var(--gold);margin-bottom:8px}
-.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:700}
-.bg{background:#1a3a1a;color:var(--grn)}.br{background:#3a1a1a;color:var(--red)}.bb{background:#1a2a3a;color:var(--blu)}.by{background:#2d2200;color:var(--gold)}
-table{width:100%;border-collapse:collapse;font-size:12px}
-th{background:#222;color:var(--gold);padding:7px 8px;text-align:left}
-td{padding:7px 8px;border-bottom:1px solid var(--bd);color:var(--t2)}
-tr:last-child td{border:none}
-.pbar{background:#222;border-radius:4px;height:8px;margin:8px 0}
-.pfill{background:linear-gradient(90deg,var(--gold),#ff9500);height:100%;border-radius:4px;width:17.1%}
-.plabel{font-size:11px;color:var(--t3);display:flex;justify-content:space-between;}
-<div id="tab-채용" class="section">
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --bg:#111;
+  --s1:#181818;
+  --s2:#222;
+  --bd:#2e2e2e;
+  --t1:#f0f0f0;
+  --t2:#bbb;
+  --t3:#666;
+
+  --gold:#f5c518;
+  --red:#ff5f5f;
+  --grn:#3ddc84;
+  --blu:#5ba4f5;
+  --cyan:#22d3ee;
+}
+
+body{
+  background:var(--bg);
+  color:var(--t1);
+  font-family:-apple-system,'Noto Sans KR','Segoe UI',sans-serif;
+  max-width:600px;
+  margin:0 auto;
+  padding-bottom:50px;
+}
+
+.masthead{
+  padding:16px;
+  border-bottom:1px solid var(--bd);
+}
+
+.blog-title{
+  font-size:24px;
+  font-weight:900;
+}
+
+.blog-title span{
+  color:var(--gold);
+}
+
+.blog-tagline{
+  font-size:12px;
+  color:var(--t3);
+  margin-top:4px;
+}
+
+.nav{
+  display:flex;
+  background:var(--s1);
+  border-bottom:1px solid var(--bd);
+}
+
+.ntab{
+  flex:1;
+  text-align:center;
+  padding:14px;
+  cursor:pointer;
+  font-weight:700;
+  color:var(--t3);
+  border-bottom:2px solid transparent;
+}
+
+.ntab.active{
+  color:var(--gold);
+  border-bottom-color:var(--gold);
+}
+
+.section{
+  display:none;
+  padding:16px;
+}
+
+.section.active{
+  display:block;
+}
+
+.card{
+  background:var(--s1);
+  border:1px solid var(--bd);
+  border-radius:10px;
+  padding:14px;
+  margin-bottom:14px;
+}
+
+.card-title{
+  font-size:16px;
+  font-weight:800;
+  color:var(--gold);
+  margin-bottom:12px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+}
+
+th{
+  background:#222;
+  color:var(--gold);
+  text-align:left;
+  padding:8px;
+}
+
+td{
+  padding:8px;
+  border-bottom:1px solid var(--bd);
+  color:var(--t2);
+}
+
+tr:last-child td{
+  border:none;
+}
+
+.badge{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:12px;
+  font-size:11px;
+  font-weight:700;
+}
+
+.bg{
+  background:#1a3a1a;
+  color:var(--grn);
+}
+
+.bb{
+  background:#1a2a3a;
+  color:var(--blu);
+}
+
+.br{
+  background:#3a1a1a;
+  color:var(--red);
+}
+
+.by{
+  background:#2d2200;
+  color:var(--gold);
+}
+
+.updated{
+  margin-top:10px;
+  font-size:11px;
+  color:var(--t3);
+}
+
+.al-item{
+  background:var(--s1);
+  border:1px solid var(--bd);
+  border-radius:10px;
+  padding:12px;
+  margin-bottom:10px;
+}
+
+.al-row1{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:6px;
+}
+
+.al-time{
+  color:var(--gold);
+  font-weight:800;
+}
+
+.al-name{
+  font-weight:700;
+}
+
+.al-desc{
+  font-size:12px;
+  color:var(--t2);
+}
+
+.ap-section-title{
+  font-size:14px;
+  font-weight:800;
+  margin:20px 0 10px;
+  color:var(--cyan);
+}
+</style>
+</head>
+
+<body>
+
+<div class="masthead">
+  <div class="blog-title">
+    ETHAN <span>DAILY</span>
+  </div>
+
+  <div class="blog-tagline">
+    Daily Dashboard · Stocks · Power Electronics · Career
+  </div>
+</div>
+
+<div class="nav">
+  <div class="ntab active" onclick="showTab('채용', this)">채용</div>
+  <div class="ntab" onclick="showTab('공부', this)">공부</div>
+  <div class="ntab" onclick="showTab('알림', this)">알림</div>
+</div>
+
+<!-- 채용 -->
+<div id="tab-채용" class="section active">
+
   <div class="card">
     <div class="card-title">💼 채용 트래킹 현황</div>
+
     <table>
-      <tr><th>관싫 분야</th><th>상태</th></tr>
-      <tr><td>전력전자 / BMS</td><td><span class="badge bb">모니터링중</span></td></tr>
-      <tr><td>EV / 대기업</td><td><span class="badge bb">모니터링중</span></td></tr>
+      <tr>
+        <th>관심 분야</th>
+        <th>상태</th>
+      </tr>
+
+      <tr>
+        <td>전력전자 / BMS</td>
+        <td><span class="badge bb">모니터링중</span></td>
+      </tr>
+
+      <tr>
+        <td>EV / 대기업</td>
+        <td><span class="badge bb">모니터링중</span></td>
+      </tr>
     </table>
-    <div class="updated">Gmail 채용알림 연동 — 09:00 / 13:00 / 16:00</div>
+
+    <div class="updated">
+      Gmail 채용알림 연동 — 09:00 / 13:00 / 16:00
+    </div>
   </div>
-  <div class="card">
-    <div class="card-title">📬 채용 알림 설정</div>
-    <table>
-      <tr><th>키워드</th><th>설명</th></tr>
-      <tr><td>합격/불합격</td><td>서류·면접 결과 통보</td></tr>
-      <tr><td>면접/채용</td><td>면접 일정 및 채용 공고</td></tr>
-      <tr><td>offer/interview</td><td>영문 채용 메일</td></tr>
-      <tr><td>최종합격/탈락</td><td>최종 결과 통보</td></tr>
-    </table>
-    <div class="updated">Gmail 미읽음 메일 우선 · 광고/스팸 제외</div>
-  </div>
+
 </div>
 
-<!-- ═══ 공부 탭 ═══ -->
+<!-- 공부 -->
 <div id="tab-공부" class="section">
+
   <div class="card">
     <div class="card-title">📚 투자 전략 학습</div>
+
     <table>
-      <tr><th>전략</th><th>내용</th><th>적용</th></tr>
-      <tr><td>VCP</td><td>Volatility Contraction Pattern — 변동성 수축 후 돌파</td><td>MU, NVDA</td></tr>
-      <tr><td>Cup &amp; Handle</td><td>U자형 컵 + 핸들 돌파 시 강한 상승 신호</td><td>AVGO, TSM</td></tr>
-      <tr><td>Weinstein Stage 2</td><td>MA200 위 상승 단계 — 최적 매수 구간</td><td>전 종목</td></tr>
-      <tr><td>M2 유동성</td><td>글로벌 통화량 증가 시 위험자산 상승</td><td>반도체 전반</td></tr>
+      <tr>
+        <th>전략</th>
+        <th>설명</th>
+      </tr>
+
+      <tr>
+        <td>VCP</td>
+        <td>변동성 수축 후 돌파 패턴</td>
+      </tr>
+
+      <tr>
+        <td>Cup & Handle</td>
+        <td>컵 형태 후 돌파 패턴</td>
+      </tr>
+
+      <tr>
+        <td>M2 유동성</td>
+        <td>통화량 기반 상승 분석</td>
+      </tr>
     </table>
   </div>
+
   <div class="card">
-    <div class="card-title">⚡ 전력전자 / BMS 스터디</div>
+    <div class="card-title">⚡ 전력전자 스터디</div>
+
     <table>
-      <tr><th>주제</th><th>상태</th></tr>
-      <tr><td>BMS 아키텍처 (Cell Balancing)</td><td><span class="badge bg">학습 중</span></td></tr>
-      <tr><td>DC-DC 컨버터 설계</td><td><span class="badge bg">학습 중</span></td></tr>
-      <tr><td>EV 파워트레인 구조</td><td><span class="badge bb">예정</span></td></tr>
-      <tr><td>LG Magna 기술 스택</td><td><span class="badge by">정리 중</span></td></tr>
+      <tr>
+        <th>주제</th>
+        <th>상태</th>
+      </tr>
+
+      <tr>
+        <td>BMS 아키텍처</td>
+        <td><span class="badge bg">학습중</span></td>
+      </tr>
+
+      <tr>
+        <td>DC-DC 컨버터</td>
+        <td><span class="badge bg">학습중</span></td>
+      </tr>
+
+      <tr>
+        <td>Totem Pole PFC</td>
+        <td><span class="badge by">정리중</span></td>
+      </tr>
     </table>
   </div>
-  <div class="card">
-    <div class="card-title">📖 투자 지식 시리즈</div>
-    <table>
-      <tr><th>#</th><th>주제</th><th>상태</th></tr>
-      <tr><td>①</td><td>기술적 분석 기초</td><td><span class="badge bg">완료</span></td></tr>
-      <tr><td>②</td><td>섹터 로테이션 전략</td><td><span class="badge bg">완료</span></td></tr>
-      <tr><td>③</td><td>포트폴리오 리스크 관리</td><td><span class="badge bg">완료</span></td></tr>
-      <tr><td>④</td><td>이닝 리비전 분석</td><td><span class="badge br">미완료</span></td></tr>
-    </table>
-  </div>
+
 </div>
 
-<!-- ═══ 알림 탭 ═══ -->
+<!-- 알림 -->
 <div id="tab-알림" class="section">
-  <div style="font-size:15px;font-weight:900;color:var(--t1);margin-bottom:4px">🔔 자동 알림 스케줄</div>
-  <div style="font-size:11px;color:var(--t3);margin-bottom:16px">18개 태스크 운영 중</div>
 
-  <div class="ap-section-title">🌅 아침 · 06:00 ~ 10:00</div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">06:50</span><span class="al-name">개장 전 속보</span><span class="al-badge ab-s">월–금</span></div>
-    <div class="al-desc">미장 마감 결과 + 오버나이트 이슈 + 한국장 갭 예측</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">07:00</span><span class="al-name">아침 주식 브리핑</span><span class="al-badge ab-s">매일</span></div>
-    <div class="al-desc">글로벌 브리핑 + 포트폴리오 + 채용공고 · HTML 저장</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">07:05</span><span class="al-name">인사이트 KB 업데이트</span><span class="al-badge ab-s">월–금</span></div>
-    <div class="al-desc">전날 핵심 내용 추출 → insights.json 자동 추가</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">09:00</span><span class="al-name">PLTR 눌림목 알림</span><span class="al-badge ab-c">조건부</span></div>
-    <div class="al-desc">$128 이하 도달 시만 알림 (현재 $136 — 미도달)</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">09:00</span><span class="al-name">자동매수 모니터</span><span class="al-badge ab-c">조건부</span></div>
-    <div class="al-desc">설정가 3% 이내 근접 시만 알림</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">09:00</span><span class="al-name">공포/탐욕 극단 알림</span><span class="al-badge ab-c">조건부</span></div>
-    <div class="al-desc">지수 0~20 (극단 공포) 또는 81~100 (극단 탐욕) 시만</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">09:00</span><span class="al-name">USD/KRW 경보</span><span class="al-badge ab-c">조건부</span></div>
-    <div class="al-desc">1,480 초과 시만 알림 (현재 1,504 — 경보 중 ⚠️)</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">09:00</span><span class="al-name">실적 D-1 알림</span><span class="al-badge ab-c">조건부</span></div>
-    <div class="al-desc">내일 실적 발표 종목 있을 때만</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">09:00</span><span class="al-name">Gmail 채용 알림</span><span class="al-badge ab-c">조건부</span></div>
-    <div class="al-desc">채용 관련 신규 메일 있을 때만</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">09:00</span><span class="al-name">지정학/국제정세 뉴스</span><span class="al-badge ab-s">매일</span></div>
-    <div class="al-desc">글로벌 지정학 리스크 · 국제 주요 이슈 브리핑</div>
-  </div></div>
+  <div class="ap-section-title">
+    🌅 아침 스케줄
+  </div>
 
-  <div class="ap-section-title">🌞 낮 · 12:00 ~ 15:00</div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">12:00</span><span class="al-name">낮 진입전략 브리핑</span><span class="al-badge ab-s">매일</span></div>
-    <div class="al-desc">지지선 vs 허공 분석 + 오늘의 추천 4종목</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">13:00</span><span class="al-name">PLTR 눌림목 알림</span><span class="al-badge ab-c">조건부</span></div>
-    <div class="al-desc">$128 이하 도달 시만</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">13:00</span><span class="al-name">자동매수 모니터</span><span class="al-badge ab-c">조건부</span></div>
-    <div class="al-desc">설정가 3% 이내 근접 시만</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">13:00</span><span class="al-name">Gmail 채용 알림</span><span class="al-badge ab-c">조건부</span></div>
-    <div class="al-desc">채용 메일 있을 때만</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">15:00</span><span class="al-name">한국장 마감 브리핑</span><span class="al-badge ab-s">매일</span></div>
-    <div class="al-desc">KOSPI/KOSDAQ 마감 + 보유 종목 일일 점검</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">15:00</span><span class="al-name">PLTR 눌림목 알림</span><span class="al-badge ab-c">조건부</span></div>
-    <div class="al-desc">$128 이하 도달 시만</div>
-  </div></div>
+  <div class="al-item">
+    <div class="al-row1">
+      <span class="al-time">07:00</span>
+      <span class="al-name">아침 브리핑</span>
+    </div>
 
-  <div class="ap-section-title">🌙 저녁 · 16:00 ~ 24:00</div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">16:00</span><span class="al-name">Gmail 채용 알림</span><span class="al-badge ab-c">조건부</span></div>
-    <div class="al-desc">채용 메일 있을 때만</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">18:00</span><span class="al-name">저녁 진입전략 브리핑</span><span class="al-badge ab-s">매일</span></div>
-    <div class="al-desc">미장 개장 전 최종 점검 + 야간 전략</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">22:00</span><span class="al-name">저녁 브리핑</span><span class="al-badge ab-s">매일</span></div>
-    <div class="al-desc">미장 장중 흐름 + 오버나이트 전략</div>
-  </div></div>
-  <div class="al-item"><div class="al-content">
-    <div class="al-row1"><span class="al-time">23:30</span><span class="al-name">자동매수 모니터</span><span class="al-badge ab-c">조건부</span></div>
-    <div class="al-desc">설정가 3% 이내 근접 시만</div>
-  </div></div>
+    <div class="al-desc">
+      글로벌 시장 + 포트폴리오 브리핑
+    </div>
+  </div>
+
+  <div class="al-item">
+    <div class="al-row1">
+      <span class="al-time">09:00</span>
+      <span class="al-name">PLTR 눌림목 알림</span>
+    </div>
+
+    <div class="al-desc">
+      특정 가격 이하 도달 시 알림
+    </div>
+  </div>
+
+  <div class="ap-section-title">
+    🌙 저녁 스케줄
+  </div>
+
+  <div class="al-item">
+    <div class="al-row1">
+      <span class="al-time">22:00</span>
+      <span class="al-name">저녁 브리핑</span>
+    </div>
+
+    <div class="al-desc">
+      미장 흐름 + 오버나이트 전략
+    </div>
+  </div>
+
 </div>
 
 <script>
 function showTab(name, el){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.ntab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('tab-'+name).classList.add('active');
+
+  document.querySelectorAll('.section').forEach(function(section){
+    section.classList.remove('active');
+  });
+
+  document.querySelectorAll('.ntab').forEach(function(tab){
+    tab.classList.remove('active');
+  });
+
+  document.getElementById('tab-' + name).classList.add('active');
+
   el.classList.add('active');
 }
 </script>
+
 </body>
 </html>
