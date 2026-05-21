@@ -2,197 +2,195 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ETHAN DAILY</title>
-
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-:root{
-  --bg:#111;
-  --s1:#181818;
-  --s2:#222;
-  --bd:#2e2e2e;
-  --t1:#f0f0f0;
-  --t2:#bbb;
-  --t3:#666;
-
-  --gold:#f5c518;
-  --red:#ff5f5f;
-  --grn:#3ddc84;
-  --blu:#5ba4f5;
-  --cyan:#22d3ee;
+:root {
+  --bg: #111;
+  --s1: #181818;
+  --s2: #222;
+  --bd: #2e2e2e;
+  --t1: #f0f0f0;
+  --t2: #bbb;
+  --t3: #666;
+  --gold: #f5c518;
+  --red: #ff5f5f;
+  --grn: #3ddc84;
+  --blu: #5ba4f5;
+  --cyan: #22d3ee;
 }
 
-body{
-  background:var(--bg);
-  color:var(--t1);
-  font-family:-apple-system,'Noto Sans KR','Segoe UI',sans-serif;
-  max-width:600px;
-  margin:0 auto;
-  padding-bottom:50px;
+body {
+  background: var(--bg);
+  color: var(--t1);
+  font-family: -apple-system, 'Noto Sans KR', 'Segoe UI', sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 50px;
 }
 
-.masthead{
-  padding:16px;
-  border-bottom:1px solid var(--bd);
+.masthead {
+  padding: 16px;
+  border-bottom: 1px solid var(--bd);
 }
 
-.blog-title{
-  font-size:24px;
-  font-weight:900;
+.blog-title {
+  font-size: 24px;
+  font-weight: 900;
 }
 
-.blog-title span{
-  color:var(--gold);
+.blog-title span {
+  color: var(--gold);
 }
 
-.blog-tagline{
-  font-size:12px;
-  color:var(--t3);
-  margin-top:4px;
+.blog-tagline {
+  font-size: 12px;
+  color: var(--t3);
+  margin-top: 4px;
 }
 
-.nav{
-  display:flex;
-  background:var(--s1);
-  border-bottom:1px solid var(--bd);
+.nav {
+  display: flex;
+  background: var(--s1);
+  border-bottom: 1px solid var(--bd);
 }
 
-.ntab{
-  flex:1;
-  text-align:center;
-  padding:14px;
-  cursor:pointer;
-  font-weight:700;
-  color:var(--t3);
-  border-bottom:2px solid transparent;
+.ntab {
+  flex: 1;
+  text-align: center;
+  padding: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--t3);
+  border-bottom: 2px solid transparent;
 }
 
-.ntab.active{
-  color:var(--gold);
-  border-bottom-color:var(--gold);
+.ntab.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
 }
 
-.section{
-  display:none;
-  padding:16px;
+.section {
+  display: none;
+  padding: 16px;
 }
 
-.section.active{
-  display:block;
+.section.active {
+  display: block;
 }
 
-.card{
-  background:var(--s1);
-  border:1px solid var(--bd);
-  border-radius:10px;
-  padding:14px;
-  margin-bottom:14px;
+.card {
+  background: var(--s1);
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 14px;
 }
 
-.card-title{
-  font-size:16px;
-  font-weight:800;
-  color:var(--gold);
-  margin-bottom:12px;
+.card-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 12px;
 }
 
-table{
-  width:100%;
-  border-collapse:collapse;
-  font-size:13px;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
 }
 
-th{
-  background:#222;
-  color:var(--gold);
-  text-align:left;
-  padding:8px;
+th {
+  background: #222;
+  color: var(--gold);
+  text-align: left;
+  padding: 8px;
 }
 
-td{
-  padding:8px;
-  border-bottom:1px solid var(--bd);
-  color:var(--t2);
+td {
+  padding: 8px;
+  border-bottom: 1px solid var(--bd);
+  color: var(--t2);
 }
 
-tr:last-child td{
-  border:none;
+tr:last-child td {
+  border: none;
 }
 
-.badge{
-  display:inline-block;
-  padding:4px 8px;
-  border-radius:12px;
-  font-size:11px;
-  font-weight:700;
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
 }
 
-.bg{
-  background:#1a3a1a;
-  color:var(--grn);
+.bg {
+  background: #1a3a1a;
+  color: var(--grn);
 }
 
-.bb{
-  background:#1a2a3a;
-  color:var(--blu);
+.bb {
+  background: #1a2a3a;
+  color: var(--blu);
 }
 
-.br{
-  background:#3a1a1a;
-  color:var(--red);
+.br {
+  background: #3a1a1a;
+  color: var(--red);
 }
 
-.by{
-  background:#2d2200;
-  color:var(--gold);
+.by {
+  background: #2d2200;
+  color: var(--gold);
 }
 
-.updated{
-  margin-top:10px;
-  font-size:11px;
-  color:var(--t3);
+.updated {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--t3);
 }
 
-.al-item{
-  background:var(--s1);
-  border:1px solid var(--bd);
-  border-radius:10px;
-  padding:12px;
-  margin-bottom:10px;
+.al-item {
+  background: var(--s1);
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
 }
 
-.al-row1{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-bottom:6px;
+.al-row1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
 }
 
-.al-time{
-  color:var(--gold);
-  font-weight:800;
+.al-time {
+  color: var(--gold);
+  font-weight: 800;
 }
 
-.al-name{
-  font-weight:700;
+.al-name {
+  font-weight: 700;
 }
 
-.al-desc{
-  font-size:12px;
-  color:var(--t2);
+.al-desc {
+  font-size: 12px;
+  color: var(--t2);
 }
 
-.ap-section-title{
-  font-size:14px;
-  font-weight:800;
-  margin:20px 0 10px;
-  color:var(--cyan);
+.ap-section-title {
+  font-size: 14px;
+  font-weight: 800;
+  margin: 20px 0 10px;
+  color: var(--cyan);
 }
 </style>
 </head>
@@ -203,9 +201,8 @@ tr:last-child td{
   <div class="blog-title">
     ETHAN <span>DAILY</span>
   </div>
-
   <div class="blog-tagline">
-    Daily Dashboard · Stocks · Power Electronics · Career
+    Daily Dashboard - Stocks - Power Electronics - Career
   </div>
 </div>
 
@@ -215,58 +212,45 @@ tr:last-child td{
   <div class="ntab" onclick="showTab('알림', this)">알림</div>
 </div>
 
-<!-- 채용 -->
+<!-- 채용 탭 -->
 <div id="tab-채용" class="section active">
-
   <div class="card">
     <div class="card-title">💼 채용 트래킹 현황</div>
-
     <table>
       <tr>
         <th>관심 분야</th>
         <th>상태</th>
       </tr>
-
       <tr>
         <td>전력전자 / BMS</td>
         <td><span class="badge bb">모니터링중</span></td>
       </tr>
-
       <tr>
         <td>EV / 대기업</td>
         <td><span class="badge bb">모니터링중</span></td>
       </tr>
     </table>
-
-    <div class="updated">
-      Gmail 채용알림 연동 — 09:00 / 13:00 / 16:00
-    </div>
+    <div class="updated">Gmail 채용알림 연동 - 09:00 / 13:00 / 16:00</div>
   </div>
-
 </div>
 
-<!-- 공부 -->
+<!-- 공부 탭 -->
 <div id="tab-공부" class="section">
-
   <div class="card">
     <div class="card-title">📚 투자 전략 학습</div>
-
     <table>
       <tr>
         <th>전략</th>
         <th>설명</th>
       </tr>
-
       <tr>
         <td>VCP</td>
         <td>변동성 수축 후 돌파 패턴</td>
       </tr>
-
       <tr>
         <td>Cup & Handle</td>
         <td>컵 형태 후 돌파 패턴</td>
       </tr>
-
       <tr>
         <td>M2 유동성</td>
         <td>통화량 기반 상승 분석</td>
@@ -276,45 +260,36 @@ tr:last-child td{
 
   <div class="card">
     <div class="card-title">⚡ 전력전자 스터디</div>
-
     <table>
       <tr>
         <th>주제</th>
         <th>상태</th>
       </tr>
-
       <tr>
         <td>BMS 아키텍처</td>
         <td><span class="badge bg">학습중</span></td>
       </tr>
-
       <tr>
         <td>DC-DC 컨버터</td>
         <td><span class="badge bg">학습중</span></td>
       </tr>
-
       <tr>
         <td>Totem Pole PFC</td>
         <td><span class="badge by">정리중</span></td>
       </tr>
     </table>
   </div>
-
 </div>
 
-<!-- 알림 -->
+<!-- 알림 탭 -->
 <div id="tab-알림" class="section">
-
-  <div class="ap-section-title">
-    🌅 아침 스케줄
-  </div>
+  <div class="ap-section-title">🌅 아침 스케줄</div>
 
   <div class="al-item">
     <div class="al-row1">
       <span class="al-time">07:00</span>
       <span class="al-name">아침 브리핑</span>
     </div>
-
     <div class="al-desc">
       글로벌 시장 + 포트폴리오 브리핑
     </div>
@@ -325,42 +300,33 @@ tr:last-child td{
       <span class="al-time">09:00</span>
       <span class="al-name">PLTR 눌림목 알림</span>
     </div>
-
     <div class="al-desc">
       특정 가격 이하 도달 시 알림
     </div>
   </div>
 
-  <div class="ap-section-title">
-    🌙 저녁 스케줄
-  </div>
+  <div class="ap-section-title">🌙 저녁 스케줄</div>
 
   <div class="al-item">
     <div class="al-row1">
       <span class="al-time">22:00</span>
       <span class="al-name">저녁 브리핑</span>
     </div>
-
     <div class="al-desc">
       미장 흐름 + 오버나이트 전략
     </div>
   </div>
-
 </div>
 
 <script>
-function showTab(name, el){
-
-  document.querySelectorAll('.section').forEach(function(section){
+function showTab(name, el) {
+  document.querySelectorAll('.section').forEach(function(section) {
     section.classList.remove('active');
   });
-
-  document.querySelectorAll('.ntab').forEach(function(tab){
+  document.querySelectorAll('.ntab').forEach(function(tab) {
     tab.classList.remove('active');
   });
-
   document.getElementById('tab-' + name).classList.add('active');
-
   el.classList.add('active');
 }
 </script>
