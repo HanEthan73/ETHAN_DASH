@@ -140,6 +140,10 @@ const TYPES = [
   { key:'저녁브리핑',         label:'저녁 브리핑', icon:'🌆', badge:'tb-prp',  time:'18:00' },
   { key:'주식추천',           label:'주식 추천',   icon:'📈', badge:'tb-gold', time:null    },
   { key:'주식전략',           label:'주식 전략',   icon:'📈', badge:'tb-gold', time:null    },
+  { key:'stock_recommendation', label:'주식 추천', icon:'📈', badge:'tb-gold', time:null    },
+  { key:'stock_strategy',     label:'주식 전략',   icon:'🧭', badge:'tb-org',  time:null    },
+  { key:'pltr_tool_v2',       label:'PLTR 앱 v2',  icon:'🛠️', badge:'tb-blu',  time:null    },
+  { key:'pltr_tool',          label:'PLTR 앱',     icon:'🛠️', badge:'tb-blu',  time:null    },
   { key:'morning_briefing',   label:'아침 브리핑', icon:'🌅', badge:'tb-gold', time:'07:00' },
   { key:'noon_briefing',      label:'낮 브리핑',   icon:'☀️', badge:'tb-cyan', time:'12:00' },
   { key:'afternoon_briefing', label:'오후 브리핑', icon:'🕒', badge:'tb-org',  time:'15:00' },
@@ -160,6 +164,8 @@ const OFFICIAL_NAME = /^(.+?)_(\d{6})_(\d{1,2})(?:[._-](\d{1,2}))?\s*_?\s*(AM|PM
 
 function parseFile(name) {
   const raw = name.replace('.html','');
+  const toolFile = parseToolFile(name, raw);
+  if (toolFile) return toolFile;
 
   // YYYYMMDD 또는 YYMMDD 날짜 추출
   const dm = raw.match(/(\d{8})|(\d{6})/);
@@ -192,6 +198,23 @@ function parseFile(name) {
 
   return { name, dateKey, dateLabel, timeNum, timeStr: info.time || '—',
            label: info.label, icon: info.icon, badge: info.badge };
+}
+
+function parseToolFile(name, raw) {
+  const toolTypes = TYPES.filter(t => t.key.startsWith('pltr_tool'));
+  const matched = toolTypes.find(t => raw.includes(t.key));
+  if (!matched) return null;
+
+  return {
+    name,
+    dateKey:'tools',
+    dateLabel:'앱 / 도구',
+    timeNum: raw.includes('v2') ? 2 : 1,
+    timeStr:'APP',
+    label:matched.label,
+    icon:matched.icon,
+    badge:matched.badge
+  };
 }
 
 function labelFromOfficialName(raw) {
@@ -231,6 +254,7 @@ function parseTimeFromName(raw) {
 
 /* ── 상대 날짜 ───────────────────────────────────────── */
 function relDate(dateKey) {
+  if (dateKey === 'tools') return '상시 사용';
   const diff = Math.floor((Date.now() - new Date(dateKey)) / 86400000);
   if (diff === 0) return '오늘';
   if (diff === 1) return '어제';
@@ -263,12 +287,15 @@ function render() {
   });
 
   // 날짜 정렬
-  let keys = Object.keys(groups).sort();
+  let keys = Object.keys(groups).sort((a,b) => compareDateKeys(a,b));
   if (sort === 'newest') keys = keys.reverse();
+  keys = keys.filter(k => k !== 'tools').concat(keys.includes('tools') ? ['tools'] : []);
 
   // 그룹 내 시간 정렬
   keys.forEach(k => groups[k].sort((a,b) =>
-    sort === 'newest' ? b.timeNum - a.timeNum : a.timeNum - b.timeNum
+    k === 'tools'
+      ? b.timeNum - a.timeNum
+      : sort === 'newest' ? b.timeNum - a.timeNum : a.timeNum - b.timeNum
   ));
 
   feed.innerHTML = '';
@@ -322,6 +349,13 @@ function render() {
   document.getElementById('mc-dates').textContent  = keys.length;
   document.getElementById('footer-info').textContent = `${files.length}건 · ${keys.length}일`;
   hydrateSummaries();
+}
+
+function compareDateKeys(a,b) {
+  if (a === 'tools' && b === 'tools') return 0;
+  if (a === 'tools') return -1;
+  if (b === 'tools') return 1;
+  return a.localeCompare(b);
 }
 
 function hydrateSummaries() {
@@ -410,9 +444,14 @@ function trimSummary(text) {
 const STATIC = [
   'fx_alert_20260521_06.html',
   'morning_briefing_20260521.html',
+  'morning_briefing_20260522_09.html',
   'noon_briefing_20260521.html',
   'premarket_20260521.html',
+  'stock_recommendation_20260522_22.html',
+  'stock_strategy_20260522_22.html',
   '저녁브리핑_260522_6.17PM.html',
+  'pltr_tool.html',
+  'pltr_tool_v2.html',
 ];
 
 function load(names) {
