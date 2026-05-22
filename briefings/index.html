@@ -329,7 +329,7 @@ function parseFile(name) {
     }
   }
 
-  const dow = WEEKDAYS[new Date(`${y}-${m}-${d}`).getDay()];
+  const dow = WEEKDAYS[localDateFromKey(dateKey).getDay()];
   const dateLabel = `${y}년 ${+m}월 ${+d}일 ${dow}요일`;
   const timeNum = info.time ? parseInt(info.time.replace(':','')) : 9999;
 
@@ -392,11 +392,20 @@ function parseTimeFromName(raw) {
 /* ── 상대 날짜 ───────────────────────────────────────── */
 function relDate(dateKey) {
   if (dateKey === 'tools') return '상시 사용';
-  const diff = Math.floor((Date.now() - new Date(dateKey)) / 86400000);
+  const today = new Date();
+  const todayOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const target = localDateFromKey(dateKey);
+  const diff = Math.round((todayOnly - target) / 86400000);
   if (diff === 0) return '오늘';
   if (diff === 1) return '어제';
   if (diff === 2) return '그제';
+  if (diff < 0) return `${Math.abs(diff)}일 후`;
   return `${diff}일 전`;
+}
+
+function localDateFromKey(dateKey) {
+  const [year, month, day] = dateKey.split('-').map(Number);
+  return new Date(year, month - 1, day);
 }
 
 /* ── 렌더링 ──────────────────────────────────────────── */
