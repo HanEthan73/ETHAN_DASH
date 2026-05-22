@@ -149,6 +149,7 @@ const TYPES = [
 
 /* ── 파일명 파싱 ─────────────────────────────────────── */
 const WEEKDAYS = ['일','월','화','수','목','금','토'];
+const OFFICIAL_NAME = /^(.+?)_(\d{6})_(\d{1,2})(?:[._-](\d{1,2}))?\s*_?\s*(AM|PM)$/i;
 
 function parseFile(name) {
   const raw = name.replace('.html','');
@@ -165,7 +166,12 @@ function parseFile(name) {
   const timeFromName = parseTimeFromName(raw);
 
   // 타입 매칭
-  let info = { label: raw.replace(/_/g,' '), icon:'📄', badge:'tb-gray', time: timeFromName };
+  let info = {
+    label: labelFromOfficialName(raw) || raw.replace(/_/g,' '),
+    icon:'📄',
+    badge:'tb-gray',
+    time: timeFromName
+  };
   for (const t of TYPES) {
     if (raw.includes(t.key)) {
       info = { label:t.label, icon:t.icon, badge:t.badge, time: timeFromName || t.time };
@@ -181,12 +187,24 @@ function parseFile(name) {
            label: info.label, icon: info.icon, badge: info.badge };
 }
 
+function labelFromOfficialName(raw) {
+  const official = raw.match(OFFICIAL_NAME);
+  if (!official) return null;
+  return official[1]
+    .replace(/브리핑$/, ' 브리핑')
+    .replace(/추천$/, ' 추천')
+    .replace(/전략$/, ' 전략')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function parseTimeFromName(raw) {
-  const ampm = raw.match(/(?:^|_)(\d{1,2})(?:[._-](\d{1,2}))?\s*_?\s*(AM|PM)$/i);
+  const ampm = raw.match(OFFICIAL_NAME) || raw.match(/(?:^|_)(\d{1,2})(?:[._-](\d{1,2}))?\s*_?\s*(AM|PM)$/i);
   if (ampm) {
-    let hour = parseInt(ampm[1], 10);
-    const minute = parseInt(ampm[2] || '0', 10);
-    const marker = ampm[3].toUpperCase();
+    const offset = ampm.length === 6 ? 2 : 0;
+    let hour = parseInt(ampm[1 + offset], 10);
+    const minute = parseInt(ampm[2 + offset] || '0', 10);
+    const marker = ampm[3 + offset].toUpperCase();
     if (marker === 'PM' && hour < 12) hour += 12;
     if (marker === 'AM' && hour === 12) hour = 0;
     return `${String(hour).padStart(2,'0')}:${String(minute).padStart(2,'0')}`;
@@ -304,6 +322,7 @@ const STATIC = [
   'morning_briefing_20260521.html',
   'noon_briefing_20260521.html',
   'premarket_20260521.html',
+  '저녁브리핑_260522_6.17PM.html',
 ];
 
 function load(names) {
