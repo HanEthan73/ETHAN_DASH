@@ -42,8 +42,6 @@ body{
 :root:has(#t-all:checked)  label.ntab[for="t-all"]  {color:var(--t1);border-bottom-color:var(--t1)}
 :root:has(#t-cal:checked)  label.ntab[for="t-cal"]  {color:var(--gold);border-bottom-color:var(--gold)}
 :root:has(#t-주식:checked) label.ntab[for="t-주식"] {color:var(--gold);border-bottom-color:var(--gold)}
-:root:has(#t-채용:checked) label.ntab[for="t-채용"] {color:var(--blu);border-bottom-color:var(--blu)}
-:root:has(#t-공부:checked) label.ntab[for="t-공부"] {color:var(--cyan);border-bottom-color:var(--cyan)}
 :root:has(#t-알림:checked) label.ntab[for="t-알림"] {color:var(--red);border-bottom-color:var(--red)}
 
 /* ─── CALENDAR ─── */
@@ -133,8 +131,6 @@ details.card > summary::-webkit-details-marker{display:none}
 details.card.imp-high  {border-top:2px solid var(--red)}
 details.card.imp-medium{border-top:2px solid var(--gold)}
 details.card.imp-low   {border-top:2px solid var(--t4)}
-details.card.cat-채용  {border-top-color:var(--blu)}
-details.card.cat-공부  {border-top-color:var(--cyan)}
 
 details.card > summary::after{content:'∨';position:absolute;right:13px;top:14px;font-size:11px;color:var(--t4);transition:transform .2s;line-height:1}
 details.card[open] > summary::after{transform:rotate(180deg);color:var(--gold)}
@@ -149,8 +145,6 @@ details.card[open] > summary::after{transform:rotate(180deg);color:var(--gold)}
 .st-전략  {background:rgba(52,211,153,.1);color:#34d399}
 .st-시스템{background:rgba(148,163,184,.1);color:#94a3b8}
 .st-분석  {background:rgba(255,160,64,.1);color:#ffa040}
-.st-채용  {background:rgba(91,164,245,.14);color:#5ba4f5}
-.st-공부  {background:rgba(34,211,238,.1);color:#22d3ee}
 .st-긴급  {background:rgba(255,95,95,.2);color:#ff5f5f}
 
 .imp-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
@@ -188,29 +182,16 @@ details.card[open] > summary::after{transform:rotate(180deg);color:var(--gold)}
 /* ─── FILTERING ─── */
 details.card{display:block}
 :root:has(#t-주식:checked) details.card:not(.cat-주식){display:none}
-:root:has(#t-채용:checked) details.card:not(.cat-채용){display:none}
-:root:has(#t-공부:checked) details.card:not(.cat-공부){display:none}
 :root:has(#t-cal:checked):has(#d-0519:checked) details.card:not(.d0519){display:none}
 :root:has(#t-cal:checked):has(#d-0520:checked) details.card:not(.d0520){display:none}
 :root:has(#t-cal:checked):has(#d-0521:checked) details.card:not(.d0521){display:none}
 :root:has(#t-cal:checked):has(#d-0521:checked) .today-strip{display:none}
 
 :root:has(#t-주식:checked) .date-header,
-:root:has(#t-채용:checked) .date-header,
-:root:has(#t-공부:checked) .date-header,
 :root:has(#t-cal:checked)  .date-header{display:none}
 
-:root:has(#t-주식:checked) .today-strip,
-:root:has(#t-채용:checked) .today-strip,
-:root:has(#t-공부:checked) .today-strip{display:none}
+:root:has(#t-주식:checked) .today-strip{display:none}
 
-/* ─── EMPTY STATE ─── */
-.empty-state{display:none;padding:60px 20px;text-align:center}
-.es-icon{font-size:36px;margin-bottom:14px}
-.es-title{font-size:14px;font-weight:800;color:var(--t2);margin-bottom:8px}
-.es-desc{font-size:12px;color:var(--t3);line-height:1.7}
-:root:has(#t-채용:checked) .empty-state.es-채용{display:block}
-:root:has(#t-공부:checked) .empty-state.es-공부{display:block}
 
 /* ─── FOOTER ─── */
 .site-footer{margin:30px 16px 0;padding:16px 0;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;font-size:10px;color:var(--t4)}
@@ -222,8 +203,6 @@ details.card{display:block}
 <input type="radio" name="tab" id="t-all" checked>
 <input type="radio" name="tab" id="t-cal">
 <input type="radio" name="tab" id="t-주식">
-<input type="radio" name="tab" id="t-채용">
-<input type="radio" name="tab" id="t-공부">
 <input type="radio" name="tab" id="t-알림">
 <input type="radio" name="date" id="d-0519">
 <input type="radio" name="date" id="d-0520">
@@ -248,8 +227,6 @@ details.card{display:block}
   <label class="ntab" for="t-all">전체</label>
   <label class="ntab" for="t-cal">📅 달력</label>
   <label class="ntab" for="t-주식">📈 주식</label>
-  <label class="ntab" for="t-채용">💼 채용</label>
-  <label class="ntab" for="t-공부">📚 공부</label>
   <label class="ntab" for="t-알림">🔔 알림</label>
 </div>
 
@@ -454,14 +431,10 @@ details.card{display:block}
 <!-- ═══ FEED ═══ -->
 <div class="feed">
 
-<div class="empty-state es-채용">
-  <div class="es-icon">💼</div>
-  <div class="es-title">아직 채용 관련 기록이 없습니다</div>
+<div class="es-title">아직 채용 관련 기록이 없습니다</div>
   <div class="es-desc">합격·불합격·면접 일정 메일이 도착하면<br>자동으로 여기에 발행됩니다.</div>
 </div>
-<div class="empty-state es-공부">
-  <div class="es-icon">📚</div>
-  <div class="es-title">아직 학습 기록이 없습니다</div>
+<div class="es-title">아직 학습 기록이 없습니다</div>
   <div class="es-desc">제어공학·BMS·전력전자 공부 내용을<br>"공부 내용 기록해줘" 라고 말씀해 주세요.</div>
 </div>
 
@@ -550,13 +523,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">강세 시나리오(55%): 서프라이즈 달성 시 NVDA +8~15% 갭업, KOSPI 7,400~7,600 반등, SK하이닉스·MU 연동 급등. 지금 조정은 황금 기회가 된다. 약세 시나리오(45%): H20 가이던스 실망 시 NVDA -10~15%, KOSPI 7,000 재테스트. 컨센서스 EPS $1.78 (+120% YoY), 매출 $79.2B. 하이퍼스케일러 CAPEX $7,250억(+77% YoY) 이미 확정.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>NVDA·VRT·SK하이닉스·ASTS 전량 홀딩. 실적 발표(한국시간 내일 새벽 5:30) 후 방향 확인 즉시 대응. 실적 전 절대 매도 금지.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../evening-briefing-20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>저녁브리핑 5/19</a>
-        <a class="rl-chip" href="../아침브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>아침브리핑 5/19</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">NVDA</span><span class="ab-tag">실적</span><span class="ab-tag">시나리오</span><span class="ab-tag">반도체전략</span></div>
   </div>
 </details>
@@ -569,13 +535,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">4만 5천명 규모 노조가 협상 결렬 시 내일(5/21) 파업에 돌입한다. 하루 1조원 손실에 웨이퍼 2.2만장이 폐기되는 규모다. HBM·DDR5 공급 공백이 생기면 SK하이닉스·MU가 가장 먼저 수혜를 본다. SK하이닉스는 이미 밸류에이션에서 삼성을 사상 최초로 추월했다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>SK하이닉스 절대 홀딩 + 조정 시 추가매수 1순위. MU $730 분할 진입 검토.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../오후브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>오후브리핑 5/19</a>
-        <a class="rl-chip" href="../per_analysis_하이닉스_현대차_20260518.html" target="_blank"><span class="rl-chip-icon">📊</span>하이닉스 PER 분석</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">삼성전자</span><span class="ab-tag">파업</span><span class="ab-tag">SK하이닉스</span><span class="ab-tag">MU</span></div>
   </div>
 </details>
@@ -588,13 +547,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">KOSPI가 장중 7,000선을 뚫으며 충격을 줬지만 삼성전자·SK하이닉스의 장 후반 반등으로 7,224에 마감했다. 외국인은 1조 7,945억을 순매도했고, 개인·기관이 저가 매수로 방어에 나섰다. 5/7~5/19 누적 외국인 매도는 42조를 넘어섰다. FOMC 의사록이 오늘 오후 발표돼 분기점이 된다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>FOMC 비둘기파 여부 확인 필수. 7,000 지지선 붕괴 시 포지션 25% 축소 검토.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../개장전속보_20260520.html" target="_blank"><span class="rl-chip-icon">📄</span>개장전속보 5/20</a>
-        <a class="rl-chip" href="../SP500_월별수익률_5년_20260519.html" target="_blank"><span class="rl-chip-icon">📊</span>S&P500 5년 패턴</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">KOSPI</span><span class="ab-tag">외국인매도</span><span class="ab-tag">FOMC</span></div>
   </div>
 </details>
@@ -607,13 +559,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">4/28~29 FOMC 의사록이 오늘 오후 2시(ET, 한국시간 내일 새벽 3시)에 공개된다. 신임 Kevin Warsh 의장의 첫 의사록이다. 10년물 금리는 이미 4.606%로 경고 기준(4.5%)을 돌파했다. 매파 기조가 확인되면 NVDA·VRT·INTC 같은 고PER 성장주에 추가 압박이 오고, 비둘기파라면 외국인이 한국 시장으로 돌아올 트리거가 된다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>매파 확인 시 → NVDA 실적 전 현금 비중 일부 확대. 비둘기파 확인 시 → SK하이닉스·현대차 추가 매수 준비.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../아침브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>아침브리핑 5/19</a>
-        <a class="rl-chip" href="../주가_월별패턴_AI예측_20260518.html" target="_blank"><span class="rl-chip-icon">📊</span>주가 AI 예측</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">FOMC</span><span class="ab-tag">금리</span><span class="ab-tag">10년물</span></div>
   </div>
 </details>
@@ -626,13 +571,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">낮 12시 기준 KOSPI -2.70% 속에서 현대차는 ₩580,000~590,000로 추산된다. 자동매수 1차(₩665K)·2차(₩635K)는 이미 오래 전에 하회했고, 이제 손절가 ₩600,000마저 거의 이탈했거나 이탈 직전이다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>MTS에서 현대차 종가 즉시 확인. ₩600K 하회 확정 시 손절 여부 직접 결정. 방치하지 말 것.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../per_analysis_하이닉스_현대차_20260518.html" target="_blank"><span class="rl-chip-icon">📊</span>현대차·하이닉스 PER 분석</a>
-        <a class="rl-chip" href="../자동매수_10종목_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>자동매수 10종목</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">현대차</span><span class="ab-tag">손절</span><span class="ab-tag">긴급</span></div>
   </div>
 </details>
@@ -645,12 +583,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">USD/KRW 1,509.11. 1,500원 경보 구간이 계속 이어지고 있다. 외국인들은 5/7부터 9거래일 연속으로 한국 주식을 팔아치웠고 누적 순매도는 42조를 넘어섰다. 현대차는 수출 수혜가 있지만 외국인 이탈 압박이 더 크다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>한국주 비중 축소 검토. 현대차 단기 관망. 1,520 돌파 시 추가 경보 발령.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../환율경보_20260520_09.html" target="_blank"><span class="rl-chip-icon">📄</span>환율경보 5/20 오전</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">환율</span><span class="ab-tag">USD_KRW</span><span class="ab-tag">외국인매도</span></div>
   </div>
 </details>
@@ -663,12 +595,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">CNN Fear & Greed Index 63. 탐욕 구간으로 경보 기준에 해당하지 않는다. 1개월 전 68에서 천천히 내려오는 중이다. 탐욕이 지배하는 동안은 역발상 매수 타이밍이 아니다. 지수가 20 이하로 내려올 때까지 기다리는 게 정석이다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>신규 진입 자제. 기존 포지션은 분할 접근 유지. 극단 공포 신호 시 전면 재검토.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../SP500_월평균수익률_20년_20260519.html" target="_blank"><span class="rl-chip-icon">📊</span>S&P500 20년 월평균</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">공포탐욕</span><span class="ab-tag">시장온도</span><span class="ab-tag">역발상타이밍</span></div>
   </div>
 </details>
@@ -689,12 +615,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">아침 브리핑부터 야간 자동매수 모니터까지 18개 태스크가 돌아가기 시작했다. 06:50 개장전속보 / 07:00 아침브리핑 / 07:05 KB업데이트 / 08:00 공포탐욕 / 09·15시 환율 / 09시 PLTR·Gmail / 12시 낮브리핑 / 15시 한국장마감 / 18시 저녁전략 / 20시 실적D-1 / 21시 지정학 / 21:10 프리마켓 / 22~04시 종목모니터(2h마다) / 금17시 주간정산 / 일19시 주간전략 / 매월첫화 M2.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>각 알림 첫 실행 시 "Run now" 눌러 도구 권한 사전 승인. 이후 완전 자동화.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../자동매수_10종목_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>자동매수 10종목 세팅</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">시스템</span><span class="ab-tag">자동화</span><span class="ab-tag">스케줄</span></div>
   </div>
 </details>
@@ -707,13 +627,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">CNN Fear & Greed Index가 20 이하로 떨어지면 그게 역발상 매수의 최적 타이밍이다. 80 이상이면 익절 신호. 남들이 패닉할 때 사는 이 하나의 원칙이 2억 목표 달성의 핵심이다. 매일 오전 8시 자동 모니터링으로 이 순간을 절대 놓치지 않도록 세팅했다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>극단 공포 도달 시 보유 종목 + 자동매수 10종목 전체 재검토. 이게 2억 가는 타이밍이다.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../SP500_월별수익률_5년_20260519.html" target="_blank"><span class="rl-chip-icon">📊</span>S&P500 5년 월별 수익률</a>
-        <a class="rl-chip" href="../SP500_월평균수익률_20년_20260519.html" target="_blank"><span class="rl-chip-icon">📊</span>S&P500 20년 패턴</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">공포탐욕</span><span class="ab-tag">역발상</span><span class="ab-tag">2억목표</span></div>
   </div>
 </details>
@@ -726,13 +639,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">호르무즈 해협에 잠수함이 추가 배치됐다. 한국 원유의 70%가 중동에서 온다. 유가는 WTI $102로 이미 높은데 봉쇄가 현실이 되면 에너지 충격이 국내 제조업 전체를 강타한다. 협상이 타결되면 유가 급락→금리인하→코스피 급등의 시나리오가 열린다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>현대차 자동매수 유지. 협상 종료 신호 감지 시 SK하이닉스·항공주 반등 준비 즉각 시작.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../evening-briefing-20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>저녁브리핑 5/19</a>
-        <a class="rl-chip" href="../evening_briefing_20260517.html" target="_blank"><span class="rl-chip-icon">📄</span>저녁브리핑 5/17</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">이란</span><span class="ab-tag">지정학</span><span class="ab-tag">유가</span><span class="ab-tag">코스피</span></div>
   </div>
 </details>
@@ -745,12 +651,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">빌 애크먼(퍼싱스퀘어)과 마이클 버리(빅쇼트)가 Q1 2026에 마이크로소프트를 매집했다. ATH $555에서 -25% 조정된 $418이다. DCF 내재가치는 $506으로 현재가보다 높다. AI 매출은 YoY +123%인데 Forward PER은 26배로 5년 평균 34배보다 오히려 싸다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>자동매수 알림가 $410 도달 시 분할 매수. 손절 $360 / 목표 $500. R/R 1:2.0.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../낮브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>낮브리핑 5/19</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">MSFT</span><span class="ab-tag">역발상</span><span class="ab-tag">기관매집</span></div>
   </div>
 </details>
@@ -763,14 +663,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">AVGO $420 / MSFT $410 / INTC $104.50 / GOOGL $385 / TSM $395 / MRVL $168 / AMZN $255 / ORCL $178 / PLTR $122 / ASTS $68. 미장 시간 동안 2시간마다 자동으로 현재가를 체크해 트리거 도달 시 알림을 보낸다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>알림 수신 즉시 증권앱에서 직접 분할 매수 실행. 수동 확인 필요.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../자동매수_10종목_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>자동매수 10종목 상세</a>
-        <a class="rl-chip" href="../매수알림_20260519_15.html" target="_blank"><span class="rl-chip-icon">🔔</span>매수알림 5/19 오후</a>
-        <a class="rl-chip" href="../매수알림_20260520_09.html" target="_blank"><span class="rl-chip-icon">🔔</span>매수알림 5/20 오전</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">AVGO</span><span class="ab-tag">MSFT</span><span class="ab-tag">INTC</span><span class="ab-tag">TSM</span><span class="ab-tag">자동매수</span></div>
   </div>
 </details>
@@ -783,13 +675,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">TSM $404. MA50($351)이 MA200($294)을 돌파하며 골든크로스를 확인했다. NVDA·AVGO·AMD의 모든 칩을 위탁생산한다. AI 인프라 확장에 $56B을 투자한다. 삼성 파업이 현실화되면 파운드리 수요가 TSMC로 더 쏠린다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>NVDA 실적 호조 시 $395~400 선취매. 손절 $355 / 목표 $455. R/R 1:2.1.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../아침브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>아침브리핑 5/19</a>
-        <a class="rl-chip" href="../차트지표_공부_20260518.html" target="_blank"><span class="rl-chip-icon">📚</span>차트지표 공부</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">TSM</span><span class="ab-tag">골든크로스</span><span class="ab-tag">파운드리</span></div>
   </div>
 </details>
@@ -802,13 +687,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">MU가 $715.80까지 밀리며 자동매수 1차($748)와 2차($725)를 모두 하회했다. 손절선 $700까지는 2.2% 남은 상황이다. 그나마 평균 매수가가 $671.79라 손절이 나더라도 수익권이긴 하다. NVDA 실적이 오늘 밤 모든 걸 결정한다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>NVDA 실적 호조 후 반등 여부 확인. 손절 $700 또는 $650 조정 검토. NVDA 실망 시 전량 정리.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../오후브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>오후브리핑 5/19</a>
-        <a class="rl-chip" href="../매수알림_20260519_15.html" target="_blank"><span class="rl-chip-icon">🔔</span>매수알림 5/19</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">MU</span><span class="ab-tag">손절선</span><span class="ab-tag">HBM</span></div>
   </div>
 </details>
@@ -821,13 +699,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">AVGO $419.79. 자동매수 기준가 $435를 이미 하회해 $415~$420 지지선 구간에 진입했다. Evercore ISI가 목표가를 $582로 상향한 날 오히려 주가가 내려온 것은 오히려 기회다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>$415~420 분할 매수 구간. 손절 $390 / 목표 $480. R/R 1:1.9. 체결 확인 먼저.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../오후브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>오후브리핑 5/19</a>
-        <a class="rl-chip" href="../매수알림_20260520_19.html" target="_blank"><span class="rl-chip-icon">🔔</span>매수알림 5/20 저녁</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">AVGO</span><span class="ab-tag">자동매수</span><span class="ab-tag">지지선</span></div>
   </div>
 </details>
@@ -840,13 +711,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">MRVL이 $166.69로 자동매수 트리거 $168을 하방 돌파했다. ATH $192에서 -13% 조정된 구간이다. 구글·아마존 AI 맞춤칩 수주 모멘텀은 살아있고 골든크로스도 유효하다. 머그컵 패턴 핸들 구간이기도 하다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>체결 확인. 미체결이면 $160~165 재진입 검토. 손절 $150 / 목표 $215. R/R 1:2.5.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../오후브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>오후브리핑 5/19</a>
-        <a class="rl-chip" href="../PLTR_트레이딩툴_v2.html" target="_blank"><span class="rl-chip-icon">🔧</span>PLTR 트레이딩툴 v2</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">MRVL</span><span class="ab-tag">자동매수체결</span><span class="ab-tag">AI_ASIC</span></div>
   </div>
 </details>
@@ -859,13 +723,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">Vertiv가 하루 -8.41%로 $339.73에 마감했다. ATH $379에서 -10%가 넘는 낙폭이다. 30년물 국채 5.19% 급등이 고PER 성장주를 직격한 것이다. AI 데이터센터 수요 자체가 훼손된 게 아니라서 금리가 안정되면 반등한다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>$320 손절 유지. 금리 안정화 + NVDA 호조 이중 조건 충족 시 $340~345 추가 분할 매수.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../evening-briefing-20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>저녁브리핑 5/19</a>
-        <a class="rl-chip" href="../오후브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>오후브리핑 5/19</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">VRT</span><span class="ab-tag">급락</span><span class="ab-tag">채권금리</span></div>
   </div>
 </details>
@@ -878,13 +735,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">MU가 5/19 종가에서 $681.54로 마감했다. 오후 브리핑 시점 $715.80에서 장 마감까지 추가로 -4.7% 더 빠진 것이다. 설정 손절가 $700을 하방 돌파했다. 평균 매수가 $671.79 기준으로는 아직 +1.5% 수익권이지만, 손절 원칙 위반 상태다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>NVDA 호조여도 $700 미회복 시 전량 정리 원칙 적용. 예외 없음.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../아침브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>아침브리핑 5/19</a>
-        <a class="rl-chip" href="../매수알림_20260519_15.html" target="_blank"><span class="rl-chip-icon">🔔</span>매수알림 5/19</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">MU</span><span class="ab-tag">손절원칙</span><span class="ab-tag">긴급</span></div>
   </div>
 </details>
@@ -897,13 +747,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">30년물 미국채 수익률이 5.19%를 돌파했다. 2007년 이후 최고치다. 10년물도 4.687%를 기록했다. S&P500은 -0.67%(7,353), 나스닥은 -0.84%(25,870)로 3거래일 연속 하락했다. VIX는 18대로 아직 공황이 아니지만, 밸류에이션 전반에 재조정 압박이 쌓이고 있다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>30년물 5.5% 돌파 시 전 포트폴리오 포지션 25% 즉시 축소. 현금 비중 확대 준비.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../아침브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>아침브리핑 5/19</a>
-        <a class="rl-chip" href="../주가_월별패턴_AI예측_20260518.html" target="_blank"><span class="rl-chip-icon">📊</span>주가 AI 예측 모델</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">미국채</span><span class="ab-tag">금리충격</span><span class="ab-tag">채권발작</span></div>
   </div>
 </details>
@@ -916,13 +759,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">KOSPI가 7,272pt(-3.25%)로 마감했다. 현대차 -9.05%, 기아 -4.68%, LG에너지솔루션 -2.33%, 두산에너빌리티 -5.89%가 함께 빠졌다. 방산주만 달랐다. 한화에어로스페이스는 +4.32%로 홀로 강했다. 유가 상승(WTI $102)과 글로벌 채권 금리 급등이 동시에 한국을 강타한 날이다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>현대차 실제 종가 확인 후 자동매수 기준가 조정 검토. 한화에어로스페이스 방산 모멘텀 관심 등재.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../아침브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>아침브리핑 5/19</a>
-        <a class="rl-chip" href="../per_analysis_하이닉스_현대차_20260518.html" target="_blank"><span class="rl-chip-icon">📊</span>현대차 PER 분석</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">KOSPI</span><span class="ab-tag">현대차</span><span class="ab-tag">방산</span></div>
   </div>
 </details>
@@ -935,12 +771,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">AST SpaceMobile이 하루에 25.4% 급등해 $87.01로 마감했다. FCC 위성통신 면허 승인 + AT&T·Verizon·T-Mobile 3사 합작법인 소식 + BlueBird 8~10호 6월 발사 일정이 한꺼번에 터졌다. 지금 주가 $87은 지지선 $65~68보다 한참 위 허공이다. 추격 매수는 금물이다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>$65~68 눌림 구간까지 기다렸다가 분할 매수. 손절 $45 / 목표 $100. 추격은 패배다.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../evening-briefing-20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>저녁브리핑 5/19</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">ASTS</span><span class="ab-tag">위성통신</span><span class="ab-tag">추격금지</span></div>
   </div>
 </details>
@@ -953,13 +783,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">Evercore ISI가 AVGO 목표가를 $490에서 $582로 대폭 올렸다. 현재가 $419.79 대비 38.6%의 업사이드다. 구글·메타 AI 맞춤 ASIC 칩을 독점 수주하고 있고 네트워킹 시장 1위 지위도 확고하다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>$415~420 자동매수 구간 유지. 손절 $390 / 목표 $480(단기) → $582(장기). 분할 전략 유효.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../낮브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>낮브리핑 5/19</a>
-        <a class="rl-chip" href="../오후브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>오후브리핑 5/19</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">AVGO</span><span class="ab-tag">목표가상향</span><span class="ab-tag">AI_ASIC</span></div>
   </div>
 </details>
@@ -972,12 +795,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">NVDA 실적 발표가 내일(5/20) 장 마감 후다. 옵션 시장은 ±6~13%의 이동폭을 예상하고 있다. VIX 18로 공포 국면은 아니지만, 실적 전 신규 대량 매수는 절대 자제해야 한다. 나스닥 선물이 -0.45%로 약세를 보이고 있다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>실적 확인 후 방향 보고 SK하이닉스·TSM 추가 매수 결정. 지금은 기다리는 게 포지션이다.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../아침브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>아침브리핑 5/19</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">NVDA</span><span class="ab-tag">실적D-1</span><span class="ab-tag">반도체</span></div>
   </div>
 </details>
@@ -990,13 +807,6 @@ details.card{display:block}
   <div class="article-body"><div class="ab-divider"></div>
     <div class="ab-lead">KOSPI -2.35%. 외국인이 5월에만 18조 원을 빼냈다. USD/KRW은 1,494~1,503으로 경보 수준이다. 이란 전쟁 리스크와 달러 강세가 복합적으로 작용하고 있다. FOMC 5/20 의사록이 이 흐름의 분기점이 될 것이다.</div>
     <div class="ab-action"><span class="ab-action-label">에디터 지시</span>FOMC 비둘기파 확인 시 외국인 복귀 기대. 현대차·SK하이닉스 매수 준비.</div>
-    <div class="report-links">
-      <span class="rl-label">📎 관련 리포트</span>
-      <div class="rl-chips">
-        <a class="rl-chip" href="../아침브리핑_20260519.html" target="_blank"><span class="rl-chip-icon">📄</span>아침브리핑 5/19</a>
-        <a class="rl-chip" href="../카카오_월별수익률_5년_20260519.html" target="_blank"><span class="rl-chip-icon">📊</span>카카오 5년 분석</a>
-      </div>
-    </div>
     <div class="ab-tags"><span class="ab-tag">KOSPI</span><span class="ab-tag">외국인이탈</span><span class="ab-tag">환율</span></div>
   </div>
 </details>
