@@ -125,6 +125,32 @@ body{
 .schedule-table tr:last-child td{border-bottom:0}
 .schedule-time{font-weight:800;color:var(--t1);font-variant-numeric:tabular-nums}
 .schedule-note{font-size:10px;color:var(--t3);margin-top:10px;text-align:right}
+
+/* ─── CALENDAR ─── */
+.calendar-wrap{padding:18px 16px 0}
+.calendar-card{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:14px 16px}
+.calendar-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.calendar-title{font-size:14px;font-weight:900;color:var(--gold)}
+.calendar-nav{display:flex;gap:6px}
+.calendar-nav button{
+  width:30px;height:28px;border-radius:7px;border:1px solid var(--bd);background:var(--s2);
+  color:var(--t2);font-size:14px;font-weight:900;cursor:pointer;
+}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.cal-dow{font-size:10px;color:var(--t3);text-align:center;font-weight:800;padding-bottom:4px}
+.cal-day{
+  min-height:64px;border:1px solid var(--bd);border-radius:8px;background:#151515;
+  padding:6px;display:flex;flex-direction:column;gap:4px;color:var(--t3);
+}
+.cal-day.empty{opacity:.35}
+.cal-day.has-files{border-color:rgba(245,197,24,.45);background:rgba(245,197,24,.06);cursor:pointer}
+.cal-day.selected{outline:2px solid rgba(91,164,245,.6);outline-offset:1px}
+.cal-num{font-size:11px;font-weight:900;color:var(--t2);line-height:1}
+.cal-count{font-size:10px;color:var(--gold);font-weight:800}
+.cal-label{font-size:9px;color:var(--t3);line-height:1.25;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.calendar-list{margin-top:12px;display:flex;flex-direction:column;gap:5px}
+.calendar-list-title{font-size:12px;font-weight:900;color:var(--t2);margin-top:10px}
+.calendar-empty{font-size:12px;color:var(--t3);padding:20px 0;text-align:center}
 </style>
 </head>
 <body>
@@ -143,6 +169,7 @@ body{
 
 <div class="main-tabs">
   <button class="main-tab active" id="tab-archive" onclick="showPanel('archive')">📚 브리핑</button>
+  <button class="main-tab" id="tab-calendar" onclick="showPanel('calendar')">📅 달력</button>
   <button class="main-tab" id="tab-schedule" onclick="showPanel('schedule')">🔔 알림 스케줄</button>
 </div>
 
@@ -154,6 +181,23 @@ body{
 
   <div class="feed" id="feed">
     <div class="status-msg">파일 목록을 불러오는 중…</div>
+  </div>
+</div>
+
+<div class="tab-panel" id="panel-calendar">
+  <div class="calendar-wrap">
+    <div class="calendar-card">
+      <div class="calendar-head">
+        <div class="calendar-title" id="calendar-title">달력</div>
+        <div class="calendar-nav">
+          <button type="button" onclick="moveCalendarMonth(-1)">‹</button>
+          <button type="button" onclick="moveCalendarMonth(1)">›</button>
+        </div>
+      </div>
+      <div class="calendar-grid" id="calendar-grid"></div>
+      <div class="calendar-list-title" id="calendar-list-title"></div>
+      <div class="calendar-list" id="calendar-list"></div>
+    </div>
   </div>
 </div>
 
@@ -324,6 +368,8 @@ function relDate(dateKey) {
 /* ── 렌더링 ──────────────────────────────────────────── */
 let files = [];
 let sort = 'newest';
+let calendarMonth = null;
+let selectedCalendarDate = null;
 
 function showPanel(id) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
@@ -415,6 +461,99 @@ function render() {
   document.getElementById('mc-dates').textContent  = keys.length;
   document.getElementById('footer-info').textContent = `${files.length}건 · ${keys.length}일`;
   hydrateSummaries();
+  renderCalendar();
+}
+
+function renderCalendar() {
+  const grid = document.getElementById('calendar-grid');
+  if (!grid) return;
+
+  const datedFiles = files.filter(f => f.dateKey !== 'tools');
+  if (!datedFiles.length) {
+    grid.innerHTML = '<div class="calendar-empty">표시할 날짜가 없습니다.</div>';
+    return;
+  }
+
+  if (!calendarMonth) {
+    calendarMonth = datedFiles
+      .map(f => f.dateKey.slice(0,7))
+      .sort()
+      .pop();
+  }
+
+  const [year, month] = calendarMonth.split('-').map(Number);
+  const first = new Date(year, month - 1, 1);
+  const lastDate = new Date(year, month, 0).getDate();
+  const startDow = first.getDay();
+  const byDate = groupFilesByDate(datedFiles);
+  const title = document.getElementById('calendar-title');
+  title.textContent = `${year}년 ${month}월`;
+
+  const parts = WEEKDAYS.map(d => `<div class="cal-dow">${d}</div>`);
+  for (let i = 0; i < startDow; i++) parts.push('<div class="cal-day empty"></div>');
+
+  for (let day = 1; day <= lastDate; day++) {
+    const dateKey = `${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+    const dayFiles = byDate[dateKey] || [];
+    const classes = 'cal-day' + (dayFiles.length ? ' has-files' : '') + (dateKey === selectedCalendarDate ? ' selected' : '');
+    const labels = dayFiles.slice(0,2).map(f => f.label).join(' · ');
+    parts.push(
+      `<button type="button" class="${classes}" onclick="selectCalendarDate('${dateKey}')">` +
+        `<span class="cal-num">${day}</span>` +
+        (dayFiles.length ? `<span class="cal-count">${dayFiles.length}건</span><span class="cal-label">${labels}</span>` : '') +
+      `</button>`
+    );
+  }
+
+  grid.innerHTML = parts.join('');
+  const latestInMonth = Object.keys(byDate).filter(d => d.startsWith(calendarMonth)).sort().pop();
+  selectCalendarDate(latestInMonth || `${year}-${String(month).padStart(2,'0')}-01`);
+}
+
+function groupFilesByDate(source) {
+  return source.reduce((acc, file) => {
+    (acc[file.dateKey] = acc[file.dateKey] || []).push(file);
+    acc[file.dateKey].sort((a,b) => b.timeNum - a.timeNum);
+    return acc;
+  }, {});
+}
+
+function moveCalendarMonth(delta) {
+  if (!calendarMonth) return;
+  const [year, month] = calendarMonth.split('-').map(Number);
+  const next = new Date(year, month - 1 + delta, 1);
+  calendarMonth = `${next.getFullYear()}-${String(next.getMonth() + 1).padStart(2,'0')}`;
+  renderCalendar();
+}
+
+function selectCalendarDate(dateKey) {
+  selectedCalendarDate = dateKey;
+  document.querySelectorAll('.cal-day').forEach(el => el.classList.remove('selected'));
+  document.querySelectorAll(`.cal-day[onclick*="${dateKey}"]`).forEach(el => el.classList.add('selected'));
+
+  const listTitle = document.getElementById('calendar-list-title');
+  const list = document.getElementById('calendar-list');
+  if (!listTitle || !list) return;
+
+  const dayFiles = files
+    .filter(f => f.dateKey === dateKey)
+    .sort((a,b) => b.timeNum - a.timeNum);
+  const [year, month, day] = dateKey.split('-');
+  listTitle.textContent = `${year}년 ${Number(month)}월 ${Number(day)}일`;
+
+  if (!dayFiles.length) {
+    list.innerHTML = '<div class="calendar-empty">이 날짜에는 브리핑이 없습니다.</div>';
+    return;
+  }
+
+  list.innerHTML = dayFiles.map(f =>
+    `<a class="file-row" href="${f.name}">` +
+      `<span class="file-icon">${f.icon}</span>` +
+      `<div class="file-info"><div class="file-label">${f.label}</div><div class="file-name">${f.name}</div></div>` +
+      `<div class="file-meta"><span class="file-time">${f.timeStr}</span><span class="type-badge ${f.badge}">${f.label}</span></div>` +
+      `<span class="file-arrow">›</span>` +
+    `</a>`
+  ).join('');
 }
 
 function compareDateKeys(a,b) {
