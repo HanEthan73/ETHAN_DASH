@@ -154,6 +154,8 @@ const TYPES = [
 
 /* ── 파일명 파싱 ─────────────────────────────────────── */
 const WEEKDAYS = ['일','월','화','수','목','금','토'];
+// Official upload format: 제목_YYMMDD_H.MMAM.html / 제목_YYMMDD_H.MMPM.html
+// Example: 저녁브리핑_260522_6.17PM.html
 const OFFICIAL_NAME = /^(.+?)_(\d{6})_(\d{1,2})(?:[._-](\d{1,2}))?\s*_?\s*(AM|PM)$/i;
 
 function parseFile(name) {
@@ -375,9 +377,16 @@ function extractSummary(html) {
   const summary = candidates
     .map(t => cleanText(t).replace(/^(Claude|클로드)?\s*종합\s*의견[:：]?\s*/i, ''))
     .filter(t => t && t.length > 18)
-    .sort((a,b) => scoreSummary(b) - scoreSummary(a))[0] || '';
+    .sort((a,b) => scoreSummary(b) - scoreSummary(a))[0] || fallbackSummary(doc);
 
   return trimSummary(summary);
+}
+
+function fallbackSummary(doc) {
+  const blocks = Array.from(doc.querySelectorAll('p,.section,.card,table,.subtitle'))
+    .map(el => cleanText(el.textContent))
+    .filter(t => t.length > 24 && !/(투자 참고용|최종 판단|자동 생성|데이터 출처)/.test(t));
+  return blocks[0] || '';
 }
 
 function scoreSummary(text) {
@@ -397,7 +406,7 @@ function trimSummary(text) {
 }
 
 /* ── 데이터 로드 ─────────────────────────────────────── */
-// 정적 폴백 (GitHub API 불가 시 사용 — 새 파일 추가 시 여기에도 추가)
+// 정적 폴백: GitHub API가 막힐 때만 사용. 평소에는 briefings 폴더의 HTML을 자동 인덱싱한다.
 const STATIC = [
   'fx_alert_20260521_06.html',
   'morning_briefing_20260521.html',
