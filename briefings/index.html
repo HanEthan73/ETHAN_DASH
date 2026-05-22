@@ -1,340 +1,300 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>ETHAN BRIEFINGS</title>
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRIEFINGS — 브리핑 아카이브</title>
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
 :root{
-
-    --bg:#020617;
-
-    --card:#111827;
-
-    --line:#1e293b;
-
-    --hover:#172554;
-
-    --text:#f8fafc;
-
-    --sub:#94a3b8;
-
-    --accent:#22d3ee;
+  --bg:#111;--s1:#181818;--s2:#222;--bd:#2e2e2e;
+  --t1:#f0f0f0;--t2:#bbb;--t3:#666;--t4:#444;
+  --gold:#f5c518;--red:#ff5f5f;--grn:#3ddc84;
+  --blu:#5ba4f5;--cyan:#22d3ee;--prp:#b388ff;--org:#ffa040;
 }
-
 body{
-
-    font-family:'Inter',sans-serif;
-
-    background:
-    linear-gradient(
-        135deg,
-        #020617 0%,
-        #0f172a 100%
-    );
-
-    color:var(--text);
-
-    min-height:100vh;
-
-    padding:50px 24px;
+  background:var(--bg);color:var(--t1);
+  font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR','Segoe UI',sans-serif;
+  font-size:14px;line-height:1.6;max-width:600px;margin:0 auto;padding-bottom:80px;
 }
 
-/* 컨테이너 */
+/* ─── MASTHEAD ─── */
+.masthead{padding:20px 18px 14px;border-bottom:1px solid var(--bd);background:var(--bg);position:sticky;top:0;z-index:100}
+.blog-title{font-size:20px;font-weight:900;letter-spacing:-.5px;color:var(--t1);line-height:1;margin-bottom:3px}
+.blog-title span{color:var(--gold)}
+.blog-tagline{font-size:10px;color:var(--t3);letter-spacing:.3px;margin-bottom:10px}
+.meta-bar{display:flex;align-items:center;justify-content:space-between;font-size:10px;color:var(--t3)}
+.meta-counts{display:flex;gap:12px}
+.mc{display:flex;align-items:center;gap:4px}
+.mc-n{font-weight:800;color:var(--gold);font-size:13px}
+.source-badge{background:var(--s2);border:1px solid var(--bd);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--t3);font-weight:700;letter-spacing:.3px}
 
-.container{
-
-    max-width:1000px;
-
-    margin:auto;
+/* ─── SORT BAR ─── */
+.sort-bar{display:flex;gap:6px;padding:10px 16px;border-bottom:1px solid var(--bd);background:var(--s1)}
+.sort-btn{
+  font-size:11px;font-weight:700;padding:5px 12px;border-radius:12px;cursor:pointer;
+  background:var(--s2);border:1px solid var(--bd);color:var(--t3);
+  -webkit-tap-highlight-color:transparent;user-select:none;
+  transition:background .15s,border-color .15s,color .15s;
 }
+.sort-btn.active{background:rgba(245,197,24,.12);border-color:rgba(245,197,24,.4);color:var(--gold)}
 
-/* 헤더 */
+/* ─── FEED ─── */
+.feed{padding:0 16px}
+.status-msg{padding:40px 0;font-size:12px;color:var(--t3);text-align:center}
 
-.header{
-
-    margin-bottom:40px;
+/* ─── DATE GROUP ─── */
+.date-group{margin-top:18px}
+.dg-header{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 14px;background:var(--s1);border:1px solid var(--bd);
+  border-radius:10px;cursor:pointer;user-select:none;
+  -webkit-tap-highlight-color:transparent;
+  transition:background .15s;
 }
+.dg-header:hover{background:var(--s2)}
+.dg-label{font-size:13px;font-weight:900;color:var(--t1);letter-spacing:-.3px}
+.dg-sub{font-size:10px;color:var(--t3);margin-top:1px}
+.dg-count{margin-left:auto;font-size:10px;color:var(--t3);background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:2px 9px;font-weight:700;flex-shrink:0}
+.dg-chevron{font-size:12px;color:var(--t4);transition:transform .2s;flex-shrink:0}
+.dg-header.collapsed .dg-chevron{transform:rotate(-90deg)}
 
-.title{
+.dg-body{margin-top:5px;display:flex;flex-direction:column;gap:4px}
+.dg-body.hidden{display:none}
 
-    font-size:52px;
-
-    font-weight:700;
-
-    margin-bottom:10px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #ffffff,
-        #22d3ee
-    );
-
-    -webkit-background-clip:text;
-
-    -webkit-text-fill-color:transparent;
+/* ─── FILE ROW ─── */
+.file-row{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 14px;background:var(--s1);border:1px solid var(--bd);
+  border-radius:8px;text-decoration:none;color:var(--t1);
+  transition:background .15s,border-color .15s;
+  -webkit-tap-highlight-color:transparent;
 }
+.file-row:hover{background:var(--s2);border-color:rgba(91,164,245,.3)}
+.file-row:active{background:rgba(91,164,245,.07)}
 
-.subtitle{
+.file-icon{font-size:15px;flex-shrink:0;width:20px;text-align:center}
+.file-info{flex:1;min-width:0}
+.file-label{font-size:13px;font-weight:700;color:var(--t1)}
+.file-name{font-size:10px;color:var(--t4);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
-    color:var(--sub);
-
-    letter-spacing:1px;
-
-    font-size:14px;
+.file-meta{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.file-time{font-size:11px;font-weight:800;color:var(--t3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.type-badge{
+  font-size:9px;font-weight:800;padding:2px 7px;border-radius:3px;
+  white-space:nowrap;letter-spacing:.3px;flex-shrink:0;
 }
+.tb-gold{background:rgba(245,197,24,.12);color:var(--gold)}
+.tb-cyan{background:rgba(34,211,238,.1);color:var(--cyan)}
+.tb-red {background:rgba(255,95,95,.12);color:var(--red)}
+.tb-blu {background:rgba(91,164,245,.1);color:var(--blu)}
+.tb-prp {background:rgba(179,136,255,.1);color:var(--prp)}
+.tb-org {background:rgba(255,160,64,.1);color:var(--org)}
+.tb-grn {background:rgba(61,220,132,.1);color:var(--grn)}
+.tb-gray{background:rgba(148,163,184,.1);color:#94a3b8}
 
-/* 리스트 */
+.file-arrow{font-size:13px;color:var(--t4);flex-shrink:0;transition:color .15s}
+.file-row:hover .file-arrow{color:var(--blu)}
 
-.list{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:14px;
-}
-
-/* 카드 */
-
-.item{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    text-decoration:none;
-
-    color:var(--text);
-
-    background:rgba(17,24,39,0.75);
-
-    border:1px solid var(--line);
-
-    border-radius:16px;
-
-    padding:22px;
-
-    transition:0.25s;
-
-    backdrop-filter:blur(10px);
-}
-
-.item:hover{
-
-    background:var(--hover);
-
-    border-color:rgba(34,211,238,0.25);
-
-    transform:translateY(-2px);
-}
-
-.left{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:6px;
-}
-
-.name{
-
-    font-size:18px;
-
-    font-weight:600;
-}
-
-.desc{
-
-    font-size:13px;
-
-    color:var(--sub);
-}
-
-.arrow{
-
-    font-size:20px;
-
-    color:var(--sub);
-
-    transition:0.25s;
-}
-
-.item:hover .arrow{
-
-    color:var(--accent);
-
-    transform:translateX(6px);
-}
-
-/* 로딩 */
-
-.loading{
-
-    color:var(--sub);
-
-    padding:20px 0;
-}
-
-/* 모바일 */
-
-@media(max-width:600px){
-
-    body{
-
-        padding:40px 18px;
-    }
-
-    .title{
-
-        font-size:38px;
-    }
-
-    .name{
-
-        font-size:16px;
-    }
-}
-
+/* ─── FOOTER ─── */
+.footer{margin:24px 16px 0;padding:14px 0;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;font-size:10px;color:var(--t4)}
 </style>
-
 </head>
-
 <body>
 
-<div class="container">
-
-    <div class="header">
-
-        <div class="title">
-            📚 BRIEFINGS
-        </div>
-
-        <div class="subtitle">
-            AUTO INDEXED REPORT ARCHIVE
-        </div>
-
+<div class="masthead">
+  <div class="blog-title">BRIEFINGS <span>ARCHIVE</span></div>
+  <div class="blog-tagline">브리핑 & 알림 파일 — 날짜·시간순 정렬</div>
+  <div class="meta-bar">
+    <div class="meta-counts">
+      <div class="mc"><span class="mc-n" id="mc-total">—</span><span>건</span></div>
+      <div class="mc"><span class="mc-n" id="mc-dates">—</span><span>일</span></div>
     </div>
+    <span class="source-badge" id="source-badge">로딩 중</span>
+  </div>
+</div>
 
-    <div class="list"
-    id="list">
+<div class="sort-bar">
+  <button class="sort-btn active" id="btn-newest" onclick="setSort('newest')">최신순 ▼</button>
+  <button class="sort-btn"        id="btn-oldest" onclick="setSort('oldest')">오래된순 ▲</button>
+</div>
 
-        <div class="loading">
-            Loading reports...
-        </div>
+<div class="feed" id="feed">
+  <div class="status-msg">파일 목록을 불러오는 중…</div>
+</div>
 
-    </div>
-
+<div class="footer">
+  <span>ETHAN BRIEFINGS</span>
+  <span id="footer-info"></span>
 </div>
 
 <script>
+/* ── 파일 타입 정의 ──────────────────────────────────── */
+const TYPES = [
+  { key:'morning_briefing',   label:'아침 브리핑', icon:'🌅', badge:'tb-gold', time:'07:00' },
+  { key:'noon_briefing',      label:'낮 브리핑',   icon:'☀️', badge:'tb-cyan', time:'12:00' },
+  { key:'afternoon_briefing', label:'오후 브리핑', icon:'🕒', badge:'tb-org',  time:'15:00' },
+  { key:'evening_briefing',   label:'저녁 브리핑', icon:'🌆', badge:'tb-prp',  time:'18:00' },
+  { key:'evening-briefing',   label:'저녁 브리핑', icon:'🌆', badge:'tb-prp',  time:'18:00' },
+  { key:'premarket',          label:'프리마켓',    icon:'⚡', badge:'tb-blu',  time:'06:50' },
+  { key:'fx_alert',           label:'환율경보',    icon:'💱', badge:'tb-red',  time:null    },
+  { key:'earnings',           label:'실적경보',    icon:'📊', badge:'tb-grn',  time:null    },
+  { key:'autobuy',            label:'자동매수',    icon:'🔔', badge:'tb-gold', time:null    },
+  { key:'stock',              label:'주식 브리핑', icon:'📈', badge:'tb-gold', time:null    },
+];
 
-const apiUrl =
-"https://api.github.com/repos/hanethan73/ethan-daily-dashboard/contents/briefings";
+/* ── 파일명 파싱 ─────────────────────────────────────── */
+const WEEKDAYS = ['일','월','화','수','목','금','토'];
 
-fetch(apiUrl)
+function parseFile(name) {
+  const raw = name.replace('.html','');
 
-.then(response => response.json())
+  // YYYYMMDD 날짜 추출
+  const dm = raw.match(/(\d{8})/);
+  if (!dm) return null;
+  const ds = dm[1];
+  const y = ds.slice(0,4), m = ds.slice(4,6), d = ds.slice(6,8);
+  const dateKey = `${y}-${m}-${d}`;
 
-.then(data => {
+  // _HH 시간 추출 (파일명 마지막 숫자 2자리)
+  const hm = raw.match(/_(\d{2})$/);
+  const timeFromName = hm ? `${hm[1]}:00` : null;
 
-    const list =
-    document.getElementById("list");
+  // 타입 매칭
+  let info = { label: raw.replace(/_/g,' '), icon:'📄', badge:'tb-gray', time: timeFromName };
+  for (const t of TYPES) {
+    if (raw.includes(t.key)) {
+      info = { label:t.label, icon:t.icon, badge:t.badge, time: timeFromName || t.time };
+      break;
+    }
+  }
 
-    list.innerHTML = "";
+  const dow = WEEKDAYS[new Date(`${y}-${m}-${d}`).getDay()];
+  const dateLabel = `${y}년 ${+m}월 ${+d}일 ${dow}요일`;
+  const timeNum = info.time ? parseInt(info.time.replace(':','')) : 9999;
 
-    data
+  return { name, dateKey, dateLabel, timeNum, timeStr: info.time || '—',
+           label: info.label, icon: info.icon, badge: info.badge };
+}
 
-    .filter(file => {
+/* ── 상대 날짜 ───────────────────────────────────────── */
+function relDate(dateKey) {
+  const diff = Math.floor((Date.now() - new Date(dateKey)) / 86400000);
+  if (diff === 0) return '오늘';
+  if (diff === 1) return '어제';
+  if (diff === 2) return '그제';
+  return `${diff}일 전`;
+}
 
-        return (
-            file.name.endsWith(".html") &&
-            file.name !== "index.html"
-        );
-    })
+/* ── 렌더링 ──────────────────────────────────────────── */
+let files = [];
+let sort = 'newest';
 
-    .sort((a,b) => {
+function setSort(s) {
+  sort = s;
+  document.getElementById('btn-newest').classList.toggle('active', s === 'newest');
+  document.getElementById('btn-oldest').classList.toggle('active', s === 'oldest');
+  render();
+}
 
-        return b.name.localeCompare(a.name);
-    })
+function render() {
+  const feed = document.getElementById('feed');
+  if (!files.length) {
+    feed.innerHTML = '<div class="status-msg">파일이 없습니다.</div>';
+    return;
+  }
 
-    .forEach(file => {
+  // 날짜별 그룹
+  const groups = {};
+  files.forEach(f => {
+    (groups[f.dateKey] = groups[f.dateKey] || []).push(f);
+  });
 
-        let cleanName =
-        file.name
-        .replace(".html","")
-        .replaceAll("_"," ");
+  // 날짜 정렬
+  let keys = Object.keys(groups).sort();
+  if (sort === 'newest') keys = keys.reverse();
 
-        const item =
-        document.createElement("a");
+  // 그룹 내 시간 오름차순
+  keys.forEach(k => groups[k].sort((a,b) => a.timeNum - b.timeNum));
 
-        item.className = "item";
+  feed.innerHTML = '';
+  keys.forEach((dk, i) => {
+    const group = groups[dk];
+    const isOpen = (i === 0);
 
-        item.href = file.name;
+    const sec = document.createElement('div');
+    sec.className = 'date-group';
 
-        item.innerHTML = `
+    const hdr = document.createElement('div');
+    hdr.className = 'dg-header' + (isOpen ? '' : ' collapsed');
+    hdr.innerHTML =
+      `<div><div class="dg-label">${group[0].dateLabel}</div><div class="dg-sub">${relDate(dk)}</div></div>` +
+      `<div class="dg-count">${group.length}건</div>` +
+      `<span class="dg-chevron">▾</span>`;
 
-            <div class="left">
+    const body = document.createElement('div');
+    body.className = 'dg-body' + (isOpen ? '' : ' hidden');
 
-                <div class="name">
-                    📄 ${cleanName}
-                </div>
-
-                <div class="desc">
-                    Auto detected from GitHub repository
-                </div>
-
-            </div>
-
-            <div class="arrow">
-                →
-            </div>
-
-        `;
-
-        list.appendChild(item);
+    group.forEach(f => {
+      const row = document.createElement('a');
+      row.className = 'file-row';
+      row.href = f.name;
+      row.innerHTML =
+        `<span class="file-icon">${f.icon}</span>` +
+        `<div class="file-info">` +
+          `<div class="file-label">${f.label}</div>` +
+          `<div class="file-name">${f.name}</div>` +
+        `</div>` +
+        `<div class="file-meta">` +
+          `<span class="file-time">${f.timeStr}</span>` +
+          `<span class="type-badge ${f.badge}">${f.label}</span>` +
+        `</div>` +
+        `<span class="file-arrow">›</span>`;
+      body.appendChild(row);
     });
 
-})
+    hdr.addEventListener('click', () => {
+      const c = hdr.classList.toggle('collapsed');
+      body.classList.toggle('hidden', c);
+    });
 
-.catch(error => {
+    sec.appendChild(hdr);
+    sec.appendChild(body);
+    feed.appendChild(sec);
+  });
 
-    document.getElementById("list").innerHTML = `
+  document.getElementById('mc-total').textContent  = files.length;
+  document.getElementById('mc-dates').textContent  = keys.length;
+  document.getElementById('footer-info').textContent = `${files.length}건 · ${keys.length}일`;
+}
 
-        <div class="loading">
-            Failed to load reports.
-        </div>
+/* ── 데이터 로드 ─────────────────────────────────────── */
+// 정적 폴백 (GitHub API 불가 시 사용 — 새 파일 추가 시 여기에도 추가)
+const STATIC = [
+  'fx_alert_20260521_06.html',
+  'morning_briefing_20260521.html',
+  'noon_briefing_20260521.html',
+  'premarket_20260521.html',
+];
 
-    `;
+function load(names) {
+  files = names
+    .filter(n => n !== 'index.html' && n.endsWith('.html'))
+    .map(parseFile)
+    .filter(Boolean);
+  render();
+}
 
-    console.error(error);
-});
-
+fetch('https://api.github.com/repos/hanethan73/ethan_dash/contents/briefings')
+  .then(r => r.ok ? r.json() : Promise.reject(r.status))
+  .then(data => {
+    load(data.map(f => f.name));
+    document.getElementById('source-badge').textContent = 'GitHub 실시간';
+  })
+  .catch(() => {
+    load(STATIC);
+    document.getElementById('source-badge').textContent = '정적 목록';
+  });
 </script>
-
 </body>
-
 </html>
