@@ -29,6 +29,17 @@ body{
 .mc-n{font-weight:800;color:var(--gold);font-size:13px}
 .source-badge{background:var(--s2);border:1px solid var(--bd);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--t3);font-weight:700;letter-spacing:.3px}
 
+/* ─── MAIN TABS ─── */
+.main-tabs{display:flex;gap:6px;padding:10px 16px;border-bottom:1px solid var(--bd);background:var(--bg);position:sticky;top:78px;z-index:90}
+.main-tab{
+  flex:1;font-size:12px;font-weight:800;padding:8px 10px;border-radius:8px;cursor:pointer;
+  background:var(--s1);border:1px solid var(--bd);color:var(--t3);text-align:center;
+  -webkit-tap-highlight-color:transparent;user-select:none;
+}
+.main-tab.active{background:rgba(245,197,24,.12);border-color:rgba(245,197,24,.45);color:var(--gold)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
 /* ─── SORT BAR ─── */
 .sort-bar{display:flex;gap:6px;padding:10px 16px;border-bottom:1px solid var(--bd);background:var(--s1)}
 .sort-btn{
@@ -103,6 +114,17 @@ body{
 
 /* ─── FOOTER ─── */
 .footer{margin:24px 16px 0;padding:14px 0;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;font-size:10px;color:var(--t4)}
+
+/* ─── SCHEDULE ─── */
+.schedule{padding:18px 16px 0}
+.schedule-card{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:14px 16px}
+.schedule-title{font-size:14px;font-weight:900;color:var(--gold);margin-bottom:10px}
+.schedule-table{width:100%;border-collapse:collapse;font-size:12px}
+.schedule-table th{background:var(--s2);color:var(--gold);padding:8px;text-align:left}
+.schedule-table td{padding:8px;border-bottom:1px solid var(--bd);color:var(--t2)}
+.schedule-table tr:last-child td{border-bottom:0}
+.schedule-time{font-weight:800;color:var(--t1);font-variant-numeric:tabular-nums}
+.schedule-note{font-size:10px;color:var(--t3);margin-top:10px;text-align:right}
 </style>
 </head>
 <body>
@@ -119,13 +141,50 @@ body{
   </div>
 </div>
 
-<div class="sort-bar">
-  <button class="sort-btn active" id="btn-newest" onclick="setSort('newest')">최신순 ▼</button>
-  <button class="sort-btn"        id="btn-oldest" onclick="setSort('oldest')">오래된순 ▲</button>
+<div class="main-tabs">
+  <button class="main-tab active" id="tab-archive" onclick="showPanel('archive')">📚 브리핑</button>
+  <button class="main-tab" id="tab-schedule" onclick="showPanel('schedule')">🔔 알림 스케줄</button>
 </div>
 
-<div class="feed" id="feed">
-  <div class="status-msg">파일 목록을 불러오는 중…</div>
+<div class="tab-panel active" id="panel-archive">
+  <div class="sort-bar">
+    <button class="sort-btn active" id="btn-newest" onclick="setSort('newest')">최신순 ▼</button>
+    <button class="sort-btn"        id="btn-oldest" onclick="setSort('oldest')">오래된순 ▲</button>
+  </div>
+
+  <div class="feed" id="feed">
+    <div class="status-msg">파일 목록을 불러오는 중…</div>
+  </div>
+</div>
+
+<div class="tab-panel" id="panel-schedule">
+  <div class="schedule">
+    <div class="schedule-card">
+      <div class="schedule-title">🔔 스케줄 알림 (18개)</div>
+      <table class="schedule-table">
+        <tr><th>시간</th><th>알림명</th><th>조건</th></tr>
+        <tr><td class="schedule-time">07:00</td><td>아침 브리핑</td><td>매일</td></tr>
+        <tr><td class="schedule-time">07:05</td><td>인사이트 KB 업데이트</td><td>매일</td></tr>
+        <tr><td class="schedule-time">09:00</td><td>PLTR 눌림목</td><td>$128 이하 시만</td></tr>
+        <tr><td class="schedule-time">09:00</td><td>자동매수 모니터</td><td>3% 이내 시만</td></tr>
+        <tr><td class="schedule-time">09:00</td><td>공포/탐욕 극단</td><td>0-20 또는 81-100</td></tr>
+        <tr><td class="schedule-time">09:00</td><td>USD/KRW 경보</td><td>1,480 초과 시만</td></tr>
+        <tr><td class="schedule-time">09:00</td><td>실적 D-1 알림</td><td>내일 실적 있을 때만</td></tr>
+        <tr><td class="schedule-time">09:00</td><td>Gmail 채용알림</td><td>채용메일 있을 때만</td></tr>
+        <tr><td class="schedule-time">09:00</td><td>지정학/국제뉴스</td><td>매일</td></tr>
+        <tr><td class="schedule-time">12:00</td><td>낮 진입전략 브리핑</td><td>매일</td></tr>
+        <tr><td class="schedule-time">13:00</td><td>PLTR 눌림목</td><td>$128 이하 시만</td></tr>
+        <tr><td class="schedule-time">13:00</td><td>자동매수 모니터</td><td>3% 이내 시만</td></tr>
+        <tr><td class="schedule-time">13:00</td><td>Gmail 채용알림</td><td>채용메일 있을 때만</td></tr>
+        <tr><td class="schedule-time">15:00</td><td>한국장 마감 브리핑</td><td>매일</td></tr>
+        <tr><td class="schedule-time">15:00</td><td>PLTR 눌림목</td><td>$128 이하 시만</td></tr>
+        <tr><td class="schedule-time">16:00</td><td>Gmail 채용알림</td><td>채용메일 있을 때만</td></tr>
+        <tr><td class="schedule-time">22:00</td><td>저녁 브리핑</td><td>매일</td></tr>
+        <tr><td class="schedule-time">23:30</td><td>자동매수 모니터</td><td>3% 이내 시만</td></tr>
+      </table>
+      <div class="schedule-note">ETHAN PRIVATE에서 이관</div>
+    </div>
+  </div>
 </div>
 
 <div class="footer">
@@ -265,6 +324,13 @@ function relDate(dateKey) {
 /* ── 렌더링 ──────────────────────────────────────────── */
 let files = [];
 let sort = 'newest';
+
+function showPanel(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.main-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(`panel-${id}`).classList.add('active');
+  document.getElementById(`tab-${id}`).classList.add('active');
+}
 
 function setSort(s) {
   sort = s;
