@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주식 추천 — 1차 2차 3차 진입표</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1014;color:#e9e9ef;font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;padding:24px 14px 48px;line-height:1.62}
+.wrap{max-width:1220px;margin:0 auto}
+header{border-bottom:1px solid #30313a;padding-bottom:16px;margin-bottom:18px}
+h1{font-size:26px;color:#ffd43b;margin-bottom:6px}
+.sub{font-size:14px;color:#a8a8b2}
+.stamp{display:inline-block;margin-top:10px;border:1px solid #4c4631;background:#231f14;color:#ffd43b;border-radius:999px;padding:4px 11px;font-size:12px;font-weight:800}
+section{background:#171820;border:1px solid #2d2f3a;border-radius:8px;padding:16px;margin-top:16px}
+h2{font-size:18px;color:#ffd43b;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;border-radius:6px;overflow:hidden}
+th{background:#252733;color:#ffd43b;text-align:left;padding:9px 10px;font-size:13px;border-bottom:1px solid #3b3d4a}
+td{padding:9px 10px;border-bottom:1px solid #2b2d37;font-size:13px;color:#e2e2e8;vertical-align:top}
+tr:nth-child(even) td{background:#14151b}
+tr:last-child td{border-bottom:0}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.buy{color:#7af0a6;font-weight:900}.wait{color:#ffe27a;font-weight:900}.cut{color:#ffaaa5;font-weight:900}.core{color:#91c8ff;font-weight:900}
+.tag{display:inline-block;border:1px solid #4b4d5c;border-radius:999px;padding:2px 8px;font-size:12px;font-weight:800}
+.tag.buy{background:#10291b}.tag.wait{background:#2d2712}.tag.cut{background:#2a171a}
+.note{margin-top:12px;background:#221f16;border-left:4px solid #ffd43b;border-radius:6px;padding:11px 13px;color:#e8ddb3;font-size:13px}
+.warn{background:#251a1d;border-left-color:#ff6b6b;color:#ffc4c0}
+a{color:#91c8ff;text-decoration:none}
+footer{margin-top:18px;text-align:right;color:#777884;font-size:12px}
+@media(max-width:900px){body{padding:16px 8px 36px}table{display:block;overflow-x:auto}th,td{white-space:nowrap}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>주식 추천 — 1차 2차 3차 진입표</h1>
+    <div class="sub">대표님 실행용 · Claude 눌림목/컵앤핸들 전략을 주문 가격표로 변환 · 모든 가격은 조건 충족 시만 사용</div>
+    <div class="stamp">가격 기준: 2026-05-23 00:15 KST / 2026-05-22 14:52 UTC 전후</div>
+  </header>
+
+  <section>
+    <h2>1. 오늘 결론</h2>
+    <table>
+      <thead>
+        <tr><th>구분</th><th>판단</th><th>실행</th><th>금지</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>시장 상태</td><td class="wait">AI/반도체 상승 추세는 유효하지만 단기 과열</td><td>눌림목 주문표로 대기</td><td>현재가 풀매수</td></tr>
+        <tr><td>오늘 바로 살 수 있는 종목</td><td class="buy">AVGO, NVDA, TSM만 소량 가능</td><td>각 목표 비중의 25% 이하</td><td>AMD·ALAB·CRWV 추격</td></tr>
+        <tr><td>가장 좋은 매수 방식</td><td class="buy">-5%, -10%, -15% 눌림에 3단계</td><td>1차 40%, 2차 35%, 3차 25%</td><td>계획 없는 물타기</td></tr>
+        <tr><td>현금</td><td class="wait">최소 25% 유지</td><td>급락장 풀매수용 총알</td><td>상승장 흥분 매수</td></tr>
+      </tbody>
+    </table>
+    <div class="note">핵심: 대표님 목표가 공격적이므로 “종목 선택”보다 “진입 가격”이 더 중요합니다. 아래 1차·2차·3차 가격이 오기 전에는 기다리는 것도 포지션입니다.</div>
+  </section>
+
+  <section>
+    <h2>2. 최종 주문표 — 1차 2차 3차 진입</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>역할</th>
+          <th>목표비중</th>
+          <th>1차 진입</th>
+          <th>2차 진입</th>
+          <th>3차 진입</th>
+          <th>손절/무효화</th>
+          <th>익절/축소</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="core">AVGO</td><td class="num">$411.87</td><td>AI ASIC·네트워크 핵심</td><td class="num">16%</td><td><b>$402~412</b><br>목표비중 40%</td><td><b>$382~392</b><br>목표비중 35%</td><td><b>$360~370</b><br>목표비중 25%</td><td class="cut">$355 종가 이탈</td><td>$460 20% 축소<br>$500 30% 축소</td></tr>
+        <tr><td class="core">NVDA</td><td class="num">$217.10</td><td>AI 대장주</td><td class="num">15%</td><td><b>$210~217</b><br>목표비중 40%</td><td><b>$198~205</b><br>목표비중 35%</td><td><b>$188~195</b><br>목표비중 25%</td><td class="cut">$188 종가 이탈</td><td>$245 20% 축소<br>$270 30% 축소</td></tr>
+        <tr><td class="core">MU</td><td class="num">$767.09</td><td>HBM·메모리 공격주</td><td class="num">14%</td><td><b>$735~760</b><br>목표비중 35%</td><td><b>$690~715</b><br>목표비중 35%</td><td><b>$640~665</b><br>목표비중 30%</td><td class="cut">$640 종가 이탈</td><td>$850 25% 축소<br>$920 35% 축소</td></tr>
+        <tr><td class="core">TSM</td><td class="num">$406.79</td><td>AI 제조 인프라</td><td class="num">12%</td><td><b>$395~407</b><br>목표비중 40%</td><td><b>$372~385</b><br>목표비중 35%</td><td><b>$342~360</b><br>목표비중 25%</td><td class="cut">$340 종가 이탈</td><td>$450 20% 축소<br>$490 30% 축소</td></tr>
+        <tr><td>AMD</td><td class="num">$466.88</td><td>AI 추격 탄력주</td><td class="num">8%</td><td><b>$438~455</b><br>목표비중 40%</td><td><b>$405~420</b><br>목표비중 35%</td><td><b>$370~390</b><br>목표비중 25%</td><td class="cut">$370 종가 이탈</td><td>$520 25% 축소<br>$570 35% 축소</td></tr>
+        <tr><td>MRVL</td><td class="num">$196.09</td><td>AI 네트워크 보조주</td><td class="num">6%</td><td><b>$184~192</b><br>목표비중 40%</td><td><b>$170~178</b><br>목표비중 35%</td><td><b>$155~165</b><br>목표비중 25%</td><td class="cut">$155 종가 이탈</td><td>$220 25% 축소<br>$245 35% 축소</td></tr>
+        <tr><td>PLTR</td><td class="num">$135.74</td><td>AI 소프트웨어 고성장</td><td class="num">5%</td><td><b>$126~130</b><br>목표비중 40%</td><td><b>$116~121</b><br>목표비중 35%</td><td><b>$105~112</b><br>목표비중 25%</td><td class="cut">$105 종가 이탈</td><td>$155 30% 축소<br>$175 40% 축소</td></tr>
+        <tr><td>ALAB</td><td class="num">$310.61</td><td>AI 연결 병목 고위험</td><td class="num">4%</td><td><b>$285~300</b><br>목표비중 35%</td><td><b>$255~270</b><br>목표비중 35%</td><td><b>$225~240</b><br>목표비중 30%</td><td class="cut">$225 종가 이탈</td><td>$360 30% 축소<br>$420 40% 축소</td></tr>
+        <tr><td>CRWV</td><td class="num">$105.39</td><td>AI 클라우드 초고위험</td><td class="num">관찰</td><td><b>$96~102</b><br>소액만</td><td><b>$86~92</b><br>소액만</td><td><b>$78~82</b><br>마지막 관찰</td><td class="cut">$78 종가 이탈</td><td>$125 50% 축소</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">CRWV는 추천이 아니라 감시입니다. 재무/부채/락업 변동성이 큰 종목은 대표님 목표에 맞는 폭발력은 있지만, 실패 시 회복이 어렵습니다.</div>
+  </section>
+
+  <section>
+    <h2>3. 3,200만 원 기준 실제 주문 금액</h2>
+    <table>
+      <thead>
+        <tr><th>종목</th><th>목표금액</th><th>1차 금액</th><th>2차 금액</th><th>3차 금액</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>AVGO</td><td class="num">512만 원</td><td class="num">205만 원</td><td class="num">179만 원</td><td class="num">128만 원</td><td>핵심 1순위</td></tr>
+        <tr><td>NVDA</td><td class="num">480만 원</td><td class="num">192만 원</td><td class="num">168만 원</td><td class="num">120만 원</td><td>핵심 대장</td></tr>
+        <tr><td>MU</td><td class="num">448만 원</td><td class="num">157만 원</td><td class="num">157만 원</td><td class="num">134만 원</td><td>변동성 큼</td></tr>
+        <tr><td>TSM</td><td class="num">384만 원</td><td class="num">154만 원</td><td class="num">134만 원</td><td class="num">96만 원</td><td>안정축</td></tr>
+        <tr><td>AMD</td><td class="num">256만 원</td><td class="num">102만 원</td><td class="num">90만 원</td><td class="num">64만 원</td><td>눌림 전 대기</td></tr>
+        <tr><td>MRVL</td><td class="num">192만 원</td><td class="num">77만 원</td><td class="num">67만 원</td><td class="num">48만 원</td><td>보조주</td></tr>
+        <tr><td>PLTR</td><td class="num">160만 원</td><td class="num">64만 원</td><td class="num">56만 원</td><td class="num">40만 원</td><td>조건부</td></tr>
+        <tr><td>ALAB</td><td class="num">128만 원</td><td class="num">45만 원</td><td class="num">45만 원</td><td class="num">38만 원</td><td>고위험 소액</td></tr>
+        <tr><td>현금</td><td class="num">640만 원</td><td colspan="3">항상 남겨둘 급락장 매수 자금</td><td>총자산 20%</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. 전략별 발동 조건</h2>
+    <table>
+      <thead>
+        <tr><th>전략</th><th>발동 조건</th><th>매수 대상</th><th>비중</th><th>취소 조건</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>컵앤핸들 돌파</td><td>전고점 돌파 + 거래량 150% 이상 + 종가 유지</td><td>AVGO, NVDA, MU</td><td>목표금액의 25%만</td><td>돌파 다음날 -3% 이상 되돌림</td></tr>
+        <tr><td>눌림목 1차</td><td>현재가 대비 -5~-8% 또는 20일선 접근</td><td>핵심 4개 우선</td><td>목표금액의 35~40%</td><td>거래량 증가 동반 장대음봉</td></tr>
+        <tr><td>눌림목 2차</td><td>고점 대비 -10~-15% 또는 50일선 접근</td><td>핵심 4개 + AMD/MRVL</td><td>목표금액의 35%</td><td>VIX 25 이상 + 200일선 이탈</td></tr>
+        <tr><td>눌림목 3차</td><td>고점 대비 -20% 이상, 시장 패닉이나 과매도</td><td>AVGO, NVDA, MU, TSM만 우선</td><td>남은 목표금액</td><td>실적 가이던스 하향</td></tr>
+        <tr><td>시장 악화 7대 경보</td><td>VIX 25+, 금리 급등, USD/KRW 1480+, QQQ 200일선 이탈 중 4개 이상</td><td>신규매수 중단</td><td>현금 50% 이상</td><td>경보 2개 이하로 완화</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>5. 바로 실행할 주문 우선순위</h2>
+    <table>
+      <thead>
+        <tr><th>우선순위</th><th>행동</th><th>종목</th><th>가격 조건</th><th>실행 금액</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="buy">대기 주문</td><td>AVGO</td><td>$402~412</td><td>205만 원 이하</td></tr>
+        <tr><td class="num">2</td><td class="buy">대기 주문</td><td>NVDA</td><td>$210~217</td><td>192만 원 이하</td></tr>
+        <tr><td class="num">3</td><td class="wait">눌림 대기</td><td>MU</td><td>$735~760</td><td>157만 원 이하</td></tr>
+        <tr><td class="num">4</td><td class="wait">눌림 대기</td><td>TSM</td><td>$395~407</td><td>154만 원 이하</td></tr>
+        <tr><td class="num">5</td><td class="wait">아직 금지</td><td>AMD</td><td>$438 이하 전까지 대기</td><td>0원</td></tr>
+        <tr><td class="num">6</td><td class="wait">아직 금지</td><td>ALAB</td><td>$300 이하 전까지 대기</td><td>0원</td></tr>
+        <tr><td class="num">7</td><td class="cut">매수 금지</td><td>CRWV</td><td>$102 이하 관찰 전까지 금지</td><td>0원</td></tr>
+      </tbody>
+    </table>
+    <div class="note">오늘 기준으로 AVGO와 NVDA는 1차 범위에 걸쳐 있습니다. 단, 장중 변동이 크므로 종가가 저가 근처로 밀릴 때만 1차 소액 진입이 맞습니다. 양봉 추격은 금지입니다.</div>
+  </section>
+
+  <section>
+    <h2>6. 근거 링크</h2>
+    <table>
+      <thead><tr><th>구분</th><th>근거</th><th>링크</th></tr></thead>
+      <tbody>
+        <tr><td>섹터 리스크</td><td>반도체 급등 이후 과열 및 조정 위험</td><td><a href="https://www.investing.com/news/stock-market-news/analysissizzling-semiconductor-trade-at-risk-of-cooling--and-stalling-us-stocks-rally-4683659">Reuters/Investing</a></td></tr>
+        <tr><td>PLTR</td><td>Q1 2026 매출 +85%, 미국 매출 +104%, FY 가이던스 상향</td><td><a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000026/a2026q1ex991pressrelease.htm">SEC 8-K</a></td></tr>
+        <tr><td>TSM</td><td>2026년 4월 매출 NT$410.73B, YoY +17.5%</td><td><a href="https://pr.tsmc.com/english/news/3305">TSMC PR</a></td></tr>
+        <tr><td>AMD</td><td>AI infrastructure demand와 데이터센터 성장</td><td><a href="https://www.amd.com/en/newsroom/press-releases/2026-5-5-amd-reports-first-quarter-2026-financial-results.html">AMD IR</a></td></tr>
+        <tr><td>NVDA</td><td>FY2026 매출 $215.9B, 데이터센터 성장</td><td><a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/">NVIDIA IR</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>ETHAN DASH · CODEX REPORT · 2026-05-23</footer>
+</div>
+</body>
+</html>
