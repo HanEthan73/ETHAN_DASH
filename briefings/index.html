@@ -43,7 +43,7 @@ body{
 .tab-panel.active{display:block}
 
 /* ─── SORT BAR ─── */
-.sort-bar{display:flex;gap:6px;padding:10px 16px;border-bottom:1px solid var(--bd);background:var(--s1)}
+.sort-bar{display:flex;gap:6px;padding:10px 16px;border-bottom:1px solid var(--bd);background:var(--s1);flex-wrap:wrap}
 .sort-btn{
   font-size:11px;font-weight:700;padding:5px 12px;border-radius:12px;cursor:pointer;
   background:var(--s2);border:1px solid var(--bd);color:var(--t3);
@@ -51,6 +51,21 @@ body{
   transition:background .15s,border-color .15s,color .15s;
 }
 .sort-btn.active{background:rgba(245,197,24,.12);border-color:rgba(245,197,24,.4);color:var(--gold)}
+.search-box{
+  display:flex;align-items:center;gap:8px;flex:1;min-width:170px;
+  background:var(--bg);border:1px solid var(--bd);border-radius:8px;
+  padding:5px 9px;color:var(--t3);
+}
+.search-box input{
+  width:100%;background:transparent;border:0;outline:0;color:var(--t1);
+  font:inherit;font-size:11px;min-width:0;
+}
+.search-box input::placeholder{color:var(--t4)}
+.search-clear{
+  width:18px;height:18px;border:0;border-radius:50%;background:var(--s2);
+  color:var(--t3);font-size:13px;line-height:18px;cursor:pointer;
+}
+.search-clear:hover{color:var(--gold)}
 
 /* ─── FEED ─── */
 .feed{padding:0 16px}
@@ -184,6 +199,11 @@ body{
   <div class="sort-bar">
     <button class="sort-btn active" id="btn-newest" onclick="setSort('newest')">최신순 ▼</button>
     <button class="sort-btn"        id="btn-oldest" onclick="setSort('oldest')">오래된순 ▲</button>
+    <div class="search-box" role="search" aria-label="브리핑 검색">
+      <span>⌕</span>
+      <input id="archive-search" type="search" placeholder="파일명·제목·요약 검색" autocomplete="off" oninput="setSearch(this.value)">
+      <button class="search-clear" id="search-clear" type="button" onclick="clearSearch()" hidden>×</button>
+    </div>
   </div>
 
   <div class="feed" id="feed">
@@ -422,6 +442,7 @@ function localDateFromKey(dateKey) {
 /* ── 렌더링 ──────────────────────────────────────────── */
 let files = [];
 let sort = 'newest';
+let searchQuery = '';
 let calendarMonth = null;
 let selectedCalendarDate = null;
 
@@ -439,16 +460,54 @@ function setSort(s) {
   render();
 }
 
+function setSearch(value) {
+  searchQuery = normalizeSearch(value);
+  const clear = document.getElementById('search-clear');
+  if (clear) clear.hidden = !searchQuery;
+  render();
+}
+
+function clearSearch() {
+  const input = document.getElementById('archive-search');
+  if (input) input.value = '';
+  setSearch('');
+  if (input) input.focus();
+}
+
+function getVisibleFiles() {
+  if (!searchQuery) return files;
+  return files.filter(f => normalizeSearch([
+    f.name,
+    f.label,
+    f.dateLabel,
+    f.timeStr,
+    f.summary || ''
+  ].join(' ')).includes(searchQuery));
+}
+
+function normalizeSearch(text) {
+  return cleanText(text).toLowerCase();
+}
+
 function render() {
   const feed = document.getElementById('feed');
+  const visibleFiles = getVisibleFiles();
   if (!files.length) {
     feed.innerHTML = '<div class="status-msg">파일이 없습니다.</div>';
+    return;
+  }
+  if (!visibleFiles.length) {
+    feed.innerHTML = '<div class="status-msg">검색 결과가 없습니다.</div>';
+    document.getElementById('mc-total').textContent = `0/${files.length}`;
+    document.getElementById('mc-dates').textContent = '0';
+    document.getElementById('footer-info').textContent = `0/${files.length}건`;
+    renderCalendar();
     return;
   }
 
   // 날짜별 그룹
   const groups = {};
-  files.forEach(f => {
+  visibleFiles.forEach(f => {
     (groups[f.dateKey] = groups[f.dateKey] || []).push(f);
   });
 
@@ -511,9 +570,9 @@ function render() {
     feed.appendChild(sec);
   });
 
-  document.getElementById('mc-total').textContent  = files.length;
+  document.getElementById('mc-total').textContent  = searchQuery ? `${visibleFiles.length}/${files.length}` : files.length;
   document.getElementById('mc-dates').textContent  = keys.length;
-  document.getElementById('footer-info').textContent = `${files.length}건 · ${keys.length}일`;
+  document.getElementById('footer-info').textContent = searchQuery ? `${visibleFiles.length}/${files.length}건 · ${keys.length}일` : `${files.length}건 · ${keys.length}일`;
   hydrateSummaries();
   renderCalendar();
 }
@@ -522,7 +581,7 @@ function renderCalendar() {
   const grid = document.getElementById('calendar-grid');
   if (!grid) return;
 
-  const datedFiles = files.filter(f => f.dateKey !== 'tools');
+  const datedFiles = getVisibleFiles().filter(f => f.dateKey !== 'tools');
   if (!datedFiles.length) {
     grid.innerHTML = '<div class="calendar-empty">표시할 날짜가 없습니다.</div>';
     return;
