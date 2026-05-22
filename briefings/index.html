@@ -131,6 +131,10 @@ body{
 <script>
 /* ── 파일 타입 정의 ──────────────────────────────────── */
 const TYPES = [
+  { key:'아침브리핑',         label:'아침 브리핑', icon:'🌅', badge:'tb-gold', time:'09:00' },
+  { key:'저녁브리핑',         label:'저녁 브리핑', icon:'🌆', badge:'tb-prp',  time:'18:00' },
+  { key:'주식추천',           label:'주식 추천',   icon:'📈', badge:'tb-gold', time:null    },
+  { key:'주식전략',           label:'주식 전략',   icon:'📈', badge:'tb-gold', time:null    },
   { key:'morning_briefing',   label:'아침 브리핑', icon:'🌅', badge:'tb-gold', time:'07:00' },
   { key:'noon_briefing',      label:'낮 브리핑',   icon:'☀️', badge:'tb-cyan', time:'12:00' },
   { key:'afternoon_briefing', label:'오후 브리핑', icon:'🕒', badge:'tb-org',  time:'15:00' },
@@ -149,16 +153,16 @@ const WEEKDAYS = ['일','월','화','수','목','금','토'];
 function parseFile(name) {
   const raw = name.replace('.html','');
 
-  // YYYYMMDD 날짜 추출
-  const dm = raw.match(/(\d{8})/);
+  // YYYYMMDD 또는 YYMMDD 날짜 추출
+  const dm = raw.match(/(\d{8})|(\d{6})/);
   if (!dm) return null;
-  const ds = dm[1];
+  let ds = dm[0];
+  if (ds.length === 6) ds = `20${ds}`;
   const y = ds.slice(0,4), m = ds.slice(4,6), d = ds.slice(6,8);
   const dateKey = `${y}-${m}-${d}`;
 
-  // _HH 시간 추출 (파일명 마지막 숫자 2자리)
-  const hm = raw.match(/_(\d{2})$/);
-  const timeFromName = hm ? `${hm[1]}:00` : null;
+  // 09, 9.00AM, 10.45_PM, 6.17PM 같은 시간 표기 지원
+  const timeFromName = parseTimeFromName(raw);
 
   // 타입 매칭
   let info = { label: raw.replace(/_/g,' '), icon:'📄', badge:'tb-gray', time: timeFromName };
@@ -175,6 +179,29 @@ function parseFile(name) {
 
   return { name, dateKey, dateLabel, timeNum, timeStr: info.time || '—',
            label: info.label, icon: info.icon, badge: info.badge };
+}
+
+function parseTimeFromName(raw) {
+  const ampm = raw.match(/(?:^|_)(\d{1,2})(?:[._-](\d{1,2}))?\s*_?\s*(AM|PM)$/i);
+  if (ampm) {
+    let hour = parseInt(ampm[1], 10);
+    const minute = parseInt(ampm[2] || '0', 10);
+    const marker = ampm[3].toUpperCase();
+    if (marker === 'PM' && hour < 12) hour += 12;
+    if (marker === 'AM' && hour === 12) hour = 0;
+    return `${String(hour).padStart(2,'0')}:${String(minute).padStart(2,'0')}`;
+  }
+
+  const hm = raw.match(/_(\d{1,2})(?:[._-](\d{2}))?$/);
+  if (hm) {
+    const hour = parseInt(hm[1], 10);
+    const minute = parseInt(hm[2] || '0', 10);
+    if (hour <= 23 && minute <= 59) {
+      return `${String(hour).padStart(2,'0')}:${String(minute).padStart(2,'0')}`;
+    }
+  }
+
+  return null;
 }
 
 /* ── 상대 날짜 ───────────────────────────────────────── */
@@ -214,8 +241,10 @@ function render() {
   let keys = Object.keys(groups).sort();
   if (sort === 'newest') keys = keys.reverse();
 
-  // 그룹 내 시간 오름차순
-  keys.forEach(k => groups[k].sort((a,b) => a.timeNum - b.timeNum));
+  // 그룹 내 시간 정렬
+  keys.forEach(k => groups[k].sort((a,b) =>
+    sort === 'newest' ? b.timeNum - a.timeNum : a.timeNum - b.timeNum
+  ));
 
   feed.innerHTML = '';
   keys.forEach((dk, i) => {
