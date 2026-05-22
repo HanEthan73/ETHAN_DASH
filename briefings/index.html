@@ -77,6 +77,11 @@ body{
 .file-info{flex:1;min-width:0}
 .file-label{font-size:13px;font-weight:700;color:var(--t1)}
 .file-name{font-size:10px;color:var(--t4);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.file-summary{
+  margin-top:5px;font-size:11px;line-height:1.45;color:var(--t2);
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+}
+.file-summary:empty{display:none}
 
 .file-meta{display:flex;align-items:center;gap:6px;flex-shrink:0}
 .file-time{font-size:11px;font-weight:800;color:var(--t3);font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -291,6 +296,7 @@ function render() {
         `<div class="file-info">` +
           `<div class="file-label">${f.label}</div>` +
           `<div class="file-name">${f.name}</div>` +
+          `<div class="file-summary" data-summary-for="${f.name}"></div>` +
         `</div>` +
         `<div class="file-meta">` +
           `<span class="file-time">${f.timeStr}</span>` +
@@ -313,6 +319,81 @@ function render() {
   document.getElementById('mc-total').textContent  = files.length;
   document.getElementById('mc-dates').textContent  = keys.length;
   document.getElementById('footer-info').textContent = `${files.length}건 · ${keys.length}일`;
+  hydrateSummaries();
+}
+
+function hydrateSummaries() {
+  files.forEach(f => {
+    if (f.summary !== undefined) {
+      applySummary(f);
+      return;
+    }
+
+    f.summary = '';
+    fetch(f.name)
+      .then(r => r.ok ? r.text() : '')
+      .then(html => {
+        f.summary = extractSummary(html);
+        applySummary(f);
+      })
+      .catch(() => applySummary(f));
+  });
+}
+
+function applySummary(file) {
+  document.querySelectorAll('[data-summary-for]').forEach(el => {
+    if (el.getAttribute('data-summary-for') === file.name) {
+      el.textContent = file.summary || '';
+    }
+  });
+}
+
+function extractSummary(html) {
+  if (!html) return '';
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const selectors = ['.warn', '.summary-box', '.claude-box', '.alert-box', '.note'];
+  const candidates = [];
+
+  doc.querySelectorAll('h1,h2,h3,strong,.label,.label-s').forEach(el => {
+    const title = cleanText(el.textContent);
+    if (!/(Claude|클로드|종합|총평|요약|의견)/i.test(title)) return;
+
+    const parentText = cleanText(el.parentElement && el.parentElement.textContent);
+    const nextText = cleanText(el.nextElementSibling && el.nextElementSibling.textContent);
+    candidates.push(parentText, nextText);
+  });
+
+  selectors.forEach(sel => {
+    doc.querySelectorAll(sel).forEach(el => {
+      const text = cleanText(el.textContent);
+      if (/(Claude|클로드|종합|총평|요약|진입|매수|전략|경보|추천)/i.test(text)) {
+        candidates.push(text);
+      }
+    });
+  });
+
+  const summary = candidates
+    .map(t => cleanText(t).replace(/^(Claude|클로드)?\s*종합\s*의견[:：]?\s*/i, ''))
+    .filter(t => t && t.length > 18)
+    .sort((a,b) => scoreSummary(b) - scoreSummary(a))[0] || '';
+
+  return trimSummary(summary);
+}
+
+function scoreSummary(text) {
+  let score = Math.min(text.length, 280);
+  if (/Claude|클로드|종합|의견|총평/.test(text)) score += 500;
+  if (/요약|전략/.test(text)) score += 120;
+  return score;
+}
+
+function cleanText(text) {
+  return (text || '').replace(/\s+/g, ' ').trim();
+}
+
+function trimSummary(text) {
+  const cleaned = cleanText(text);
+  return cleaned.length > 220 ? `${cleaned.slice(0, 220)}…` : cleaned;
 }
 
 /* ── 데이터 로드 ─────────────────────────────────────── */
