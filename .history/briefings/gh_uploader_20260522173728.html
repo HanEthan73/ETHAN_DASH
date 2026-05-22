@@ -7,6 +7,12 @@ button{background:#333;color:#0f0;border:1px solid #0f0;padding:8px 20px;cursor:
 <h2 style="color:#f5c518">ETHAN DAILY — GitHub 업로드</h2>
 <div>총 27개 파일 준비됨</div>
 <br>
+<div style="margin-bottom:15px;padding:10px;background:#222;border:1px solid #444">
+  <input type="password" id="tokenInput" placeholder="GitHub Personal Access Token 입력" style="width:100%;padding:8px;margin-right:10px;background:#333;color:#0f0;border:1px solid #0f0">
+  <button onclick="saveToken()" style="margin-top:5px">💾 Token 저장</button>
+  <button onclick="clearToken()">🗑️ Token 삭제</button>
+  <div id="tokenStatus" style="margin-top:5px;font-size:12px;color:#888"></div>
+</div>
 <button onclick="startUpload()">🚀 업로드 시작</button>
 <button onclick="enablePages()">📄 GitHub Pages 활성화</button>
 <div id="log"></div>
