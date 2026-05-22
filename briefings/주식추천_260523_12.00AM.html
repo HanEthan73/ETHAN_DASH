@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주식 추천 — 전략형 인사이트 보고</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1014;color:#e9e9ef;font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;padding:24px 14px 48px;line-height:1.62}
+.wrap{max-width:1180px;margin:0 auto}
+header{border-bottom:1px solid #30313a;padding-bottom:16px;margin-bottom:18px}
+h1{font-size:26px;color:#ffd43b;margin-bottom:6px}
+.sub{font-size:14px;color:#a8a8b2}
+.stamp{display:inline-block;margin-top:10px;border:1px solid #4c4631;background:#231f14;color:#ffd43b;border-radius:999px;padding:4px 11px;font-size:12px;font-weight:800}
+section{background:#171820;border:1px solid #2d2f3a;border-radius:8px;padding:16px;margin-top:16px}
+h2{font-size:18px;color:#ffd43b;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;border-radius:6px;overflow:hidden}
+th{background:#252733;color:#ffd43b;text-align:left;padding:9px 10px;font-size:13px;border-bottom:1px solid #3b3d4a}
+td{padding:9px 10px;border-bottom:1px solid #2b2d37;font-size:13px;color:#e2e2e8;vertical-align:top}
+tr:nth-child(even) td{background:#14151b}
+tr:last-child td{border-bottom:0}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.buy{color:#7af0a6;font-weight:900}.wait{color:#ffe27a;font-weight:900}.cut{color:#ffaaa5;font-weight:900}.core{color:#91c8ff;font-weight:900}
+.note{margin-top:12px;background:#221f16;border-left:4px solid #ffd43b;border-radius:6px;padding:11px 13px;color:#e8ddb3;font-size:13px}
+.warn{background:#251a1d;border-left-color:#ff6b6b;color:#ffc4c0}
+a{color:#91c8ff;text-decoration:none}
+footer{margin-top:18px;text-align:right;color:#777884;font-size:12px}
+@media(max-width:860px){body{padding:16px 8px 36px}table{display:block;overflow-x:auto}th,td{white-space:nowrap}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>주식 추천 — 전략형 인사이트 보고</h1>
+    <div class="sub">대표님 보고용 · Claude 4대 전략 반영 · 단순 추천이 아니라 진입 모드/비중/무효화 기준 중심</div>
+    <div class="stamp">가격 기준: 2026-05-23 00:00 KST 전후 / 미국장 2026-05-22 14:49 UTC 전후</div>
+  </header>
+
+  <section>
+    <h2>1. 제 결론</h2>
+    <table>
+      <thead>
+        <tr><th>판단 항목</th><th>결론</th><th>이유</th><th>대표님 행동</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>현재 시장</td><td class="wait">상승장 안의 과열 구간</td><td>AI/반도체 실적 모멘텀은 강하지만, 반도체 상승분이 S&amp;P500 시총 증가의 큰 비중을 차지해 쏠림이 큼</td><td>추격 풀매수 금지</td></tr>
+        <tr><td>매수 방식</td><td class="buy">핵심 4개 + 공격 2개 + 감시 2개</td><td>대장주와 공급망 핵심은 눌림 때 사고, 고밸류 종목은 조건부로만 접근</td><td>분할 진입</td></tr>
+        <tr><td>가장 좋은 종목군</td><td class="core">NVDA·AVGO·MU·TSM</td><td>AI 수요가 실제 매출/가이던스로 확인된 축</td><td>포트폴리오 중심</td></tr>
+        <tr><td>가장 조심할 종목군</td><td class="cut">ALAB·PLTR·CRWV</td><td>성장성은 크지만 밸류와 변동성이 큼</td><td>소액 또는 조건부</td></tr>
+        <tr><td>현금 비중</td><td class="wait">최소 20%</td><td>대표님 목표가 공격적일수록 급락 매수용 현금이 필요함</td><td>급락 전 총알 보존</td></tr>
+      </tbody>
+    </table>
+    <div class="note">핵심 인사이트: 지금은 “좋은 종목을 찾는 구간”이 아니라 “좋은 종목을 비싸게 사지 않는 구간”입니다. 추천 종목은 유지하되, 진입 가격을 엄격히 잡아야 기대수익/위험 비율이 맞습니다.</div>
+  </section>
+
+  <section>
+    <h2>2. Claude 4대 전략 적용표</h2>
+    <table>
+      <thead>
+        <tr><th>전략</th><th>대표님 기존 기준</th><th>현재 적용 판단</th><th>실행 규칙</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>컵앤핸들 돌파</td><td>핸들 고점 +1~2% 돌파, 거래량 150% 이상</td><td class="wait">대부분 이미 돌파 후 고가권. 신규 추격보다 재돌파 확인 필요</td><td>신고가 돌파일에만 1차 10~15%</td></tr>
+        <tr><td>눌림목 분할매수</td><td>-8~12%, -15~20%, -25% 3단계</td><td class="buy">현재 가장 적합한 전략. 과열 이후 눌림을 기다려야 함</td><td>1차 40%, 2차 35%, 3차 25%</td></tr>
+        <tr><td>시장 모드 전환</td><td>VIX, 200일선, 금리, 환율로 정상/위험 구분</td><td class="wait">정상 모드지만 반도체 과열 경계. 현금 20% 유지</td><td>위험 신호 2개 이상이면 신규매수 중단</td></tr>
+        <tr><td>7대 경보</td><td>VIX, 200일선, 금리, USD/KRW, 지정학, M2, 연준</td><td class="wait">현재는 가격 과열 경보가 더 큼. 금리/환율 급등 시 방어</td><td>경보 4개 이상이면 50% 현금화</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>3. 추천 종목 우선순위</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>순위</th><th>종목</th><th>현재가</th><th>등급</th><th>제 인사이트</th><th>1차 진입</th><th>2차 진입</th><th>무효화</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="core">AVGO</td><td class="num">$412.11</td><td class="buy">핵심</td><td>NVDA보다 덜 직접적이지만 AI ASIC·네트워크 양쪽을 먹는 구조. 포트 내 안정성과 성장 균형이 가장 좋음</td><td>$398~410</td><td>$370~390</td><td>$355 이탈</td></tr>
+        <tr><td class="num">2</td><td class="core">NVDA</td><td class="num">$217.16</td><td class="buy">핵심</td><td>AI 대장주는 계속 포트에 있어야 함. 단, 이미 기대가 매우 높아 눌림 없는 추격은 효율 낮음</td><td>$208~216</td><td>$195~205</td><td>$188 이탈</td></tr>
+        <tr><td class="num">3</td><td class="core">MU</td><td class="num">$767.38</td><td class="buy">공격 핵심</td><td>HBM/메모리 사이클은 지금 수익률 폭발력이 가장 큼. 대신 사이클 꺾이면 급락도 빠름</td><td>$730~760</td><td>$670~710</td><td>$640 이탈</td></tr>
+        <tr><td class="num">4</td><td class="core">TSM</td><td class="num">$407.02</td><td class="buy">안정</td><td>AI 붐의 제조 인프라. 대박주보다는 포트 변동성을 낮추는 핵심 방어형 성장주</td><td>$392~405</td><td>$360~380</td><td>$340 이탈</td></tr>
+        <tr><td class="num">5</td><td>AMD</td><td class="num">$468.28</td><td class="wait">대기</td><td>상승 탄력은 강하지만 PE와 기대감이 높음. 지금 사는 종목이 아니라 눌림을 기다릴 종목</td><td>$430~455</td><td>$390~415</td><td>$370 이탈</td></tr>
+        <tr><td class="num">6</td><td>MRVL</td><td class="num">$197.04</td><td class="wait">대기</td><td>AI 네트워크 보조축. AVGO 대비 2순위지만, 네트워크 테마가 확산되면 탄력 가능</td><td>$182~192</td><td>$165~175</td><td>$155 이탈</td></tr>
+        <tr><td class="num">7</td><td>PLTR</td><td class="num">$135.64</td><td class="wait">조건부</td><td>성장률은 압도적이나 밸류가 비쌈. 실적이 좋아도 빠지는 유형이라 매수가격이 전부</td><td>$124~130</td><td>$112~120</td><td>$105 이탈</td></tr>
+        <tr><td class="num">8</td><td>ALAB</td><td class="num">$310.82</td><td class="cut">소액</td><td>AI 인프라 병목 수혜는 맞지만 PE 200배대. 맞으면 크게 가고 틀리면 크게 맞는 종목</td><td>$280~300</td><td>$240~265</td><td>$225 이탈</td></tr>
+        <tr><td class="num">9</td><td>CRWV</td><td class="num">$105.61</td><td class="cut">감시</td><td>AI 클라우드 레버리지 종목. 수익성/부채/락업 변동성 때문에 현재 추천보다 감시가 맞음</td><td>$95~102</td><td>$82~90</td><td>$78 이탈</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. 대표님 3,200만 원 기준 운영안</h2>
+    <table>
+      <thead>
+        <tr><th>분류</th><th>종목</th><th>비중</th><th>금액</th><th>이유</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>핵심 성장</td><td>AVGO</td><td class="num">16%</td><td class="num">512만 원</td><td>AI ASIC·네트워크 동시 수혜</td></tr>
+        <tr><td>핵심 대장</td><td>NVDA</td><td class="num">15%</td><td class="num">480만 원</td><td>AI 대장주, 포트 기준점</td></tr>
+        <tr><td>공격 성장</td><td>MU</td><td class="num">14%</td><td class="num">448만 원</td><td>HBM/메모리 사이클 탄력</td></tr>
+        <tr><td>안정 성장</td><td>TSM</td><td class="num">12%</td><td class="num">384만 원</td><td>AI 제조 인프라</td></tr>
+        <tr><td>추격 후보</td><td>AMD</td><td class="num">8%</td><td class="num">256만 원</td><td>눌림 시만 편입</td></tr>
+        <tr><td>보조 후보</td><td>MRVL</td><td class="num">6%</td><td class="num">192만 원</td><td>AI 네트워크 확산 베팅</td></tr>
+        <tr><td>고위험</td><td>PLTR 또는 ALAB</td><td class="num">5%</td><td class="num">160만 원</td><td>둘 중 조건 좋은 하나만</td></tr>
+        <tr><td>현금</td><td>대기</td><td class="num">24%</td><td class="num">768만 원</td><td>시장 악화 시 풀매수 재료</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">대표님 목표가 2억이라도 현금 0%는 비효율적입니다. 급락장에서 돈을 벌려면 급락 전에 현금을 들고 있어야 합니다. 지금은 24% 현금이 공격성을 낮추는 게 아니라 다음 공격을 준비하는 포지션입니다.</div>
+  </section>
+
+  <section>
+    <h2>5. 오늘 기준 실행 지시안</h2>
+    <table>
+      <thead>
+        <tr><th>상황</th><th>실행</th><th>금지</th><th>확인 지표</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>오늘 바로 매수하고 싶을 때</td><td>AVGO/NVDA/MU/TSM만 각 목표 비중의 25% 이하</td><td>AMD·ALAB·PLTR 추격매수 금지</td><td>종가가 당일 저가 근처인지 확인</td></tr>
+        <tr><td>반도체 -5% 조정</td><td>핵심 4개 1차 진입</td><td>한 번에 전액 매수 금지</td><td>SOX, QQQ, VIX</td></tr>
+        <tr><td>반도체 -10~15% 조정</td><td>2차 진입, 현금 절반 사용</td><td>손절선 없는 물타기 금지</td><td>200일선, 금리, USD/KRW</td></tr>
+        <tr><td>시장 악화 4대 경보 이상</td><td>보유 50% 현금화 후 바닥 대기</td><td>반등 전 예측 몰빵 금지</td><td>VIX 25+, USD/KRW 1480+, 금리 급등</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>6. 근거 출처</h2>
+    <table>
+      <thead><tr><th>구분</th><th>근거</th><th>링크</th></tr></thead>
+      <tbody>
+        <tr><td>섹터 과열</td><td>반도체와 메모리 주도 상승이 S&amp;P500 상승분에 크게 기여, 조정 위험 존재</td><td><a href="https://www.investing.com/news/stock-market-news/analysissizzling-semiconductor-trade-at-risk-of-cooling--and-stalling-us-stocks-rally-4683659">Reuters/Investing</a></td></tr>
+        <tr><td>AI 실적 모멘텀</td><td>AMD, Broadcom, Nvidia 실적 이후 반도체 섹터 강세</td><td><a href="https://rockstarmarkets.com/news/2026/05/15/semiconductor-earnings-momentum-ai-demand">Rockstar Markets</a></td></tr>
+        <tr><td>NVDA</td><td>FY2026 매출 $215.9B, 데이터센터 성장</td><td><a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/">NVIDIA IR</a></td></tr>
+        <tr><td>AVGO</td><td>AI 매출 성장과 Q2 AI 반도체 가이던스</td><td><a href="https://investors.broadcom.com/node/63976/pdf">Broadcom IR PDF</a></td></tr>
+        <tr><td>AMD</td><td>Q1 2026 매출 성장, 데이터센터/AI 인프라 수요</td><td><a href="https://www.amd.com/en/newsroom/press-releases/2026-5-5-amd-reports-first-quarter-2026-financial-results.html">AMD IR</a></td></tr>
+        <tr><td>PLTR</td><td>Q1 2026 매출 +85%, 미국 매출 +104%, FY 가이던스 상향</td><td><a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000026/a2026q1ex991pressrelease.htm">SEC 8-K</a></td></tr>
+        <tr><td>TSM</td><td>2026년 4월 매출 NT$410.73B, YoY +17.5%</td><td><a href="https://pr.tsmc.com/english/news/3305">TSMC PR</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>ETHAN DASH · CODEX REPORT · 2026-05-23</footer>
+</div>
+</body>
+</html>
