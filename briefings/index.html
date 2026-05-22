@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BRIEFINGS ??釉뚮━???꾩뭅?대툕</title>
+<title>ETHAN HAN's BRIEFINGS ARCHIVE</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -18,10 +18,12 @@ body{
   font-size:14px;line-height:1.6;max-width:600px;margin:0 auto;padding-bottom:80px;
 }
 
-/* ??? MASTHEAD ??? */
+/* ─── MASTHEAD ─── */
 .masthead{padding:20px 18px 14px;border-bottom:1px solid var(--bd);background:var(--bg);position:sticky;top:0;z-index:100}
-.blog-title{font-size:20px;font-weight:900;letter-spacing:-.5px;color:var(--t1);line-height:1;margin-bottom:3px}
-.blog-title span{color:var(--gold)}
+.blog-title{font-size:20px;font-weight:900;color:var(--t1);line-height:1.08;margin-bottom:5px}
+.blog-title span{display:block;letter-spacing:0}
+.blog-title .brand-line{color:var(--t1)}
+.blog-title .archive-line{color:var(--gold)}
 .blog-tagline{font-size:10px;color:var(--t3);letter-spacing:.3px;margin-bottom:10px}
 .meta-bar{display:flex;align-items:center;justify-content:space-between;font-size:10px;color:var(--t3)}
 .meta-counts{display:flex;gap:12px}
@@ -29,7 +31,7 @@ body{
 .mc-n{font-weight:800;color:var(--gold);font-size:13px}
 .source-badge{background:var(--s2);border:1px solid var(--bd);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--t3);font-weight:700;letter-spacing:.3px}
 
-/* ??? MAIN TABS ??? */
+/* ─── MAIN TABS ─── */
 .main-tabs{display:flex;gap:6px;padding:10px 16px;border-bottom:1px solid var(--bd);background:var(--bg);position:sticky;top:78px;z-index:90}
 .main-tab{
   flex:1;font-size:12px;font-weight:800;padding:8px 10px;border-radius:8px;cursor:pointer;
@@ -40,7 +42,7 @@ body{
 .tab-panel{display:none}
 .tab-panel.active{display:block}
 
-/* ??? SORT BAR ??? */
+/* ─── SORT BAR ─── */
 .sort-bar{display:flex;gap:6px;padding:10px 16px;border-bottom:1px solid var(--bd);background:var(--s1)}
 .sort-btn{
   font-size:11px;font-weight:700;padding:5px 12px;border-radius:12px;cursor:pointer;
@@ -50,11 +52,11 @@ body{
 }
 .sort-btn.active{background:rgba(245,197,24,.12);border-color:rgba(245,197,24,.4);color:var(--gold)}
 
-/* ??? FEED ??? */
+/* ─── FEED ─── */
 .feed{padding:0 16px}
 .status-msg{padding:40px 0;font-size:12px;color:var(--t3);text-align:center}
 
-/* ??? DATE GROUP ??? */
+/* ─── DATE GROUP ─── */
 .date-group{margin-top:18px}
 .dg-header{
   display:flex;align-items:center;gap:10px;
@@ -73,7 +75,7 @@ body{
 .dg-body{margin-top:5px;display:flex;flex-direction:column;gap:4px}
 .dg-body.hidden{display:none}
 
-/* ??? FILE ROW ??? */
+/* ─── FILE ROW ─── */
 .file-row{
   display:flex;align-items:center;gap:10px;
   padding:10px 14px;background:var(--s1);border:1px solid var(--bd);
@@ -83,6 +85,8 @@ body{
 }
 .file-row:hover{background:var(--s2);border-color:rgba(91,164,245,.3)}
 .file-row:active{background:rgba(91,164,245,.07)}
+.file-row.alert-file{background:rgba(245,197,24,.08);border-color:rgba(245,197,24,.28)}
+.file-row.alert-file:hover{background:rgba(245,197,24,.13);border-color:rgba(245,197,24,.45)}
 
 .file-icon{font-size:15px;flex-shrink:0;width:20px;text-align:center}
 .file-info{flex:1;min-width:0}
@@ -108,14 +112,15 @@ body{
 .tb-org {background:rgba(255,160,64,.1);color:var(--org)}
 .tb-grn {background:rgba(61,220,132,.1);color:var(--grn)}
 .tb-gray{background:rgba(148,163,184,.1);color:#94a3b8}
+.tb-alert{background:rgba(245,197,24,.18);color:var(--gold)}
 
 .file-arrow{font-size:13px;color:var(--t4);flex-shrink:0;transition:color .15s}
 .file-row:hover .file-arrow{color:var(--blu)}
 
-/* ??? FOOTER ??? */
+/* ─── FOOTER ─── */
 .footer{margin:24px 16px 0;padding:14px 0;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;font-size:10px;color:var(--t4)}
 
-/* ??? SCHEDULE ??? */
+/* ─── SCHEDULE ─── */
 .schedule{padding:18px 16px 0}
 .schedule-card{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:14px 16px}
 .schedule-title{font-size:14px;font-weight:900;color:var(--gold);margin-bottom:10px}
@@ -126,7 +131,7 @@ body{
 .schedule-time{font-weight:800;color:var(--t1);font-variant-numeric:tabular-nums}
 .schedule-note{font-size:10px;color:var(--t3);margin-top:10px;text-align:right}
 
-/* ??? CALENDAR ??? */
+/* ─── CALENDAR ─── */
 .calendar-wrap{padding:18px 16px 0}
 .calendar-card{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:14px 16px}
 .calendar-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
@@ -156,32 +161,33 @@ body{
 <body>
 
 <div class="masthead">
-  <div class="blog-title">BRIEFINGS <span>ARCHIVE</span></div>
-  <div class="blog-tagline">釉뚮━??& ?뚮┝ ?뚯씪 ???좎쭨쨌?쒓컙???뺣젹</div>
+  <div class="blog-title"><span class="brand-line">ETHAN HAN's</span><span class="archive-line">BRIEFINGS ARCHIVE</span></div>
+  <div class="blog-tagline">브리핑 & 알림 파일 — 날짜·시간순 정렬</div>
   <div class="meta-bar">
     <div class="meta-counts">
-      <div class="mc"><span class="mc-n" id="mc-total">??/span><span>嫄?/span></div>
-      <div class="mc"><span class="mc-n" id="mc-dates">??/span><span>??/span></div>
+      <div class="mc"><span class="mc-n" id="mc-total">—</span><span>건</span></div>
+      <div class="mc"><span class="mc-n" id="mc-dates">—</span><span>일</span></div>
+      <div class="mc"><span class="mc-n" id="mc-visits">—</span><span>방문</span></div>
     </div>
-    <span class="source-badge" id="source-badge">濡쒕뵫 以?/span>
+    <span class="source-badge" id="source-badge">로딩 중</span>
   </div>
 </div>
 
 <div class="main-tabs">
-  <button class="main-tab active" id="tab-archive" onclick="showPanel('archive')">?뱴 釉뚮━??/button>
-  <button class="main-tab" id="tab-calendar" onclick="showPanel('calendar')">?뱟 ?щ젰</button>
-  <button class="main-tab" id="tab-schedule" onclick="showPanel('schedule')">?뵒 ?뚮┝ ?ㅼ?以?/button>
+  <button class="main-tab active" id="tab-archive" onclick="showPanel('archive')">📚 브리핑</button>
+  <button class="main-tab" id="tab-calendar" onclick="showPanel('calendar')">📅 달력</button>
+  <button class="main-tab" id="tab-schedule" onclick="showPanel('schedule')">🔔 알림 스케줄</button>
   <button class="main-tab" id="tab-codex" onclick="showPanel('codex')">CODEX</button>
 </div>
 
 <div class="tab-panel active" id="panel-archive">
   <div class="sort-bar">
-    <button class="sort-btn active" id="btn-newest" onclick="setSort('newest')">理쒖떊????/button>
-    <button class="sort-btn"        id="btn-oldest" onclick="setSort('oldest')">?ㅻ옒?쒖닚 ??/button>
+    <button class="sort-btn active" id="btn-newest" onclick="setSort('newest')">최신순 ▼</button>
+    <button class="sort-btn"        id="btn-oldest" onclick="setSort('oldest')">오래된순 ▲</button>
   </div>
 
   <div class="feed" id="feed">
-    <div class="status-msg">?뚯씪 紐⑸줉??遺덈윭?ㅻ뒗 以묅?/div>
+    <div class="status-msg">파일 목록을 불러오는 중…</div>
   </div>
 </div>
 
@@ -189,10 +195,10 @@ body{
   <div class="calendar-wrap">
     <div class="calendar-card">
       <div class="calendar-head">
-        <div class="calendar-title" id="calendar-title">?щ젰</div>
+        <div class="calendar-title" id="calendar-title">달력</div>
         <div class="calendar-nav">
-          <button type="button" onclick="moveCalendarMonth(-1)">??/button>
-          <button type="button" onclick="moveCalendarMonth(1)">??/button>
+          <button type="button" onclick="moveCalendarMonth(-1)">‹</button>
+          <button type="button" onclick="moveCalendarMonth(1)">›</button>
         </div>
       </div>
       <div class="calendar-grid" id="calendar-grid"></div>
@@ -205,29 +211,29 @@ body{
 <div class="tab-panel" id="panel-schedule">
   <div class="schedule">
     <div class="schedule-card">
-      <div class="schedule-title">?뵒 ?ㅼ?以??뚮┝ (18媛?</div>
+      <div class="schedule-title">🔔 스케줄 알림 (18개)</div>
       <table class="schedule-table">
-        <tr><th>?쒓컙</th><th>?뚮┝紐?/th><th>議곌굔</th></tr>
-        <tr><td class="schedule-time">07:00</td><td>?꾩묠 釉뚮━??/td><td>留ㅼ씪</td></tr>
-        <tr><td class="schedule-time">07:05</td><td>?몄궗?댄듃 KB ?낅뜲?댄듃</td><td>留ㅼ씪</td></tr>
-        <tr><td class="schedule-time">09:00</td><td>PLTR ?뚮┝紐?/td><td>$128 ?댄븯 ?쒕쭔</td></tr>
-        <tr><td class="schedule-time">09:00</td><td>?먮룞留ㅼ닔 紐⑤땲??/td><td>3% ?대궡 ?쒕쭔</td></tr>
-        <tr><td class="schedule-time">09:00</td><td>怨듯룷/?먯슃 洹밸떒</td><td>0-20 ?먮뒗 81-100</td></tr>
-        <tr><td class="schedule-time">09:00</td><td>USD/KRW 寃쎈낫</td><td>1,480 珥덇낵 ?쒕쭔</td></tr>
-        <tr><td class="schedule-time">09:00</td><td>?ㅼ쟻 D-1 ?뚮┝</td><td>?댁씪 ?ㅼ쟻 ?덉쓣 ?뚮쭔</td></tr>
-        <tr><td class="schedule-time">09:00</td><td>Gmail 梨꾩슜?뚮┝</td><td>梨꾩슜硫붿씪 ?덉쓣 ?뚮쭔</td></tr>
-        <tr><td class="schedule-time">09:00</td><td>吏?뺥븰/援?젣?댁뒪</td><td>留ㅼ씪</td></tr>
-        <tr><td class="schedule-time">12:00</td><td>??吏꾩엯?꾨왂 釉뚮━??/td><td>留ㅼ씪</td></tr>
-        <tr><td class="schedule-time">13:00</td><td>PLTR ?뚮┝紐?/td><td>$128 ?댄븯 ?쒕쭔</td></tr>
-        <tr><td class="schedule-time">13:00</td><td>?먮룞留ㅼ닔 紐⑤땲??/td><td>3% ?대궡 ?쒕쭔</td></tr>
-        <tr><td class="schedule-time">13:00</td><td>Gmail 梨꾩슜?뚮┝</td><td>梨꾩슜硫붿씪 ?덉쓣 ?뚮쭔</td></tr>
-        <tr><td class="schedule-time">15:00</td><td>?쒓뎅??留덇컧 釉뚮━??/td><td>留ㅼ씪</td></tr>
-        <tr><td class="schedule-time">15:00</td><td>PLTR ?뚮┝紐?/td><td>$128 ?댄븯 ?쒕쭔</td></tr>
-        <tr><td class="schedule-time">16:00</td><td>Gmail 梨꾩슜?뚮┝</td><td>梨꾩슜硫붿씪 ?덉쓣 ?뚮쭔</td></tr>
-        <tr><td class="schedule-time">22:00</td><td>???釉뚮━??/td><td>留ㅼ씪</td></tr>
-        <tr><td class="schedule-time">23:30</td><td>?먮룞留ㅼ닔 紐⑤땲??/td><td>3% ?대궡 ?쒕쭔</td></tr>
+        <tr><th>시간</th><th>알림명</th><th>조건</th></tr>
+        <tr><td class="schedule-time">07:00</td><td>아침 브리핑</td><td>매일</td></tr>
+        <tr><td class="schedule-time">07:05</td><td>인사이트 KB 업데이트</td><td>매일</td></tr>
+        <tr><td class="schedule-time">09:00</td><td>PLTR 눌림목</td><td>$128 이하 시만</td></tr>
+        <tr><td class="schedule-time">09:00</td><td>자동매수 모니터</td><td>3% 이내 시만</td></tr>
+        <tr><td class="schedule-time">09:00</td><td>공포/탐욕 극단</td><td>0-20 또는 81-100</td></tr>
+        <tr><td class="schedule-time">09:00</td><td>USD/KRW 경보</td><td>1,480 초과 시만</td></tr>
+        <tr><td class="schedule-time">09:00</td><td>실적 D-1 알림</td><td>내일 실적 있을 때만</td></tr>
+        <tr><td class="schedule-time">09:00</td><td>Gmail 채용알림</td><td>채용메일 있을 때만</td></tr>
+        <tr><td class="schedule-time">09:00</td><td>지정학/국제뉴스</td><td>매일</td></tr>
+        <tr><td class="schedule-time">12:00</td><td>낮 진입전략 브리핑</td><td>매일</td></tr>
+        <tr><td class="schedule-time">13:00</td><td>PLTR 눌림목</td><td>$128 이하 시만</td></tr>
+        <tr><td class="schedule-time">13:00</td><td>자동매수 모니터</td><td>3% 이내 시만</td></tr>
+        <tr><td class="schedule-time">13:00</td><td>Gmail 채용알림</td><td>채용메일 있을 때만</td></tr>
+        <tr><td class="schedule-time">15:00</td><td>한국장 마감 브리핑</td><td>매일</td></tr>
+        <tr><td class="schedule-time">15:00</td><td>PLTR 눌림목</td><td>$128 이하 시만</td></tr>
+        <tr><td class="schedule-time">16:00</td><td>Gmail 채용알림</td><td>채용메일 있을 때만</td></tr>
+        <tr><td class="schedule-time">22:00</td><td>저녁 브리핑</td><td>매일</td></tr>
+        <tr><td class="schedule-time">23:30</td><td>자동매수 모니터</td><td>3% 이내 시만</td></tr>
       </table>
-      <div class="schedule-note">ETHAN PRIVATE?먯꽌 ?닿?</div>
+      <div class="schedule-note">ETHAN PRIVATE에서 이관</div>
     </div>
   </div>
 </div>
@@ -235,32 +241,32 @@ body{
 <div class="tab-panel" id="panel-codex">
   <div class="schedule">
     <div class="schedule-card">
-      <div class="schedule-title">CODEX ?뚮┝ ?ㅼ?以?(21媛?</div>
+      <div class="schedule-title">CODEX 알림 스케줄 (21개)</div>
       <table class="schedule-table">
-        <tr><th>Claude ?쒓컙</th><th>CODEX ?쒓컙</th><th>蹂닿퀬紐?/th><th>議곌굔</th></tr>
-        <tr><td>07:00</td><td class="schedule-time">07:30</td><td>?꾩묠 釉뚮━??/td><td>留ㅼ씪</td></tr>
-        <tr><td>07:05</td><td class="schedule-time">07:35</td><td>?몄궗?댄듃 KB ?낅뜲?댄듃</td><td>留ㅼ씪</td></tr>
-        <tr><td>?좉퇋</td><td class="schedule-time">08:30</td><td>二쇱떇 異붿쿇 ?꾨왂 蹂닿퀬</td><td>5醫낅ぉ ?댁긽 + 4媛吏 ?꾨왂 洹쇨굅 + HTML/Git ?낅줈??/td></tr>
-        <tr><td>09:00</td><td class="schedule-time">09:30</td><td>PLTR ?뚮┝紐?/td><td>$128 ?댄븯 ?쒕쭔</td></tr>
-        <tr><td>09:00</td><td class="schedule-time">09:30</td><td>?먮룞留ㅼ닔 紐⑤땲??/td><td>3% ?대궡 ?쒕쭔</td></tr>
-        <tr><td>09:00</td><td class="schedule-time">09:30</td><td>怨듯룷/?먯슃 洹밸떒</td><td>0-20 ?먮뒗 81-100</td></tr>
-        <tr><td>09:00</td><td class="schedule-time">09:30</td><td>USD/KRW 寃쎈낫</td><td>1,480 珥덇낵 ?쒕쭔</td></tr>
-        <tr><td>09:00</td><td class="schedule-time">09:30</td><td>?ㅼ쟻 D-1 ?뚮┝</td><td>?댁씪 ?ㅼ쟻 ?덉쓣 ?뚮쭔</td></tr>
-        <tr><td>09:00</td><td class="schedule-time">09:30</td><td>Gmail 梨꾩슜?뚮┝</td><td>梨꾩슜硫붿씪 ?덉쓣 ?뚮쭔</td></tr>
-        <tr><td>09:00</td><td class="schedule-time">09:30</td><td>吏?뺥븰/援?젣?댁뒪</td><td>留ㅼ씪</td></tr>
-        <tr><td>12:00</td><td class="schedule-time">12:30</td><td>??吏꾩엯?꾨왂 釉뚮━??/td><td>留ㅼ씪</td></tr>
-        <tr><td>13:00</td><td class="schedule-time">13:30</td><td>PLTR ?뚮┝紐?/td><td>$128 ?댄븯 ?쒕쭔</td></tr>
-        <tr><td>13:00</td><td class="schedule-time">13:30</td><td>?먮룞留ㅼ닔 紐⑤땲??/td><td>3% ?대궡 ?쒕쭔</td></tr>
-        <tr><td>13:00</td><td class="schedule-time">13:30</td><td>Gmail 梨꾩슜?뚮┝</td><td>梨꾩슜硫붿씪 ?덉쓣 ?뚮쭔</td></tr>
-        <tr><td>?좉퇋</td><td class="schedule-time">14:00</td><td>二쇱떇 異붿쿇 ?꾨왂 蹂닿퀬</td><td>5醫낅ぉ ?댁긽 + 4媛吏 ?꾨왂 洹쇨굅 + HTML/Git ?낅줈??/td></tr>
-        <tr><td>15:00</td><td class="schedule-time">15:30</td><td>?쒓뎅??留덇컧 釉뚮━??/td><td>留ㅼ씪</td></tr>
-        <tr><td>15:00</td><td class="schedule-time">15:30</td><td>PLTR ?뚮┝紐?/td><td>$128 ?댄븯 ?쒕쭔</td></tr>
-        <tr><td>?좉퇋</td><td class="schedule-time">16:00</td><td>二쇱떇 異붿쿇 ?꾨왂 蹂닿퀬</td><td>5醫낅ぉ ?댁긽 + 4媛吏 ?꾨왂 洹쇨굅 + HTML/Git ?낅줈??/td></tr>
-        <tr><td>16:00</td><td class="schedule-time">16:30</td><td>Gmail 梨꾩슜?뚮┝</td><td>梨꾩슜硫붿씪 ?덉쓣 ?뚮쭔</td></tr>
-        <tr><td>22:00</td><td class="schedule-time">22:30</td><td>???釉뚮━??/td><td>留ㅼ씪</td></tr>
-        <tr><td>23:30</td><td class="schedule-time">00:00</td><td>?먮룞留ㅼ닔 紐⑤땲??/td><td>3% ?대궡 ?쒕쭔</td></tr>
+        <tr><th>Claude 시간</th><th>CODEX 시간</th><th>보고명</th><th>조건</th></tr>
+        <tr><td>07:00</td><td class="schedule-time">07:30</td><td>아침 브리핑</td><td>매일</td></tr>
+        <tr><td>07:05</td><td class="schedule-time">07:35</td><td>인사이트 KB 업데이트</td><td>매일</td></tr>
+        <tr><td>신규</td><td class="schedule-time">08:30</td><td>주식 추천 전략 보고</td><td>5종목 이상 + 4가지 전략 근거 + HTML/Git 업로드</td></tr>
+        <tr><td>09:00</td><td class="schedule-time">09:30</td><td>PLTR 눌림목</td><td>$128 이하 시만</td></tr>
+        <tr><td>09:00</td><td class="schedule-time">09:30</td><td>자동매수 모니터</td><td>3% 이내 시만</td></tr>
+        <tr><td>09:00</td><td class="schedule-time">09:30</td><td>공포/탐욕 극단</td><td>0-20 또는 81-100</td></tr>
+        <tr><td>09:00</td><td class="schedule-time">09:30</td><td>USD/KRW 경보</td><td>1,480 초과 시만</td></tr>
+        <tr><td>09:00</td><td class="schedule-time">09:30</td><td>실적 D-1 알림</td><td>내일 실적 있을 때만</td></tr>
+        <tr><td>09:00</td><td class="schedule-time">09:30</td><td>Gmail 채용알림</td><td>채용메일 있을 때만</td></tr>
+        <tr><td>09:00</td><td class="schedule-time">09:30</td><td>지정학/국제뉴스</td><td>매일</td></tr>
+        <tr><td>12:00</td><td class="schedule-time">12:30</td><td>낮 진입전략 브리핑</td><td>매일</td></tr>
+        <tr><td>13:00</td><td class="schedule-time">13:30</td><td>PLTR 눌림목</td><td>$128 이하 시만</td></tr>
+        <tr><td>13:00</td><td class="schedule-time">13:30</td><td>자동매수 모니터</td><td>3% 이내 시만</td></tr>
+        <tr><td>13:00</td><td class="schedule-time">13:30</td><td>Gmail 채용알림</td><td>채용메일 있을 때만</td></tr>
+        <tr><td>신규</td><td class="schedule-time">14:00</td><td>주식 추천 전략 보고</td><td>5종목 이상 + 4가지 전략 근거 + HTML/Git 업로드</td></tr>
+        <tr><td>15:00</td><td class="schedule-time">15:30</td><td>한국장 마감 브리핑</td><td>매일</td></tr>
+        <tr><td>15:00</td><td class="schedule-time">15:30</td><td>PLTR 눌림목</td><td>$128 이하 시만</td></tr>
+        <tr><td>신규</td><td class="schedule-time">16:00</td><td>주식 추천 전략 보고</td><td>5종목 이상 + 4가지 전략 근거 + HTML/Git 업로드</td></tr>
+        <tr><td>16:00</td><td class="schedule-time">16:30</td><td>Gmail 채용알림</td><td>채용메일 있을 때만</td></tr>
+        <tr><td>22:00</td><td class="schedule-time">22:30</td><td>저녁 브리핑</td><td>매일</td></tr>
+        <tr><td>23:30</td><td class="schedule-time">00:00</td><td>자동매수 모니터</td><td>3% 이내 시만</td></tr>
       </table>
-      <div class="schedule-note"><a href="肄붾뜳?ㅼ븣由?260522_11.00PM.html" style="color:var(--gold);text-decoration:none;font-weight:800">CODEX ?곸꽭 蹂닿퀬???닿린</a></div>
+      <div class="schedule-note"><a href="코덱스알림_260522_11.00PM.html" style="color:var(--gold);text-decoration:none;font-weight:800">CODEX 상세 보고서 열기</a></div>
     </div>
   </div>
 </div>
@@ -271,41 +277,42 @@ body{
 </div>
 
 <script>
-/* ?? ?뚯씪 ????뺤쓽 ???????????????????????????????????? */
+/* ── 파일 타입 정의 ──────────────────────────────────── */
 const TYPES = [
-  { key:'?꾩묠釉뚮━??,         label:'?꾩묠 釉뚮━??, icon:'?똿', badge:'tb-gold', time:'09:00' },
-  { key:'??곷툕由ы븨',         label:'???釉뚮━??, icon:'?뙀', badge:'tb-prp',  time:'18:00' },
-  { key:'二쇱떇異붿쿇',           label:'二쇱떇 異붿쿇',   icon:'?뱢', badge:'tb-gold', time:null    },
-  { key:'二쇱떇?꾨왂',           label:'二쇱떇 ?꾨왂',   icon:'?뱢', badge:'tb-gold', time:null    },
-  { key:'stock_recommendation', label:'二쇱떇 異붿쿇', icon:'?뱢', badge:'tb-gold', time:null    },
-  { key:'CODEX_二쇱떇異붿쿇',       label:'CODEX 二쇱떇 異붿쿇', icon:'?뱢', badge:'tb-gold', time:null },
-  { key:'stock_strategy',     label:'二쇱떇 ?꾨왂',   icon:'?㎛', badge:'tb-org',  time:null    },
-  { key:'pltr_tool_v2',       label:'PLTR ??v2',  icon:'?썱截?, badge:'tb-blu',  time:null    },
-  { key:'pltr_tool',          label:'PLTR ??,     icon:'?썱截?, badge:'tb-blu',  time:null    },
-  { key:'morning_briefing',   label:'?꾩묠 釉뚮━??, icon:'?똿', badge:'tb-gold', time:'07:00' },
-  { key:'noon_briefing',      label:'??釉뚮━??,   icon:'?截?, badge:'tb-cyan', time:'12:00' },
-  { key:'afternoon_briefing', label:'?ㅽ썑 釉뚮━??, icon:'?븩', badge:'tb-org',  time:'15:00' },
-  { key:'evening_briefing',   label:'???釉뚮━??, icon:'?뙀', badge:'tb-prp',  time:'18:00' },
-  { key:'evening-briefing',   label:'???釉뚮━??, icon:'?뙀', badge:'tb-prp',  time:'18:00' },
-  { key:'premarket',          label:'?꾨━留덉폆',    icon:'??, badge:'tb-blu',  time:'06:50' },
-  { key:'fx_alert',           label:'?섏쑉寃쎈낫',    icon:'?뮦', badge:'tb-red',  time:null    },
-  { key:'earnings',           label:'?ㅼ쟻寃쎈낫',    icon:'?뱤', badge:'tb-grn',  time:null    },
-  { key:'autobuy',            label:'?먮룞留ㅼ닔',    icon:'?뵒', badge:'tb-gold', time:null    },
-  { key:'stock',              label:'二쇱떇 釉뚮━??, icon:'?뱢', badge:'tb-gold', time:null    },
+  { key:'아침브리핑',         label:'아침 브리핑', icon:'🌅', badge:'tb-gold', time:'09:00' },
+  { key:'저녁브리핑',         label:'저녁 브리핑', icon:'🌆', badge:'tb-prp',  time:'18:00' },
+  { key:'주식추천',           label:'주식 추천',   icon:'📈', badge:'tb-gold', time:null    },
+  { key:'주식전략',           label:'주식 전략',   icon:'📈', badge:'tb-gold', time:null    },
+  { key:'stock_recommendation', label:'주식 추천', icon:'📈', badge:'tb-gold', time:null    },
+  { key:'CODEX_주식추천',       label:'CODEX 주식 추천', icon:'📈', badge:'tb-gold', time:null },
+  { key:'stock_strategy',     label:'주식 전략',   icon:'🧭', badge:'tb-org',  time:null    },
+  { key:'pltr_tool_v2',       label:'PLTR 앱 v2',  icon:'🛠️', badge:'tb-blu',  time:null    },
+  { key:'pltr_tool',          label:'PLTR 앱',     icon:'🛠️', badge:'tb-blu',  time:null    },
+  { key:'morning_briefing',   label:'아침 브리핑', icon:'🌅', badge:'tb-gold', time:'07:00' },
+  { key:'noon_briefing',      label:'낮 브리핑',   icon:'☀️', badge:'tb-cyan', time:'12:00' },
+  { key:'afternoon_briefing', label:'오후 브리핑', icon:'🕒', badge:'tb-org',  time:'15:00' },
+  { key:'evening_briefing',   label:'저녁 브리핑', icon:'🌆', badge:'tb-prp',  time:'18:00' },
+  { key:'evening-briefing',   label:'저녁 브리핑', icon:'🌆', badge:'tb-prp',  time:'18:00' },
+  { key:'premarket',          label:'프리마켓',    icon:'⚡', badge:'tb-blu',  time:'06:50' },
+  { key:'fx_alert',           label:'환율경보',    icon:'💱', badge:'tb-red',  time:null    },
+  { key:'earnings',           label:'실적경보',    icon:'📊', badge:'tb-grn',  time:null    },
+  { key:'autobuy',            label:'자동매수',    icon:'🔔', badge:'tb-gold', time:null    },
+  { key:'stock',              label:'주식 브리핑', icon:'📈', badge:'tb-gold', time:null    },
 ];
 
-/* ?? ?뚯씪紐??뚯떛 ??????????????????????????????????????? */
-const WEEKDAYS = ['??,'??,'??,'??,'紐?,'湲?,'??];
-// Official upload format: ?쒕ぉ_YYMMDD_H.MMAM.html / ?쒕ぉ_YYMMDD_H.MMPM.html
-// Example: ??곷툕由ы븨_260522_6.17PM.html
+/* ── 파일명 파싱 ─────────────────────────────────────── */
+const WEEKDAYS = ['일','월','화','수','목','금','토'];
+// Official upload format: 제목_YYMMDD_H.MMAM.html / 제목_YYMMDD_H.MMPM.html
+// Example: 저녁브리핑_260522_6.17PM.html
 const OFFICIAL_NAME = /^(.+?)_(\d{6})_(\d{1,2})(?:[._-](\d{1,2}))?\s*_?\s*(AM|PM)$/i;
 
 function parseFile(name) {
   const raw = name.replace('.html','');
+  const isAlert = raw.startsWith('알림_');
   const toolFile = parseToolFile(name, raw);
   if (toolFile) return toolFile;
 
-  // YYYYMMDD ?먮뒗 YYMMDD ?좎쭨 異붿텧
+  // YYYYMMDD 또는 YYMMDD 날짜 추출
   const dm = raw.match(/(\d{8})|(\d{6})/);
   if (!dm) return null;
   let ds = dm[0];
@@ -313,12 +320,13 @@ function parseFile(name) {
   const y = ds.slice(0,4), m = ds.slice(4,6), d = ds.slice(6,8);
   const dateKey = `${y}-${m}-${d}`;
 
-  // 09, 9.00AM, 10.45_PM, 6.17PM 媛숈? ?쒓컙 ?쒓린 吏??  const timeFromName = parseTimeFromName(raw);
+  // 09, 9.00AM, 10.45_PM, 6.17PM 같은 시간 표기 지원
+  const timeFromName = parseTimeFromName(raw);
 
-  // ???留ㅼ묶
+  // 타입 매칭
   let info = {
     label: labelFromOfficialName(raw) || raw.replace(/_/g,' '),
-    icon:'?뱞',
+    icon:'📄',
     badge:'tb-gray',
     time: timeFromName
   };
@@ -330,11 +338,14 @@ function parseFile(name) {
   }
 
   const dow = WEEKDAYS[localDateFromKey(dateKey).getDay()];
-  const dateLabel = `${y}??${+m}??${+d}??${dow}?붿씪`;
+  const dateLabel = `${y}년 ${+m}월 ${+d}일 ${dow}요일`;
   const timeNum = info.time ? parseInt(info.time.replace(':','')) : 9999;
 
-  return { name, dateKey, dateLabel, timeNum, timeStr: info.time || '??,
-           label: info.label, icon: info.icon, badge: info.badge };
+  return { name, dateKey, dateLabel, timeNum, timeStr: info.time || '—',
+           label: isAlert ? `알림 ${info.label}` : info.label,
+           icon: info.icon,
+           badge: isAlert ? 'tb-alert' : info.badge,
+           isAlert };
 }
 
 function parseToolFile(name, raw) {
@@ -345,7 +356,7 @@ function parseToolFile(name, raw) {
   return {
     name,
     dateKey:'tools',
-    dateLabel:'??/ ?꾧뎄',
+    dateLabel:'앱 / 도구',
     timeNum: raw.includes('v2') ? 2 : 1,
     timeStr:'APP',
     label:matched.label,
@@ -358,9 +369,9 @@ function labelFromOfficialName(raw) {
   const official = raw.match(OFFICIAL_NAME);
   if (!official) return null;
   return official[1]
-    .replace(/釉뚮━??/, ' 釉뚮━??)
-    .replace(/異붿쿇$/, ' 異붿쿇')
-    .replace(/?꾨왂$/, ' ?꾨왂')
+    .replace(/브리핑$/, ' 브리핑')
+    .replace(/추천$/, ' 추천')
+    .replace(/전략$/, ' 전략')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -389,18 +400,18 @@ function parseTimeFromName(raw) {
   return null;
 }
 
-/* ?? ?곷? ?좎쭨 ????????????????????????????????????????? */
+/* ── 상대 날짜 ───────────────────────────────────────── */
 function relDate(dateKey) {
-  if (dateKey === 'tools') return '?곸떆 ?ъ슜';
+  if (dateKey === 'tools') return '상시 사용';
   const today = new Date();
   const todayOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
   const target = localDateFromKey(dateKey);
   const diff = Math.round((todayOnly - target) / 86400000);
-  if (diff === 0) return '?ㅻ뒛';
-  if (diff === 1) return '?댁젣';
-  if (diff === 2) return '洹몄젣';
-  if (diff < 0) return `${Math.abs(diff)}????;
-  return `${diff}????;
+  if (diff === 0) return '오늘';
+  if (diff === 1) return '어제';
+  if (diff === 2) return '그제';
+  if (diff < 0) return `${Math.abs(diff)}일 후`;
+  return `${diff}일 전`;
 }
 
 function localDateFromKey(dateKey) {
@@ -408,7 +419,7 @@ function localDateFromKey(dateKey) {
   return new Date(year, month - 1, day);
 }
 
-/* ?? ?뚮뜑留????????????????????????????????????????????? */
+/* ── 렌더링 ──────────────────────────────────────────── */
 let files = [];
 let sort = 'newest';
 let calendarMonth = null;
@@ -431,22 +442,22 @@ function setSort(s) {
 function render() {
   const feed = document.getElementById('feed');
   if (!files.length) {
-    feed.innerHTML = '<div class="status-msg">?뚯씪???놁뒿?덈떎.</div>';
+    feed.innerHTML = '<div class="status-msg">파일이 없습니다.</div>';
     return;
   }
 
-  // ?좎쭨蹂?洹몃９
+  // 날짜별 그룹
   const groups = {};
   files.forEach(f => {
     (groups[f.dateKey] = groups[f.dateKey] || []).push(f);
   });
 
-  // ?좎쭨 ?뺣젹
+  // 날짜 정렬
   let keys = Object.keys(groups).sort((a,b) => compareDateKeys(a,b));
   if (sort === 'newest') keys = keys.reverse();
   keys = keys.filter(k => k !== 'tools').concat(keys.includes('tools') ? ['tools'] : []);
 
-  // 洹몃９ ???쒓컙 ?뺣젹
+  // 그룹 내 시간 정렬
   keys.forEach(k => groups[k].sort((a,b) =>
     k === 'tools'
       ? b.timeNum - a.timeNum
@@ -465,15 +476,15 @@ function render() {
     hdr.className = 'dg-header' + (isOpen ? '' : ' collapsed');
     hdr.innerHTML =
       `<div><div class="dg-label">${group[0].dateLabel}</div><div class="dg-sub">${relDate(dk)}</div></div>` +
-      `<div class="dg-count">${group.length}嫄?/div>` +
-      `<span class="dg-chevron">??/span>`;
+      `<div class="dg-count">${group.length}건</div>` +
+      `<span class="dg-chevron">▾</span>`;
 
     const body = document.createElement('div');
     body.className = 'dg-body' + (isOpen ? '' : ' hidden');
 
     group.forEach(f => {
       const row = document.createElement('a');
-      row.className = 'file-row';
+      row.className = 'file-row' + (f.isAlert ? ' alert-file' : '');
       row.href = f.name;
       row.innerHTML =
         `<span class="file-icon">${f.icon}</span>` +
@@ -486,7 +497,7 @@ function render() {
           `<span class="file-time">${f.timeStr}</span>` +
           `<span class="type-badge ${f.badge}">${f.label}</span>` +
         `</div>` +
-        `<span class="file-arrow">??/span>`;
+        `<span class="file-arrow">›</span>`;
       body.appendChild(row);
     });
 
@@ -502,7 +513,7 @@ function render() {
 
   document.getElementById('mc-total').textContent  = files.length;
   document.getElementById('mc-dates').textContent  = keys.length;
-  document.getElementById('footer-info').textContent = `${files.length}嫄?쨌 ${keys.length}??;
+  document.getElementById('footer-info').textContent = `${files.length}건 · ${keys.length}일`;
   hydrateSummaries();
   renderCalendar();
 }
@@ -513,7 +524,7 @@ function renderCalendar() {
 
   const datedFiles = files.filter(f => f.dateKey !== 'tools');
   if (!datedFiles.length) {
-    grid.innerHTML = '<div class="calendar-empty">?쒖떆???좎쭨媛 ?놁뒿?덈떎.</div>';
+    grid.innerHTML = '<div class="calendar-empty">표시할 날짜가 없습니다.</div>';
     return;
   }
 
@@ -530,7 +541,7 @@ function renderCalendar() {
   const startDow = first.getDay();
   const byDate = groupFilesByDate(datedFiles);
   const title = document.getElementById('calendar-title');
-  title.textContent = `${year}??${month}??;
+  title.textContent = `${year}년 ${month}월`;
 
   const parts = WEEKDAYS.map(d => `<div class="cal-dow">${d}</div>`);
   for (let i = 0; i < startDow; i++) parts.push('<div class="cal-day empty"></div>');
@@ -539,11 +550,11 @@ function renderCalendar() {
     const dateKey = `${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
     const dayFiles = byDate[dateKey] || [];
     const classes = 'cal-day' + (dayFiles.length ? ' has-files' : '') + (dateKey === selectedCalendarDate ? ' selected' : '');
-    const labels = dayFiles.slice(0,2).map(f => f.label).join(' 쨌 ');
+    const labels = dayFiles.slice(0,2).map(f => f.label).join(' · ');
     parts.push(
       `<button type="button" class="${classes}" onclick="selectCalendarDate('${dateKey}')">` +
         `<span class="cal-num">${day}</span>` +
-        (dayFiles.length ? `<span class="cal-count">${dayFiles.length}嫄?/span><span class="cal-label">${labels}</span>` : '') +
+        (dayFiles.length ? `<span class="cal-count">${dayFiles.length}건</span><span class="cal-label">${labels}</span>` : '') +
       `</button>`
     );
   }
@@ -582,19 +593,19 @@ function selectCalendarDate(dateKey) {
     .filter(f => f.dateKey === dateKey)
     .sort((a,b) => b.timeNum - a.timeNum);
   const [year, month, day] = dateKey.split('-');
-  listTitle.textContent = `${year}??${Number(month)}??${Number(day)}??;
+  listTitle.textContent = `${year}년 ${Number(month)}월 ${Number(day)}일`;
 
   if (!dayFiles.length) {
-    list.innerHTML = '<div class="calendar-empty">???좎쭨?먮뒗 釉뚮━?묒씠 ?놁뒿?덈떎.</div>';
+    list.innerHTML = '<div class="calendar-empty">이 날짜에는 브리핑이 없습니다.</div>';
     return;
   }
 
   list.innerHTML = dayFiles.map(f =>
-    `<a class="file-row" href="${f.name}">` +
+    `<a class="file-row${f.isAlert ? ' alert-file' : ''}" href="${f.name}">` +
       `<span class="file-icon">${f.icon}</span>` +
       `<div class="file-info"><div class="file-label">${f.label}</div><div class="file-name">${f.name}</div></div>` +
       `<div class="file-meta"><span class="file-time">${f.timeStr}</span><span class="type-badge ${f.badge}">${f.label}</span></div>` +
-      `<span class="file-arrow">??/span>` +
+      `<span class="file-arrow">›</span>` +
     `</a>`
   ).join('');
 }
@@ -640,7 +651,7 @@ function extractSummary(html) {
 
   doc.querySelectorAll('h1,h2,h3,strong,.label,.label-s').forEach(el => {
     const title = cleanText(el.textContent);
-    if (!/(Claude|?대줈??醫낇빀|珥앺룊|?붿빟|?섍껄)/i.test(title)) return;
+    if (!/(Claude|클로드|종합|총평|요약|의견)/i.test(title)) return;
 
     const parentText = cleanText(el.parentElement && el.parentElement.textContent);
     const nextText = cleanText(el.nextElementSibling && el.nextElementSibling.textContent);
@@ -650,14 +661,14 @@ function extractSummary(html) {
   selectors.forEach(sel => {
     doc.querySelectorAll(sel).forEach(el => {
       const text = cleanText(el.textContent);
-      if (/(Claude|?대줈??醫낇빀|珥앺룊|?붿빟|吏꾩엯|留ㅼ닔|?꾨왂|寃쎈낫|異붿쿇)/i.test(text)) {
+      if (/(Claude|클로드|종합|총평|요약|진입|매수|전략|경보|추천)/i.test(text)) {
         candidates.push(text);
       }
     });
   });
 
   const summary = candidates
-    .map(t => cleanText(t).replace(/^(Claude|?대줈???\s*醫낇빀\s*?섍껄[:竊??\s*/i, ''))
+    .map(t => cleanText(t).replace(/^(Claude|클로드)?\s*종합\s*의견[:：]?\s*/i, ''))
     .filter(t => t && t.length > 18)
     .sort((a,b) => scoreSummary(b) - scoreSummary(a))[0] || fallbackSummary(doc);
 
@@ -667,28 +678,48 @@ function extractSummary(html) {
 function fallbackSummary(doc) {
   const blocks = Array.from(doc.querySelectorAll('p,.section,.card,table,.subtitle'))
     .map(el => cleanText(el.textContent))
-    .filter(t => t.length > 24 && !/(?ъ옄 李멸퀬??理쒖쥌 ?먮떒|?먮룞 ?앹꽦|?곗씠??異쒖쿂)/.test(t));
+    .filter(t => t.length > 24 && !/(투자 참고용|최종 판단|자동 생성|데이터 출처)/.test(t));
   return blocks[0] || '';
 }
 
 function scoreSummary(text) {
   let score = Math.min(text.length, 280);
-  if (/Claude|?대줈??醫낇빀|?섍껄|珥앺룊/.test(text)) score += 500;
-  if (/?붿빟|?꾨왂/.test(text)) score += 120;
+  if (/Claude|클로드|종합|의견|총평/.test(text)) score += 500;
+  if (/요약|전략/.test(text)) score += 120;
   return score;
 }
 
 function cleanText(text) {
-  return (text || '').replace(/\s+/g, ' ').trim();
+  return scrubPrivate(text || '').replace(/\s+/g, ' ').trim();
 }
 
 function trimSummary(text) {
   const cleaned = cleanText(text);
-  return cleaned.length > 220 ? `${cleaned.slice(0, 220)}?? : cleaned;
+  return cleaned.length > 220 ? `${cleaned.slice(0, 220)}…` : cleaned;
 }
 
-/* ?? ?곗씠??濡쒕뱶 ??????????????????????????????????????? */
-// ?뺤쟻 ?대갚: GitHub API媛 留됲옄 ?뚮쭔 ?ъ슜. ?됱냼?먮뒗 briefings ?대뜑??HTML???먮룞 ?몃뜳?깊븳??
+function scrubPrivate(text) {
+  return String(text || '')
+    .replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, '[email hidden]')
+    .replace(/\b(?:\d{1,3}\.){3}\d{1,3}\b/g, '[ip hidden]')
+    .replace(/AzureAD\\[^\s<>"']+/gi, '[windows user hidden]');
+}
+
+function hydrateVisitorCount() {
+  const el = document.getElementById('mc-visits');
+  if (!el) return;
+  fetch('https://api.countapi.xyz/hit/ethan-dash/briefings')
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(data => {
+      el.textContent = Number(data.value || 0).toLocaleString('ko-KR');
+    })
+    .catch(() => {
+      el.textContent = '—';
+    });
+}
+
+/* ── 데이터 로드 ─────────────────────────────────────── */
+// 정적 폴백: GitHub API가 막힐 때만 사용. 평소에는 briefings 폴더의 HTML을 자동 인덱싱한다.
 const STATIC = [
   'fx_alert_20260521_06.html',
   'morning_briefing_20260521.html',
@@ -697,7 +728,7 @@ const STATIC = [
   'premarket_20260521.html',
   'stock_recommendation_20260522_22.html',
   'stock_strategy_20260522_22.html',
-  '??곷툕由ы븨_260522_6.17PM.html',
+  '저녁브리핑_260522_6.17PM.html',
   'pltr_tool.html',
   'pltr_tool_v2.html',
 ];
@@ -710,15 +741,17 @@ function load(names) {
   render();
 }
 
+hydrateVisitorCount();
+
 fetch('https://api.github.com/repos/hanethan73/ethan_dash/contents/briefings')
   .then(r => r.ok ? r.json() : Promise.reject(r.status))
   .then(data => {
     load(data.map(f => f.name));
-    document.getElementById('source-badge').textContent = 'GitHub ?ㅼ떆媛?;
+    document.getElementById('source-badge').textContent = 'GitHub 실시간';
   })
   .catch(() => {
     load(STATIC);
-    document.getElementById('source-badge').textContent = '?뺤쟻 紐⑸줉';
+    document.getElementById('source-badge').textContent = '정적 목록';
   });
 </script>
 </body>
