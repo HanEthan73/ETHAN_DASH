@@ -1,5 +1,26 @@
 [
     {
+        "name":  "CODEX_국제정세브리핑_260524_8.45AM.html",
+        "updatedIso":  "2026-05-24T08:35:08.7875415+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "08:35",
+        "updatedEpoch":  1779579308
+    },
+    {
+        "name":  "알림_CODEX_인사이트KB업데이트_260524_7.35AM.html",
+        "updatedIso":  "2026-05-24T07:39:40.0985637+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "07:39",
+        "updatedEpoch":  1779575980
+    },
+    {
+        "name":  "알림_CODEX_자동매수모니터_260524_12.02AM.html",
+        "updatedIso":  "2026-05-24T00:04:51.0955873+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "00:04",
+        "updatedEpoch":  1779548691
+    },
+    {
         "name":  "CODEX_국내이색단타8선_260523_11.08PM.html",
         "updatedIso":  "2026-05-23T23:07:15.3052163+09:00",
         "updatedDate":  "2026-05-23",
@@ -7,15 +28,15 @@
         "updatedEpoch":  1779545235
     },
     {
-        "name":  "CODEX_국내주3종비교전략_260523_8.40PM.html",
-        "updatedIso":  "2026-05-23T23:05:39.6012513+09:00",
+        "name":  "CODEX_국내저점단타8선_260523_10.34PM.html",
+        "updatedIso":  "2026-05-23T23:05:39.6102510+09:00",
         "updatedDate":  "2026-05-23",
         "updatedTime":  "23:05",
         "updatedEpoch":  1779545139
     },
     {
-        "name":  "CODEX_국내저점단타8선_260523_10.34PM.html",
-        "updatedIso":  "2026-05-23T23:05:39.6102510+09:00",
+        "name":  "CODEX_국내주3종비교전략_260523_8.40PM.html",
+        "updatedIso":  "2026-05-23T23:05:39.6012513+09:00",
         "updatedDate":  "2026-05-23",
         "updatedTime":  "23:05",
         "updatedEpoch":  1779545139
@@ -119,6 +140,13 @@
         "updatedEpoch":  1779489656
     },
     {
+        "name":  "fx_alert_20260521_06.html",
+        "updatedIso":  "2026-05-23T04:11:11.0000000+09:00",
+        "updatedDate":  "2026-05-23",
+        "updatedTime":  "04:11",
+        "updatedEpoch":  1779477071
+    },
+    {
         "name":  "morning_briefing_20260521.html",
         "updatedIso":  "2026-05-23T04:11:11.0000000+09:00",
         "updatedDate":  "2026-05-23",
@@ -127,13 +155,6 @@
     },
     {
         "name":  "premarket_20260521.html",
-        "updatedIso":  "2026-05-23T04:11:11.0000000+09:00",
-        "updatedDate":  "2026-05-23",
-        "updatedTime":  "04:11",
-        "updatedEpoch":  1779477071
-    },
-    {
-        "name":  "fx_alert_20260521_06.html",
         "updatedIso":  "2026-05-23T04:11:11.0000000+09:00",
         "updatedDate":  "2026-05-23",
         "updatedTime":  "04:11",
