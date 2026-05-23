@@ -366,6 +366,22 @@ function parseFile(name) {
            isAlert };
 }
 
+function applyManifestMeta(file, meta) {
+  if (!meta) return file;
+  const dateKey = meta.updatedDate || file.dateKey;
+  const [y, m, d] = dateKey.split('-');
+  const dow = WEEKDAYS[localDateFromKey(dateKey).getDay()];
+  return {
+    ...file,
+    dateKey,
+    dateLabel: `${y}년 ${+m}월 ${+d}일 ${dow}요일`,
+    timeStr: meta.updatedTime || file.timeStr,
+    timeNum: meta.updatedTime ? parseInt(meta.updatedTime.replace(':','')) : file.timeNum,
+    updatedIso: meta.updatedIso,
+    updatedEpoch: meta.updatedEpoch
+  };
+}
+
 function parseToolFile(name, raw) {
   const toolTypes = TYPES.filter(t => t.key.startsWith('pltr_tool'));
   const matched = toolTypes.find(t => raw.includes(t.key));
@@ -790,11 +806,12 @@ const STATIC = [
   'pltr_tool_v2.html',
 ];
 
-function load(names) {
+function load(names, manifest = {}) {
   files = names
     .filter(n => n !== 'index.html' && n.endsWith('.html'))
     .map(parseFile)
-    .filter(Boolean);
+    .filter(Boolean)
+    .map(f => applyManifestMeta(f, manifest[f.name]));
   render();
 }
 
@@ -803,8 +820,14 @@ hydrateVisitorCount();
 fetch('https://api.github.com/repos/hanethan73/ethan_dash/contents/briefings')
   .then(r => r.ok ? r.json() : Promise.reject(r.status))
   .then(data => {
-    load(data.map(f => f.name));
-    document.getElementById('source-badge').textContent = 'GitHub 실시간';
+    return fetch('manifest.json?v=' + Date.now())
+      .then(r => r.ok ? r.json() : [])
+      .catch(() => [])
+      .then(manifestRows => {
+        const manifest = Object.fromEntries((manifestRows || []).map(row => [row.name, row]));
+        load(data.map(f => f.name), manifest);
+        document.getElementById('source-badge').textContent = manifestRows.length ? '최종 수정일 기준' : 'GitHub 실시간';
+      });
   })
   .catch(() => {
     load(STATIC);
