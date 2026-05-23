@@ -30,6 +30,10 @@ body{
 .mc{display:flex;align-items:center;gap:4px}
 .mc-n{font-weight:800;color:var(--gold);font-size:13px}
 .source-badge{background:var(--s2);border:1px solid var(--bd);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--t3);font-weight:700;letter-spacing:.3px}
+.meta-actions{display:flex;align-items:center;gap:6px}
+.refresh-btn{background:var(--s2);border:1px solid var(--bd);border-radius:20px;color:var(--t2);font-size:9px;font-weight:800;letter-spacing:.2px;padding:3px 9px;cursor:pointer}
+.refresh-btn:hover{border-color:rgba(245,197,24,.45);color:var(--gold)}
+.refresh-btn:disabled{opacity:.55;cursor:wait}
 
 /* ─── MAIN TABS ─── */
 .main-tabs{display:flex;gap:6px;padding:10px 16px;border-bottom:1px solid var(--bd);background:var(--bg);position:sticky;top:78px;z-index:90}
@@ -184,7 +188,10 @@ body{
       <div class="mc"><span class="mc-n" id="mc-dates">—</span><span>일</span></div>
       <div class="mc"><span class="mc-n" id="mc-visits">—</span><span>방문</span></div>
     </div>
-    <span class="source-badge" id="source-badge">로딩 중</span>
+    <div class="meta-actions">
+      <button class="refresh-btn" id="refresh-btn" type="button" onclick="refreshArchive()">새로고침</button>
+      <span class="source-badge" id="source-badge">로딩 중</span>
+    </div>
   </div>
 </div>
 
@@ -785,9 +792,20 @@ function hydrateVisitorCount() {
     .then(r => r.ok ? r.json() : Promise.reject(r.status))
     .then(data => {
       el.textContent = Number(data.value || 0).toLocaleString('ko-KR');
+      el.title = '외부 방문자 API 기준';
     })
     .catch(() => {
-      el.textContent = '—';
+      const key = 'ethan-briefings-local-visits';
+      const todayKey = 'ethan-briefings-local-visit-date';
+      const today = new Date().toISOString().slice(0, 10);
+      let value = Number(localStorage.getItem(key) || '0');
+      if (localStorage.getItem(todayKey) !== today) {
+        value += 1;
+        localStorage.setItem(key, String(value));
+        localStorage.setItem(todayKey, today);
+      }
+      el.textContent = value.toLocaleString('ko-KR');
+      el.title = '외부 방문자 API가 응답하지 않아 이 브라우저 기준 방문수로 대체 표시 중';
     });
 }
 
@@ -817,22 +835,46 @@ function load(names, manifest = {}) {
 
 hydrateVisitorCount();
 
-fetch('https://api.github.com/repos/hanethan73/ethan_dash/contents/briefings')
-  .then(r => r.ok ? r.json() : Promise.reject(r.status))
-  .then(data => {
-    return fetch('manifest.json?v=' + Date.now())
-      .then(r => r.ok ? r.json() : [])
-      .catch(() => [])
-      .then(manifestRows => {
-        const manifest = Object.fromEntries((manifestRows || []).map(row => [row.name, row]));
-        load(data.map(f => f.name), manifest);
-        document.getElementById('source-badge').textContent = manifestRows.length ? '최종 수정일 기준' : 'GitHub 실시간';
-      });
-  })
-  .catch(() => {
-    load(STATIC);
-    document.getElementById('source-badge').textContent = '정적 목록';
-  });
+function setSourceBadge(text) {
+  const badge = document.getElementById('source-badge');
+  if (badge) badge.textContent = text;
+}
+
+function setRefreshBusy(isBusy) {
+  const btn = document.getElementById('refresh-btn');
+  if (!btn) return;
+  btn.disabled = isBusy;
+  btn.textContent = isBusy ? '갱신 중' : '새로고침';
+}
+
+function loadArchiveData() {
+  setRefreshBusy(true);
+  return fetch('https://api.github.com/repos/hanethan73/ethan_dash/contents/briefings?ts=' + Date.now())
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(data => {
+      return fetch('manifest.json?v=' + Date.now())
+        .then(r => r.ok ? r.json() : [])
+        .catch(() => [])
+        .then(manifestRows => {
+          const manifest = Object.fromEntries((manifestRows || []).map(row => [row.name, row]));
+          load(data.map(f => f.name), manifest);
+          setSourceBadge(manifestRows.length ? '최종 수정일 기준' : 'GitHub 실시간');
+        });
+    })
+    .catch(() => {
+      load(STATIC);
+      setSourceBadge('정적 목록');
+    })
+    .finally(() => setRefreshBusy(false));
+}
+
+function refreshArchive() {
+  setSourceBadge('새로고침 중');
+  hydrateVisitorCount();
+  loadArchiveData();
+}
+
+loadArchiveData();
 </script>
 </body>
 </html>
