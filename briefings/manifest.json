@@ -1,5 +1,12 @@
 [
     {
+        "name":  "알림_CODEX_국내주3종비교전략_260523_8.40PM.html",
+        "updatedIso":  "2026-05-23T20:41:58.0208182+09:00",
+        "updatedDate":  "2026-05-23",
+        "updatedTime":  "20:41",
+        "updatedEpoch":  1779536518
+    },
+    {
         "name":  "알림_CODEX_폭락시나리오2차심층분석_260523_8.06PM.html",
         "updatedIso":  "2026-05-23T20:12:32.2126613+09:00",
         "updatedDate":  "2026-05-23",
@@ -91,14 +98,14 @@
         "updatedEpoch":  1779489656
     },
     {
-        "name":  "fx_alert_20260521_06.html",
+        "name":  "morning_briefing_20260521.html",
         "updatedIso":  "2026-05-23T04:11:11.0000000+09:00",
         "updatedDate":  "2026-05-23",
         "updatedTime":  "04:11",
         "updatedEpoch":  1779477071
     },
     {
-        "name":  "noon_briefing_20260521.html",
+        "name":  "fx_alert_20260521_06.html",
         "updatedIso":  "2026-05-23T04:11:11.0000000+09:00",
         "updatedDate":  "2026-05-23",
         "updatedTime":  "04:11",
@@ -112,7 +119,7 @@
         "updatedEpoch":  1779477071
     },
     {
-        "name":  "morning_briefing_20260521.html",
+        "name":  "noon_briefing_20260521.html",
         "updatedIso":  "2026-05-23T04:11:11.0000000+09:00",
         "updatedDate":  "2026-05-23",
         "updatedTime":  "04:11",
