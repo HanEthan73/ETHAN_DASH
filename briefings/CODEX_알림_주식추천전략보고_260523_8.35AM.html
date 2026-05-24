@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX 알림 주식추천전략보고 260523 8.35AM</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0f1116;
+    color: #e9edf5;
+    font-family: "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif;
+    line-height: 1.68;
+    padding: 22px 14px 44px;
+  }
+  .wrap { max-width: 1240px; margin: 0 auto; }
+  header {
+    border-bottom: 1px solid #2e3340;
+    padding-bottom: 16px;
+    margin-bottom: 18px;
+  }
+  h1 {
+    color: #ffd24a;
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .sub {
+    color: #aeb7c8;
+    font-size: 14px;
+  }
+  .stamp {
+    display: inline-block;
+    margin-top: 12px;
+    border: 1px solid #4c4530;
+    background: #241f12;
+    color: #ffd24a;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  section {
+    margin-top: 16px;
+    background: #171b24;
+    border: 1px solid #2d3442;
+    border-radius: 10px;
+    padding: 16px;
+  }
+  h2 {
+    color: #ffd24a;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    color: #8fc5ff;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  th {
+    background: #252c39;
+    color: #ffd24a;
+    text-align: left;
+    padding: 9px 10px;
+    font-size: 13px;
+    border-bottom: 1px solid #394356;
+  }
+  td {
+    padding: 9px 10px;
+    border-bottom: 1px solid #293140;
+    font-size: 13px;
+    color: #e6ebf4;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #141922; }
+  tr:last-child td { border-bottom: 0; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .buy { color: #7ef0a8; font-weight: 800; }
+  .wait { color: #ffe27a; font-weight: 800; }
+  .risk { color: #ff9d9d; font-weight: 800; }
+  .hold { color: #8fc5ff; font-weight: 800; }
+  .note {
+    margin-top: 12px;
+    background: #201b11;
+    border-left: 4px solid #ffd24a;
+    border-radius: 6px;
+    padding: 12px 14px;
+    color: #ebdfb1;
+    font-size: 13px;
+  }
+  .note.warn {
+    background: #25171a;
+    border-left-color: #ff6b6b;
+    color: #ffc3c3;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .stock-block {
+    border: 1px solid #2d3442;
+    border-radius: 10px;
+    padding: 14px;
+    background: #131821;
+  }
+  .meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 6px 0 10px;
+    font-size: 12px;
+    color: #aeb7c8;
+  }
+  .pill {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: 800;
+    border: 1px solid #384254;
+    background: #1b2230;
+  }
+  a { color: #8fc5ff; text-decoration: none; }
+  footer {
+    margin-top: 20px;
+    text-align: right;
+    color: #7d8799;
+    font-size: 12px;
+  }
+  @media (max-width: 980px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 860px) {
+    body { padding: 16px 8px 36px; }
+    table { display: block; overflow-x: auto; }
+    th, td { white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>CODEX 알림 주식 추천 전략 보고</h1>
+    <div class="sub">대표님 보고용 · 2026년 5월 23일 08:30 KST 기준 · 단순 추천이 아니라 진입 가격, 시장 모드, 무효화 조건 중심으로 정리</div>
+    <div class="stamp">최종 확인 시각: 2026-05-23 08:30 KST / 미국 최신 세션 기준: 2026-05-22 정규장 및 장마감 후 접근 가능 데이터</div>
+  </header>
+
+  <section>
+    <h2>1. 시장 설명 및 오늘 전략 결론</h2>
+    <table>
+      <thead>
+        <tr><th>항목</th><th>최신 수치</th><th>판단</th><th>대표님 실행</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>시장 모드</td><td>정상-경계 혼합</td><td class="wait">상승 추세는 유지되지만 금리와 환율 경보가 동시에 켜져 있음</td><td>전액 추격매수 금지, 1차 진입은 30~40%만 사용</td></tr>
+        <tr><td>QQQ</td><td class="num">$714.51</td><td class="buy">200일선 이탈 경보는 아직 없음</td><td>대형 AI 인프라주는 감시 하 매수 가능</td></tr>
+        <tr><td>VIX</td><td class="num">16.70</td><td class="buy">공포 장세 아님</td><td>패닉 매수 구간은 아니므로 눌림목 우선</td></tr>
+        <tr><td>미국 10년물</td><td class="num">4.60%</td><td class="risk">대표님 경계선 4.5% 상회</td><td>고밸류 종목 비중 과다 금지</td></tr>
+        <tr><td>USD/KRW</td><td class="num">1,520.06</td><td class="risk">대표님 경계선 1,480 상회</td><td>환율 부담이 큰 만큼 2차 진입 자금 남겨둘 것</td></tr>
+      </tbody>
+    </table>
+    <div class="note">오늘 핵심은 종목 선정이 아니라 가격 관리입니다. AI 대형주 구조는 살아 있으나, 금리 4.60%와 원달러 1,520원대 조합은 “좋은 종목도 비싸게 사면 오래 묶일 수 있다”는 신호입니다.</div>
+  </section>
+
+  <section>
+    <h2>2. 대표님 4대 전략 현재 적용</h2>
+    <table>
+      <thead>
+        <tr><th>전략</th><th>오늘 해석</th><th>현재 적용 결론</th><th>실행 규칙</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>컴포트존 진입</td><td>현재가가 1차 진입밴드 안이거나 상단 대비 3% 이내일 때만 시작</td><td class="buy">AVGO, ORCL, TSM은 진입권 근처</td><td>컴포트존 안에서는 1차만, 절대 풀사이즈 금지</td></tr>
+        <tr><td>눌림목 분할매수</td><td>1차 35~40%, 2차 35%, 3차 25~30%</td><td class="buy">오늘 가장 유효한 기본 전략</td><td>현재가 위로는 비중 늘리지 말고 아래 가격표만 사용</td></tr>
+        <tr><td>시장 모드 전환</td><td>VIX는 안정적이지만 금리와 환율은 위험모드 경보</td><td class="wait">정상 모드 유지, 단 공격 강도는 한 단계 낮춤</td><td>경보 1개 추가 점등 시 신규매수 즉시 축소</td></tr>
+        <tr><td>시장 악화 7대 경보</td><td>7개 중 2개 점등, 3개 보류, 2개 미점등</td><td class="wait">방향은 상승이지만 속도 조절 필요</td><td>점등 4개 이상이면 신규매수 중단, 현금 40% 이상 확보</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>3. 시장 악화 7대 경보 점검</h2>
+    <table>
+      <thead>
+        <tr><th>경보 항목</th><th>최신 체크</th><th>상태</th><th>메모</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>VIX 25 이상</td><td class="num">16.70</td><td class="buy">미점등</td><td>공포 장세는 아님</td></tr>
+        <tr><td>QQQ 200일선 이탈</td><td class="num">$714.51</td><td class="buy">미점등</td><td>기술주 추세 훼손 확인 안 됨</td></tr>
+        <tr><td>미국 10년물 4.5% 상회</td><td class="num">4.60%</td><td class="risk">점등</td><td>고PER 종목 할인율 압박</td></tr>
+        <tr><td>USD/KRW 1,480 상회</td><td class="num">1,520.06</td><td class="risk">점등</td><td>한국 투자자 체감 매수단가 악화</td></tr>
+        <tr><td>지정학 급변</td><td>중동 리스크 완화 시도 중</td><td class="wait">보류</td><td>유가 충격 재확산 시 즉시 재평가 필요</td></tr>
+        <tr><td>M2/유동성 둔화</td><td>실시간 일간 업데이트 확인 제한</td><td class="wait">보류</td><td>유동성 모멘텀보다 금리 영향이 더 큼</td></tr>
+        <tr><td>연준 매파 재강화</td><td>추가 발언 대기</td><td class="wait">보류</td><td>채권금리 재상승이 사실상 선반영 중</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">결론: 경보 2개가 이미 켜져 있으므로 “좋은 종목이면 그냥 산다”가 아니라 “좋은 종목이라도 1차만 산다”로 행동 단위를 낮춰야 합니다.</div>
+  </section>
+
+  <section>
+    <h2>4. 오늘 최종 추천 5종목</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>순위</th>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>확인 시각</th>
+          <th>지금 판단</th>
+          <th>핵심 이유</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="hold">AVGO</td><td class="num">$414.63</td><td>2026-05-23 08:30 KST 확인</td><td class="buy">1차 분할매수 가능</td><td>AI ASIC + 네트워킹 이중 수혜, 현재가가 1차 밴드와 근접</td></tr>
+        <tr><td class="num">2</td><td class="hold">ORCL</td><td class="num">$191.60</td><td>2026-05-23 08:30 KST 확인</td><td class="buy">1차 분할매수 가능</td><td>OCI와 AI 인프라 백로그가 실적에 반영되는 구간</td></tr>
+        <tr><td class="num">3</td><td class="hold">TSM</td><td class="num">$404.19</td><td>2026-05-23 08:30 KST 확인</td><td class="buy">소량 선진입 가능</td><td>AI 공급망 핵심인데 상대적으로 밸류 부담이 덜함</td></tr>
+        <tr><td class="num">4</td><td class="hold">NVDA</td><td class="num">$215.24</td><td>2026-05-23 08:30 KST 확인</td><td class="wait">208~212 재확인 대기</td><td>실적은 최고지만 바로 추격하면 리스크-리워드가 둔함</td></tr>
+        <tr><td class="num">5</td><td class="hold">MU</td><td class="num">$771.33</td><td>2026-05-23 08:30 KST 확인</td><td class="wait">760 이하 눌림 확인 후</td><td>HBM 구조는 강하지만 메모리 특유 변동성이 큼</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>5. 종목별 세부 판단</h2>
+    <div class="grid">
+      <div class="stock-block">
+        <h3>AVGO · Broadcom</h3>
+        <div class="meta">
+          <span class="pill">현재가 $414.63</span>
+          <span class="pill">확인 2026-05-23 08:30 KST</span>
+          <span class="pill">지금 판단: 1차 진입 가능</span>
+        </div>
+        <table>
+          <tbody>
+            <tr><th>컴포트존 진입</th><td class="buy">만족</td><td>현재가가 1차 진입가 $410 근처다. 상단 괴리가 크지 않아 추격이 아니라 시작 진입으로 해석 가능.</td></tr>
+            <tr><th>눌림목 분할매수</th><td class="buy">만족</td><td>1차 $410, 2차 $398, 3차 $382로 가격대가 명확하다. 실적과 AI 매출 증가가 뒷받침된다.</td></tr>
+            <tr><th>시장 모드 전환</th><td class="buy">만족</td><td>고금리 구간에서도 현금흐름이 강한 대형 인프라주라 현재 시장 모드와 가장 잘 맞는다.</td></tr>
+            <tr><th>시장 악화 7대 경보</th><td class="wait">보류</td><td>금리와 환율 경보가 켜져 있어 1차만 허용. 경보가 더 늘면 추가 매수는 늦춰야 한다.</td></tr>
+          </tbody>
+        </table>
+        <table style="margin-top:10px;">
+          <thead>
+            <tr><th>항목</th><th>내용</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1차·2차·3차 진입가</td><td>$410 / $398 / $382</td></tr>
+            <tr><td>투입 비중</td><td>35% / 35% / 30%</td></tr>
+            <tr><td>목표주가</td><td>$470</td></tr>
+            <tr><td>목표 도달 조건</td><td>AI 반도체 매출이 분기당 $10B 이상 유지되고 6~8주 내 네트워킹 수요 둔화가 확인되지 않을 것</td></tr>
+            <tr><td>지금 매수인지 대기인지</td><td class="buy">지금 1차 매수</td></tr>
+            <tr><td>손절·무효화 조건</td><td>$388 종가 이탈 또는 AI 매출 가이던스 둔화</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="stock-block">
+        <h3>ORCL · Oracle</h3>
+        <div class="meta">
+          <span class="pill">현재가 $191.60</span>
+          <span class="pill">확인 2026-05-23 08:30 KST</span>
+          <span class="pill">지금 판단: 1차 진입 가능</span>
+        </div>
+        <table>
+          <tbody>
+            <tr><th>컴포트존 진입</th><td class="buy">만족</td><td>현재가가 1차 진입 밴드 $188~192 안이다. 가격이 이미 편안한 시작 구간에 들어와 있다.</td></tr>
+            <tr><th>눌림목 분할매수</th><td class="buy">만족</td><td>OCI 수요와 AI 백로그가 실적에 잡히고 있어 1차 $192, 2차 $186, 3차 $178 분할이 논리적이다.</td></tr>
+            <tr><th>시장 모드 전환</th><td class="buy">만족</td><td>순수 꿈주가 아니라 매출과 계약잔고가 동반되는 AI 인프라주라 현재 시장 환경에서 방어력이 있다.</td></tr>
+            <tr><th>시장 악화 7대 경보</th><td class="wait">보류</td><td>금리 상승은 소프트웨어 멀티플에 부담이므로 비중은 AVGO보다 한 단계 낮춰야 한다.</td></tr>
+          </tbody>
+        </table>
+        <table style="margin-top:10px;">
+          <thead>
+            <tr><th>항목</th><th>내용</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1차·2차·3차 진입가</td><td>$192 / $186 / $178</td></tr>
+            <tr><td>투입 비중</td><td>40% / 35% / 25%</td></tr>
+            <tr><td>목표주가</td><td>$225</td></tr>
+            <tr><td>목표 도달 조건</td><td>OCI 성장과 AI 인프라 백로그가 다음 분기까지 이어지고, 1~2개 분기 안에 신규 리레이팅이 지속될 것</td></tr>
+            <tr><td>지금 매수인지 대기인지</td><td class="buy">지금 1차 매수</td></tr>
+            <tr><td>손절·무효화 조건</td><td>$179 종가 이탈 또는 클라우드 성장률 둔화</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="stock-block">
+        <h3>TSM · Taiwan Semiconductor</h3>
+        <div class="meta">
+          <span class="pill">현재가 $404.19</span>
+          <span class="pill">확인 2026-05-23 08:30 KST</span>
+          <span class="pill">지금 판단: 소량 선진입 가능</span>
+        </div>
+        <table>
+          <tbody>
+            <tr><th>컴포트존 진입</th><td class="buy">만족</td><td>현재가가 1차 진입가 $404와 사실상 일치한다. 추격보다는 눌림 확인형 진입으로 볼 수 있다.</td></tr>
+            <tr><th>눌림목 분할매수</th><td class="buy">만족</td><td>1차 $404, 2차 $394, 3차 $382. AI 노드 공급 부족이 계속되는 한 조정 시마다 매수 근거가 남는다.</td></tr>
+            <tr><th>시장 모드 전환</th><td class="buy">만족</td><td>완제품 밸류보다 제조 캐파의 희소성으로 평가받는 구조라 금리 부담을 상대적으로 덜 받는다.</td></tr>
+            <tr><th>시장 악화 7대 경보</th><td class="buy">만족</td><td>현재 경보 2개 수준에서는 오히려 가장 방어적인 AI 핵심주다. 다만 지정학 리스크는 상시 감시 대상이다.</td></tr>
+          </tbody>
+        </table>
+        <table style="margin-top:10px;">
+          <thead>
+            <tr><th>항목</th><th>내용</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1차·2차·3차 진입가</td><td>$404 / $394 / $382</td></tr>
+            <tr><td>투입 비중</td><td>35% / 35% / 30%</td></tr>
+            <tr><td>목표주가</td><td>$445</td></tr>
+            <tr><td>목표 도달 조건</td><td>월간 매출 증가율이 두 자릿수를 유지하고 3nm/2nm 수요가 하반기까지 계속 강할 것</td></tr>
+            <tr><td>지금 매수인지 대기인지</td><td class="buy">지금 1차 소량</td></tr>
+            <tr><td>손절·무효화 조건</td><td>$382 종가 이탈 또는 월간 매출 성장률 급감</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="stock-block">
+        <h3>NVDA · NVIDIA</h3>
+        <div class="meta">
+          <span class="pill">현재가 $215.24</span>
+          <span class="pill">확인 2026-05-23 08:30 KST</span>
+          <span class="pill">지금 판단: 대기 우선</span>
+        </div>
+        <table>
+          <tbody>
+            <tr><th>컴포트존 진입</th><td class="wait">보류</td><td>현재가가 여전히 실적 직후 프리미엄을 반영하고 있다. $208~212 재확인이 더 편한 자리다.</td></tr>
+            <tr><th>눌림목 분할매수</th><td class="buy">만족</td><td>AI 지배력은 독보적이므로 눌림목 매수 논리는 가장 강하다. 다만 가격이 너무 좋지 않을 뿐이다.</td></tr>
+            <tr><th>시장 모드 전환</th><td class="buy">만족</td><td>현 시장이 성장주를 버리는 국면은 아니므로 핵심 보유 후보는 유지된다.</td></tr>
+            <tr><th>시장 악화 7대 경보</th><td class="wait">보류</td><td>금리 4.60% 구간에서는 멀티플 재확장이 둔해질 수 있어 급한 매수보다 가격 확인이 우선이다.</td></tr>
+          </tbody>
+        </table>
+        <table style="margin-top:10px;">
+          <thead>
+            <tr><th>항목</th><th>내용</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1차·2차·3차 진입가</td><td>$212 / $205 / $196</td></tr>
+            <tr><td>투입 비중</td><td>30% / 35% / 35%</td></tr>
+            <tr><td>목표주가</td><td>$245</td></tr>
+            <tr><td>목표 도달 조건</td><td>Q2 FY2027 가이던스 소화 후 데이터센터 수요 재확인, 1~2개 분기 내 신고가 재도전</td></tr>
+            <tr><td>지금 매수인지 대기인지</td><td class="wait">대기</td></tr>
+            <tr><td>손절·무효화 조건</td><td>$198 종가 이탈 또는 데이터센터 성장 둔화 확인</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="stock-block">
+        <h3>MU · Micron</h3>
+        <div class="meta">
+          <span class="pill">현재가 $771.33</span>
+          <span class="pill">확인 2026-05-23 08:30 KST</span>
+          <span class="pill">지금 판단: 눌림 확인 후</span>
+        </div>
+        <table>
+          <tbody>
+            <tr><th>컴포트존 진입</th><td class="wait">보류</td><td>$760 1차 라인 위에 있고 변동성이 크다. NVDA보다 더 예민하게 가격을 봐야 한다.</td></tr>
+            <tr><th>눌림목 분할매수</th><td class="buy">만족</td><td>HBM 구조는 강력하므로 1차 $760, 2차 $730, 3차 $690 분할 접근이 유효하다.</td></tr>
+            <tr><th>시장 모드 전환</th><td class="wait">보류</td><td>시장이 risk-on일 때 가장 강하지만, 금리/환율 경보가 커지면 메모리주는 진폭이 더 커질 수 있다.</td></tr>
+            <tr><th>시장 악화 7대 경보</th><td class="wait">보류</td><td>경보가 2개 켜진 지금은 공격 사이즈보다 눌림 확인이 우선이다.</td></tr>
+          </tbody>
+        </table>
+        <table style="margin-top:10px;">
+          <thead>
+            <tr><th>항목</th><th>내용</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1차·2차·3차 진입가</td><td>$760 / $730 / $690</td></tr>
+            <tr><td>투입 비중</td><td>30% / 35% / 35%</td></tr>
+            <tr><td>목표주가</td><td>$920</td></tr>
+            <tr><td>목표 도달 조건</td><td>HBM 공급 타이트와 Q3 가이던스 상향이 유지되고, 1~2개 분기 내 메모리 리레이팅이 지속될 것</td></tr>
+            <tr><td>지금 매수인지 대기인지</td><td class="wait">대기</td></tr>
+            <tr><td>손절·무효화 조건</td><td>$690 종가 이탈 또는 HBM/DRAM 가격 피크아웃 신호</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>6. 최종 요약</h2>
+    <table>
+      <thead>
+        <tr><th>구분</th><th>대표님 결론</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>지금 바로 살 종목</td><td>AVGO, ORCL, TSM만 1차 비중으로 시작 가능</td></tr>
+        <tr><td>더 좋은 가격 기다릴 종목</td><td>NVDA는 $208~212, MU는 $760 이하 재확인 후</td></tr>
+        <tr><td>현금 운영</td><td>오늘 신규 투입 후에도 최소 30%는 남겨두는 편이 유리</td></tr>
+        <tr><td>대표님 행동 한 줄</td><td>좋은 종목은 맞지만, 오늘 수익률을 만드는 핵심은 “종목 선택”이 아니라 “1차 가격 절제”다</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>7. CODEX만의 최종 인사이트</h2>
+    <div class="note">
+      오늘 시장의 진짜 차별화 포인트는 “AI 여부”가 아니라 “AI 매출이 이미 숫자로 찍히는가”입니다. 그래서 같은 AI 테마라도 지금은 꿈을 파는 종목보다 계약잔고와 공급병목을 가진 인프라주가 우위입니다. 즉, 오늘의 알파는 더 화려한 스토리를 찾는 것이 아니라, 이미 숫자로 검증된 AI 인프라를 금리 경보 속에서 얼마나 싸게 사느냐에 있습니다.
+    </div>
+  </section>
+
+  <section>
+    <h2>8. 데이터 출처</h2>
+    <table>
+      <thead>
+        <tr><th>구분</th><th>출처</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>NVDA 가격</td><td><a href="https://chartexchange.com/symbol/nasdaq-nvda/">ChartExchange NVDA</a></td></tr>
+        <tr><td>AVGO 가격</td><td><a href="https://tradingeconomics.com/avgo%3Aus">Trading Economics AVGO</a></td></tr>
+        <tr><td>MU 가격</td><td><a href="https://tradingeconomics.com/mu%3Aus">Trading Economics MU</a></td></tr>
+        <tr><td>TSM 가격</td><td><a href="https://tradingeconomics.com/tsm%3Aus">Trading Economics TSM</a></td></tr>
+        <tr><td>ORCL 가격</td><td><a href="https://tradingeconomics.com/orcl%3Aus">Trading Economics ORCL</a></td></tr>
+        <tr><td>QQQ</td><td><a href="https://www.marketbeat.com/stocks/NASDAQ/QQQ/chart/">MarketBeat QQQ chart</a></td></tr>
+        <tr><td>VIX</td><td><a href="https://ca.investing.com/indices/volatility-s-p-500-historical-data">Investing.com VIX historical data</a></td></tr>
+        <tr><td>USD/KRW</td><td><a href="https://tradingeconomics.com/usdkrw%3Acur">Trading Economics USD/KRW</a></td></tr>
+        <tr><td>미국 10년물</td><td><a href="https://tradingeconomics.com/united-states/government-bond-yield">Trading Economics US 10Y</a></td></tr>
+        <tr><td>NVDA 실적</td><td><a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2027/default.aspx">NVIDIA FY2027 Q1</a></td></tr>
+        <tr><td>AVGO 실적</td><td><a href="https://investors.broadcom.com/node/63976/pdf">Broadcom FY2026 Q1</a></td></tr>
+        <tr><td>MU 실적</td><td><a href="https://investors.micron.com/node/50256/pdf">Micron FY2026 Q2</a></td></tr>
+        <tr><td>TSM 월매출</td><td><a href="https://pr.tsmc.com/english/news/3305">TSMC April 2026 Revenue Report</a></td></tr>
+        <tr><td>ORCL 실적</td><td><a href="https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Fiscal-Year-2026-Third-Quarter-Financial-Results/default.aspx">Oracle FY2026 Q3</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>ETHAN DASH · CODEX 08:30 전략 보고 · 2026-05-23 08:35 KST</footer>
+</div>
+</body>
+</html>

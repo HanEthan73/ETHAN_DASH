@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX 폭락시나리오 그래프뷰 3종 분석 260523</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0e1118;--panel:#151b26;--line:#2a3345;--text:#e9edf5;--muted:#9ca7bb;
+  --gold:#f5c518;--red:#ff6b6b;--green:#3ddc84;--blue:#67b7ff;--amber:#ffb84d;
+}
+body{
+  background:linear-gradient(180deg,#0c1017 0%,#121826 100%);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR','Segoe UI',sans-serif;
+  line-height:1.65;
+  max-width:980px;
+  margin:0 auto;
+  padding:22px;
+}
+h1{font-size:28px;color:var(--gold);margin-bottom:6px}
+h2{font-size:19px;color:var(--blue);margin:26px 0 12px}
+h3{font-size:16px;color:var(--gold);margin-bottom:10px}
+p{margin:8px 0}
+.meta,.small{font-size:12px;color:var(--muted)}
+.lead,.panel,.card{
+  background:rgba(21,27,38,.96);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px;
+  margin:14px 0;
+}
+.lead{border-left:4px solid var(--gold)}
+.warn{border-left:4px solid var(--amber)}
+.danger{border-left:4px solid var(--red)}
+.ok{border-left:4px solid var(--green)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.metric{
+  background:#101622;
+  border:1px solid #2f394d;
+  border-radius:12px;
+  padding:14px;
+}
+.metric b{display:block;font-size:23px;color:#fff;margin-top:6px}
+.tag{
+  display:inline-block;
+  padding:3px 8px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+}
+.tag.red{background:#ff6b6b22;color:#ff8b8b}
+.tag.yellow{background:#f5c51822;color:#ffd95f}
+.tag.green{background:#3ddc8422;color:#64e6a3}
+.tag.blue{background:#67b7ff22;color:#8bc8ff}
+table{width:100%;border-collapse:collapse;margin:0;font-size:13px;min-width:760px}
+th{background:#20293a;color:var(--gold);text-align:left;padding:10px;position:sticky;top:0;z-index:1}
+td{border-bottom:1px solid var(--line);padding:10px;vertical-align:top}
+.table-wrap{
+  margin:10px 0;
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:auto;
+  background:#0d131e;
+}
+.table-wrap table{margin:0}
+.table-wrap::-webkit-scrollbar{height:10px}
+.table-wrap::-webkit-scrollbar-thumb{background:#33405a;border-radius:999px}
+.chart{
+  background:#0d131e;
+  border:1px solid #2a3345;
+  border-radius:12px;
+  padding:12px;
+  margin:12px 0;
+}
+svg{width:100%;height:auto;display:block}
+.axis{stroke:#4e5a73;stroke-width:1}
+.line{fill:none;stroke:#67b7ff;stroke-width:3}
+.line2{fill:none;stroke:#ffb84d;stroke-width:3}
+.line3{fill:none;stroke:#3ddc84;stroke-width:3}
+.risk{stroke:#ff6b6b;stroke-width:2;stroke-dasharray:6 5}
+.label{fill:#9ca7bb;font-size:12px}
+.hot{fill:#ff6b6b}
+.gold{fill:#f5c518}
+.blue{fill:#67b7ff}
+.green{fill:#3ddc84}
+ul{padding-left:20px;margin:8px 0}
+a{color:#8bc8ff}
+@media(max-width:760px){body{padding:14px}.grid{grid-template-columns:1fr}table{font-size:12px;min-width:680px}}
+</style>
+</head>
+<body>
+<h1>CODEX 폭락시나리오 그래프뷰 3종 분석</h1>
+<div class="meta">Gmail 명령 처리: [codex] 폭락시나리오 그래프뷰 기반 3개 분석후 깃업로드 | 생성: 2026-05-23 09:35 KST | 가격 확인: 2026-05-23 09:35 KST 기준 최신 검색 스냅샷</div>
+
+<div class="lead">
+  <b>결론 먼저:</b> 아직 시장은 <b>폭락 확정 구간이 아니라 고점권 취약성 누적 구간</b>입니다.
+  QQQ는 여전히 52주 고점 부근이고 VIX도 패닉 수준이 아닙니다. 따라서 이번 3종(NVDA, AVGO, TSM)은
+  “지금 당장 세게 사는 종목”이 아니라 <b>시장 급락 시 더 낮은 가격에 입찰할 후보</b>로 보는 것이 맞습니다.
+</div>
+
+<h2>1. 시장 모드</h2>
+<div class="grid">
+  <div class="metric">QQQ<b>$720.15</b><div class="small">52주 고점 $722.12 대비 99.7%</div></div>
+  <div class="metric">VIX<b>16.70</b><div class="small">패닉 아님. 공포 폭발 전 단계</div></div>
+  <div class="metric">작전 모드<b>분할 입찰</b><div class="small">추격매수 금지, 눌림목만 집행</div></div>
+</div>
+
+<div class="chart">
+<svg viewBox="0 0 920 280" role="img" aria-label="폭락 시나리오 그래프뷰">
+  <line class="axis" x1="60" y1="230" x2="860" y2="230"/>
+  <line class="axis" x1="60" y1="35" x2="60" y2="230"/>
+  <polyline class="line" points="60,198 150,168 240,142 330,112 420,84 510,66 600,54 690,47 780,42 860,45"/>
+  <line class="risk" x1="60" y1="60" x2="860" y2="60"/>
+  <circle cx="780" cy="42" r="6" class="gold"/>
+  <circle cx="860" cy="45" r="6" class="hot"/>
+  <text class="label" x="70" y="24">가격 고도</text>
+  <text class="label" x="640" y="55">52주 고점권 유지</text>
+  <text class="hot" x="520" y="92">폭락 확정이 아니라 매수 단가를 낮춰야 하는 구간</text>
+  <text class="label" x="72" y="252">작년 저점권</text>
+  <text class="label" x="792" y="252">2026-05-23</text>
+</svg>
+</div>
+
+<div class="table-wrap"><table>
+  <tr><th>체크 항목</th><th>현재 해석</th><th>실행 의미</th></tr>
+  <tr><td>QQQ 고점 근접</td><td><span class="tag red">경고</span> 52주 고점의 99.7%</td><td>좋은 종목도 비싸게 살 가능성이 큼</td></tr>
+  <tr><td>VIX</td><td><span class="tag blue">중립</span> 16.70</td><td>공포 패닉이 아니므로 바닥매수 신호도 아직 아님</td></tr>
+  <tr><td>결론</td><td><span class="tag yellow">보수적</span> 고점권 취약성 누적</td><td>1차만 허용, 2차·3차는 급락 시에만</td></tr>
+</table></div>
+
+<h2>2. 종목별 그래프뷰 판단</h2>
+
+<div class="card warn">
+  <h3>NVDA</h3>
+  <p>그래프뷰상 가장 강한 기업이지만, 주가는 여전히 실적 프리미엄을 많이 반영하고 있습니다. 폭락 시나리오에서는
+  “좋은 회사라서 바로 사는 것”보다 <b>$210 아래로 들어오는지</b>가 핵심입니다.</p>
+  <div class="chart">
+  <svg viewBox="0 0 920 170" role="img" aria-label="NVDA 그래프뷰">
+    <line class="axis" x1="40" y1="130" x2="880" y2="130"/>
+    <polyline class="line" points="40,118 150,108 260,98 370,78 480,62 590,55 700,48 810,70 880,74"/>
+    <line class="risk" x1="40" y1="92" x2="880" y2="92"/>
+    <text class="label" x="44" y="150">저점</text>
+    <text class="label" x="760" y="32">최근 고점 $227</text>
+    <text class="hot" x="620" y="88">현재 $214.60</text>
+  </svg>
+  </div>
+  <div class="table-wrap"><table>
+    <tr><th>항목</th><th>판단</th></tr>
+    <tr><td>현재가</td><td>$214.60</td></tr>
+    <tr><td>타깃 3% 이내 여부</td><td><span class="tag green">예</span> 1차 상단 $212와 약 1.2% 차이</td></tr>
+    <tr><td>진입 밴드</td><td>1차 $208~212 / 2차 $201~203 / 3차 $195 전후</td></tr>
+    <tr><td>무효화 라인</td><td>$190 이탈 시 재평가</td></tr>
+    <tr><td>최종 실행 결론</td><td><span class="tag yellow">소액 대기</span> 지금은 추격 금지, $212 아래 확인 시 1차만</td></tr>
+  </table></div>
+</div>
+
+<div class="card ok">
+  <h3>AVGO</h3>
+  <p>3종 중에서는 가장 실행력이 좋습니다. 이유는 NVDA만큼 과열 프리미엄이 높지 않고, 현재가가 대표님식
+  1차 진입 밴드에 가장 가까워 <b>폭락이 아니어도 눌림 매수 설계가 가능한 축</b>이기 때문입니다.</p>
+  <div class="chart">
+  <svg viewBox="0 0 920 170" role="img" aria-label="AVGO 그래프뷰">
+    <line class="axis" x1="40" y1="130" x2="880" y2="130"/>
+    <polyline class="line2" points="40,120 150,110 260,95 370,82 480,70 590,62 700,54 810,46 880,58"/>
+    <line class="risk" x1="40" y1="82" x2="880" y2="82"/>
+    <text class="label" x="44" y="150">저점</text>
+    <text class="label" x="748" y="32">ATH $442.36</text>
+    <text class="hot" x="630" y="78">현재 $413.50</text>
+  </svg>
+  </div>
+  <div class="table-wrap"><table>
+    <tr><th>항목</th><th>판단</th></tr>
+    <tr><td>현재가</td><td>$413.50</td></tr>
+    <tr><td>타깃 3% 이내 여부</td><td><span class="tag green">예</span> 1차 상단 $410과 약 0.9% 차이</td></tr>
+    <tr><td>진입 밴드</td><td>1차 $405~410 / 2차 $392~398 / 3차 $372~380</td></tr>
+    <tr><td>무효화 라인</td><td>$360 이탈 시 구조 재검토</td></tr>
+    <tr><td>최종 실행 결론</td><td><span class="tag green">1순위</span> 1차 접근 가능, 단 25% 비중 이하로 시작</td></tr>
+  </table></div>
+</div>
+
+<div class="card warn">
+  <h3>TSM</h3>
+  <p>TSM은 그래프가 덜 요란하지만, 바로 그 점 때문에 폭락 시나리오 방어축으로 좋습니다. 다만 지정학 변수 때문에
+  <b>반드시 작은 비중으로 시작</b>해야 합니다. 공격주가 아니라 공급망 코어 축입니다.</p>
+  <div class="chart">
+  <svg viewBox="0 0 920 170" role="img" aria-label="TSM 그래프뷰">
+    <line class="axis" x1="40" y1="130" x2="880" y2="130"/>
+    <polyline class="line3" points="40,122 150,116 260,104 370,96 480,82 590,70 700,60 810,55 880,63"/>
+    <line class="risk" x1="40" y1="86" x2="880" y2="86"/>
+    <text class="label" x="44" y="150">저점</text>
+    <text class="label" x="732" y="32">최근 고점 $410.60</text>
+    <text class="hot" x="620" y="82">현재 $404.53</text>
+  </svg>
+  </div>
+  <div class="table-wrap"><table>
+    <tr><th>항목</th><th>판단</th></tr>
+    <tr><td>현재가</td><td>$404.53</td></tr>
+    <tr><td>타깃 3% 이내 여부</td><td><span class="tag green">예</span> 1차 상단 $402와 약 0.6% 차이</td></tr>
+    <tr><td>진입 밴드</td><td>1차 $398~402 / 2차 $385~390 / 3차 $365~372</td></tr>
+    <tr><td>무효화 라인</td><td>$350 이탈 시 보수 강화</td></tr>
+    <tr><td>최종 실행 결론</td><td><span class="tag yellow">방어축</span> 소량 선진입 가능, 본격 증액은 $390 아래</td></tr>
+  </table></div>
+</div>
+
+<h2>3. 최종 우선순위</h2>
+<div class="table-wrap"><table>
+  <tr><th>순위</th><th>종목</th><th>한 줄 결론</th></tr>
+  <tr><td>1</td><td><b>AVGO</b></td><td>현재가가 1차 밴드와 가장 가깝고 폭락 시나리오에서도 실행 설계가 가장 깔끔함</td></tr>
+  <tr><td>2</td><td><b>TSM</b></td><td>공급망 코어 축. 방어적 분할 진입에 적합</td></tr>
+  <tr><td>3</td><td><b>NVDA</b></td><td>기업은 최강이지만 가격은 아직 더 아래에서 받아야 함</td></tr>
+</table></div>
+
+<div class="panel danger">
+  <b>대표님 실행 결론:</b> 이번 3개는 “폭락 확정 베팅”이 아니라 “폭락이 오면 어디에 먼저 입찰할지 정하는 보고서”입니다.
+  지금 바로 세게 들어갈 종목은 없고, <b>AVGO만 1차 소량 가능</b>, TSM은 방어축, NVDA는 더 낮은 가격을 기다리는 것이 맞습니다.
+</div>
+
+<h2>출처</h2>
+<ul>
+  <li><a href="https://www.benzinga.com/quote/NVDA">Benzinga NVDA quote</a></li>
+  <li><a href="https://www.benzinga.com/quote/AVGO">Benzinga AVGO quote</a></li>
+  <li><a href="https://www.benzinga.com/quote/tsm">Benzinga TSM quote</a></li>
+  <li><a href="https://ca.investing.com/etfs/powershares-qqqq-historical-data">Investing.com QQQ historical data</a></li>
+  <li><a href="https://ca.investing.com/indices/volatility-s-p-500-historical-data">Investing.com VIX historical data</a></li>
+</ul>
+
+<p class="small">이 보고서는 교육용 정리이며 실시간 체결가와 차이가 있을 수 있습니다. 가격은 2026-05-23 09:35 KST 기준 최신 검색 스냅샷으로 반영했습니다.</p>
+</body>
+</html>

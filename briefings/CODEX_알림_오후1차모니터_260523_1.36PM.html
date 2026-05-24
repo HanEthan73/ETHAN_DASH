@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX 알림 오후 1차 모니터 260523</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#0d1117;
+  color:#e6edf3;
+  font-family:"Malgun Gothic","Apple SD Gothic Neo","Segoe UI",sans-serif;
+  line-height:1.6;
+  padding:24px 14px 40px;
+}
+.wrap{max-width:1160px;margin:0 auto}
+header{border-bottom:1px solid #283244;padding-bottom:18px;margin-bottom:18px}
+h1{font-size:28px;color:#f5c518;margin-bottom:6px}
+.sub{color:#97a3b6;font-size:13px}
+.lead{
+  margin-top:14px;
+  background:#171d28;
+  border:1px solid #30405a;
+  border-left:4px solid #f5c518;
+  border-radius:10px;
+  padding:14px 16px;
+  color:#e7ddb1;
+}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+.metric{background:#141b25;border:1px solid #2a3548;border-radius:10px;padding:14px}
+.metric b{display:block;color:#f5c518;font-size:12px;margin-bottom:5px}
+.metric span{display:block;font-size:22px;font-weight:800}
+.metric small{display:block;color:#97a3b6;font-size:11px;margin-top:5px}
+section{background:#131923;border:1px solid #273244;border-radius:10px;padding:16px;margin-top:16px}
+h2{font-size:18px;color:#8ab4ff;margin-bottom:10px}
+table{width:100%;border-collapse:collapse}
+th{
+  background:#1f2937;
+  color:#f5c518;
+  text-align:left;
+  padding:10px;
+  font-size:12px;
+  border-bottom:1px solid #324159;
+  white-space:nowrap;
+}
+td{
+  padding:10px;
+  border-bottom:1px solid #212a39;
+  font-size:13px;
+  vertical-align:top;
+}
+tr:nth-child(even) td{background:#0f1520}
+tr:last-child td{border-bottom:0}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.tag{
+  display:inline-block;
+  border-radius:999px;
+  padding:3px 9px;
+  font-size:11px;
+  font-weight:800;
+}
+.ok{background:#123321;color:#62e0a1;border:1px solid #24563a}
+.no{background:#39191b;color:#ff9b9b;border:1px solid #6d292e}
+.hold{background:#352a12;color:#ffe27a;border:1px solid #6d5a1c}
+.note{
+  margin-top:12px;
+  background:#1b2432;
+  border:1px solid #30405a;
+  border-radius:8px;
+  padding:12px 14px;
+  color:#c9d3e1;
+  font-size:13px;
+}
+a{color:#8ab4ff;text-decoration:none}
+footer{margin-top:18px;color:#7d889d;font-size:12px;text-align:right}
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  table{display:block;overflow-x:auto}
+  th,td{white-space:nowrap}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>CODEX 알림 오후 1차 모니터</h1>
+    <div class="sub">생성 2026-05-23 13:36 KST | 대표님 보고용 | 가격 기준은 미국장 2026-05-22 종가 및 최신 연장호가, 환율은 2026-05-23 KST 확인값 반영</div>
+    <div class="lead">
+      결론 먼저: <b>PLTR 단독 눌림은 여전히 미충족</b>입니다. 반면 <b>NVDA·MU·TSM은 1차 밴드 안, AVGO는 상단 0.52% 위</b>라서
+      가격만 보면 자동매수 접근권입니다. 다만 <b>USD/KRW 1,520선</b>과 <b>5월 25일(월) 미국장 Memorial Day 휴장</b> 때문에
+      오늘 판단은 <b>추격 금지, 재개장 후 눌림 재확인형</b>이 맞습니다.
+    </div>
+  </header>
+
+  <div class="grid">
+    <div class="metric"><b>PLTR 최신가</b><span>$135.90</span><small>2026-05-22 19:59 EDT after-hours</small></div>
+    <div class="metric"><b>자동매수 접근권</b><span>4/4</span><small>핵심 4종 모두 1차 밴드 3% 이내</small></div>
+    <div class="metric"><b>USD/KRW</b><span>1,520.06</span><small>2026-05-22 기준 +1.03%</small></div>
+    <div class="metric"><b>Gmail 채용 알림</b><span>1건</span><small>최근 7일 검색 기준, 리멤버 미확인 메일 존재</small></div>
+  </div>
+
+  <section>
+    <h2>1. 오후 1차 핵심 판단표</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>최신 확인 시각</th>
+          <th>조건</th>
+          <th>최신 수치</th>
+          <th>상태</th>
+          <th>필요한 행동</th>
+          <th>무효화 조건</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>PLTR 눌림목</b></td>
+          <td class="num">2026-05-23 13:36 KST<br>가격 기준 2026-05-22 19:59 EDT</td>
+          <td>$128 이하 시만 적극 진입<br>보조 대기: $126~130</td>
+          <td>$135.90<br>기준 대비 +6.17%</td>
+          <td><span class="tag no">불충족</span></td>
+          <td>오늘 신규 추격매수 금지. $130 아래 재진입 전까지 관찰만 유지.</td>
+          <td>$128 하향 재진입이 없고, 반대로 $120 방어선까지 훼손되면 눌림이 아니라 구조 약화로 재평가.</td>
+        </tr>
+        <tr>
+          <td><b>자동매수 조건</b><br>핵심 4종</td>
+          <td class="num">2026-05-23 13:36 KST<br>가격 기준 2026-05-22 close</td>
+          <td>1차 밴드 이내 또는 상단 3% 이내</td>
+          <td>AVGO $414.14 / NVDA $215.33 / MU $751.00 / TSM $404.52</td>
+          <td><span class="tag ok">충족</span></td>
+          <td>가격은 들어왔습니다. 다만 연휴 전이라 오늘 결론은 체결보다 대기. 재개장 후 눌림 재확인 시 1차 25% 이하만 시작.</td>
+          <td>VIX 20 상향 재진입, USD/KRW 1,520 상회 고착, 유가 재급등이 겹치면 자동매수는 즉시 방어 모드로 전환.</td>
+        </tr>
+        <tr>
+          <td><b>Gmail 채용 알림</b></td>
+          <td class="num">2026-05-23 13:35 KST<br>메일 시각 2026-05-18 18:18 KST</td>
+          <td>최근 7일 내 채용 메일 존재 여부</td>
+          <td>리멤버 1건 미확인<br>미래시스템, 하이퍼엑셀, 뉴빌리티, 나라스페이스 등 포함</td>
+          <td><span class="tag ok">충족</span></td>
+          <td>관심 직무만 추려 별도 검토. 급한 시장 판단과는 분리하고, 메일은 오늘 안에 읽음 처리 여부만 결정.</td>
+          <td>추가 신규 메일이 없고 기존 메일이 이미 검토 완료라면 다음 모니터부터는 참고 항목으로만 유지.</td>
+        </tr>
+        <tr>
+          <td><b>주요 시장 변화</b></td>
+          <td class="num">2026-05-23 13:36 KST<br>시장 기준 2026-05-22 close</td>
+          <td>지수 상승이 진입 허용인지 확인</td>
+          <td>S&amp;P 500 7,473.47 (+0.4%)<br>Nasdaq 26,343.97 (+0.2%)<br>8주 연속 주간 상승</td>
+          <td><span class="tag hold">보류</span></td>
+          <td>지수는 강하지만 이미 높습니다. 오늘은 "좋은 기업을 싸게 사는 날"이 아니라 "좋은 가격이 오는지 감시하는 날"로 유지.</td>
+          <td>지수 강세만 보고 진입 기준을 올려잡는 순간 전략이 무너집니다. 가격 기준 훼손 시 자동 대기 유지.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>2. 자동매수 세부 점검</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>종목</th>
+          <th>최신가</th>
+          <th>1차 진입 밴드</th>
+          <th>3% 룰</th>
+          <th>상태</th>
+          <th>필요한 행동</th>
+          <th>개별 무효화</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>AVGO</b></td>
+          <td class="num">$414.14</td>
+          <td>$402~412</td>
+          <td>상단 대비 +0.52%</td>
+          <td><span class="tag ok">충족</span></td>
+          <td>가장 근접합니다. 재개장 후 $412 안착 확인 시 1차만 시작 가능.</td>
+          <td>$360 종가 이탈 시 구조 재검토.</td>
+        </tr>
+        <tr>
+          <td><b>NVDA</b></td>
+          <td class="num">$215.33</td>
+          <td>$210~217</td>
+          <td>밴드 내부</td>
+          <td><span class="tag ok">충족</span></td>
+          <td>가격만 보면 바로 1차권입니다. 다만 실적 직후 변동성 구간이라 시가 추격은 금지.</td>
+          <td>$188 종가 이탈 시 자동매수 시나리오 중단.</td>
+        </tr>
+        <tr>
+          <td><b>MU</b></td>
+          <td class="num">$751.00</td>
+          <td>$735~760</td>
+          <td>밴드 내부</td>
+          <td><span class="tag ok">충족</span></td>
+          <td>가격 자체는 매력권입니다. HBM 랠리 종목이므로 분할 외 일괄 진입 금지.</td>
+          <td>$640 종가 이탈 시 손절 기준 재설정.</td>
+        </tr>
+        <tr>
+          <td><b>TSM</b></td>
+          <td class="num">$404.52</td>
+          <td>$395~407</td>
+          <td>밴드 내부</td>
+          <td><span class="tag ok">충족</span></td>
+          <td>지정학 리스크 반영이 필요합니다. 핵심 4종 중 가장 보수적으로 다뤄야 합니다.</td>
+          <td>$340 종가 이탈 시 보수 강화.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note">
+      실행 문장: <b>가격은 들어왔지만 환경이 아직 깨끗하지 않습니다.</b> 따라서 오후 1차 모니터의 결론은
+      <b>즉시 체결</b>이 아니라 <b>재개장 후 눌림 재확인형 대기</b>입니다.
+    </div>
+  </section>
+
+  <section>
+    <h2>3. 시장 변화와 진입 가능성</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>변수</th>
+          <th>최신 확인 시각</th>
+          <th>변화 내용</th>
+          <th>진입 가능성 판단</th>
+          <th>필요한 행동</th>
+          <th>무효화 조건</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>미 증시 흐름</b></td>
+          <td class="num">2026-05-23 13:36 KST<br>2026-05-22 close</td>
+          <td>S&amp;P 500 +0.4%, Nasdaq +0.2%, 8주 연속 주간 상승</td>
+          <td><span class="tag hold">보류</span></td>
+          <td>강세장 추격 대신 진입가 고수. 오늘은 종목 선정이 아니라 가격 대기.</td>
+          <td>지수 강세를 이유로 1차 밴드를 올리면 전략 무효.</td>
+        </tr>
+        <tr>
+          <td><b>환율 압박</b></td>
+          <td class="num">2026-05-23 13:36 KST<br>환율 기준 2026-05-22</td>
+          <td>USD/KRW 1,520.06, 전일 대비 +1.03%</td>
+          <td><span class="tag no">불충족</span></td>
+          <td>달러 강세 경보 유지. 평소보다 현금 비중 높게 유지하고 1차 진입 규모 축소.</td>
+          <td>1,500 아래로 복귀하고 연속 안정화되기 전까지 공격적 확대 금지.</td>
+        </tr>
+        <tr>
+          <td><b>유가·중동 변수</b></td>
+          <td class="num">2026-05-23 13:36 KST<br>기사 기준 2026-05-22</td>
+          <td>유가와 채권 압박이 일부 완화되며 미 증시 반등, 다만 이란 변수는 잔존</td>
+          <td><span class="tag hold">보류</span></td>
+          <td>평화 기대만 믿고 선진입 금지. 유가 재급등 여부를 다음 미장 전에 재확인.</td>
+          <td>유가 급등 재개 또는 중동 리스크 재확대 시 현금 방어 우선.</td>
+        </tr>
+        <tr>
+          <td><b>연휴 유동성</b></td>
+          <td class="num">2026-05-23 13:36 KST</td>
+          <td>미국장 2026-05-25 Memorial Day 휴장</td>
+          <td><span class="tag hold">보류</span></td>
+          <td>오늘 확정매수보다 2026-05-26 재개장 대응이 효율적입니다.</td>
+          <td>휴장 전 무리한 체결로 기준가가 꼬이면 전략상 손해.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. Gmail 채용 알림 상세</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>메일</th>
+          <th>수신 시각</th>
+          <th>핵심 내용</th>
+          <th>상태</th>
+          <th>필요한 행동</th>
+          <th>무효화 조건</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>리멤버</b><br>[리멤버] 한의성님에게 딱맞는 공고에 지원해보세요!</td>
+          <td class="num">2026-05-18 18:18 KST</td>
+          <td>미래시스템 HW개발(대전/판교·용인), 하이퍼엑셀 Device Driver, 뉴빌리티 Physical AI HW, 나라스페이스 EE, 원익로보틱스 전장 시스템 설계</td>
+          <td><span class="tag ok">미확인 1건</span></td>
+          <td>대표님 관심 직무와 맞는지 5분 내 1차 필터링만 수행. 시장 실행과 직접 연결하지는 않음.</td>
+          <td>검토 완료 후 후속 지원 의사 없으면 다음 모니터부터 제외 가능.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>5. 출처</h2>
+    <table>
+      <thead>
+        <tr><th>구분</th><th>근거</th><th>링크</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>PLTR 눌림 기준</td><td>내부 수정본 기준 $128~132 눌림, 손절 $120</td><td><a href="주식추천신규수정_260523_9.45AM.html">주식추천신규수정_260523_9.45AM.html</a></td></tr>
+        <tr><td>자동매수 밴드</td><td>핵심 4종 1차 진입 밴드</td><td><a href="주식추천_260523_12.15AM.html">주식추천_260523_12.15AM.html</a></td></tr>
+        <tr><td>PLTR 최신가</td><td>Benzinga, 2026-05-22 19:59 EDT</td><td><a href="https://www.benzinga.com/quote/pltr">Benzinga PLTR</a></td></tr>
+        <tr><td>AVGO 최신가</td><td>Benzinga, 2026-05-22 close / 18:05 EDT after-hours</td><td><a href="https://www.benzinga.com/quote/avgo">Benzinga AVGO</a></td></tr>
+        <tr><td>NVDA 최신가</td><td>Benzinga, 2026-05-22 close / 18:52 EDT after-hours</td><td><a href="https://www.benzinga.com/quote/NVDA">Benzinga NVDA</a></td></tr>
+        <tr><td>MU 최신가</td><td>Trading Economics, 2026-05-22 close $751.00</td><td><a href="https://tradingeconomics.com/mu%3Aus">Trading Economics MU</a></td></tr>
+        <tr><td>TSM 최신가</td><td>MarketScreener, 2026-05-22 16:00 EDT close $404.52</td><td><a href="https://www.marketscreener.com/quote/stock/TSMC-TAIWAN-SEMICONDUCTOR-40246786/">MarketScreener TSM</a></td></tr>
+        <tr><td>미 증시 마감</td><td>AP, 2026-05-22 close: S&amp;P 500 7,473.47 / Nasdaq 26,343.97</td><td><a href="https://apnews.com/article/2129e0beebf47c8a223dbafa00d8a7ed">AP Market Close</a></td></tr>
+        <tr><td>환율</td><td>Trading Economics USD/KRW 1,520.06</td><td><a href="https://tradingeconomics.com/usdkrw%3Acur">Trading Economics USD/KRW</a></td></tr>
+        <tr><td>연휴 일정</td><td>Yahoo Finance, Memorial Day 2026 휴장 안내</td><td><a href="https://finance.yahoo.com/personal-finance/investing/article/is-the-stock-market-open-on-memorial-day-10-market-holidays-in-2026-210239563.html">Yahoo Finance Memorial Day</a></td></tr>
+        <tr><td>시장 배경</td><td>AP, 유가·채권 압박 완화에 따른 반등</td><td><a href="https://apnews.com/article/351c7434b9875516e61e8917f960fc13">AP Market Relief</a></td></tr>
+        <tr><td>Gmail 채용 알림</td><td>리멤버 메일 1건, 최근 7일 검색 및 본문 확인</td><td><a href="https://mail.google.com/mail/#all/19e3a616129b31ee">Gmail Message</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>ETHAN DASH · CODEX 오후 1차 모니터 · 2026-05-23</footer>
+</div>
+</body>
+</html>
