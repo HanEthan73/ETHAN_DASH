@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX 방문자 로그 비공개 설계 260524 11.05AM</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0b0f16;color:#e6edf7;font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;line-height:1.66;padding:18px}
+.wrap{max-width:1120px;margin:0 auto}header{border-bottom:1px solid #2a3446;padding:8px 0 18px;margin-bottom:18px}
+h1{font-size:28px;color:#f5c84c;margin-bottom:7px}h2{font-size:20px;color:#8cc8ff;margin:26px 0 12px}
+p,li{font-size:14px;color:#c7d2e1}.sub{font-size:13px;color:#94a3b8}.notice{background:#111a27;border:1px solid #2b384d;border-left:4px solid #f5c84c;border-radius:8px;padding:13px 14px;margin:14px 0;color:#dce6f5}
+.table-wrap{overflow:auto;border:1px solid #273246;border-radius:8px;background:#101722;margin:10px 0}
+table{width:100%;border-collapse:collapse;min-width:950px}th{background:#1d2635;color:#f5c84c;text-align:left;font-size:12px;padding:10px;border-bottom:1px solid #334056;white-space:nowrap}
+td{font-size:13px;padding:10px;border-bottom:1px solid #222d3d;vertical-align:top}tr:last-child td{border-bottom:0}
+.ok{display:inline-block;background:#173523;color:#73e699;border:1px solid #2e7d45;border-radius:999px;padding:2px 8px;font-size:12px;white-space:nowrap}
+.warn{display:inline-block;background:#3a2e12;color:#ffd36b;border:1px solid #856821;border-radius:999px;padding:2px 8px;font-size:12px;white-space:nowrap}
+.no{display:inline-block;background:#3a1720;color:#ff8ea0;border:1px solid #833142;border-radius:999px;padding:2px 8px;font-size:12px;white-space:nowrap}
+.final{background:#151b25;border:1px solid #3a465a;border-radius:8px;padding:16px;margin:18px 0}
+.src{font-size:12px;color:#8b98a8;margin-top:8px}ul{padding-left:20px}
+@media(max-width:760px){body{padding:12px}h1{font-size:22px}table{min-width:860px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>CODEX 방문자 로그 비공개 설계</h1>
+  <div class="sub">작성 2026-05-24 11:05 KST | 목적: 브리핑 페이지 방문자 확인 방식 정리</div>
+  <div class="sub">파일명: CODEX_방문자로그비공개설계_260524_11.05AM.html</div>
+</header>
+
+<section class="notice">
+  <b>먼저 결론입니다.</b><br>
+  GitHub Pages만으로는 “누가 왔는지”를 정확히 알 수 없습니다. GitHub Pages는 정적 호스팅이라 서버 접속 로그를 대표님에게 제공하지 않습니다. 현재 페이지의 방문자수 폴백은 브라우저 로컬 기준이라 전체 방문자 분석용이 아닙니다. “나만 보고 싶은 날짜별 방문 로그”를 만들려면 별도 로그 저장소가 필요합니다.
+</section>
+
+<section>
+  <h2>1. 가능한 방식 비교</h2>
+  <div class="table-wrap">
+    <table>
+      <tr><th>방식</th><th>누가 왔는지</th><th>날짜 로그</th><th>나만 보기</th><th>장점</th><th>단점</th><th>추천</th></tr>
+      <tr><td>GitHub Pages 기본</td><td><span class="no">불가</span></td><td><span class="no">불가</span></td><td>-</td><td>추가 설정 없음</td><td>방문자 IP/기기/시간 로그 접근 불가</td><td>불가</td></tr>
+      <tr><td>GoatCounter / Plausible</td><td><span class="warn">개인 식별 불가</span></td><td><span class="ok">가능</span></td><td><span class="ok">가능</span></td><td>간단하고 개인정보 부담 낮음</td><td>정확한 개인 이름은 모름</td><td>추천</td></tr>
+      <tr><td>Cloudflare Web Analytics</td><td><span class="warn">개인 식별 불가</span></td><td><span class="ok">가능</span></td><td><span class="ok">가능</span></td><td>무료, 속도 영향 낮음</td><td>GitHub Pages 도메인 앞에 Cloudflare 설정 필요</td><td>추천</td></tr>
+      <tr><td>Google Analytics</td><td><span class="warn">개인 식별 불가</span></td><td><span class="ok">가능</span></td><td><span class="ok">가능</span></td><td>기능 강함</td><td>설정 복잡, 개인정보/쿠키 이슈</td><td>보류</td></tr>
+      <tr><td>직접 로그 API</td><td><span class="warn">IP/UA 정도 가능</span></td><td><span class="ok">가능</span></td><td><span class="ok">가능</span></td><td>대표님 원하는 형태로 저장 가능</td><td>서버/DB/보안 필요. 공개 API 키 노출 위험</td><td>고급</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>2. “나만 보기” 현실적 구조</h2>
+  <div class="table-wrap">
+    <table>
+      <tr><th>구성</th><th>설명</th><th>실행 방법</th></tr>
+      <tr><td>공개 브리핑 페이지</td><td>현재 GitHub Pages 유지. 방문자에게 별도 관리자 정보 노출 없음.</td><td>index.html에 분석 스크립트 1줄 삽입.</td></tr>
+      <tr><td>비공개 분석 대시보드</td><td>GoatCounter/Plausible/Cloudflare 계정에 로그인한 대표님만 확인.</td><td>대시보드 URL은 공개 페이지에 노출하지 않음.</td></tr>
+      <tr><td>날짜별 로그</td><td>일자, 페이지, 국가/지역, referrer, 기기 종류 정도 확인.</td><td>분석 도구가 자동 수집.</td></tr>
+      <tr><td>개인 식별</td><td>이름까지는 불가. IP도 개인정보라 저장/표시를 조심해야 함.</td><td>“누가”보다 “언제 어떤 페이지를 얼마나 봤는지” 중심으로 보는 게 안전.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>3. 추천 실행안</h2>
+  <div class="table-wrap">
+    <table>
+      <tr><th>순서</th><th>작업</th><th>담당</th><th>결과</th></tr>
+      <tr><td>1</td><td>GoatCounter 무료 계정 생성 또는 Cloudflare Analytics 연결</td><td>대표님 계정 필요</td><td>비공개 관리자 대시보드 생성</td></tr>
+      <tr><td>2</td><td>추적 스크립트 1줄을 briefings/index.html에 삽입</td><td>Codex 가능</td><td>방문 로그 수집 시작</td></tr>
+      <tr><td>3</td><td>관리자 링크는 로컬 메모/이메일에만 보관</td><td>대표님</td><td>방문자에게는 안 보임</td></tr>
+      <tr><td>4</td><td>매일 방문 요약을 Gmail 명령으로 요청</td><td>Codex 가능</td><td>날짜별 방문 추세 보고 가능</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="final">
+  <h2>4. 최종 답변</h2>
+  <ul>
+    <li><b>지금 상태:</b> 방문자수는 외부 API 실패 시 로컬 브라우저 기준으로만 표시됩니다. 전체 방문자 로그가 아닙니다.</li>
+    <li><b>누가 왔는지:</b> GitHub Pages만으로는 확인 불가입니다.</li>
+    <li><b>날짜 로그:</b> GoatCounter, Plausible, Cloudflare Analytics 같은 별도 도구가 필요합니다.</li>
+    <li><b>나만 보기:</b> 분석 도구 대시보드를 비공개로 두면 가능합니다.</li>
+    <li><b>추천:</b> 개인정보 부담이 낮은 GoatCounter 또는 Cloudflare Web Analytics부터 시작하는 것이 맞습니다.</li>
+  </ul>
+</section>
+
+<p class="src">주의: 방문자 IP, 기기정보, 위치정보는 개인정보에 해당할 수 있으므로 공개 페이지에 직접 노출하면 안 됩니다.</p>
+</div>
+</body>
+</html>
