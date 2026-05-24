@@ -1,5 +1,89 @@
 [
     {
+        "name":  "CODEX_알림_자동매수모니터_260524_12.02AM.html",
+        "updatedIso":  "2026-05-24T11:32:48.6466258+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "11:32",
+        "updatedEpoch":  1779589968
+    },
+    {
+        "name":  "CODEX_알림_저녁브리핑_260523_10.32PM.html",
+        "updatedIso":  "2026-05-24T11:32:48.6516247+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "11:32",
+        "updatedEpoch":  1779589968
+    },
+    {
+        "name":  "CODEX_알림_인사이트KB업데이트_260524_7.35AM.html",
+        "updatedIso":  "2026-05-24T11:32:48.6366244+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "11:32",
+        "updatedEpoch":  1779589968
+    },
+    {
+        "name":  "CODEX_알림_오전종합모니터_260524_9.33AM.html",
+        "updatedIso":  "2026-05-24T11:32:48.6036229+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "11:32",
+        "updatedEpoch":  1779589968
+    },
+    {
+        "name":  "CODEX_알림_오후1차모니터_260523_1.36PM.html",
+        "updatedIso":  "2026-05-24T11:32:48.6316218+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "11:32",
+        "updatedEpoch":  1779589968
+    },
+    {
+        "name":  "CODEX_알림_주식추천전략보고_260524_8.34AM.html",
+        "updatedIso":  "2026-05-24T11:32:48.7276266+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "11:32",
+        "updatedEpoch":  1779589968
+    },
+    {
+        "name":  "CODEX_알림_폭락시나리오2차심층분석_260523_8.06PM.html",
+        "updatedIso":  "2026-05-24T11:32:48.7576226+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "11:32",
+        "updatedEpoch":  1779589968
+    },
+    {
+        "name":  "CODEX_알림_주식추천전략보고_260523_9.19AM.html",
+        "updatedIso":  "2026-05-24T11:32:48.7236251+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "11:32",
+        "updatedEpoch":  1779589968
+    },
+    {
+        "name":  "CODEX_알림_주식추천전략보고_260523_2.00PM.html",
+        "updatedIso":  "2026-05-24T11:32:48.6866235+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "11:32",
+        "updatedEpoch":  1779589968
+    },
+    {
+        "name":  "CODEX_알림_주식추천전략보고_260523_8.35AM.html",
+        "updatedIso":  "2026-05-24T11:32:48.6906243+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "11:32",
+        "updatedEpoch":  1779589968
+    },
+    {
+        "name":  "CODEX_알림_폭락시나리오그래프뷰_260523_3.18PM.html",
+        "updatedIso":  "2026-05-24T11:32:48.7786223+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "11:32",
+        "updatedEpoch":  1779589968
+    },
+    {
+        "name":  "CODEX_알림_오전종합모니터_260523_9.33AM.html",
+        "updatedIso":  "2026-05-24T11:32:48.5936211+09:00",
+        "updatedDate":  "2026-05-24",
+        "updatedTime":  "11:32",
+        "updatedEpoch":  1779589968
+    },
+    {
         "name":  "CODEX_방문자로그비공개설계_260524_11.05AM.html",
         "updatedIso":  "2026-05-24T11:02:55.7584395+09:00",
         "updatedDate":  "2026-05-24",
@@ -21,39 +105,11 @@
         "updatedEpoch":  1779586520
     },
     {
-        "name":  "알림_CODEX_오전종합모니터_260524_9.33AM.html",
-        "updatedIso":  "2026-05-24T09:35:13.4078765+09:00",
-        "updatedDate":  "2026-05-24",
-        "updatedTime":  "09:35",
-        "updatedEpoch":  1779582913
-    },
-    {
-        "name":  "알림_CODEX_주식추천전략보고_260524_8.34AM.html",
-        "updatedIso":  "2026-05-24T08:38:06.9802408+09:00",
-        "updatedDate":  "2026-05-24",
-        "updatedTime":  "08:38",
-        "updatedEpoch":  1779579486
-    },
-    {
         "name":  "CODEX_국제정세브리핑_260524_8.45AM.html",
         "updatedIso":  "2026-05-24T08:35:08.7875415+09:00",
         "updatedDate":  "2026-05-24",
         "updatedTime":  "08:35",
         "updatedEpoch":  1779579308
-    },
-    {
-        "name":  "알림_CODEX_인사이트KB업데이트_260524_7.35AM.html",
-        "updatedIso":  "2026-05-24T07:39:40.0985637+09:00",
-        "updatedDate":  "2026-05-24",
-        "updatedTime":  "07:39",
-        "updatedEpoch":  1779575980
-    },
-    {
-        "name":  "알림_CODEX_자동매수모니터_260524_12.02AM.html",
-        "updatedIso":  "2026-05-24T00:04:51.0955873+09:00",
-        "updatedDate":  "2026-05-24",
-        "updatedTime":  "00:04",
-        "updatedEpoch":  1779548691
     },
     {
         "name":  "CODEX_국내이색단타8선_260523_11.08PM.html",
@@ -77,32 +133,11 @@
         "updatedEpoch":  1779545139
     },
     {
-        "name":  "알림_CODEX_저녁브리핑_260523_10.32PM.html",
-        "updatedIso":  "2026-05-23T22:35:09.4744283+09:00",
-        "updatedDate":  "2026-05-23",
-        "updatedTime":  "22:35",
-        "updatedEpoch":  1779543309
-    },
-    {
-        "name":  "알림_CODEX_폭락시나리오2차심층분석_260523_8.06PM.html",
-        "updatedIso":  "2026-05-23T20:12:32.2126613+09:00",
-        "updatedDate":  "2026-05-23",
-        "updatedTime":  "20:12",
-        "updatedEpoch":  1779534752
-    },
-    {
         "name":  "CODEX_다음주추천주전략보고_260523_7.38PM.html",
         "updatedIso":  "2026-05-23T19:41:48.0000000+09:00",
         "updatedDate":  "2026-05-23",
         "updatedTime":  "19:41",
         "updatedEpoch":  1779532908
-    },
-    {
-        "name":  "알림_CODEX_폭락시나리오그래프뷰_260523_3.18PM.html",
-        "updatedIso":  "2026-05-23T19:18:26.0000000+09:00",
-        "updatedDate":  "2026-05-23",
-        "updatedTime":  "19:18",
-        "updatedEpoch":  1779531506
     },
     {
         "name":  "CODEX_힌덴버그오멘삼층분석_260523_11.11AM.html",
@@ -119,34 +154,6 @@
         "updatedEpoch":  1779531214
     },
     {
-        "name":  "알림_CODEX_주식추천전략보고_260523_9.19AM.html",
-        "updatedIso":  "2026-05-23T15:18:33.0000000+09:00",
-        "updatedDate":  "2026-05-23",
-        "updatedTime":  "15:18",
-        "updatedEpoch":  1779517113
-    },
-    {
-        "name":  "알림_CODEX_주식추천전략보고_260523_2.00PM.html",
-        "updatedIso":  "2026-05-23T14:05:28.4064785+09:00",
-        "updatedDate":  "2026-05-23",
-        "updatedTime":  "14:05",
-        "updatedEpoch":  1779512728
-    },
-    {
-        "name":  "알림_CODEX_오후1차모니터_260523_1.36PM.html",
-        "updatedIso":  "2026-05-23T13:38:29.8179450+09:00",
-        "updatedDate":  "2026-05-23",
-        "updatedTime":  "13:38",
-        "updatedEpoch":  1779511109
-    },
-    {
-        "name":  "알림_CODEX_오전종합모니터_260523_9.33AM.html",
-        "updatedIso":  "2026-05-23T13:32:33.8463421+09:00",
-        "updatedDate":  "2026-05-23",
-        "updatedTime":  "13:32",
-        "updatedEpoch":  1779510753
-    },
-    {
         "name":  "CODEX_폭락시나리오그래프뷰3종분석_260523_9.35AM.html",
         "updatedIso":  "2026-05-23T09:45:04.8789184+09:00",
         "updatedDate":  "2026-05-23",
@@ -161,13 +168,6 @@
         "updatedEpoch":  1779493766
     },
     {
-        "name":  "알림_CODEX_주식추천전략보고_260523_8.35AM.html",
-        "updatedIso":  "2026-05-23T08:39:45.8355658+09:00",
-        "updatedDate":  "2026-05-23",
-        "updatedTime":  "08:39",
-        "updatedEpoch":  1779493185
-    },
-    {
         "name":  "인사이트KB업데이트_260523_7.35AM.html",
         "updatedIso":  "2026-05-23T07:40:56.6703748+09:00",
         "updatedDate":  "2026-05-23",
@@ -175,7 +175,7 @@
         "updatedEpoch":  1779489656
     },
     {
-        "name":  "morning_briefing_20260521.html",
+        "name":  "noon_briefing_20260521.html",
         "updatedIso":  "2026-05-23T04:11:11.0000000+09:00",
         "updatedDate":  "2026-05-23",
         "updatedTime":  "04:11",
@@ -189,14 +189,14 @@
         "updatedEpoch":  1779477071
     },
     {
-        "name":  "fx_alert_20260521_06.html",
+        "name":  "morning_briefing_20260521.html",
         "updatedIso":  "2026-05-23T04:11:11.0000000+09:00",
         "updatedDate":  "2026-05-23",
         "updatedTime":  "04:11",
         "updatedEpoch":  1779477071
     },
     {
-        "name":  "noon_briefing_20260521.html",
+        "name":  "fx_alert_20260521_06.html",
         "updatedIso":  "2026-05-23T04:11:11.0000000+09:00",
         "updatedDate":  "2026-05-23",
         "updatedTime":  "04:11",
@@ -273,14 +273,14 @@
         "updatedEpoch":  1779461286
     },
     {
-        "name":  "morning_briefing_20260522_09.html",
+        "name":  "stock_strategy_20260522_22.html",
         "updatedIso":  "2026-05-22T21:52:42.0000000+09:00",
         "updatedDate":  "2026-05-22",
         "updatedTime":  "21:52",
         "updatedEpoch":  1779454362
     },
     {
-        "name":  "stock_strategy_20260522_22.html",
+        "name":  "morning_briefing_20260522_09.html",
         "updatedIso":  "2026-05-22T21:52:42.0000000+09:00",
         "updatedDate":  "2026-05-22",
         "updatedTime":  "21:52",
@@ -301,14 +301,14 @@
         "updatedEpoch":  1779448085
     },
     {
-        "name":  "pltr_tool.html",
+        "name":  "pltr_tool_v2.html",
         "updatedIso":  "2026-05-22T17:34:35.0000000+09:00",
         "updatedDate":  "2026-05-22",
         "updatedTime":  "17:34",
         "updatedEpoch":  1779438875
     },
     {
-        "name":  "pltr_tool_v2.html",
+        "name":  "pltr_tool.html",
         "updatedIso":  "2026-05-22T17:34:35.0000000+09:00",
         "updatedDate":  "2026-05-22",
         "updatedTime":  "17:34",

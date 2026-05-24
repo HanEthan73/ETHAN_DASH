@@ -333,7 +333,7 @@ const OFFICIAL_NAME = /^(.+?)_(\d{6})_(\d{1,2})(?:[._-](\d{1,2}))?\s*_?\s*(AM|PM
 
 function parseFile(name) {
   const raw = name.replace('.html','');
-  const isAlert = raw.startsWith('알림_');
+  const isAlert = raw.startsWith('알림_') || raw.startsWith('CODEX_알림_');
   const toolFile = parseToolFile(name, raw);
   if (toolFile) return toolFile;
 
