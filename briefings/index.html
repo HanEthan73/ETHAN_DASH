@@ -375,17 +375,19 @@ function parseFile(name) {
 
 function applyManifestMeta(file, meta) {
   if (!meta) return file;
-  const dateKey = meta.updatedDate || file.dateKey;
+  const dateKey = meta.displayDate || meta.updatedDate || file.dateKey;
+  const timeStr = meta.displayTime || meta.updatedTime || file.timeStr;
   const [y, m, d] = dateKey.split('-');
   const dow = WEEKDAYS[localDateFromKey(dateKey).getDay()];
   return {
     ...file,
     dateKey,
     dateLabel: `${y}년 ${+m}월 ${+d}일 ${dow}요일`,
-    timeStr: meta.updatedTime || file.timeStr,
-    timeNum: meta.updatedTime ? parseInt(meta.updatedTime.replace(':','')) : file.timeNum,
+    timeStr,
+    timeNum: timeStr ? parseInt(timeStr.replace(':','')) : file.timeNum,
     updatedIso: meta.updatedIso,
-    updatedEpoch: meta.updatedEpoch
+    updatedEpoch: meta.updatedEpoch,
+    displayEpoch: meta.displayEpoch
   };
 }
 
@@ -858,7 +860,7 @@ function loadArchiveData() {
         .then(manifestRows => {
           const manifest = Object.fromEntries((manifestRows || []).map(row => [row.name, row]));
           load(data.map(f => f.name), manifest);
-          setSourceBadge(manifestRows.length ? '최종 수정일 기준' : 'GitHub 실시간');
+          setSourceBadge(manifestRows.length ? '보고 시간 기준' : 'GitHub 실시간');
         });
     })
     .catch(() => {
