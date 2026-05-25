@@ -1,5 +1,145 @@
 [
   {
+    "name": "CODEX_CLLC_SR매핑전류파형_260525_4.35PM.html",
+    "updatedIso": "2026-05-25T16:35:39.722713+09:00",
+    "updatedDate": "2026-05-25",
+    "updatedTime": "16:35",
+    "updatedEpoch": 1779694539,
+    "displayDate": "2026-05-25",
+    "displayTime": "16:35",
+    "displayEpoch": 1779694500
+  },
+  {
+    "name": "CODEX_알림_주식추천전략보고_260525_4.00PM.html",
+    "updatedIso": "2026-05-25T16:06:30.828669+09:00",
+    "updatedDate": "2026-05-25",
+    "updatedTime": "16:06",
+    "updatedEpoch": 1779692790,
+    "displayDate": "2026-05-25",
+    "displayTime": "16:00",
+    "displayEpoch": 1779692400
+  },
+  {
+    "name": "CODEX_알림_한국장마감PLTR모니터_260525_3.32PM.html",
+    "updatedIso": "2026-05-25T15:37:33.053992+09:00",
+    "updatedDate": "2026-05-25",
+    "updatedTime": "15:37",
+    "updatedEpoch": 1779691053,
+    "displayDate": "2026-05-25",
+    "displayTime": "15:32",
+    "displayEpoch": 1779690720
+  },
+  {
+    "name": "CODEX_알림_주식추천전략보고_260525_2.00PM.html",
+    "updatedIso": "2026-05-25T14:07:12.615261+09:00",
+    "updatedDate": "2026-05-25",
+    "updatedTime": "14:07",
+    "updatedEpoch": 1779685632,
+    "displayDate": "2026-05-25",
+    "displayTime": "14:00",
+    "displayEpoch": 1779685200
+  },
+  {
+    "name": "CODEX_알림_오후1차모니터_260525_1.33PM.html",
+    "updatedIso": "2026-05-25T13:35:05.365347+09:00",
+    "updatedDate": "2026-05-25",
+    "updatedTime": "13:35",
+    "updatedEpoch": 1779683705,
+    "displayDate": "2026-05-25",
+    "displayTime": "13:33",
+    "displayEpoch": 1779683580
+  },
+  {
+    "name": "CODEX_알림_낮진입전략_260525_12.30PM.html",
+    "updatedIso": "2026-05-25T12:37:14.423961+09:00",
+    "updatedDate": "2026-05-25",
+    "updatedTime": "12:37",
+    "updatedEpoch": 1779680234,
+    "displayDate": "2026-05-25",
+    "displayTime": "12:30",
+    "displayEpoch": 1779679800
+  },
+  {
+    "name": "CODEX_알림_오전종합모니터_260525_9.30AM.html",
+    "updatedIso": "2026-05-25T09:36:52.210297+09:00",
+    "updatedDate": "2026-05-25",
+    "updatedTime": "09:36",
+    "updatedEpoch": 1779669412,
+    "displayDate": "2026-05-25",
+    "displayTime": "09:30",
+    "displayEpoch": 1779669000
+  },
+  {
+    "name": "CODEX_알림_주식추천전략보고_260525_8.33AM.html",
+    "updatedIso": "2026-05-25T08:35:59.434472+09:00",
+    "updatedDate": "2026-05-25",
+    "updatedTime": "08:35",
+    "updatedEpoch": 1779665759,
+    "displayDate": "2026-05-25",
+    "displayTime": "08:33",
+    "displayEpoch": 1779665580
+  },
+  {
+    "name": "CODEX_알림_인사이트KB업데이트_260525_7.35AM.html",
+    "updatedIso": "2026-05-25T07:46:21.761865+09:00",
+    "updatedDate": "2026-05-25",
+    "updatedTime": "07:46",
+    "updatedEpoch": 1779662781,
+    "displayDate": "2026-05-25",
+    "displayTime": "07:35",
+    "displayEpoch": 1779662100
+  },
+  {
+    "name": "CODEX_알림_자동매수모니터_260525_12.03AM.html",
+    "updatedIso": "2026-05-25T00:05:16.140838+09:00",
+    "updatedDate": "2026-05-25",
+    "updatedTime": "00:05",
+    "updatedEpoch": 1779635116,
+    "displayDate": "2026-05-25",
+    "displayTime": "00:03",
+    "displayEpoch": 1779634980
+  },
+  {
+    "name": "CODEX_알림_저녁브리핑_260524_10.33PM.html",
+    "updatedIso": "2026-05-24T22:35:32.781903+09:00",
+    "updatedDate": "2026-05-24",
+    "updatedTime": "22:35",
+    "updatedEpoch": 1779629732,
+    "displayDate": "2026-05-24",
+    "displayTime": "22:33",
+    "displayEpoch": 1779629580
+  },
+  {
+    "name": "CODEX_알림_주식추천전략보고_260524_4.00PM.html",
+    "updatedIso": "2026-05-24T16:04:47.123852+09:00",
+    "updatedDate": "2026-05-24",
+    "updatedTime": "16:04",
+    "updatedEpoch": 1779606287,
+    "displayDate": "2026-05-24",
+    "displayTime": "16:00",
+    "displayEpoch": 1779606000
+  },
+  {
+    "name": "CODEX_알림_한국장마감PLTR모니터_260524_3.33PM.html",
+    "updatedIso": "2026-05-24T15:38:01.793136+09:00",
+    "updatedDate": "2026-05-24",
+    "updatedTime": "15:38",
+    "updatedEpoch": 1779604681,
+    "displayDate": "2026-05-24",
+    "displayTime": "15:33",
+    "displayEpoch": 1779604380
+  },
+  {
+    "name": "CODEX_알림_주식추천전략보고_260524_2.00PM.html",
+    "updatedIso": "2026-05-24T14:06:28.482754+09:00",
+    "updatedDate": "2026-05-24",
+    "updatedTime": "14:06",
+    "updatedEpoch": 1779599188,
+    "displayDate": "2026-05-24",
+    "displayTime": "14:00",
+    "displayEpoch": 1779598800
+  },
+  {
     "name": "CODEX_알림_오후1차모니터_260524_1.32PM.html",
     "updatedIso": "2026-05-24T13:40:37.678969+09:00",
     "updatedDate": "2026-05-24",
