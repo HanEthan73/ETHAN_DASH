@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CODEX 국내 단타 머그컵 4전략 보고</title>
+  <style>
+    :root{--bg:#0f1115;--panel:#171a20;--line:#2a2f38;--text:#e8edf4;--muted:#9ca6b4;--gold:#f4c430;--green:#4ade80;--red:#fb7185;--blue:#60a5fa;--warn:#fff4bf;--warnText:#3f3200}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif;line-height:1.55}
+    main{max-width:1180px;margin:0 auto;padding:28px 18px 64px}
+    h1{font-size:28px;margin:0 0 8px}
+    h2{font-size:19px;margin:30px 0 12px;color:#fff}
+    h3{font-size:16px;margin:18px 0 8px;color:#fff}
+    .meta,.note{color:var(--muted);font-size:13px}
+    .hero{border:1px solid var(--line);background:linear-gradient(180deg,#171a20,#11141a);border-radius:8px;padding:22px;margin-bottom:16px}
+    .strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0}
+    .box{border:1px solid var(--line);background:#141820;border-radius:8px;padding:13px}
+    .box b{display:block;font-size:18px;color:var(--gold)}
+    .box span{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:10px 0 20px}
+    table{border-collapse:collapse;width:100%;min-width:980px}
+    th,td{border-bottom:1px solid var(--line);padding:10px 11px;vertical-align:top;text-align:left;font-size:13px}
+    th{background:#20242b;color:var(--gold);white-space:nowrap}
+    td:first-child,th:first-child{position:sticky;left:0;background:#191d24;z-index:1;font-weight:700}
+    tr:last-child td{border-bottom:0}
+    .buy{color:var(--green);font-weight:700}.wait{color:var(--gold);font-weight:700}.sell{color:var(--red);font-weight:700}
+    .blue{color:var(--blue);font-weight:700}.small{font-size:12px;color:var(--muted)}
+    .warn{background:var(--warn);color:var(--warnText);border-radius:8px;padding:12px 14px;margin:14px 0;font-size:13px}
+    .tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 8px;margin:2px;color:#cbd5e1;background:#111827;font-size:12px}
+    .source a{color:#93c5fd}
+    @media(max-width:720px){.strip{grid-template-columns:1fr 1fr}h1{font-size:23px}main{padding:20px 12px 48px}}
+  </style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <h1>CODEX 국내 단타 머그컵 4전략 보고</h1>
+    <div class="meta">작성: 2026-05-25 23:35 KST · 실행 기준일: 2026-05-26 화요일 · 기준 데이터: 2026-05-22 국내장 마감가</div>
+    <div class="warn">2026-05-25 국내 증시는 석가탄신일 대체공휴일로 휴장입니다. 따라서 내일 주문은 2026-05-22 종가, 당일 시초가, 09:30 이후 VWAP/전일 저가 재확인 기준으로만 유효합니다. 시장가 추격매수 금지입니다.</div>
+    <div class="strip">
+      <div class="box"><b>1순위</b><span>아모레퍼시픽 · 머그컵 손잡이 눌림목</span></div>
+      <div class="box"><b>2순위</b><span>NAVER · 전일 저가 부근 회복 단타</span></div>
+      <div class="box"><b>3순위</b><span>S-Oil · 고가권 추격보다 재진입형</span></div>
+      <div class="box"><b>보류</b><span>한화에어로·알테오젠은 변동성 과다</span></div>
+    </div>
+    <div class="note">이 보고서는 주문 실행 지시가 아니라 대표님이 직접 판단할 수 있도록 만든 단기 트레이딩 체크리스트입니다. 손절가를 먼저 입력하지 못하면 진입 자체를 보류합니다.</div>
+  </section>
+
+  <h2>1. 먼저 결론: 내일 바로 걸 수 있는 지정가 표</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>순위</th><th>종목</th><th>5/22 종가</th><th>내일 1차 지정가</th><th>2차 지정가</th><th>손절 기준</th><th>1차 목표</th><th>2차 목표</th><th>주문 조건</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td><td>아모레퍼시픽<br><span class="small">090430</span></td><td>120,000</td><td class="buy">119,200~120,000</td><td>117,300~118,000</td><td class="sell">115,300 이탈</td><td>122,300</td><td>126,000</td><td>09:30 이후 120,000 회복 또는 전일 저가 부근 지지 확인 시만. 갭상승 122,500 이상 출발이면 보류.</td>
+        </tr>
+        <tr>
+          <td>2</td><td>NAVER<br><span class="small">035420</span></td><td>203,000</td><td class="buy">201,500~202,500</td><td>199,300~200,000</td><td class="sell">197,500 이탈</td><td>207,000</td><td>211,000</td><td>첫 30분 하락 뒤 202,000선 재탈환이면 진입. 205,000 위 추격 금지.</td>
+        </tr>
+        <tr>
+          <td>3</td><td>S-Oil<br><span class="small">010950</span></td><td>109,000</td><td class="buy">107,700~108,300</td><td>106,000~107,000</td><td class="sell">105,300 이탈</td><td>110,900</td><td>113,000</td><td>유가/정유주 강세 뉴스에 시초가 급등하면 사지 말고 전일 중심가로 내려올 때만.</td>
+        </tr>
+        <tr>
+          <td>4</td><td>카카오<br><span class="small">035720</span></td><td>41,850</td><td class="buy">41,450~41,800</td><td>40,900~41,100</td><td class="sell">40,500 이탈</td><td>42,600</td><td>43,300</td><td>저가권 반등용. 단, 거래대금이 전일 대비 약하면 1차도 반만.</td>
+        </tr>
+        <tr>
+          <td>5</td><td>삼성바이오로직스<br><span class="small">207940</span></td><td>1,415,000</td><td class="wait">1,387,000~1,402,000</td><td>1,360,000</td><td class="sell">1,350,000 이탈</td><td>1,444,000</td><td>1,470,000</td><td>가격 단위가 커서 소액 계좌 효율 낮음. 체결 가능 수량이 작으면 NAVER/아모레로 대체.</td>
+        </tr>
+        <tr>
+          <td>대기</td><td>한화에어로스페이스<br><span class="small">012450</span></td><td>1,261,000</td><td class="wait">1,226,000~1,248,000</td><td>1,205,000</td><td class="sell">1,198,000 이탈</td><td>1,276,000</td><td>1,300,000</td><td>강하지만 1주 가격과 변동폭이 큼. 1차 밴드까지 내려오지 않으면 추격 금지.</td>
+        </tr>
+        <tr>
+          <td>대기</td><td>알테오젠<br><span class="small">196170</span></td><td>364,500</td><td class="wait">358,000~361,000</td><td>350,000</td><td class="sell">346,000 이탈</td><td>374,000</td><td>384,500</td><td>수익률은 크지만 흔들림도 큼. 체결 후 30분 내 반등이 없으면 빠른 축소.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>2. 4가지 전략 만족/불만족 근거</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>종목</th><th>머그컵 이론</th><th>눌림목 분할</th><th>대표님 사팔사팔 전략</th><th>폭락장 풀매수 대기 전략</th><th>판정</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>아모레퍼시픽</td><td>컵 바닥권에서 오른쪽 림을 만들다 손잡이 눌림으로 내려온 구조. 120,000선 회복 여부가 핵심.</td><td>1차 120,000, 2차 117,300으로 손잡이 하단을 나눠 받기 좋음.</td><td>목표 122,300~126,000까지 짧게 잘라먹기 적합.</td><td>시장 전체 급락 시 115,300 이탈하면 단타가 아니라 더 낮은 대기권으로 전환.</td><td class="buy">만족</td>
+        </tr>
+        <tr>
+          <td>NAVER</td><td>긴 하락 뒤 둥근 바닥을 시도하는 구간. 완성 컵은 아니지만 손잡이 후보 구간.</td><td>201,500~202,500 1차, 200,000 전후 2차가 명확.</td><td>대형주라 급락 리스크가 상대적으로 작고 목표가도 숫자로 관리 가능.</td><td>197,500 이탈 시 컵 무효. 폭락장 전환이면 190,000대까지 기다림.</td><td class="buy">만족</td>
+        </tr>
+        <tr>
+          <td>S-Oil</td><td>컵보다는 재료주 재평가 후 눌림. 머그컵 점수는 중간.</td><td>108,000 전후가 전일 중심가라 분할 진입 선이 깔끔.</td><td>정유/유가 뉴스에 당일 탄력 가능. 단 뉴스 급등 추격은 금지.</td><td>105,300 이탈 시 바로 현금화. 원유 급락이면 재검토.</td><td class="buy">조건부 만족</td>
+        </tr>
+        <tr>
+          <td>카카오</td><td>컵이라기보다 저가 박스권 회복 시도. 오른쪽 림 힘은 아직 약함.</td><td>41,000대가 작게 나눠 받기 쉬움.</td><td>가격 단위가 작아 대표님 계좌에서 수량 조절이 쉬움.</td><td>40,500 아래면 박스 하단 붕괴. 폭락장까지 현금 대기.</td><td class="wait">반만 만족</td>
+        </tr>
+        <tr>
+          <td>삼성바이오로직스</td><td>상단 추세가 강하지만 머그컵 손잡이보다는 고가권 눌림.</td><td>1,400,000 전후가 1차 구간이나 계좌 효율 낮음.</td><td>고가주라 사팔사팔 회전 효율이 떨어짐.</td><td>방어주는 좋지만 손절폭이 커서 소액 단타에 부담.</td><td class="wait">대체 후보</td>
+        </tr>
+        <tr>
+          <td>한화에어로스페이스</td><td>추세 강도는 최고지만 컵 손잡이보다 과열 추세주.</td><td>1,226,000 아래까지 내려와야 리스크가 맞음.</td><td>탄력은 좋으나 1주 가격이 커서 실패 시 계좌 흔들림 큼.</td><td>지정학 재료 꺼지면 급락폭 큼. 폭락장 전용 관찰로 격하.</td><td class="wait">좋지만 비싸다</td>
+        </tr>
+        <tr>
+          <td>알테오젠</td><td>고변동 성장주라 컵 완성 전 흔들림이 큼.</td><td>358,000 아래로 깊게 눌릴 때만 가능.</td><td>수익률은 매력적이나 당일 -3% 흔들림도 감수해야 함.</td><td>346,000 이탈이면 급락 시나리오로 전환.</td><td class="wait">전문가용</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>3. 시간대별 실행 시나리오</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>시간</th><th>해야 할 일</th><th>매수 가능 조건</th><th>매수 금지 조건</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>08:40~08:59</td><td>예상체결가 확인</td><td>관심종목이 1차 밴드 안에 있거나 -0.5%~-1.5% 눌림이면 준비</td><td>아모레 122,500, NAVER 205,000, S-Oil 110,500 이상 갭상승이면 취소</td></tr>
+        <tr><td>09:00~09:30</td><td>첫 변동성 관찰</td><td>원칙적으로 주문 보류. 단 전일 저가 지지 후 빠른 회복만 예외</td><td>시초가 양봉만 보고 즉시 추격 금지</td></tr>
+        <tr><td>09:30~10:30</td><td>1차 진입 구간</td><td>1차 밴드 체결 + 거래대금 살아 있음 + 지수 약세가 과하지 않음</td><td>KOSPI가 장중 -1% 이상 밀리면 1차 수량 절반으로 축소</td></tr>
+        <tr><td>10:30~13:30</td><td>2차 여부 결정</td><td>1차보다 낮은 가격에서 지지 캔들이 나오면 2차</td><td>손절가 근처에서 물타기 금지</td></tr>
+        <tr><td>14:20~15:10</td><td>당일 청산 판단</td><td>목표가 1차 도달 시 절반 익절, 종가 강하면 잔량 보유</td><td>목표가 미도달 + 종가 약하면 다음날로 넘기지 않음</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>4. 최종 요약</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>구분</th><th>결론</th></tr></thead>
+      <tbody>
+        <tr><td>바로 주문 후보</td><td><span class="buy">아모레퍼시픽, NAVER, S-Oil</span> 세 종목만 우선. 지정가 밴드 밖이면 주문 취소.</td></tr>
+        <tr><td>소액 보조 후보</td><td>카카오는 41,000원대 지지 확인 시만. 목표는 짧게.</td></tr>
+        <tr><td>고가/고변동 후보</td><td>삼성바이오로직스, 한화에어로스페이스, 알테오젠은 좋은 종목이어도 대표님 현재 계좌 단타 효율은 낮음.</td></tr>
+        <tr><td>핵심 원칙</td><td>내일은 “싸게 걸어놓고 안 오면 안 산다”가 정답. 2026-05-26은 휴장 뒤 첫 거래일이라 시초가 왜곡이 커질 수 있음.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>5. CODEX 최종 인사이트</h2>
+  <div class="warn">대표님 전략의 강점은 “폭락장에 풀매수한다”가 아니라 “평소에 현금을 남길 명분을 만든다”는 점입니다. 머그컵 이론을 국내 단타에 그대로 쓰면 돌파매수로 변질되기 쉽습니다. 그래서 이번 보고서는 컵의 오른쪽 림 돌파가 아니라 손잡이의 얕은 실패 지점, 즉 남들이 실망해서 던지는 1~2% 눌림만 사는 구조로 바꿨습니다. 내일의 핵심은 종목 선택보다 주문 미체결을 견디는 능력입니다. 체결이 안 되면 실패가 아니라 전략이 지켜진 것입니다.</div>
+
+  <h2>6. 데이터 출처</h2>
+  <div class="table-wrap source">
+    <table>
+      <thead><tr><th>항목</th><th>링크</th><th>사용 방식</th></tr></thead>
+      <tbody>
+        <tr><td>아모레퍼시픽</td><td><a href="https://finance.naver.com/item/main.naver?code=090430">Naver Finance 090430</a></td><td>2026-05-22 종가, 고가, 저가, 52주 저가 확인</td></tr>
+        <tr><td>NAVER</td><td><a href="https://finance.naver.com/item/main.naver?code=035420">Naver Finance 035420</a></td><td>2026-05-22 종가 및 단기 밴드 산정</td></tr>
+        <tr><td>S-Oil</td><td><a href="https://finance.naver.com/item/main.naver?code=010950">Naver Finance 010950</a></td><td>2026-05-22 종가 및 분할매수 밴드 산정</td></tr>
+        <tr><td>카카오</td><td><a href="https://finance.naver.com/item/main.naver?code=035720">Naver Finance 035720</a></td><td>2026-05-22 종가 및 박스권 하단 확인</td></tr>
+        <tr><td>휴장 확인</td><td><a href="https://search.daum.net/search?w=tot&q=2026%EB%85%84%205%EC%9B%94%2025%EC%9D%BC%20%EC%84%9D%EA%B0%80%ED%83%84%EC%8B%A0%EC%9D%BC%20%EB%8C%80%EC%B2%B4%EA%B3%B5%ED%9C%B4%EC%9D%BC">2026-05-25 대체공휴일 검색</a></td><td>국내장 휴장일 판단</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+</body>
+</html>
