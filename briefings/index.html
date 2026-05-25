@@ -55,6 +55,12 @@ body{
   transition:background .15s,border-color .15s,color .15s;
 }
 .sort-btn.active{background:rgba(245,197,24,.12);border-color:rgba(245,197,24,.4);color:var(--gold)}
+.category-tabs{display:flex;gap:6px;width:100%;order:3}
+.category-tab{
+  flex:1;font-size:11px;font-weight:800;padding:6px 10px;border-radius:8px;cursor:pointer;
+  background:var(--s2);border:1px solid var(--bd);color:var(--t3);text-align:center;
+}
+.category-tab.active{background:rgba(91,164,245,.12);border-color:rgba(91,164,245,.45);color:var(--blu)}
 .search-box{
   display:flex;align-items:center;gap:8px;flex:1;min-width:170px;
   background:var(--bg);border:1px solid var(--bd);border-radius:8px;
@@ -210,6 +216,11 @@ body{
       <span>⌕</span>
       <input id="archive-search" type="search" placeholder="파일명·제목·요약 검색" autocomplete="off" oninput="setSearch(this.value)">
       <button class="search-clear" id="search-clear" type="button" onclick="clearSearch()" hidden>×</button>
+    </div>
+    <div class="category-tabs" aria-label="카테고리 필터">
+      <button class="category-tab active" id="cat-all" type="button" onclick="setCategory('all')">전체</button>
+      <button class="category-tab" id="cat-study" type="button" onclick="setCategory('study')">Study</button>
+      <button class="category-tab" id="cat-stock" type="button" onclick="setCategory('stock')">주식</button>
     </div>
   </div>
 
@@ -387,7 +398,8 @@ function applyManifestMeta(file, meta) {
     timeNum: timeStr ? parseInt(timeStr.replace(':','')) : file.timeNum,
     updatedIso: meta.updatedIso,
     updatedEpoch: meta.updatedEpoch,
-    displayEpoch: meta.displayEpoch
+    displayEpoch: meta.displayEpoch,
+    category: meta.category || file.category || inferCategory(file.name, file.label)
   };
 }
 
@@ -466,6 +478,7 @@ function localDateFromKey(dateKey) {
 let files = [];
 let sort = 'newest';
 let searchQuery = '';
+let categoryFilter = 'all';
 let calendarMonth = null;
 let selectedCalendarDate = null;
 
@@ -497,19 +510,40 @@ function clearSearch() {
   if (input) input.focus();
 }
 
+function setCategory(category) {
+  categoryFilter = category;
+  ['all','study','stock'].forEach(c => {
+    const btn = document.getElementById(`cat-${c}`);
+    if (btn) btn.classList.toggle('active', c === category);
+  });
+  render();
+}
+
 function getVisibleFiles() {
-  if (!searchQuery) return files;
-  return files.filter(f => normalizeSearch([
+  let visible = files;
+  if (categoryFilter !== 'all') {
+    visible = visible.filter(f => (f.category || inferCategory(f.name, f.label)) === categoryFilter);
+  }
+  if (!searchQuery) return visible;
+  return visible.filter(f => normalizeSearch([
     f.name,
     f.label,
     f.dateLabel,
     f.timeStr,
+    f.category || '',
     f.summary || ''
   ].join(' ')).includes(searchQuery));
 }
 
 function normalizeSearch(text) {
   return cleanText(text).toLowerCase();
+}
+
+function inferCategory(name, label) {
+  const text = normalizeSearch(`${name || ''} ${label || ''}`);
+  if (text.includes('#study') || text.includes('study') || text.includes('cllc') || text.includes('psim') || text.includes('pfc')) return 'study';
+  if (text.includes('주식') || text.includes('stock') || text.includes('pltr') || text.includes('nvda') || text.includes('시장')) return 'stock';
+  return 'stock';
 }
 
 function render() {

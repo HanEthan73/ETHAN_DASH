@@ -1,0 +1,111 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#study CODEX CLLC PWM 기준 Below Above SR 앞뒤 매핑</title>
+  <style>
+    :root{--bg:#0f1115;--panel:#171b22;--panel2:#202633;--line:#303948;--text:#eef3ff;--muted:#9ba8ba;--gold:#f5c518;--blue:#5aa9ff;--green:#54d58a;--red:#ff6b6b;--violet:#b58cff}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif;line-height:1.58}.wrap{max-width:1180px;margin:0 auto;padding:28px 18px 44px}
+    header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:22px}.eyebrow{font-size:12px;color:var(--gold);font-weight:900;letter-spacing:.4px}h1{font-size:30px;line-height:1.22;margin:8px 0 10px}h2{font-size:20px;margin:28px 0 12px}.sub,.muted{color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}.k{font-size:11px;color:var(--muted);font-weight:900}.v{font-size:18px;font-weight:900;margin-top:4px}.warn{border-color:rgba(245,197,24,.45);background:rgba(245,197,24,.08)}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--panel)}table{width:100%;border-collapse:collapse;min-width:900px}th,td{border-bottom:1px solid var(--line);padding:10px 12px;vertical-align:top;font-size:13px}th{background:var(--panel2);color:var(--gold);text-align:left;font-weight:900}tr:last-child td{border-bottom:0}
+    .note{background:#121821;border-left:4px solid var(--gold);padding:12px 14px;border-radius:0 8px 8px 0;margin:14px 0}.figure{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;margin:12px 0}.figure svg{width:100%;height:auto;display:block}.tag{display:inline-block;border:1px solid var(--line);background:#222936;color:#dbe8ff;border-radius:999px;padding:2px 7px;font-size:11px;font-weight:900}.tag.g{color:#93f0b7;border-color:rgba(84,213,138,.35);background:rgba(84,213,138,.08)}.tag.y{color:#ffe68a;border-color:rgba(245,197,24,.38);background:rgba(245,197,24,.08)}.tag.r{color:#ffb3b3;border-color:rgba(255,107,107,.38);background:rgba(255,107,107,.08)}
+    footer{margin-top:28px;border-top:1px solid var(--line);padding-top:14px;color:var(--muted);font-size:12px}@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}h1{font-size:24px}.wrap{padding:22px 12px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">#study CODEX CLLC PWM / SR TIMING</div>
+    <h1>Below는 SR 앞쪽을 더 켜고, Above는 SR 뒷쪽을 더 켜는 이유</h1>
+    <div class="sub">생성 2026-05-25 23:10 KST | 요청: PWM 기준 그림 설명, 1차측 대비, Study 카테고리 분류</div>
+  </header>
+
+  <section class="grid">
+    <div class="card warn"><div class="k">핵심</div><div class="v">PWM 기준이 아니라 전류 중심이 이동한다</div></div>
+    <div class="card"><div class="k">Below f<sub>r</sub></div><div class="v">전류가 앞쪽에 강함</div></div>
+    <div class="card"><div class="k">Above f<sub>r</sub></div><div class="v">전달전류가 뒤쪽으로 밀림</div></div>
+    <div class="card"><div class="k">SR 기준</div><div class="v">Isec zero-cross 전 OFF</div></div>
+  </section>
+
+  <section>
+    <h2>1. 대표님 관찰 정리</h2>
+    <div class="note">
+      “Below일 땐 SR 앞쪽을 더 켜고, Above일 땐 SR 뒷쪽을 더 켠다”는 관찰은 방향이 맞습니다. 다만 정확히는 SR 자체가 앞뒤로 움직인다기보다, <b>2차 전달전류 I<sub>sec</sub>가 PWM half-cycle 안에서 어디에 몰리는지가 바뀌는 것</b>입니다. SR은 그 전달전류가 실제로 흐르는 구간을 따라가야 합니다.
+    </div>
+  </section>
+
+  <section>
+    <h2>2. PWM 기준 그림</h2>
+    <div class="figure">
+      <svg viewBox="0 0 1180 680" role="img" aria-label="PWM based SR mapping below above resonance">
+        <rect width="1180" height="680" fill="#171b22"/>
+        <defs>
+          <pattern id="g" width="50" height="40" patternUnits="userSpaceOnUse"><path d="M50 0 H0 V40" fill="none" stroke="#242a34" stroke-width="1"/></pattern>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#f5c518"/></marker>
+        </defs>
+        <rect x="70" y="60" width="1040" height="520" fill="url(#g)" stroke="#303948"/>
+        <line x1="70" y1="140" x2="1110" y2="140" stroke="#6d7788" stroke-width="2"/>
+        <line x1="70" y1="300" x2="1110" y2="300" stroke="#6d7788" stroke-width="2"/>
+        <line x1="70" y1="460" x2="1110" y2="460" stroke="#6d7788" stroke-width="2"/>
+        <line x1="590" y1="60" x2="590" y2="580" stroke="#7d8798" stroke-dasharray="8 8"/>
+        <text x="80" y="42" fill="#9ba8ba" font-size="15">One switching period, vertical dashed line = PWM half-cycle boundary</text>
+        <text x="560" y="612" fill="#9ba8ba" font-size="14">PWM half-cycle boundary</text>
+
+        <text x="84" y="88" fill="#ffe68a" font-size="16" font-weight="700">Below f<tspan baseline-shift="sub" font-size="11">r</tspan>: SR 앞쪽 확장</text>
+        <path d="M95,140 C150,45 245,45 315,140 C360,205 410,215 455,165 C480,136 500,126 520,124" fill="none" stroke="#5aa9ff" stroke-width="4"/>
+        <path d="M95,140 C142,65 210,60 260,140 C300,195 360,194 402,152" fill="none" stroke="#f5c518" stroke-width="5" stroke-dasharray="10 7"/>
+        <rect x="112" y="108" width="260" height="24" fill="rgba(84,213,138,.32)" stroke="rgba(84,213,138,.8)"/>
+        <text x="120" y="103" fill="#93f0b7" font-size="13">SR ON window starts early</text>
+        <line x1="402" y1="122" x2="520" y2="122" stroke="#ff6b6b" stroke-width="3" marker-end="url(#arrow)"/>
+        <text x="428" y="112" fill="#ffb3b3" font-size="12">zero-cross 전 OFF</text>
+
+        <text x="84" y="248" fill="#93f0b7" font-size="16" font-weight="700">Near f<tspan baseline-shift="sub" font-size="11">r</tspan>: 중앙 대칭</text>
+        <path d="M95,300 C175,190 275,190 355,300 C435,410 535,410 590,300 C670,190 770,190 850,300 C930,410 1030,410 1090,320" fill="none" stroke="#5aa9ff" stroke-width="4"/>
+        <path d="M105,300 C185,205 275,205 350,300 C425,395 515,395 585,305" fill="none" stroke="#f5c518" stroke-width="5" stroke-dasharray="10 7"/>
+        <rect x="135" y="268" width="410" height="24" fill="rgba(84,213,138,.25)" stroke="rgba(84,213,138,.75)"/>
+        <text x="144" y="263" fill="#93f0b7" font-size="13">SR window roughly follows half-cycle</text>
+
+        <text x="84" y="408" fill="#ffb3b3" font-size="16" font-weight="700">Above f<tspan baseline-shift="sub" font-size="11">r</tspan>: SR 뒷쪽 확장</text>
+        <path d="M95,460 C150,390 230,390 300,460 C370,530 450,530 520,460 C590,390 670,390 740,460 C810,530 890,530 965,465" fill="none" stroke="#5aa9ff" stroke-width="4"/>
+        <path d="M255,460 C300,410 365,410 420,460 C475,508 535,505 575,465" fill="none" stroke="#f5c518" stroke-width="5" stroke-dasharray="10 7"/>
+        <rect x="265" y="428" width="300" height="24" fill="rgba(84,213,138,.28)" stroke="rgba(84,213,138,.8)"/>
+        <text x="274" y="423" fill="#93f0b7" font-size="13">SR ON window shifts later</text>
+        <line x1="130" y1="438" x2="245" y2="438" stroke="#ff6b6b" stroke-width="3" marker-end="url(#arrow)"/>
+        <text x="135" y="426" fill="#ffb3b3" font-size="12">앞쪽은 OFF</text>
+
+        <text x="760" y="88" fill="#5aa9ff" font-size="14" font-weight="700">Blue = Ipri tank current</text>
+        <text x="760" y="112" fill="#f5c518" font-size="14" font-weight="700">Yellow = reflected Isec</text>
+        <text x="760" y="136" fill="#93f0b7" font-size="14" font-weight="700">Green = recommended SR ON</text>
+        <text x="760" y="160" fill="#ffb3b3" font-size="14" font-weight="700">Red = force OFF / danger</text>
+      </svg>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. 1차측 대비 해석표</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>영역</th><th>I<sub>pri</sub> 대비 I<sub>sec</sub> 위치</th><th>SR을 앞/뒤로 켜는 이유</th><th>실무 게이트 규칙</th><th>틀리면 생기는 문제</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag y">Below f<sub>r</sub></span></td><td>I<sub>sec</sub>가 PWM 반주기 초반부터 크게 흐름. I<sub>pri</sub> 피크도 커짐</td><td>전달전류가 앞쪽에 많으므로 SR도 앞쪽 conduction을 받아야 body diode 손실이 줄어듦</td><td>초반 blanking 후 빠르게 ON, zero-cross 전 조기 OFF</td><td>앞쪽을 늦게 켜면 diode 손실, 뒤쪽을 오래 켜면 역전류</td></tr>
+          <tr><td><span class="tag g">Near f<sub>r</sub></span></td><td>I<sub>pri</sub>와 환산 I<sub>sec</sub>가 가장 잘 겹침</td><td>반주기 대칭에 가까워 기본 45~48% window가 잘 맞음</td><td>PWM half-cycle 기반 + 전류 threshold 보정</td><td>deadtime만 과하면 효율 손실</td></tr>
+          <tr><td><span class="tag r">Above f<sub>r</sub></span></td><td>I<sub>sec</sub> 유효 전달 구간이 뒤쪽 또는 좁은 펄스로 보일 수 있음</td><td>초반에는 탱크 전류가 있어도 2차 전달전류가 작거나 반대 부호일 수 있어 앞쪽 SR은 위험</td><td>앞쪽 강제 OFF, I<sub>sec</sub> 부호가 확실할 때 뒤쪽 ON</td><td>앞쪽을 켜면 reverse conduction, 경부하 효율 급락</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>최종 요약</h2>
+    <div class="note">
+      대표님 표현대로 Below에서는 SR 앞쪽을 더 살리고, Above에서는 SR 뒷쪽을 더 살리는 방향이 맞습니다. 다만 제어식으로는 “앞/뒤 고정”이 아니라 <b>PWM half-cycle 안에서 I<sub>sec</sub>가 실제로 나타나는 위치를 추적</b>하는 구조여야 합니다. I<sub>pri</sub>는 탱크가 얼마나 많이 돌고 있는지 보는 기준이고, SR ON/OFF의 직접 기준은 I<sub>sec</sub>입니다.
+    </div>
+  </section>
+
+  <footer>#study · CLLC PWM 기준 SR 앞뒤 매핑 · Study 카테고리 자동 분류 대상</footer>
+</div>
+</body>
+</html>
+

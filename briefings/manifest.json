@@ -1,5 +1,38 @@
 [
   {
+    "name": "CODEX_STUDY_CLLC_PWMSRFrontBackMap_260525_11.10PM.html",
+    "updatedIso": "2026-05-25T23:10:14.787660+09:00",
+    "updatedDate": "2026-05-25",
+    "updatedTime": "23:10",
+    "updatedEpoch": 1779718214,
+    "displayDate": "2026-05-25",
+    "displayTime": "23:10",
+    "displayEpoch": 1779718200,
+    "category": "study"
+  },
+  {
+    "name": "CODEX_STUDY_PSIM_PFC60HzSimulationStep_260525_11.05PM.html",
+    "updatedIso": "2026-05-25T23:04:57.367129+09:00",
+    "updatedDate": "2026-05-25",
+    "updatedTime": "23:04",
+    "updatedEpoch": 1779717897,
+    "displayDate": "2026-05-25",
+    "displayTime": "23:05",
+    "displayEpoch": 1779717900,
+    "category": "study"
+  },
+  {
+    "name": "CODEX_알림_저녁브리핑_260525_10.33PM.html",
+    "updatedIso": "2026-05-25T22:35:59.066797+09:00",
+    "updatedDate": "2026-05-25",
+    "updatedTime": "22:35",
+    "updatedEpoch": 1779716159,
+    "displayDate": "2026-05-25",
+    "displayTime": "22:33",
+    "displayEpoch": 1779715980,
+    "category": "stock"
+  },
+  {
     "name": "CODEX_CLLC_PrimarySecondaryCurrentSRMap_260525_6.05PM.html",
     "updatedIso": "2026-05-25T18:06:54.289000+09:00",
     "updatedDate": "2026-05-25",
@@ -7,7 +40,8 @@
     "updatedEpoch": 1779700014,
     "displayDate": "2026-05-25",
     "displayTime": "18:05",
-    "displayEpoch": 1779699900
+    "displayEpoch": 1779699900,
+    "category": "study"
   },
   {
     "name": "CODEX_CLLC_SR매핑전류파형_260525_4.35PM.html",
@@ -17,7 +51,8 @@
     "updatedEpoch": 1779694539,
     "displayDate": "2026-05-25",
     "displayTime": "16:35",
-    "displayEpoch": 1779694500
+    "displayEpoch": 1779694500,
+    "category": "study"
   },
   {
     "name": "CODEX_알림_주식추천전략보고_260525_4.00PM.html",
@@ -27,7 +62,8 @@
     "updatedEpoch": 1779692790,
     "displayDate": "2026-05-25",
     "displayTime": "16:00",
-    "displayEpoch": 1779692400
+    "displayEpoch": 1779692400,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_한국장마감PLTR모니터_260525_3.32PM.html",
@@ -37,7 +73,8 @@
     "updatedEpoch": 1779691053,
     "displayDate": "2026-05-25",
     "displayTime": "15:32",
-    "displayEpoch": 1779690720
+    "displayEpoch": 1779690720,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_주식추천전략보고_260525_2.00PM.html",
@@ -47,7 +84,8 @@
     "updatedEpoch": 1779685632,
     "displayDate": "2026-05-25",
     "displayTime": "14:00",
-    "displayEpoch": 1779685200
+    "displayEpoch": 1779685200,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_오후1차모니터_260525_1.33PM.html",
@@ -57,7 +95,8 @@
     "updatedEpoch": 1779683705,
     "displayDate": "2026-05-25",
     "displayTime": "13:33",
-    "displayEpoch": 1779683580
+    "displayEpoch": 1779683580,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_낮진입전략_260525_12.30PM.html",
@@ -67,7 +106,8 @@
     "updatedEpoch": 1779680234,
     "displayDate": "2026-05-25",
     "displayTime": "12:30",
-    "displayEpoch": 1779679800
+    "displayEpoch": 1779679800,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_오전종합모니터_260525_9.30AM.html",
@@ -77,7 +117,8 @@
     "updatedEpoch": 1779669412,
     "displayDate": "2026-05-25",
     "displayTime": "09:30",
-    "displayEpoch": 1779669000
+    "displayEpoch": 1779669000,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_주식추천전략보고_260525_8.33AM.html",
@@ -87,7 +128,8 @@
     "updatedEpoch": 1779665759,
     "displayDate": "2026-05-25",
     "displayTime": "08:33",
-    "displayEpoch": 1779665580
+    "displayEpoch": 1779665580,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_인사이트KB업데이트_260525_7.35AM.html",
@@ -97,7 +139,8 @@
     "updatedEpoch": 1779662781,
     "displayDate": "2026-05-25",
     "displayTime": "07:35",
-    "displayEpoch": 1779662100
+    "displayEpoch": 1779662100,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_자동매수모니터_260525_12.03AM.html",
@@ -107,7 +150,8 @@
     "updatedEpoch": 1779635116,
     "displayDate": "2026-05-25",
     "displayTime": "00:03",
-    "displayEpoch": 1779634980
+    "displayEpoch": 1779634980,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_저녁브리핑_260524_10.33PM.html",
@@ -117,7 +161,8 @@
     "updatedEpoch": 1779629732,
     "displayDate": "2026-05-24",
     "displayTime": "22:33",
-    "displayEpoch": 1779629580
+    "displayEpoch": 1779629580,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_주식추천전략보고_260524_4.00PM.html",
@@ -127,7 +172,8 @@
     "updatedEpoch": 1779606287,
     "displayDate": "2026-05-24",
     "displayTime": "16:00",
-    "displayEpoch": 1779606000
+    "displayEpoch": 1779606000,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_한국장마감PLTR모니터_260524_3.33PM.html",
@@ -137,7 +183,8 @@
     "updatedEpoch": 1779604681,
     "displayDate": "2026-05-24",
     "displayTime": "15:33",
-    "displayEpoch": 1779604380
+    "displayEpoch": 1779604380,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_주식추천전략보고_260524_2.00PM.html",
@@ -147,7 +194,8 @@
     "updatedEpoch": 1779599188,
     "displayDate": "2026-05-24",
     "displayTime": "14:00",
-    "displayEpoch": 1779598800
+    "displayEpoch": 1779598800,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_오후1차모니터_260524_1.32PM.html",
@@ -157,7 +205,8 @@
     "updatedEpoch": 1779597637,
     "displayDate": "2026-05-24",
     "displayTime": "13:32",
-    "displayEpoch": 1779597120
+    "displayEpoch": 1779597120,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_낮진입전략_260524_12.30PM.html",
@@ -167,7 +216,8 @@
     "updatedEpoch": 1779597637,
     "displayDate": "2026-05-24",
     "displayTime": "12:30",
-    "displayEpoch": 1779593400
+    "displayEpoch": 1779593400,
+    "category": "stock"
   },
   {
     "name": "CODEX_방문자로그비공개설계_260524_11.05AM.html",
@@ -177,7 +227,8 @@
     "updatedEpoch": 1779588175,
     "displayDate": "2026-05-24",
     "displayTime": "11:05",
-    "displayEpoch": 1779588300
+    "displayEpoch": 1779588300,
+    "category": "stock"
   },
   {
     "name": "CODEX_TIGER우주스페이스X전략_260524_10.47AM.html",
@@ -187,7 +238,8 @@
     "updatedEpoch": 1779586593,
     "displayDate": "2026-05-24",
     "displayTime": "10:47",
-    "displayEpoch": 1779587220
+    "displayEpoch": 1779587220,
+    "category": "stock"
   },
   {
     "name": "CODEX_국제정세방어포트폴리오_260524_10.42AM.html",
@@ -197,7 +249,8 @@
     "updatedEpoch": 1779586520,
     "displayDate": "2026-05-24",
     "displayTime": "10:42",
-    "displayEpoch": 1779586920
+    "displayEpoch": 1779586920,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_오전종합모니터_260524_9.33AM.html",
@@ -207,7 +260,8 @@
     "updatedEpoch": 1779597637,
     "displayDate": "2026-05-24",
     "displayTime": "09:33",
-    "displayEpoch": 1779582780
+    "displayEpoch": 1779582780,
+    "category": "stock"
   },
   {
     "name": "CODEX_국제정세브리핑_260524_8.45AM.html",
@@ -217,7 +271,8 @@
     "updatedEpoch": 1779579308,
     "displayDate": "2026-05-24",
     "displayTime": "08:45",
-    "displayEpoch": 1779579900
+    "displayEpoch": 1779579900,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_주식추천전략보고_260524_8.34AM.html",
@@ -227,7 +282,8 @@
     "updatedEpoch": 1779597637,
     "displayDate": "2026-05-24",
     "displayTime": "08:34",
-    "displayEpoch": 1779579240
+    "displayEpoch": 1779579240,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_인사이트KB업데이트_260524_7.35AM.html",
@@ -237,7 +293,8 @@
     "updatedEpoch": 1779597637,
     "displayDate": "2026-05-24",
     "displayTime": "07:35",
-    "displayEpoch": 1779575700
+    "displayEpoch": 1779575700,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_자동매수모니터_260524_12.02AM.html",
@@ -247,7 +304,8 @@
     "updatedEpoch": 1779589968,
     "displayDate": "2026-05-24",
     "displayTime": "00:02",
-    "displayEpoch": 1779548520
+    "displayEpoch": 1779548520,
+    "category": "stock"
   },
   {
     "name": "CODEX_국내이색단타8선_260523_11.08PM.html",
@@ -257,7 +315,8 @@
     "updatedEpoch": 1779545235,
     "displayDate": "2026-05-23",
     "displayTime": "23:08",
-    "displayEpoch": 1779545280
+    "displayEpoch": 1779545280,
+    "category": "stock"
   },
   {
     "name": "CODEX_국내저점단타8선_260523_10.34PM.html",
@@ -267,7 +326,8 @@
     "updatedEpoch": 1779545139,
     "displayDate": "2026-05-23",
     "displayTime": "22:34",
-    "displayEpoch": 1779543240
+    "displayEpoch": 1779543240,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_저녁브리핑_260523_10.32PM.html",
@@ -277,7 +337,8 @@
     "updatedEpoch": 1779597637,
     "displayDate": "2026-05-23",
     "displayTime": "22:32",
-    "displayEpoch": 1779543120
+    "displayEpoch": 1779543120,
+    "category": "stock"
   },
   {
     "name": "CODEX_국내주3종비교전략_260523_8.40PM.html",
@@ -287,7 +348,8 @@
     "updatedEpoch": 1779545139,
     "displayDate": "2026-05-23",
     "displayTime": "20:40",
-    "displayEpoch": 1779536400
+    "displayEpoch": 1779536400,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_폭락시나리오2차심층분석_260523_8.06PM.html",
@@ -297,7 +359,8 @@
     "updatedEpoch": 1779589968,
     "displayDate": "2026-05-23",
     "displayTime": "20:06",
-    "displayEpoch": 1779534360
+    "displayEpoch": 1779534360,
+    "category": "stock"
   },
   {
     "name": "CODEX_다음주추천주전략보고_260523_7.38PM.html",
@@ -307,7 +370,8 @@
     "updatedEpoch": 1779532908,
     "displayDate": "2026-05-23",
     "displayTime": "19:38",
-    "displayEpoch": 1779532680
+    "displayEpoch": 1779532680,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_폭락시나리오그래프뷰_260523_3.18PM.html",
@@ -317,7 +381,8 @@
     "updatedEpoch": 1779589968,
     "displayDate": "2026-05-23",
     "displayTime": "15:18",
-    "displayEpoch": 1779517080
+    "displayEpoch": 1779517080,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_주식추천전략보고_260523_2.00PM.html",
@@ -327,7 +392,8 @@
     "updatedEpoch": 1779597637,
     "displayDate": "2026-05-23",
     "displayTime": "14:00",
-    "displayEpoch": 1779512400
+    "displayEpoch": 1779512400,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_오후1차모니터_260523_1.36PM.html",
@@ -337,7 +403,8 @@
     "updatedEpoch": 1779589968,
     "displayDate": "2026-05-23",
     "displayTime": "13:36",
-    "displayEpoch": 1779510960
+    "displayEpoch": 1779510960,
+    "category": "stock"
   },
   {
     "name": "다음사이클예측_260523_11.30AM.html",
@@ -347,7 +414,8 @@
     "updatedEpoch": 1779469439,
     "displayDate": "2026-05-23",
     "displayTime": "11:30",
-    "displayEpoch": 1779503400
+    "displayEpoch": 1779503400,
+    "category": "stock"
   },
   {
     "name": "CODEX_힌덴버그오멘삼층분석_260523_11.11AM.html",
@@ -357,7 +425,8 @@
     "updatedEpoch": 1779531361,
     "displayDate": "2026-05-23",
     "displayTime": "11:11",
-    "displayEpoch": 1779502260
+    "displayEpoch": 1779502260,
+    "category": "stock"
   },
   {
     "name": "국내주3종분석_260523_11.00AM.html",
@@ -367,7 +436,8 @@
     "updatedEpoch": 1779469011,
     "displayDate": "2026-05-23",
     "displayTime": "11:00",
-    "displayEpoch": 1779501600
+    "displayEpoch": 1779501600,
+    "category": "stock"
   },
   {
     "name": "CPU_GPU_HBM분석_260523_10.30AM.html",
@@ -377,7 +447,8 @@
     "updatedEpoch": 1779468872,
     "displayDate": "2026-05-23",
     "displayTime": "10:30",
-    "displayEpoch": 1779499800
+    "displayEpoch": 1779499800,
+    "category": "stock"
   },
   {
     "name": "브로드컴분석_260523_10.00AM.html",
@@ -387,7 +458,8 @@
     "updatedEpoch": 1779468404,
     "displayDate": "2026-05-23",
     "displayTime": "10:00",
-    "displayEpoch": 1779498000
+    "displayEpoch": 1779498000,
+    "category": "stock"
   },
   {
     "name": "주식추천신규수정_260523_9.45AM.html",
@@ -397,7 +469,8 @@
     "updatedEpoch": 1779467430,
     "displayDate": "2026-05-23",
     "displayTime": "09:45",
-    "displayEpoch": 1779497100
+    "displayEpoch": 1779497100,
+    "category": "stock"
   },
   {
     "name": "CODEX_폭락시나리오그래프뷰3종분석_260523_9.35AM.html",
@@ -407,7 +480,8 @@
     "updatedEpoch": 1779497104,
     "displayDate": "2026-05-23",
     "displayTime": "09:35",
-    "displayEpoch": 1779496500
+    "displayEpoch": 1779496500,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_오전종합모니터_260523_9.33AM.html",
@@ -417,7 +491,8 @@
     "updatedEpoch": 1779589968,
     "displayDate": "2026-05-23",
     "displayTime": "09:33",
-    "displayEpoch": 1779496380
+    "displayEpoch": 1779496380,
+    "category": "stock"
   },
   {
     "name": "주식추천신규_260523_9.30AM.html",
@@ -427,7 +502,8 @@
     "updatedEpoch": 1779467303,
     "displayDate": "2026-05-23",
     "displayTime": "09:30",
-    "displayEpoch": 1779496200
+    "displayEpoch": 1779496200,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_주식추천전략보고_260523_9.19AM.html",
@@ -437,7 +513,8 @@
     "updatedEpoch": 1779589968,
     "displayDate": "2026-05-23",
     "displayTime": "09:19",
-    "displayEpoch": 1779495540
+    "displayEpoch": 1779495540,
+    "category": "stock"
   },
   {
     "name": "ASTS분석_260523_9.10AM.html",
@@ -447,7 +524,8 @@
     "updatedEpoch": 1779466539,
     "displayDate": "2026-05-23",
     "displayTime": "09:10",
-    "displayEpoch": 1779495000
+    "displayEpoch": 1779495000,
+    "category": "stock"
   },
   {
     "name": "CODEX_나스닥폭락시그널분석_260523_8.46AM.html",
@@ -457,7 +535,8 @@
     "updatedEpoch": 1779493766,
     "displayDate": "2026-05-23",
     "displayTime": "08:46",
-    "displayEpoch": 1779493560
+    "displayEpoch": 1779493560,
+    "category": "stock"
   },
   {
     "name": "CODEX_알림_주식추천전략보고_260523_8.35AM.html",
@@ -467,7 +546,8 @@
     "updatedEpoch": 1779589968,
     "displayDate": "2026-05-23",
     "displayTime": "08:35",
-    "displayEpoch": 1779492900
+    "displayEpoch": 1779492900,
+    "category": "stock"
   },
   {
     "name": "인사이트KB업데이트_260523_7.35AM.html",
@@ -477,7 +557,8 @@
     "updatedEpoch": 1779489656,
     "displayDate": "2026-05-23",
     "displayTime": "07:35",
-    "displayEpoch": 1779489300
+    "displayEpoch": 1779489300,
+    "category": "stock"
   },
   {
     "name": "premarket_20260521.html",
@@ -487,7 +568,8 @@
     "updatedEpoch": 1779477071,
     "displayDate": "2026-05-23",
     "displayTime": "04:11",
-    "displayEpoch": 1779477071
+    "displayEpoch": 1779477071,
+    "category": "stock"
   },
   {
     "name": "noon_briefing_20260521.html",
@@ -497,7 +579,8 @@
     "updatedEpoch": 1779477071,
     "displayDate": "2026-05-23",
     "displayTime": "04:11",
-    "displayEpoch": 1779477071
+    "displayEpoch": 1779477071,
+    "category": "stock"
   },
   {
     "name": "morning_briefing_20260521.html",
@@ -507,7 +590,8 @@
     "updatedEpoch": 1779477071,
     "displayDate": "2026-05-23",
     "displayTime": "04:11",
-    "displayEpoch": 1779477071
+    "displayEpoch": 1779477071,
+    "category": "stock"
   },
   {
     "name": "주식추천_260523_12.15AM.html",
@@ -517,7 +601,8 @@
     "updatedEpoch": 1779462571,
     "displayDate": "2026-05-23",
     "displayTime": "00:15",
-    "displayEpoch": 1779462900
+    "displayEpoch": 1779462900,
+    "category": "stock"
   },
   {
     "name": "주식추천_260523_12.00AM.html",
@@ -527,7 +612,8 @@
     "updatedEpoch": 1779462401,
     "displayDate": "2026-05-23",
     "displayTime": "00:00",
-    "displayEpoch": 1779462000
+    "displayEpoch": 1779462000,
+    "category": "stock"
   },
   {
     "name": "주식추천_260522_11.35PM.html",
@@ -537,7 +623,8 @@
     "updatedEpoch": 1779461286,
     "displayDate": "2026-05-22",
     "displayTime": "23:35",
-    "displayEpoch": 1779460500
+    "displayEpoch": 1779460500,
+    "category": "stock"
   },
   {
     "name": "코덱스알림_260522_11.00PM.html",
@@ -547,7 +634,8 @@
     "updatedEpoch": 1779531214,
     "displayDate": "2026-05-22",
     "displayTime": "23:00",
-    "displayEpoch": 1779458400
+    "displayEpoch": 1779458400,
+    "category": "stock"
   },
   {
     "name": "stock_strategy_20260522_22.html",
@@ -557,7 +645,8 @@
     "updatedEpoch": 1779454362,
     "displayDate": "2026-05-22",
     "displayTime": "22:00",
-    "displayEpoch": 1779454800
+    "displayEpoch": 1779454800,
+    "category": "stock"
   },
   {
     "name": "stock_recommendation_20260522_22.html",
@@ -567,7 +656,8 @@
     "updatedEpoch": 1779454362,
     "displayDate": "2026-05-22",
     "displayTime": "22:00",
-    "displayEpoch": 1779454800
+    "displayEpoch": 1779454800,
+    "category": "stock"
   },
   {
     "name": "저녁브리핑_260522_6.17PM.html",
@@ -577,7 +667,8 @@
     "updatedEpoch": 1779448085,
     "displayDate": "2026-05-22",
     "displayTime": "18:17",
-    "displayEpoch": 1779441420
+    "displayEpoch": 1779441420,
+    "category": "stock"
   },
   {
     "name": "pltr_tool_v2.html",
@@ -587,7 +678,8 @@
     "updatedEpoch": 1779438875,
     "displayDate": "2026-05-22",
     "displayTime": "17:34",
-    "displayEpoch": 1779438875
+    "displayEpoch": 1779438875,
+    "category": "stock"
   },
   {
     "name": "pltr_tool.html",
@@ -597,7 +689,8 @@
     "updatedEpoch": 1779438875,
     "displayDate": "2026-05-22",
     "displayTime": "17:34",
-    "displayEpoch": 1779438875
+    "displayEpoch": 1779438875,
+    "category": "stock"
   },
   {
     "name": "morning_briefing_20260522_09.html",
@@ -607,7 +700,8 @@
     "updatedEpoch": 1779454362,
     "displayDate": "2026-05-22",
     "displayTime": "09:00",
-    "displayEpoch": 1779408000
+    "displayEpoch": 1779408000,
+    "category": "stock"
   },
   {
     "name": "fx_alert_20260521_06.html",
@@ -617,6 +711,7 @@
     "updatedEpoch": 1779477071,
     "displayDate": "2026-05-21",
     "displayTime": "06:00",
-    "displayEpoch": 1779310800
+    "displayEpoch": 1779310800,
+    "category": "stock"
   }
 ]
