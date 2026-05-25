@@ -1,5 +1,27 @@
 ﻿[
     {
+        "name":  "CODEX_종전시나리오심층브리핑_260526_12.05AM.html",
+        "updatedIso":  "2026-05-26T00:04:57.350287+09:00",
+        "updatedDate":  "2026-05-26",
+        "updatedTime":  "00:04",
+        "updatedEpoch":  1779753897,
+        "displayDate":  "2026-05-26",
+        "displayTime":  "00:05",
+        "displayEpoch":  1779753900,
+        "category":  "stock"
+    },
+    {
+        "name":  "CODEX_알림_자동매수모니터_260526_12.02AM.html",
+        "updatedIso":  "2026-05-26T00:04:29+09:00",
+        "updatedDate":  "2026-05-26",
+        "updatedTime":  "00:04",
+        "updatedEpoch":  1779721469,
+        "displayDate":  "2026-05-26",
+        "displayTime":  "00:02",
+        "displayEpoch":  1779721320,
+        "category":  "stock"
+    },
+    {
         "name":  "CODEX_STUDY_PSIM_VariableStepSimulation_260525_11.45PM.html",
         "updatedIso":  "2026-05-25T23:34:18.666355+09:00",
         "updatedDate":  "2026-05-25",
