@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>ETHAN 인사이트 대시보드</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a14;--bg2:#0e0e1e;--panel:#12122a;--line:#2a2a4a;
+  --text:#edf3fb;--muted:#8090b0;--gold:#ffd700;--blue:#8ecbff;
+  --green:#79e4ad;--yellow:#ffe58f;--red:#ff8080;--orange:#ffb347;
+  --purp:#c084fc;--cyan:#67e8f9;
+}
+body{background:linear-gradient(135deg,var(--bg2) 0%,var(--bg) 100%);color:var(--text);font-family:"Malgun Gothic","Apple SD Gothic Neo","Segoe UI",sans-serif;line-height:1.6;min-height:100vh;padding:16px}
+.wrap{max-width:1200px;margin:0 auto}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,rgba(255,215,0,.12),rgba(142,203,255,.08));border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:16px}
+.header h1{font-size:26px;color:var(--gold);margin-bottom:4px;letter-spacing:-0.5px}
+.header .sub{font-size:12px;color:var(--muted)}
+.header .last-update{font-size:11px;color:var(--muted);margin-top:8px}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.stat-card{background:rgba(18,18,42,.9);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
+.stat-card .label{font-size:11px;color:var(--muted);margin-bottom:6px}
+.stat-card .num{font-size:28px;font-weight:800;color:var(--gold)}
+.stat-card .sub2{font-size:10px;color:var(--muted);margin-top:4px}
+
+/* CONTROLS */
+.controls{background:rgba(18,18,42,.9);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
+.tab-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tab{padding:6px 14px;border-radius:20px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;font-size:12px;font-family:inherit;transition:all .2s}
+.tab.active{background:var(--gold);color:#000;border-color:var(--gold);font-weight:700}
+.tab:hover:not(.active){border-color:var(--gold);color:var(--gold)}
+.cat-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.cat{padding:4px 10px;border-radius:12px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;font-size:11px;font-family:inherit;transition:all .2s}
+.cat.active{font-weight:700}
+.cat[data-cat="시장경보"].active{background:rgba(255,128,128,.2);color:#ff8080;border-color:#ff8080}
+.cat[data-cat="종목추천"].active{background:rgba(121,228,173,.2);color:#79e4ad;border-color:#79e4ad}
+.cat[data-cat="포트폴리오"].active{background:rgba(142,203,255,.2);color:#8ecbff;border-color:#8ecbff}
+.cat[data-cat="역발상투자"].active{background:rgba(255,179,71,.2);color:#ffb347;border-color:#ffb347}
+.cat[data-cat="지정학"].active{background:rgba(192,132,252,.2);color:#c084fc;border-color:#c084fc}
+.cat[data-cat="전략"].active{background:rgba(255,228,143,.2);color:#ffe58f;border-color:#ffe58f}
+.cat[data-cat="시장분석"].active{background:rgba(103,232,249,.2);color:#67e8f9;border-color:#67e8f9}
+.cat[data-cat="시스템"].active{background:rgba(160,160,160,.2);color:#aaa;border-color:#aaa}
+.search{width:100%;padding:8px 14px;background:rgba(0,0,0,.4);border:1px solid var(--line);border-radius:8px;color:var(--text);font-size:13px;font-family:inherit}
+.search::placeholder{color:var(--muted)}
+.search:focus{outline:none;border-color:var(--gold)}
+
+/* CARDS */
+.cards{display:grid;gap:12px}
+.card{background:rgba(18,18,42,.92);border:1px solid var(--line);border-radius:14px;padding:18px;transition:border-color .2s}
+.card:hover{border-color:rgba(255,215,0,.4)}
+.card.importance-high{border-left:3px solid #ff8080}
+.card.importance-medium{border-left:3px solid var(--gold)}
+.card.importance-low{border-left:3px solid var(--muted)}
+.card-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.badge{padding:3px 8px;border-radius:10px;font-size:10px;font-weight:700;white-space:nowrap;flex-shrink:0}
+.badge-시장경보{background:rgba(255,128,128,.2);color:#ff8080}
+.badge-종목추천{background:rgba(121,228,173,.2);color:#79e4ad}
+.badge-포트폴리오{background:rgba(142,203,255,.2);color:#8ecbff}
+.badge-역발상투자{background:rgba(255,179,71,.2);color:#ffb347}
+.badge-지정학{background:rgba(192,132,252,.2);color:#c084fc}
+.badge-전략{background:rgba(255,228,143,.2);color:#ffe58f}
+.badge-시장분석{background:rgba(103,232,249,.2);color:#67e8f9}
+.badge-시스템{background:rgba(160,160,160,.15);color:#aaa}
+.card-title{font-size:15px;font-weight:700;color:var(--text);flex:1;line-height:1.4}
+.imp-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.imp-dot.high{background:#ff8080}
+.imp-dot.medium{background:var(--gold)}
+.imp-dot.low{background:var(--muted)}
+.card-meta{font-size:11px;color:var(--muted);margin-bottom:10px}
+.card-content{font-size:13px;color:var(--text);line-height:1.65;margin-bottom:10px}
+.card-action{background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:8px;padding:10px 12px;font-size:12px;color:var(--yellow)}
+.card-action::before{content:"⚡ 실행: ";font-weight:700;color:var(--gold)}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tag{padding:2px 7px;background:rgba(255,255,255,.06);border-radius:6px;font-size:10px;color:var(--muted)}
+.no-results{text-align:center;padding:40px;color:var(--muted);font-size:14px}
+
+/* MOBILE */
+@media(max-width:540px){
+  body{padding:10px}
+  .header h1{font-size:20px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat-card .num{font-size:22px}
+  .tab-bar{gap:6px}
+  .tab{padding:5px 10px;font-size:11px}
+  .cat{padding:3px 8px;font-size:10px}
+  .card-title{font-size:14px}
+  .card-content{font-size:12px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <h1>📊 ETHAN 인사이트 대시보드</h1>
+  <div class="sub">투자 지식베이스 · AI 자동 추출 · 매일 07:05 업데이트</div>
+  <div class="last-update">최종 업데이트: 2026-05-27 07:05 KST</div>
+</div>
+
+<div class="stats">
+  <div class="stat-card">
+    <div class="label">📚 전체 인사이트</div>
+    <div class="num" id="total-count">8</div>
+    <div class="sub2">누적 총계</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">📅 오늘 (5/27)</div>
+    <div class="num" id="today-count">0</div>
+    <div class="sub2">신규 추출</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">📆 이번주 W22</div>
+    <div class="num" id="week-count">8</div>
+    <div class="sub2">주간 누적</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">🔴 HIGH 중요</div>
+    <div class="num" id="high-count" style="color:#ff8080">6</div>
+    <div class="sub2">즉시 확인 필요</div>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="tab-bar">
+    <button class="tab active" data-tab="all">전체</button>
+    <button class="tab" data-tab="daily">일별</button>
+    <button class="tab" data-tab="weekly">주별</button>
+    <button class="tab" data-tab="monthly">월별</button>
+  </div>
+  <div class="cat-bar">
+    <button class="cat" data-cat="all">모두</button>
+    <button class="cat" data-cat="시장경보">🚨 시장경보</button>
+    <button class="cat" data-cat="종목추천">📈 종목추천</button>
+    <button class="cat" data-cat="포트폴리오">💼 포트폴리오</button>
+    <button class="cat" data-cat="역발상투자">🔄 역발상투자</button>
+    <button class="cat" data-cat="지정학">🌐 지정학</button>
+    <button class="cat" data-cat="전략">🎯 전략</button>
+    <button class="cat" data-cat="시장분석">📊 시장분석</button>
+    <button class="cat" data-cat="시스템">⚙️ 시스템</button>
+  </div>
+  <input type="text" class="search" id="search" placeholder="🔍 종목명, 키워드로 검색...">
+</div>
+
+<div class="cards" id="cards-container"></div>
+
+</div>
+
+<script>
+const RAW_DATA = [{"id": "20260526-001", "date": "2026-05-26", "week": "2026-W22", "month": "2026-05", "category": "종목추천", "title": "MU +19.3% 폭등 — 시총 $1조 첫 돌파, UBS $1,625 목표가 설정", "content": "Micron(MU) 2026-05-26 +19.3% 급등으로 시총 $1조 최초 돌파. UBS Timothy Arcuri 애널리스트가 목표주가 $535→$1,625(+204%, Street-high)로 대폭 상향. HBM4 2026년 전량 사전 판매 완료, 마이크로소프트·구글·아마존 장기공급계약(LTA) 확보. NVIDIA AI서버 핵심 공급망으로 AI 메모리 수요 폭발적 증가. 보유 8주 기준 미실현이익 +$1,793(≈269만원).", "action": "MU 보유 지속. 추가매수는 조정 시($840~870) 검토. UBS 목표가 $1,625 대비 현재 $895 — 추가 상승 여력 존재. 단, 단기 급등 후 차익실현 압력 가능하므로 추격매수 금지.", "importance": "high", "tags": ["MU", "HBM", "AI메모리", "시총1조", "UBS상향", "자동매수"]}, {"id": "20260526-002", "date": "2026-05-26", "week": "2026-W22", "month": "2026-05", "category": "시장분석", "title": "S&P500·Nasdaq 사상최고 갱신 — 메모리얼데이 재개장 첫날", "content": "미국장 메모리얼데이 휴장 후 2026-05-26 재개장. S&P500 7,519.12(+0.61%), Nasdaq 26,656.18(+1.19%), Russell 2000 2,900 최초 돌파 등 동시 사상 최고 기록. S&P500 상위 20개 종목 중 16개가 반도체·컴퓨터 하드웨어. 이란 종전협상 기대 + AI 낙관론이 동반 견인. 기술주 주도 불마켓 지속 확인.", "action": "지수 추세 상승 유지 확인. 단, 10년물 4.57%·USD/KRW 1,501 경보 활성 중 — 지수 강세에도 공격적 비중 확대보다 눌림목 분할매수 원칙 유지. 갭상승 종목 추격 금지.", "importance": "high", "tags": ["S&P500", "Nasdaq", "사상최고", "재개장", "불마켓", "시장분석"]}, {"id": "20260526-003", "date": "2026-05-26", "week": "2026-W22", "month": "2026-05", "category": "시장분석", "title": "KOSPI 사상 첫 8,000 돌파 — 반도체 수익 기대·지정학 완화 동반", "content": "2026-05-26 KOSPI 8,065.47(+2.77%) 사상 최초 8,000 돌파. ETF 매수 주도, 반도체 실적 기대·이란 협상 훈풍. KOSDAQ 1,171.00(+0.85%) 동반 상승. 현대차(005380) ₩689,000 급등(자동매수 1차 ₩665K까지 거리 3.48%). USD/KRW 1,517.2로 원화 부담은 여전히 높음.", "action": "현대차 자동매수 1차 ₩665K 트리거 거리 3.48% — 매우 임박. ₩665K 하단 지지 확인 시 1차 진입 검토. KOSPI 8,000 돌파는 구조적 강세 신호이나 환율 부담(1,517)으로 원화 기준 체감 수익률 주의.", "importance": "high", "tags": ["KOSPI", "8000돌파", "현대차", "한국시장", "지정학"]}, {"id": "20260526-004", "date": "2026-05-26", "week": "2026-W22", "month": "2026-05", "category": "종목추천", "title": "ASTS 5월 한달 +79% 폭등 — AT&T·T-Mobile·Verizon JV 제안 호재", "content": "AST SpaceMobile(ASTS) 5월 $70.89→$126.46(+79%) 폭등. 2026-05-26 $119.70(+13.1%). AT&T·T-Mobile·Verizon 3사의 직접위성통신 JV 제안 호재로 시가총액 $45.7B. Roth Capital PT $108 인상. 보유 8주 기준 미실현이익 +$201(+26.6%). RSI 과열 구간 진입.", "action": "ASTS 고점 추격 추가매수 금지. RSI 과열로 단기 조정 가능. $100 이탈 시 일부 이익실현 고려. 현재 보유분 유지 — 위성통신 직접서비스 구조적 성장 스토리는 유효.", "importance": "high", "tags": ["ASTS", "위성통신", "AT&T", "T-Mobile", "Verizon", "모멘텀"]}, {"id": "20260526-005", "date": "2026-05-26", "week": "2026-W22", "month": "2026-05", "category": "지정학", "title": "이란-미국 종전협상 기대 — 트럼프 'shortly' 발언, 반도체 섹터 훈풍", "content": "트럼프 이란 전쟁 종식·호르무즈 재개방 합의 'shortly' 발표 가능 언급(Axios). 러-우 3일 휴전·포로교환도 동시 진행. 양대 지정학 리스크 완화 기대로 반도체·AI 성장주 AI 낙관 강화. 단, 백악관 공식 확인은 미완료 — 찌라시 수준 시나리오로 관리 필요. '평화면 유가 하락, 결렬이면 급등' 시나리오 대비.", "action": "발표 전 방산·유가·반도체 추격 금지. 'Deal finalized' 확인 후 첫 30분 변동 버리고 2차 파동(MSFT·NVDA·AVGO 눌림) 포착 전략. 종전 기대가 이미 가격에 일부 반영됐을 가능성 주의.", "importance": "high", "tags": ["이란", "종전협상", "지정학", "트럼프", "러우전쟁", "시나리오"]}, {"id": "20260526-006", "date": "2026-05-26", "week": "2026-W22", "month": "2026-05", "category": "시장경보", "title": "MRVL 5/27 실적발표 임박 — YTD +125%, EPS $0.79±0.05 컨센서스", "content": "Marvell Technology(MRVL) 2026-05-27 장마감 후 Q1 FY2027 실적 발표 예정. 컨센서스 EPS $0.79±0.05, 매출 $2.40B(YoY +27%). YTD +125%, 12개월 +209%로 기대 고조. 아마존·마이크로소프트 커스텀AI칩(XPU) 수주 확대. $200 저항선 앞 실적 결과가 돌파 여부 결정. EPS $0.85+ / 매출 $2.50B+ 상회 시 추가 상승 모멘텀.", "action": "실적 발표 전 신규 매수 자제. 기존 관심 종목 유지. 발표 후 $190 이상 유지 확인 시 1차 분할 진입 검토. 실망 시 $180 급락 가능 — 실적 확인 전 섣부른 진입은 도박.", "importance": "high", "tags": ["MRVL", "실적발표", "AI칩", "커스텀칩", "XPU", "실적경보"]}, {"id": "20260526-007", "date": "2026-05-26", "week": "2026-W22", "month": "2026-05", "category": "시장경보", "title": "거시 경보 3개 동시 활성 — 10년물 4.57%·USD/KRW 1,501·이란 지정학", "content": "2026-05-26 기준 8대 선제 알림 중 3개 동시 활성. ②S&P 200일선 이탈 관찰, ③10년물 4.57%(경보 기준 4.5% 초과), ⑧USD/KRW 1,501(경보 기준 1,450 초과). 지수는 사상최고지만 금리·환율·지정학 경보 동시 발동 상태. 경보 4개 이상 시 신규 진입 중단 원칙 기준 1개 부족.", "action": "현재 경보 3개 — 공격 모드 전환 아직 이름. 1차 진입만 허용, 2·3차는 경보 해소 후 검토. VIX 재상승 또는 환율 1,520 재상승 시 즉시 방어 전환. USD/KRW 1,480 이하 진입 시 비중 확대 검토 가능.", "importance": "medium", "tags": ["거시경보", "USD/KRW", "10년물", "VIX", "경보활성", "리스크관리"]}, {"id": "20260526-008", "date": "2026-05-26", "week": "2026-W22", "month": "2026-05", "category": "포트폴리오", "title": "MSTX 대규모 손실 지속 — 레버리지ETF 장기보유 위험 확인", "content": "MSTX(Defiance 2X Long MSTR ETF) 매입 $182.73 → 현재 $28.62(손실 84.3%). MSTR 하락과 레버리지ETF 일일복리 손실(Decay) 누적으로 원금 대비 심각한 손실. 비트코인·MSTR 반등 없이는 회복 어려운 구조. 레버리지ETF 장기보유의 대표적 위험 사례.", "action": "MSTX 추가매수 절대 금지. 명확한 손절선 설정 후 MSTR 방향성 확인 필요. 레버리지 ETF는 단기 트레이딩 도구로만 활용 — 장기보유 원칙 수립. 현재 포지션 유지 여부는 MSTR $170 이상 회복 여부로 판단.", "importance": "medium", "tags": ["MSTX", "레버리지ETF", "손실관리", "MSTR", "비트코인", "포트폴리오경고"]}];
+
+let activeTab = 'all';
+let activeCat = 'all';
+let searchQ = '';
+
+function getWeekStr(d) {
+  const dt = new Date(d);
+  const jan1 = new Date(dt.getFullYear(), 0, 1);
+  const week = Math.ceil(((dt - jan1) / 86400000 + jan1.getDay() + 1) / 7);
+  return dt.getFullYear() + '-W' + String(week).padStart(2,'0');
+}
+const TODAY = '2026-05-27';
+const THIS_WEEK = '2026-W22';
+const THIS_MONTH = '2026-05';
+
+function filterData() {
+  let d = [...RAW_DATA];
+  if (activeTab === 'daily') d = d.filter(i => i.date === TODAY);
+  else if (activeTab === 'weekly') d = d.filter(i => i.week === THIS_WEEK);
+  else if (activeTab === 'monthly') d = d.filter(i => i.month === THIS_MONTH);
+  if (activeCat !== 'all') d = d.filter(i => i.category === activeCat);
+  if (searchQ) {
+    const q = searchQ.toLowerCase();
+    d = d.filter(i =>
+      i.title.toLowerCase().includes(q) ||
+      i.content.toLowerCase().includes(q) ||
+      i.action.toLowerCase().includes(q) ||
+      (i.tags && i.tags.some(t => t.toLowerCase().includes(q)))
+    );
+  }
+  return d;
+}
+
+function impLabel(imp) {
+  if (imp === 'high') return '🔴';
+  if (imp === 'medium') return '🟡';
+  return '⚪';
+}
+
+function render() {
+  const data = filterData();
+  const container = document.getElementById('cards-container');
+  if (data.length === 0) {
+    container.innerHTML = '<div class="no-results">조건에 맞는 인사이트가 없습니다.</div>';
+    return;
+  }
+  container.innerHTML = data.map(i => `
+    <div class="card importance-${i.importance}">
+      <div class="card-header">
+        <span class="badge badge-${i.category}">${i.category}</span>
+        <span class="card-title">${impLabel(i.importance)} ${i.title}</span>
+        <span class="imp-dot ${i.importance}"></span>
+      </div>
+      <div class="card-meta">${i.date} &nbsp;|&nbsp; ${i.week} &nbsp;|&nbsp; ID: ${i.id}</div>
+      <div class="card-content">${i.content}</div>
+      <div class="card-action">${i.action}</div>
+      ${i.tags && i.tags.length ? '<div class="tags">' + i.tags.map(t => '<span class="tag">#' + t + '</span>').join('') + '</div>' : ''}
+    </div>
+  `).join('');
+}
+
+// Tab clicks
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeTab = btn.dataset.tab;
+    render();
+  });
+});
+
+// Cat clicks
+document.querySelectorAll('.cat').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.cat').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeCat = btn.dataset.cat;
+    render();
+  });
+});
+
+// Search
+document.getElementById('search').addEventListener('input', e => {
+  searchQ = e.target.value.trim();
+  render();
+});
+
+render();
+</script>
+</body>
+</html>
