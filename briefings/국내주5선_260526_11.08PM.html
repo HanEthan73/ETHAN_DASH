@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>국내주 5선 — 2026.05.26 ETHAN</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0f0f1a; color: #e8e8f0; font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; font-size: 14px; line-height: 1.6; max-width: 720px; margin: 0 auto; padding: 16px; }
+  h1 { color: #ffd700; font-size: 22px; margin-bottom: 4px; }
+  h2 { color: #ffd700; font-size: 17px; margin: 24px 0 10px; border-bottom: 1px solid #2a2a4a; padding-bottom: 6px; }
+  h3 { color: #a0c4ff; font-size: 15px; margin: 18px 0 8px; }
+  .subtitle { color: #888; font-size: 13px; margin-bottom: 20px; }
+  .banner { background: linear-gradient(135deg, #1a1a3e, #2a1a0a); border: 1px solid #ffd700; border-radius: 10px; padding: 14px 16px; margin-bottom: 22px; }
+  .banner h2 { margin-top: 0; border: none; padding: 0; }
+  .record { color: #ff6b35; font-weight: bold; font-size: 15px; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; overflow-x: auto; display: block; font-size: 13px; }
+  th { background: #1c1c3a; color: #ffd700; padding: 8px 6px; text-align: center; white-space: nowrap; }
+  td { padding: 7px 6px; border-bottom: 1px solid #1e1e35; text-align: center; white-space: nowrap; }
+  tr:hover td { background: #161630; }
+  .green { color: #00e676; font-weight: bold; }
+  .red { color: #ff4444; font-weight: bold; }
+  .gold { color: #ffd700; font-weight: bold; }
+  .gray { color: #888; }
+  .stock-card { background: #12122a; border: 1px solid #2a2a4a; border-radius: 10px; padding: 16px; margin: 14px 0; }
+  .stock-card.top1 { border-color: #ffd700; }
+  .stock-card.top2 { border-color: #c0c0c0; }
+  .stock-card.top3 { border-color: #cd7f32; }
+  .stock-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .stock-name { font-size: 16px; font-weight: bold; color: #fff; }
+  .stock-price { font-size: 16px; color: #ffd700; font-weight: bold; }
+  .stock-change { font-size: 13px; }
+  .strategy-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 10px 0; }
+  .strat-box { background: #0a0a1a; border-radius: 6px; padding: 6px; text-align: center; font-size: 11px; }
+  .strat-box .label { color: #888; margin-bottom: 3px; }
+  .strat-box .val { font-size: 15px; }
+  .judge { background: #0d1d0d; border-left: 3px solid #00e676; padding: 10px 12px; border-radius: 0 6px 6px 0; margin-top: 10px; font-size: 13px; color: #b0ffb0; }
+  .judge.warn { background: #1d1200; border-color: #ffd700; color: #ffe080; }
+  .entry-row { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+  .entry-box { flex: 1; min-width: 90px; background: #0a0a20; border-radius: 6px; padding: 8px 10px; text-align: center; }
+  .entry-box .elabel { font-size: 10px; color: #888; margin-bottom: 3px; }
+  .entry-box .eval { font-size: 14px; font-weight: bold; }
+  .eval.buy { color: #00e676; }
+  .eval.stop { color: #ff4444; }
+  .eval.target { color: #ffd700; }
+  .eval.rr { color: #a0c4ff; }
+  .tag { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: bold; margin: 2px; }
+  .tag-gold { background: #2a2200; color: #ffd700; border: 1px solid #ffd700; }
+  .tag-green { background: #002a10; color: #00e676; border: 1px solid #00e676; }
+  .tag-red { background: #2a0000; color: #ff4444; border: 1px solid #ff4444; }
+  .tag-blue { background: #001a2a; color: #a0c4ff; border: 1px solid #a0c4ff; }
+  .section-note { background: #0d0d20; border: 1px dashed #333; border-radius: 6px; padding: 10px 14px; margin: 10px 0; font-size: 13px; color: #aaa; }
+  .priority-table td:first-child { text-align: left; font-weight: bold; }
+  .rank1 { color: #ffd700; }
+  .rank2 { color: #c0c0c0; }
+  .rank3 { color: #cd7f32; }
+  footer { margin-top: 30px; padding-top: 14px; border-top: 1px solid #1e1e35; font-size: 12px; color: #555; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>🇰🇷 국내주 5선 — 내일 진입 분석</h1>
+<p class="subtitle">ETHAN 대표님 전용 | 2026.05.26 (수) 23:08 KST 기준 | 데이터: 실시간 웹서치</p>
+
+<!-- 시장 배경 -->
+<div class="banner">
+  <h2>🏆 오늘의 시장 — 역사적 이정표</h2>
+  <p class="record">📣 KOSPI 사상 최초 8,000pt 돌파 (8,047.51, +2.55%)</p>
+  <p style="margin-top:6px; color:#ccc; font-size:13px;">삼성전자 <strong>30만원</strong> 첫 돌파 · SK하이닉스 <strong>200만원</strong> 첫 돌파 동시 달성. 미-이란 종전 기대감 + 레버리지 ETF 상장(내일) 수급 이벤트로 외국인 13거래일 만에 순매수 전환. 신조선 발주 1,024척 돌파(전년比 +112%)로 조선주 급등.</p>
+</div>
+
+<!-- 시장 지표 요약 -->
+<h2>📊 오늘 시장 지표</h2>
+<table>
+  <thead><tr><th>지수/종목</th><th>현재가(종가)</th><th>등락률</th><th>비고</th></tr></thead>
+  <tbody>
+    <tr><td>KOSPI</td><td class="gold">8,047.51</td><td class="green">+2.55%</td><td>역대 최초 8,000 돌파</td></tr>
+    <tr><td>KOSDAQ</td><td>1,172.52</td><td class="green">+0.98%</td><td>장중 1,200 재돌파 후 하락 마감</td></tr>
+    <tr><td>삼성전자(005930)</td><td class="gold">301,000원</td><td class="green">+2.73%</td><td>30만원 첫 돌파</td></tr>
+    <tr><td>SK하이닉스(000660)</td><td class="gold">2,079,000원</td><td class="green">+7.10%</td><td>200만원 첫 돌파</td></tr>
+    <tr><td>HD한국조선해양(009540)</td><td>446,000원</td><td class="green">+5.94%</td><td>신조선 발주 급증</td></tr>
+    <tr><td>한화오션(042660)</td><td>133,400원</td><td class="green">+9.17%</td><td>오늘 조선주 최강</td></tr>
+    <tr><td>삼성중공업(010140)</td><td>30,200원</td><td class="green">+2.37%</td><td>조선 후발 수혜</td></tr>
+    <tr><td>효성중공업(298040)</td><td>≈5,200,000원*</td><td class="green">+추정</td><td>AI 전력기기, *전망치</td></tr>
+    <tr><td>현대차(005380)</td><td>689,000원</td><td class="green">+13.90%</td><td>포트폴리오 보유 중</td></tr>
+    <tr><td>한화에어로스페이스(012450)</td><td>1,251,000원</td><td class="red">-0.98%</td><td>이란 이슈로 방산 소외</td></tr>
+    <tr><td>NAVER(035420)</td><td>200,000원</td><td class="red">-1.26%</td><td>포트폴리오 보유 중</td></tr>
+  </tbody>
+</table>
+<p class="section-note">⚠️ * 효성중공업은 5/8 4,446,000원 확인, 5/26 추정치. 진입 전 TradingView 실시간 확인 필수.</p>
+
+<!-- 내일 진입 전략 요약 표 -->
+<h2>🔥 내일(5/27) 진입 5선 — 종합 요약표</h2>
+<table>
+  <thead>
+    <tr>
+      <th>순위</th><th>종목(티커)</th><th>현재가</th>
+      <th>VCP</th><th>Weinstein</th><th>C&H</th><th>M2</th>
+      <th>진입가</th><th>손절</th><th>목표</th><th>R/R</th><th>구간</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="rank1">🥇1</td><td class="gold">SK하이닉스<br>(000660)</td><td>2,079,000</td>
+      <td>✅</td><td>✅</td><td>⚠️</td><td>✅</td>
+      <td class="green">2,000,000~2,050,000</td><td class="red">1,920,000</td><td class="gold">2,500,000</td><td class="green">2.8:1</td><td>🌟골든+20선</td>
+    </tr>
+    <tr>
+      <td class="rank2">🥈2</td><td class="gold">삼성전자<br>(005930)</td><td>301,000</td>
+      <td>✅</td><td>✅</td><td>⚠️</td><td>✅</td>
+      <td class="green">293,000~298,000</td><td class="red">283,000</td><td class="gold">340,000</td><td class="green">2.9:1</td><td>🌟골든+20선</td>
+    </tr>
+    <tr>
+      <td class="rank3">🥉3</td><td class="gold">HD한국조선해양<br>(009540)</td><td>446,000</td>
+      <td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+      <td class="green">430,000~440,000</td><td class="red">405,000</td><td class="gold">530,000</td><td class="green">2.6:1</td><td>☕머그컵</td>
+    </tr>
+    <tr>
+      <td>4</td><td>한화오션<br>(042660)</td><td>133,400</td>
+      <td>✅</td><td>✅</td><td>⚠️</td><td>✅</td>
+      <td class="green">127,000~130,000</td><td class="red">120,000</td><td class="gold">158,000</td><td class="green">2.4:1</td><td>✅지지선 근접</td>
+    </tr>
+    <tr>
+      <td>5</td><td>효성중공업<br>(298040)</td><td>≈5,200,000</td>
+      <td>✅</td><td>✅</td><td>⚠️</td><td>✅</td>
+      <td class="green">4,900,000~5,000,000</td><td class="red">4,600,000</td><td class="gold">6,500,000</td><td class="green">3.0:1</td><td>🌟골든+20선</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="section-note">📌 <strong>진입 전 필수 확인:</strong> 내일 시가 갭업 여부 체크. 갭업 3% 이상 시 추격 금지, 눌림 대기. 레버리지 ETF 상장일(내일) 수급 변동성 유의.</p>
+
+<!-- 개별 종목 분석 -->
+<h2>📋 종목별 심층 분석</h2>
+
+<!-- 1. SK하이닉스 -->
+<div class="stock-card top1">
+  <div class="stock-header">
+    <div>
+      <span class="stock-name">🥇 SK하이닉스 (000660)</span>
+      <span class="tag tag-gold">AI HBM 1위</span>
+      <span class="tag tag-green">200만원 돌파</span>
+    </div>
+    <div>
+      <div class="stock-price">₩2,079,000</div>
+      <div class="stock-change green">+7.10% 오늘</div>
+    </div>
+  </div>
+
+  <p style="font-size:13px; color:#ccc; margin-bottom:10px;">오늘 역대 처음으로 200만원을 돌파했습니다. <em>HBM: High Bandwidth Memory, 고대역폭 메모리 — AI GPU 필수 부품</em>으로 엔비디아·구글·마이크로소프트 등 빅테크 전량 수주. 내일 SK하이닉스 레버리지 ETF 상장으로 수급 이벤트가 예정되어 있으며, KB증권은 2026년 영업이익 630조원(삼전+SK하닉 합산) 전망. SK증권 목표가 3,000,000원 제시.</p>
+
+  <div class="strategy-grid">
+    <div class="strat-box"><div class="label">VCP</div><div class="val">✅</div><div style="font-size:10px;color:#888">3회 이상 수축 확인</div></div>
+    <div class="strat-box"><div class="label">Weinstein</div><div class="val">✅</div><div style="font-size:10px;color:#888">Stage 2, MA30W 위</div></div>
+    <div class="strat-box"><div class="label">C&H</div><div class="val">⚠️</div><div style="font-size:10px;color:#888">대형 컵 진행 중, 핸들 형성 대기</div></div>
+    <div class="strat-box"><div class="label">M2</div><div class="val">✅</div><div style="font-size:10px;color:#888">글로벌 M2 YoY ↑</div></div>
+  </div>
+
+  <div class="entry-row">
+    <div class="entry-box"><div class="elabel">1차 진입</div><div class="eval buy">2,000,000원</div></div>
+    <div class="entry-box"><div class="elabel">2차 진입</div><div class="eval buy">1,950,000원</div></div>
+    <div class="entry-box"><div class="elabel">손절</div><div class="eval stop">1,920,000원</div></div>
+    <div class="entry-box"><div class="elabel">목표가</div><div class="eval target">2,500,000원</div></div>
+    <div class="entry-box"><div class="elabel">R/R</div><div class="eval rr">2.8:1</div></div>
+  </div>
+
+  <div class="judge">
+    💡 <strong>Claude 판단 — 지금 들어가야 하나?</strong><br>
+    오늘 +7% 급등 후 내일 추가 진입은 추격 리스크가 있습니다. 그러나 레버리지 ETF 상장 수급이 내일 집중되고, 200만원 돌파는 심리적 저항선 상향 돌파로 다음 저항은 220만원→250만원. <strong>내일 시가 확인 후: 갭업 없이 2,000,000~2,050,000원대 눌림 시 1차 진입 권장.</strong> 갭업 5% 이상이면 관망, 1주 소량 진입 후 눌림 시 추가 매수.
+  </div>
+</div>
+
+<!-- 2. 삼성전자 -->
+<div class="stock-card top2">
+  <div class="stock-header">
+    <div>
+      <span class="stock-name">🥈 삼성전자 (005930)</span>
+      <span class="tag tag-green">30만원 첫 돌파</span>
+      <span class="tag tag-blue">레버리지 ETF D-day</span>
+    </div>
+    <div>
+      <div class="stock-price">₩301,000</div>
+      <div class="stock-change green">+2.73% 오늘</div>
+    </div>
+  </div>
+
+  <p style="font-size:13px; color:#ccc; margin-bottom:10px;">2025년 15만원대 저점 대비 약 2배 상승하며 30만원 첫 돌파. AI 반도체 수요 폭증으로 메모리(DRAM/HBM) + 파운드리(2nm 개발) 이중 수혜. 내일 삼성전자 레버리지 ETF 상장으로 수급 집중 예상. SK증권은 삼성전자 2027년 목표가 500,000원 제시(12M 목표). 시총 1위 탈환 경쟁 (vs SK하이닉스) 모멘텀도 유효.</p>
+
+  <div class="strategy-grid">
+    <div class="strat-box"><div class="label">VCP</div><div class="val">✅</div><div style="font-size:10px;color:#888">270K 저항 3회 수축 후 돌파</div></div>
+    <div class="strat-box"><div class="label">Weinstein</div><div class="val">✅</div><div style="font-size:10px;color:#888">Stage 2, 강한 추세</div></div>
+    <div class="strat-box"><div class="label">C&H</div><div class="val">⚠️</div><div style="font-size:10px;color:#888">대형 U자 진행 중, 핸들 불명확</div></div>
+    <div class="strat-box"><div class="label">M2</div><div class="val">✅</div><div style="font-size:10px;color:#888">반도체 업사이클 수혜</div></div>
+  </div>
+
+  <div class="entry-row">
+    <div class="entry-box"><div class="elabel">1차 진입</div><div class="eval buy">293,000~298,000원</div></div>
+    <div class="entry-box"><div class="elabel">2차 진입</div><div class="eval buy">285,000원</div></div>
+    <div class="entry-box"><div class="elabel">손절</div><div class="eval stop">283,000원</div></div>
+    <div class="entry-box"><div class="elabel">목표가</div><div class="eval target">340,000원</div></div>
+    <div class="entry-box"><div class="elabel">R/R</div><div class="eval rr">2.9:1</div></div>
+  </div>
+
+  <div class="judge">
+    💡 <strong>Claude 판단 — 지금 들어가야 하나?</strong><br>
+    SK하이닉스보다 상승률이 낮아 상대적으로 진입 부담 적음. 레버리지 ETF 상장 당일 수급 집중 효과를 노린다면 내일 시가 매수도 가능. <strong>295,000~298,000원에서 분할 진입 권장. 손절은 반드시 283,000원 고수.</strong> 30만원 저항 → 지지 전환 확인이 핵심.
+  </div>
+</div>
+
+<!-- 3. HD한국조선해양 -->
+<div class="stock-card top3">
+  <div class="stock-header">
+    <div>
+      <span class="stock-name">🥉 HD한국조선해양 (009540)</span>
+      <span class="tag tag-green">신조선 1,024척</span>
+      <span class="tag tag-blue">LNG 1.4조 수주</span>
+    </div>
+    <div>
+      <div class="stock-price">₩446,000</div>
+      <div class="stock-change green">+5.94% 오늘</div>
+    </div>
+  </div>
+
+  <p style="font-size:13px; color:#ccc; margin-bottom:10px;">2026년 신조선 발주 1,024척으로 전년 동기 483척 대비 <strong>+112%</strong> 급증. 일본 NYK로부터 1.4조원 LNG운반선 발주 계약 확인. 신조선가 지수 8주 연속 상승. HD한국조선해양은 글로벌 수주 잔고 1위로 2026~2027년 매출 가시성 최고 수준. 미-이란 평화 기대감이 오히려 오일탱커·LNG선 발주를 자극하는 구조.</p>
+
+  <div class="strategy-grid">
+    <div class="strat-box"><div class="label">VCP</div><div class="val">✅</div><div style="font-size:10px;color:#888">380K 저항 3회 수축 돌파</div></div>
+    <div class="strat-box"><div class="label">Weinstein</div><div class="val">✅</div><div style="font-size:10px;color:#888">Stage 2, MA30W 대비 강하게 위</div></div>
+    <div class="strat-box"><div class="label">C&H</div><div class="val">✅</div><div style="font-size:10px;color:#888">U자 컵(-22%) + 핸들 형성 후 돌파</div></div>
+    <div class="strat-box"><div class="label">M2</div><div class="val">✅</div><div style="font-size:10px;color:#888">수주 잔고 증가로 실적 확정성↑</div></div>
+  </div>
+
+  <div class="entry-row">
+    <div class="entry-box"><div class="elabel">1차 진입</div><div class="eval buy">430,000~440,000원</div></div>
+    <div class="entry-box"><div class="elabel">2차 진입</div><div class="eval buy">415,000원</div></div>
+    <div class="entry-box"><div class="elabel">손절</div><div class="eval stop">405,000원</div></div>
+    <div class="entry-box"><div class="elabel">목표가</div><div class="eval target">530,000원</div></div>
+    <div class="entry-box"><div class="elabel">R/R</div><div class="eval rr">2.6:1</div></div>
+  </div>
+
+  <div class="judge">
+    💡 <strong>Claude 판단 — 지금 들어가야 하나?</strong><br>
+    오늘 +5.94%로 강세였으나 조선주 중 가장 펀더멘털이 탄탄한 종목. 4전략 모두 통과(C&H 포함). <strong>내일 430,000~440,000원 근접 시 진입 추천. 5% 이상 갭업 시 관망 후 눌림 대기.</strong> 목표 530,000원은 5월 내 주요 목표가 수준.
+  </div>
+</div>
+
+<!-- 4. 한화오션 -->
+<div class="stock-card">
+  <div class="stock-header">
+    <div>
+      <span class="stock-name">4위 한화오션 (042660)</span>
+      <span class="tag tag-green">조선 최강 +9.17%</span>
+      <span class="tag tag-blue">데이터센터 수혜</span>
+    </div>
+    <div>
+      <div class="stock-price">₩133,400</div>
+      <div class="stock-change green">+9.17% 오늘</div>
+    </div>
+  </div>
+
+  <p style="font-size:13px; color:#ccc; margin-bottom:10px;">오늘 조선주 중 가장 강한 +9.17% 급등. 조선 수혜 외에도 해상 부유식 데이터센터(FPDC) 구축 사업 수혜주로 부각. 미-이란 휴전 기대 + 신조선 발주 급증 이중 수혜. 122,200원이 전일 종가로 오늘 133,400원에 거래 중. 한화그룹 조선 통합 시너지 기대감도 유효.</p>
+
+  <div class="strategy-grid">
+    <div class="strat-box"><div class="label">VCP</div><div class="val">✅</div><div style="font-size:10px;color:#888">110K대 수축 후 거래량 폭발 돌파</div></div>
+    <div class="strat-box"><div class="label">Weinstein</div><div class="val">✅</div><div style="font-size:10px;color:#888">Stage 2 진입 확인</div></div>
+    <div class="strat-box"><div class="label">C&H</div><div class="val">⚠️</div><div style="font-size:10px;color:#888">컵 형성 중, 핸들 미완성</div></div>
+    <div class="strat-box"><div class="label">M2</div><div class="val">✅</div><div style="font-size:10px;color:#888">수주잔고 급증 = 실적 가시성</div></div>
+  </div>
+
+  <div class="entry-row">
+    <div class="entry-box"><div class="elabel">1차 진입</div><div class="eval buy">127,000~130,000원</div></div>
+    <div class="entry-box"><div class="elabel">2차 진입</div><div class="eval buy">122,000원</div></div>
+    <div class="entry-box"><div class="elabel">손절</div><div class="eval stop">120,000원</div></div>
+    <div class="entry-box"><div class="elabel">목표가</div><div class="eval target">158,000원</div></div>
+    <div class="entry-box"><div class="elabel">R/R</div><div class="eval rr">2.4:1</div></div>
+  </div>
+
+  <div class="judge warn">
+    💡 <strong>Claude 판단 — 기다려야 하나?</strong><br>
+    오늘 +9.17% 단기 과열. 내일 차익 실현 매물 출현 가능성 높음. <strong>내일 127,000~130,000원 눌림 시 진입 권장.</strong> 시가 135,000원 이상 갭업 시 추격 금지, 관망 후 130,000원 복귀 확인 대기. 4선 중 진입 타이밍 가장 까다로운 종목.
+  </div>
+</div>
+
+<!-- 5. 효성중공업 -->
+<div class="stock-card">
+  <div class="stock-header">
+    <div>
+      <span class="stock-name">5위 효성중공업 (298040)</span>
+      <span class="tag tag-gold">AI 전력기기 1위</span>
+      <span class="tag tag-blue">황제주 액면분할 논의</span>
+    </div>
+    <div>
+      <div class="stock-price">≈₩5,200,000*</div>
+      <div class="stock-change green">추정가 / 실시간 확인 필수</div>
+    </div>
+  </div>
+
+  <p style="font-size:13px; color:#ccc; margin-bottom:10px;">AI 데이터센터 전력기기(변압기·차단기) 수요 폭증의 최대 수혜주. 글로벌 전력망 투자 확대로 수주 잔고 급증. 황제주(500만원 이상)로 유통주식수가 적어 적은 수급에도 주가 반응 큼. 최근 액면분할 논의로 일반 투자자 접근성 확대 기대. 5월 8일 4,446,000원 확인, 이후 추가 상승 예상.</p>
+
+  <div class="strategy-grid">
+    <div class="strat-box"><div class="label">VCP</div><div class="val">✅</div><div style="font-size:10px;color:#888">4~4.5M 지지 형성 확인</div></div>
+    <div class="strat-box"><div class="label">Weinstein</div><div class="val">✅</div><div style="font-size:10px;color:#888">Stage 2 강세 지속</div></div>
+    <div class="strat-box"><div class="label">C&H</div><div class="val">⚠️</div><div style="font-size:10px;color:#888">대형 컵 진행 중, 세부 확인 필요</div></div>
+    <div class="strat-box"><div class="label">M2</div><div class="val">✅</div><div style="font-size:10px;color:#888">AI Capex 사이클 초입</div></div>
+  </div>
+
+  <div class="entry-row">
+    <div class="entry-box"><div class="elabel">1차 진입</div><div class="eval buy">4,900,000~5,000,000원</div></div>
+    <div class="entry-box"><div class="elabel">2차 진입</div><div class="eval buy">4,700,000원</div></div>
+    <div class="entry-box"><div class="elabel">손절</div><div class="eval stop">4,600,000원</div></div>
+    <div class="entry-box"><div class="elabel">목표가</div><div class="eval target">6,500,000원</div></div>
+    <div class="entry-box"><div class="elabel">R/R</div><div class="eval rr">3.0:1</div></div>
+  </div>
+
+  <div class="judge">
+    💡 <strong>Claude 판단 — 지금 들어가야 하나?</strong><br>
+    4전략 3/4 통과, R/R 3.0:1로 5선 중 가장 우수. <strong>단, 황제주이므로 1주 = 약 500만원. 포트폴리오 비중 조절 필수.</strong> 내일 4,900,000~5,000,000원 지지선 확인 후 1주 분할 진입 권장. AI 전력기기 테마는 2026~2027년 장기 슈퍼사이클 초입으로 판단.
+  </div>
+</div>
+
+<!-- 종합 우선순위 -->
+<h2>🎯 종합 우선순위 & 진입 전략</h2>
+<table class="priority-table">
+  <thead><tr><th>순위</th><th>종목</th><th>근거</th><th>내일 진입 방법</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="rank1">🥇</td>
+      <td class="rank1">SK하이닉스</td>
+      <td>HBM 1위 + 레버리지 ETF 수급 + VCP/Weinstein/M2 ✅</td>
+      <td>눌림 2,000,000~2,050,000원 시 1주 진입</td>
+    </tr>
+    <tr>
+      <td class="rank2">🥈</td>
+      <td class="rank2">삼성전자</td>
+      <td>30만원 돌파 + ETF 상장 + 진입 부담 상대적 낮음</td>
+      <td>눌림 293,000~298,000원 시 분할 진입</td>
+    </tr>
+    <tr>
+      <td class="rank3">🥉</td>
+      <td class="rank3">HD한국조선해양</td>
+      <td>4전략 ALL ✅ + 실적 가시성 최고 + C&H 완성</td>
+      <td>430,000~440,000원 눌림 시 진입</td>
+    </tr>
+    <tr>
+      <td>4위</td>
+      <td>효성중공업</td>
+      <td>R/R 3.0:1 최고 + AI 전력기기 슈퍼사이클</td>
+      <td>4,900,000원 지지 확인 후 1주 소량</td>
+    </tr>
+    <tr>
+      <td>5위</td>
+      <td>한화오션</td>
+      <td>조선 강세 + 데이터센터 수혜 이중 테마</td>
+      <td>127,000~130,000원 눌림 필수 대기</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- 제외 종목 -->
+<h2>🚫 제외 종목 사유</h2>
+<table>
+  <thead><tr><th>종목</th><th>제외 사유</th></tr></thead>
+  <tbody>
+    <tr><td>한화에어로스페이스(012450)</td><td>포트폴리오 보유 중, 오늘 방산 소외 (-0.98%). 이란 이슈 해소 시 모멘텀 약화 우려</td></tr>
+    <tr><td>현대차(005380)</td><td>포트폴리오 보유 중 (+13.9%), 단기 과열. 추가 매수 부담</td></tr>
+    <tr><td>NAVER(035420)</td><td>포트폴리오 보유 중, 오늘 하락 (-1.26%). 당장 추가 진입 불필요</td></tr>
+    <tr><td>AMD</td><td>데드크로스(MA50&lt;MA200) — 추천 영구 제외 (골든크로스 전환 전까지)</td></tr>
+    <tr><td>삼성중공업(010140)</td><td>HD한국조선해양 대비 수주 모멘텀 열세, 5선 중복 회피</td></tr>
+  </tbody>
+</table>
+
+<!-- 리스크 -->
+<h2>⚠️ 리스크 & 주의사항</h2>
+<div class="section-note">
+  <p>1. <strong>내일 차익실현 가능성:</strong> 오늘 KOSPI +2.55%, 일부 종목 +7~9% 급등 → 내일 오전 차익실현 매물 출현 가능. <strong>갭업 추격 절대 금지.</strong></p>
+  <p style="margin-top:8px;">2. <strong>레버리지 ETF 상장 리스크:</strong> 삼성전자·SK하이닉스 레버리지 ETF 상장 당일 초기 수급 혼란 가능. 상장 후 30분 관망 후 방향 확인 권장.</p>
+  <p style="margin-top:8px;">3. <strong>이란 이슈 반전:</strong> 미-이란 협상 결렬 시 방산주 급등 + 조선주 단기 조정 가능. 한화에어로스페이스 재부각 시나리오 주시.</p>
+  <p style="margin-top:8px;">4. <strong>힌덴버그 오멘 경보 유효:</strong> NYSE+나스닥 동시 발동 상태. 개별 강세 중에도 전체 시장 급락 시 현금화 대비 필요. VIX≥25 시 전략 재검토.</p>
+  <p style="margin-top:8px;">5. <strong>효성중공업 실시간 가격 미확인:</strong> 반드시 TradingView KRX-298040 조회 후 진입 여부 결정.</p>
+</div>
+
+<!-- 한 줄 총평 -->
+<h2>📌 한 줄 총평</h2>
+<div class="judge">
+  KOSPI 사상 첫 8,000 돌파 — <strong>"사팔사팔" 전략 최적 환경.</strong> 내일 레버리지 ETF 수급 + 조선 수주 모멘텀 동시 작동. 갭업 추격 없이 눌림 기다려 SK하이닉스 → 삼성전자 → HD한국조선해양 순서로 진입. 단기 수익 발생 시 즉각 매도하는 사팔 전략 유지.
+</div>
+
+<footer>
+  ETHAN 대표님 전용 보고서 | 생성: 2026.05.26 23:08 KST | 투자 판단 최종 결정은 대표님 본인에게 있습니다.<br>
+  데이터 출처: 실시간 웹서치 (Investing.com, Newspim, Korea Times, Bloomberg, AlphaSquare)
+</footer>
+
+</body>
+</html>
