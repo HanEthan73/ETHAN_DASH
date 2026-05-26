@@ -181,6 +181,22 @@ body{
 .calendar-list{margin-top:12px;display:flex;flex-direction:column;gap:5px}
 .calendar-list-title{font-size:12px;font-weight:900;color:var(--t2);margin-top:10px}
 .calendar-empty{font-size:12px;color:var(--t3);padding:20px 0;text-align:center}
+.qna-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:12px;padding:18px}
+.qna-card{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:16px}
+.qna-title{font-size:15px;font-weight:900;color:var(--gold);margin-bottom:10px}
+.qna-field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+.qna-field label{font-size:11px;font-weight:800;color:var(--t3)}
+.qna-field input,.qna-field textarea,.qna-field select{
+  width:100%;background:var(--bg);border:1px solid var(--bd);border-radius:8px;
+  color:var(--t1);padding:9px 10px;font:inherit;font-size:12px;outline:0;
+}
+.qna-field textarea{min-height:150px;resize:vertical}
+.qna-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.qna-btn{border:1px solid rgba(245,197,24,.42);background:rgba(245,197,24,.12);color:var(--gold);border-radius:8px;padding:9px 12px;font-size:12px;font-weight:900;cursor:pointer;text-decoration:none}
+.qna-btn.secondary{border-color:var(--bd);background:var(--s2);color:var(--t2)}
+.qna-note{font-size:11px;color:var(--t3);line-height:1.6}
+.qna-note b{color:var(--t1)}
+@media(max-width:760px){.qna-grid{grid-template-columns:1fr;padding:12px}}
 </style>
 </head>
 <body>
@@ -206,6 +222,7 @@ body{
   <button class="main-tab" id="tab-calendar" onclick="showPanel('calendar')">📅 달력</button>
   <button class="main-tab" id="tab-schedule" onclick="showPanel('schedule')">🔔 알림 스케줄</button>
   <button class="main-tab" id="tab-codex" onclick="showPanel('codex')">CODEX</button>
+  <button class="main-tab" id="tab-qna" onclick="showPanel('qna')">Q&A</button>
 </div>
 
 <div class="tab-panel active" id="panel-archive">
@@ -303,6 +320,57 @@ body{
         <tr><td>23:30</td><td class="schedule-time">00:00</td><td>자동매수 모니터</td><td>3% 이내 시만</td></tr>
       </table>
       <div class="schedule-note"><a href="코덱스알림_260522_11.00PM.html" style="color:var(--gold);text-decoration:none;font-weight:800">CODEX 상세 보고서 열기</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-panel" id="panel-qna">
+  <div class="qna-grid">
+    <div class="qna-card">
+      <div class="qna-title">Q&A 토론 등록</div>
+      <div class="qna-field">
+        <label for="qna-name">이름 또는 닉네임</label>
+        <input id="qna-name" type="text" placeholder="예: Ethan / 방문자">
+      </div>
+      <div class="qna-field">
+        <label for="qna-contact">GitHub ID 또는 이메일</label>
+        <input id="qna-contact" type="text" placeholder="예: github-id 또는 name@example.com">
+      </div>
+      <div class="qna-field">
+        <label for="qna-topic">분류</label>
+        <select id="qna-topic">
+          <option>주식/시장</option>
+          <option>전력전자/PSIM/CLLC</option>
+          <option>브리핑 오류 수정</option>
+          <option>자료 공유</option>
+          <option>기타 토론</option>
+        </select>
+      </div>
+      <div class="qna-field">
+        <label for="qna-title-input">제목</label>
+        <input id="qna-title-input" type="text" placeholder="토론 제목">
+      </div>
+      <div class="qna-field">
+        <label for="qna-body">내용</label>
+        <textarea id="qna-body" placeholder="질문, 반박, 자료 설명, 요청사항을 적으세요."></textarea>
+      </div>
+      <div class="qna-field">
+        <label for="qna-files">첨부할 자료 설명</label>
+        <input id="qna-files" type="text" placeholder="예: 회로도 PNG, PSIM 파일, 캡처 이미지">
+      </div>
+      <div class="qna-actions">
+        <button class="qna-btn" type="button" onclick="openQnaIssue()">GitHub 토론 열기</button>
+        <button class="qna-btn secondary" type="button" onclick="openQnaMail()">메일로 보내기</button>
+        <button class="qna-btn secondary" type="button" onclick="clearQnaForm()">비우기</button>
+      </div>
+    </div>
+    <div class="qna-card">
+      <div class="qna-title">사용 방식</div>
+      <div class="qna-note">
+        <p><b>GitHub 토론 열기</b>는 입력 내용을 GitHub Issue 작성 화면에 자동으로 채웁니다. 로그인 후 이미지나 파일을 본문에 드래그해서 첨부하면 됩니다.</p>
+        <p><b>메일로 보내기</b>는 메일 앱을 열어 제목과 본문을 자동 작성합니다. 파일은 메일 앱에서 직접 첨부해야 합니다.</p>
+        <p>GitHub Pages는 정적 호스팅이라 방문자가 파일을 서버에 직접 업로드하는 기능은 없습니다. 자료 첨부까지 공개 토론장으로 쓰려면 GitHub Issue/Discussion 방식이 가장 안정적입니다.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -487,6 +555,47 @@ function showPanel(id) {
   document.querySelectorAll('.main-tab').forEach(t => t.classList.remove('active'));
   document.getElementById(`panel-${id}`).classList.add('active');
   document.getElementById(`tab-${id}`).classList.add('active');
+}
+
+function qnaPayload() {
+  const name = document.getElementById('qna-name')?.value.trim() || '익명';
+  const contact = document.getElementById('qna-contact')?.value.trim() || '미기재';
+  const topic = document.getElementById('qna-topic')?.value || '기타 토론';
+  const title = document.getElementById('qna-title-input')?.value.trim() || 'Q&A 토론';
+  const body = document.getElementById('qna-body')?.value.trim() || '내용 미기재';
+  const files = document.getElementById('qna-files')?.value.trim() || '없음';
+  const text = [
+    `분류: ${topic}`,
+    `작성자: ${name}`,
+    `GitHub/이메일: ${contact}`,
+    `첨부 예정 자료: ${files}`,
+    '',
+    '내용:',
+    body
+  ].join('\n');
+  return { title: `[Q&A] ${title}`, text };
+}
+
+function openQnaIssue() {
+  const q = qnaPayload();
+  const url = 'https://github.com/HanEthan73/ETHAN_DASH/issues/new?title='
+    + encodeURIComponent(q.title)
+    + '&body=' + encodeURIComponent(q.text + '\n\n첨부 파일은 GitHub 작성 화면에 드래그해서 추가하세요.');
+  window.open(url, '_blank', 'noopener');
+}
+
+function openQnaMail() {
+  const q = qnaPayload();
+  const url = 'mailto:?subject=' + encodeURIComponent(q.title)
+    + '&body=' + encodeURIComponent(q.text + '\n\n파일은 이 메일에 직접 첨부하세요.');
+  window.location.href = url;
+}
+
+function clearQnaForm() {
+  ['qna-name','qna-contact','qna-title-input','qna-body','qna-files'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
 }
 
 function setSort(s) {
