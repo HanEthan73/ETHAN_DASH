@@ -1,4 +1,28 @@
-[
+﻿[
+    {
+        "name":  "CODEX_알림_인사이트KB업데이트_260527_7.35AM.html",
+        "updatedIso":  "2026-05-27T07:40:30+09:00",
+        "updatedDate":  "2026-05-27",
+        "updatedTime":  "07:40",
+        "updatedEpoch":  1779867630,
+        "displayDate":  "2026-05-27",
+        "displayTime":  "07:35",
+        "displayEpoch":  1779867300,
+        "category":  "stock",
+        "label":  "CODEX 알림 인사이트KB업데이트"
+    },    {
+        "name":  "CODEX_알림_인사이트KB업데이트_260527_7.35AM.html",
+        "updatedIso":  "2026-05-27T07:40:30+09:00",
+        "updatedDate":  "2026-05-27",
+        "updatedTime":  "07:40",
+        "updatedEpoch":  1779838830,
+        "displayDate":  "2026-05-27",
+        "displayTime":  "07:35",
+        "displayEpoch":  1779838500,
+        "category":  "stock",
+        "label":  "CODEX 자동매수모니터"
+    },         "label":  "CODEX 트럼프수요일발언찌라시"
+    },
     {
         "name":  "CODEX_알림_자동매수모니터_260527_12.06AM.html",
         "updatedIso":  "2026-05-27T00:06:31+09:00",
@@ -9,8 +33,7 @@
         "displayTime":  "00:06",
         "displayEpoch":  1779811560,
         "category":  "stock",
-        "label":  "CODEX 자동매수모니터"
-    },
+
     {
         "name":  "CODEX_트럼프수요일발언찌라시_260526_11.12PM.html",
         "updatedIso":  "2026-05-26T23:12:00+09:00",
@@ -21,8 +44,7 @@
         "displayTime":  "23:12",
         "displayEpoch":  1779804720,
         "category":  "stock",
-        "label":  "CODEX 트럼프 수요일 발언 찌라시"
-    },
+
     {
         "name":  "CODEX_알림_저녁브리핑_260526_10.33PM.html",
         "updatedIso":  "2026-05-26T22:33:30+09:00",
@@ -44,8 +66,7 @@
         "displayTime":  "16:00",
         "displayEpoch":  1779778800,
         "category":  "stock",
-        "label":  "CODEX 주식추천전략보고"
-    },
+
     {
         "name":  "CODEX_알림_한국장마감PLTR모니터_260526_3.34PM.html",
         "updatedIso":  "2026-05-26T15:34:24+09:00",
@@ -67,8 +88,7 @@
         "displayTime":  "14:00",
         "displayEpoch":  1779771600,
         "category":  "stock",
-        "label":  "CODEX 주식추천전략보고"
-    },
+
     {
         "name":  "CODEX_알림_오후1차모니터_260526_1.33PM.html",
         "updatedIso":  "2026-05-26T13:34:52+09:00",
@@ -884,3 +904,4 @@
         "category":  "stock"
     }
 ]
+
