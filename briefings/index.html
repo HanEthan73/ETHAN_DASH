@@ -181,22 +181,31 @@ body{
 .calendar-list{margin-top:12px;display:flex;flex-direction:column;gap:5px}
 .calendar-list-title{font-size:12px;font-weight:900;color:var(--t2);margin-top:10px}
 .calendar-empty{font-size:12px;color:var(--t3);padding:20px 0;text-align:center}
-.qna-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:12px;padding:18px}
+.qna-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:12px;padding:18px}
 .qna-card{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:16px}
 .qna-title{font-size:15px;font-weight:900;color:var(--gold);margin-bottom:10px}
+.qna-chat{
+  min-height:360px;max-height:56vh;overflow-y:auto;background:#0b0d11;border:1px solid var(--bd);
+  border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:9px;margin-bottom:12px;
+}
+.qna-bubble{max-width:82%;padding:9px 11px;border-radius:12px;font-size:12px;line-height:1.45;white-space:pre-wrap}
+.qna-bubble.in{align-self:flex-start;background:#20242b;color:var(--t2);border-top-left-radius:4px}
+.qna-bubble.out{align-self:flex-end;background:rgba(245,197,24,.16);color:var(--t1);border:1px solid rgba(245,197,24,.28);border-top-right-radius:4px}
+.qna-bubble .qna-meta{display:block;font-size:9px;color:var(--t4);font-weight:800;margin-bottom:3px}
+.qna-compose{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:end}
 .qna-field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
 .qna-field label{font-size:11px;font-weight:800;color:var(--t3)}
 .qna-field input,.qna-field textarea,.qna-field select{
   width:100%;background:var(--bg);border:1px solid var(--bd);border-radius:8px;
   color:var(--t1);padding:9px 10px;font:inherit;font-size:12px;outline:0;
 }
-.qna-field textarea{min-height:150px;resize:vertical}
+.qna-field textarea{min-height:74px;resize:vertical}
 .qna-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .qna-btn{border:1px solid rgba(245,197,24,.42);background:rgba(245,197,24,.12);color:var(--gold);border-radius:8px;padding:9px 12px;font-size:12px;font-weight:900;cursor:pointer;text-decoration:none}
 .qna-btn.secondary{border-color:var(--bd);background:var(--s2);color:var(--t2)}
 .qna-note{font-size:11px;color:var(--t3);line-height:1.6}
 .qna-note b{color:var(--t1)}
-@media(max-width:760px){.qna-grid{grid-template-columns:1fr;padding:12px}}
+@media(max-width:760px){.qna-grid{grid-template-columns:1fr;padding:12px}.qna-compose{grid-template-columns:1fr}.qna-bubble{max-width:94%}}
 </style>
 </head>
 <body>
@@ -327,7 +336,30 @@ body{
 <div class="tab-panel" id="panel-qna">
   <div class="qna-grid">
     <div class="qna-card">
-      <div class="qna-title">Q&A 토론 등록</div>
+      <div class="qna-title">Q&A 대화방</div>
+      <div class="qna-chat" id="qna-chat">
+        <div class="qna-bubble in"><span class="qna-meta">ETHAN Q&A</span>질문이나 자료를 카톡처럼 편하게 남기세요. 전송은 GitHub 토론 또는 메일로 넘깁니다.</div>
+      </div>
+      <div class="qna-compose">
+        <div>
+          <div class="qna-field">
+            <label for="qna-body">메시지</label>
+            <textarea id="qna-body" placeholder="메시지를 입력하세요. Enter는 줄바꿈, 버튼으로 전송"></textarea>
+          </div>
+          <div class="qna-field">
+            <label for="qna-files">첨부 메모</label>
+            <input id="qna-files" type="text" placeholder="예: 회로도 PNG, PSIM 파일, 캡처 이미지">
+          </div>
+        </div>
+        <div class="qna-actions">
+          <button class="qna-btn" type="button" onclick="sendQnaLocal()">전송</button>
+          <button class="qna-btn secondary" type="button" onclick="openQnaIssue()">GitHub</button>
+          <button class="qna-btn secondary" type="button" onclick="openQnaMail()">메일</button>
+        </div>
+      </div>
+    </div>
+    <div class="qna-card">
+      <div class="qna-title">내 정보</div>
       <div class="qna-field">
         <label for="qna-name">이름 또는 닉네임</label>
         <input id="qna-name" type="text" placeholder="예: Ethan / 방문자">
@@ -350,26 +382,12 @@ body{
         <label for="qna-title-input">제목</label>
         <input id="qna-title-input" type="text" placeholder="토론 제목">
       </div>
-      <div class="qna-field">
-        <label for="qna-body">내용</label>
-        <textarea id="qna-body" placeholder="질문, 반박, 자료 설명, 요청사항을 적으세요."></textarea>
-      </div>
-      <div class="qna-field">
-        <label for="qna-files">첨부할 자료 설명</label>
-        <input id="qna-files" type="text" placeholder="예: 회로도 PNG, PSIM 파일, 캡처 이미지">
-      </div>
       <div class="qna-actions">
-        <button class="qna-btn" type="button" onclick="openQnaIssue()">GitHub 토론 열기</button>
-        <button class="qna-btn secondary" type="button" onclick="openQnaMail()">메일로 보내기</button>
         <button class="qna-btn secondary" type="button" onclick="clearQnaForm()">비우기</button>
       </div>
-    </div>
-    <div class="qna-card">
-      <div class="qna-title">사용 방식</div>
       <div class="qna-note">
-        <p><b>GitHub 토론 열기</b>는 입력 내용을 GitHub Issue 작성 화면에 자동으로 채웁니다. 로그인 후 이미지나 파일을 본문에 드래그해서 첨부하면 됩니다.</p>
-        <p><b>메일로 보내기</b>는 메일 앱을 열어 제목과 본문을 자동 작성합니다. 파일은 메일 앱에서 직접 첨부해야 합니다.</p>
-        <p>GitHub Pages는 정적 호스팅이라 방문자가 파일을 서버에 직접 업로드하는 기능은 없습니다. 자료 첨부까지 공개 토론장으로 쓰려면 GitHub Issue/Discussion 방식이 가장 안정적입니다.</p>
+        <p><b>전송</b>은 화면에 즉시 말풍선을 추가하고 GitHub 토론 작성창을 엽니다.</p>
+        <p>GitHub Pages는 정적 사이트라 자체 서버 저장은 안 됩니다. 공개 토론과 첨부는 GitHub Issue, 비공개 전달은 메일을 씁니다.</p>
       </div>
     </div>
   </div>
@@ -596,6 +614,49 @@ function clearQnaForm() {
     const el = document.getElementById(id);
     if (el) el.value = '';
   });
+  localStorage.removeItem('ethan-qna-chat');
+  renderQnaChat([]);
+}
+
+function sendQnaLocal() {
+  const body = document.getElementById('qna-body')?.value.trim();
+  if (!body) return;
+  const name = document.getElementById('qna-name')?.value.trim() || '익명';
+  const files = document.getElementById('qna-files')?.value.trim();
+  const item = {
+    name,
+    body: files ? `${body}\n\n첨부 메모: ${files}` : body,
+    ts: new Date().toLocaleString('ko-KR', { hour:'2-digit', minute:'2-digit' })
+  };
+  const rows = readQnaChat();
+  rows.push(item);
+  localStorage.setItem('ethan-qna-chat', JSON.stringify(rows.slice(-50)));
+  renderQnaChat(rows);
+  openQnaIssue();
+  const textarea = document.getElementById('qna-body');
+  if (textarea) textarea.value = '';
+}
+
+function readQnaChat() {
+  try { return JSON.parse(localStorage.getItem('ethan-qna-chat') || '[]'); }
+  catch (_) { return []; }
+}
+
+function renderQnaChat(rows = readQnaChat()) {
+  const chat = document.getElementById('qna-chat');
+  if (!chat) return;
+  chat.innerHTML = '<div class="qna-bubble in"><span class="qna-meta">ETHAN Q&A</span>질문이나 자료를 카톡처럼 편하게 남기세요. 전송은 GitHub 토론 또는 메일로 넘깁니다.</div>';
+  rows.forEach(row => {
+    const bubble = document.createElement('div');
+    bubble.className = 'qna-bubble out';
+    const meta = document.createElement('span');
+    meta.className = 'qna-meta';
+    meta.textContent = `${row.name || '익명'} · ${row.ts || ''}`;
+    bubble.appendChild(meta);
+    bubble.append(document.createTextNode(row.body || ''));
+    chat.appendChild(bubble);
+  });
+  chat.scrollTop = chat.scrollHeight;
 }
 
 function setSort(s) {
@@ -1019,6 +1080,7 @@ function refreshArchive() {
   loadArchiveData();
 }
 
+renderQnaChat();
 loadArchiveData();
 </script>
 </body>
