@@ -1,4 +1,16 @@
-﻿[
+[
+    {
+        "name":  "CODEX_알림_자동매수모니터_260527_12.06AM.html",
+        "updatedIso":  "2026-05-27T00:06:31+09:00",
+        "updatedDate":  "2026-05-27",
+        "updatedTime":  "00:06",
+        "updatedEpoch":  1779811591,
+        "displayDate":  "2026-05-27",
+        "displayTime":  "00:06",
+        "displayEpoch":  1779811560,
+        "category":  "stock",
+        "label":  "CODEX 자동매수모니터"
+    },
     {
         "name":  "CODEX_트럼프수요일발언찌라시_260526_11.12PM.html",
         "updatedIso":  "2026-05-26T23:12:00+09:00",
