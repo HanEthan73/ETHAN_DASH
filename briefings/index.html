@@ -431,7 +431,7 @@ body{
     <div class="qna-card">
       <div class="qna-title">Q&A 대화방</div>
       <div class="qna-chat" id="qna-chat">
-        <div class="qna-bubble in"><span class="qna-meta">ETHAN Q&A</span>카톡처럼 익명 메시지를 작성하고 아이폰 공유시트로 보냅니다. 이름/연락처는 익명 공유에 포함하지 않습니다.</div>
+        <div class="qna-bubble in"><span class="qna-meta">ETHAN Q&A</span>내 폰 말풍선은 기기 안에만 남습니다. 다른 사람도 보게 하려면 공개 등록을 눌러 익명 Q&A로 올려야 합니다.</div>
       </div>
       <div class="qna-compose">
         <div>
@@ -456,14 +456,16 @@ body{
         </div>
         <div class="qna-actions">
           <button class="qna-btn" type="button" onclick="sendQnaLocal()">말풍선 남기기</button>
+          <button class="qna-btn" type="button" onclick="openQnaPublicIssue()">공개 등록</button>
           <button class="qna-btn secondary" type="button" onclick="shareQnaAnonymous()">카톡식 익명 공유</button>
+          <button class="qna-btn secondary" type="button" onclick="loadPublicQna()">공개글 새로고침</button>
           <button class="qna-btn secondary" type="button" onclick="clearQnaShareOutput()">공유상태 지우기</button>
           <button class="qna-btn secondary" type="button" onclick="openQnaMail()">메일</button>
         </div>
       </div>
-      <div class="qna-title">익명 공유 상태</div>
+      <div class="qna-title">공개 Q&A</div>
       <div id="qna-public-feed" class="qna-public-feed">
-        <div class="qna-note">익명 공유는 링크를 만들지 않고 아이폰 공유시트로 텍스트와 가능한 첨부를 전달합니다.</div>
+        <div class="qna-note">공개 등록된 익명 Q&A를 불러오는 중입니다.</div>
       </div>
     </div>
     <div class="qna-card">
@@ -486,7 +488,8 @@ body{
         <button class="qna-btn secondary" type="button" onclick="clearQnaForm()">비우기</button>
       </div>
       <div class="qna-note">
-        <p><b>익명 공유</b>는 이름/연락처 없이 카톡·메시지·메일 공유시트로 보냅니다.</p>
+        <p><b>공개 등록</b>은 이름/연락처 없이 모두가 볼 수 있는 Q&A 목록에 올리는 방식입니다.</p>
+        <p><b>익명 공유</b>는 카톡·메시지·메일 공유시트로 보내는 기능이며, 공개 저장은 공개 등록으로 처리합니다.</p>
         <p>사진은 선택 즉시 미리보기로 보입니다. 전송 후 선택 목록과 미리보기는 초기화됩니다.</p>
       </div>
     </div>
@@ -696,6 +699,18 @@ function qnaPayload() {
     body
   ].join('\n');
   return { title: `[Q&A] ${title}`, text };
+}
+
+function openQnaPublicIssue() {
+  const q = qnaPayload();
+  const body = q.text
+    + '\n\n---\n익명 공개 Q&A입니다. 이름/연락처는 저장하지 않습니다.'
+    + '\n사진/파일은 GitHub 작성 화면에서 직접 첨부하면 모두에게 보입니다.';
+  const url = 'https://github.com/HanEthan73/ETHAN_DASH/issues/new?title='
+    + encodeURIComponent(q.title)
+    + '&labels=' + encodeURIComponent('Q&A')
+    + '&body=' + encodeURIComponent(body);
+  window.open(url, '_blank', 'noopener');
 }
 
 function openQnaMail() {
@@ -924,7 +939,7 @@ function readQnaChat() {
 function renderQnaChat(rows = readQnaChat()) {
   const chat = document.getElementById('qna-chat');
   if (!chat) return;
-  chat.innerHTML = '<div class="qna-bubble in"><span class="qna-meta">ETHAN Q&A</span>카톡처럼 익명 메시지를 작성하고 아이폰 공유시트로 보냅니다. 이름/연락처는 익명 공유에 포함하지 않습니다.</div>';
+  chat.innerHTML = '<div class="qna-bubble in"><span class="qna-meta">ETHAN Q&A</span>내 폰 말풍선은 기기 안에만 남습니다. 다른 사람도 보게 하려면 공개 등록을 눌러 익명 Q&A로 올려야 합니다.</div>';
   rows.forEach(row => {
     const bubble = document.createElement('div');
     bubble.className = 'qna-bubble out';
@@ -936,6 +951,42 @@ function renderQnaChat(rows = readQnaChat()) {
     chat.appendChild(bubble);
   });
   chat.scrollTop = chat.scrollHeight;
+}
+
+function loadPublicQna() {
+  const feed = document.getElementById('qna-public-feed');
+  if (!feed) return;
+  feed.innerHTML = '<div class="qna-note">공개 Q&A를 불러오는 중입니다.</div>';
+  fetch('https://api.github.com/repos/HanEthan73/ETHAN_DASH/issues?state=open&labels=Q%26A&per_page=20&ts=' + Date.now())
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(items => {
+      const qnas = (items || []).filter(item => item.title && item.title.startsWith('[Q&A]')).slice(0, 10);
+      if (!qnas.length) {
+        feed.innerHTML = '<div class="qna-note">아직 공개 등록된 Q&A가 없습니다. 공개 등록을 완료하면 다른 사람에게도 여기 표시됩니다.</div>';
+        return;
+      }
+      feed.innerHTML = '';
+      qnas.forEach(item => {
+        const a = document.createElement('a');
+        a.className = 'qna-public-item';
+        a.href = item.html_url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        const title = document.createElement('strong');
+        title.textContent = item.title.replace(/^\[Q&A\]\s*/, '');
+        const meta = document.createElement('span');
+        meta.textContent = `익명 · #${item.number} · ${new Date(item.created_at).toLocaleString('ko-KR', { month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' })}`;
+        const body = document.createElement('span');
+        body.textContent = (item.body || '').replace(/\s+/g, ' ').slice(0, 160);
+        a.appendChild(title);
+        a.appendChild(meta);
+        a.appendChild(body);
+        feed.appendChild(a);
+      });
+    })
+    .catch(() => {
+      feed.innerHTML = '<div class="qna-note">공개 Q&A를 불러오지 못했습니다. 새로고침 후 다시 확인하세요.</div>';
+    });
 }
 
 function setSort(s) {
@@ -1360,6 +1411,7 @@ function refreshArchive() {
 }
 
 renderQnaChat();
+loadPublicQna();
 loadArchiveData();
 </script>
 </body>
