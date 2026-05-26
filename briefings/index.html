@@ -386,8 +386,8 @@ body{
         <button class="qna-btn secondary" type="button" onclick="clearQnaForm()">비우기</button>
       </div>
       <div class="qna-note">
-        <p><b>전송</b>은 화면에 즉시 말풍선을 추가하고 GitHub 토론 작성창을 엽니다.</p>
-        <p>GitHub Pages는 정적 사이트라 자체 서버 저장은 안 됩니다. 공개 토론과 첨부는 GitHub Issue, 비공개 전달은 메일을 씁니다.</p>
+        <p><b>전송</b>은 폰 화면 안에만 말풍선을 남깁니다. GitHub 앱으로 넘어가지 않습니다.</p>
+        <p>공개 토론이나 첨부 공유가 필요할 때만 GitHub 버튼을 따로 누르세요. 비공개 전달은 메일 버튼을 씁니다.</p>
       </div>
     </div>
   </div>
@@ -632,7 +632,6 @@ function sendQnaLocal() {
   rows.push(item);
   localStorage.setItem('ethan-qna-chat', JSON.stringify(rows.slice(-50)));
   renderQnaChat(rows);
-  openQnaIssue();
   const textarea = document.getElementById('qna-body');
   if (textarea) textarea.value = '';
 }
