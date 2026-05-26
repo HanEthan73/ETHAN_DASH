@@ -18,8 +18,10 @@ body{
   font-family:"Malgun Gothic","Apple SD Gothic Neo","Segoe UI",sans-serif;
   line-height:1.65;
   padding:24px 14px 40px;
+  width:100%;
+  overflow-x:hidden;
 }
-.wrap{max-width:1360px;margin:0 auto}
+.wrap{width:100%;max-width:1360px;margin:0 auto}
 header{padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:18px}
 h1{font-size:31px;color:var(--gold);margin-bottom:8px}
 .sub{font-size:13px;color:var(--muted)}
@@ -35,7 +37,8 @@ h1{font-size:31px;color:var(--gold);margin-bottom:8px}
 h2{font-size:20px;color:var(--blue);margin-bottom:12px}
 h3{font-size:17px;color:var(--gold);margin-bottom:10px}
 p{font-size:14px;color:#d7e0ec}
-.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px;background:#101722}
+.panel,.summary-card,.stock-grid,.stock-card{min-width:0}
+.table-wrap{width:100%;max-width:100%;min-width:0;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#101722;-webkit-overflow-scrolling:touch}
 .table-wrap table{min-width:1260px}
 table{width:100%;border-collapse:collapse}
 th{background:#1f2938;color:var(--gold);text-align:left;padding:10px;font-size:12px;border-bottom:1px solid #314157;white-space:nowrap}
@@ -64,6 +67,11 @@ footer{margin-top:18px;text-align:right;color:#7d899c;font-size:12px}
 @media(max-width:960px){.summary-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){
   body{padding:16px 8px 32px}
+  h1{font-size:24px;line-height:1.25}
+  h2{font-size:18px;line-height:1.35}
+  .panel{padding:12px;border-radius:10px}
+  .table-wrap table{min-width:760px}
+  th,td{padding:8px;font-size:12px}
   .summary-strip{grid-template-columns:1fr}
 }
 </style>
