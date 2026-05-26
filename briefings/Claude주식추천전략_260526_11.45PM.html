@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude주식추천전략_260526_11.45PM</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f0f1a;color:#e8e8f0;font-family:'Segoe UI',sans-serif;font-size:14px;line-height:1.8;padding:16px}
+h1{color:#ffd700;font-size:20px;margin-bottom:4px}
+h2{color:#4fc3f7;font-size:15px;margin:18px 0 10px}
+.meta{color:#555;font-size:12px;margin-bottom:20px}
+.section{background:#16162a;border-radius:12px;padding:16px;margin-bottom:16px;border-left:4px solid}
+.s1{border-color:#ffd700}.s2{border-color:#4fc3f7}.s3{border-color:#ffa726}.s4{border-color:#66bb6a}.s5{border-color:#ef5350}.s6{border-color:#ce93d8}
+.stitle{font-size:15px;font-weight:bold;color:#ffd700;margin-bottom:12px}
+table{width:100%;border-collapse:collapse;margin:10px 0;overflow-x:auto;display:block}
+th{background:#1e1e3a;color:#ffd700;padding:8px 10px;text-align:left;font-size:12px;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid #2a2a3f;font-size:13px;vertical-align:top}
+tr:hover td{background:#1e1e3a}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold;margin:1px}
+.tred{background:#ef535033;color:#ef5350}.tgreen{background:#66bb6a33;color:#66bb6a}
+.tyellow{background:#ffa72633;color:#ffa726}.tblue{background:#4fc3f733;color:#4fc3f7}
+.tpurple{background:#ce93d833;color:#ce93d8}.tgold{background:#ffd70033;color:#ffd700}
+p{margin:6px 0;font-size:13px}
+.flowbox{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.step{background:#1e1e3a;border-radius:8px;padding:10px 14px;font-size:13px;position:relative;padding-left:40px}
+.stepnum{position:absolute;left:10px;top:10px;width:22px;height:22px;background:#ffd700;color:#0f0f1a;border-radius:50%;font-weight:bold;font-size:12px;text-align:center;line-height:22px}
+.alert-box{background:#1a0a0a;border:1px solid #ef5350;border-radius:8px;padding:12px;margin:10px 0;font-size:13px}
+.alert-title{color:#ef5350;font-weight:bold;margin-bottom:6px}
+.good-box{background:#0a1a0a;border:1px solid #66bb6a;border-radius:8px;padding:12px;margin:10px 0;font-size:13px}
+.good-title{color:#66bb6a;font-weight:bold;margin-bottom:6px}
+ul{padding-left:18px}
+li{margin:4px 0}
+code{background:#1e1e3a;padding:1px 6px;border-radius:3px;font-size:12px;color:#4fc3f7}
+</style>
+</head>
+<body>
+
+<h1>🧠 Claude 주식 추천 전략 전체 가이드</h1>
+<div class="meta">2026.05.26 · ETHAN DASH · Claude 작성</div>
+
+<!-- 1. 전략 개요 -->
+<div class="section s1">
+  <div class="stitle">📌 추천 프로세스 — Claude가 보는 순서</div>
+  <div class="flowbox">
+    <div class="step"><span class="stepnum">1</span><b>실시간 가격 조회</b> — TradingView 필수 (추정·기억 절대 금지)</div>
+    <div class="step"><span class="stepnum">2</span><b>데드크로스 필터링</b> — MA50 &lt; MA200 종목 즉시 제외</div>
+    <div class="step"><span class="stepnum">3</span><b>4전략 복합 평가</b> — VCP + Weinstein + C&H + M2 각각 ✅❌⚠️</div>
+    <div class="step"><span class="stepnum">4</span><b>매크로 필터</b> — VIX·금리·환율·힌덴버그 오멘 경보 확인</div>
+    <div class="step"><span class="stepnum">5</span><b>눌림목 분류</b> — 허공 / 지지선 근접 / 홀딩 3분류</div>
+    <div class="step"><span class="stepnum">6</span><b>Claude 최종 판단</b> — 지금 들어가야 하나 말아야 하나 직접 서술</div>
+  </div>
+</div>
+
+<!-- 2. 4전략 복합분석 -->
+<div class="section s2">
+  <div class="stitle">⚡ 4전략 복합분석 (4종목 이상 시 필수)</div>
+  <table>
+    <tr><th>전략</th><th>창시자 / 출처</th><th>핵심 원리</th><th>Claude가 보는 것</th></tr>
+    <tr>
+      <td><b>VCP</b><br><span class="tag tblue">변동성 수축 패턴</span></td>
+      <td>Mark Minervini</td>
+      <td>박스권이 점점 좁아지며 거래량 감소 → 에너지 압축 → 돌파 시 폭발</td>
+      <td>수축 횟수(3회+), 각 수축 깊이 감소 여부, 돌파 시 거래량 +40% 이상</td>
+    </tr>
+    <tr>
+      <td><b>Weinstein 4단계</b><br><span class="tag tpurple">스테이지 분석</span></td>
+      <td>Stan Weinstein</td>
+      <td>Stage 1(바닥) → 2(상승) → 3(천장) → 4(하락). Stage 2만 매수.</td>
+      <td>현재 어느 스테이지인지, MA30주선 위/아래 위치</td>
+    </tr>
+    <tr>
+      <td><b>Cup & Handle</b><br><span class="tag tgold">머그컵 패턴</span></td>
+      <td>William O'Neil (CANSLIM)</td>
+      <td>U자형 컵(7~65주, -15~33%) + 핸들(1~4주, 5~15% 조정) 후 돌파</td>
+      <td>컵 깊이(-15~33%), 핸들 거래량 수축, 돌파 시 거래량 +40%, 매수점은 핸들 고점 +$0.10</td>
+    </tr>
+    <tr>
+      <td><b>M2 유동성 사이클</b><br><span class="tag tgreen">거시 유동성</span></td>
+      <td>거시경제 분석</td>
+      <td>M2 증가 → 시장 유동성 확대 → 주가 상승 사이클. M2 감소 시 매도 압력.</td>
+      <td>M2 추세 방향, 연준 대차대조표, 시중 유동성 상태</td>
+    </tr>
+  </table>
+
+  <div class="good-box">
+    <div class="good-title">🌟 최우선 추천 조건</div>
+    4전략 전원 통과(✅✅✅✅) + 골든크로스(MA50 > MA200) = <b>이중 신호 → 강력 매수 후보</b>
+  </div>
+</div>
+
+<!-- 3. 기술적 지표 -->
+<div class="section s3">
+  <div class="stitle">📈 기술적 지표 — 차트 직접 확인</div>
+  <table>
+    <tr><th>지표</th><th>Claude가 보는 기준</th><th>매수 신호</th><th>주의 신호</th></tr>
+    <tr>
+      <td><b>골든/데드크로스</b></td>
+      <td>MA50 vs MA200 교차</td>
+      <td>MA50 > MA200 (골든크로스)</td>
+      <td><span class="tag tred">MA50 &lt; MA200 → 추천 완전 제외</span></td>
+    </tr>
+    <tr>
+      <td><b>RSI</b></td>
+      <td>14일 기준</td>
+      <td>30~50 구간 (과매도 회복)</td>
+      <td>70 이상 (과매수), 진입 자제</td>
+    </tr>
+    <tr>
+      <td><b>MACD</b></td>
+      <td>히스토그램 + 크로스</td>
+      <td>0선 위 골든크로스, 히스토그램 양전환</td>
+      <td>데드크로스, 히스토그램 감소</td>
+    </tr>
+    <tr>
+      <td><b>거래량</b></td>
+      <td>20일 평균 대비 비교</td>
+      <td>돌파 시 +40% 이상 급증</td>
+      <td>거래량 없는 돌파 = 가짜 돌파</td>
+    </tr>
+    <tr>
+      <td><b>이동평균선</b></td>
+      <td>MA20 / MA50 / MA200</td>
+      <td>주가 > MA20 > MA50 > MA200 정렬</td>
+      <td>MA 역배열 (하락 추세)</td>
+    </tr>
+    <tr>
+      <td><b>캔들 패턴</b></td>
+      <td>지지선 근처에서만 유효</td>
+      <td>망치형·강세 엔걸핑·도지 반전</td>
+      <td>장대 음봉 + 거래량 급증</td>
+    </tr>
+    <tr>
+      <td><b>눌림목 구조</b></td>
+      <td>MA20/50 터치 후 반등</td>
+      <td>지지선에서 반등 캔들 확인</td>
+      <td>지지선 완전 이탈 = 손절</td>
+    </tr>
+  </table>
+</div>
+
+<!-- 4. 매크로 분석 -->
+<div class="section s4">
+  <div class="stitle">🌍 매크로 분석 — 시장 환경 필터</div>
+  <table>
+    <tr><th>지표</th><th>현재 (2026.05)</th><th>안전</th><th>경보</th><th>Claude 판단 영향</th></tr>
+    <tr><td><b>VIX (공포지수)</b></td><td>16.76</td><td>&lt;20</td><td><span class="tag tred">≥25 → 신규 진입 자제</span></td><td>VIX 급등 시 전 종목 관망</td></tr>
+    <tr><td><b>10년물 국채금리</b></td><td>4.66% ⚠️</td><td>&lt;4.5%</td><td><span class="tag tred">≥4.5% → 고PER주 압박</span></td><td>AI·성장주 할인율 상승</td></tr>
+    <tr><td><b>USD/KRW</b></td><td>~1,514 🚨</td><td>&lt;1,380</td><td><span class="tag tred">≥1,450 → 경보</span></td><td>원화 약세 = 수입원가 상승</td></tr>
+    <tr><td><b>M2 유동성</b></td><td>모니터 중</td><td>증가 추세</td><td>감소 전환</td><td>M2 감소 시 매도 압력 증가</td></tr>
+    <tr><td><b>나스닥 연속 하락</b></td><td>—</td><td>—</td><td>-5% 이상 연속 2일</td><td>포트 전체 방어 모드</td></tr>
+    <tr><td><b>힌덴버그 오멘</b></td><td>🚨 발동 중</td><td>미발동</td><td><span class="tag tred">NYSE+나스닥 동시 발동</span></td><td>신규 진입 신중, 손절선 엄수</td></tr>
+  </table>
+
+  <div class="alert-box">
+    <div class="alert-title">🚨 시장 악화 복합 경보 — 3가지 동시 발생 시 현금화 검토</div>
+    <ul>
+      <li>VIX ≥ 25</li>
+      <li>나스닥 -3% 이상 연속 2일</li>
+      <li>10년물 금리 4.8% 돌파</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 5. 머그컵 상세 기준 -->
+<div class="section s6">
+  <div class="stitle">☕ Cup & Handle 세부 기준 (William O'Neil CANSLIM)</div>
+  <table>
+    <tr><th>요소</th><th>합격 기준</th><th>불합격</th></tr>
+    <tr><td>컵(Cup) 기간</td><td>7주 ~ 65주</td><td>7주 미만 (V자 반등 = 컵 아님)</td></tr>
+    <tr><td>컵 깊이</td><td>-15% ~ -33%</td><td>-33% 초과 (너무 깊음)</td></tr>
+    <tr><td>컵 모양</td><td>U자형 (완만한 바닥)</td><td>V자형 (급락 후 급반등)</td></tr>
+    <tr><td>핸들(Handle)</td><td>컵 상단 절반에서 5~15% 조정, 1~4주</td><td>컵 하단 절반에서 형성</td></tr>
+    <tr><td>핸들 거래량</td><td>수축 (조용히 쉬는 구간)</td><td>핸들에서 거래량 급증</td></tr>
+    <tr><td>돌파 매수점</td><td>핸들 고점 + $0.10</td><td>—</td></tr>
+    <tr><td>돌파 거래량</td><td>평균 대비 +40% 이상</td><td>거래량 미동반 돌파</td></tr>
+    <tr><td>손절</td><td>매수가 기준 -7~8% (O'Neil 철칙)</td><td>—</td></tr>
+    <tr><td>R/R 비율</td><td>최소 2:1 이상</td><td>2:1 미만 = 진입 불가</td></tr>
+  </table>
+  <p style="margin-top:8px">등급: <span class="tag tgold">🌟 완벽</span> 컵깊이 15~33% + 핸들거래량수축 + 돌파폭발 &nbsp;|&nbsp; <span class="tag tgreen">✅ 양호</span> 패턴성립 but 거래량 미흡 &nbsp;|&nbsp; <span class="tag tred">❌ 불합격</span> 조건 미충족</p>
+</div>
+
+<!-- 6. 자동매수 전략 -->
+<div class="section s5">
+  <div class="stitle">⚡ 자동매수 전략 & 세팅 (2026.05 기준)</div>
+  <p>1차/2차 분할매수 (각 50%), 현재가가 자동매수가 3% 이내 접근 시 <b>⚡ 자동매수 임박</b> 표시</p>
+  <table>
+    <tr><th>종목</th><th>1차 매수</th><th>2차 매수</th><th>손절</th><th>상태</th></tr>
+    <tr><td>NVDA</td><td>$217.00</td><td>$201.00</td><td>$185</td><td><span class="tag tyellow">현재 $214 — 근접</span></td></tr>
+    <tr><td>AVGO</td><td>$435.00</td><td>$420.00</td><td>$390</td><td>—</td></tr>
+    <tr><td>ASTS</td><td>$67.00</td><td>$57.00</td><td>$45</td><td>—</td></tr>
+    <tr><td>INTC</td><td>$104.50</td><td>$99.00</td><td>$95</td><td>—</td></tr>
+    <tr><td>현대차</td><td>₩665,000</td><td>₩635,000</td><td>₩600,000</td><td>—</td></tr>
+    <tr><td>MU</td><td colspan="2">⚠️ 매입 완료 (8주 @$671.79)</td><td>$640~650</td><td>손절 재설정 필요</td></tr>
+    <tr><td>AMD</td><td>$405.00</td><td>$392.00</td><td>$370</td><td><span class="tag tred">데드크로스 — 추천 제외</span></td></tr>
+  </table>
+</div>
+
+<div style="text-align:center;color:#333;font-size:11px;margin-top:16px;padding-top:12px;border-top:1px solid #1e1e3a">
+  Claude 주식 추천 전략 가이드 | ETHAN DASH | 2026.05.26
+</div>
+</body>
+</html>
