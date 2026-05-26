@@ -419,7 +419,7 @@ body{
     <div class="qna-card">
       <div class="qna-title">Q&A 대화방</div>
       <div class="qna-chat" id="qna-chat">
-        <div class="qna-bubble in"><span class="qna-meta">ETHAN Q&A</span>공개 전송은 GitHub Q&A 게시물로 열립니다. 등록된 글은 아래 공개 목록에서 모두 볼 수 있습니다.</div>
+        <div class="qna-bubble in"><span class="qna-meta">ETHAN Q&A</span>카톡처럼 익명 메시지를 작성하고 아이폰 공유시트로 보냅니다. 이름/연락처는 익명 공유에 포함하지 않습니다.</div>
       </div>
       <div class="qna-compose">
         <div>
@@ -432,7 +432,7 @@ body{
             <div class="qna-file-tools">
               <button class="qna-btn secondary" type="button" onclick="pickQnaPhotos()">사진 선택</button>
               <button class="qna-btn secondary" type="button" onclick="pickQnaFiles()">파일 선택</button>
-              <button class="qna-btn secondary" type="button" onclick="createQnaShareLink()">공유링크</button>
+              <button class="qna-btn secondary" type="button" onclick="shareQnaAnonymous()">익명 공유</button>
             </div>
             <input id="qna-photo-input" class="qna-file-input" type="file" accept="image/*,video/*" multiple onchange="handleQnaFiles(this.files)">
             <input id="qna-file-input" class="qna-file-input" type="file" multiple onchange="handleQnaFiles(this.files)">
@@ -443,27 +443,19 @@ body{
           </div>
         </div>
         <div class="qna-actions">
-          <button class="qna-btn" type="button" onclick="sendQnaLocal()">공개 전송</button>
-          <button class="qna-btn secondary" type="button" onclick="createQnaShareLink()">링크 만들기</button>
-          <button class="qna-btn secondary" type="button" onclick="loadPublicQna()">새로고침</button>
+          <button class="qna-btn" type="button" onclick="sendQnaLocal()">말풍선 남기기</button>
+          <button class="qna-btn secondary" type="button" onclick="shareQnaAnonymous()">카톡식 익명 공유</button>
+          <button class="qna-btn secondary" type="button" onclick="clearQnaShareOutput()">공유상태 지우기</button>
           <button class="qna-btn secondary" type="button" onclick="openQnaMail()">메일</button>
         </div>
       </div>
-      <div class="qna-title">공개 Q&A</div>
+      <div class="qna-title">익명 공유 상태</div>
       <div id="qna-public-feed" class="qna-public-feed">
-        <div class="qna-note">공개 게시물을 불러오는 중입니다.</div>
+        <div class="qna-note">익명 공유는 링크를 만들지 않고 아이폰 공유시트로 텍스트와 가능한 첨부를 전달합니다.</div>
       </div>
     </div>
     <div class="qna-card">
-      <div class="qna-title">내 정보</div>
-      <div class="qna-field">
-        <label for="qna-name">이름 또는 닉네임</label>
-        <input id="qna-name" type="text" placeholder="예: Ethan / 방문자">
-      </div>
-      <div class="qna-field">
-        <label for="qna-contact">GitHub ID 또는 이메일</label>
-        <input id="qna-contact" type="text" placeholder="예: github-id 또는 name@example.com">
-      </div>
+      <div class="qna-title">공유 설정</div>
       <div class="qna-field">
         <label for="qna-topic">분류</label>
         <select id="qna-topic">
@@ -482,7 +474,7 @@ body{
         <button class="qna-btn secondary" type="button" onclick="clearQnaForm()">비우기</button>
       </div>
       <div class="qna-note">
-        <p><b>공개 전송</b>은 GitHub Q&A 작성창을 엽니다. 작성창에서 제출해야 남들도 볼 수 있습니다.</p>
+        <p><b>익명 공유</b>는 이름/연락처 없이 카톡·메시지·메일 공유시트로 보냅니다.</p>
         <p>사진은 선택 즉시 미리보기로 보입니다. 전송 후 선택 목록과 미리보기는 초기화됩니다.</p>
       </div>
     </div>
@@ -680,31 +672,18 @@ function showPanel(id) {
 }
 
 function qnaPayload() {
-  const name = document.getElementById('qna-name')?.value.trim() || '익명';
-  const contact = document.getElementById('qna-contact')?.value.trim() || '미기재';
   const topic = document.getElementById('qna-topic')?.value || '기타 토론';
   const title = document.getElementById('qna-title-input')?.value.trim() || 'Q&A 토론';
   const body = document.getElementById('qna-body')?.value.trim() || '내용 미기재';
   const files = qnaAttachmentText();
   const text = [
     `분류: ${topic}`,
-    `작성자: ${name}`,
-    `GitHub/이메일: ${contact}`,
     `첨부 예정 자료: ${files}`,
     '',
     '내용:',
     body
   ].join('\n');
   return { title: `[Q&A] ${title}`, text };
-}
-
-function openQnaIssue() {
-  const q = qnaPayload();
-  const url = 'https://github.com/HanEthan73/ETHAN_DASH/issues/new?title='
-    + encodeURIComponent(q.title)
-    + '&labels=' + encodeURIComponent('Q&A')
-    + '&body=' + encodeURIComponent(q.text + '\n\n사진/파일은 이 GitHub 작성 화면에 직접 첨부해야 남들도 볼 수 있습니다.');
-  window.open(url, '_blank', 'noopener');
 }
 
 function openQnaMail() {
@@ -715,7 +694,7 @@ function openQnaMail() {
 }
 
 function clearQnaForm() {
-  ['qna-name','qna-contact','qna-title-input','qna-body','qna-files'].forEach(id => {
+  ['qna-title-input','qna-body','qna-files'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
   });
@@ -822,16 +801,6 @@ function qnaAttachmentText() {
   return rows.length ? rows.join(' / ') : '없음';
 }
 
-async function shareQnaFiles() {
-  if (!selectedQnaFiles.length) return;
-  const q = qnaPayload();
-  if (navigator.canShare && navigator.canShare({ files: selectedQnaFiles }) && navigator.share) {
-    await navigator.share({ title: q.title, text: q.text, files: selectedQnaFiles });
-    return;
-  }
-  alert('이 브라우저에서는 파일 직접 공유가 제한됩니다. 사진 선택/파일 선택 후 GitHub 또는 메일 화면에서 다시 첨부하세요.');
-}
-
 async function prepareQnaImages() {
   const imageFiles = selectedQnaFiles.filter(file => file.type && file.type.startsWith('image/')).slice(0, 6);
   selectedQnaImages = [];
@@ -865,26 +834,38 @@ function compressQnaImage(file) {
   });
 }
 
-async function createQnaShareLink() {
+async function shareQnaAnonymous() {
   const out = document.getElementById('qna-share-output');
-  if (!out) return;
-  if (selectedQnaFiles.some(file => file.type && file.type.startsWith('image/')) && !selectedQnaImages.length) {
-    await prepareQnaImages();
-  }
-  const q = qnaPayload();
-  const payload = {
-    title: q.title,
-    text: q.text,
-    images: selectedQnaImages,
-    ts: new Date().toISOString()
-  };
-  const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
-  const url = `${location.origin}${location.pathname}#qna=${encoded}`;
-  out.hidden = false;
-  out.innerHTML = `<b>공유 링크 생성 완료</b><br><a href="${qnaEscape(url)}">${qnaEscape(url)}</a>`;
-  try { await navigator.clipboard.writeText(url); } catch (_) {}
-  if (navigator.share) {
-    try { await navigator.share({ title: q.title, text: 'ETHAN Q&A 공유 링크', url }); } catch (_) {}
+  const body = document.getElementById('qna-body')?.value.trim();
+  const title = document.getElementById('qna-title-input')?.value.trim() || '익명 Q&A';
+  const topic = document.getElementById('qna-topic')?.value || '기타';
+  const memo = document.getElementById('qna-files')?.value.trim();
+  const text = [
+    `[익명 Q&A] ${title}`,
+    `분류: ${topic}`,
+    '',
+    body || '내용 미기재',
+    memo ? `\n첨부 메모: ${memo}` : ''
+  ].join('\n').trim();
+  try {
+    if (navigator.share) {
+      const imageFiles = selectedQnaFiles.filter(file => file.type && file.type.startsWith('image/')).slice(0, 8);
+      if (imageFiles.length && navigator.canShare && navigator.canShare({ files: imageFiles })) {
+        await navigator.share({ title: `[익명 Q&A] ${title}`, text, files: imageFiles });
+      } else {
+        await navigator.share({ title: `[익명 Q&A] ${title}`, text });
+      }
+      if (out) {
+        out.hidden = false;
+        out.innerHTML = '<b>익명 공유 완료</b><br>아이폰 공유시트로 내용과 가능한 첨부를 넘겼습니다.';
+      }
+      return;
+    }
+  } catch (_) {}
+  try { await navigator.clipboard.writeText(text); } catch (_) {}
+  if (out) {
+    out.hidden = false;
+    out.innerHTML = '<b>익명 공유 대기</b><br>이 브라우저는 공유시트를 지원하지 않아 익명 메시지 내용을 클립보드에 복사했습니다.';
   }
 }
 
@@ -898,10 +879,9 @@ function clearQnaShareOutput() {
 function sendQnaLocal() {
   const body = document.getElementById('qna-body')?.value.trim();
   if (!body) return;
-  const name = document.getElementById('qna-name')?.value.trim() || '익명';
   const files = qnaAttachmentText();
   const item = {
-    name,
+    name: '익명',
     body: files !== '없음' ? `${body}\n\n첨부: ${files}` : body,
     ts: new Date().toLocaleString('ko-KR', { hour:'2-digit', minute:'2-digit' })
   };
@@ -909,7 +889,7 @@ function sendQnaLocal() {
   rows.push(item);
   localStorage.setItem('ethan-qna-chat', JSON.stringify(rows.slice(-50)));
   renderQnaChat(rows);
-  createQnaShareLink();
+  clearQnaShareOutput();
   const textarea = document.getElementById('qna-body');
   if (textarea) textarea.value = '';
   selectedQnaFiles = [];
@@ -932,7 +912,7 @@ function readQnaChat() {
 function renderQnaChat(rows = readQnaChat()) {
   const chat = document.getElementById('qna-chat');
   if (!chat) return;
-  chat.innerHTML = '<div class="qna-bubble in"><span class="qna-meta">ETHAN Q&A</span>공개 전송은 GitHub Q&A 게시물로 열립니다. 등록된 글은 아래 공개 목록에서 모두 볼 수 있습니다.</div>';
+  chat.innerHTML = '<div class="qna-bubble in"><span class="qna-meta">ETHAN Q&A</span>카톡처럼 익명 메시지를 작성하고 아이폰 공유시트로 보냅니다. 이름/연락처는 익명 공유에 포함하지 않습니다.</div>';
   rows.forEach(row => {
     const bubble = document.createElement('div');
     bubble.className = 'qna-bubble out';
@@ -944,73 +924,6 @@ function renderQnaChat(rows = readQnaChat()) {
     chat.appendChild(bubble);
   });
   chat.scrollTop = chat.scrollHeight;
-}
-
-function loadPublicQna() {
-  const feed = document.getElementById('qna-public-feed');
-  if (!feed) return;
-  feed.innerHTML = '<div class="qna-note">공개 게시물을 불러오는 중입니다.</div>';
-  fetch('https://api.github.com/repos/HanEthan73/ETHAN_DASH/issues?state=open&per_page=20&ts=' + Date.now())
-    .then(r => r.ok ? r.json() : Promise.reject(r.status))
-    .then(items => {
-      const qnas = (items || []).filter(item => item.title && item.title.startsWith('[Q&A]')).slice(0, 10);
-      if (!qnas.length) {
-        feed.innerHTML = '<div class="qna-note">아직 공개 Q&A 게시물이 없습니다.</div>';
-        return;
-      }
-      feed.innerHTML = '';
-      qnas.forEach(item => {
-        const a = document.createElement('a');
-        a.className = 'qna-public-item';
-        a.href = item.html_url;
-        a.target = '_blank';
-        a.rel = 'noopener';
-        const title = document.createElement('strong');
-        title.textContent = item.title.replace(/^\[Q&A\]\s*/, '');
-        const meta = document.createElement('span');
-        meta.textContent = `#${item.number} · ${new Date(item.created_at).toLocaleString('ko-KR', { month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' })}`;
-        const body = document.createElement('span');
-        body.textContent = (item.body || '').replace(/\s+/g, ' ').slice(0, 120);
-        a.appendChild(title);
-        a.appendChild(meta);
-        a.appendChild(body);
-        feed.appendChild(a);
-      });
-    })
-    .catch(() => {
-      feed.innerHTML = '<div class="qna-note">공개 Q&A를 불러오지 못했습니다. 잠시 후 새로고침하세요.</div>';
-    });
-}
-
-function hydrateSharedQna() {
-  if (!location.hash.startsWith('#qna=')) return;
-  try {
-    const payload = JSON.parse(decodeURIComponent(escape(atob(location.hash.slice(5)))));
-    const chat = document.getElementById('qna-chat');
-    if (chat) {
-      chat.innerHTML = '';
-      const bubble = document.createElement('div');
-      bubble.className = 'qna-bubble in';
-      const meta = document.createElement('span');
-      meta.className = 'qna-meta';
-      meta.textContent = payload.title || '공유 Q&A';
-      bubble.appendChild(meta);
-      bubble.append(document.createTextNode(payload.text || ''));
-      chat.appendChild(bubble);
-      (payload.images || []).forEach(image => {
-        const fig = document.createElement('figure');
-        fig.style.margin = '8px 0 0';
-        const img = document.createElement('img');
-        img.src = image.dataUrl;
-        img.alt = image.name || 'shared image';
-        img.style.maxWidth = '100%';
-        img.style.borderRadius = '8px';
-        img.onclick = () => openQnaModal(img.src);
-        fig.appendChild(img);
-        bubble.appendChild(fig);
-      });
-    }
-  } catch (_) {}
 }
 
 function setSort(s) {
@@ -1435,8 +1348,6 @@ function refreshArchive() {
 }
 
 renderQnaChat();
-hydrateSharedQna();
-loadPublicQna();
 loadArchiveData();
 </script>
 </body>
