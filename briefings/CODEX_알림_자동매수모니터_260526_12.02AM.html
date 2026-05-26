@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX 알림 자동매수모니터 260526 12.02AM</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d1118;--panel:#141b26;--panel2:#182130;--line:#2a3447;
+  --text:#eaf0f8;--muted:#99a7ba;--gold:#f5c518;--goldbg:#2a2412;
+  --green:#62e0a1;--greenbg:#10261b;--yellow:#ffe082;--yellowbg:#2d2814;
+  --red:#ff9b9b;--redbg:#2d1719;--blue:#8ab4ff;--bluebg:#122238;
+}
+body{
+  background:radial-gradient(circle at top,#182236 0,#0d1118 52%);
+  color:var(--text);font-family:"Malgun Gothic","Apple SD Gothic Neo","Segoe UI",sans-serif;
+  line-height:1.62;padding:24px 14px 40px;
+}
+.wrap{max-width:1280px;margin:0 auto}
+header{padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:18px}
+h1{font-size:30px;color:var(--gold);margin-bottom:8px}
+.sub{font-size:13px;color:var(--muted)}
+.stamp{display:inline-block;margin-top:12px;padding:6px 12px;border-radius:999px;background:var(--goldbg);border:1px solid #5d4b18;color:var(--gold);font-size:12px;font-weight:800}
+.summary-strip{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0;
+}
+.summary-card{
+  background:rgba(245,197,24,.09);border:1px solid rgba(245,197,24,.28);border-radius:12px;padding:14px;
+}
+.summary-card b{display:block;color:var(--gold);font-size:12px;margin-bottom:6px}
+.summary-card span{display:block;font-size:23px;font-weight:900}
+.summary-card small{display:block;color:var(--muted);font-size:11px;margin-top:6px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:16px}
+.lead{background:#1d1910;border-left:4px solid var(--gold)}
+.risk{background:#231417;border-left:4px solid #ff6b6b}
+h2{font-size:19px;color:var(--blue);margin-bottom:12px}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px;background:#111722}
+.table-wrap table{min-width:1220px}
+table{width:100%;border-collapse:collapse}
+th{background:#202a3a;color:var(--gold);text-align:left;padding:10px;font-size:12px;border-bottom:1px solid #314055;white-space:nowrap}
+td{padding:10px;border-bottom:1px solid #1f2938;font-size:13px;vertical-align:top}
+tr:nth-child(even) td{background:#101620}
+tr:last-child td{border-bottom:0}
+.money,.center{font-variant-numeric:tabular-nums;white-space:nowrap}
+.center{text-align:center}
+.tag{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:800;border:1px solid transparent}
+.ok{background:var(--greenbg);color:var(--green);border-color:#25593f}
+.wait{background:var(--yellowbg);color:var(--yellow);border-color:#6e5b1a}
+.stop{background:var(--redbg);color:var(--red);border-color:#ffb3b3}
+.info{background:var(--bluebg);color:var(--blue);border-color:#29486f}
+.watch-row td{background:rgba(245,197,24,.08)!important}
+.note{margin-top:12px;padding:12px 14px;border-radius:8px;background:#241f14;border-left:4px solid var(--gold);color:#eadfb0;font-size:13px}
+ul{padding-left:18px}
+li{margin:5px 0}
+a{color:var(--blue);text-decoration:none}
+footer{margin-top:18px;text-align:right;color:#768399;font-size:12px}
+@media(max-width:960px){
+  .summary-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:640px){
+  body{padding:16px 8px 32px}
+  .summary-strip{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>CODEX 알림 자동매수 모니터</h1>
+    <div class="sub">생성 2026-05-26 00:02 KST | 가격 기준 2026-05-22 미국 정규장 종가 및 2026-05-23 KST 확인분 | 미국장 휴장 2026-05-25 Memorial Day</div>
+    <div class="stamp">파일명 규칙 준수: CODEX_알림_자동매수모니터_260526_12.02AM.html</div>
+  </header>
+
+  <div class="panel lead">
+    <b>대표님 결론:</b> 오늘 보고서는 <b>즉시 시장가 매수 보고서가 아니라 재개장 조건부 자동매수 대기표</b>입니다.
+    미국장은 2026-05-25 Memorial Day로 휴장이라 신규 체결 자체가 없었습니다.
+    따라서 실행 원칙은 하나입니다. <b>추격매수는 금지</b>하고, 2026-05-26 미국장 재개장 초반에도
+    <b>1차 진입 밴드 안에 남아 있는 종목만 1차 분할</b>하거나, 밴드 밖으로 뜨면 당일은 대기합니다.
+  </div>
+
+  <div class="summary-strip">
+    <div class="summary-card"><b>매수 가능 후보</b><span>NVDA · MU · TSM</span><small>단, 2026-05-26 재개장 초반에도 1차 밴드 유지 시만 유효합니다.</small></div>
+    <div class="summary-card"><b>대기 우선</b><span>AVGO</span><small>3% 이내이지만 1차 상단 위라서 되밀림 확인 전까지 자동매수 금지입니다.</small></div>
+    <div class="summary-card"><b>공통 원칙</b><span>추격매수 금지</span><small>갭 상승 출발이면 좋은 종목이어도 그날 자동매수는 보류합니다.</small></div>
+    <div class="summary-card"><b>시장 일정</b><span>05/26 재개장</span><small>이번 판단은 미국장 2026-05-26 재개장 첫 흐름 확인이 전제입니다.</small></div>
+  </div>
+
+  <section class="panel">
+    <h2>1. 자동매수 실행표</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>최신 확인 시각</th>
+          <th>목표가 3% 이내 여부</th>
+          <th>진입 대기 구간</th>
+          <th>1차 분할매수 조건</th>
+          <th>2차 분할매수 조건</th>
+          <th>3차 분할매수 조건</th>
+          <th>무효화 조건</th>
+          <th>최종 실행 결론</th>
+        </tr>
+        <tr class="watch-row">
+          <td><b>NVDA</b></td>
+          <td class="money">$215.23</td>
+          <td>2026-05-23 05:00 KST 기준<br><span class="tag info">2026-05-22 U.S. close</span></td>
+          <td><span class="tag ok">예</span> 1차 상단 $217 대비 -0.8%</td>
+          <td>$210~217</td>
+          <td>2026-05-26 재개장 초반 60~90분 동안 $217 이하 유지 시 목표 비중의 25~40%</td>
+          <td>$198~205 조정 시 추가 35%</td>
+          <td>$188~195 급락 구간에서 잔여 25%</td>
+          <td>$188 종가 이탈 시 자동매수 시나리오 중단</td>
+          <td><span class="tag ok">매수 가능</span> 밴드 안이지만 시가 갭 상승 추격은 금지</td>
+        </tr>
+        <tr>
+          <td><b>AVGO</b></td>
+          <td class="money">$414.01</td>
+          <td>2026-05-23 05:00 KST 기준<br><span class="tag info">2026-05-22 U.S. close</span></td>
+          <td><span class="tag ok">예</span> 1차 상단 $412 대비 +0.5%</td>
+          <td>$402~412</td>
+          <td>$412 아래로 되밀리며 지지 확인 시 25~40%</td>
+          <td>$382~392 조정 시 추가 35%</td>
+          <td>$360~370 급락 시 잔여 25%</td>
+          <td>$355 종가 이탈 시 보수적으로 재평가</td>
+          <td><span class="tag wait">대기</span> 3% 이내지만 밴드 위라서 오늘 기준 즉시 실행 불가</td>
+        </tr>
+        <tr class="watch-row">
+          <td><b>MU</b></td>
+          <td class="money">$751.09</td>
+          <td>2026-05-23 05:00 KST 기준<br><span class="tag info">2026-05-22 U.S. close</span></td>
+          <td><span class="tag ok">예</span> 1차 밴드 $735~760 내부</td>
+          <td>$735~760</td>
+          <td>재개장 후 1차 밴드 하단 이탈 없이 버티면 20~35%</td>
+          <td>$690~715 조정 시 추가 35%</td>
+          <td>$640~665 급락 시 잔여 30%</td>
+          <td>$640 종가 이탈 시 메모리 사이클 가설 재점검</td>
+          <td><span class="tag ok">매수 가능</span> 가능권이지만 변동성 커서 1차 비중은 낮게 시작</td>
+        </tr>
+        <tr class="watch-row">
+          <td><b>TSM</b></td>
+          <td class="money">$404.52</td>
+          <td>2026-05-23 05:00 KST 기준<br><span class="tag info">2026-05-22 U.S. close</span></td>
+          <td><span class="tag ok">예</span> 1차 밴드 $395~407 내부</td>
+          <td>$395~407</td>
+          <td>재개장 시가가 $407 이하이면 25~40%</td>
+          <td>$372~385 조정 시 추가 35%</td>
+          <td>$342~360 패닉 구간에서 잔여 25%</td>
+          <td>$340 종가 이탈 시 방어 축에서 제외</td>
+          <td><span class="tag ok">매수 가능</span> 4종 중 가장 방어적이나 갭상승 출발이면 보류</td>
+        </tr>
+      </table>
+    </div>
+    <div class="note">핵심은 가격 그 자체보다 밴드 유지 여부입니다. 같은 3% 이내라도 AVGO처럼 밴드 위에 떠 있으면 대기이고, NVDA·MU·TSM처럼 밴드 안에 있어도 시가 급등 출발이면 그날 자동매수는 금지입니다.</div>
+  </section>
+
+  <section class="panel">
+    <h2>2. 실제 실행 구분</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>구분</th><th>종목</th><th>근거</th><th>실행 지시</th></tr>
+        <tr><td><span class="tag ok">매수 가능</span></td><td>NVDA</td><td>현재가가 1차 밴드 내부, 상단과 거리도 1% 미만</td><td>2026-05-26 재개장 후 $217 이하 유지 확인 시 1차만 실행</td></tr>
+        <tr><td><span class="tag ok">매수 가능</span></td><td>MU</td><td>1차 밴드 내부이나 변동성 높음</td><td>1차는 20~35%만, 시가 급등이면 자동매수 중지</td></tr>
+        <tr><td><span class="tag ok">매수 가능</span></td><td>TSM</td><td>1차 밴드 내부, 상대적으로 방어적</td><td>시가가 $407 이하인 경우에만 1차 분할</td></tr>
+        <tr class="watch-row"><td><span class="tag wait">대기</span></td><td>AVGO</td><td>1차 상단보다 위에 있어 되밀림 확인이 먼저</td><td>$412 아래 재진입 전까지 자동매수 금지</td></tr>
+        <tr><td><span class="tag stop">제외</span></td><td>시장가 추격매수</td><td>휴장 다음날 첫 체결가는 왜곡될 수 있음</td><td>모든 종목 공통으로 금지</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel risk">
+    <h2>3. 대표님 주의사항</h2>
+    <ul>
+      <li>이번 보고서의 현재가는 모두 2026-05-22 미국 정규장 종가 기준이며, 2026-05-25 미국장은 Memorial Day로 휴장이었습니다.</li>
+      <li>2026-05-26 재개장 시 시가가 1차 밴드 위로 1% 이상 갭 상승하면 해당 종목은 좋은 종목이어도 그날 자동매수는 보류가 맞습니다.</li>
+      <li>MU는 수익 기회가 크지만 변동성도 가장 커서, 같은 매수 가능권이어도 NVDA·TSM보다 1차 배정 비중을 더 낮게 시작해야 합니다.</li>
+      <li>이번 자동매수 모니터의 목적은 공격 신호가 아니라 휴장 직후 왜곡 체결을 막는 방어형 실행 통제입니다.</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>4. 최종 요약</h2>
+    <p>최종 실행 결론은 명확합니다. <b>NVDA, MU, TSM은 매수 가능</b>이지만 모두 <b>2026-05-26 미국장 재개장 후 1차 밴드 유지 확인</b>이 전제입니다. <b>AVGO는 대기</b>가 맞습니다. 공통 실행 원칙은 하나입니다. <b>재개장 첫 상승을 따라붙지 말고, 밴드 안에 남아 있는 종목만 1차 분할</b>합니다.</p>
+  </section>
+
+  <section class="panel">
+    <h2>5. CODEX 인사이트</h2>
+    <p>이번 자동매수 모니터의 핵심은 종목 선택보다 <b>재개장 첫 가격의 위치 관리</b>입니다. 휴장 다음날 첫 체결은 보기에는 강해 보여도 체결 효율이 가장 나쁜 구간이 자주 나옵니다. 그래서 오늘 00:00 보고서는 공격 후보를 늘리는 대신, <b>매수 가능 / 대기 / 제외를 분리해서 추격 실수를 막는 통제표</b>로 보는 것이 맞습니다.</p>
+  </section>
+
+  <section class="panel">
+    <h2>6. 근거 링크</h2>
+    <ul>
+      <li>NYSE 휴장 일정: <a href="https://www.nyse.com/trade/hours-calendars">NYSE Holidays &amp; Trading Hours</a></li>
+      <li>Nasdaq 휴장 일정: <a href="https://www.nasdaq.com/market-activity/stock-market-holiday-schedule">Nasdaq Holiday Schedule</a></li>
+      <li>진입 밴드 기준 참고: <a href="CODEX_알림_자동매수모니터_260525_12.03AM.html">전일 자동매수 모니터</a></li>
+      <li>분할매수 구간 기준 참고: <a href="주식추천_260523_12.15AM.html">1차 2차 3차 진입표</a></li>
+    </ul>
+  </section>
+
+  <footer>ETHAN DASH · CODEX AUTO BUY MONITOR · 2026-05-26 00:02 KST</footer>
+</div>
+</body>
+</html>
