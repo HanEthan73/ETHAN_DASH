@@ -1,5 +1,16 @@
 ﻿[
     {
+        "name":  "CODEX_알림_저녁브리핑_260526_10.33PM.html",
+        "updatedIso":  "2026-05-26T22:33:30+09:00",
+        "updatedDate":  "2026-05-26",
+        "updatedTime":  "22:33",
+        "updatedEpoch":  1779802410,
+        "displayDate":  "2026-05-26",
+        "displayTime":  "22:33",
+        "displayEpoch":  1779802380,
+        "category":  "stock"
+    },
+    {
         "name":  "CODEX_알림_주식추천전략보고_260526_4.00PM.html",
         "updatedIso":  "2026-05-26T16:07:57+09:00",
         "updatedDate":  "2026-05-26",
@@ -8,7 +19,8 @@
         "displayDate":  "2026-05-26",
         "displayTime":  "16:00",
         "displayEpoch":  1779778800,
-        "category":  "stock"
+        "category":  "stock",
+        "label":  "CODEX 주식추천전략보고"
     },
     {
         "name":  "CODEX_알림_한국장마감PLTR모니터_260526_3.34PM.html",
@@ -30,7 +42,8 @@
         "displayDate":  "2026-05-26",
         "displayTime":  "14:00",
         "displayEpoch":  1779771600,
-        "category":  "stock"
+        "category":  "stock",
+        "label":  "CODEX 주식추천전략보고"
     },
     {
         "name":  "CODEX_알림_오후1차모니터_260526_1.33PM.html",

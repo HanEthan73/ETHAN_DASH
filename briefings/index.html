@@ -208,9 +208,15 @@ body{
 .qna-file-list b{color:var(--gold)}
 .qna-file-tools{display:flex;flex-wrap:wrap;gap:8px}
 .qna-preview{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:8px;margin-top:8px}
-.qna-preview figure{margin:0;background:#080a0d;border:1px solid var(--bd);border-radius:8px;overflow:hidden}
+.qna-preview figure{position:relative;margin:0;background:#080a0d;border:1px solid var(--bd);border-radius:8px;overflow:hidden}
 .qna-preview img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
 .qna-preview figcaption{font-size:9px;color:var(--t3);padding:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qna-remove{position:absolute;right:4px;top:4px;width:22px;height:22px;border:0;border-radius:50%;background:rgba(0,0,0,.72);color:#fff;font-size:14px;font-weight:900;cursor:pointer}
+.qna-modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:none;align-items:center;justify-content:center;padding:18px}
+.qna-modal.active{display:flex}
+.qna-modal img{max-width:96vw;max-height:86vh;border-radius:10px;border:1px solid var(--bd)}
+.qna-modal button{position:absolute;right:18px;top:18px}
+.qna-share-link{word-break:break-all}
 .qna-public-feed{display:flex;flex-direction:column;gap:9px;margin-top:12px}
 .qna-public-item{display:block;border:1px solid var(--bd);background:#0b0d11;border-radius:8px;padding:10px;text-decoration:none}
 .qna-public-item strong{display:block;color:var(--t1);font-size:12px;margin-bottom:4px}
@@ -363,17 +369,19 @@ body{
             <div class="qna-file-tools">
               <button class="qna-btn secondary" type="button" onclick="pickQnaPhotos()">사진 선택</button>
               <button class="qna-btn secondary" type="button" onclick="pickQnaFiles()">파일 선택</button>
-              <button class="qna-btn secondary" type="button" onclick="shareQnaFiles()">공유</button>
+              <button class="qna-btn secondary" type="button" onclick="createQnaShareLink()">공유링크</button>
             </div>
             <input id="qna-photo-input" class="qna-file-input" type="file" accept="image/*,video/*" multiple onchange="handleQnaFiles(this.files)">
             <input id="qna-file-input" class="qna-file-input" type="file" multiple onchange="handleQnaFiles(this.files)">
             <div id="qna-picked-list" class="qna-file-list">선택된 첨부 없음</div>
             <div id="qna-preview" class="qna-preview"></div>
+            <div id="qna-share-output" class="qna-file-list qna-share-link" hidden></div>
             <input id="qna-files" type="text" placeholder="첨부 메모를 추가로 적으세요">
           </div>
         </div>
         <div class="qna-actions">
           <button class="qna-btn" type="button" onclick="sendQnaLocal()">공개 전송</button>
+          <button class="qna-btn secondary" type="button" onclick="createQnaShareLink()">링크 만들기</button>
           <button class="qna-btn secondary" type="button" onclick="loadPublicQna()">새로고침</button>
           <button class="qna-btn secondary" type="button" onclick="openQnaMail()">메일</button>
         </div>
@@ -418,6 +426,11 @@ body{
   </div>
 </div>
 
+<div class="qna-modal" id="qna-modal" onclick="closeQnaModal()">
+  <button class="qna-btn secondary" type="button">X</button>
+  <img id="qna-modal-img" alt="첨부 확대">
+</div>
+
 <div class="footer">
   <span>ETHAN BRIEFINGS</span>
   <span id="footer-info"></span>
@@ -428,8 +441,8 @@ body{
 const TYPES = [
   { key:'아침브리핑',         label:'아침 브리핑', icon:'🌅', badge:'tb-gold', time:'09:00' },
   { key:'저녁브리핑',         label:'저녁 브리핑', icon:'🌆', badge:'tb-prp',  time:'18:00' },
-  { key:'주식추천전략보고',   label:'주식 추천 전략보고', icon:'📈', badge:'tb-gold', time:null },
-  { key:'CODEX_알림_주식추천전략보고', label:'CODEX 주식 추천 전략보고', icon:'📈', badge:'tb-gold', time:null },
+  { key:'CODEX_알림_주식추천전략보고', label:'CODEX 주식추천전략보고', icon:'📈', badge:'tb-gold', time:null },
+  { key:'주식추천전략보고',   label:'주식추천전략보고', icon:'📈', badge:'tb-gold', time:null },
   { key:'주식추천',           label:'주식 추천',   icon:'📈', badge:'tb-gold', time:null    },
   { key:'주식전략',           label:'주식 전략',   icon:'📈', badge:'tb-gold', time:null    },
   { key:'stock_recommendation', label:'주식 추천', icon:'📈', badge:'tb-gold', time:null    },
@@ -512,6 +525,7 @@ function applyManifestMeta(file, meta) {
     updatedIso: meta.updatedIso,
     updatedEpoch: meta.updatedEpoch,
     displayEpoch: meta.displayEpoch,
+    label: meta.label || meta.displayLabel || file.label,
     category: meta.category || file.category || inferCategory(file.name, file.label)
   };
 }
@@ -645,11 +659,13 @@ function clearQnaForm() {
   selectedQnaFiles = [];
   updateQnaFileList();
   clearQnaFileInputs();
+  clearQnaShareOutput();
   localStorage.removeItem('ethan-qna-chat');
   renderQnaChat([]);
 }
 
 let selectedQnaFiles = [];
+let selectedQnaImages = [];
 
 function pickQnaPhotos() {
   document.getElementById('qna-photo-input')?.click();
@@ -661,7 +677,9 @@ function pickQnaFiles() {
 
 function handleQnaFiles(files) {
   selectedQnaFiles = Array.from(files || []);
+  selectedQnaImages = [];
   updateQnaFileList();
+  prepareQnaImages();
 }
 
 function updateQnaFileList() {
@@ -679,20 +697,51 @@ function updateQnaFileList() {
     selectedQnaFiles.map(file => qnaEscape(file.name)).join('<br>');
   if (!preview) return;
   selectedQnaFiles
-    .filter(file => file.type && file.type.startsWith('image/'))
+    .map((file, originalIndex) => ({ file, originalIndex }))
+    .filter(item => item.file.type && item.file.type.startsWith('image/'))
     .slice(0, 12)
-    .forEach(file => {
+    .forEach(({ file, originalIndex }) => {
       const fig = document.createElement('figure');
       const img = document.createElement('img');
       img.src = URL.createObjectURL(file);
       img.alt = file.name;
+      img.onclick = () => openQnaModal(img.src);
       img.onload = () => URL.revokeObjectURL(img.src);
+      const remove = document.createElement('button');
+      remove.className = 'qna-remove';
+      remove.type = 'button';
+      remove.textContent = 'X';
+      remove.onclick = () => removeQnaFile(originalIndex);
       const cap = document.createElement('figcaption');
       cap.textContent = file.name;
+      fig.appendChild(remove);
       fig.appendChild(img);
       fig.appendChild(cap);
       preview.appendChild(fig);
     });
+}
+
+function removeQnaFile(index) {
+  selectedQnaFiles.splice(index, 1);
+  selectedQnaImages = [];
+  updateQnaFileList();
+  prepareQnaImages();
+  clearQnaShareOutput();
+}
+
+function openQnaModal(src) {
+  const modal = document.getElementById('qna-modal');
+  const img = document.getElementById('qna-modal-img');
+  if (!modal || !img) return;
+  img.src = src;
+  modal.classList.add('active');
+}
+
+function closeQnaModal() {
+  const modal = document.getElementById('qna-modal');
+  const img = document.getElementById('qna-modal-img');
+  if (modal) modal.classList.remove('active');
+  if (img) img.removeAttribute('src');
 }
 
 function qnaEscape(value) {
@@ -720,6 +769,69 @@ async function shareQnaFiles() {
   alert('이 브라우저에서는 파일 직접 공유가 제한됩니다. 사진 선택/파일 선택 후 GitHub 또는 메일 화면에서 다시 첨부하세요.');
 }
 
+async function prepareQnaImages() {
+  const imageFiles = selectedQnaFiles.filter(file => file.type && file.type.startsWith('image/')).slice(0, 6);
+  selectedQnaImages = [];
+  for (const file of imageFiles) {
+    try {
+      selectedQnaImages.push({ name: file.name, dataUrl: await compressQnaImage(file) });
+    } catch (_) {}
+  }
+}
+
+function compressQnaImage(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = reject;
+    reader.onload = () => {
+      const img = new Image();
+      img.onerror = reject;
+      img.onload = () => {
+        const max = 1000;
+        const scale = Math.min(1, max / Math.max(img.width, img.height));
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.max(1, Math.round(img.width * scale));
+        canvas.height = Math.max(1, Math.round(img.height * scale));
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL('image/jpeg', .72));
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+async function createQnaShareLink() {
+  const out = document.getElementById('qna-share-output');
+  if (!out) return;
+  if (selectedQnaFiles.some(file => file.type && file.type.startsWith('image/')) && !selectedQnaImages.length) {
+    await prepareQnaImages();
+  }
+  const q = qnaPayload();
+  const payload = {
+    title: q.title,
+    text: q.text,
+    images: selectedQnaImages,
+    ts: new Date().toISOString()
+  };
+  const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
+  const url = `${location.origin}${location.pathname}#qna=${encoded}`;
+  out.hidden = false;
+  out.innerHTML = `<b>공유 링크 생성 완료</b><br><a href="${qnaEscape(url)}">${qnaEscape(url)}</a>`;
+  try { await navigator.clipboard.writeText(url); } catch (_) {}
+  if (navigator.share) {
+    try { await navigator.share({ title: q.title, text: 'ETHAN Q&A 공유 링크', url }); } catch (_) {}
+  }
+}
+
+function clearQnaShareOutput() {
+  const out = document.getElementById('qna-share-output');
+  if (!out) return;
+  out.hidden = true;
+  out.innerHTML = '';
+}
+
 function sendQnaLocal() {
   const body = document.getElementById('qna-body')?.value.trim();
   if (!body) return;
@@ -734,7 +846,7 @@ function sendQnaLocal() {
   rows.push(item);
   localStorage.setItem('ethan-qna-chat', JSON.stringify(rows.slice(-50)));
   renderQnaChat(rows);
-  openQnaIssue();
+  createQnaShareLink();
   const textarea = document.getElementById('qna-body');
   if (textarea) textarea.value = '';
   selectedQnaFiles = [];
@@ -805,6 +917,37 @@ function loadPublicQna() {
     .catch(() => {
       feed.innerHTML = '<div class="qna-note">공개 Q&A를 불러오지 못했습니다. 잠시 후 새로고침하세요.</div>';
     });
+}
+
+function hydrateSharedQna() {
+  if (!location.hash.startsWith('#qna=')) return;
+  try {
+    const payload = JSON.parse(decodeURIComponent(escape(atob(location.hash.slice(5)))));
+    const chat = document.getElementById('qna-chat');
+    if (chat) {
+      chat.innerHTML = '';
+      const bubble = document.createElement('div');
+      bubble.className = 'qna-bubble in';
+      const meta = document.createElement('span');
+      meta.className = 'qna-meta';
+      meta.textContent = payload.title || '공유 Q&A';
+      bubble.appendChild(meta);
+      bubble.append(document.createTextNode(payload.text || ''));
+      chat.appendChild(bubble);
+      (payload.images || []).forEach(image => {
+        const fig = document.createElement('figure');
+        fig.style.margin = '8px 0 0';
+        const img = document.createElement('img');
+        img.src = image.dataUrl;
+        img.alt = image.name || 'shared image';
+        img.style.maxWidth = '100%';
+        img.style.borderRadius = '8px';
+        img.onclick = () => openQnaModal(img.src);
+        fig.appendChild(img);
+        bubble.appendChild(fig);
+      });
+    }
+  } catch (_) {}
 }
 
 function setSort(s) {
@@ -1229,6 +1372,7 @@ function refreshArchive() {
 }
 
 renderQnaChat();
+hydrateSharedQna();
 loadPublicQna();
 loadArchiveData();
 </script>
