@@ -203,6 +203,10 @@ body{
 .qna-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .qna-btn{border:1px solid rgba(245,197,24,.42);background:rgba(245,197,24,.12);color:var(--gold);border-radius:8px;padding:9px 12px;font-size:12px;font-weight:900;cursor:pointer;text-decoration:none}
 .qna-btn.secondary{border-color:var(--bd);background:var(--s2);color:var(--t2)}
+.qna-file-input{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.qna-file-list{min-height:32px;background:var(--bg);border:1px dashed var(--bd);border-radius:8px;color:var(--t3);font-size:11px;line-height:1.45;padding:8px 10px}
+.qna-file-list b{color:var(--gold)}
+.qna-file-tools{display:flex;flex-wrap:wrap;gap:8px}
 .qna-note{font-size:11px;color:var(--t3);line-height:1.6}
 .qna-note b{color:var(--t1)}
 @media(max-width:760px){.qna-grid{grid-template-columns:1fr;padding:12px}.qna-compose{grid-template-columns:1fr}.qna-bubble{max-width:94%}}
@@ -347,8 +351,16 @@ body{
             <textarea id="qna-body" placeholder="메시지를 입력하세요. Enter는 줄바꿈, 버튼으로 전송"></textarea>
           </div>
           <div class="qna-field">
-            <label for="qna-files">첨부 메모</label>
-            <input id="qna-files" type="text" placeholder="예: 회로도 PNG, PSIM 파일, 캡처 이미지">
+            <label>첨부</label>
+            <div class="qna-file-tools">
+              <button class="qna-btn secondary" type="button" onclick="pickQnaPhotos()">사진 선택</button>
+              <button class="qna-btn secondary" type="button" onclick="pickQnaFiles()">파일 선택</button>
+              <button class="qna-btn secondary" type="button" onclick="shareQnaFiles()">공유</button>
+            </div>
+            <input id="qna-photo-input" class="qna-file-input" type="file" accept="image/*,video/*" multiple onchange="handleQnaFiles(this.files)">
+            <input id="qna-file-input" class="qna-file-input" type="file" multiple onchange="handleQnaFiles(this.files)">
+            <div id="qna-picked-list" class="qna-file-list">선택된 첨부 없음</div>
+            <input id="qna-files" type="text" placeholder="첨부 메모를 추가로 적으세요">
           </div>
         </div>
         <div class="qna-actions">
@@ -581,7 +593,7 @@ function qnaPayload() {
   const topic = document.getElementById('qna-topic')?.value || '기타 토론';
   const title = document.getElementById('qna-title-input')?.value.trim() || 'Q&A 토론';
   const body = document.getElementById('qna-body')?.value.trim() || '내용 미기재';
-  const files = document.getElementById('qna-files')?.value.trim() || '없음';
+  const files = qnaAttachmentText();
   const text = [
     `분류: ${topic}`,
     `작성자: ${name}`,
@@ -605,7 +617,7 @@ function openQnaIssue() {
 function openQnaMail() {
   const q = qnaPayload();
   const url = 'mailto:?subject=' + encodeURIComponent(q.title)
-    + '&body=' + encodeURIComponent(q.text + '\n\n파일은 이 메일에 직접 첨부하세요.');
+    + '&body=' + encodeURIComponent(q.text + '\n\n아이폰에서는 메일 작성창이 열린 뒤 선택한 파일을 다시 첨부해야 합니다. 브라우저 보안상 mailto는 파일을 자동 첨부하지 못합니다.');
   window.location.href = url;
 }
 
@@ -614,18 +626,73 @@ function clearQnaForm() {
     const el = document.getElementById(id);
     if (el) el.value = '';
   });
+  selectedQnaFiles = [];
+  updateQnaFileList();
   localStorage.removeItem('ethan-qna-chat');
   renderQnaChat([]);
+}
+
+let selectedQnaFiles = [];
+
+function pickQnaPhotos() {
+  document.getElementById('qna-photo-input')?.click();
+}
+
+function pickQnaFiles() {
+  document.getElementById('qna-file-input')?.click();
+}
+
+function handleQnaFiles(files) {
+  selectedQnaFiles = Array.from(files || []);
+  updateQnaFileList();
+}
+
+function updateQnaFileList() {
+  const box = document.getElementById('qna-picked-list');
+  if (!box) return;
+  if (!selectedQnaFiles.length) {
+    box.textContent = '선택된 첨부 없음';
+    return;
+  }
+  const total = selectedQnaFiles.reduce((sum, file) => sum + (file.size || 0), 0);
+  const mb = (total / 1024 / 1024).toFixed(2);
+  box.innerHTML = `<b>${selectedQnaFiles.length}개 선택</b> · ${mb} MB<br>` +
+    selectedQnaFiles.map(file => qnaEscape(file.name)).join('<br>');
+}
+
+function qnaEscape(value) {
+  return String(value).replace(/[&<>"']/g, ch => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[ch]));
+}
+
+function qnaAttachmentText() {
+  const memo = document.getElementById('qna-files')?.value.trim();
+  const picked = selectedQnaFiles.map(file => `${file.name} (${Math.round((file.size || 0) / 1024)}KB)`);
+  const rows = [];
+  if (picked.length) rows.push(`선택 파일: ${picked.join(', ')}`);
+  if (memo) rows.push(`메모: ${memo}`);
+  return rows.length ? rows.join(' / ') : '없음';
+}
+
+async function shareQnaFiles() {
+  if (!selectedQnaFiles.length) return;
+  const q = qnaPayload();
+  if (navigator.canShare && navigator.canShare({ files: selectedQnaFiles }) && navigator.share) {
+    await navigator.share({ title: q.title, text: q.text, files: selectedQnaFiles });
+    return;
+  }
+  alert('이 브라우저에서는 파일 직접 공유가 제한됩니다. 사진 선택/파일 선택 후 GitHub 또는 메일 화면에서 다시 첨부하세요.');
 }
 
 function sendQnaLocal() {
   const body = document.getElementById('qna-body')?.value.trim();
   if (!body) return;
   const name = document.getElementById('qna-name')?.value.trim() || '익명';
-  const files = document.getElementById('qna-files')?.value.trim();
+  const files = qnaAttachmentText();
   const item = {
     name,
-    body: files ? `${body}\n\n첨부 메모: ${files}` : body,
+    body: files !== '없음' ? `${body}\n\n첨부: ${files}` : body,
     ts: new Date().toLocaleString('ko-KR', { hour:'2-digit', minute:'2-digit' })
   };
   const rows = readQnaChat();
