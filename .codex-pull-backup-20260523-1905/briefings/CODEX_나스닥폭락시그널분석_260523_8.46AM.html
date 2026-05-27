@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX 나스닥 폭락시그널 분석 260523</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1117;color:#e8eaf0;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR','Segoe UI',sans-serif;line-height:1.65;max-width:980px;margin:0 auto;padding:22px}
+h1{font-size:26px;color:#f5c518;margin-bottom:6px}
+h2{font-size:18px;color:#8ab4ff;margin:28px 0 10px}
+h3{font-size:15px;color:#f5c518;margin:18px 0 8px}
+.meta,.note{color:#9aa3b2;font-size:13px}
+.panel{background:#171b26;border:1px solid #2b3142;border-radius:10px;padding:16px;margin:14px 0}
+.warn{border-left:4px solid #f5c518;background:#1e1a0d}
+.danger{border-left:4px solid #ff6b6b;background:#211214}
+.ok{border-left:4px solid #3ddc84;background:#102016}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+th{background:#232a3a;color:#f5c518;text-align:left;padding:9px}
+td{border-bottom:1px solid #2b3142;padding:9px;vertical-align:top}
+.tag{display:inline-block;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:800}
+.red{background:#ff6b6b22;color:#ff8585}.yellow{background:#f5c51822;color:#f5c518}.green{background:#3ddc8422;color:#55e49a}.blue{background:#8ab4ff22;color:#8ab4ff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.metric{background:#111520;border:1px solid #30384d;border-radius:10px;padding:14px}
+.metric b{display:block;font-size:22px;color:#fff;margin-top:4px}
+.bar{height:12px;background:#2a3142;border-radius:20px;overflow:hidden;margin-top:8px}
+.fill{height:100%;background:linear-gradient(90deg,#3ddc84,#f5c518,#ff6b6b)}
+.chart{background:#10141f;border:1px solid #2b3142;border-radius:10px;padding:12px;margin:12px 0}
+svg{width:100%;height:auto;display:block}
+.axis{stroke:#465066;stroke-width:1}.line{fill:none;stroke:#8ab4ff;stroke-width:3}.riskline{stroke:#ff6b6b;stroke-width:2;stroke-dasharray:6 5}.label{fill:#9aa3b2;font-size:12px}.hot{fill:#ff6b6b}.gold{fill:#f5c518}
+ul{padding-left:20px}.small{font-size:12px;color:#9aa3b2}
+@media(max-width:760px){body{padding:14px}.grid{grid-template-columns:1fr}table{font-size:12px}}
+</style>
+</head>
+<body>
+<h1>CODEX 나스닥 폭락시그널 분석</h1>
+<div class="meta">작성: 2026-05-23 08:46 KST | 대상: NASDAQ / QQQ / Hindenburg Omen | 형식: 그래프 중심 리스크 보고</div>
+
+<div class="panel warn">
+  <b>결론 먼저:</b> 인스타 릴의 핵심 주장인 “힌덴버그 오멘 기반 나스닥 폭락 시그널”은 메모리 저장 가치가 있습니다. 다만 즉시 폭락 확정 신호가 아니라, <b>지수는 고점권인데 내부 종목 참여율은 갈라지는 장</b>을 표시하는 경고등입니다. 지금의 행동은 공포 매도가 아니라 <b>추격매수 금지 + 진입가 하향 + 현금 비중 준비</b>가 맞습니다.
+</div>
+
+<h2>1. 현재 가격 위치 그래프</h2>
+<div class="grid">
+  <div class="metric">QQQ 현재가<b>$717.54</b><div class="small">52주 고점 $722.12 대비 99.4%</div><div class="bar"><div class="fill" style="width:99.4%"></div></div></div>
+  <div class="metric">NASDAQ Composite<b>26,343.97</b><div class="small">52주 고점 26,707.14 대비 98.6%</div><div class="bar"><div class="fill" style="width:98.6%"></div></div></div>
+  <div class="metric">VIX<b>16.70</b><div class="small">공포 폭발 전 단계. 아직 시스템 패닉 아님</div><div class="bar"><div class="fill" style="width:47.3%"></div></div></div>
+</div>
+
+<div class="chart">
+<svg viewBox="0 0 900 320" role="img" aria-label="나스닥 리스크 해석 그래프">
+  <line class="axis" x1="60" y1="260" x2="840" y2="260"/>
+  <line class="axis" x1="60" y1="40" x2="60" y2="260"/>
+  <text class="label" x="62" y="32">고점권 가격</text>
+  <text class="label" x="760" y="285">2026-05-23</text>
+  <polyline class="line" points="60,230 150,210 240,180 330,145 420,112 510,92 600,75 690,66 780,58 840,62"/>
+  <line class="riskline" x1="60" y1="70" x2="840" y2="70"/>
+  <circle cx="780" cy="58" r="7" class="hot"/>
+  <circle cx="840" cy="62" r="7" class="gold"/>
+  <text class="label" x="585" y="55">지수는 52주 고점 부근</text>
+  <text class="hot" x="610" y="105">오멘 의미: 겉은 강하지만 내부 종목은 분열</text>
+  <text class="label" x="70" y="285">가격 추세는 상승 유지</text>
+</svg>
+</div>
+
+<h2>2. 힌덴버그 오멘 조건별 판정</h2>
+<table>
+  <tr><th>조건</th><th>현재 해석</th><th>대표님 전략상 의미</th></tr>
+  <tr><td>지수가 상승 추세 또는 고점권</td><td><span class="tag red">만족</span> QQQ와 나스닥이 52주 고점의 98~99% 구간</td><td>싸게 사는 장이 아님. 추격매수 리스크 증가</td></tr>
+  <tr><td>52주 신고가와 신저가가 동시에 많음</td><td><span class="tag yellow">확인 필요</span> 공개 자료상 최근 breadth 경고 반복. 단 실시간 원자료는 유료/제한</td><td>주도주만 오르는 장이면 눌림목 대기 우선</td></tr>
+  <tr><td>McClellan Oscillator 음수</td><td><span class="tag yellow">조건부 경고</span> Chartlas는 2026-05-01 주간 보고서에서 오멘 firing 및 oscillator 음수 조건을 언급</td><td>시장 내부 체력 저하. 분할 진입가를 더 낮춰야 함</td></tr>
+  <tr><td>반복 클러스터</td><td><span class="tag red">가치 있음</span> 단일 신호보다 여러 번 반복될 때 의미가 커짐</td><td>메모리 저장 대상. 향후 자동매수 조건에 리스크 보정값으로 반영</td></tr>
+</table>
+
+<h2>3. 그래프 해석: 왜 “폭락 확정”이 아니라 “취약성 누적”인가</h2>
+<div class="chart">
+<svg viewBox="0 0 900 300" role="img" aria-label="리스크 레이어 그래프">
+  <rect x="80" y="210" width="140" height="40" fill="#3ddc8444"/><text class="label" x="95" y="235">가격 추세 강함</text>
+  <rect x="260" y="160" width="140" height="90" fill="#f5c51844"/><text class="label" x="275" y="205">시장폭 균열</text>
+  <rect x="440" y="120" width="140" height="130" fill="#f5c51866"/><text class="label" x="458" y="175">고점권 피로</text>
+  <rect x="620" y="78" width="140" height="172" fill="#ff6b6b55"/><text class="label" x="638" y="155">반복 경고</text>
+  <line class="axis" x1="60" y1="250" x2="820" y2="250"/>
+  <text class="gold" x="80" y="45">현재 결론: 매수 금지가 아니라, 진입 단가를 낮추고 확인 조건을 늘리는 구간</text>
+  <text class="label" x="84" y="274">낮음</text><text class="label" x="705" y="274">높음</text>
+</svg>
+</div>
+
+<table>
+  <tr><th>매매 상태</th><th>판정</th><th>실행 기준</th></tr>
+  <tr><td>지금 신규 추격매수</td><td><span class="tag red">불가</span></td><td>QQQ가 52주 고점권. 보상보다 리스크가 큼</td></tr>
+  <tr><td>1차 소액 진입</td><td><span class="tag yellow">조건부</span></td><td>QQQ가 700 아래로 내려오고 VIX가 20 미만이면 소액만</td></tr>
+  <tr><td>2차 진입</td><td><span class="tag yellow">대기</span></td><td>QQQ 680~690, 나스닥 내부 breadth 개선 확인</td></tr>
+  <tr><td>3차 진입</td><td><span class="tag green">폭락 대기</span></td><td>QQQ 650 이하 또는 VIX 25 이상 급등 후 진정 신호</td></tr>
+  <tr><td>위험 무효화</td><td><span class="tag blue">해제 조건</span></td><td>신고가/신저가 동시 확대가 줄고, McClellan Oscillator가 양수 전환</td></tr>
+</table>
+
+<h2>4. CODEX 최종 인사이트</h2>
+<div class="panel danger">
+  <b>이 신호의 진짜 쓸모는 “폭락 예언”이 아니라 “좋은 종목도 비싸게 사면 안 되는 날을 알려주는 기능”입니다.</b><br>
+  힌덴버그 오멘이 뜬 장에서는 지수 차트가 멀쩡해 보여도 내부적으로는 강한 종목과 약한 종목이 동시에 늘어납니다. 이때 개인은 강한 종목만 보며 안심하지만, 실제로는 시장의 산소가 줄어드는 중일 수 있습니다. 대표님 전략에는 이 신호를 <b>매수 버튼 금지 신호가 아니라, 호가를 아래로 2~3칸 내리는 신호</b>로 저장하는 게 가장 가치 있습니다.
+</div>
+
+<h2>5. 최종 요약</h2>
+<table>
+  <tr><th>질문</th><th>답</th></tr>
+  <tr><td>인스타 폭락 시그널은 가치 있나</td><td>가치 있음. 단독으로 팔 신호는 아니고 리스크 보정 신호</td></tr>
+  <tr><td>메모리 저장 여부</td><td>저장 가치 있음. “나스닥 고점권 + Hindenburg Omen 반복 + VIX 미폭발” 조합으로 기록</td></tr>
+  <tr><td>지금 해야 할 행동</td><td>추격매수 금지, 1차 진입가 하향, 현금 대기</td></tr>
+  <tr><td>다음 확인</td><td>QQQ 700/690/650, VIX 20/25, McClellan Oscillator 양수 전환 여부</td></tr>
+</table>
+
+<h2>출처</h2>
+<ul>
+  <li><a href="https://www.investing.com/analysis/hindenburg-omen-rotation-signal-or-early-distribution-200675777">Investing.com: Hindenburg Omen, rotation or distribution</a></li>
+  <li><a href="https://chartlas.com/blog/weekly-market-breadth-2026-05-01">Chartlas: Weekly Market Breadth Report, 2026-05-01</a></li>
+  <li><a href="https://sentimentrader.com/blog/ultimate-guide-to-the-hindenburg-omen">SentimenTrader: Ultimate Guide to the Hindenburg Omen</a></li>
+  <li>Yahoo Finance chart endpoint: QQQ, NASDAQ Composite, VIX latest checked 2026-05-23 KST</li>
+</ul>
+<p class="small">투자 판단 참고용 보고서입니다. 가격 데이터는 확인 시점 기준이며 실시간 체결가와 차이가 있을 수 있습니다.</p>
+</body>
+</html>

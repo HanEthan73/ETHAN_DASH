@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPU vs GPU vs HBM 완전 분석</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#0f0f1a; color:#e8e8f0; font-family:"Apple SD Gothic Neo","Malgun Gothic",sans-serif; padding:16px; font-size:15px; line-height:1.85; }
+  h1 { color:#ffd700; font-size:1.3em; border-bottom:2px solid #ffd700; padding-bottom:8px; margin-bottom:20px; }
+  h2 { color:#7ecfff; font-size:1.05em; margin:26px 0 10px; border-left:4px solid #7ecfff; padding-left:10px; }
+  h3 { color:#ffd700; font-size:0.95em; margin:16px 0 6px; }
+  table { width:100%; border-collapse:collapse; margin:12px 0; overflow-x:auto; display:block; }
+  th { background:#1e1e3a; color:#ffd700; padding:10px 12px; font-size:0.85em; text-align:center; white-space:nowrap; }
+  td { padding:10px 12px; border-bottom:1px solid #2a2a4a; font-size:0.85em; vertical-align:top; }
+  tr:nth-child(even) td { background:#13132a; }
+  .card { padding:14px 16px; border-radius:6px; margin:12px 0; font-size:0.93em; }
+  .card.gold  { background:#1a1800; border-left:4px solid #ffd700; }
+  .card.blue  { background:#0f1320; border-left:4px solid #7ecfff; }
+  .card.green { background:#0a1a0f; border-left:4px solid #00e676; }
+  .card.red   { background:#1a0f0f; border-left:4px solid #ff5252; }
+  .card.purple{ background:#130f1a; border-left:4px solid #bb86fc; }
+  .card strong, .hl { color:#ffd700; font-weight:bold; }
+  .up   { color:#00e676; font-weight:bold; }
+  .dn   { color:#ff5252; font-weight:bold; }
+  .warn { color:#ffd700; font-weight:bold; }
+  .purp { color:#bb86fc; font-weight:bold; }
+  .abbr { background:#1e1e3a; border:1px solid #3a3a5a; border-radius:4px; padding:10px 14px; margin:8px 0; font-size:0.9em; }
+  .abbr .word { color:#7ecfff; font-weight:bold; font-size:1.05em; }
+  .abbr .full { color:#ffd700; }
+  .arch { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0; }
+  .core-box { background:#1e1e3a; border:2px solid; border-radius:8px; padding:12px; flex:1; min-width:140px; text-align:center; }
+  .core-box.cpu { border-color:#ff9800; }
+  .core-box.gpu { border-color:#00e676; }
+  .core-box .num { font-size:2em; font-weight:bold; margin:4px 0; }
+  .core-box .lbl { font-size:0.8em; color:#aaaacc; }
+  .core-box.cpu .num { color:#ff9800; }
+  .core-box.gpu .num { color:#00e676; }
+  .math-box { background:#13132a; border:1px solid #3a3a5a; border-radius:5px; padding:14px 16px; margin:10px 0; }
+  .math-box .label { color:#aaaacc; font-size:0.82em; margin-bottom:6px; }
+  ul { padding-left:18px; }
+  li { margin-bottom:5px; }
+</style>
+</head>
+<body>
+<h1>🖥️ CPU vs GPU vs HBM — 역할·구조·장단점 완전 분석</h1>
+
+<!-- 약자 섹션 -->
+<h2>① 약자 먼저</h2>
+
+<div class="abbr">
+  <span class="word">CPU</span> =
+  <span class="full">Central Processing Unit</span> (중앙 처리 장치)<br>
+  <span style="color:#aaaacc; font-size:0.9em;">컴퓨터의 두뇌. 모든 연산·명령 처리의 중심.</span>
+</div>
+<div class="abbr">
+  <span class="word">GPU</span> =
+  <span class="full">Graphics Processing Unit</span> (그래픽 처리 장치)<br>
+  <span style="color:#aaaacc; font-size:0.9em;">원래 화면 렌더링용 → AI·과학 계산으로 확장.</span>
+</div>
+<div class="abbr">
+  <span class="word">HBM</span> =
+  <span class="full">High Bandwidth Memory</span> (고대역폭 메모리)<br>
+  <span style="color:#aaaacc; font-size:0.9em;">GPU 옆에 적층해서 붙이는 초고속 메모리. AI 연산의 병목 해결사.</span>
+</div>
+<div class="abbr">
+  <span class="word">ASIC</span> =
+  <span class="full">Application-Specific Integrated Circuit</span> (주문형 반도체)<br>
+  <span style="color:#aaaacc; font-size:0.9em;">특정 용도만을 위해 맞춤 설계된 칩. 브로드컴 TPU 계열.</span>
+</div>
+<div class="abbr">
+  <span class="word">ALU</span> =
+  <span class="full">Arithmetic Logic Unit</span> (산술 논리 장치)<br>
+  <span style="color:#aaaacc; font-size:0.9em;">실제 덧셈·뺄셈·비교 등 연산을 수행하는 회로 블록.</span>
+</div>
+<div class="abbr">
+  <span class="word">FLOPS</span> =
+  <span class="full">Floating Point Operations Per Second</span><br>
+  <span style="color:#aaaacc; font-size:0.9em;">초당 부동소수점 연산 수. 컴퓨팅 성능 단위.</span>
+</div>
+<div class="abbr">
+  <span class="word">DRAM</span> =
+  <span class="full">Dynamic Random Access Memory</span><br>
+  <span style="color:#aaaacc; font-size:0.9em;">일반 메모리. HBM은 DRAM을 수직으로 여러 층 쌓은 것.</span>
+</div>
+
+<!-- CPU 구조 -->
+<h2>② CPU — "만능 해결사"</h2>
+
+<div class="card gold">
+  <strong>역할:</strong> 컴퓨터의 중앙 두뇌. 운영체제, 프로그램 실행, 분기·조건문 등 복잡한 순차 논리 처리.<br><br>
+  <strong>핵심 설계 철학:</strong> 하나의 복잡한 작업을 최대한 빠르게 처리 (Latency 최소화)
+</div>
+
+<div class="arch">
+  <div class="core-box cpu">
+    <div class="num" style="font-size:1.3em;">8~64개</div>
+    <div class="lbl">코어 수 (고성능)</div>
+  </div>
+  <div class="core-box cpu">
+    <div class="num" style="font-size:1.3em;">4~6GHz</div>
+    <div class="lbl">클럭 속도</div>
+  </div>
+  <div class="core-box cpu">
+    <div class="num" style="font-size:1.3em;">대용량</div>
+    <div class="lbl">캐시 메모리</div>
+  </div>
+</div>
+
+<div class="card blue">
+  <strong>CPU 내부 구조 (코어 1개 기준):</strong>
+  <ul style="margin-top:8px;">
+    <li><strong>ALU</strong>: 실제 연산 수행</li>
+    <li><strong>제어 유닛(CU)</strong>: 명령어 해석·분기 예측</li>
+    <li><strong>캐시(L1/L2/L3)</strong>: 자주 쓰는 데이터를 가까이 보관</li>
+    <li><strong>파이프라인</strong>: 명령어 동시 처리 (fetch → decode → execute → writeback)</li>
+  </ul>
+</div>
+
+<table>
+  <thead><tr><th>장점</th><th>단점</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="up">✅ 복잡한 순차 연산 최강<br>✅ 운영체제·분기문·예외처리 능숙<br>✅ 범용성 최고<br>✅ 단일 스레드 성능 최고</td>
+      <td class="dn">❌ 병렬 연산 효율 낮음<br>❌ 코어 수가 적어 동시 처리 한계<br>❌ AI 행렬 연산에 비효율<br>❌ 전력 대비 AI 성능 낮음</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- GPU 구조 -->
+<h2>③ GPU — "공장 조립 라인"</h2>
+
+<div class="card green">
+  <strong>역할:</strong> 동일한 단순 연산을 수천 개 동시에 처리. 원래 픽셀 렌더링용이었으나 행렬 연산 구조가 AI 딥러닝과 완벽히 일치하여 AI 가속기로 전용.<br><br>
+  <strong>핵심 설계 철학:</strong> 많은 작업을 동시에 처리 (Throughput 최대화)
+</div>
+
+<div class="arch">
+  <div class="core-box gpu">
+    <div class="num">16,384개</div>
+    <div class="lbl">CUDA 코어 수 (H100)</div>
+  </div>
+  <div class="core-box gpu">
+    <div class="num">~1.8GHz</div>
+    <div class="lbl">클럭 속도 (CPU보다 낮음)</div>
+  </div>
+  <div class="core-box gpu">
+    <div class="num">3.35TB/s</div>
+    <div class="lbl">메모리 대역폭 (H100)</div>
+  </div>
+</div>
+
+<div class="card blue">
+  <strong>GPU가 AI에 최적인 이유 — 행렬 곱셈:</strong>
+  <div class="math-box">
+    <div class="label">AI의 핵심 연산 = 행렬 곱셈 (Matrix Multiplication)</div>
+    $$\mathbf{Y} = \mathbf{W} \cdot \mathbf{X} + \mathbf{b}$$
+    <div style="color:#aaaacc; font-size:0.85em; margin-top:6px;">
+    \(\mathbf{W}\): 가중치 행렬, \(\mathbf{X}\): 입력, \(\mathbf{b}\): 편향<br>
+    → 수백만 개의 곱셈·덧셈을 동시 수행 → GPU 수천 코어가 병렬 처리
+    </div>
+  </div>
+  예를 들어 \(1024 \times 1024\) 행렬 곱셈 = 약 \(10^9\) 번 연산 → CPU는 순차적으로, GPU는 동시에.
+</div>
+
+<table>
+  <thead><tr><th>장점</th><th>단점</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="up">✅ 병렬 연산 압도적<br>✅ AI/딥러닝 행렬 연산 최적화<br>✅ 대역폭 매우 높음<br>✅ CUDA 생태계 (NVDA)</td>
+      <td class="dn">❌ 단일 복잡 연산은 CPU보다 느림<br>❌ 분기·조건문 비효율<br>❌ 전력 소모 큼 (H100 = 700W)<br>❌ 단독으로 작동 불가 (CPU 보조 필요)</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- HBM -->
+<h2>④ HBM — "GPU 옆에 붙은 초고속 창고"</h2>
+
+<div class="card purple">
+  <strong>왜 필요한가 — 메모리 병목 문제:</strong><br><br>
+  GPU 코어가 아무리 빨라도 데이터를 메모리에서 가져오는 속도가 느리면 코어가 놀게 됩니다.<br><br>
+  일반 GDDR 메모리: 대역폭 ~500GB/s<br>
+  HBM3e (H100): 대역폭 <span class="up">3.35TB/s</span> → 약 6~7배 빠름
+</div>
+
+<div class="card blue">
+  <strong>HBM 구조 — 3D 적층:</strong><br><br>
+  일반 DRAM을 수직으로 8~12층 쌓고, GPU 다이 옆에 패키지 레벨로 붙임 (인터포저 연결).
+  <div class="math-box" style="margin-top:10px;">
+    <div class="label">대역폭 계산 (HBM3e 기준)</div>
+    $$BW = \text{버스폭} \times \text{클럭} \times 2 = 1024\text{bit} \times 1.638\text{GHz} \times 2 \approx 3.35\text{ TB/s}$$
+    <div style="color:#aaaacc; font-size:0.85em; margin-top:6px;">일반 DDR5: 64bit × 4.8GHz × 2 ≈ 76.8 GB/s → HBM 대비 44배 낮음</div>
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>메모리 종류</th><th>대역폭</th><th>용량</th><th>위치</th><th>용도</th></tr></thead>
+  <tbody>
+    <tr><td>DDR5 (시스템)</td><td class="dn">~76 GB/s</td><td class="up">수백 GB</td><td>메인보드</td><td>CPU 메인 메모리</td></tr>
+    <tr><td>GDDR6X</td><td class="warn">~1 TB/s</td><td class="warn">~24 GB</td><td>GPU 기판</td><td>일반 그래픽카드</td></tr>
+    <tr><td class="purp"><strong>HBM3e</strong></td><td class="up"><strong>3.35 TB/s</strong></td><td class="warn">80~141 GB</td><td>GPU 패키지 내부</td><td class="up">AI 가속기 전용</td></tr>
+  </tbody>
+</table>
+
+<!-- 최종 비교 -->
+<h2>⑤ CPU vs GPU vs HBM 종합 비교</h2>
+
+<table>
+  <thead><tr><th>항목</th><th style="color:#ff9800;">CPU</th><th style="color:#00e676;">GPU</th><th style="color:#bb86fc;">HBM</th></tr></thead>
+  <tbody>
+    <tr><td>역할</td><td>두뇌 (제어·순차 연산)</td><td>공장 (병렬 연산)</td><td>창고 (고속 데이터 공급)</td></tr>
+    <tr><td>코어 수</td><td class="warn">8~64개</td><td class="up">수천~만 개</td><td>해당 없음</td></tr>
+    <tr><td>클럭</td><td class="up">4~6 GHz</td><td class="warn">1~2 GHz</td><td>해당 없음</td></tr>
+    <tr><td>특기</td><td>복잡한 단일 작업</td><td>단순 작업 대량 병렬</td><td>초고속 데이터 전달</td></tr>
+    <tr><td>AI 역할</td><td>AI 서빙 조율</td><td>AI 연산 수행</td><td>GPU에 데이터 공급</td></tr>
+    <tr><td>대표 제품</td><td>인텔 Core, AMD Ryzen</td><td>NVDA H100, A100</td><td>SK하이닉스 HBM3e</td></tr>
+    <tr><td>AI 수혜주</td><td class="dn">간접 수혜</td><td class="up">최대 수혜 (NVDA)</td><td class="up">최대 수혜 (MU, SK하이닉스)</td></tr>
+  </tbody>
+</table>
+
+<h2>⑥ AI 데이터센터에서 3개가 협력하는 방식</h2>
+<div class="card gold">
+  <strong>비유:</strong> 공장 생산라인<br><br>
+  <strong>CPU</strong> = 공장장 → 어떤 작업을 할지 지시, 순서 관리<br>
+  <strong>GPU</strong> = 조립 라인 작업자 수천 명 → 실제 AI 행렬 연산 수행<br>
+  <strong>HBM</strong> = 바로 옆 부품 창고 → 작업자에게 실시간으로 부품(데이터) 공급<br><br>
+  창고(HBM)가 느리면 작업자(GPU 코어)가 놀게 됩니다. 그래서 AI 성능 = GPU + HBM 세트가 중요.
+</div>
+
+<p style="color:#555588; font-size:0.78em; margin-top:22px; text-align:right;">Claude AI 기술 설명 | 2026.05.23 | briefings/CPU_GPU_HBM분석_260523.html</p>
+</body>
+</html>
