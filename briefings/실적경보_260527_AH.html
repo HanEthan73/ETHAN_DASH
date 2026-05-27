@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>실적경보 - MRVL Q1 FY2027 | 260527</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0f;
+    color: #e8e8f0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    padding: 16px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border: 1px solid #ff4444;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .alert-badge {
+    display: inline-block;
+    background: #ff4444;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 13px;
+    color: #8888aa;
+  }
+  .card {
+    background: #12121f;
+    border: 1px solid #2a2a4a;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 14px;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #2a2a4a;
+  }
+  .ticker-badge {
+    background: linear-gradient(135deg, #6c5ce7, #a855f7);
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    padding: 8px 14px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+  }
+  .company-info h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .company-info .timing {
+    font-size: 12px;
+    color: #f59e0b;
+    margin-top: 2px;
+  }
+  .table-wrap {
+    width: 100%;
+  }
+  .table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .table-wrap th {
+    background: #1e1e36;
+    color: #8888aa;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 8px 12px;
+    text-align: left;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .table-wrap td {
+    padding: 10px 12px;
+    font-size: 14px;
+    border-bottom: 1px solid #1e1e36;
+  }
+  .table-wrap tr:last-child td { border-bottom: none; }
+  .val-highlight {
+    color: #22d3ee;
+    font-weight: 700;
+  }
+  .section-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #8888aa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .strategy-card {
+    background: #12121f;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 14px;
+    border-left: 4px solid #22c55e;
+  }
+  .strategy-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #22c55e;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .strategy-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #cccce0;
+  }
+  .strategy-item .bullet {
+    color: #a855f7;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  .risk-card {
+    background: #12121f;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 14px;
+    border-left: 4px solid #f59e0b;
+  }
+  .risk-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #f59e0b;
+    margin-bottom: 10px;
+  }
+  .risk-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #cccce0;
+  }
+  .verdict-card {
+    background: linear-gradient(135deg, #1a1a2e, #1e1a3a);
+    border: 2px solid #6c5ce7;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .verdict-label {
+    font-size: 11px;
+    color: #8888aa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .verdict-text {
+    font-size: 24px;
+    font-weight: 900;
+    color: #f59e0b;
+    margin-bottom: 8px;
+  }
+  .verdict-desc {
+    font-size: 13px;
+    color: #aaaacc;
+    line-height: 1.6;
+  }
+  .context-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 13px;
+    border-bottom: 1px solid #1e1e36;
+  }
+  .context-row:last-child { border-bottom: none; }
+  .context-key { color: #8888aa; }
+  .context-val { color: #e8e8f0; font-weight: 600; }
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #555570;
+    padding-top: 8px;
+  }
+  .no-earnings-note {
+    background: #1a1a2e;
+    border: 1px solid #2a2a4a;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #666688;
+    margin-bottom: 14px;
+  }
+  .no-earnings-note strong { color: #8888aa; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="alert-badge">⚡ 실적경보</div>
+  <h1>MRVL 실적 발표 (오늘 장 후)</h1>
+  <div class="subtitle">2026년 5월 27일(수) 장 마감 후 · 한국시각 5/28(목) 오전 확인</div>
+</div>
+
+<!-- 종목 실적 정보 -->
+<div class="card">
+  <div class="card-header">
+    <div class="ticker-badge">MRVL</div>
+    <div class="company-info">
+      <h2>Marvell Technology</h2>
+      <div class="timing">📅 Q1 FY2027 · 5/27 장 마감 후 발표 (AH)</div>
+    </div>
+  </div>
+  <div class="section-title">컨센서스 추정치</div>
+  <div class="table-wrap">
+    <table>
+      <tr>
+        <th>항목</th>
+        <th>컨센서스</th>
+        <th>비고</th>
+      </tr>
+      <tr>
+        <td>Non-GAAP EPS</td>
+        <td class="val-highlight">$0.80</td>
+        <td style="color:#8888aa; font-size:12px;">YoY +29%</td>
+      </tr>
+      <tr>
+        <td>매출액</td>
+        <td class="val-highlight">$2.40B</td>
+        <td style="color:#8888aa; font-size:12px;">YoY +27% (±5%)</td>
+      </tr>
+      <tr>
+        <td>데이터센터 성장</td>
+        <td class="val-highlight">+42% YoY</td>
+        <td style="color:#8888aa; font-size:12px;">전체 매출 최대 비중</td>
+      </tr>
+      <tr>
+        <td>현재 주가</td>
+        <td class="val-highlight">~$196</td>
+        <td style="color:#8888aa; font-size:12px;">2026년 YTD +100%</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- 핵심 컨텍스트 -->
+<div class="card">
+  <div class="section-title">핵심 배경 정보</div>
+  <div class="context-row">
+    <span class="context-key">FY2026 연매출</span>
+    <span class="context-val">$8.195B (+42% YoY)</span>
+  </div>
+  <div class="context-row">
+    <span class="context-key">AI 커스텀칩 포지셔닝</span>
+    <span class="context-val">하이퍼스케일러 맞춤 XPU</span>
+  </div>
+  <div class="context-row">
+    <span class="context-key">NVIDIA 파트너십</span>
+    <span class="context-val">NVLink Fusion 연동 발표</span>
+  </div>
+  <div class="context-row">
+    <span class="context-key">애널리스트 의견</span>
+    <span class="context-val">Strong Buy (39명 중 36명)</span>
+  </div>
+  <div class="context-row">
+    <span class="context-key">컨센서스 목표가</span>
+    <span class="context-val">$143.76 (현재가 대비 -26%)</span>
+  </div>
+  <div class="context-row">
+    <span class="context-key">52주 최고가</span>
+    <span class="context-val">$198.40 (2026.05.22)</span>
+  </div>
+</div>
+
+<!-- 전략 권고 -->
+<div class="strategy-card">
+  <div class="strategy-title">📊 강세 시나리오 (Beat &amp; Raise)</div>
+  <div class="strategy-item">
+    <span class="bullet">▶</span>
+    <span>EPS $0.80 상회 + AI 커스텀칩 가이던스 상향 시 → 주가 $210~220 단기 랠리 가능</span>
+  </div>
+  <div class="strategy-item">
+    <span class="bullet">▶</span>
+    <span>하이퍼스케일러 신규 디자인 윈 발표 여부가 핵심 트리거</span>
+  </div>
+  <div class="strategy-item">
+    <span class="bullet">▶</span>
+    <span>3월 실적 때도 Beat + 가이던스 상향으로 당일 +18% 급등 선례 있음</span>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="risk-title">⚠️ 위험 요소</div>
+  <div class="risk-item">
+    <span style="color:#f59e0b;">▶</span>
+    <span>현재 주가($196)가 컨센서스 목표가($143.76) 대비 26% 고평가 상태</span>
+  </div>
+  <div class="risk-item">
+    <span style="color:#f59e0b;">▶</span>
+    <span>커스텀 AI 수주 둔화 또는 보수적 가이던스 제시 시 급락 위험</span>
+  </div>
+  <div class="risk-item">
+    <span style="color:#f59e0b;">▶</span>
+    <span>AVGO도 6/3 실적 예정 — 반도체 섹터 전반 변동성 구간 진입</span>
+  </div>
+</div>
+
+<!-- 최종 전략 판단 -->
+<div class="verdict-card">
+  <div class="verdict-label">종합 전략 권고</div>
+  <div class="verdict-text">⏳ 관망 · 조건부 보유</div>
+  <div class="verdict-desc">
+    실적 발표 전 신규 매수 자제 권고.<br>
+    발표 후 EPS Beat + AI 가이던스 상향 확인 시 비중 유지.<br>
+    보수적 가이던스 or 미스 시 일부 차익실현 검토.
+  </div>
+</div>
+
+<!-- 나머지 종목 요약 -->
+<div class="no-earnings-note">
+  <strong>내일(5/28) 발표 없는 보유 종목:</strong><br>
+  NVDA (다음 8/26) · MU (다음 6월 말) · AVGO (6/3) · TSM (7/16) · PLTR (발표 완료 5/4) · 현대차 (발표 완료 4/23)
+</div>
+
+<div class="footer">
+  자동 생성 · 2026-05-27 · ETHAN 실적 모니터링 시스템
+</div>
+
+</body>
+</html>
