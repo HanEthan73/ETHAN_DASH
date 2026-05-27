@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 환율 경보 | USD/KRW 1,480 돌파</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg2: #161b22;
+    --bg3: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-dim: #8b949e;
+    --red: #f85149;
+    --red-dim: #3d0f0f;
+    --yellow: #e3b341;
+    --yellow-dim: #2d2007;
+    --green: #3fb950;
+    --blue: #58a6ff;
+    --orange: #f0883e;
+    --orange-dim: #2d1a07;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans KR', 'Segoe UI', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 16px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--red-dim);
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: var(--red);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+  }
+
+  /* 메인 환율 카드 */
+  .rate-card {
+    background: var(--bg2);
+    border: 2px solid var(--red);
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .rate-label {
+    font-size: 12px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .rate-value {
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--red);
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .rate-unit { font-size: 20px; color: var(--text-dim); }
+  .rate-change {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--red-dim);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 14px;
+  }
+  .prev-rate {
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+
+  /* 1500 돌파 경고 */
+  .breach-1500 {
+    background: var(--orange-dim);
+    border: 1.5px solid var(--orange);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .breach-1500 .icon { font-size: 22px; flex-shrink: 0; }
+  .breach-1500 .title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--orange);
+    margin-bottom: 3px;
+  }
+  .breach-1500 .desc {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  /* 섹션 카드 */
+  .card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* 주간 범위 */
+  .range-bar {
+    position: relative;
+    height: 8px;
+    background: var(--bg3);
+    border-radius: 4px;
+    margin: 10px 0;
+  }
+  .range-fill {
+    position: absolute;
+    height: 100%;
+    background: linear-gradient(90deg, var(--green), var(--yellow), var(--red));
+    border-radius: 4px;
+    width: 100%;
+  }
+  .range-dot {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border: 3px solid var(--red);
+    border-radius: 50%;
+    left: 80%;
+  }
+  .range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  /* 코스피 영향 테이블 */
+  .impact-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .impact-table th {
+    text-align: left;
+    color: var(--text-dim);
+    font-weight: 600;
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+  }
+  .impact-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--bg3);
+    vertical-align: top;
+  }
+  .impact-table tr:last-child td { border-bottom: none; }
+  .tag {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .tag-red { background: var(--red-dim); color: var(--red); }
+  .tag-yellow { background: var(--yellow-dim); color: var(--yellow); }
+  .tag-green { background: rgba(63,185,80,0.12); color: var(--green); }
+
+  /* 권고 조치 */
+  .action-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .action-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--bg3);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .action-num {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    background: var(--blue);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 900;
+    margin-top: 1px;
+  }
+
+  /* 통계 그리드 */
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat-item {
+    background: var(--bg3);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+  .stat-item .val {
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .stat-item .lbl { font-size: 11px; color: var(--text-dim); }
+
+  .footer {
+    margin-top: 20px;
+    font-size: 11px;
+    color: var(--text-dim);
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 400px) {
+    body { font-size: 14px; padding: 12px; }
+    .rate-value { font-size: 42px; }
+    .stat-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header-badge">🚨 USD/KRW 환율 경보 발령</div>
+<h1>달러-원 환율 1,480 돌파</h1>
+<p class="timestamp">📅 2026년 5월 27일 (수) · 자동 모니터링 시스템</p>
+
+<!-- 메인 환율 -->
+<div class="rate-card">
+  <div class="rate-label">USD / KRW 현재 환율</div>
+  <div class="rate-value">1,501<span class="rate-unit">.97</span></div>
+  <div class="rate-change">▼ -10.43원 (-0.69%) 전일 대비</div>
+  <div class="prev-rate">전일 종가 기준: 1,512.40 원</div>
+</div>
+
+<!-- 1500 돌파 경고 -->
+<div class="breach-1500">
+  <div class="icon">🔥</div>
+  <div>
+    <div class="title">심리적 저항선 1,500원 상회 지속</div>
+    <div class="desc">달러-원 환율이 1,500원 선을 상회하며 거래되고 있습니다. 이 수준은 시장의 주요 심리적 저항선으로, 전 주 고점 1,520.22원 대비 소폭 조정됐으나 여전히 고위험 구간입니다.</div>
+  </div>
+</div>
+
+<!-- 주간 범위 -->
+<div class="card">
+  <div class="card-title">📊 주간 환율 변동 범위 (5/18~5/27)</div>
+  <div class="stat-grid" style="margin-bottom:14px;">
+    <div class="stat-item">
+      <span class="val" style="color:var(--green)">1,488</span>
+      <span class="lbl">📉 주간 저점 (5/18)</span>
+    </div>
+    <div class="stat-item">
+      <span class="val" style="color:var(--red)">1,520</span>
+      <span class="lbl">📈 주간 고점 (5/22)</span>
+    </div>
+  </div>
+  <div class="range-bar">
+    <div class="range-fill"></div>
+    <div class="range-dot"></div>
+  </div>
+  <div class="range-labels">
+    <span>1,488 (저점)</span>
+    <span>현재 1,501.97</span>
+    <span>1,520 (고점)</span>
+  </div>
+</div>
+
+<!-- 코스피 외국인 수급 영향 -->
+<div class="card">
+  <div class="card-title">🏦 코스피 외국인 수급 영향 분석</div>
+  <table class="impact-table">
+    <thead>
+      <tr>
+        <th>항목</th>
+        <th>영향</th>
+        <th>판단</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>외국인 주식 매수/매도</td>
+        <td>원화 약세로 환 손실 우려 → 외국인 매도 압력 증가</td>
+        <td><span class="tag tag-red">부정적</span></td>
+      </tr>
+      <tr>
+        <td>수출주 (반도체·자동차)</td>
+        <td>달러 강세 수혜, 원화 환산 실적 개선 기대</td>
+        <td><span class="tag tag-green">긍정적</span></td>
+      </tr>
+      <tr>
+        <td>내수·금융주</td>
+        <td>수입 물가 상승, 인플레 재자극 우려</td>
+        <td><span class="tag tag-red">부정적</span></td>
+      </tr>
+      <tr>
+        <td>채권·외채 기업</td>
+        <td>달러 부채 이자 및 상환 부담 가중</td>
+        <td><span class="tag tag-red">부정적</span></td>
+      </tr>
+      <tr>
+        <td>외국인 코스피 누적 수급</td>
+        <td>1,500 이상 지속 시 패시브 자금 이탈 가속화 가능</td>
+        <td><span class="tag tag-yellow">주의</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 권고 조치 -->
+<div class="card">
+  <div class="card-title">⚡ 권고 조치</div>
+  <ul class="action-list">
+    <li>
+      <div class="action-num">1</div>
+      <div><strong>달러 자산 비중 점검</strong><br>보유 달러 예금·ETF 비중이 과도하게 낮을 경우, 환헤지 수단을 재검토하세요.</div>
+    </li>
+    <li>
+      <div class="action-num">2</div>
+      <div><strong>수출주 중심 포트폴리오 조정</strong><br>삼성전자·SK하이닉스·현대차 등 달러 수출 비중 높은 종목에 관심을 높이세요.</div>
+    </li>
+    <li>
+      <div class="action-num">3</div>
+      <div><strong>해외 결제·송금 시기 검토</strong><br>달러 매수가 필요하다면 1,520 저항선 돌파 전에 분할 매수를 고려하세요.</div>
+    </li>
+    <li>
+      <div class="action-num">4</div>
+      <div><strong>한국은행 환시 개입 모니터링</strong><br>당국의 구두 개입 또는 실개입 가능성이 높아지는 구간입니다. 뉴스 주시 필요.</div>
+    </li>
+    <li>
+      <div class="action-num">5</div>
+      <div><strong>다음 주요 저항선 체크</strong><br>1,520 돌파 시 1,550 테스트 가능성. 미 연준 발언 및 무역지표 일정을 확인하세요.</div>
+    </li>
+  </ul>
+</div>
+
+<!-- 참고 지표 -->
+<div class="card">
+  <div class="card-title">📈 참고 지표</div>
+  <div class="stat-grid">
+    <div class="stat-item">
+      <span class="val" style="color:var(--yellow)">-9.17%</span>
+      <span class="lbl">원화 12개월 절하율</span>
+    </div>
+    <div class="stat-item">
+      <span class="val" style="color:var(--red)">-1.91%</span>
+      <span class="lbl">원화 1개월 변동</span>
+    </div>
+    <div class="stat-item">
+      <span class="val">1,513</span>
+      <span class="lbl">XE 미드마켓 레이트</span>
+    </div>
+    <div class="stat-item">
+      <span class="val" style="color:var(--red)">1,480+</span>
+      <span class="lbl">경보 기준선 초과</span>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  ⚙️ ETHAN 자동 모니터링 시스템 | 데이터 출처: Yahoo Finance · XE · ExchangeRates.org.uk<br>
+  경보 기준: USD/KRW &gt; 1,480 · 생성일시: 2026-05-27 06:04 AM
+</div>
+
+</body>
+</html>
