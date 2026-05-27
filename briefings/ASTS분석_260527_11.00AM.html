@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASTS AST SpaceMobile 심층 분석 — 260527 ETHAN</title>
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#0f0f1a; color:#e8e8f0; font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif; font-size:14px; line-height:1.7; max-width:740px; margin:0 auto; padding:16px; }
+  h1 { color:#ffd700; font-size:22px; margin-bottom:4px; }
+  h2 { color:#ffd700; font-size:16px; margin:22px 0 8px; border-bottom:1px solid #2a2a4a; padding-bottom:5px; }
+  h3 { color:#a0c4ff; font-size:14px; margin:14px 0 6px; }
+  .sub { color:#888; font-size:12px; margin-bottom:18px; }
+  table { width:100%; border-collapse:collapse; margin:8px 0; overflow-x:auto; display:block; font-size:13px; }
+  th { background:#1c1c3a; color:#ffd700; padding:8px 6px; text-align:center; white-space:nowrap; }
+  td { padding:7px 6px; border-bottom:1px solid #1e1e35; white-space:nowrap; }
+  td:first-child { text-align:left; }
+  tr:hover td { background:#161630; }
+  .green { color:#00e676; font-weight:bold; }
+  .red { color:#ff4444; font-weight:bold; }
+  .gold { color:#ffd700; font-weight:bold; }
+  .blue { color:#a0c4ff; }
+  .hero { background:linear-gradient(135deg,#0a0020,#001a10); border:1px solid #a0c4ff; border-radius:10px; padding:16px; margin-bottom:20px; }
+  .card { background:#12122a; border-radius:8px; padding:14px; margin:10px 0; }
+  .stat-row { display:flex; gap:8px; flex-wrap:wrap; margin:10px 0; }
+  .stat { flex:1; min-width:95px; background:#0a0a1a; border-radius:6px; padding:8px 8px; text-align:center; }
+  .sv { font-size:16px; font-weight:bold; color:#ffd700; }
+  .sl { font-size:10px; color:#888; margin-top:2px; }
+  .tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:bold; margin:2px; }
+  .tg { background:#002200;color:#00e676;border:1px solid #00e676; }
+  .ty { background:#2a2200;color:#ffd700;border:1px solid #ffd700; }
+  .tb { background:#001a2a;color:#a0c4ff;border:1px solid #a0c4ff; }
+  .tr { background:#2a0000;color:#ff6666;border:1px solid #ff4444; }
+  .judge { background:#0d1d0d; border-left:3px solid #00e676; padding:10px 14px; border-radius:0 6px 6px 0; margin:10px 0; font-size:13px; }
+  .risk-card { background:#1d0d0d; border-left:3px solid #ff4444; padding:10px 14px; border-radius:0 6px 6px 0; margin:10px 0; font-size:13px; }
+  .bull { background:#002200; border:1px solid #00e676; border-radius:8px; padding:12px; margin:8px 0; }
+  .bear { background:#200000; border:1px solid #ff4444; border-radius:8px; padding:12px; margin:8px 0; }
+  .timeline { margin:10px 0; }
+  .tl-item { display:flex; gap:10px; margin:8px 0; align-items:flex-start; }
+  .tl-year { background:#1c1c3a; color:#ffd700; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:bold; white-space:nowrap; min-width:50px; text-align:center; }
+  .tl-text { font-size:13px; color:#ccc; }
+  .price-row { display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #1a1a30; font-size:13px; }
+  .price-row:last-child { border-bottom:none; }
+  .orbit-visual { background:#0a0a20; border-radius:8px; padding:12px; text-align:center; margin:10px 0; font-size:12px; color:#aaa; }
+  .sat-count { font-size:32px; font-weight:bold; color:#a0c4ff; }
+  footer { margin-top:26px; padding-top:12px; border-top:1px solid #1e1e35; font-size:11px; color:#444; text-align:center; }
+</style>
+</head>
+<body>
+
+<h1>🛰️ AST SpaceMobile (ASTS) 심층 분석</h1>
+<p class="sub">ETHAN 대표님 전용 | 2026.05.27 11:00 AM KST | Q1 2026 실적 + 실시간 웹서치 기반</p>
+
+<div class="hero">
+  <h2 style="margin:0 0 6px;border:none;padding:0;font-size:18px;color:#a0c4ff;">🌍 한 줄 정의 — "일반 스마트폰을 위성 전화로 만드는 회사"</h2>
+  <p style="font-size:13px;color:#ccc;margin-top:8px;">하늘에 위성을 올려서 <strong>기존 스마트폰(특별 기기 불필요)</strong>에 직접 4G/5G 신호 전달. 인터넷 없는 오지에서도 카카오톡, 전화 가능하게 만드는 기술. AT&T·T-Mobile·Verizon 등 통신사가 ASTS 위성 네트워크를 빌려서 고객에게 서비스.</p>
+  <div style="margin-top:10px;">
+    <span class="tag tb">저궤도 위성(LEO)</span>
+    <span class="tag tg">5월 한달 +79%</span>
+    <span class="tag ty">AT&T·T-Mobile·Verizon JV 제안</span>
+    <span class="tag tr">현재 순손실 중 (초기 투자 단계)</span>
+  </div>
+</div>
+
+<!-- 현재가 및 주가 정보 -->
+<h2>📈 주가 현황 (5/26 기준)</h2>
+<div class="stat-row">
+  <div class="stat"><div class="sv gold">$119.70</div><div class="sl">5/26 종가</div></div>
+  <div class="stat"><div class="sv green">+79%</div><div class="sl">5월 한달 수익률</div></div>
+  <div class="stat"><div class="sv">$22.47~$129.89</div><div class="sl">52주 범위</div></div>
+  <div class="stat"><div class="sv gold">$3.5B</div><div class="sl">현금 보유 (3/31)</div></div>
+  <div class="stat"><div class="sv gold">$1.2B+</div><div class="sl">상업 파이프라인</div></div>
+</div>
+
+<!-- 회사 사업 모델 -->
+<h2>🏢 사업 모델 — 어떻게 돈 버나?</h2>
+<div class="card">
+  <h3>구조 요약</h3>
+  <table>
+    <thead><tr><th>단계</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td class="gold">① 위성 발사</td><td>BlueBird 위성을 저궤도(LEO 500~700km)에 배치. 위성 1대가 지상 수천 km 커버.</td></tr>
+      <tr><td class="gold">② 통신사 파트너 계약</td><td>AT&T·T-Mobile·Verizon 등 통신사(MNO)에 위성 대역폭 판매. 통신사가 고객에게 "위성 커버리지" 서비스 제공.</td></tr>
+      <tr><td class="gold">③ 수익 배분</td><td>통신사가 위성 커버리지 구독료 수취 → ASTS에 Revenue Share. 가입자 늘수록 ASTS 수익 자동 증가.</td></tr>
+      <tr><td class="gold">④ 미국 정부</td><td>DoD(국방부), 재난 대응, 오지 커버리지 정부 계약 별도.</td></tr>
+    </tbody>
+  </table>
+  <div style="margin-top:10px; background:#001a10; border-radius:6px; padding:10px; font-size:12px; color:#aaa;">
+    <strong style="color:#00e676;">핵심 강점:</strong> 기존 스마트폰 그대로 사용 가능. 스타링크(SpaceX)는 별도 안테나 필요, ASTS는 삼성·애플 기존 폰 OK.<br>
+    현재 파트너 통신사 <strong>약 60개</strong> = 가입자 기반 <strong>30억명 이상</strong>.
+  </div>
+</div>
+
+<!-- 위성 현황 -->
+<h2>🛰️ 위성 배치 현황 (BlueBird 컨스텔레이션)</h2>
+<div class="orbit-visual">
+  <div style="margin-bottom:8px; color:#a0c4ff; font-weight:bold;">2026년 목표 궤도 위성 수</div>
+  <div class="sat-count">45~60기</div>
+  <div style="margin-top:6px;">현재 운용 중 → 2026년 말 목표</div>
+  <div style="margin-top:10px; color:#888; font-size:11px;">1기당 커버리지 반경: 약 수천km | 피크 속도 기록: 98.9 Mbps (unmodified 스마트폰)</div>
+</div>
+<div class="card">
+  <div class="price-row"><span>현재 운용 위성</span><span class="gold">Block 1 BlueBird 다수 운용 중</span></div>
+  <div class="price-row"><span>2026 목표</span><span class="gold">45~60기 (1~2개월 간격 추가 발사)</span></div>
+  <div class="price-row"><span>피크 데이터 속도</span><span class="green">98.9 Mbps (일반 스마트폰 직접 연결 세계 신기록)</span></div>
+  <div class="price-row"><span>주요 발사 파트너</span><span>SpaceX 팰컨9 (ASTS-SpaceX 이례적 협력)</span></div>
+  <div class="price-row"><span>장기 컨스텔레이션 목표</span><span class="gold">수백기 → 글로벌 완전 커버리지</span></div>
+</div>
+
+<!-- 실적 -->
+<h2>💰 Q1 2026 실적</h2>
+<div class="stat-row">
+  <div class="stat"><div class="sv">$14.7M</div><div class="sl">Q1 매출 (계획 부합)</div></div>
+  <div class="stat"><div class="sv red">순손실</div><div class="sl">초기 투자 단계</div></div>
+  <div class="stat"><div class="sv gold">$3.5B</div><div class="sl">현금 (3/31 기준)</div></div>
+  <div class="stat"><div class="sv gold">$1B+</div><div class="sl">계약 잔고(Backlog)</div></div>
+</div>
+<div class="card">
+  <h3>2026 연간 가이던스</h3>
+  <div class="price-row"><span>2026 매출 가이던스</span><span class="gold">$150M ~ $200M</span></div>
+  <div class="price-row"><span>2025 매출 (비교)</span><span>$70.9M</span></div>
+  <div class="price-row"><span>2026 성장률</span><span class="green">+111% ~ +182%</span></div>
+  <div class="price-row"><span>2027 매출 가이던스</span><span class="gold">~$1B (10배 성장 목표)</span></div>
+  <div class="price-row"><span>상업 파이프라인</span><span class="gold">$1.2B+</span></div>
+  <div class="price-row"><span>계약 잔고 중 2026 예상 실현</span><span>약 50%</span></div>
+</div>
+
+<!-- AT&T·T-Mobile·Verizon JV -->
+<h2>📡 게임체인저 — AT&T·T-Mobile·Verizon JV 제안</h2>
+<div class="card" style="border:1px solid #ffd700;">
+  <h3 style="color:#ffd700;">왜 이게 대형 이벤트인가?</h3>
+  <p>미국 3대 통신사(AT&T·T-Mobile·Verizon)가 <strong>직접 위성 커버리지 합작법인(JV)</strong>을 설립하고, ASTS를 핵심 기술 공급자로 지정 논의 중. 이 JV가 성사되면:</p>
+  <table style="margin-top:10px;">
+    <thead><tr><th>항목</th><th>의미</th></tr></thead>
+    <tbody>
+      <tr><td class="gold">미국 전체 커버리지</td><td>미국 인구 3.3억명 → ASTS 네트워크 사용 가능</td></tr>
+      <tr><td class="gold">Revenue Share 규모</td><td>미국 통신사 매출 합산 $400B+ → 일부가 ASTS 수익</td></tr>
+      <tr><td class="gold">경쟁자 진입 차단</td><td>3사 동시 계약 = 스타링크·아마존 쿠이퍼 미국 진입 어려워짐</td></tr>
+      <tr><td class="gold">주가 재평가</td><td>확정 시 현재 주가 대비 3~5배 재평가 가능</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:10px; font-size:12px; color:#ffd700;">⚠️ 현재 "제안" 단계 — 최종 계약 미확정. 확정 여부가 주가의 최대 변수.</p>
+</div>
+
+<!-- 향후 성장 로드맵 -->
+<h2>🚀 향후 발전 시나리오</h2>
+<div class="timeline">
+  <div class="tl-item"><div class="tl-year">2026 H1</div><div class="tl-text">BlueBird 45~60기 달성. 상업 서비스 미국·유럽·아시아 순차 개시. 매출 $150~200M 달성 여부 확인.</div></div>
+  <div class="tl-item"><div class="tl-year">2026 H2</div><div class="tl-text">AT&T·T-Mobile·Verizon JV 계약 체결 여부 결정. 미국 정부(DoD) 추가 계약 가능성. 위성 추가 발사 가속.</div></div>
+  <div class="tl-item"><div class="tl-year">2027</div><div class="tl-text">매출 ~$1B 목표. 위성 100기 이상 배치. 영업 레버리지 본격화로 손익분기점 접근. Revenue Share 기반 자동 성장.</div></div>
+  <div class="tl-item"><div class="tl-year">2028</div><div class="tl-text">글로벌 MNO 파트너 80개+. 아프리카·동남아·남미 등 인터넷 소외 지역 커버. 위성 200기+ 달성. 매출 $3~5B 목표.</div></div>
+  <div class="tl-item"><div class="tl-year">2030</div><div class="tl-text">글로벌 완전 커버리지. 30억 잠재 가입자 기반 현실화. 매출 $10B+ 잠재력. 위성 통신 인프라 시장 독점적 지위.</div></div>
+</div>
+
+<!-- 불/베어 케이스 -->
+<h2>⚔️ 강세 vs 약세 시나리오</h2>
+<div class="bull">
+  <h3 style="color:#00e676; margin-bottom:8px;">🟢 강세(Bull) 시나리오 — 목표 $200~$260</h3>
+  <p style="font-size:13px; color:#aaa;">① AT&T·T-Mobile·Verizon JV <strong>계약 확정</strong><br>
+  ② 2026년 말 60기 달성 + 2027년 100기 돌파<br>
+  ③ 2027 매출 $1B 달성 → P/S 30~50배 재평가<br>
+  ④ 미국 정부 DoD 대형 계약 추가<br>
+  → 현재 $119 대비 <strong>+67%~+118% 상승 가능</strong></p>
+</div>
+<div class="bear">
+  <h3 style="color:#ff4444; margin-bottom:8px;">🔴 약세(Bear) 시나리오 — 하락 위험 $60~$80</h3>
+  <p style="font-size:13px; color:#aaa;">① JV 협상 결렬 또는 지연<br>
+  ② 위성 발사 실패/지연 → 2026 매출 가이던스 미달<br>
+  ③ Q2 매출 $25M 이하로 성장 모멘텀 둔화<br>
+  ④ 추가 자금 조달(유상증자) 발표 시 주가 희석<br>
+  → 현재 $119 대비 <strong>-33%~-50% 하락 위험</strong></p>
+</div>
+
+<!-- 애널리스트 목표가 -->
+<h2>🎯 애널리스트 목표가 현황</h2>
+<table>
+  <thead><tr><th>기관</th><th>투자의견</th><th>목표가</th><th>비고</th></tr></thead>
+  <tbody>
+    <tr><td>Roth Capital</td><td class="green">Buy ↑</td><td class="gold">$108 → 상향</td><td>Q1 이후 목표가 상향</td></tr>
+    <tr><td>BofA</td><td class="blue">Neutral</td><td>$95 (하향)</td><td>개발 일정 리스크 반영</td></tr>
+    <tr><td>UBS</td><td class="blue">Neutral</td><td>$80 (하향)</td><td>보수적 접근</td></tr>
+    <tr><td>컨센서스 평균</td><td class="blue">Hold</td><td>$79.45</td><td>11개 기관 평균</td></tr>
+    <tr><td>강세 아웃라이어</td><td class="green">Buy</td><td>$117~$122</td><td>JV+가속 시나리오 반영</td></tr>
+  </tbody>
+</table>
+<p style="font-size:12px; color:#f90; margin-top:6px;">⚠️ 현재 주가 $119.70은 이미 대부분 애널리스트 목표가를 <strong>초과</strong>. 5월 JV 이슈로 주가가 목표가를 앞질렀음.</p>
+
+<!-- Claude 판단 -->
+<h2>💡 Claude 최종 판단 (보유 중 기준: 8주 @$94.56)</h2>
+<div class="judge">
+  <strong>8주 평균단가 $94.56 → 현재 $119.70 = 미실현 수익 +26.6% (+약 $200/8주)</strong><br><br>
+
+  <strong>[지금 당장 매도? 홀딩?]</strong><br>
+  → <strong>절반(4주) 수익 실현 + 4주 홀딩 권장.</strong><br><br>
+
+  이유: 현재 주가 $119.70은 52주 신고가($129.89) 근접 = 단기 저항. 컨센서스 목표가($79)를 이미 50% 초과. JV 미확정 상태에서 재료 선반영된 구간.<br><br>
+
+  단, JV 계약 확정 시 $180~$200 재평가 가능 → <strong>전량 매도보다 반만 챙기고 나머지는 JV 결과 지켜보기</strong> 전략이 최적.<br><br>
+
+  <strong>수익 실현 방법:</strong><br>
+  · 4주 즉시 매도 → 수익 확정 약 $101 (4주 × $25.14)<br>
+  · 나머지 4주 손절 설정: $95 (원가 근처) / 목표: $170~$200 (JV 확정 시)
+</div>
+
+<div class="risk-card">
+  ⚠️ <strong>보유 시 핵심 리스크</strong><br>
+  ① 위성 추가 발사 실패 → 주가 급락 트리거<br>
+  ② 유상증자(추가 자금 조달) 가능성 — 현금 $3.5B이지만 위성 발사 비용 막대<br>
+  ③ 스타링크(SpaceX) 경쟁 심화 — 스타링크도 직접-to-폰 서비스 개발 중<br>
+  ④ 기술 실증 리스크 — 98.9 Mbps는 '피크', 상용 품질 일관성 미증명<br>
+  ⑤ JV 협상 결렬 시 주가 $70~80 급락 가능 (현재가 대비 -35%~-40%)
+</div>
+
+<div style="background:#0d0d1d;border-left:3px solid #a0c4ff;padding:12px 14px;border-radius:0 6px 6px 0;margin-top:14px;font-size:13px;color:#d0d0ff;">
+  📌 <strong>한 줄 총평</strong> — ASTS는 <strong>"성공하면 조(兆)짜리 회사, 실패하면 급락"의 고위험 고수익 우주 베팅</strong>. 이미 +26% 수익 중이므로 절반 챙기고 나머지로 JV 이슈 지켜보는 게 최적. 전량 홀딩은 JV 결렬 리스크 너무 큼.
+</div>
+
+<footer>ETHAN 대표님 전용 | 2026.05.27 11:00 KST | Q1 2026 10-Q, 8-K, BusinessWire, StocksToTrade, 24/7 WallSt 기반</footer>
+</body>
+</html>
