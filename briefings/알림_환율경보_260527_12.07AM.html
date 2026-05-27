@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>🚨 환율 경보 - USD/KRW 1,480 돌파</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+    padding: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .alert-banner {
+    background: linear-gradient(135deg, #ff4444, #cc0000);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 0 30px rgba(255,68,68,0.4);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 30px rgba(255,68,68,0.4); }
+    50% { box-shadow: 0 0 50px rgba(255,68,68,0.8); }
+  }
+  .alert-banner h1 { font-size: 1.6em; font-weight: 900; letter-spacing: -0.5px; }
+  .alert-banner .time { font-size: 0.85em; color: rgba(255,255,255,0.8); margin-top: 6px; }
+
+  .rate-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .rate-label { font-size: 0.85em; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .rate-value { font-size: 3em; font-weight: 900; color: #ff6b6b; letter-spacing: -2px; }
+  .rate-change { font-size: 1em; color: #58a6ff; margin-top: 8px; }
+
+  .threshold-banner {
+    background: linear-gradient(135deg, #2d1b00, #4a2c00);
+    border: 2px solid #ff8800;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .threshold-banner.crossed {
+    background: linear-gradient(135deg, #2d0000, #4a0000);
+    border-color: #ff0000;
+  }
+  .threshold-title { font-size: 1.1em; font-weight: 700; }
+  .threshold-crossed { color: #ff4444; font-weight: 900; font-size: 1.3em; }
+  .threshold-ok { color: #ff8800; font-weight: 700; font-size: 1.1em; }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .info-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .info-card .label { font-size: 0.75em; color: #8b949e; margin-bottom: 4px; }
+  .info-card .value { font-size: 1.1em; font-weight: 700; }
+  .up { color: #f85149; }
+  .down { color: #3fb950; }
+  .neutral { color: #e6edf3; }
+
+  .section {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 16px;
+  }
+  .section h2 {
+    font-size: 1em;
+    color: #58a6ff;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #21262d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section p { font-size: 0.9em; color: #c9d1d9; line-height: 1.7; margin-bottom: 8px; }
+  .section p:last-child { margin-bottom: 0; }
+
+  .action-list { list-style: none; }
+  .action-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #21262d;
+    font-size: 0.9em;
+    color: #c9d1d9;
+    line-height: 1.5;
+  }
+  .action-list li:last-child { border-bottom: none; }
+  .action-icon { font-size: 1.1em; flex-shrink: 0; margin-top: 1px; }
+
+  .priority-high { border-left: 3px solid #ff4444; padding-left: 10px; }
+  .priority-med { border-left: 3px solid #ff8800; padding-left: 10px; }
+  .priority-low { border-left: 3px solid #3fb950; padding-left: 10px; }
+
+  .footer {
+    text-align: center;
+    font-size: 0.75em;
+    color: #484f58;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #21262d;
+  }
+</style>
+</head>
+<body>
+
+<div class="alert-banner">
+  <h1>🚨 USD/KRW 환율 경보 🚨</h1>
+  <div class="time">2026년 5월 27일 (수) 00:07 | 기준: 1,480원 초과 발동</div>
+</div>
+
+<div class="rate-card">
+  <div class="rate-label">현재 USD/KRW</div>
+  <div class="rate-value">1,501.97</div>
+  <div class="rate-change">전일 대비 ▼ -0.69% (전일 종가 기준)</div>
+</div>
+
+<div class="threshold-banner crossed">
+  <div class="threshold-title">⚠️ 1,500원 돌파 확인</div>
+  <div class="threshold-crossed">현재가 1,501.97 — 심리적 저항선 1,500원 상회 중</div>
+</div>
+
+<div class="info-grid">
+  <div class="info-card">
+    <div class="label">주간 고점</div>
+    <div class="value up">1,520.22</div>
+  </div>
+  <div class="info-card">
+    <div class="label">주간 저점</div>
+    <div class="value down">1,488.38</div>
+  </div>
+  <div class="info-card">
+    <div class="label">월간 변화</div>
+    <div class="value up">+1.91%↑ (원화 약세)</div>
+  </div>
+  <div class="info-card">
+    <div class="label">12개월 변화</div>
+    <div class="value up">+9.17%↑ (원화 약세)</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>📊 코스피 외국인 수급 영향 분석</h2>
+  <p>환율 1,500원 이상 고착화 시 외국인 투자자의 원화 자산 환산 수익률이 악화되어 <strong>코스피 외국인 순매도 압력</strong>이 증가할 수 있습니다.</p>
+  <p>과거 사례 기준, 달러 강세 지속 시 외국인이 코스피에서 월간 1~3조 원 순매도 전환하는 패턴이 반복되었습니다. 반도체·자동차 수출주는 환율 수혜이나, 금융·내수·소비재 업종은 외국인 이탈 리스크가 높습니다.</p>
+  <p>미드마켓 환율 기준 현재 <strong>1,513.31원</strong>까지 호가 스프레드가 벌어진 상태로, 변동성 확대 국면입니다.</p>
+</div>
+
+<div class="section">
+  <h2>🎯 권고 조치</h2>
+  <ul class="action-list">
+    <li>
+      <span class="action-icon">🔴</span>
+      <span class="priority-high">달러 수취 예정 거래: 선물환 또는 환헤지 비중 점검 — 현 수준에서 일부 확정 검토</span>
+    </li>
+    <li>
+      <span class="action-icon">🟠</span>
+      <span class="priority-med">해외 자산 매입 예정 시 분할 환전 전략 유지 — 1,480~1,520 구간 변동성 대비</span>
+    </li>
+    <li>
+      <span class="action-icon">🟠</span>
+      <span class="priority-med">코스피 외국인 매매 동향 일별 모니터링 강화 (특히 반도체·금융섹터)</span>
+    </li>
+    <li>
+      <span class="action-icon">🟢</span>
+      <span class="priority-low">수출 기업 원화 환산 매출 증가 효과 확인 — 실적 발표 시즌 대비 포지션 점검</span>
+    </li>
+    <li>
+      <span class="action-icon">🟢</span>
+      <span class="priority-low">1,520 재돌파 시 추가 경보 자동 발동 예정</span>
+    </li>
+  </ul>
+</div>
+
+<div class="footer">
+  ⚡ ETHAN AUTO ALERT · 자동 생성 보고 · 2026-05-27 00:07 KST<br>
+  데이터 출처: Yahoo Finance, XE.com, Wise · 투자 결정은 반드시 전문가와 확인하세요
+</div>
+
+</body>
+</html>
