@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>프리마켓 브리핑 260528</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    padding: 16px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .header {
+    background: linear-gradient(135deg, #161b22 0%, #1c2128 100%);
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .header h1 { font-size: 18px; color: #58a6ff; letter-spacing: 0.5px; }
+  .header .meta { color: #8b949e; font-size: 12px; margin-top: 4px; }
+  .section {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+  .section-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #21262d;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: #8b949e; font-size: 11px; padding: 5px 8px; border-bottom: 1px solid #21262d; }
+  td { padding: 7px 8px; border-bottom: 1px solid #161b22; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #1c2128; }
+  .up { color: #3fb950; }
+  .down { color: #f85149; }
+  .neutral { color: #e6edf3; }
+  .badge { display: inline-block; padding: 2px 7px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+  .badge-red { background: #2d1117; color: #f85149; border: 1px solid #f85149; }
+  .badge-green { background: #0d1f17; color: #3fb950; border: 1px solid #3fb950; }
+  .badge-yellow { background: #2d2100; color: #d29922; border: 1px solid #d29922; }
+  .event-item { padding: 6px 0; border-bottom: 1px solid #21262d; font-size: 13px; }
+  .event-item:last-child { border-bottom: none; }
+  .event-time { color: #58a6ff; font-size: 11px; font-weight: 600; margin-right: 8px; }
+  .summary {
+    background: #1c2128;
+    border-left: 3px solid #58a6ff;
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #c9d1d9;
+    line-height: 1.6;
+  }
+  .ticker { font-weight: 700; color: #e6edf3; font-size: 13px; }
+  @media (max-width: 480px) {
+    body { padding: 10px; font-size: 13px; }
+    .header h1 { font-size: 16px; }
+    td, th { padding: 5px 4px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>&#9889; ETHAN 프리마켓 브리핑</h1>
+  <div class="meta">2026년 5월 28일 (목) 21:10 KST &nbsp;|&nbsp; 미장 개장 20분 전</div>
+</div>
+
+<div class="section">
+  <div class="section-title">&#128202; 지수 선물 &amp; 주요 지표</div>
+  <table>
+    <tr><th>종목</th><th>현재값</th><th>등락</th><th>비고</th></tr>
+    <tr><td class="ticker">S&amp;P 500 선물</td><td class="neutral">7,538.50</td><td class="down">&#9660; -0.20%</td><td><span class="badge badge-yellow">약세</span></td></tr>
+    <tr><td class="ticker">나스닥 100 선물</td><td class="neutral">—</td><td class="down">&#9660; -0.30%</td><td><span class="badge badge-yellow">약세</span></td></tr>
+    <tr><td class="ticker">다우 선물</td><td class="neutral">—</td><td class="down">&#9660; -0.20% (-112pt)</td><td><span class="badge badge-yellow">약세</span></td></tr>
+    <tr><td class="ticker">VIX</td><td class="up">16.33</td><td class="up">&#9660; -4.00%</td><td><span class="badge badge-green">안정</span></td></tr>
+    <tr><td class="ticker">미 10년물 금리</td><td class="neutral">4.50%</td><td class="down">&#9650; +0.02%p</td><td>이란 공습 우려 반등</td></tr>
+    <tr><td class="ticker">WTI 원유</td><td class="down">~$90</td><td class="down">&#9650; +1.80%</td><td>지정학적 리스크</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title">&#128293; 프리마켓 주요 급등락 Top 3</div>
+  <table>
+    <tr><th>종목</th><th>프리마켓가</th><th>등락률</th><th>사유</th></tr>
+    <tr><td class="ticker">SNOW</td><td class="up">+38%</td><td class="up">&#9650; +38%</td><td>AWS $60억 계약 + Q1 어닝 비트</td></tr>
+    <tr><td><span class="ticker">MU</span> <span class="badge badge-green">보유후보</span></td><td class="up">+8.3%</td><td class="up">&#9650; +8.3%</td><td>Bernstein 강세 서플라이체인 리포트</td></tr>
+    <tr><td><span class="ticker">ASTS</span> <span class="badge badge-red">보유</span></td><td class="down">$124.34</td><td class="down">&#9660; -3.88%</td><td>전일 대비 조정 (전가 $129.60)</td></tr>
+  </table>
+  <div style="margin-top:8px; font-size:12px; color:#8b949e;">
+    ※ VRT: $339.95 (&#9660; -3.81%) &nbsp;|&nbsp; NVDA: $210.42 (&#9660; -1.03%) &nbsp;|&nbsp; AVGO: ~$413 (&#9660; 트리거 하회)
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">&#128680; 자동매수 알림 트리거 체크</div>
+  <table>
+    <tr><th>종목</th><th>매수 트리거</th><th>현재가 (프리마켓)</th><th>상태</th></tr>
+    <tr><td class="ticker">AVGO</td><td>$420.00</td><td class="down">~$413.55</td><td><span class="badge badge-red">&#128680; 하회</span></td></tr>
+    <tr><td class="ticker">MSFT</td><td>$410.00</td><td class="up">~$415.31</td><td><span class="badge badge-green">&#10003; 상회</span></td></tr>
+    <tr><td class="ticker">INTC</td><td>$104.50</td><td class="neutral">데이터 미수신</td><td><span class="badge badge-yellow">확인 요</span></td></tr>
+    <tr><td class="ticker">GOOGL</td><td>$385.00</td><td class="neutral">데이터 미수신</td><td><span class="badge badge-yellow">확인 요</span></td></tr>
+    <tr><td class="ticker">TSM</td><td>$395.00</td><td class="neutral">데이터 미수신</td><td><span class="badge badge-yellow">확인 요</span></td></tr>
+    <tr><td class="ticker">MRVL</td><td>$168.00</td><td class="neutral">데이터 미수신</td><td><span class="badge badge-yellow">확인 요</span></td></tr>
+    <tr><td class="ticker">AMZN</td><td>$255.00</td><td class="up">~$268.46</td><td><span class="badge badge-green">&#10003; 상회</span></td></tr>
+    <tr><td class="ticker">ORCL</td><td>$178.00</td><td class="up">~$192.54</td><td><span class="badge badge-green">&#10003; 상회</span></td></tr>
+    <tr><td class="ticker">PLTR</td><td>$122.00</td><td class="up">~$134.72</td><td><span class="badge badge-green">&#10003; 상회</span></td></tr>
+    <tr><td class="ticker">ASTS</td><td>$68.00</td><td class="up">~$124.34</td><td><span class="badge badge-green">&#10003; 상회</span></td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title">&#128197; 오늘 주요 이벤트</div>
+  <div class="event-item"><span class="event-time">21:30 KST</span><strong>PCE 인플레이션 지수 (4월)</strong> — 핵심 PCE +0.3% MoM / +3.3% YoY 예상. 신임 Fed 의장 Kevin Warsh 금리 방향 핵심 지표</div>
+  <div class="event-item"><span class="event-time">종일</span><strong>WTI 유가 $90 돌파</strong> — 이란 군사시설 공습 보도. 인플레 재가열·금리 상승 우려 연동</div>
+  <div class="event-item"><span class="event-time">종일</span><strong>SNOW +38% 급등</strong> — AWS 5년 $60억 계약 + Q1 어닝 서프라이즈. 클라우드 섹터 모멘텀 주목</div>
+</div>
+
+<div class="section">
+  <div class="section-title">&#128172; 총평</div>
+  <div class="summary">
+    PCE 발표 앞두고 선물 소폭 약세(-0.2~0.3%), 유가 급등·금리 반등 부담 지속. <strong style="color:#f85149;">AVGO $413 — 자동매수 트리거 $420 하회 중 (개장 후 즉시 확인 요망).</strong> MU +8.3% 강세 주목, ASTS·VRT 프리마켓 조정 유의.
+  </div>
+</div>
+
+<div style="text-align:center; color:#484f58; font-size:11px; margin-top:12px; padding-top:10px; border-top:1px solid #21262d;">
+  자동 생성 by ETHAN Auto-Briefing Agent &nbsp;|&nbsp; 2026-05-28 21:10 KST
+</div>
+</body>
+</html>
