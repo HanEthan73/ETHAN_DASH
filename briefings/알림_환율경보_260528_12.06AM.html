@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 환율 경보 | USD/KRW 1,499.64</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d0d0d;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+    padding: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0000, #2d0000);
+    border: 1px solid #ff3333;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .alert-badge {
+    background: #ff0000;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .rate-display {
+    font-size: 48px;
+    font-weight: 900;
+    color: #ff4444;
+    line-height: 1;
+    margin: 10px 0;
+  }
+  .rate-label {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 6px;
+  }
+  .change-info {
+    font-size: 15px;
+    color: #ff8888;
+    margin-top: 8px;
+  }
+  .timestamp {
+    font-size: 11px;
+    color: #555;
+    margin-top: 8px;
+  }
+  .card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 12px;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .threshold-bar {
+    background: #0d0d0d;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .threshold-label { font-size: 13px; color: #aaa; }
+  .threshold-value { font-size: 15px; font-weight: 700; }
+  .status-ok { color: #44cc44; }
+  .status-warn { color: #ffaa00; }
+  .status-danger { color: #ff4444; }
+  .breach-banner {
+    background: linear-gradient(135deg, #1a0a00, #2d1500);
+    border: 1px solid #ff8800;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .breach-text {
+    font-size: 14px;
+    color: #ffbb44;
+    font-weight: 600;
+  }
+  .near-breach {
+    background: linear-gradient(135deg, #1a0500, #250a00);
+    border: 1px solid #ff6600;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .supply-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #222;
+    font-size: 14px;
+  }
+  .supply-row:last-child { border-bottom: none; }
+  .supply-key { color: #888; }
+  .supply-val { font-weight: 600; }
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #1e1e1e;
+    font-size: 14px;
+  }
+  .action-item:last-child { border-bottom: none; }
+  .action-num {
+    background: #333;
+    color: #ccc;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #444;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+  .week-range {
+    background: #151515;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-top: 8px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="alert-badge">🚨 환율 경보 발령</div>
+  <div class="rate-label">USD / KRW 현재 환율</div>
+  <div class="rate-display">1,499.64</div>
+  <div class="change-info">전일(5/27) 대비 +1.42원 ▲ (+0.09%)</div>
+  <div class="timestamp">📅 2026-05-28 00:06 AM KST 기준</div>
+</div>
+
+<div class="near-breach">
+  <div class="breach-text">⚠️ 1,500원 임박 — 0.36원 차이</div>
+  <div style="font-size:12px;color:#cc8833;margin-top:4px;">1,500 심리적 저항선 붕괴 직전</div>
+</div>
+
+<div class="card">
+  <div class="card-title">📊 경보 임계값 현황</div>
+  <div class="threshold-bar">
+    <span class="threshold-label">경보 기준선</span>
+    <span class="threshold-value status-danger">1,480 ✓ 초과</span>
+  </div>
+  <div class="threshold-bar">
+    <span class="threshold-label">심리적 저항선</span>
+    <span class="threshold-value status-warn">1,500 ⚠️ 임박</span>
+  </div>
+  <div class="threshold-bar">
+    <span class="threshold-label">현재 환율</span>
+    <span class="threshold-value status-danger">1,499.64원</span>
+  </div>
+  <div class="week-range">
+    <span style="color:#888;">주간 범위</span>
+    <span>저 <b style="color:#44cc88;">1,488.38</b> — 고 <b style="color:#ff6666;">1,520.22</b></span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">📈 코스피 외국인 수급 영향</div>
+  <div class="supply-row">
+    <span class="supply-key">환율 상승 압력</span>
+    <span class="supply-val status-danger">외국인 순매도 가속 우려</span>
+  </div>
+  <div class="supply-row">
+    <span class="supply-key">원화 약세 지속시</span>
+    <span class="supply-val status-warn">외국인 환차손 확대 → 이탈 심화</span>
+  </div>
+  <div class="supply-row">
+    <span class="supply-key">1,500 돌파 시</span>
+    <span class="supply-val status-danger">패닉셀 및 프로그램 매도 가능</span>
+  </div>
+  <div class="supply-row">
+    <span class="supply-key">최근 1개월 원화</span>
+    <span class="supply-val status-danger">-1.73% 약세</span>
+  </div>
+  <div class="supply-row">
+    <span class="supply-key">최근 12개월 원화</span>
+    <span class="supply-val status-danger">-8.99% 약세</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">✅ 권고 조치</div>
+  <div class="action-item">
+    <div class="action-num">1</div>
+    <div><b style="color:#ffcc44;">달러 자산 비중 점검</b> — 환헤지 비율 재검토, 달러 예금/ETF 포지션 확인</div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">2</div>
+    <div><b style="color:#ffcc44;">수입 결제 앞당기기 주의</b> — 1,500 돌파 전 필수 달러 매수 완료 여부 확인</div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">3</div>
+    <div><b style="color:#ffcc44;">코스피 외국인 동향 모니터링</b> — 장중 외국인 순매도 급증 시 리스크 축소 검토</div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">4</div>
+    <div><b style="color:#ffcc44;">1,500 돌파 확인 시</b> — 추가 경보 발령, 방어적 포트폴리오로 전환 검토</div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">5</div>
+    <div><b style="color:#ffcc44;">한국은행 동향 확인</b> — 외환시장 구두개입 또는 스무딩오퍼레이션 가능성 주시</div>
+  </div>
+</div>
+
+<div class="footer">
+  ETHAN AUTO MONITOR | 2026-05-28 00:06 AM<br>
+  데이터 출처: XE.com, Bloomberg, ExchangeRates.org.uk<br>
+  본 알림은 자동 생성된 참고용 정보입니다.
+</div>
+
+</body>
+</html>
