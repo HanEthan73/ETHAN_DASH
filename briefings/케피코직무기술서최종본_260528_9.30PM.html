@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>케피코 직무기술서 최종본</title>
+<style>
+  body { background:#0f0f1a; color:#e8e8f0; font-family:'Malgun Gothic',sans-serif; max-width:800px; margin:0 auto; padding:32px 20px; line-height:2.0; }
+  h1 { color:#ffd700; font-size:1.2rem; border-bottom:2px solid #ffd700; padding-bottom:8px; margin-bottom:28px; }
+  h2 { color:#ffd700; font-size:1.0rem; margin-top:28px; margin-bottom:8px; }
+  p { margin:0 0 12px 0; }
+  .note { background:#1a1a30; border-left:3px solid #ffd700; padding:10px 14px; font-size:0.82rem; color:#aaa; margin-bottom:24px; border-radius:0 6px 6px 0; }
+  mark { background:#2a2a10; color:#ffd700; padding:1px 3px; border-radius:3px; }
+</style>
+</head>
+<body>
+
+<h1>케피코 직무기술서 — 최종 개선본 (2026.05.28)</h1>
+<div class="note">🖊️ <mark>노란 강조</mark>는 수정된 부분입니다. <strong>[ ]</strong> 표시는 실제 수치로 교체하세요.</div>
+
+<h2>• 프로젝트 개요</h2>
+<p>전기차 ICCU용 11kW급 양방향 OBC 제어 알고리즘 개발을 <mark>주도하고 있습니다</mark>. 개발 대상은 AC/DC 2상 인터리브드 Totem-Pole PFC와 DC/DC CLLC 컨버터 기반의 양방향 전력변환 시스템이며, 충전, V2L, V2G 운전 조건에서 제어 로직, 고장 진단 로직, 보호 동작 및 복귀 조건을 <mark>직접 설계·구현·검증</mark>했습니다.</p>
+
+<h2>• 개발 초기 및 컨셉 검증</h2>
+<p>개발 초기 단계에서는 고객 요구사양과 시스템 요구사양을 분석하여 운전 모드별 제어 컨셉과 동작 시퀀스를 <mark>정의하고 문서화</mark>했습니다. 충전 모드에서는 계통 조건과 배터리 충전 요구 조건을 고려하여 제어 흐름을 <mark>직접 설계</mark>했고, V2L 및 V2G 모드에서는 배터리에서 외부 부하 또는 계통으로 전력을 전달하는 양방향 운전 특성을 고려하여 모드 전환 조건과 상태 천이 로직을 <mark>직접 정의</mark>했습니다.</p>
+
+<h2>• 제어 로직 및 고장 진단 개발</h2>
+<p>운전 조건별 제어 시퀀스와 보호 동작을 정리한 뒤 C 기반 실시간 제어 로직으로 <mark>구현</mark>했습니다. 전류 제어, 전력 제어, 운전 모드 전환, 출력 제한, 보호 상태 전환 로직을 <mark>직접 설계·개발</mark>했으며, 충전 및 V2G 운전 중 발생 가능한 계통 전압 이상, 전압/전류 이상, 통신 이상, 상태 불일치 조건을 포함하여 <mark>총 [N]개 고장 진단 조건을 직접 정의</mark>했습니다. 계통 전압 강하와 같은 이상 조건에서도 시스템이 안전한 상태로 전환될 수 있도록 진단 조건, 보호 동작, 재시도 및 복귀 조건을 포함한 <mark>Fault Management 구조를 설계</mark>했습니다.</p>
+
+<h2>• 차량 시스템 연동 및 검증</h2>
+<p>CAN 기반 차량 제어기 연동 환경에서 운전 상태, 고장 정보, 제어 명령, 제한 조건이 실제 시스템 동작과 일관되게 반영되는지 <mark>체계적으로 검증</mark>했습니다. 단품 제어 성능뿐 아니라 차량 시스템 안에서 OBC 제어 로직이 의도한 상태로 동작하는지 확인하기 위해 계통 조건, 부하 조건, 배터리 상태, 통신 상태 변화를 포함한 <mark>[M]개 이상의 시험 케이스를 직접 설계하고 실행</mark>했습니다.</p>
+
+<h2>• 모델링 및 검토 방법</h2>
+<p>제어기 설계와 파라미터 산출 과정에서는 Python을 활용하여 수식 기반 모델링과 데이터 분석을 <mark>수행·최적화</mark>했습니다. 전력변환 회로 동작 검토가 필요한 경우 PSIM으로 <mark>사전 검증</mark>하여 실물 시험 전 리스크를 <mark>최소화</mark>했고, 제어 로직의 동작 방향이나 시스템 응답 확인이 필요한 경우 MATLAB/Simulink로 <mark>시뮬레이션·검증</mark>했습니다. 석사 과정에서 배터리 상태추정 알고리즘을 개발하며 모델 기반 검증을 수행한 경험을 바탕으로, 배터리 특성, 전력변환기 동작, 차량 시스템 요구 조건을 통합적으로 고려하는 데 강점이 있습니다.</p>
+
+<h2>• HIL, 실차, EOL 검증 및 이슈 대응</h2>
+<p>HIL, 실차, EOL 환경에서 발생한 이슈를 원인별로 분류하는 분석 프레임(제어 로직·진단 조건·파라미터·시험 조건·시스템 연동·양산 라인 6개 관점)을 <mark>직접 수립</mark>했습니다. 유관 부서와 협업하여 <mark>[X]건 이상의 현장 이슈를 해결</mark>했으며, 재현 조건 확인, 원인 분석, 개선안 도출, 검증 결과 정리까지 전 과정을 <mark>주도</mark>했습니다.</p>
+
+<h2>• 해외 양산 및 현장 대응</h2>
+<p>멕시코 현지에서는 프로젝트 양산 단계의 캘리브레이션과 EOL 라인 셋업을 <mark>직접 수행</mark>했습니다. 현지 R&amp;D팀을 대상으로 제품 제어 로직, 검증 절차, 이슈 분석 방법에 대한 기술 세미나를 <mark>기획·진행</mark>하여 양산 초기 안정화를 <mark>주도</mark>했습니다. 미국 캘리포니아 지역에서는 북미 충전 인프라 환경에서 OBC 충전 동작과 V2L 기능을 <mark>실증 검증</mark>하고, 고객 및 유관 부서와 기술 이슈를 직접 협의하여 <mark>개선 방향을 도출</mark>했습니다.</p>
+
+<h2>• 주요 강점</h2>
+<p>개발 초기 컨셉 검증부터 C 코드 구현, CAN 기반 차량 제어기 연동, HIL·실차·EOL 검증, 해외 양산 대응까지 전 개발 사이클을 <mark>단독 또는 주도적 역할로 수행</mark>한 것이 가장 큰 강점입니다. 케피코에서는 이 경험을 바탕으로 <mark>EV 차량 제어 SW의 품질과 양산 신뢰성을 높이는 데 직접 기여</mark>하겠습니다.</p>
+
+</body>
+</html>
