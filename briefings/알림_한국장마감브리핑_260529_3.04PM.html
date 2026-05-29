@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 주식시장 마감 브리핑</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .timestamp {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        
+        table th {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+        
+        table tr:nth-child(even) {
+            background: #fafafa;
+        }
+        
+        .positive {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .negative {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .neutral {
+            color: #333;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .paragraph {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .stock-card {
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        
+        .stock-name {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .insight {
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            background: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 한국 주식시장 오후 3시 마감 브리핑</h1>
+            <div class="timestamp">2026년 5월 29일 (금) 오후 3:04</div>
+        </div>
+        
+        <div class="content">
+            <!-- 경고 메시지 -->
+            <div class="warning">
+                ⚠️ <strong>데이터 수집 제약:</strong> TradingView 실시간 조회 불가로 인해 검색 기반 데이터로 작성되었습니다. 
+                정확한 거래량 및 기술적 분석은 실시간 조회 후 재작성이 필요합니다.
+            </div>
+            
+            <!-- 1. 한국 시장 마감 -->
+            <div class="section">
+                <div class="section-title">1️⃣ 한국 시장 마감</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>지수</th>
+                            <th>종가</th>
+                            <th>등락</th>
+                            <th>등락률</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>KOSPI</strong></td>
+                            <td>8,185.29</td>
+                            <td><span class="negative">-43.41</span></td>
+                            <td><span class="negative">-0.53%</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>KOSDAQ</strong></td>
+                            <td>1,104.36</td>
+                            <td><span class="negative">-28.77</span></td>
+                            <td><span class="negative">-2.54%</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="paragraph">
+                    한국 주식시장은 약세를 지속했습니다. KOSPI는 전일 대비 43.41포인트(-0.53%) 하락하여 8,185.29로 마감했고, 
+                    KOSDAQ은 28.77포인트(-2.54%) 내려 1,104.36으로 마감했습니다. 글로벌 경제 불확실성과 기술주 조정의 영향을 받은 것으로 보입니다.
+                </div>
+            </div>
+            
+            <!-- 2. 오늘 핵심 뉴스 -->
+            <div class="section">
+                <div class="section-title">2️⃣ 오늘 핵심 뉴스</div>
+                <div class="paragraph">
+                    <strong>① 반도체 산업 호황 지속</strong><br>
+                    AI 투자 낙관론으로 반도체주 랠리가 이어지고 있습니다. 미국 BofA는 한국이 반도체 슈퍼사이클에 올라탄다며 
+                    3%대 성장을 전망했으며, 마이크론의 19% 폭등이 반도체 섹터 전반에 긍정적 신호를 주고 있습니다.
+                </div>
+                <div class="paragraph">
+                    <strong>② 기업 심리 개선</strong><br>
+                    반도체 훈풍에 힘입어 제조업 기업심리가 3년 9개월 만에 기준선을 회복했습니다. 
+                    2026년 5월 제조업 심리지수는 100.8(전월대비 +1.7p)로 상승세를 보였습니다.
+                </div>
+                <div class="paragraph">
+                    <strong>③ 경제심리지수 상승세</strong><br>
+                    비제조업 심리지수가 97.5(+5.4p)를 기록했으며, 종합 경제심리지수(ESI)도 97.5(+5.8p)로 상승했습니다. 
+                    글로벌 AI 붐과 한국 반도체 산업의 시너지가 긍정적으로 작용하고 있습니다.
+                </div>
+            </div>
+            
+            <!-- 3. 보유 종목 현황 -->
+            <div class="section">
+                <div class="section-title">3️⃣ 보유 종목 현황</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>종목명</th>
+                            <th>현재가</th>
+                            <th>등락률</th>
+                            <th>판단</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>NVDA</strong></td>
+                            <td>$213.40</td>
+                            <td><span class="positive">+0.38%</span></td>
+                            <td>약보합 지지선 근처</td>
+                        </tr>
+                        <tr>
+                            <td><strong>INTC</strong></td>
+                            <td>$120.67</td>
+                            <td><span class="negative">-0.90%</span></td>
+                            <td>약세 지속 관찰 필요</td>
+                        </tr>
+                        <tr>
+                            <td><strong>현대차(005380)</strong></td>
+                            <td>미조회</td>
+                            <td>-</td>
+                            <td>실시간 조회 필요</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VRT</strong></td>
+                            <td>미조회</td>
+                            <td>-</td>
+                            <td>실시간 조회 필요</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ASTS</strong></td>
+                            <td>미조회</td>
+                            <td>-</td>
+                            <td>실시간 조회 필요</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MSTX</strong></td>
+                            <td>미조회</td>
+                            <td>-</td>
+                            <td>실시간 조회 필요</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MU</strong></td>
+                            <td>미조회</td>
+                            <td>-</td>
+                            <td>목표가 $748.00 대비 추적 필요</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="stock-card">
+                    <div class="stock-name">NVDA (엔비디아)</div>
+                    <div class="paragraph">
+                        현재 $213.40으로 소폭 상승세(+0.38%). AI 반도체 최대 수혜주로서 글로벌 AI 투자 확대 기조에서 
+                        기술적 지지선 ($217.00 자동매수 1차)까지 약 $3.60 상승 여력이 있습니다. 
+                        <strong>판단:</strong> 현 수준에서 매수 기회를 엿볼 수 있으나, $217 이상에서는 이익 실현 고려.
+                    </div>
+                </div>
+                
+                <div class="stock-card">
+                    <div class="stock-name">INTC (인텔)</div>
+                    <div class="paragraph">
+                        현재 $120.67로 약세(-0.90%). 반도체 경기 회복에도 불구하고 기술주 조정에 휘말린 상태. 
+                        자동매수 1차 목표인 $104.50까지는 약 13.4% 하락 필요. 
+                        <strong>판단:</strong> 단기 약세는 지속될 가능성이 높으나, $104.50 이하에서는 적극 매수 기회로 평가.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 4. 자동매수 임박 알림 -->
+            <div class="section">
+                <div class="section-title">⚡ 자동매수 임박 알림</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>종목</th>
+                            <th>자동매수 1차</th>
+                            <th>현재가</th>
+                            <th>거리</th>
+                            <th>상태</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>NVDA</strong></td>
+                            <td>$217.00</td>
+                            <td>$213.40</td>
+                            <td>-$3.60 (-1.7%)</td>
+                            <td>🔔 임박</td>
+                        </tr>
+                        <tr>
+                            <td><strong>INTC</strong></td>
+                            <td>$104.50</td>
+                            <td>$120.67</td>
+                            <td>+$16.17 (+15.5%)</td>
+                            <td>⏳ 관찰</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MU</strong></td>
+                            <td>$748.00</td>
+                            <td>미조회</td>
+                            <td>-</td>
+                            <td>📊 실시간 추적 필요</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ASTS</strong></td>
+                            <td>$67.00</td>
+                            <td>미조회</td>
+                            <td>-</td>
+                            <td>📊 실시간 추적 필요</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="paragraph">
+                    <strong>NVDA</strong>는 자동매수 1차 $217.00까지 겨우 1.7% 떨어진 상태로, 단기 조정 시 자동매수 진입 가능성이 높습니다.
+                    <strong>INTC</strong>는 목표가까지 15.5% 더 내려야 하므로 단기에는 어려울 것으로 보이나, 향후 경제 약세 신호 시 빠르게 전개될 수 있습니다.
+                </div>
+            </div>
+            
+            <!-- 5. 오늘의 추천 종목 -->
+            <div class="section">
+                <div class="section-title">🔥 오늘의 추천 종목</div>
+                <div class="warning">
+                    📌 실시간 TradingView 조회 불가로 인해 완전한 기술 분석(VCP, Weinstein, Cup&Handle, M2 유동성)이 제한되었습니다. 
+                    실시간 조회 후 재평가 필수.
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>순위</th>
+                            <th>종목</th>
+                            <th>현재가</th>
+                            <th>포지션</th>
+                            <th>R/R</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td>반도체 ETF (나스닥)</td>
+                            <td>실시간 필요</td>
+                            <td>골든크로스 재확인 필요</td>
+                            <td>높음</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td>대형주 나스닥</td>
+                            <td>실시간 필요</td>
+                            <td>MA20 지지선 근처</td>
+                            <td>중간</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td>한국 IT주</td>
+                            <td>실시간 필요</td>
+                            <td>반도체 호황 수혜</td>
+                            <td>중간</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td>신재생에너지</td>
+                            <td>실시간 필요</td>
+                            <td>정책 지지 예상</td>
+                            <td>중간</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="paragraph">
+                    <strong>전략적 평가:</strong><br>
+                    현 시점의 핵심은 "반도체 슈퍼사이클이 지속되는가"입니다. AI 수요의 견조함과 한국 반도체 산업의 경쟁력이 결합된 상황으로, 
+                    단기 조정에도 불구하고 중기적으로는 상승 가능성이 높습니다. 
+                    다만 기술주 밸류에이션이 높아진 상태이므로, 진입은 지지선(MA50, MA200) 근처에서 신중하게 진행 권고.
+                </div>
+            </div>
+            
+            <!-- 6. Claude 인사이트 -->
+            <div class="section">
+                <div class="section-title">💡 Claude 인사이트</div>
+                
+                <div class="insight">
+                    <strong>향후 1~2주 시나리오:</strong><br>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>강세 시나리오:</strong> AI 수요 확대 + 반도체 경기 호황이 지속되면 나스닥 신고가 경신 가능 ($217 위).
+                            이 경우 NVDA는 $230+ 도달 가능.</li>
+                        <li><strong>약세 시나리오:</strong> 글로벌 경제 경착륙 우려 심화 시 기술주 대폭 조정 가능. 
+                            INTC는 $104 이하, NVDA도 $200 아래로 내려올 수 있음.</li>
+                        <li><strong>보합 시나리오:</strong> 현 수준에서 $200~$230 박스권 형성 가능. 이 경우 자동매수 기회 창출.</li>
+                    </ul>
+                </div>
+                
+                <div class="insight">
+                    <strong>액션 플랜:</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>구매:</strong> NVDA $217 이하에서 분할 매수 / INTC $104.50 이하에서 공격 매수</li>
+                        <li><strong>판매:</strong> 특별한 이유 없으면 현 보유 종목(MSTX 장기보유) 유지</li>
+                        <li><strong>관찰:</strong> 현대차, VRT, ASTS 등은 실시간 조회 후 기술적 신호 재평가</li>
+                    </ul>
+                </div>
+                
+                <div class="insight">
+                    <strong>내일(5월 30일) 주목 이벤트:</strong><br>
+                    미국 경제 지표 발표(초청 청구 건수, PCE 물가지수) 및 
+                    한국 수출입 통계가 나올 예정입니다. 반도체 수출 증가세가 확인되면 기술주 추가 강세 예상.
+                </div>
+            </div>
+            
+            <!-- 7. 한 줄 총평 -->
+            <div class="section">
+                <div class="section-title">📝 한 줄 총평</div>
+                <div class="paragraph" style="font-size: 16px; font-weight: bold; color: #667eea; padding: 15px; background: #f0f4ff; border-radius: 4px;">
+                    "AI 반도체 호황은 여전하나 단기 조정은 임박. NVDA $217 자동매수 임박으로 좋은 기회. 
+                    향후 1~2주는 기술주 버티기 기간이므로 헬지 전략 강화 권고."
+                </div>
+            </div>
+            
+            <!-- 전략 -->
+            <div class="section">
+                <div class="section-title">🎯 투자 전략</div>
+                <div class="paragraph">
+                    <strong>기본 원칙:</strong> 시장 좋을 때 <strong>사팔사팔</strong>(수익 실현), 나쁠 때 <strong>풀매수 장기보유</strong>(추가 매수).<br><br>
+                    <strong>현 상황 적용:</strong><br>
+                    ✅ NVDA 자동매수 1차 임박 → 단기 조정 시 과감히 매수<br>
+                    ✅ INTC 강한 약세 → 추가 조정 대기, $100대 진입 준비<br>
+                    ✅ MSTX 장기보유 유지 → 반도체 슈퍼사이클 동승<br>
+                    ❌ 허공 매수 금지 → 기술적 지지선 확인 후 진입
+                </div>
+            </div>
+            
+            <!-- 전문용어 -->
+            <div class="section">
+                <div class="section-title">📖 전문용어</div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><strong>VCP (Volatility Contraction Pattern)</strong></td>
+                            <td>민너비니 변동성 수축 패턴. 거래량 확대로 이어지는 수축 신호.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Weinstein 4단계</strong></td>
+                            <td>Stage 1(상승), Stage 2(지속), Stage 3(조정), Stage 4(하락). Stage 2만 진입.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cup & Handle</strong></td>
+                            <td>머그컵 패턴. U자형 컵 형성 후 작은 핸들 조정으로 거래량 폭발 신호.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>M2 유동성</strong></td>
+                            <td>글로벌 화폐 공급량. YoY 양수 추세 시 리스크 자산 매수 신호.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>골든크로스</strong></td>
+                            <td>단기(MA20) > 중기(MA50) > 장기(MA200) 신호. 강한 매수 신호.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>데드크로스</strong></td>
+                            <td>단기 < 중기 < 장기. 약세 신호로 매도 고려.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>이 브리핑은 자동화된 분석 결과입니다. 투자 결정은 개인의 판단과 책임입니다.</p>
+            <p>📧 문의: triumphhan73@gmail.com | 🔄 다음 업데이트: 2026-05-30 오후 3시</p>
+            <p style="margin-top: 10px;">⚠️ TradingView 실시간 조회 불가로 인한 데이터 제약 있음</p>
+        </div>
+    </div>
+</body>
+</html>
