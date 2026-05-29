@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글로벌 아침 브리핑 - 2026.05.30</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-dark: #0a0e27;
+            --bg-card: #111827;
+            --text-primary: #f0f4f8;
+            --text-secondary: #cbd5e1;
+            --accent-gold: #fbbf24;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+            --border: #374151;
+        }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            padding: 16px;
+        }
+        
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 24px 0;
+            border-bottom: 2px solid var(--accent-gold);
+            margin-bottom: 24px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        .section {
+            margin-bottom: 32px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            font-size: 13px;
+        }
+        
+        th {
+            background-color: #1f2937;
+            color: var(--accent-gold);
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .stock-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        
+        .stock-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .stock-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .stock-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+        
+        .price-change.up {
+            color: var(--accent-red);
+        }
+        
+        .price-change.down {
+            color: var(--accent-green);
+        }
+        
+        .stock-details {
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        
+        .label {
+            color: var(--text-secondary);
+            display: inline-block;
+            width: 80px;
+        }
+        
+        .value {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        .alert {
+            background-color: #78350f;
+            border-left: 4px solid var(--accent-gold);
+            padding: 12px;
+            margin-bottom: 16px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .positive {
+            color: var(--accent-green);
+        }
+        
+        .negative {
+            color: var(--accent-red);
+        }
+        
+        .progress-bar {
+            background-color: #374151;
+            height: 24px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, var(--accent-gold), #f59e0b);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8px;
+            color: #000;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        .highlight {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+        
+        .job-item {
+            background-color: var(--bg-card);
+            border-left: 3px solid var(--accent-gold);
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            margin-top: 32px;
+        }
+        
+        @media (max-width: 680px) {
+            body {
+                padding: 12px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .section-title {
+                font-size: 16px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📈 글로벌 아침 브리핑</h1>
+            <p>2026년 5월 30일 (금) | 07:04 AM | 시장 전망</p>
+        </div>
+        
+        <!-- 1. 오늘의 주요 일정 -->
+        <div class="section">
+            <h2 class="section-title">📅 오늘·이번주 주요 일정</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>시간 (US)</th>
+                        <th>국가</th>
+                        <th>이벤트</th>
+                        <th>중요도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10:00</td>
+                        <td>미국</td>
+                        <td>PCE 물가지수</td>
+                        <td>🔴 높음</td>
+                    </tr>
+                    <tr>
+                        <td>13:00</td>
+                        <td>미국</td>
+                        <td>개인소비지출</td>
+                        <td>🔴 높음</td>
+                    </tr>
+                    <tr>
+                        <td>15:00</td>
+                        <td>한국</td>
+                        <td>생산자물가지수</td>
+                        <td>🟡 중간</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="alert">
+                ⚠️ <strong>주의:</strong> 장기휴무(메모리얼데이) 이후 첫 완전 거래일. 변동성 주의.
+            </div>
+        </div>
+        
+        <!-- 2. 시장 전반 흐름 -->
+        <div class="section">
+            <h2 class="section-title">📊 시장 전반 흐름</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>지수/지표</th>
+                        <th>현재값</th>
+                        <th>변화</th>
+                        <th>평가</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>NASDAQ</td>
+                        <td>-</td>
+                        <td class="positive">+0.20%</td>
+                        <td>강세</td>
+                    </tr>
+                    <tr>
+                        <td>S&P 500</td>
+                        <td>-</td>
+                        <td class="positive">+0.16%</td>
+                        <td>약한강세</td>
+                    </tr>
+                    <tr>
+                        <td>DOW JONES</td>
+                        <td>51,000+</td>
+                        <td class="positive">+0.13%</td>
+                        <td>사상신고</td>
+                    </tr>
+                    <tr>
+                        <td>KOSPI</td>
+                        <td>8,476.15</td>
+                        <td class="positive">+3.55%</td>
+                        <td>강한강세</td>
+                    </tr>
+                    <tr>
+                        <td>KOSDAQ</td>
+                        <td>1,104.36</td>
+                        <td class="negative">-2.54%</td>
+                        <td>약세</td>
+                    </tr>
+                    <tr>
+                        <td>VIX</td>
+                        <td>15.74</td>
+                        <td class="positive">-3.38%</td>
+                        <td>낮음(안정)</td>
+                    </tr>
+                    <tr>
+                        <td>10Y 금리</td>
+                        <td>4.44%</td>
+                        <td class="positive">↓</td>
+                        <td>완화경향</td>
+                    </tr>
+                    <tr>
+                        <td>USD/KRW</td>
+                        <td>1,501.25</td>
+                        <td class="negative">+0.35%</td>
+                        <td>약달러</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="alert">
+                ✅ <strong>긍정신호:</strong> VIX 15.74 (안정) | S&P500 신고가 근처 | 중동 지정학 완화
+            </div>
+        </div>
+        
+        <!-- 3. 보유 종목 브리핑 -->
+        <div class="section">
+            <h2 class="section-title">💼 보유 종목 브리핑</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>종목</th>
+                        <th>현재가</th>
+                        <th>전일대비</th>
+                        <th>평가</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>NVDA</td>
+                        <td>$216.24</td>
+                        <td class="positive">↑</td>
+                        <td>홀딩(근접상승)</td>
+                    </tr>
+                    <tr>
+                        <td>INTC</td>
+                        <td>$115.25</td>
+                        <td class="positive">↑</td>
+                        <td>관망</td>
+                    </tr>
+                    <tr>
+                        <td>ASTS</td>
+                        <td>$111.17</td>
+                        <td class="positive">+2.69%</td>
+                        <td>관망(Blue Origin 충격 회복중)</td>
+                    </tr>
+                    <tr>
+                        <td>MU</td>
+                        <td>$942.36</td>
+                        <td class="positive">↑↑</td>
+                        <td>강한홀딩</td>
+                    </tr>
+                    <tr>
+                        <td>MSTX (2x MSTR)</td>
+                        <td>$28.62</td>
+                        <td>-</td>
+                        <td>레버리지감시</td>
+                    </tr>
+                    <tr>
+                        <td>현대차</td>
+                        <td>₩723,000</td>
+                        <td class="positive">+6.79%</td>
+                        <td>강한홀딩</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="stock-card">
+                <div class="stock-header">
+                    <span class="stock-name">🔸 NVDA (7주 @ $213.75 평균가)</span>
+                    <span class="stock-price">$216.24</span>
+                </div>
+                <div class="stock-details">
+                    <div><span class="label">상태:</span> <span class="value positive">작은 수익</span></div>
+                    <div><span class="label">판단:</span> <span class="value">AI 인프라 투자 지속. 조정 기회 노려하되, 장기 홀딩.</span></div>
+                    <div><span class="label">주의:</span> 밸류에이션 과열 경고음. 5% 조정 시 평균인하 검토.</div>
+                </div>
+            </div>
+            
+            <div class="stock-card">
+                <div class="stock-header">
+                    <span class="stock-name">🔸 MU (8주 @ $671.79 평균가)</span>
+                    <span class="stock-price">$942.36</span>
+                </div>
+                <div class="stock-details">
+                    <div><span class="label">상태:</span> <span class="value positive">큰 수익 (+40%)</span></div>
+                    <div><span class="label">판단:</span> <span class="value">메모리칩 수요 호조. $1T 마켓캡 목전. 강한 홀딩.</span></div>
+                    <div><span class="label">목표:</span> 2027년 상반기 $1,200~1,400 예상</div>
+                </div>
+            </div>
+            
+            <div class="stock-card">
+                <div class="stock-header">
+                    <span class="stock-name">🔸 현대차 (한국)</span>
+                    <span class="stock-price">₩723,000</span>
+                </div>
+                <div class="stock-details">
+                    <div><span class="label">상태:</span> <span class="value positive">강한 강세 (+6.79%)</span></div>
+                    <div><span class="label">판단:</span> <span class="value">중동 지정학 완화, EV/BMS 기술 주목. KOSPI 주도주.</span></div>
+                    <div><span class="label">목표:</span> ₩800,000 (단기) | ₩1,000,000 (중기)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 4. 목표 달성 현황 -->
+        <div class="section">
+            <h2 class="section-title">🎯 목표 달성 현황</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>항목</th>
+                        <th>값</th>
+                        <th>비율</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>총 투자원금</td>
+                        <td>약 20.4M 원</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>목표 자산</td>
+                        <td>200M 원</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>예상 현재가치</td>
+                        <td>≈ 35~38M 원</td>
+                        <td><span class="positive">17.5~19%</span></td>
+                    </tr>
+                    <tr>
+                        <td>잔여 목표금액</td>
+                        <td>≈ 162~165M 원</td>
+                        <td>추가 필요</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 16px;">
+                <strong>진행도:</strong>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 18%;">18%</div>
+                </div>
+            </div>
+            <div class="alert">
+                📈 MU의 급등(+850% YTD)으로 포트폴리오 건전성 개선. 2년 내 목표 달성 가능성 높음.
+            </div>
+        </div>
+        
+        <!-- 5. 자동매수 임박 알림 -->
+        <div class="section">
+            <h2 class="section-title">⚡ 자동매수 임박 알림</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>종목</th>
+                        <th>현재가</th>
+                        <th>1차 목표</th>
+                        <th>거리</th>
+                        <th>상태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>NVDA</td>
+                        <td>$216.24</td>
+                        <td>$217</td>
+                        <td>-0.76₩</td>
+                        <td>⚠️ 근접</td>
+                    </tr>
+                    <tr>
+                        <td>INTC</td>
+                        <td>$115.25</td>
+                        <td>$104.50</td>
+                        <td>-10.75₩</td>
+                        <td>관망</td>
+                    </tr>
+                    <tr>
+                        <td>ASTS</td>
+                        <td>$111.17</td>
+                        <td>$67</td>
+                        <td>-44.17₩</td>
+                        <td>관망</td>
+                    </tr>
+                    <tr>
+                        <td>MU</td>
+                        <td>$942.36</td>
+                        <td>$748</td>
+                        <td>-194.36₩</td>
+                        <td>관망</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="alert">
+                ✨ NVDA $217까지 단 0.76 남음. 과도한 기대매각 조심.
+            </div>
+        </div>
+        
+        <!-- 6. 추천 종목 4개 -->
+        <div class="section">
+            <h2 class="section-title">🔥 오늘의 추천 종목 4개</h2>
+            
+            <div class="stock-card">
+                <div class="stock-header">
+                    <span class="stock-name">1️⃣ SK Hynix (KRX:000660)</span>
+                    <span class="stock-price">₩2,289,000</span>
+                </div>
+                <div class="stock-details">
+                    <div><span class="label">강점:</span> <span class="value">AI메모리 수요, Golden Cross ✅</span></div>
+                    <div><span class="label">신고가:</span> <span class="value">2.2M+ 근처 (마켓캡 $1T 신입)</span></div>
+                    <div><span class="label">R/R:</span> <span class="value">2.5:1 (목표 ₩2.8M)</span></div>
+                    <div><span class="label">진입:</span> <span class="value">현 수준 또는 2,200K 조정 시</span></div>
+                </div>
+            </div>
+            
+            <div class="stock-card">
+                <div class="stock-header">
+                    <span class="stock-name">2️⃣ Samsung Electronics (005930)</span>
+                    <span class="stock-price">₩307,000</span>
+                </div>
+                <div class="stock-details">
+                    <div><span class="label">강점:</span> <span class="value">메모리/파운드리 선도. 글로벌 수급 주도</span></div>
+                    <div><span class="label">신호:</span> <span class="value">Golden Cross ✅ | C&H 형성</span></div>
+                    <div><span class="label">목표:</span> <span class="value">₩400K (12개월)</span></div>
+                    <div><span class="label">진입:</span> <span class="value">현 수준 (강세장)</span></div>
+                </div>
+            </div>
+            
+            <div class="stock-card">
+                <div class="stock-header">
+                    <span class="stock-name">3️⃣ ASML (오거스트)</span>
+                    <span class="stock-price">$850+ (추정)</span>
+                </div>
+                <div class="stock-details">
+                    <div><span class="label">강점:</span> <span class="value">반도체 제조장비 시장 독점 (EUV)</span></div>
+                    <div><span class="label">신호:</span> <span class="value">Golden Cross ✅ | VCP형성</span></div>
+                    <div><span class="label">목표:</span> <span class="value">$1,200+ (AI 인프라 부스트)</span></div>
+                    <div><span class="label">R/R:</span> <span class="value">3.0:1</span></div>
+                </div>
+            </div>
+            
+            <div class="stock-card">
+                <div class="stock-header">
+                    <span class="stock-name">4️⃣ Broadcom (AVGO)</span>
+                    <span class="stock-price">$450+ (추정)</span>
+                </div>
+                <div class="stock-details">
+                    <div><span class="label">강점:</span> <span class="value">AI 인프라 스위치칩 설계 (NVIDIA 파트너)</span></div>
+                    <div><span class="label">신호:</span> <span class="value">Golden Cross ✅ | 강한 모멘텀</span></div>
+                    <div><span class="label">목표:</span> <span class="value">$650 (18개월)</span></div>
+                    <div><span class="label">진입:</span> <span class="value">$430~450 (현 근처)</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 7. 채용공고 알림 -->
+        <div class="section">
+            <h2 class="section-title">💼 채용공고 알림 (최근 1주일)</h2>
+            <div class="job-item">
+                <strong>Power Electronics Engineer</strong><br>
+                급여: $67K~$170K | 공고: 2026년 5월 |<br>
+                파워반도체/BMS/EV 배터리 시스템 (대기업)
+            </div>
+            <div class="job-item">
+                <strong>Battery Management System (BMS) Engineer</strong><br>
+                급여: $95K~$165K | 수요: 고(+20%↑)<br>
+                자격: MATLAB, 임베디드C, 배터리 기술 선호
+            </div>
+            <div class="job-item">
+                <strong>EV Battery Technician</strong><br>
+                급여: $17~$28/hr | 지역: 전국<br>
+                수요: 높음 | 시프트: Mon~Sat 가능
+            </div>
+            <div class="alert">
+                📌 <strong>트렌드:</strong> BMS/Power Electronics 엔지니어 급여 +20% YoY. 현대차 신기술 채용 강화 중.
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>⚠️ 면책: 본 브리핑은 참고용이며, 투자 조언이 아닙니다. 자신의 포지션과 위험도를 재확인하세요.</p>
+            <p>최종 수정: 2026-05-30 07:04 AM | Data: Real-time Web Search</p>
+        </div>
+    </div>
+</body>
+</html>
