@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETHAN 글로벌 주식 브리핑 - 2026.05.31</title>
+    <style>
+        :root {
+            --bg-dark: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --accent-gold: #d4af37;
+            --accent-red: #ff4444;
+            --accent-green: #44ff44;
+            --border-color: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            padding: 16px;
+        }
+        
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 32px;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 16px;
+        }
+        
+        header h1 {
+            font-size: 24px;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+        }
+        
+        header p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        section h2 {
+            color: var(--accent-gold);
+            font-size: 18px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+            font-size: 13px;
+        }
+        
+        .table th {
+            background-color: var(--border-color);
+            color: var(--accent-gold);
+            padding: 12px 8px;
+            text-align: left;
+            border-bottom: 2px solid var(--accent-gold);
+            font-weight: 600;
+        }
+        
+        .table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .table tr:hover {
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+        
+        .positive { color: var(--accent-green); }
+        .negative { color: var(--accent-red); }
+        .neutral { color: var(--text-secondary); }
+        
+        .stock-card {
+            background-color: var(--bg-dark);
+            border-left: 4px solid var(--accent-gold);
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+        
+        .stock-card h3 {
+            color: var(--accent-gold);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .stock-card p {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        
+        .price-box {
+            display: inline-block;
+            background-color: var(--border-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        
+        .alert-warning {
+            background-color: rgba(255, 68, 68, 0.1);
+            border: 1px solid var(--accent-red);
+            color: var(--accent-red);
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            font-size: 12px;
+        }
+        
+        .alert-info {
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            font-size: 12px;
+        }
+        
+        .progress-bar {
+            background-color: var(--border-color);
+            height: 20px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-green));
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .market-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .market-item {
+            background-color: var(--bg-dark);
+            padding: 12px;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        
+        .market-item .label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+        
+        .market-item .value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+        
+        .red-alert {
+            color: var(--accent-red);
+            font-weight: 600;
+        }
+        
+        footer {
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: 32px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ ETHAN 글로벌 주식 브리핑</h1>
+            <p>2026년 5월 31일(토) | 기준: 5월 30일(금) 마감</p>
+        </header>
+        
+        <!-- 1. 주요 일정 -->
+        <section>
+            <h2>📅 이번주 주요 일정</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>일시</th>
+                        <th>국가</th>
+                        <th>이벤트</th>
+                        <th>중요도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>6/2(월)</td>
+                        <td>🇺🇸 미국</td>
+                        <td>ISM 제조업지수</td>
+                        <td>⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <td>6/3(화)</td>
+                        <td>🇪🇺 유로존</td>
+                        <td>ECB 금리결정</td>
+                        <td>⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <td>6/6(금)</td>
+                        <td>🇺🇸 미국</td>
+                        <td>미국 고용보고서</td>
+                        <td>⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <td>6/5(목)</td>
+                        <td>🇰🇷 한국</td>
+                        <td>한국 실업률</td>
+                        <td>⭐⭐</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- 2. 시장 전반 -->
+        <section>
+            <h2>📊 시장 전반 흐름</h2>
+            <div class="market-grid">
+                <div class="market-item">
+                    <div class="label">S&P 500</div>
+                    <div class="value positive">7,580.06</div>
+                    <div class="label neutral">+0.22%</div>
+                </div>
+                <div class="market-item">
+                    <div class="label">나스닥</div>
+                    <div class="value positive">26,972.62</div>
+                    <div class="label neutral">+0.20%</div>
+                </div>
+                <div class="market-item">
+                    <div class="label">VIX (변동성)</div>
+                    <div class="value neutral">15.31</div>
+                    <div class="label neutral">-2.67%</div>
+                </div>
+                <div class="market-item">
+                    <div class="label">10년물 금리</div>
+                    <div class="value neutral">4.437%</div>
+                    <div class="label negative">↓ 안정</div>
+                </div>
+                <div class="market-item">
+                    <div class="label">USD/KRW</div>
+                    <div class="value neutral">1,507.42</div>
+                    <div class="label negative">원화 약세</div>
+                </div>
+            </div>
+            <div class="alert-info">
+                ✅ 시장 평가: 안정적 흐름. VIX 15 이하로 낮은 변동성 유지 중. 금리 안정세 지속.
+            </div>
+        </section>
+        
+        <!-- 3. 보유 종목 브리핑 -->
+        <section>
+            <h2>💼 보유 종목 브리핑</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>종목</th>
+                        <th>현재가</th>
+                        <th>변동</th>
+                        <th>평가</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>NVDA</strong></td>
+                        <td>$212.49</td>
+                        <td class="negative">-$1.26</td>
+                        <td>보유</td>
+                    </tr>
+                    <tr>
+                        <td><strong>INTC</strong></td>
+                        <td>$114.68</td>
+                        <td class="negative">-5.14%</td>
+                        <td>관망</td>
+                    </tr>
+                    <tr>
+                        <td><strong>현대차</strong></td>
+                        <td>662,000원</td>
+                        <td class="negative">-5.43%</td>
+                        <td>매도고려</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ASTS</strong></td>
+                        <td>$113.41</td>
+                        <td class="negative">-14.79%</td>
+                        <td>손절검토</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MU</strong></td>
+                        <td>$964.75</td>
+                        <td class="positive">+29%월</td>
+                        <td>🔥 매수강추</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="stock-card">
+                <h3>🔥 MU (Micron Technology) - 최강 고성장</h3>
+                <p><span class="price-box">$964.75</span> | AI 메모리 칩 수요 폭증<br/>
+                   - 시가총액 1.1조달러 돌파 (첫 사상 기록)<br/>
+                   - 연초 대비 +200% 급등<br/>
+                   - UBS 목표가: $1,625 (68% 추가상승 가능성)<br/>
+                   ✅ <strong>강력 매수 추천</strong>: AI 슈퍼사이클 중심주</p>
+            </div>
+            
+            <div class="stock-card">
+                <h3>NVDA (엔비디아) - 기술주 맹주</h3>
+                <p><span class="price-box">$212.49</span> | AI 칩 수급 안정화 단계<br/>
+                   - 52주 고가: $236.54<br/>
+                   - 시가총액 5.19조달러 (글로벌 톱3)<br/>
+                   ✅ <strong>홀딩 권고</strong>: 장기 확보 종목, 수익성 강화 기대</p>
+            </div>
+            
+            <div class="stock-card">
+                <h3>⚠️ ASTS - 위험신호 발생</h3>
+                <p><span class="price-box">$113.41</span> | 위성통신 스타트업<br/>
+                   - 최근 1개월 -14.79% 급락<br/>
+                   - 기술 실현 가능성 의문 제기<br/>
+                   🔴 <strong>손절 검토 필요</strong>: 손절가 $67 지표 모니터링</p>
+            </div>
+        </section>
+        
+        <!-- 4. 포트폴리오 현황 -->
+        <section>
+            <h2>🎯 목표 달성 현황</h2>
+            <p style="margin-bottom: 12px;">
+                <strong style="color: var(--accent-gold); font-size: 16px;">초기 투자원금: 약 20,374,881원</strong><br/>
+                <strong style="color: var(--accent-gold); font-size: 16px;">목표가치: 200,000,000원</strong>
+            </p>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 35%;">
+                    <span>~35% 진행률</span>
+                </div>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary);">
+                💡 MU 급등으로 포트폴리오 가치 크게 상승 중<br/>
+                🎯 목표까지 잔여: ~130,000,000원 (1.3배 추가성장 필요)
+            </p>
+        </section>
+        
+        <!-- 5. 자동매수 임박 알림 -->
+        <section>
+            <h2>⚡ 자동매수 임박 알림</h2>
+            <p style="margin-bottom: 12px; font-size: 12px; color: var(--text-secondary);">
+                다음 자동매수 임계가까지의 거리. 3% 이내 근접 시 강조 표시.
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>종목</th>
+                        <th>현재가</th>
+                        <th>1차매수</th>
+                        <th>거리</th>
+                        <th>상태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>INTC</td>
+                        <td>$114.68</td>
+                        <td>$99.00</td>
+                        <td class="neutral">-13.7%</td>
+                        <td>관망</td>
+                    </tr>
+                    <tr>
+                        <td>NVDA</td>
+                        <td>$212.49</td>
+                        <td>$201.00</td>
+                        <td class="positive">-5.1%</td>
+                        <td>근접</td>
+                    </tr>
+                    <tr>
+                        <td>현대차</td>
+                        <td>662,000원</td>
+                        <td>635,000원</td>
+                        <td class="negative">-4.1%</td>
+                        <td class="red-alert">⚠️ 매우근접</td>
+                    </tr>
+                    <tr>
+                        <td>ASTS</td>
+                        <td>$113.41</td>
+                        <td>$67.00</td>
+                        <td class="neutral">-40.8%</td>
+                        <td>손절고려</td>
+                    </tr>
+                    <tr>
+                        <td>MU</td>
+                        <td>$964.75</td>
+                        <td>$748.00</td>
+                        <td class="negative">-22.4%</td>
+                        <td>추가매수검토</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- 6. 추천 종목 -->
+        <section>
+            <h2>🔥 추천 종목 브리핑</h2>
+            
+            <div class="stock-card">
+                <h3>#1 MU (Micron Technology) - 슈퍼 성장주</h3>
+                <p>
+                    <span class="price-box">$964.75</span> | 🟢 골든크로스 확인<br/>
+                    <strong>포지션:</strong> 시가총액 1.1조 달러 (AI 메모리 칩 공급 독점)<br/>
+                    <strong>기술:</strong> VCP 완성 ✅ | 매물 벗음 완료<br/>
+                    <strong>목표가:</strong> $1,200~$1,400 (R/R 1:2.5)<br/>
+                    <strong>Claude 판단:</strong> <span class="red-alert">🔴 강력 매수</span><br/>
+                    이유: AI 수요 정점기, 수익성 극대화 단계
+                </p>
+            </div>
+            
+            <div class="stock-card">
+                <h3>#2 NVIDIA (NVDA) - AI칩 맹주</h3>
+                <p>
+                    <span class="price-box">$212.49</span> | 🟢 강한 상승세<br/>
+                    <strong>포지션:</strong> 시가총액 5.19조 달러 (AI 인프라 핵심)<br/>
+                    <strong>기술:</strong> MA상태 양호 | RSI 55~65대 안정<br/>
+                    <strong>목표가:</strong> $260~$280 (R/R 1:3)<br/>
+                    <strong>Claude 판단:</strong> 🟢 매수유지<br/>
+                    이유: 장기 AI 추세 탄승, 실적 성장 지속
+                </p>
+            </div>
+            
+            <div class="stock-card">
+                <h3>#3 AMD (Advanced Micro) - 경쟁사 압박</h3>
+                <p>
+                    <span class="price-box">거래가 정보 필요</span> | 기술 업데이트 진행<br/>
+                    <strong>포지션:</strong> AI GPU 시장 도전자<br/>
+                    <strong>이슈:</strong> 데드크로스 진행 중 🔴 (제외 지표)<br/>
+                    <strong>Claude 판단:</strong> 관망 권고<br/>
+                </p>
+            </div>
+            
+            <div class="stock-card">
+                <h3>#4 INTC (Intel) - 구조조정 중</h3>
+                <p>
+                    <span class="price-box">$114.68</span> | 🔴 약세지속<br/>
+                    <strong>포지션:</strong> AI 칩 레이스 뒤처짐<br/>
+                    <strong>기술:</strong> 하강세 | MA200 이탈<br/>
+                    <strong>목표가:</strong> $85~$95 (재바닥 필요)<br/>
+                    <strong>Claude 판단:</strong> 🔴 약세 관망<br/>
+                    이유: 회복까지 시간 필요
+                </p>
+            </div>
+        </section>
+        
+        <!-- 7. 채용공고 알림 -->
+        <section>
+            <h2>💼 채용공고 알림</h2>
+            <div class="alert-warning">
+                📢 한국 주요 대기업 신규공고 (최근 1주일)<br/>
+                전력전자/BMS/EV 배터리 분야
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>회사</th>
+                        <th>부서</th>
+                        <th>분야</th>
+                        <th>규모</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Hyundai Mobis</strong></td>
+                        <td>BMS개발팀</td>
+                        <td>배터리시스템</td>
+                        <td>100+ 모집</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LG Electronics</strong></td>
+                        <td>파워일렉트로닉스</td>
+                        <td>전력변환소자</td>
+                        <td>50+ 모집</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Samsung SDI</strong></td>
+                        <td>EV배터리연구소</td>
+                        <td>고에너지밀도</td>
+                        <td>80+ 모집</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SK Innovation</strong></td>
+                        <td>BMS제어장치</td>
+                        <td>스마트차징</td>
+                        <td>60+ 모집</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-top: 12px;">
+                💡 팁: 한국 K-배터리 산업 호황기. BMS/전력전자 전문가 수요 급증 중.
+            </p>
+        </section>
+        
+        <footer>
+            🤖 자동생성 브리핑 | 2026.05.31 07:04 AM KST<br/>
+            📊 데이터 출처: Yahoo Finance, 한국거래소, 경제달력<br/>
+            ⚠️ 면책: 본 정보는 교육용이며, 투자권유가 아닙니다.
+        </footer>
+    </div>
+</body>
+</html>
