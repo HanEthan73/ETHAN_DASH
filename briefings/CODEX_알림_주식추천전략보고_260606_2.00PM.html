@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX_알림_주식추천전략보고_260606_2.00PM | 주식 추천 전략보고</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#081019;--panel:#101a27;--panel2:#162435;--line:#2d4158;
+  --text:#e7eef8;--muted:#9aabbe;--gold:#f4ca64;--blue:#9fd8ff;
+  --green:#83ecb2;--greenbg:#11281d;--yellow:#ffe28f;--yellowbg:#342c12;
+  --red:#ffb0b0;--redbg:#34181c;--cyan:#9be1ff;--cyanbg:#133041;
+}
+body{margin:0;background:radial-gradient(circle at top,#1a3452 0,#081019 58%);color:var(--text);font-family:"Malgun Gothic","Apple SD Gothic Neo","Segoe UI",sans-serif;line-height:1.64;padding:18px 10px 32px}
+.wrap{max-width:1460px;margin:0 auto}
+header{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+h1{margin:0 0 8px;font-size:31px;line-height:1.25;color:var(--gold)}
+.sub{color:var(--muted);font-size:13px}
+.stamp{display:inline-block;margin-top:12px;padding:7px 12px;border-radius:999px;border:1px solid #6d5720;background:#302612;color:var(--gold);font-size:12px;font-weight:800}
+.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+.summary-card{padding:14px;border:1px solid rgba(244,202,100,.22);border-radius:12px;background:rgba(244,202,100,.07)}
+.summary-card b{display:block;margin-bottom:6px;color:var(--gold);font-size:12px}
+.summary-card strong{display:block;font-size:20px;line-height:1.25}
+.summary-card small{display:block;margin-top:6px;color:var(--muted);font-size:11px}
+.panel{margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.lead{background:#1b170f;border-left:4px solid var(--gold)}
+h2{margin:0 0 12px;font-size:20px;color:var(--blue)}
+p{margin:0;font-size:14px;color:#d9e2ef}
+.note{margin-top:12px;padding:12px 14px;border-radius:9px;background:#1c2b3b;border-left:4px solid var(--gold);font-size:13px;color:#dbe4ef}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#0d1621;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px;border-bottom:1px solid #1f2d3d;text-align:left;vertical-align:top;font-size:13px}
+th{background:#1d2a39;color:var(--gold);font-size:12px;white-space:nowrap}
+tr:nth-child(even) td{background:#0b131d}
+tr:last-child td{border-bottom:0}
+.money,.center{white-space:nowrap;font-variant-numeric:tabular-nums}
+.center{text-align:center}
+.tag{display:inline-block;padding:3px 9px;border-radius:999px;border:1px solid transparent;font-size:11px;font-weight:800}
+.ok{background:var(--greenbg);border-color:#24593e;color:var(--green)}
+.wait{background:var(--yellowbg);border-color:#6d5a1a;color:var(--yellow)}
+.stop{background:var(--redbg);border-color:#6a2d31;color:var(--red)}
+.info{background:var(--cyanbg);border-color:#305a78;color:var(--cyan)}
+.watch-row td{background:rgba(244,202,100,.07)!important}
+.danger-row td{background:rgba(255,110,110,.07)!important}
+ul{margin:0;padding-left:20px}
+li{margin:6px 0;color:#d4dcea}
+a{color:var(--blue);text-decoration:none}
+footer{margin-top:18px;text-align:right;color:#8390a2;font-size:12px}
+@media(max-width:1050px){.summary-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){
+  body{padding:14px 8px 28px}
+  h1{font-size:25px}
+  h2{font-size:18px}
+  .summary-grid{grid-template-columns:1fr}
+  .panel{padding:12px}
+  th,td{padding:8px;font-size:12px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>CODEX 알림 주식 추천 전략보고</h1>
+    <div class="sub">생성 2026-06-06 14:00 KST | 대표님 14:00 정규 보고 | 문서 제목 고정: 주식 추천 전략보고 | 파일명 규칙: CODEX_알림_주식추천전략보고_YYMMDD_H.MMPM.html</div>
+    <div class="stamp">최신 확인 시각 2026-06-06 14:00 KST | 미국 주식 최신 접근 가능 가격은 2026-06-05 정규장과 애프터마켓, 환율은 2026-06-06 05:49:50 KST 기준입니다.</div>
+  </header>
+
+  <div class="summary-grid">
+    <div class="summary-card"><b>시장 모드</b><strong>위험회피형 선별장 / No Chase</strong><small>2026-06-05 나스닥 종가 25,709.43, QQQ 종가 705.06으로 급락했습니다. 강한 종목은 남아 있지만 오늘 14:00 KST 기준 즉시 추격 매수는 금지입니다.</small></div>
+    <div class="summary-card"><b>즉시 실행 판정</b><strong>지금 매수 없음</strong><small>MSFT, NVDA, TSM, META, AVGO, PLTR, MU 모두 1차 밴드 재확인 전입니다. 오늘은 가격 통제가 종목 선정보다 중요합니다.</small></div>
+    <div class="summary-card"><b>우선 감시 순서</b><strong>MSFT, NVDA, TSM, META</strong><small>네 종목만 1차 눌림목 대기 대상으로 유지합니다. AVGO는 실적 후 충격 정리 대기, PLTR과 MU는 오늘 14:00 KST 기준 제외입니다.</small></div>
+    <div class="summary-card"><b>거시 경보</b><strong>10Y 4.54 / USDKRW 1559.95</strong><small>Reuters 기준 2026-06-05 미국 10년물 종가는 약 4.54%, Investing.com 기준 USD/KRW는 2026-06-06 05:49:50 KST에 1,559.95입니다. FRED 공식 DGS10 최신치는 2026-06-04의 4.47입니다.</small></div>
+  </div>
+
+  <section class="panel lead">
+    <h2>1. 시장/전략 상황 설명</h2>
+    <p>대표님, 오늘 14:00 보고의 핵심은 <b>좋은 종목을 더 찾는 것</b>이 아니라 <b>좋은 종목도 비싸게는 사지 않는 것</b>입니다. 2026-06-05 미국장은 강한 5월 고용지표 이후 금리 재상승 우려가 다시 커지면서 기술주가 한 번에 꺾였습니다. AP와 Reuters 보도를 종합하면 나스닥 종가는 25,709.43으로 4.18% 하락했고, QQQ도 705.06으로 4.80% 밀렸습니다. 금리와 환율이 동시에 위험자산에 불리한 방향으로 움직였기 때문에, 오늘 14:00 KST의 시장 모드는 <b>추세 붕괴 직전</b>이 아니라 <b>위험회피형 선별장</b>입니다. 즉 전체 시장을 포기할 단계는 아니지만, 매수는 리더주를 1차 눌림목에서만 제한적으로 허용해야 합니다.</p>
+    <div class="note">오늘 판단의 기준이 되는 7대 경보는 1) 나스닥 급락, 2) QQQ 4.80% 하락, 3) 미국 10년물 4.54% 수준, 4) USD/KRW 1,559.95 급등, 5) Broadcom 실적 후 급락, 6) 반도체 전반 리스크오프, 7) 고밸류 AI주 멀티플 압축입니다.</div>
+  </section>
+
+  <section class="panel">
+    <h2>2. 오늘의 선별 기준과 제외 기준</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>구분</th><th>최신 확인</th><th>판정</th><th>실행 해석</th></tr>
+        <tr><td>시장 모드</td><td>Nasdaq 25,709.43 / -4.18%, QQQ 705.06 / -4.80%, 2026-06-05 미국장 마감</td><td><span class="tag wait">위험회피형 선별장</span></td><td>리더주는 남기되 추격 금지, 1차 밴드만 허용합니다.</td></tr>
+        <tr><td>선별 기준</td><td>컴포트존 재진입 가능성, 3단 눌림목 계획, 시장 모드 적합도, 7대 경보 방어력</td><td><span class="tag ok">유지</span></td><td>오늘도 같은 4전략 프레임을 그대로 적용합니다.</td></tr>
+        <tr><td>제외 기준</td><td>1차 밴드 위 3% 이상, 실적 후 방향 미확정, 고밸류 변동성 과다, 금리 민감도 과대</td><td><span class="tag stop">엄격 적용</span></td><td>AVGO, PLTR, MU는 오늘 즉시 매수 대상에서 제외합니다.</td></tr>
+        <tr><td>유동성 방향</td><td>FRED M2SL 22,804.5B, 최신 공식치 2026-04</td><td><span class="tag ok">중기 우호</span></td><td>장기 낙관은 유지하지만, 오늘 매수 타이밍을 완화시켜 주지는 않습니다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>3. 종목별 상세 전략표</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>순위</th><th>종목</th><th>현재가</th><th>최신 확인 시각</th><th>1차 / 2차 / 3차</th><th>비중</th><th>목표주가</th><th>판정</th><th>실행 코멘트</th></tr>
+        <tr class="watch-row"><td class="center">1</td><td><b>MSFT</b></td><td class="money">$416.67<br>AH $412.40</td><td>2026-06-05 19:59:59 EDT</td><td class="money">$410 / $402 / $394</td><td>25% / 30% / 45%</td><td class="money">$438 / $452</td><td><span class="tag wait">대기</span></td><td>가장 방어적인 리더주입니다. 애프터마켓이 이미 1차 밴드에 근접했지만, 오늘은 410 재확인과 미국장 초반 지지 확인 전까지 기다립니다.</td></tr>
+        <tr class="watch-row"><td class="center">2</td><td><b>NVDA</b></td><td class="money">$205.10<br>AH $204.04</td><td>2026-06-05 19:59:59 EDT</td><td class="money">$202 / $194 / $186</td><td>20% / 30% / 50%</td><td class="money">$224 / $238</td><td><span class="tag wait">대기</span></td><td>리더주이지만 금리 민감도도 큽니다. 202 아래에서만 1차 검토가 합리적입니다.</td></tr>
+        <tr class="watch-row"><td class="center">3</td><td><b>TSM</b></td><td class="money">$415.17</td><td>2026-06-06 13:34 KST 재확인</td><td class="money">$412 / $398 / $382</td><td>20% / 30% / 50%</td><td class="money">$438 / $456</td><td><span class="tag wait">대기</span></td><td>반도체 중 체력은 남아 있지만 수출 규제와 금리 변수가 동시에 걸립니다. 412 지지 확인 전에는 기다립니다.</td></tr>
+        <tr class="watch-row"><td class="center">4</td><td><b>META</b></td><td class="money">$593.00<br>AH $589.82</td><td>2026-06-05 19:59:59 EDT</td><td class="money">$586 / $570 / $552</td><td>20% / 35% / 45%</td><td class="money">$625 / $655</td><td><span class="tag wait">대기</span></td><td>체력은 좋지만 오늘은 가격 메리트가 아직 부족합니다. 586 재확인 전까지는 관망이 맞습니다.</td></tr>
+        <tr><td class="center">5</td><td><b>AVGO</b></td><td class="money">$385.73<br>AH $385.02</td><td>2026-06-05 19:59:59 EDT</td><td class="money">$380 / $365 / $348</td><td>15% / 35% / 50%</td><td class="money">$420 / $438</td><td><span class="tag wait">대기</span></td><td>실적 이후 급락 첫날이라 구조 안정이 먼저입니다. 오늘은 계획만 남기고 실행은 보류합니다.</td></tr>
+        <tr class="danger-row"><td class="center">6</td><td><b>PLTR</b></td><td class="money">$133.79</td><td>2026-06-06 13:34 KST 재확인</td><td class="money">$128 / $121 / $114</td><td>15% / 35% / 50%</td><td class="money">$145 / $156</td><td><span class="tag stop">제외</span></td><td>이야기는 좋지만 밸류와 변동성이 오늘 장세와 맞지 않습니다. 계획은 유지하되 오늘은 제외합니다.</td></tr>
+        <tr class="danger-row"><td class="center">7</td><td><b>MU</b></td><td class="money">$864.01</td><td>2026-06-05 16:00 EDT 종가</td><td class="money">$840 / $790 / $740</td><td>15% / 35% / 50%</td><td class="money">$920 / $980</td><td><span class="tag stop">제외</span></td><td>하루 낙폭이 너무 커서 아직 '눌림목'이 아니라 '가격 발견' 구간입니다. 오늘은 만지지 않는 쪽이 맞습니다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>4. 종목별 4대 전략 만족/불만족/보류 근거</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>종목</th><th>컴포트존 진입</th><th>눌림목 분할매수</th><th>시장 모드 전환 적합</th><th>시장 악화 7대 경보 방어</th><th>세부 근거</th></tr>
+        <tr><td><b>MSFT</b></td><td><span class="tag wait">보류</span></td><td><span class="tag ok">만족</span></td><td><span class="tag ok">만족</span></td><td><span class="tag ok">만족</span></td><td>AH 412.40으로 1차 410에 근접했지만 아직 정확한 컴포트존 진입은 아닙니다. 다만 사업 체력과 현금흐름이 좋아 오늘 같은 장에서는 가장 방어력이 높습니다.</td></tr>
+        <tr><td><b>NVDA</b></td><td><span class="tag wait">보류</span></td><td><span class="tag ok">만족</span></td><td><span class="tag ok">만족</span></td><td><span class="tag wait">보류</span></td><td>202-194-186 밴드는 명확하지만 금리 민감도가 아직 큽니다. 장기 리더라는 점은 유효하나 오늘 장에서는 1차 체결도 가볍게만 접근해야 합니다.</td></tr>
+        <tr><td><b>TSM</b></td><td><span class="tag wait">보류</span></td><td><span class="tag ok">만족</span></td><td><span class="tag ok">만족</span></td><td><span class="tag wait">보류</span></td><td>AI 파운드리 핵심주라는 점은 분명합니다. 다만 금리와 규제 뉴스가 동시에 걸려 있어 412 밑에서만 의미 있는 컴포트존이 형성됩니다.</td></tr>
+        <tr><td><b>META</b></td><td><span class="tag wait">보류</span></td><td><span class="tag ok">만족</span></td><td><span class="tag ok">만족</span></td><td><span class="tag wait">보류</span></td><td>광고 현금흐름과 AI 기대가 살아 있어 시장 모드 적합도는 높습니다. 하지만 586 미도달 상태에서는 오늘 매수 메리트가 충분하지 않습니다.</td></tr>
+        <tr><td><b>AVGO</b></td><td><span class="tag stop">불만족</span></td><td><span class="tag wait">보류</span></td><td><span class="tag wait">보류</span></td><td><span class="tag stop">불만족</span></td><td>실적 직후 급락 첫날이라 방향이 고정되지 않았습니다. 밴드는 설정 가능하지만 오늘은 7대 경보 방어력 부족이 더 큽니다.</td></tr>
+        <tr><td><b>PLTR</b></td><td><span class="tag stop">불만족</span></td><td><span class="tag ok">만족</span></td><td><span class="tag wait">보류</span></td><td><span class="tag stop">불만족</span></td><td>128-121-114 밴드는 선명하지만 현재 가격이 여전히 높고 밸류 부담이 큽니다. 스토리는 살아 있어도 오늘 시장 악화 국면 방어주는 아닙니다.</td></tr>
+        <tr><td><b>MU</b></td><td><span class="tag stop">불만족</span></td><td><span class="tag ok">만족</span></td><td><span class="tag wait">보류</span></td><td><span class="tag stop">불만족</span></td><td>낙폭이 큰 만큼 밴드는 만들 수 있지만 아직 안정권이 아닙니다. 오늘은 '눌림목'보다 '가격 재발견'에 가깝습니다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>5. 1차·2차·3차 눌림목 진입가와 비중</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>종목</th><th>1차 / 2차 / 3차 진입가</th><th>비중</th><th>실행 메모</th></tr>
+        <tr><td><b>MSFT</b></td><td class="money">$410 / $402 / $394</td><td>25% / 30% / 45%</td><td>오늘은 410 체결이 나오더라도 미국장 초반 30~90분 지지 확인 뒤 1차만 허용합니다.</td></tr>
+        <tr><td><b>NVDA</b></td><td class="money">$202 / $194 / $186</td><td>20% / 30% / 50%</td><td>리더주이지만 오늘은 1차 20% 이상 선행 매수 금지입니다.</td></tr>
+        <tr><td><b>TSM</b></td><td class="money">$412 / $398 / $382</td><td>20% / 30% / 50%</td><td>반도체 체력 확인 전까지는 1차만 얕게, 2차 이하는 분명한 하방 재시험일 때만 접근합니다.</td></tr>
+        <tr><td><b>META</b></td><td class="money">$586 / $570 / $552</td><td>20% / 35% / 45%</td><td>체력은 있지만 가격이 아직 높아 1차 도달 전 선매수 금지입니다.</td></tr>
+        <tr><td><b>AVGO</b></td><td class="money">$380 / $365 / $348</td><td>15% / 35% / 50%</td><td>실적 후 첫 진정 구간이 확인되기 전까지는 밴드만 보존합니다.</td></tr>
+        <tr><td><b>PLTR</b></td><td class="money">$128 / $121 / $114</td><td>15% / 35% / 50%</td><td>오늘은 계획만 유지합니다. 매수 실행은 허용하지 않습니다.</td></tr>
+        <tr><td><b>MU</b></td><td class="money">$840 / $790 / $740</td><td>15% / 35% / 50%</td><td>하루 낙폭이 커서 1차도 성급합니다. 오늘은 관찰 대상입니다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>6. 목표주가 / 목표 도달 조건 / 예상 체크일</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>종목</th><th>1차 목표 / 2차 목표</th><th>목표 도달 조건</th><th>예상 체크일</th></tr>
+        <tr><td><b>MSFT</b></td><td class="money">$438 / $452</td><td>410 지지 확인, 10년물 재상승 진정, QQQ 반등 동행</td><td>2026-06-10, 2026-06-17</td></tr>
+        <tr><td><b>NVDA</b></td><td class="money">$224 / $238</td><td>202 지지 확인, 반도체 공포 완화, 리더주 회복</td><td>2026-06-10, 2026-06-18</td></tr>
+        <tr><td><b>TSM</b></td><td class="money">$438 / $456</td><td>412 지지와 파운드리 기대 유지, 규제 뉴스 추가 악화 없음</td><td>2026-06-11, 2026-06-20</td></tr>
+        <tr><td><b>META</b></td><td class="money">$625 / $655</td><td>586 지지, 광고 체력 유지, AI 투자 우려 재완화</td><td>2026-06-12, 2026-06-20</td></tr>
+        <tr><td><b>AVGO</b></td><td class="money">$420 / $438</td><td>실적 후 충격 완화와 380 지지 형성</td><td>2026-06-12, 2026-06-24</td></tr>
+        <tr><td><b>PLTR</b></td><td class="money">$145 / $156</td><td>128 지지와 고밸류 부담 완화</td><td>2026-06-12, 2026-06-23</td></tr>
+        <tr><td><b>MU</b></td><td class="money">$920 / $980</td><td>840 지지와 낙폭 진정, 6월 24일 실적 기대 재형성</td><td>2026-06-17, 2026-06-26</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>7. 지금 매수·대기·제외 판정</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>종목</th><th>판정</th><th>이유</th></tr>
+        <tr><td><b>MSFT</b></td><td><span class="tag wait">대기</span></td><td>가장 안전하지만 오늘도 410 재확인 전 선매수는 금지입니다.</td></tr>
+        <tr><td><b>NVDA</b></td><td><span class="tag wait">대기</span></td><td>리더주이지만 금리 민감도가 커서 202 도달 전에는 기다립니다.</td></tr>
+        <tr><td><b>TSM</b></td><td><span class="tag wait">대기</span></td><td>412 확인 전에는 여전히 비싼 가격대입니다.</td></tr>
+        <tr><td><b>META</b></td><td><span class="tag wait">대기</span></td><td>좋은 종목이지만 586 재확인 전에는 매수 메리트가 부족합니다.</td></tr>
+        <tr><td><b>AVGO</b></td><td><span class="tag wait">대기</span></td><td>계획은 유지하되 실적 후 방향 안정 전까지는 실행하지 않습니다.</td></tr>
+        <tr><td><b>PLTR</b></td><td><span class="tag stop">제외</span></td><td>오늘 장세에서는 고밸류·고변동성 부담이 너무 큽니다.</td></tr>
+        <tr><td><b>MU</b></td><td><span class="tag stop">제외</span></td><td>낙폭이 너무 커서 아직 매수보다 관찰이 우선입니다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>8. 손절·무효화 조건</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>종목</th><th>손절·무효화 조건</th><th>설명</th></tr>
+        <tr><td><b>MSFT</b></td><td class="money">$394 종가 이탈</td><td>가장 방어적인 시나리오가 깨지는 구간입니다.</td></tr>
+        <tr><td><b>NVDA</b></td><td class="money">$186 종가 이탈</td><td>AI 리더 프리미엄이 한 단계 더 압축되는 신호로 봅니다.</td></tr>
+        <tr><td><b>TSM</b></td><td class="money">$382 종가 이탈</td><td>반도체 핵심주 논리보다 시장 리스크가 더 커졌다는 뜻입니다.</td></tr>
+        <tr><td><b>META</b></td><td class="money">$552 종가 이탈</td><td>광고·AI 복합 체력 시나리오가 흔들리는 구간입니다.</td></tr>
+        <tr><td><b>AVGO</b></td><td class="money">$348 종가 이탈</td><td>실적 후 재평가가 아니라 구조 악화로 해석해야 합니다.</td></tr>
+        <tr><td><b>PLTR</b></td><td class="money">$114 종가 이탈</td><td>오늘은 제외 상태지만 이후 계획도 다시 짜야 합니다.</td></tr>
+        <tr><td><b>MU</b></td><td class="money">$740 종가 이탈</td><td>하락 추세 자체가 한 단계 더 열리는 구간입니다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>9. 최종 요약</h2>
+    <ul>
+      <li>오늘 14:00 KST 기준 시장 모드는 <b>위험회피형 선별장</b>이며, 종목 추천보다 가격 규율이 우선입니다.</li>
+      <li>추천 대상은 7종목이지만, 오늘 즉시 매수 허용 종목은 없습니다.</li>
+      <li>실행 우선순위는 <b>MSFT, NVDA, TSM, META</b> 네 종목의 1차 눌림목 재확인입니다.</li>
+      <li>AVGO는 실적 후 충격 정리 대기, PLTR과 MU는 오늘 장세 기준 제외가 맞습니다.</li>
+      <li>대표님 기준으로 오늘 결론은 <b>좋은 종목도 비싸게는 사지 않는다</b>입니다.</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>10. 일반적이지 않은 CODEX 최종 인사이트</h2>
+    <p>오늘의 진짜 변수는 종목이 아니라 <b>금리의 멈춤 여부</b>입니다. 2026-06-05 급락은 단순한 차익실현이 아니라, 강한 고용지표가 다시 <b>AI 멀티플을 압축할 수 있다</b>는 공포를 건드린 하루였습니다. 그래서 지금 가장 위험한 행동은 '좋은 회사니까 먼저 산다'는 판단입니다. 오히려 오늘 같은 날의 알파는 <b>기회를 놓칠까 봐 서두르지 않는 규율</b>에서 나옵니다. 10년물이 4.54 근처에서 진정되고, 리더주가 1차 밴드에서 반등을 확인시켜 줄 때 그때 1차만 들어가는 것이 오늘 전략의 핵심입니다.</p>
+    <div class="note">외부 근거: <a href="https://apnews.com/article/b5e10863b81cb1d6399f688ad8885c46">AP 2026-06-05 미국 증시 급락</a>, <a href="https://www.investing.com/news/stock-market-news/wall-street-ends-sharply-lower-as-chips-slide-jobs-data-fuels-rate-hike-fears-4729821">Reuters 재배포 2026-06-05 장마감 기사</a>, <a href="https://finance.yahoo.com/quote/MSFT/">Yahoo Finance MSFT</a>, <a href="https://finance.yahoo.com/quote/NVDA/">Yahoo Finance NVDA</a>, <a href="https://finance.yahoo.com/quote/META/">Yahoo Finance META</a>, <a href="https://finance.yahoo.com/quote/AVGO/">Yahoo Finance AVGO</a>, <a href="https://kr.investing.com/currencies/usd-krw">Investing.com USD/KRW</a>, <a href="https://fred.stlouisfed.org/series/DGS10">FRED DGS10</a>, <a href="https://fred.stlouisfed.org/series/M2SL">FRED M2SL</a>.</div>
+  </section>
+
+  <footer>최종 생성: 2026-06-06 14:00 KST | 정규 파일명: CODEX_알림_주식추천전략보고_260606_2.00PM.html</footer>
+</div>
+</body>
+</html>

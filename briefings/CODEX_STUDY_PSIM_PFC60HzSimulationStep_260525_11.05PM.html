@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#study CODEX PSIM 60Hz PFC Simulation Step 가속 보고</title>
+  <style>
+    :root{--bg:#101216;--panel:#171b22;--panel2:#202632;--line:#313947;--text:#edf3ff;--muted:#9aa6b8;--gold:#f5c518;--blue:#5aa9ff;--green:#54d58a;--red:#ff6b6b}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif;line-height:1.58}
+    .wrap{max-width:1160px;margin:0 auto;padding:28px 18px 44px} header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:22px}
+    .eyebrow{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:.4px} h1{font-size:30px;line-height:1.22;margin:8px 0 10px} h2{font-size:20px;margin:28px 0 12px}
+    .sub,.muted{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}
+    .k{font-size:11px;color:var(--muted);font-weight:900}.v{font-size:18px;font-weight:900;margin-top:4px}.warn{border-color:rgba(245,197,24,.45);background:rgba(245,197,24,.08)}.good{border-color:rgba(84,213,138,.35);background:rgba(84,213,138,.07)}.bad{border-color:rgba(255,107,107,.38);background:rgba(255,107,107,.07)}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--panel)} table{width:100%;border-collapse:collapse;min-width:900px} th,td{border-bottom:1px solid var(--line);padding:10px 12px;vertical-align:top;font-size:13px} th{background:var(--panel2);color:var(--gold);text-align:left;font-weight:900} tr:last-child td{border-bottom:0}
+    .note{background:#121821;border-left:4px solid var(--gold);padding:12px 14px;border-radius:0 8px 8px 0;margin:14px 0}.figure{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;margin:12px 0}.figure svg{width:100%;height:auto;display:block}
+    code{background:#242b36;border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:#dbe8ff}.tag{display:inline-block;border:1px solid var(--line);background:#222936;color:#dbe8ff;border-radius:999px;padding:2px 7px;font-size:11px;font-weight:900}.tag.g{color:#93f0b7;border-color:rgba(84,213,138,.35);background:rgba(84,213,138,.08)}.tag.y{color:#ffe68a;border-color:rgba(245,197,24,.38);background:rgba(245,197,24,.08)}.tag.r{color:#ffb3b3;border-color:rgba(255,107,107,.38);background:rgba(255,107,107,.08)}
+    footer{margin-top:28px;border-top:1px solid var(--line);padding-top:14px;color:var(--muted);font-size:12px}@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}h1{font-size:24px}.wrap{padding:22px 12px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">#study CODEX POWER ELECTRONICS</div>
+    <h1>PSIM 60Hz PFC 시뮬레이션 3분 걸릴 때 Simulation Step으로 빠르게 돌리는 법</h1>
+    <div class="sub">생성 2026-05-25 23:05 KST | 질문: “60Hz PFC가 약 3분 걸리는데 simulation step 이용하면 빨라진다는데 어떻게?”</div>
+  </header>
+
+  <section class="grid">
+    <div class="card warn"><div class="k">핵심</div><div class="v">스위칭 상세 모델과 라인주기 모델을 분리</div></div>
+    <div class="card good"><div class="k">가속 1순위</div><div class="v">Max step / print step 분리</div></div>
+    <div class="card good"><div class="k">가속 2순위</div><div class="v">초기조건 저장 후 재시작</div></div>
+    <div class="card bad"><div class="k">금지</div><div class="v">스위칭 edge를 놓치는 큰 step</div></div>
+  </section>
+
+  <section>
+    <h2>1. 먼저 결론</h2>
+    <div class="note">
+      60Hz PFC 시뮬레이션이 느린 이유는 60Hz 한 주기를 보려면 수십 ms를 돌려야 하는데, 회로는 수십~수백 kHz 스위칭 edge까지 따라가야 하기 때문입니다. 빠르게 하려면 <b>simulation step을 무작정 크게 하는 게 아니라</b> 목적별로 step을 나눠야 합니다. “스위칭 파형 검증”은 작은 step, “라인주기 PF/THD/전압 루프 확인”은 평균모델 또는 큰 print step로 갑니다.
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>목적</th><th>권장 방식</th><th>왜 빠른가</th><th>주의점</th></tr></thead>
+        <tbody>
+          <tr><td>게이트/전류 ripple/diode recovery 확인</td><td><span class="tag y">스위칭 상세 모델</span><br>작은 time step 유지</td><td>정확도 우선. edge를 놓치지 않음</td><td>느림. 긴 60Hz transient 전체를 이 방식으로 돌리면 시간 낭비</td></tr>
+          <tr><td>60Hz 입력전류 모양, PF, Vout settling</td><td><span class="tag g">average model / simplified switch</span></td><td>스위칭 edge를 계산하지 않아 수십 배 빨라짐</td><td>스위칭 ripple, SR/diode 세부 손실은 못 봄</td></tr>
+          <tr><td>정상상태 주변만 상세 확인</td><td><span class="tag g">초기조건 저장 후 restart</span></td><td>기동 100~300ms를 매번 다시 계산하지 않음</td><td>초기조건 파일이 바뀐 회로 조건과 맞아야 함</td></tr>
+          <tr><td>파형 저장/화면 출력 줄이기</td><td><span class="tag g">print step 크게, internal step 작게</span></td><td>계산은 촘촘히, 저장 포인트는 듬성듬성</td><td>print step을 너무 크게 하면 보고 싶은 ripple이 안 보임</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Simulation Step을 어떻게 잡나</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>파라미터</th><th>의미</th><th>추천 시작값</th><th>판단 기준</th></tr></thead>
+        <tbody>
+          <tr><td>Time Step / Max Step</td><td>내부 적분 계산의 최대 간격</td><td>스위칭 상세: T<sub>sw</sub>/100 ~ T<sub>sw</sub>/200<br>예: 100kHz면 50~100ns</td><td>인덕터 전류 ripple과 MOSFET edge가 매끄럽게 보여야 함</td></tr>
+          <tr><td>Print Step</td><td>결과 저장 간격</td><td>라인주기 관찰: 5~20us<br>스위칭 ripple 관찰: 50~200ns</td><td>저장 파일 크기와 그래프 표시 속도를 줄이는 핵심</td></tr>
+          <tr><td>Total Time</td><td>전체 시뮬 시간</td><td>기동 확인: 100~300ms<br>정상상태 상세: 마지막 1~3ms만</td><td>기동과 정상상태를 한 파일에서 계속 반복하지 말 것</td></tr>
+          <tr><td>Save / Load Initial Condition</td><td>정상상태 근처를 저장해 재시작</td><td>첫 run에서 steady-state 저장, 이후 parameter sweep은 load</td><td>PFC 전압루프가 안정된 지점에서 저장해야 함</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. 권장 워크플로우</h2>
+    <div class="figure">
+      <svg viewBox="0 0 1100 360" role="img" aria-label="PSIM PFC acceleration workflow">
+        <rect width="1100" height="360" fill="#171b22"/>
+        <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#f5c518"/></marker></defs>
+        <g font-family="Arial" font-size="15">
+          <rect x="50" y="90" width="190" height="96" rx="8" fill="#202632" stroke="#f5c518"/><text x="78" y="126" fill="#ffe68a" font-weight="700">1. Average Model</text><text x="78" y="152" fill="#dbe8ff">60Hz PF / Vout loop</text>
+          <line x1="245" y1="138" x2="335" y2="138" stroke="#f5c518" stroke-width="3" marker-end="url(#arr)"/>
+          <rect x="340" y="90" width="210" height="96" rx="8" fill="#202632" stroke="#54d58a"/><text x="366" y="126" fill="#93f0b7" font-weight="700">2. Save Initial State</text><text x="366" y="152" fill="#dbe8ff">steady-state 근처 저장</text>
+          <line x1="555" y1="138" x2="645" y2="138" stroke="#f5c518" stroke-width="3" marker-end="url(#arr)"/>
+          <rect x="650" y="90" width="210" height="96" rx="8" fill="#202632" stroke="#5aa9ff"/><text x="676" y="126" fill="#9dccff" font-weight="700">3. Switch Model</text><text x="676" y="152" fill="#dbe8ff">마지막 1~3ms 상세 확인</text>
+          <line x1="865" y1="138" x2="955" y2="138" stroke="#f5c518" stroke-width="3" marker-end="url(#arr)"/>
+          <rect x="960" y="90" width="95" height="96" rx="8" fill="#202632" stroke="#ff6b6b"/><text x="979" y="126" fill="#ffb3b3" font-weight="700">결론</text><text x="976" y="152" fill="#dbe8ff">빠름</text>
+          <rect x="180" y="235" width="740" height="64" rx="8" fill="rgba(245,197,24,.08)" stroke="rgba(245,197,24,.40)"/>
+          <text x="218" y="262" fill="#ffe68a" font-weight="700">원칙</text><text x="280" y="262" fill="#dbe8ff">긴 시간은 평균모델, 짧은 시간은 스위칭 상세모델. Print step은 크게, internal max step은 필요한 만큼 작게.</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. 바로 적용 체크리스트</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>순서</th><th>작업</th><th>설정 예시</th><th>성공 판단</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>현재 3분짜리 run에서 저장 파형 줄이기</td><td>불필요한 scope/probe 출력 제거, print step 10us 이상</td><td>결과 파일 크기와 표시 시간이 줄어듦</td></tr>
+          <tr><td>2</td><td>입력 60Hz 3~5주기만 평균모델로 안정화</td><td>스위치 대신 average PFC block 또는 behavioral switch 사용</td><td>Vout, input current envelope 확인 가능</td></tr>
+          <tr><td>3</td><td>정상상태 저장</td><td>Save initial condition / snapshot 기능 사용</td><td>다음 run이 기동 없이 바로 정상상태 근처에서 시작</td></tr>
+          <tr><td>4</td><td>마지막 1~3ms만 상세 스위칭 모델로 재실행</td><td>max step = Tsw/100, print step = Tsw/50부터 시작</td><td>스위칭 ripple, 전류 피크, ZVS/ZCS 판단 가능</td></tr>
+          <tr><td>5</td><td>파라미터 sweep은 초기조건 기반 반복</td><td>Vin, Load, L, C를 바꿔도 기동시간을 매번 계산하지 않음</td><td>반복 run 시간이 분 단위에서 초 단위로 내려감</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>최종 요약</h2>
+    <div class="note">
+      대표님 케이스에서 “simulation step으로 빠르게”의 정답은 step을 크게 하나로 잡는 것이 아닙니다. <b>내부 계산 step, 출력 저장 print step, 평균모델/상세모델, 초기조건 재시작</b>을 분리하는 것입니다. 60Hz PFC 전체 동작은 평균모델로 빠르게 보고, 실제 스위칭 파형은 정상상태 마지막 몇 ms만 상세모델로 보면 됩니다.
+    </div>
+  </section>
+
+  <footer>#study · PSIM/PFC simulation acceleration note · 투자 보고서가 아닌 전력전자 학습 문서</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX_알림_주식추천전략보고_260526_8.30AM</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0c1017;--panel:#131b27;--panel2:#182233;--line:#2a3648;
+  --text:#ebf1fa;--muted:#9aabbe;--gold:#f5c84c;--goldbg:#2d2412;
+  --blue:#8ec7ff;--green:#73e6a0;--greenbg:#10261b;--yellow:#ffe082;--yellowbg:#2d2814;
+  --red:#ff9ca3;--redbg:#2f171b;--cyan:#8fd6ff;--cyanbg:#132737;
+}
+body{
+  background:radial-gradient(circle at top,#1a2638 0,#0c1017 52%);
+  color:var(--text);
+  font-family:"Malgun Gothic","Apple SD Gothic Neo","Segoe UI",sans-serif;
+  line-height:1.65;
+  padding:24px 14px 40px;
+  width:100%;
+  overflow-x:hidden;
+}
+.wrap{width:100%;max-width:1360px;margin:0 auto}
+header{padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:18px}
+h1{font-size:31px;color:var(--gold);margin-bottom:8px}
+.sub{font-size:13px;color:var(--muted)}
+.stamp{display:inline-block;margin-top:12px;padding:6px 12px;border-radius:999px;background:var(--goldbg);border:1px solid #665019;color:var(--gold);font-size:12px;font-weight:800}
+.summary-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+.summary-card{background:rgba(245,200,76,.09);border:1px solid rgba(245,200,76,.28);border-radius:12px;padding:14px}
+.summary-card b{display:block;color:var(--gold);font-size:12px;margin-bottom:6px}
+.summary-card span{display:block;font-size:22px;font-weight:900}
+.summary-card small{display:block;color:var(--muted);font-size:11px;margin-top:6px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:16px}
+.lead{background:#1d1910;border-left:4px solid var(--gold)}
+.risk-panel{background:#231519;border-left:4px solid #ff6b6b}
+h2{font-size:20px;color:var(--blue);margin-bottom:12px}
+h3{font-size:17px;color:var(--gold);margin-bottom:10px}
+p{font-size:14px;color:#d7e0ec}
+.panel,.summary-card,.stock-grid,.stock-card{min-width:0}
+.table-wrap{width:100%;max-width:100%;min-width:0;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#101722;-webkit-overflow-scrolling:touch}
+.table-wrap table{min-width:1260px}
+table{width:100%;border-collapse:collapse}
+th{background:#1f2938;color:var(--gold);text-align:left;padding:10px;font-size:12px;border-bottom:1px solid #314157;white-space:nowrap}
+td{padding:10px;border-bottom:1px solid #1f2938;font-size:13px;vertical-align:top}
+tr:nth-child(even) td{background:#0f1520}
+tr:last-child td{border-bottom:0}
+.money,.center{font-variant-numeric:tabular-nums;white-space:nowrap}
+.center{text-align:center}
+.tag{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:800;border:1px solid transparent}
+.ok{background:var(--greenbg);color:var(--green);border-color:#25593f}
+.wait{background:var(--yellowbg);color:var(--yellow);border-color:#6e5b1a}
+.stop{background:var(--redbg);color:var(--red);border-color:#6b2d32}
+.info{background:var(--cyanbg);color:var(--cyan);border-color:#2d5877}
+.watch-row td{background:rgba(245,200,76,.08)!important}
+.danger-row td{background:rgba(255,108,108,.08)!important}
+.note{margin-top:12px;padding:12px 14px;border-radius:8px;background:#1e2634;border-left:4px solid var(--gold);color:#d9e2ef;font-size:13px}
+.stock-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
+.stock-card{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px}
+.meta .tag{font-size:10px}
+ul{padding-left:20px}
+li{margin:6px 0;color:#d4dceb}
+a{color:var(--blue);text-decoration:none}
+footer{margin-top:18px;text-align:right;color:#7d899c;font-size:12px}
+@media(max-width:1024px){.stock-grid{grid-template-columns:1fr}}
+@media(max-width:960px){.summary-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){
+  body{padding:16px 8px 32px}
+  h1{font-size:24px;line-height:1.25}
+  h2{font-size:18px;line-height:1.35}
+  .panel{padding:12px;border-radius:10px}
+  .table-wrap table{min-width:760px}
+  th,td{padding:8px;font-size:12px}
+  .summary-strip{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>CODEX_알림_주식추천전략보고</h1>
+    <div class="sub">생성 2026-05-26 08:34 KST | 대표님 08:30 정규 보고 | 파일명 규칙: CODEX_알림_한글제목_YYMMDD_H.MMAM.html</div>
+    <div class="stamp">최종 확인 시각: 2026-05-26 08:34 KST | 미국 주가 기준시: 2026-05-22 16:00 EDT 종가 / 19:59 EDT 애프터마켓 | NYSE는 2026-05-25 Memorial Day 휴장</div>
+  </header>
+
+  <div class="summary-strip">
+    <div class="summary-card"><b>시장 모드</b><span>상승 추세 유지, 실행은 보수</span><small>QQQ는 2026-05-22 종가 717.54로 강세를 유지했지만, 휴장 직후 재개장 갭 리스크가 있어 추격 매수보다 지정가 대기가 우선입니다.</small></div>
+    <div class="summary-card"><b>금리 경보</b><span>미 10년물 4.57%</span><small>FRED DGS10 최신 공개치는 2026-05-21 기준 4.57%입니다. 성장주 멀티플 재확장은 가능하지만 밸류에이션 부담이 완전히 해소된 구간은 아닙니다.</small></div>
+    <div class="summary-card"><b>환율 경보</b><span>USD/KRW 1,517.43</span><small>Investing.com의 2026-05-25 종가 기준입니다. 1,480원을 크게 웃돌아 원화 기준 체감 수익률이 깎일 수 있습니다.</small></div>
+    <div class="summary-card"><b>즉시 실행 결론</b><span>지금은 대기 우세</span><small>ORCL과 TSM만 1차 밴드에 근접합니다. 나머지는 종목은 좋지만 가격이 아직 대표님 기준 컴포트존 아래로 충분히 내려오지 않았습니다.</small></div>
+  </div>
+
+  <section class="panel lead">
+    <h2>1. 시장/전략 설명</h2>
+    <p>대표님, 이번 08:30 보고서는 "무엇을 살까"보다 "언제까지 기다릴까"가 더 중요한 회차입니다. 현재 KST 기준 시점은 2026-05-26 오전이지만, 미국 동부시간으로는 2026-05-25 저녁이고 NYSE는 Memorial Day로 휴장 중입니다. 따라서 이번 보고서의 주가 판단은 2026-05-22 정규장 종가와 애프터마켓까지만 반영할 수 있습니다. 동시에 미 10년물은 4.57%, USD/KRW는 1,517.43으로 높습니다. 추세 자체는 살아 있지만, 대표님이 늘 강조하신 "좋은 종목도 비싼 자리에서는 사지 않는다"는 원칙을 더 강하게 적용해야 하는 환경입니다.</p>
+    <div class="note">실행 원칙: 이번 추천은 전 종목 공통으로 "노 체이스(No Chase)"입니다. 1차 진입은 탐색, 2차는 확인, 3차는 과매도 흡수로 정의하고, 미국장 재개장 첫 30~90분 동안 지정가 체결 여부를 확인한 뒤 진입해야 합니다.</div>
+  </section>
+
+  <section class="panel">
+    <h2>2. 4가지 전략 기준과 7대 경보 해석</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>구분</th><th>최신 확인</th><th>판정</th><th>대표님 실행 해석</th></tr>
+        <tr><td>컴포트존 진입</td><td>7개 추천 종목 중 2개만 1차 밴드 근접</td><td><span class="tag wait">부분 만족</span></td><td>ORCL, TSM만 1차 진입가와 현재가 간격이 좁습니다. 나머지는 기업은 좋아도 가격이 아직 대표님 기준 아래로 충분히 오지 않았습니다.</td></tr>
+        <tr><td>눌림목 분할매수</td><td>전 종목 1차/2차/3차 밴드 설계 완료</td><td><span class="tag ok">만족</span></td><td>이번 보고서의 핵심입니다. 지정가 체결 전제로 20~50% 비중 차등 배치가 가능하도록 설계했습니다.</td></tr>
+        <tr><td>시장 모드 전환</td><td>QQQ 717.54, AI 주도주 추세 유지</td><td><span class="tag wait">보류</span></td><td>상승 추세는 이어지지만, 휴장 직후 재개장과 고금리 조합이라 공격 모드로 전환하기엔 아직 이릅니다. 1차 탐색만 허용하는 구간입니다.</td></tr>
+        <tr><td>시장 악화 7대 경보</td><td>7개 중 3개 점등, 2개 보류, 2개 미점등</td><td><span class="tag wait">경계</span></td><td>금리와 환율, 휴장 재개장 리스크가 동시에 걸려 있습니다. 경보가 4개 이상으로 늘어나면 신규 진입보다 현금 비중 방어가 우선입니다.</td></tr>
+      </table>
+    </div>
+    <div class="table-wrap" style="margin-top:12px">
+      <table>
+        <tr><th>7대 경보 항목</th><th>최신 체크</th><th>상태</th><th>메모</th></tr>
+        <tr><td>변동성 급등</td><td>VXX 26.42 / VIXM 15.73, 2026-05-22 종가</td><td><span class="tag ok">미점등</span></td><td>현물 VIX 직접 소스는 이번 회차에서 확보하지 못했지만, VIX 계열 대용 지표는 공포 급등 구간으로 보이지 않습니다.</td></tr>
+        <tr class="danger-row"><td>미 10년물 4.5% 상회</td><td>FRED DGS10 4.57%, 2026-05-21</td><td><span class="tag stop">점등</span></td><td>성장주 멀티플이 다시 눌릴 수 있는 수준입니다. 좋은 기업이어도 1차 진입을 얕게 잡아야 합니다.</td></tr>
+        <tr class="danger-row"><td>USD/KRW 1,480 상회</td><td>USD/KRW 1,517.43, 2026-05-25 종가</td><td><span class="tag stop">점등</span></td><td>대표님 원화 기준 체감 수익률을 깎는 경보입니다. 환차손 완충을 위해 더 싼 가격을 받아야 합니다.</td></tr>
+        <tr><td>QQQ 추세 붕괴</td><td>QQQ 717.54, 2026-05-22 종가</td><td><span class="tag ok">미점등</span></td><td>기술주 주도 추세 자체는 아직 살아 있습니다. 이번 전략이 완전 철수보다 대기 우세인 이유입니다.</td></tr>
+        <tr><td>지정학 급변</td><td>중동 리스크 헤드라인 지속, 수치형 지표는 재확인 필요</td><td><span class="tag wait">보류</span></td><td>반도체와 AI 인프라주는 지정학 뉴스에 갭으로 반응할 수 있습니다. 재개장 첫 30분 확인이 필수입니다.</td></tr>
+        <tr><td>유동성 긴축 체감</td><td>고금리+강달러 조합 지속</td><td><span class="tag wait">보류</span></td><td>단일 지표보다 조합 위험입니다. 공격적 비중 확대보다 눌림목 흡수 전략이 더 적합합니다.</td></tr>
+        <tr class="danger-row"><td>휴장 후 재개장 갭 리스크</td><td>NYSE 2026-05-25 휴장, 다음 정규장 2026-05-26</td><td><span class="tag stop">점등</span></td><td>이번 회차는 장중 확인이 없는 상태입니다. 시가 갭이 크게 뜨면 1차 진입도 미루는 것이 맞습니다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>3. 최종 추천 7종목 요약</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>순위</th>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>확인 시각</th>
+          <th>1차 / 2차 / 3차 진입가</th>
+          <th>투입 비중</th>
+          <th>목표주가</th>
+          <th>목표 도달 예상 조건 또는 시점</th>
+          <th>지금 매수인지</th>
+          <th>손절·무효화 조건</th>
+        </tr>
+        <tr class="watch-row">
+          <td class="center">1</td>
+          <td><b>ORCL</b></td>
+          <td class="money">$192.08</td>
+          <td>2026-05-26 08:34 KST 확인<br><span class="tag info">2026-05-22 16:00 EDT 종가 / 19:59 EDT AH $190.90</span></td>
+          <td class="money">$189 / $182 / $174</td>
+          <td>25% / 35% / 40%</td>
+          <td class="money">$228 / $248</td>
+          <td>2026-06-10 실적 전후로 클라우드 인프라 수주 확인 시 2~6개월</td>
+          <td><span class="tag wait">지금은 대기</span></td>
+          <td>$172 종가 이탈 시 계획 축소. AI 클라우드 수주 둔화가 보이면 재평가.</td>
+        </tr>
+        <tr>
+          <td class="center">2</td>
+          <td><b>MSFT</b></td>
+          <td class="money">$418.57</td>
+          <td>2026-05-26 08:34 KST 확인<br><span class="tag info">2026-05-22 16:00 EDT 종가 / 19:59 EDT AH $417.79</span></td>
+          <td class="money">$410 / $400 / $388</td>
+          <td>20% / 35% / 45%</td>
+          <td class="money">$455 / $480</td>
+          <td>Azure AI 성장과 Copilot 확장이 재확인되면 3~9개월</td>
+          <td><span class="tag wait">대기</span></td>
+          <td>$384 종가 이탈 시 무효화. 대형 AI 투자 부담이 재확대되면 비중 축소.</td>
+        </tr>
+        <tr>
+          <td class="center">3</td>
+          <td><b>NVDA</b></td>
+          <td class="money">$215.33</td>
+          <td>2026-05-26 08:34 KST 확인<br><span class="tag info">2026-05-22 16:00 EDT 종가 / 19:59 EDT AH $214.30</span></td>
+          <td class="money">$210 / $202 / $194</td>
+          <td>20% / 30% / 50%</td>
+          <td class="money">$245 / $275</td>
+          <td>Blackwell 수요와 실적 가이던스 소화가 이어지면 2~6개월</td>
+          <td><span class="tag wait">대기</span></td>
+          <td>$190 이탈 시 무효화. 재개장 직후 갭 상승이면 추격 금지.</td>
+        </tr>
+        <tr>
+          <td class="center">4</td>
+          <td><b>AVGO</b></td>
+          <td class="money">$414.14</td>
+          <td>2026-05-26 08:34 KST 확인<br><span class="tag info">2026-05-22 16:00 EDT 종가 / 19:59 EDT AH $412.85</span></td>
+          <td class="money">$406 / $394 / $382</td>
+          <td>20% / 35% / 45%</td>
+          <td class="money">$455 / $485</td>
+          <td>2026-06-03 실적과 AI ASIC 수주가 유지되면 3~9개월</td>
+          <td><span class="tag wait">대기</span></td>
+          <td>$378 종가 이탈 시 무효화. 실적 앞 급등 시 1차 진입 생략.</td>
+        </tr>
+        <tr class="watch-row">
+          <td class="center">5</td>
+          <td><b>TSM</b></td>
+          <td class="money">$404.52</td>
+          <td>2026-05-26 08:34 KST 확인<br><span class="tag info">2026-05-22 16:00 EDT 종가 / 19:59 EDT AH $403.49</span></td>
+          <td class="money">$401 / $389 / $374</td>
+          <td>20% / 30% / 50%</td>
+          <td class="money">$445 / $470</td>
+          <td>첨단 패키징 공급과 AI 파운드리 수요 확인 시 3~9개월</td>
+          <td><span class="tag wait">조건부 1차</span></td>
+          <td>$368 종가 이탈 시 무효화. 지정학 뉴스 악화 시 즉시 보수 전환.</td>
+        </tr>
+        <tr>
+          <td class="center">6</td>
+          <td><b>MU</b></td>
+          <td class="money">$751.00</td>
+          <td>2026-05-26 08:34 KST 확인<br><span class="tag info">2026-05-22 16:00 EDT 종가 / 19:59 EDT AH $745.56</span></td>
+          <td class="money">$742 / $710 / $676</td>
+          <td>15% / 35% / 50%</td>
+          <td class="money">$820 / $880</td>
+          <td>HBM 수요와 2026-06-24 실적 기대 유지 시 2~6개월</td>
+          <td><span class="tag wait">대기</span></td>
+          <td>$668 종가 이탈 시 무효화. 메모리 사이클 둔화 시 3차만 검토.</td>
+        </tr>
+        <tr>
+          <td class="center">7</td>
+          <td><b>PLTR</b></td>
+          <td class="money">$136.88</td>
+          <td>2026-05-26 08:34 KST 확인<br><span class="tag info">2026-05-22 16:00 EDT 종가 / 19:59 EDT AH $135.94</span></td>
+          <td class="money">$132 / $126 / $118</td>
+          <td>15% / 35% / 50%</td>
+          <td class="money">$168 / $186</td>
+          <td>AIP 계약 확장과 공공부문 수주 지속 시 3~9개월</td>
+          <td><span class="tag wait">대기</span></td>
+          <td>$118 이탈 시 무효화. 고평가 조정이 길어지면 1차·2차 생략 가능.</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>4. 종목별 4가지 전략 기준 판정과 세부 근거</h2>
+    <div class="stock-grid">
+      <div class="stock-card">
+        <h3>ORCL</h3>
+        <div class="meta">
+          <span class="tag wait">대기 우세</span>
+          <span class="tag info">현재가 $192.08</span>
+          <span class="tag info">확인 2026-05-26 08:34 KST</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <tr><th>전략 기준</th><th>판정</th><th>세부 근거</th></tr>
+            <tr><td>컴포트존 진입</td><td><span class="tag wait">보류</span></td><td>현재가가 1차 진입가 $189보다 1.6% 높습니다. 아주 멀진 않지만, 휴장 후 재개장 갭을 감안하면 아직 대표님 컴포트존 안쪽이라고 단정하기 어렵습니다.</td></tr>
+            <tr><td>눌림목 분할매수</td><td><span class="tag ok">만족</span></td><td>실적 이벤트가 2026-06-10로 가까워 변동성이 열릴 수 있습니다. $189 / $182 / $174 3단계로 받아야 리스크 대비 기대수익이 살아납니다.</td></tr>
+            <tr><td>시장 모드 전환</td><td><span class="tag ok">만족</span></td><td>Oracle은 AI 인프라 수혜를 받으면서도 순수 반도체보다 밸류 부담이 낮은 편입니다. 시장이 다시 공격 모드가 되면 가장 먼저 프리미엄이 붙을 수 있는 구간입니다.</td></tr>
+            <tr><td>시장 악화 7대 경보</td><td><span class="tag wait">보류</span></td><td>금리와 환율 경보는 부담이지만, 기업 펀더멘털이 이를 일부 상쇄합니다. 다만 갭 상승 출발이면 진입하지 않는 것이 맞습니다.</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="stock-card">
+        <h3>MSFT</h3>
+        <div class="meta">
+          <span class="tag wait">대기</span>
+          <span class="tag info">현재가 $418.57</span>
+          <span class="tag info">확인 2026-05-26 08:34 KST</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <tr><th>전략 기준</th><th>판정</th><th>세부 근거</th></tr>
+            <tr><td>컴포트존 진입</td><td><span class="tag wait">보류</span></td><td>현재가가 1차 진입가 $410보다 위에 있습니다. 대형 우량주라 방어적이지만, 대표님 기준에서는 아직 싸다고 보기 어렵습니다.</td></tr>
+            <tr><td>눌림목 분할매수</td><td><span class="tag ok">만족</span></td><td>AI와 클라우드 성장률은 좋지만 시총이 큰 만큼 천천히 담는 편이 유리합니다. 20/35/45 비중이 가장 무난합니다.</td></tr>
+            <tr><td>시장 모드 전환</td><td><span class="tag ok">만족</span></td><td>시장이 재차 소프트웨어 리더십으로 확장되면 MSFT가 재평가의 중심이 될 가능성이 높습니다. 다만 지금은 공격보다 눌림목 확인이 먼저입니다.</td></tr>
+            <tr><td>시장 악화 7대 경보</td><td><span class="tag wait">보류</span></td><td>고금리 환경에서도 버티는 종목이지만, 10년물 4.57% 수준이 길어지면 대형주도 밸류 재조정 대상이 됩니다.</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="stock-card">
+        <h3>NVDA</h3>
+        <div class="meta">
+          <span class="tag wait">대기</span>
+          <span class="tag info">현재가 $215.33</span>
+          <span class="tag info">확인 2026-05-26 08:34 KST</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <tr><th>전략 기준</th><th>판정</th><th>세부 근거</th></tr>
+            <tr><td>컴포트존 진입</td><td><span class="tag wait">보류</span></td><td>좋은 종목인 것은 명확하지만, 대표님 기준 1차 진입선 $210 아래가 아직 아닙니다. 휴장 후 시가 갭이 뜨면 오히려 진입을 늦춰야 합니다.</td></tr>
+            <tr><td>눌림목 분할매수</td><td><span class="tag ok">만족</span></td><td>반도체 주도주는 변동성이 크기 때문에 20/30/50 구조가 맞습니다. 3차 비중을 크게 둬야 과열 해소 시 평균단가를 낮출 수 있습니다.</td></tr>
+            <tr><td>시장 모드 전환</td><td><span class="tag ok">만족</span></td><td>AI 투자심리가 다시 강해질 때 가장 빠르게 재점화될 수 있는 핵심 리더입니다. 다만 현재는 수익실현 매물이 나올 수 있는 가격대입니다.</td></tr>
+            <tr><td>시장 악화 7대 경보</td><td><span class="tag wait">보류</span></td><td>강달러와 고금리가 길어질수록 프리미엄 압축 가능성이 있습니다. 그래서 이번 회차는 종목 선호와 즉시 매수를 분리해야 합니다.</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="stock-card">
+        <h3>AVGO</h3>
+        <div class="meta">
+          <span class="tag wait">대기</span>
+          <span class="tag info">현재가 $414.14</span>
+          <span class="tag info">확인 2026-05-26 08:34 KST</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <tr><th>전략 기준</th><th>판정</th><th>세부 근거</th></tr>
+            <tr><td>컴포트존 진입</td><td><span class="tag wait">보류</span></td><td>현재가가 1차 진입가 $406보다 여전히 높습니다. 좋은 기업이지만 좋은 가격은 아직 아닙니다.</td></tr>
+            <tr><td>눌림목 분할매수</td><td><span class="tag ok">만족</span></td><td>2026-06-03 실적 전 변동성을 감안하면 3단계 분할이 필수입니다. $394 이하에서 체결되면 매력도가 급격히 높아집니다.</td></tr>
+            <tr><td>시장 모드 전환</td><td><span class="tag ok">만족</span></td><td>AI ASIC과 인프라 스토리는 여전히 강합니다. 시장이 강세를 유지하면 주도권 복귀 후보가 분명합니다.</td></tr>
+            <tr><td>시장 악화 7대 경보</td><td><span class="tag wait">보류</span></td><td>밸류 부담이 아직 크고, 실적 직전에는 작은 악재에도 흔들릴 수 있습니다. 재개장 갭이 뜨면 무조건 대기입니다.</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="stock-card">
+        <h3>TSM</h3>
+        <div class="meta">
+          <span class="tag wait">조건부 1차</span>
+          <span class="tag info">현재가 $404.52</span>
+          <span class="tag info">확인 2026-05-26 08:34 KST</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <tr><th>전략 기준</th><th>판정</th><th>세부 근거</th></tr>
+            <tr><td>컴포트존 진입</td><td><span class="tag ok">만족</span></td><td>현재가가 1차 진입가 $401과 매우 가깝습니다. 이번 회차에서 가장 현실적으로 1차 탐색이 가능한 종목입니다.</td></tr>
+            <tr><td>눌림목 분할매수</td><td><span class="tag ok">만족</span></td><td>지정학 변수와 파운드리 단가 변수 모두를 흡수하려면 $389, $374까지의 여유가 필요합니다. 3차 비중이 큰 이유가 여기에 있습니다.</td></tr>
+            <tr><td>시장 모드 전환</td><td><span class="tag wait">보류</span></td><td>AI 파운드리 핵심 기업이지만, 지정학 변수 때문에 순수 공격주로 보기 어렵습니다. 그래서 '좋은 종목이지만 천천히'가 맞습니다.</td></tr>
+            <tr><td>시장 악화 7대 경보</td><td><span class="tag wait">보류</span></td><td>금리보다 지정학 헤드라인 민감도가 큽니다. 재개장 첫 30분 방향 확인 없이 매수하면 안 됩니다.</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="stock-card">
+        <h3>MU</h3>
+        <div class="meta">
+          <span class="tag wait">대기</span>
+          <span class="tag info">현재가 $751.00</span>
+          <span class="tag info">확인 2026-05-26 08:34 KST</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <tr><th>전략 기준</th><th>판정</th><th>세부 근거</th></tr>
+            <tr><td>컴포트존 진입</td><td><span class="tag wait">보류</span></td><td>현재가가 1차 진입가 $742보다 높고, 최근 변동성도 큰 편입니다. 눌림 없이 바로 들어가면 평균단가 방어가 어렵습니다.</td></tr>
+            <tr><td>눌림목 분할매수</td><td><span class="tag ok">만족</span></td><td>메모리 사이클주는 변동폭이 크기 때문에 분할 폭을 넓게 잡아야 합니다. $710 이하부터는 체감 밸류가 확연히 좋아집니다.</td></tr>
+            <tr><td>시장 모드 전환</td><td><span class="tag ok">만족</span></td><td>HBM 수요와 AI 서버 메모리 확장 국면에서는 상승 탄력이 강할 수 있습니다. 공격 모드 전환 수혜주로는 적합합니다.</td></tr>
+            <tr><td>시장 악화 7대 경보</td><td><span class="tag stop">불만족</span></td><td>고베타 메모리주는 경보가 점등될 때 가장 먼저 흔들립니다. 이번 회차에서는 1차 체결도 무리할 필요가 없습니다.</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="stock-card">
+        <h3>PLTR</h3>
+        <div class="meta">
+          <span class="tag wait">대기</span>
+          <span class="tag info">현재가 $136.88</span>
+          <span class="tag info">확인 2026-05-26 08:34 KST</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <tr><th>전략 기준</th><th>판정</th><th>세부 근거</th></tr>
+            <tr><td>컴포트존 진입</td><td><span class="tag stop">불만족</span></td><td>현재가가 1차 진입가 $132보다 높고 밸류 프리미엄도 큽니다. 대표님 기준 컴포트존은 최소 $132 이하입니다.</td></tr>
+            <tr><td>눌림목 분할매수</td><td><span class="tag ok">만족</span></td><td>15/35/50 구조가 맞습니다. 고평가 성장주는 1차보다 2차·3차의 의미가 훨씬 큽니다.</td></tr>
+            <tr><td>시장 모드 전환</td><td><span class="tag wait">보류</span></td><td>시장 심리가 다시 뜨거워지면 가장 강하게 재평가될 수 있지만, 그만큼 조정도 큽니다. 지금은 강한 스토리와 강한 매수를 구분해야 합니다.</td></tr>
+            <tr><td>시장 악화 7대 경보</td><td><span class="tag stop">불만족</span></td><td>고금리와 강달러 구간에서 고평가 성장주는 프리미엄 압축 위험이 큽니다. 이번 회차의 정답은 기다림입니다.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>5. 최종 요약</h2>
+    <ul>
+      <li>이번 회차에서 대표님 기준으로 가장 가까운 1차 후보는 <b>TSM</b>, 그 다음은 <b>ORCL</b>입니다. 다만 둘 다 "지금 시장가 매수"가 아니라 "재개장 눌림 확인 후 지정가"가 전제입니다.</li>
+      <li><b>MSFT</b>, <b>NVDA</b>, <b>AVGO</b>는 기업 퀄리티만 보면 핵심 보유 후보이지만, 이번 가격대는 아직 대표님이 먼저 손을 뻗을 구간이 아닙니다.</li>
+      <li><b>MU</b>와 <b>PLTR</b>는 수익 탄력은 크지만 경보 구간에서 흔들림도 큽니다. 따라서 1차보다 2차·3차를 더 중요하게 봐야 합니다.</li>
+      <li>결론적으로 오늘 전략은 "종목 선택"보다 "첫 체결 가격 통제"입니다. 경보 3개가 이미 켜져 있어, 좋은 종목도 싸게만 사야 합니다.</li>
+    </ul>
+  </section>
+
+  <section class="panel risk-panel">
+    <h2>6. CODEX만의 독특한 최종 인사이트</h2>
+    <p>이번 회차의 진짜 차별점은 종목이 아니라 시간대입니다. 같은 종목이라도 <b>2026-05-26 미국장 재개장 첫 20분</b>에 사느냐, <b>첫 눌림이 나온 뒤 60~90분 구간</b>에 사느냐에 따라 올해 수익률의 질이 달라질 가능성이 큽니다. 지금 시장은 "좋은 기업을 찾는 시장"이 아니라 <b>좋은 기업을 덜 흥분된 순간에 받는 시장</b>입니다. 그래서 이번 7개 종목을 모두 긍정적으로 보더라도, 대표님께 권하는 핵심 행동은 종목을 더 늘리는 것이 아니라 <b>1차 체결을 늦추고 2차 체결의 품질을 높이는 것</b>입니다. 지금은 종목 게임이 아니라 시간차 게임입니다.</p>
+  </section>
+
+  <section class="panel">
+    <h2>7. 데이터 기준</h2>
+    <ul>
+      <li>NYSE 휴장 여부: NYSE 2026 holiday calendar 기준, Memorial Day는 2026-05-25.</li>
+      <li>미 10년물: FRED DGS10 최신 공개치 2026-05-21 4.57%.</li>
+      <li>USD/KRW: Investing.com historical data 2026-05-25 종가 1,517.43.</li>
+      <li>QQQ: StockAnalysis 2026-05-22 종가 717.54 / 19:59 EDT AH 715.31.</li>
+      <li>ORCL, MSFT, NVDA, AVGO, TSM, MU, PLTR: StockAnalysis 기준 2026-05-22 종가와 19:59 EDT 애프터마켓.</li>
+      <li>변동성 경보는 VIX 현물 직접값 대신 같은 날짜의 VXX, VIXM 대용 지표를 참고한 보수적 해석입니다.</li>
+    </ul>
+  </section>
+
+  <footer>생성 시각: 2026-05-26 08:34 KST | 정규 파일명: CODEX_알림_주식추천전략보고_260526_8.30AM.html</footer>
+</div>
+</body>
+</html>

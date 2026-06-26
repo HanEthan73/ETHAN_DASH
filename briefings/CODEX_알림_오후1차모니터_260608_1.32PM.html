@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX_알림_오후1차모니터_260608_1.32PM</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#08111a;--panel:#101b28;--line:#304357;--text:#e8eef7;--muted:#98a8bb;
+  --gold:#f1c75b;--goldbg:#302612;--blue:#99d5ff;--green:#7be6ab;--greenbg:#11281c;
+  --yellow:#ffe08a;--yellowbg:#302911;--red:#ff9e9e;--redbg:#301719;--cyan:#94dbff;--cyanbg:#132738;
+}
+body{
+  background:radial-gradient(circle at top,#19304a 0,#08111a 56%),linear-gradient(180deg,#08111a 0,#0b1420 100%);
+  color:var(--text);
+  font-family:"Malgun Gothic","Apple SD Gothic Neo","Segoe UI",sans-serif;
+  line-height:1.65;
+  padding:18px 10px 34px;
+}
+.wrap{max-width:1420px;margin:0 auto}
+header{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+h1{margin:0 0 8px;font-size:31px;line-height:1.25;color:var(--gold)}
+.sub{color:var(--muted);font-size:13px}
+.stamp{display:inline-block;margin-top:12px;padding:7px 12px;border-radius:999px;border:1px solid #6d5720;background:var(--goldbg);color:var(--gold);font-size:12px;font-weight:800}
+.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+.summary-card{padding:14px;border:1px solid rgba(241,199,91,.22);border-radius:12px;background:rgba(241,199,91,.07)}
+.summary-card b{display:block;margin-bottom:6px;color:var(--gold);font-size:12px}
+.summary-card strong{display:block;font-size:20px;line-height:1.25}
+.summary-card small{display:block;margin-top:6px;color:var(--muted);font-size:11px}
+.panel{margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.lead{background:#1b180f;border-left:4px solid var(--gold)}
+.final{background:#131d29;border:1px solid #35506d;border-radius:12px;padding:16px;margin-top:16px}
+.insight{background:#102019;border:1px solid #2d5f49;border-left:4px solid #7be5a5;border-radius:12px;padding:16px;margin-top:16px}
+h2{margin:0 0 12px;font-size:20px;color:var(--blue)}
+p{margin:0;font-size:14px;color:#d9e2ef}
+.note{margin-top:12px;padding:12px 14px;border-radius:9px;background:#1c2b3b;border-left:4px solid var(--gold);font-size:13px;color:#dbe4ef}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#0e1621;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:1180px}
+th,td{padding:10px;border-bottom:1px solid #1f2d3d;text-align:left;vertical-align:top;font-size:13px}
+th{background:#1d2a39;color:var(--gold);font-size:12px;white-space:nowrap}
+tr:nth-child(even) td{background:#0c131d}
+tr:last-child td{border-bottom:0}
+.money,.center,.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.center{text-align:center}
+.tag{display:inline-block;padding:3px 9px;border-radius:999px;border:1px solid transparent;font-size:11px;font-weight:800}
+.ok{background:var(--greenbg);border-color:#24593e;color:var(--green)}
+.wait{background:var(--yellowbg);border-color:#6d5a1a;color:var(--yellow)}
+.stop{background:var(--redbg);border-color:#6a2d31;color:var(--red)}
+.info{background:var(--cyanbg);border-color:#305a78;color:var(--cyan)}
+.watch-row td{background:rgba(241,199,91,.07)!important}
+.danger-row td{background:rgba(255,110,110,.07)!important}
+ul{margin:0;padding-left:20px}
+li{margin:6px 0;color:#d4dcea}
+a{color:var(--blue);text-decoration:none}
+footer{margin-top:18px;text-align:right;color:#8390a2;font-size:12px}
+@media(max-width:1050px){.summary-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){
+  body{padding:14px 8px 28px}
+  h1{font-size:25px}
+  h2{font-size:18px}
+  .summary-grid{grid-template-columns:1fr}
+  .panel,.final,.insight{padding:12px}
+  th,td{padding:8px;font-size:12px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>CODEX 알림 오후 1차 모니터</h1>
+    <div class="sub">생성 2026-06-08 13:32 KST | 대표님 보고용 오후 1차 정규 알림 | 파일명 규칙: CODEX_알림_오후1차모니터_YYMMDD_H.MMPM.html</div>
+    <div class="stamp">최신 확인 시각 2026-06-08 13:32 KST | 가격 기준 2026-06-05 19:59 EDT | 오늘 오후 결론: No Chase 유지, 1차 밴드 대기</div>
+  </header>
+
+  <div class="summary-grid">
+    <div class="summary-card"><b>즉시 결론</b><strong>지금도 대기 / No Chase</strong><small>08:32 전략보고, 09:33 오전 종합모니터, 12:30 낮 진입전략의 결론이 오후 1차에도 그대로 유효합니다. 오늘 13:32 KST 시점에는 새 미국 현물 체결이 없어 계획 변경 근거가 없습니다.</small></div>
+    <div class="summary-card"><b>PLTR 눌림목</b><strong>$129 1차 전까지 보류</strong><small>PLTR은 2026-06-05 19:59 EDT 기준 $135.53, AH $133.89입니다. 1차 밴드 위라 오늘 오후에도 추격 금지입니다.</small></div>
+    <div class="summary-card"><b>자동매수 조건</b><strong>MSFT·NVDA·TSM 우선 감시</strong><small>META·ORCL은 보조 대기, AVGO·PLTR·MU는 오늘 오후 즉시 집행 제외입니다. 실제 집행은 2026-06-08 미국장 개장 후 1차 밴드 하향 체결 확인이 선행돼야 합니다.</small></div>
+    <div class="summary-card"><b>Gmail 채용 알림</b><strong>최신 1건 확인 상태 유지</strong><small>최신 정식 채용 알림 보고서는 2026-06-06 16:32 KST이며, Remember 계열 프로필 조회 메일 1건이 2026-06-05 19:33 KST 기준으로 확인돼 있습니다.</small></div>
+  </div>
+
+  <section class="panel lead">
+    <h2>1. 대표님 결론</h2>
+    <p>대표님, 2026-06-08 13:32 KST 오후 1차 모니터의 핵심은 <b>새 종목을 추가로 고르는 것</b>이 아니라 <b>오늘 밤 2026-06-08 미국장 첫 30~90분에 어떤 가격에서만 반응할지 규율을 다시 고정하는 것</b>입니다. 오전 08:32 전략보고, 09:33 종합모니터, 12:30 낮 진입전략 모두 방어 우위와 No Chase를 유지했고, 오후 1차 시점에도 새 현물 데이터가 없기 때문에 판단을 바꿀 이유가 없습니다. 따라서 지금 액션은 PLTR 눌림목 가격 유지, 자동매수 1차 밴드 감시, Gmail 채용 알림은 별도 관리, 거시 변수는 금리와 환율 재확인으로 정리됩니다.</p>
+    <div class="note">실행 문장: 오늘 13:32 KST에도 즉시 주문은 없습니다. 2026-06-08 미국장 개장 후 PLTR $129, MSFT $410, NVDA $199, TSM $408 등 1차 밴드 하향 체결이 실제로 확인될 때만 1차 비중을 얇게 검토합니다.</div>
+  </section>
+
+  <section class="panel">
+    <h2>2. 오후 1차 모니터 체크표</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>항목</th>
+          <th>최신 확인 시각</th>
+          <th>조건</th>
+          <th>최신 수치 / 사실</th>
+          <th>판정</th>
+          <th>필요한 행동</th>
+          <th>무효화 조건</th>
+        </tr>
+        <tr class="watch-row">
+          <td><b>PLTR 눌림목</b></td>
+          <td class="num">2026-06-08 13:32 KST<br><span class="tag info">가격 기준 2026-06-05 19:59 EDT</span></td>
+          <td>1차 $129 / 2차 $122 / 3차 $114 구간에서만 분할 검토</td>
+          <td class="money">$135.53 종가 / $133.89 AH</td>
+          <td><span class="tag wait">보류</span></td>
+          <td>$129 도달 전 선매수 금지. 1차 체결이 나오더라도 총 계획의 15% 이내만 허용합니다.</td>
+          <td>$129 미도달 상태에서 반등 추격이 나오면 오늘 계획은 무효입니다. $114 종가 이탈 시 성장 프리미엄 복원 시나리오를 재평가합니다.</td>
+        </tr>
+        <tr class="watch-row">
+          <td><b>자동매수 조건</b><br>MSFT / NVDA / TSM / META / ORCL</td>
+          <td class="num">2026-06-08 13:32 KST<br><span class="tag info">가격 기준 2026-06-05 19:59 EDT</span></td>
+          <td>1차 밴드 도달 + No Chase 유지 + 개장 초반 지지 확인</td>
+          <td>MSFT $416.67 vs $410<br>NVDA $205.10 vs $199<br>TSM $415.17 vs $408<br>META $593.00 vs $584<br>ORCL $213.68 vs $206</td>
+          <td><span class="tag stop">불충족</span></td>
+          <td>우선 감시는 MSFT·NVDA·TSM만 유지합니다. META·ORCL은 보조 대기, AVGO·PLTR·MU는 오늘 오후 즉시 집행 제외를 유지합니다.</td>
+          <td>개장 직후 10년물 재상승, QQQ 추가 급락, 1차 밴드 미도달 반등이 겹치면 오늘 1차 체결 허용 범위를 더 줄입니다.</td>
+        </tr>
+        <tr>
+          <td><b>Gmail 채용 알림 여부</b></td>
+          <td class="num">2026-06-08 13:32 KST<br><span class="tag info">최신 정식 보고서 2026-06-06 16:32 KST</span></td>
+          <td>Remember 계열 신규 채용 / 스카웃 / 프로필 조회 메일 존재 여부</td>
+          <td>신규 확인 1건 유지<br>2026-06-05 19:33 KST<br>Remember 계열 프로필 조회 알림</td>
+          <td><span class="tag wait">보류</span></td>
+          <td>즉시 회신보다 프로필 점검과 관련 공고 확인이 우선입니다. 시장 실행과는 분리 관리가 맞습니다.</td>
+          <td>면접 제안, 직접 스카웃, 제출 마감 메일이 추가 확인되면 우선순위를 즉시 상향해야 합니다.</td>
+        </tr>
+        <tr class="danger-row">
+          <td><b>주요 시장 변화와 진입 가능성</b></td>
+          <td class="num">2026-06-08 13:32 KST<br><span class="tag info">오전/낮 보고서 기준 재확인</span></td>
+          <td>금리·환율·공포지수 기준으로 오늘 밤 1차 진입 허용 여부 판단</td>
+          <td>QQQ 705.06 / AH 700.30<br>DGS10 4.47<br>USD/KRW 1503.96<br>Fear &amp; Greed 42.06</td>
+          <td><span class="tag stop">보수 유지</span></td>
+          <td>오늘 오후에도 공격 매수 금지입니다. 미국장 개장 후에는 단일 종목 1차 체결만 얇게 열고, 2차 이하는 금리 안정 확인 뒤로 미룹니다.</td>
+          <td>10년물 4.50 상향, 원달러 1510 상향, QQQ 700 하향 재이탈 중 둘 이상이 동시 발생하면 1차 체결도 보류가 맞습니다.</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>3. 자동매수 준비표</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>우선순위</th>
+          <th>종목</th>
+          <th>현재가 기준</th>
+          <th>1차 / 2차 / 3차</th>
+          <th>최신 확인 시각</th>
+          <th>상태</th>
+          <th>필요한 행동</th>
+          <th>무효화 조건</th>
+        </tr>
+        <tr class="watch-row">
+          <td class="center">1</td>
+          <td><b>MSFT</b></td>
+          <td class="money">$416.67 / AH $412.40</td>
+          <td class="money">$410 / $400 / $390</td>
+          <td class="num">2026-06-05 19:59 EDT</td>
+          <td><span class="tag wait">대기</span></td>
+          <td>$410 하향 체결과 지지 확인 시 1차 25%만 검토합니다.</td>
+          <td>$390 종가 이탈 시 방어 프리미엄 약화로 계획을 접습니다.</td>
+        </tr>
+        <tr class="watch-row">
+          <td class="center">2</td>
+          <td><b>NVDA</b></td>
+          <td class="money">$205.10 / AH $204.04</td>
+          <td class="money">$199 / $191 / $183</td>
+          <td class="num">2026-06-05 19:59 EDT</td>
+          <td><span class="tag wait">대기</span></td>
+          <td>$199 하향 체결 확인 전 선매수 금지. 1차는 20% 이내만 허용합니다.</td>
+          <td>$183 종가 이탈 시 반도체 매도 압력 우위로 보고 계획을 중단합니다.</td>
+        </tr>
+        <tr class="watch-row">
+          <td class="center">3</td>
+          <td><b>TSM</b></td>
+          <td class="money">$415.17 / AH $411.53</td>
+          <td class="money">$408 / $394 / $380</td>
+          <td class="num">2026-06-05 19:59 EDT</td>
+          <td><span class="tag wait">대기</span></td>
+          <td>$408 하향 체결과 반도체 낙폭 축소가 같이 나와야 1차 20%를 엽니다.</td>
+          <td>$380 종가 이탈 시 반도체 복원 시나리오를 무효화합니다.</td>
+        </tr>
+        <tr>
+          <td class="center">4</td>
+          <td><b>META</b></td>
+          <td class="money">$593.00 / AH $589.82</td>
+          <td class="money">$584 / $568 / $550</td>
+          <td class="num">2026-06-05 19:59 EDT</td>
+          <td><span class="tag wait">보조 대기</span></td>
+          <td>가격 메리트가 아직 부족합니다. 1차 밴드 도달 전까지 계획만 유지합니다.</td>
+          <td>$550 종가 이탈 시 복원 전략을 재점검합니다.</td>
+        </tr>
+        <tr>
+          <td class="center">5</td>
+          <td><b>ORCL</b></td>
+          <td class="money">$213.68 / AH $210.20</td>
+          <td class="money">$206 / $196 / $186</td>
+          <td class="num">2026-06-05 19:59 EDT</td>
+          <td><span class="tag wait">보조 대기</span></td>
+          <td>2026-06-10 실적이 가까워 1차 체결만 보수적으로 검토합니다.</td>
+          <td>$186 종가 이탈 또는 실적 전 변동성 급등 시 계획을 보류합니다.</td>
+        </tr>
+        <tr class="danger-row">
+          <td class="center">6</td>
+          <td><b>AVGO / PLTR / MU</b></td>
+          <td class="money">AVGO $385.73<br>PLTR $135.53<br>MU $864.01</td>
+          <td class="money">AVGO $372<br>PLTR $129<br>MU $830</td>
+          <td class="num">2026-06-05 19:59 EDT</td>
+          <td><span class="tag stop">제외</span></td>
+          <td>오늘 오후 즉시 집행 대상에서 제외를 유지합니다.</td>
+          <td>리레이팅 종료, 1차 밴드 도달, 금리 안정이 동시에 나와야 재편입을 검토합니다.</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>4. 대표님 실행 체크리스트</h2>
+    <ul>
+      <li>오늘 오후 1차 결론은 변함없이 <b>방어 우위 / No Chase</b>입니다.</li>
+      <li>PLTR은 $129 이하 확인 전까지 추격 금지이고, 1차 체결이 와도 15% 이내만 허용합니다.</li>
+      <li>자동매수 실질 우선순위는 MSFT, NVDA, TSM이며 META와 ORCL은 보조 대기입니다.</li>
+      <li>AVGO, PLTR, MU는 종목 자체보다 오늘 시장 모드와 가격대가 맞지 않아 제외입니다.</li>
+      <li>Gmail 채용 알림은 Remember 프로필 조회 1건 유지 상태이며, 시장 실행과 분리해서 관리하는 편이 맞습니다.</li>
+    </ul>
+  </section>
+
+  <section class="final">
+    <h2>5. 최종 요약</h2>
+    <p>2026-06-08 13:32 KST 오후 1차 모니터 최종 결론은 명확합니다. <b>지금은 새 매수보다 대기</b>, <b>PLTR은 $129 1차 밴드 전까지 보류</b>, <b>자동매수는 MSFT·NVDA·TSM만 1차 감시</b>, <b>Gmail 채용 알림은 프로필 조회 1건 유지</b>입니다. 즉 오늘 오후의 목적은 종목을 늘리는 것이 아니라, 오늘 밤 미국장 초반에 반응할 가격과 비중을 흔들림 없이 지키는 것입니다.</p>
+  </section>
+
+  <section class="insight">
+    <h2>6. CODEX 인사이트</h2>
+    <p>이번 구간의 승부는 종목 선택보다 <b>체결 품질을 기다릴 수 있는 인내</b>에서 납니다. 지금처럼 금리와 AI 밸류에이션이 동시에 재가격되는 장에서는 1차 밴드 숫자를 알아도, 실제로 그 가격에서 수급이 받쳐주는지 확인하기 전에는 현금이 전략입니다. 오늘 오후 1차에서 해야 할 일은 매수 버튼이 아니라, <b>어느 가격에서만 반응할지 규율을 다시 잠그는 것</b>입니다.</p>
+  </section>
+
+  <footer>Sources checked in same-day artifacts: 2026-06-08 08:32 전략 보고서, 2026-06-08 09:33 오전 종합 모니터, 2026-06-08 12:30 낮 진입전략, 2026-06-08 00:02 자동매수 모니터, 2026-06-06 16:32 Gmail 채용 알림. 최종 생성: 2026-06-08 13:32 KST</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX_알림_오전종합모니터_260601_9.30AM</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0b1220;--panel:#121c2d;--panel2:#18263b;--line:#2a3a54;
+  --text:#edf3fb;--muted:#9fb0c7;--gold:#f4c84a;--goldbg:#2c2512;
+  --blue:#92cbff;--green:#7be5a5;--greenbg:#11281d;--yellow:#ffe38a;--yellowbg:#322a13;
+  --red:#ff9aa3;--redbg:#34171d;--cyan:#93ddff;--cyanbg:#132c3d;
+}
+body{
+  background:
+    radial-gradient(circle at top,#1b2a44 0,#0b1220 54%),
+    linear-gradient(180deg,#0b1220 0,#0e1524 100%);
+  color:var(--text);
+  font-family:"Malgun Gothic","Apple SD Gothic Neo","Segoe UI",sans-serif;
+  line-height:1.64;
+  padding:24px 14px 40px;
+}
+.wrap{max-width:1380px;margin:0 auto}
+header{padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:18px}
+h1{font-size:31px;color:var(--gold);margin-bottom:8px}
+.sub{font-size:13px;color:var(--muted)}
+.stamp{
+  display:inline-block;margin-top:12px;padding:6px 12px;border-radius:999px;
+  background:var(--goldbg);border:1px solid #65511a;color:var(--gold);font-size:12px;font-weight:800
+}
+.summary-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+.summary-card{background:rgba(244,200,74,.09);border:1px solid rgba(244,200,74,.28);border-radius:12px;padding:14px}
+.summary-card b{display:block;color:var(--gold);font-size:12px;margin-bottom:6px}
+.summary-card span{display:block;font-size:22px;font-weight:900}
+.summary-card small{display:block;color:var(--muted);font-size:11px;margin-top:6px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:16px}
+.lead{background:#1d190e;border-left:4px solid var(--gold)}
+.risk{background:#24151a;border-left:4px solid #ff6b6b}
+h2{font-size:20px;color:var(--blue);margin-bottom:12px}
+p{font-size:14px;color:#dae4f1}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px;background:#101825}
+.table-wrap table{min-width:1260px}
+table{width:100%;border-collapse:collapse}
+th{background:#1e2a3c;color:var(--gold);text-align:left;padding:10px;font-size:12px;border-bottom:1px solid #34455f;white-space:nowrap}
+td{padding:10px;border-bottom:1px solid #1f2b3b;font-size:13px;vertical-align:top}
+tr:nth-child(even) td{background:#0f1622}
+tr:last-child td{border-bottom:0}
+.money,.num,.center{font-variant-numeric:tabular-nums;white-space:nowrap}
+.center{text-align:center}
+.tag{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:800;border:1px solid transparent}
+.ok{background:var(--greenbg);color:var(--green);border-color:#245c42}
+.wait{background:var(--yellowbg);color:var(--yellow);border-color:#705d1c}
+.stop{background:var(--redbg);color:var(--red);border-color:#6d2e35}
+.info{background:var(--cyanbg);color:var(--cyan);border-color:#2c5d7b}
+.watch-row td{background:rgba(244,200,74,.08)!important}
+.danger-row td{background:rgba(255,108,108,.08)!important}
+.note{margin-top:12px;padding:12px 14px;border-radius:8px;background:#1d2837;border-left:4px solid var(--gold);color:#dbe5f1;font-size:13px}
+ul{padding-left:20px}
+li{margin:6px 0;color:#d6dfea}
+a{color:var(--blue);text-decoration:none}
+footer{margin-top:18px;text-align:right;color:#7f8da3;font-size:12px}
+@media(max-width:980px){.summary-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){
+  body{padding:16px 8px 32px}
+  .summary-strip{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>CODEX 알림 오전 종합 모니터</h1>
+    <div class="sub">생성 2026-06-01 09:30 KST | 대표님 09:30 오전 종합 모니터 | 파일명 규칙: CODEX_알림_오전종합모니터_YYMMDD_H.MMAM.html</div>
+    <div class="stamp">최신 확인 시각: 2026-06-01 09:30 KST | 미국 개별주와 QQQ는 2026-05-29 16:00 EDT 종가 및 19:59 EDT 애프터마켓 기준</div>
+  </header>
+
+  <div class="summary-strip">
+    <div class="summary-card"><b>PLTR 눌림목</b><span>추격 금지 유지</span><small>PLTR $156.54로 1차 $146, 2차 $138, 핵심 $128보다 높습니다. 오늘 오전은 감시만 유지합니다.</small></div>
+    <div class="summary-card"><b>자동매수 바스켓</b><span>TSM·NVDA 조건부 1차</span><small>TSM $419.28, NVDA $211.14는 1차 밴드 3% 이내입니다. AVGO는 실적 전 대기, MU는 과열로 제외입니다.</small></div>
+    <div class="summary-card"><b>심리·환율</b><span>탐욕 61 · 원달러 1,517.33</span><small>Fear &amp; Greed 공개 미러 최신치는 2026-05-20 기준 61입니다. 극단 공포가 아니고 환율 부담도 여전합니다.</small></div>
+    <div class="summary-card"><b>오전 행동</b><span>확인 우선, 신규 추격 금지</span><small>오늘 오전은 버튼을 누르는 시간이 아니라 미국장 재개 전 기준가와 무효화 조건을 잠그는 시간입니다.</small></div>
+  </div>
+
+  <section class="panel lead">
+    <h2>1. 대표님 실행 결론</h2>
+    <p>대표님, 오늘 오전 종합 결론은 단순합니다. <b>시장 방향은 여전히 강하지만 지금 필요한 것은 종목 확대가 아니라 가격 규율 유지</b>입니다. QQQ는 2026-05-29 종가 738.31로 추세가 살아 있고 M2도 2026-04 기준 22,804.5B로 위험자산 바탕이 유지됩니다. 반면 미국 10년물은 2026-05-28 기준 4.45%, USD/KRW는 2026-05-22 기준 1,517.33으로 아직 높습니다. 즉 유동성은 살아 있는데 할인율과 원화 체감 단가가 동시에 부담인 환경입니다. 따라서 오전 전략은 공격 집행이 아니라 <b>TSM·NVDA의 조건부 1차만 열어 두고, PLTR·MU 추격을 막고, AVGO는 실적 전 대기로 고정</b>하는 쪽이 맞습니다.</p>
+    <div class="note">실행 문장: 2026-06-01 22:30 KST 미국장 재개 전까지는 신규 추격 금지, 개장 후 첫 30~90분에 TSM $416 / NVDA $208 재진입 여부만 확인합니다. 그 외는 오늘 오전 기준 계획가만 잠그고 기다리는 편이 맞습니다.</div>
+  </section>
+
+  <section class="panel">
+    <h2>2. 오전 핵심 체크 테이블</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>항목</th>
+          <th>최신 확인 시각</th>
+          <th>조건</th>
+          <th>최신 수치</th>
+          <th>상태</th>
+          <th>필요한 행동</th>
+          <th>무효화 조건</th>
+        </tr>
+        <tr class="danger-row">
+          <td><b>PLTR 눌림목</b></td>
+          <td class="num">2026-06-01 09:30 KST<br><span class="tag info">주가 기준 2026-05-29 16:00 / 19:59 EDT</span></td>
+          <td>1차 $146, 2차 $138, 3차 $128<br>본매수는 $128 지지 확인 뒤 재개</td>
+          <td class="money">$156.54<br>AH $156.34</td>
+          <td><span class="tag stop">불충족</span></td>
+          <td>오늘 오전은 추격 금지입니다. 1차 가격대 재접근 전까지는 관찰만 하고, 기사 강세를 실행 근거로 바꾸지 않습니다.</td>
+          <td>$146 아래 눌림 없이 강세가 지속되면 오늘 전략상 계속 제외입니다. 본매수 재개는 $128 이하 지지 확인이 전제입니다.</td>
+        </tr>
+        <tr class="watch-row">
+          <td><b>자동매수 조건</b><br>TSM / NVDA / AVGO / MU</td>
+          <td class="num">2026-06-01 09:30 KST<br><span class="tag info">주가 기준 2026-05-29 16:00 / 19:59 EDT</span></td>
+          <td>1차 밴드 3% 이내 + 개장 초 재진입 확인 시만 1차 허용</td>
+          <td>TSM $419.28<br>NVDA $211.14<br>AVGO $446.77<br>MU $970.47</td>
+          <td><span class="tag wait">부분 충족</span></td>
+          <td>TSM과 NVDA만 조건부 1차 후보로 유지합니다. AVGO는 실적 전 대기, MU는 과열 제외로 잠급니다.</td>
+          <td>개장가가 1차 밴드 위에서 고착되면 TSM·NVDA도 즉시 대기로 전환합니다. 밴드 밖 갭상승 출발은 전 종목 공통 추격 금지입니다.</td>
+        </tr>
+        <tr>
+          <td><b>공포/탐욕 극단</b></td>
+          <td class="num">2026-06-01 09:30 KST<br><span class="tag info">공개 미러 최신치 2026-05-20</span></td>
+          <td>0~20 또는 81~100이면 극단 구간</td>
+          <td class="num">61<br>Greed</td>
+          <td><span class="tag stop">불충족</span></td>
+          <td>공포매수 모드가 아닙니다. 좋은 종목도 싸게 받아야 한다는 원칙을 유지합니다.</td>
+          <td>20 이하 급락이면 역발상 공포매수 논리가 열리고, 80 이상 급등이면 추격 금지 강도가 더 올라갑니다.</td>
+        </tr>
+        <tr class="danger-row">
+          <td><b>USD/KRW</b></td>
+          <td class="num">2026-06-01 09:30 KST<br><span class="tag info">FRED DEXKOUS 2026-05-22, 업데이트 2026-05-26 15:16 CDT</span></td>
+          <td>1,500 이상이면 원화 기준 체감 리스크 확대</td>
+          <td class="num">1,517.33</td>
+          <td><span class="tag ok">조건 충족</span></td>
+          <td>신규 진입은 1차 비중만 허용하는 보수 모드가 맞습니다. 2차 이후는 환율 진정 확인 뒤 검토합니다.</td>
+          <td>1,500 아래로 안정되면 체감 리스크가 완화됩니다. 반대로 1,520대 재상승이면 오늘 밤 신규 실행 강도는 더 줄여야 합니다.</td>
+        </tr>
+        <tr>
+          <td><b>실적 D-1</b></td>
+          <td class="num">2026-06-01 09:30 KST</td>
+          <td>다음 미국 거래일 직전 D-1 실적 이벤트 존재 여부</td>
+          <td>직접 D-1은 없음<br>AVGO 2026-06-03, ORCL 2026-06-15, MU 2026-06-24</td>
+          <td><span class="tag wait">보류</span></td>
+          <td>오늘 오전 기준 D-1 회피 대상은 없지만, AVGO는 실적 주간이므로 숫자 근접만으로 실행하지 않습니다.</td>
+          <td>오늘 밤이나 내일 새벽 실적 일정 변경 공시가 나오면 즉시 D-1 회피 규칙으로 전환합니다.</td>
+        </tr>
+        <tr>
+          <td><b>지정학 / 국제뉴스</b></td>
+          <td class="num">2026-06-01 09:30 KST<br><span class="tag info">Reuters 주말 리스크 프레이밍 반영</span></td>
+          <td>금리, 유가, 반도체 규제에 직접 영향을 주는 헤드라인 지속 여부</td>
+          <td>중동 긴장 완화 기대는 있으나 확정 아님<br>대중 반도체 규제 변수는 계속 감시<br>강한 AI 수요 뉴스가 가격 과열을 더 자극 중</td>
+          <td><span class="tag wait">보류</span></td>
+          <td>헤드라인은 긍정과 부담이 섞여 있습니다. 오늘 밤 개장 전 유가, 10년물, 대중 규제 뉴스만 다시 확인하면 충분합니다.</td>
+          <td>중동 재악화, 유가 급등, 대중 반도체 규제 강화가 나오면 오전 계획은 즉시 보수 모드로 더 낮춰야 합니다.</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>3. 자동매수 실행 테이블</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>1차 / 2차 / 3차</th>
+          <th>최신 확인 시각</th>
+          <th>상태</th>
+          <th>필요한 행동</th>
+          <th>무효화 조건</th>
+        </tr>
+        <tr class="watch-row">
+          <td><b>TSM</b></td>
+          <td class="money">$419.28<br>AH $419.04</td>
+          <td class="money">$416 / $404 / $390</td>
+          <td class="num">2026-06-01 09:30 KST<br><span class="tag info">2026-05-29 16:00 / 20:00 EDT</span></td>
+          <td><span class="tag ok">조건부 1차</span></td>
+          <td>$416 재진입과 첫 10~30분 지지 확인이 나오면 1차 20%만 허용합니다. 오전 기준으로는 후보 유지입니다.</td>
+          <td>$390 종가 이탈 또는 개장 직후 밴드 밖 갭상승이면 자동 대기로 전환합니다.</td>
+        </tr>
+        <tr class="watch-row">
+          <td><b>NVDA</b></td>
+          <td class="money">$211.14<br>AH $212.49</td>
+          <td class="money">$208 / $201 / $193</td>
+          <td class="num">2026-06-01 09:30 KST<br><span class="tag info">2026-05-29 16:00 / 19:59 EDT</span></td>
+          <td><span class="tag ok">조건부 1차</span></td>
+          <td>$208 재진입이 나올 때만 1차 20% 테스트가 가능합니다. 재진입 없으면 바로 대기로 돌립니다.</td>
+          <td>$193 종가 이탈, 중국 규제 충격 재부각, 개장가 급등 출발 시 자동매수는 중단합니다.</td>
+        </tr>
+        <tr>
+          <td><b>AVGO</b></td>
+          <td class="money">$446.77<br>AH $446.20</td>
+          <td class="money">$438 / $425 / $410</td>
+          <td class="num">2026-06-01 09:30 KST<br><span class="tag info">2026-05-29 16:00 / 20:00 EDT</span></td>
+          <td><span class="tag wait">대기</span></td>
+          <td>숫자는 근접하지만 2026-06-03 실적 전이라 밴드 안착 확인 전 자동매수를 열지 않습니다.</td>
+          <td>$410 종가 이탈 또는 실적 전 갭상승 추격이 나오면 이번 사이클 자동매수는 제외가 맞습니다.</td>
+        </tr>
+        <tr class="danger-row">
+          <td><b>MU</b></td>
+          <td class="money">$970.47<br>AH $964.78</td>
+          <td class="money">$930 / $885 / $840</td>
+          <td class="num">2026-06-01 09:30 KST<br><span class="tag info">2026-05-29 15:59 / 20:00 EDT</span></td>
+          <td><span class="tag stop">제외</span></td>
+          <td>1차 밴드 상단 대비 약 4.4% 위라서 오늘 기준 추격 구간입니다. 오전에는 계획가만 유지하고 실행은 막습니다.</td>
+          <td>$930 재접근 전에는 재평가하지 않습니다. $840 종가 이탈이면 계획 자체를 다시 써야 합니다.</td>
+        </tr>
+      </table>
+    </div>
+    <div class="note">요약하면 오늘 오전 자동매수는 종목 선호가 아니라 가격 규율 문제입니다. TSM·NVDA는 조건부 1차만, AVGO는 실적 전 대기, MU는 제외가 맞습니다.</div>
+  </section>
+
+  <section class="panel risk">
+    <h2>4. 최종 요약 및 CODEX 인사이트</h2>
+    <ul>
+      <li>PLTR은 $156대 과열 구간이라 눌림목 감시는 유지하되 오늘 실행 대상은 아닙니다. 본매수 재개는 $128 이하 지지 확인 뒤가 맞습니다.</li>
+      <li>자동매수 바스켓은 TSM·NVDA만 조건부 1차, AVGO는 실적 전 대기, MU는 제외로 잠그는 편이 가장 일관됩니다.</li>
+      <li>Fear &amp; Greed 61은 극단 공포가 아니고 USD/KRW 1,517.33은 원화 기준 신규 진입에 계속 불리합니다. 오전 판단은 공격보다 통제가 맞습니다.</li>
+      <li>실적 D-1 직접 회피 대상은 없지만 AVGO 2026-06-03, ORCL 2026-06-15, MU 2026-06-24 일정이 가까워 이벤트 전 변동성을 별도 리스크로 봐야 합니다.</li>
+      <li><b>CODEX 인사이트:</b> 이번 구간의 진짜 위험은 악재 자체보다 강한 장이 계속될 것이라는 착시 때문에 매수 단가 통제를 포기하는 것입니다. 좋은 종목을 오늘 굳이 안 사는 인내가 지금은 더 높은 기대값을 만듭니다.</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>5. 출처</h2>
+    <ul>
+      <li>당일 자동매수 기준: <a href="CODEX_알림_자동매수모니터_260601_12.04AM.html">CODEX_알림_자동매수모니터_260601_12.04AM.html</a></li>
+      <li>당일 전략 기준: <a href="CODEX_알림_주식추천전략보고_260601_8.34AM.html">CODEX_알림_주식추천전략보고_260601_8.34AM.html</a></li>
+      <li>직전 저녁 브리핑: <a href="CODEX_알림_저녁브리핑_260531_10.33PM.html">CODEX_알림_저녁브리핑_260531_10.33PM.html</a></li>
+      <li>FRED 미국 10년물 DGS10: <a href="https://fred.stlouisfed.org/series/DGS10">fred.stlouisfed.org/series/DGS10</a></li>
+      <li>FRED USD/KRW DEXKOUS: <a href="https://fred.stlouisfed.org/series/DEXKOUS">fred.stlouisfed.org/series/DEXKOUS</a></li>
+      <li>Fear &amp; Greed 공개 미러: <a href="https://www.finhacker.cz/en/fear-and-greed-index-historical-data-and-chart/">finhacker.cz</a></li>
+      <li>Broadcom 실적 일정: <a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-second-quarter-fiscal-year-2026-financial">investors.broadcom.com</a></li>
+      <li>Reuters 주말 시장 리스크 프레이밍 반영: <a href="https://www.investing.com/news/economy-news/jobs-report-on-tap-for-soaring-us-stocks-as-rate-path-bond-yields-eyed-as-risks-4716323">Investing / Reuters</a></li>
+    </ul>
+  </section>
+
+  <footer>CODEX morning comprehensive monitor | 2026-06-01 09:30 KST</footer>
+</div>
+</body>
+</html>
