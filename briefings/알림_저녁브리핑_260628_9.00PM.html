@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>저녁 브리핑 2026-06-28</title>
+<style>
+  :root {
+    --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+    --border: #30363d; --text: #e6edf3; --muted: #8b949e;
+    --green: #3fb950; --red: #f85149; --yellow: #d29922;
+    --blue: #58a6ff; --orange: #ff8c00; --purple: #bc8cff;
+    --alert: #ff6b6b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', -apple-system, sans-serif; font-size: 14px; line-height: 1.6; }
+  .header { background: linear-gradient(135deg, #1a1f2e 0%, #0d1117 100%); border-bottom: 2px solid var(--blue); padding: 20px 24px; }
+  .header h1 { font-size: 22px; color: var(--blue); }
+  .header .meta { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px 16px; }
+  .section { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 18px; overflow: hidden; }
+  .section-header { background: var(--surface2); border-bottom: 1px solid var(--border); padding: 10px 16px; font-size: 15px; font-weight: 700; }
+  .section-body { padding: 14px 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: var(--surface2); color: var(--muted); padding: 8px 10px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
+  td { padding: 8px 10px; border-bottom: 1px solid #1c2128; }
+  tr:last-child td { border-bottom: none; }
+  .up { color: var(--green); font-weight: 600; }
+  .down { color: var(--red); font-weight: 600; }
+  .neutral { color: var(--muted); }
+  .warn { color: var(--yellow); font-weight: 700; }
+  .alert-red { color: var(--alert); font-weight: 700; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; }
+  .badge-red { background: rgba(248,81,73,0.2); color: var(--red); }
+  .badge-green { background: rgba(63,185,80,0.2); color: var(--green); }
+  .badge-yellow { background: rgba(210,153,34,0.2); color: var(--yellow); }
+  .badge-blue { background: rgba(88,166,255,0.2); color: var(--blue); }
+  .badge-orange { background: rgba(255,140,0,0.2); color: var(--orange); }
+  .news-item { padding: 10px 0; border-bottom: 1px solid #1c2128; }
+  .news-item:last-child { border-bottom: none; }
+  .news-num { display: inline-block; background: var(--blue); color: #000; width: 22px; height: 22px; border-radius: 50%; text-align: center; line-height: 22px; font-weight: 700; font-size: 12px; margin-right: 8px; }
+  .stock-para { padding: 10px 0; border-bottom: 1px solid #1c2128; }
+  .stock-para:last-child { border-bottom: none; }
+  .stock-title { font-weight: 700; font-size: 15px; color: var(--blue); margin-bottom: 4px; }
+  .verdict { margin-top: 6px; padding: 6px 10px; background: var(--surface2); border-left: 3px solid var(--blue); border-radius: 4px; font-size: 13px; }
+  .alert-box { background: rgba(248,81,73,0.1); border: 1px solid var(--red); border-radius: 6px; padding: 12px 16px; margin-bottom: 12px; }
+  .alert-box .alert-title { color: var(--alert); font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+  .alert-box-yellow { background: rgba(210,153,34,0.1); border: 1px solid var(--yellow); border-radius: 6px; padding: 12px 16px; margin-bottom: 12px; }
+  .alert-box-yellow .alert-title { color: var(--yellow); font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+  .indicator-bar { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 16px; background: var(--surface2); }
+  .indicator { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+  .ind-ok { background: rgba(63,185,80,0.15); color: var(--green); border: 1px solid rgba(63,185,80,0.3); }
+  .ind-warn { background: rgba(210,153,34,0.15); color: var(--yellow); border: 1px solid rgba(210,153,34,0.3); }
+  .ind-alert { background: rgba(248,81,73,0.15); color: var(--red); border: 1px solid rgba(248,81,73,0.3); }
+  .four-strat { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+  .strat-badge { padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; background: var(--surface2); border: 1px solid var(--border); }
+  .footnote { font-size: 11px; color: var(--muted); margin-top: 8px; font-style: italic; }
+  .calendar-note { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.2); border-radius: 4px; padding: 4px 10px; font-size: 12px; color: var(--blue); margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>&#127769; &#51úrú&#48177;&#47533; &#8212; 2026&#45380; 06&#50900; 28&#51068; (&#51068;) 21:00</h1>
+  <div class="meta">&#48372;&#50976; &#51333;&#47785;: NVDA &#183; VRT &#183; &#54788;&#45824;&#جا차(005380) &#183; INTC &#183; ASTS &#183; MSTX(&#51109;&#44592;) &nbsp;|&nbsp; &#44592;&#51456;: &#48120;&#51109; 2026-06-26(&#44552;) &#51333;&#44032; &#183; &#54620;&#44397; 2026-06-25(&#47785;) &#54869;&#51064;&#44032; &#183; KRW 2026-06-27 &#44592;&#51456;</div>
+</div>
+
+<div class="container">
+
+<div class="alert-box">
+  <div class="alert-title">&#128680; CRITICAL &#8212; NVDA &#51088;&#46041;&#47588;&#49688; 2&#44060;&#49440; &#47784;&#46160; &#51060;&#53448; &amp; &#49552;&#51208;&#49440; &#44540;&#51217;!</div>
+  &#54788;&#51116;&#44032; $192.53 &nbsp;|&nbsp; 1&#52264; $217.00 <span class="down">&#9660; $24.47 &#51060;&#53448;</span> &nbsp;|&nbsp; 2&#52264; $201.00 <span class="down">&#9660; $8.47 &#51060;&#53448;</span> &nbsp;|&nbsp; &#49552;&#51208;&#44032; $185&#44620;&#51648; &#51389;&#50668;: <strong class="alert-red">$7.53 (3.9%)</strong>
+</div>
+<div class="alert-box">
+  <div class="alert-title">&#128680; CRITICAL &#8212; AVGO &#51088;&#46041;&#47588;&#49688; 2&#44060;&#49440; &#47784;&#46160; &#51060;&#53448;!</div>
+  &#54788;&#51116;&#44032; $365.02 &nbsp;|&nbsp; 1&#52264; $435.00 <span class="down">&#9660; $69.98 &#51060;&#53448;</span> &nbsp;|&nbsp; 2&#52264; $420.00 <span class="down">&#9660; $54.98 &#51060;&#53448;</span>
+</div>
+<div class="alert-box-yellow">
+  <div class="alert-title">&#9888;&#65039; ASTS &#51088;&#46041;&#47588;&#49688; 1&#52264;&#49440; &#51076;&#48149;</div>
+  &#54788;&#51116;&#44032; $71.45 &nbsp;|&nbsp; 1&#52264; $67.00&#44620;&#51648; &#51389;&#50668;: <strong class="warn">$4.45 (6.2%)</strong>
+</div>
+<div class="alert-box-yellow">
+  <div class="alert-title">&#9888;&#65039; USD/KRW &#44221;&#BCF4; &#51648;&#49549; &#8212; &#8361;1,450 &#52488;&#44284; &#44396;&#44036;</div>
+  &#54788;&#51116; USD/KRW &#8776; 1,542 ~ 1,543 &nbsp;|&nbsp; &#49440;&#51228; &#50508;&#47548; &#44592;&#51456;(&#8805;1,450) &#52488;&#44284; &#49345;&#53468; &#51648;&#49549;
+</div>
+
+<div class="section">
+  <div class="section-header">&#128240; 1. &#50724;&#45720;&#51032; &#44397;&#51228; &#51á&#37228;&#49464; &#54575;&#49901; (3&#45824; &#51060;&#½˜&#60714;)</div>
+  <div class="section-body">
+    <div class="news-item">
+      <span class="news-num">1</span>
+      <strong>&#48120;&#51473; &#44400;&#49324;&#44592;&#50629; &#51648;&#51á176 &#54869;&#45824; &amp; &#BCF4;&#48373; &#49688;&#52636;&#53685;&#51228; &#8212; AI&#183;&#BC18;&#46020;&#52404; &#44277;&#±ëìê² &#BCC8;&#50504;</strong><br>
+      <span style="margin-left:30px;">
+      &#48120; &#44397;&#BC29;&#48512;&#AC00; &#50508;&#47532;&#48148;&#48148;&#183;&#48148;&#51060;&#46160;&#183;BYD &#46321;&#51012; &#54252;&#54632;&#54644; &#51473;&#44397; &#44400;&#49324;&#44592;&#50629; &#51648;&#51á176 &#44592;&#50629;&#51012; 134&#44060;&#8594;<strong>188&#44060;</strong>&#47196; &#54869;&#45824;(6/9). 6/30&#48512;&#53552; DoD &#51á176;&#51217;&#44228;&#50557; &#44552;&#51648;, 2027&#45380;&#48512;&#53552; &#44036;&#51217;&#51312;&#45813; &#51á176;&#54620;. &#51060;&#50640; &#51473;&#44397;&#51008; &#51A;&#44049;&#BCF4;&#48373;&#51004;&#47196; <strong>MP Materials(&#55808;&#53664;&#47448;), USA Rare Earth, &#46300;&#46860; &#50629;&#52404; &#46321; &#48120;&#44397; &#44592;&#50629; 10&#44060; &#49688;&#52636;&#53685;&#51228;</strong> &#48512;&#44284;(6/22). &#50508;&#47532;&#48148;&#48148;&#45716; DoD&#47484; &#49345;&#45824;&#47196; &#49548;&#49569; &#51228;&#44592;(6/24).
+      <br><em class="footnote">&#8594; &#BC18;&#46020;&#52404;&#183;AI &#44277;&#±ëìê² &#B9AC;&#49828;&#53356; &#8593;. NVDA&#183;INTC &#51473;&#44397; &#47588;&#52636; &#μ555;&#BC15; &#51648;&#49549;. &#55808;&#53664;&#47448; &#44288;&#47144; MP Materials &#45800;&#44592; &#BCF0;&#46041;&#49457;.</em>
+      </span>
+    </div>
+    <div class="news-item">
+      <span class="news-num">2</span>
+      <strong>&#54944;&#47413;&#54532; &#54252;&#49828;&#53944;&#콩&#53892;&#53889;&#53936; &#μ554;&#54840;&#54868; EO + &#BD80;&#49328; &#BB34;&#50669;&#54734;&#51204; 11&#50900; &#47564;&#47308; &#μ˂ˇ;</strong><br>
+      <span style="margin-left:30px;">
+      &#54944;&#47413;&#54532;, 6/25 <em>&#54252;&#49828;&#53944;&#쿼&#53620;&#53888;&#53440; &#μ554;&#54840;&#54868;(*PQC: Post-Quantum Cryptography, &#μ591;&#51088;&#μ»´&#54004;&#53552; &#44277;&#44201;&#50640; &#45824;&#48708;&#54620; &#ج&#44608;&#45824; &#μ554;&#54840;&#44592;&#49696;)</em> &#51060;&#54665; &#51032;&#BB34;&#54868; EO &#49436;&#λ039;. OMB&#183;&#44397;&#44032;&#μ0AC&#48264;&#44397;&#51109;&#51060; &#51204; &#μ—°;&#BC29;&#44592;&#κ΄80; PQC &#λ§88;&#51060;&#κ·B8;&#λ ˆ;&#51060;&#μ…˜; &#51֪;&#46020; &#51648;&#49884;. &#54620;&#BD80;&#54620; &#48120;&#51473; &#BD80;&#49328; &#BB34;&#50669;&#54734;&#51204;&#51008; <strong>11&#50900; &#47564;&#47308;</strong> &#44592;&#51á180; &#8212; &#47564;&#47308; &#49884; &#44288;&#49464; &#51AC;&#51064;&#49345;&#183;&#D611;&#μƒ&#52581;; &#44368;&#μ°©;&#47161;&#44060; &#ACE0;.
+      <br><em class="footnote">&#8594; &#49324;&#μ´²;&#48260;&#48372;&#μ•88;&#183;AI &#51064;&#50532; &#44592;&#50629;(NVDA, INTC) &#51473;&#μž&#50689;;&#44592; &#44553;&#47161;. &#BB34;&#50669;&#54734;&#51204; &#47564;&#47308;&#45716; 11&#50900; &#51060;&#D6C4; &#CD5C;&#45824; &#48A¦;&#49828;&#53356;.</em>
+      </span>
+    </div>
+    <div class="news-item">
+      <span class="news-num">3</span>
+      <strong>&#51473;&#46041; &#51204;&#51061; &#8594; IMEC &#μ½"&#B9AC;&#45213; &#CC28;&#47168; &amp; &#κΈ&#47196;&#48780; &#μ—&#45580;&#μ§€;&#183;&#44277;&#±ëìê² &#48520;&#μ•88;&#51201;&#49457; &#51648;&#49549;</strong><br>
+      <span style="margin-left:30px;">
+      &#48120;&#44397;-&#51060;&#λž80; &#51204;&#51061;&#51004;&#47196; *IMEC(&#51064;&#46020;-&#51473;&#46041;-&#49720;&#47096; &#κ²½&#51228; &#D68C;&#λž91;) &#49688;&#49569; &#47163;&#47476;&#44032; &#CC28;&#45800;&#46428;. &#κΈ&#47196;&#48780; &#에&#45348;&#B974;&#51648; &#μ‹œ&#51109; &#48520;&#μ•88; &#51648;&#49549;. &#46041;&#49884;&#50640; EU&#45716; &#51473;&#44397;&#49328; EV&#183;&#νƒœ;&#μ–%&#κ΄' &#ACU4;&#μž&#BC18;&#46020;&#52404;; &#κ³Ό;&#μž‰;&#μƒ%&#μ‚°; &#45내;&#μ'';&#47484; &#μœ„;&#54620; &#51CJ4;&#D06C; &#μ£BC;&#κΆŒ; &#팩&#기&#51708;&#51648; (Cloud&amp;AI Act + Chips Act 2) &#BC1C;&#44592;(6/3).
+      <br><em class="footnote">&#8594; VRT(&#45370;&#51060;&#D130;&#μ„A;&#D130; &#λƒ‰;&#44033;&#183;&#51064;&#50532;) &#48143; ASTS(&#μœ„;&#49457;&#D1B5;&#49888;)&#45716; &#51473;&#46041; &#B9AC;&#49828;&#53356;&#44284; &#51D1;&#51217; &#μ—°;&#κ΄€; &#λ‚&#, &#μ—&#45580;&#51648; &#가격 &#μƒ%&#μŠB9; &#49884; &#45370;&#51060;&#D130;&#μ„A;&#D130; &#48708;&#μš©; &#압&#λ°•; &#μ£BC;&#51032;.</em>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">&#128202; 2. &#48120;&#51109; &#54788;&#D669; (2026-06-26 &#44552;&#C694;&#51068; &#51333;&#44032; &#44592;&#51456;)</div>
+  <div class="section-body">
+    <div class="indicator-bar">
+      <span class="indicator ind-ok">VIX 18.89 &#10003; &lt;25</span>
+      <span class="indicator ind-ok">10Y 4.37~4.39% &#10003; &lt;4.5%</span>
+      <span class="indicator ind-alert">USD/KRW 1,542 &#128680; &gt;1,450</span>
+      <span class="indicator ind-warn">&#B098;&#49828;&#45319; 5&#C5F0;&#C18D; &#D558;&#B77D; &#9888;</span>
+    </div>
+    <table style="margin-top:12px;">
+      <tr><th>&#C9C0;&#C218; / &#C9C0;&#D45C;</th><th>&#D604;&#C7AC;&#AC00; / &#C885;&#AC00;</th><th>&#B4F1;&#B77D;&#B960;</th><th>&#C54C;&#B9BC; &#AE30;&#C900;</th><th>&#C0C1;&#D0DC;</th></tr>
+      <tr><td><strong>&#B098;&#C2A4;&#B2E5; (NASDAQ)</strong></td><td>25,297.62</td><td class="down">-0.24%</td><td>-5% &#C5F0;&#C18D;</td><td><span class="badge badge-yellow">&#C8FC;&#C758; (5&#C5F0;&#C18D;&#x2193;)</span></td></tr>
+      <tr><td><strong>S&amp;P 500</strong></td><td>7,354.02</td><td class="down">-0.05%</td><td>200&#C77C;&#C120; &#C774;&#D0C8; &#C5EC;&#BD80;</td><td><span class="badge badge-green">&#C815;&#C0C1;</span></td></tr>
+      <tr><td><strong>&#B2E4;&#C6B0; (DOW)</strong></td><td>51,876.11</td><td class="down">-0.09%</td><td>&#8212;</td><td><span class="badge badge-green">&#C815;&#C0C1;</span></td></tr>
+      <tr><td><strong>VIX</strong></td><td>18.89</td><td class="neutral">&#8212;</td><td>&#8805;25 &#AC정보</td><td><span class="badge badge-green">&#C548;&#C804; &#10003;</span></td></tr>
+      <tr><td><strong>10&#B144;&#BB3C; &#AE08;&#B9AC;</strong></td><td>4.37 ~ 4.39%</td><td class="neutral">&#8212;</td><td>&#8805;4.5%</td><td><span class="badge badge-green">&#C548;&#C804; &#10003;</span></td></tr>
+      <tr><td><strong>USD/KRW</strong></td><td>&#8361;1,542 ~ 1,543</td><td class="down">&#8212;</td><td>&#8805;1,450</td><td><span class="badge badge-red">&#AC경보 &#128680;</span></td></tr>
+    </table>
+    <p style="margin-top:12px; color:var(--muted); font-size:12px;">&#8251; &#B098;&#C2A4;&#B2E5; 5&#AC70;&#B798;&#C77C; &#C5F0;&#C18D; &#D558;&#B77D; &#C911; (&#CE9C;&#C8FC; &#A776;&#B3C4;&#C138; &#C8FC;&#B3C4;). OpenAI IPO &#B0B4;&#B144; &#C5F0;&#AE30; &#BCF4;&#B3C4;(NYT)&#AC00; AI &#C8FC;&#C2DD; &#D22C;&#C790;&#C2EC;&#B9AC; &#μ555;&#BC15;. &#C804;&#BC18;&#C801; &#B514;&#D39C;&#C2DC;&#BC0C; &#B85C;&#D14C;&#C774;&#C158; &#C9C4;&#D589; &#C911;.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">&#128197; &#C774;&#BC88; &#C8FC; &#C8FC;&#C694; &#C77C;&#C815; (6/29 &#C6D4; ~ 7/3 &#AE08;)</div>
+  <div class="section-body">
+    <div class="calendar-note">&#127769; 9PM &#BE0C;&#B9AC;&#D551; &#AE30;&#C900;: &#B0B4;&#C77C;(6/29 &#C6D4;) + &#C774;&#BC88; &#C8FC; &#B098;&#BA38;&#C9C0; &#C804;&#CCB4; &#C77C;&#C815; &#D45C;&#C2DC;</div>
+    <table>
+      <tr><th>&#B0A0;&#C9DC;</th><th>&#C885;&#B958;</th><th>&#B0B4;&#C6A9;</th><th>&#C608;&#C0C1;&#CE58;</th><th>&#C601;&#D5A5; &#C885;&#BAA9;</th></tr>
+      <tr><td>6/29 (&#C6D4;)</td><td>&#8212;</td><td>&#C8FC;&#C694; &#C9C0;&#D45C; &#C5C6;&#C74C;</td><td>&#8212;</td><td>&#8212;</td></tr>
+      <tr><td>6/30 (&#D654;)</td><td>&#AC정제지표</td><td><strong>PCE &#C778;&#D50C;&#B808;&#C774;&#C158;</strong> (5&#C6D4;, &#C5F0;&#C900; &#C120;&#D638; &#BB3C;&#AC00;&#C9C0;&#D45C;)</td><td>TBD</td><td>&#C804; &#C885;&#BAA9; (&#C5F0;&#C900; &#AE08;&#B9AC; &#BC29;&#D5A5; &#C601;&#D5A5;)</td></tr>
+      <tr><td>7/1 (&#C218;)</td><td>&#C5F0;&#C900; &#C5F0;&#C124;</td><td><strong>&#C5F0;&#C900; &#C758;&#C7A5; &#CF00;&#BE48; &#C6CC;&#C2DC;</strong> &#D3EC;&#B974;&#D22C;&#AC08; &#C5F0;&#C124; 9:30AM ET</td><td>&#8212;</td><td>&#C804; &#C885;&#BAA9; (&#AE08;&#B9AC; &#BC29;&#D5A5; &#D78C;&#D2B8;)</td></tr>
+      <tr><td>7/1 (&#C218;)</td><td>&#AC정제지표</td><td>ISM &#C81C;&#C870;&#C5C5; PMI</td><td>&#8212;</td><td>&#C0B0;&#C5C5;&#C8FC; &#C804;&#BC18;</td></tr>
+      <tr><td><strong>7/2 (&#BAA9;)</strong></td><td><strong>&#AC정제지표 &#128293;</strong></td><td><strong>6&#C6D4; &#ACE0;&#C6A9;&#BCF4;&#ACE0;&#C11C; (NFP) &#8212; &#D734;&#C7A5;&#C77C; &#B300;&#CCB4; &#C870;&#AE30; &#BC1C;&#D45C;</strong></td><td><strong>+172,000&#BA85; (&#CEE8;&#C13C;&#C11C;&#C2A4;)</strong></td><td>&#C804; &#C885;&#BAA9;</td></tr>
+      <tr><td>7/3 (&#AE08;)</td><td>&#128683; &#D734;&#C7A5;</td><td>&#48120;&#44397; &#C2DC;&#C7A5; &#D734;&#C7A5; (&#B3C5;&#B9BD;&#AE30;&#B150;&#C77C; &#B300;&#CCB4;)</td><td>&#8212;</td><td>&#8212;</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">&#128188; 3. &#BCF4;&#C720; &#C885;&#BAA9; &#D604;&#D669;</div>
+  <div class="section-body">
+    <table>
+      <tr><th>&#C885;&#BAA9;</th><th>&#D604;&#C7AC;&#AC00;</th><th>&#B4F1;&#B77D;&#B960;</th><th>&#C624;&#B298; &#C8FC;&#C694; &#C774;&#C288;</th><th>&#D55C; &#C904; &#D310;&#B2E8;</th></tr>
+      <tr><td><strong>NVDA</strong></td><td class="down"><strong>$192.53</strong></td><td class="down">-6.5% (6/26)</td><td>&#CE5C;&#C8FC; &#C804;&#BC18; &#A776;&#B3C4;&#C138;, &#C790;&#B3D9;&#B9E4;&#C218; 2&#AC1C;&#C120; &#C774;&#D0C8;</td><td><span class="badge badge-red">&#D640;&#B529; + &#C190;&#C808;&#C120; &#BAA8;&#B2C8;&#D130;&#B9C1;</span></td></tr>
+      <tr><td><strong>VRT</strong></td><td class="down"><strong>$303.95</strong></td><td class="down">-6.6%</td><td>GLJ Research &#B9E4;&#C218;&#8594;&#D640;&#B529; &#D558;&#D5A5;, AI &#B370;&#C774;&#D130;&#C13C;&#D130; &#C218;&#C694; &#AC25;&#C870;</td><td><span class="badge badge-yellow">&#D640;&#B529; (&#B2E8;&#AE30; &#C870;&#C815;, &#CD94;&#C138; &#C720;&#D6A8;)</span></td></tr>
+      <tr><td><strong>&#D604;&#B300;&#CC28; 005380</strong></td><td class="neutral"><strong>&#8361;503,000</strong></td><td class="neutral">6/25 &#D655;&#C778;&#AC00;</td><td>&#BBF8;&#C911; EV &#AD00;&#C138;&#B410; &#C9C0;&#C18D;, &#D658;&#C728; &#D638;&#ACE0; &#BC18;&#C0C1;</td><td><span class="badge badge-yellow">&#D640;&#B529; (&#AD00;&#C138; &#B9AC;&#C2A4;&#D06C; &#C8FC;&#C2DC;)</span></td></tr>
+      <tr><td><strong>INTC</strong></td><td class="down"><strong>$128.32</strong></td><td class="down">-3.4%</td><td>Goldman AI &#C218;&#D61C; &#C758;&#AC AC;, &#C790;&#B3D9;&#B9E4;&#C218; 1&#CC28;&#C120; &#C5EC;&#C720;</td><td><span class="badge badge-blue">&#D640;&#B529; (&#ACE8;&#B4DC;&#B9CC; &#AE0D;&#C815;, &#C5EC;&#C720; &#C788;&#C74C;)</span></td></tr>
+      <tr><td><strong>ASTS</strong></td><td class="up"><strong>$71.45</strong></td><td class="up">+8.8% (6/26)</td><td>BlueBird 8&#183;9&#183;10 &#BC1C;&#C0AC; &#C131;&#ACF5;, &#B77C;&#CF70;&#D150; JV, &#C790;&#B3D9;&#B9E4;&#C218; 1&#CC28; &#AD FC;&#C811;</td><td><span class="badge badge-green">&#D640;&#B529; (&#BAA8;&#BA58;&#D138; &#AC15;&#D568;)</span></td></tr>
+      <tr><td><strong>MSTX</strong></td><td class="down"><strong>$6.76</strong></td><td class="down">-7.78% (&#C77C;)</td><td>MSTR $82.31, &#BE44;&#D2B8;&#CF54;&#C778; &#C57D;&#C138; &#C5F0;&#B3D9;</td><td><span class="badge badge-yellow">&#C7A5;&#AE30;&#D640;&#B529; &#C720;&#C9C0;</span></td></tr>
+    </table>
+
+    <div style="margin-top:16px;">
+      <div class="stock-para">
+        <div class="stock-title">NVDA &#8212; &#C790;&#B3D9;&#B9E4;&#C218; 2&#AC1C;&#C120; &#C774;&#D0C8;, &#C190;&#C808;&#C120; $7.53 &#C55E;</div>
+        &#D604;&#C7AC;&#AC00; $192.53. 6&#C6D4; &#CE5C;&#C8FC; &#A776;&#B3C4;&#C138; &#C8FC;&#B3C4;. YTD +12%&#B85C; &#BC18;&#B3C4;&#CCB4; ETF(+85%) &#B300;&#BE44; &#C5B8;&#B354;&#D37C;&#D3FC;. FY2026 &#B9E4;&#CD9C; $215.9B (+65%)&#B294; &#AC74;&#C870;. &#C560;&#B110;&#B9AC;&#C2A4;&#D2B8; &#C804;&#C6D0; &#B9E4;&#C218;, &#D3C9;&#ADE0; &#BAA9;&#D45C;&#AC00; $328.
+        <div class="verdict">Claude &#D310;&#B2E8;: <strong class="alert-red">&#AE30;&#B2E4;&#B824;&#C57C; &#D568;.</strong> 1&#CC28;($217)&#183;2&#CC28;($201) &#C790;&#B3D9;&#B9E4;&#C218;&#C120; &#BAA8;&#B450; &#C774;&#D0C8;. <strong>$185 &#C774;&#D0C8; &#C2DC; &#C989;&#C2DC; &#C190;&#C808; &#B300;&#C751; &#C900;&#BE44;.</strong> &#BC18;&#B4F1; &#D655;&#C778; &#D6C4; &#CD94;&#AC00; &#B9E4;&#C218; &#AC80;&#D1A0;.</div>
+      </div>
+      <div class="stock-para">
+        <div class="stock-title">VRT &#8212; AI &#B370;&#C774;&#D130;&#C13C;&#D130; &#C778;&#D504;&#B77C;, &#C870;&#C815; &#AD6C;&#AC04;</div>
+        &#D604;&#C7AC;&#AC00; $303.95 (-6.6%). 2026 YTD +73% &#C0C1;&#C2B9; &#D6C4; &#C870;&#C815;. &#C560;&#B110;&#B9AC;&#C2A4;&#D2B8; &#D3C9;&#ADE0; &#BAA9;&#D45C;&#AC00; $377 (+24% &#C5C5;&#C0AC;&#C774;&#B4DC;). NVIDIA Omniverse DSX &#C5F0;&#ACC4; SmartRun &#B514;&#C9C0;&#D138; &#D2B8;&#C708; &#CD9C;&#C2DC;.
+        <div class="verdict">Claude &#D310;&#B2E8;: <strong>&#D640;&#B529;.</strong> &#B2E8;&#AE30; &#C870;&#C815;&#C774;&#B098; AI &#B370;&#C774;&#D130;&#C13C;&#D130; &#AD6C;&#C870;&#C801; &#C218;&#C694; &#D6FC;&#C190; &#C5C6;&#C74C;. $290~300 &#C9C0;&#C9C0; &#D655;&#C778; &#C2DC; &#BD84;&#D560; &#CD94;&#AC00; &#B9E4;&#C218; &#AC00;&#B2A5;. $280 &#C774;&#D0C8; &#C2DC; &#B9AC;&#C2A4;&#D06C; &#C7AC;&#AC80;&#D1A0;.</div>
+      </div>
+      <div class="stock-para">
+        <div class="stock-title">&#D604;&#B300;&#CC28; 005380 &#8212; &#AD00;&#C138; &#B9AC;&#C2A4;&#D06C;, &#D658;&#C728; &#D638;&#ACE0;</div>
+        &#D604;&#C7AC;&#AC00; &#8361;503,000 (6/25 &#D655;&#C778;). &#BBF8;&#C911; &#BB34;&#C5ED; &#AC08;&#B4F1;&#AC11; &#C911;&#AD6D; EV &#C800;&#AC00; &#ACF5;&#C138; &#BCF5;&#D569; &#C555;&#BC15;. USD/KRW 1,542&#B85C; &#C218;&#CD9C; &#D658;&#CC28;&#C775; &#AE0D;&#C815;&#C801;.
+        <div class="verdict">Claude &#D310;&#B2E8;: <strong>&#D640;&#B529;.</strong> &#D658;&#C728; &#D638;&#ACE0; &#BC0F; &#C804;&#AE30;&#CC28; &#C804;&#D658; &#C218;&#D61C; &#AE30;&#B300;. &#8361;480,000 &#C9C0;&#C9C0;&#C120; &#BAA8;&#B2C8;&#D130;&#B9C1;.</div>
+      </div>
+      <div class="stock-para">
+        <div class="stock-title">INTC &#8212; Goldman &#AE0D;&#C815;, &#C790;&#B3D9;&#B9E4;&#C218;&#C120; &#C5EC;&#C720;</div>
+        &#D604;&#C7AC;&#AC00; $128.32 (-3.4%). 52&#C8FC; $18.97~$141.45. Goldman "AI &#C218;&#D61C;" &#C758;&#AC AC;. 1&#CC28; &#C790;&#B3D9;&#B9E4;&#C218;&#C120;($104.50)&#AE4C;&#C9C0; $23.82 &#C5EC;&#C720;.
+        <div class="verdict">Claude &#D310;&#B2E8;: <strong>&#D640;&#B529;.</strong> &#CE5C;&#C8FC; &#CE5C;&#C2EC;&#B9AC; &#D558;&#B77D; &#C911;. $120 &#C9C0;&#C9C0;&#C120; &#C8FC;&#C2DC;.</div>
+      </div>
+      <div class="stock-para">
+        <div class="stock-title">ASTS &#8212; BlueBird &#BC1C;&#C0AC; &#BAA8;&#BA58;&#D138;, &#C790;&#B3D9;&#B9E4;&#C218; 1&#CC28; &#ADC0;&#C811;</div>
+        &#D604;&#C7AC;&#AC00; $71.45 (+8.8%). BlueBird 8&#183;9&#183;10 6/17 &#BC1C;&#C0AC; &#C131;&#ACF5;. MNO &#AC00;&#C785;&#C790; 30&#C5B5;&#BA85; &#CE5C;&#BC84;. &#C77C;&#BCF8; &#B77C;&#CF70;&#D150; JV. 1&#CC28; &#C790;&#B3D9;&#B9E4;&#C218;&#C120;($67)&#AE4C;&#C9C0; $4.45.
+        <div class="verdict">Claude &#D310;&#B2E8;: <strong>&#D640;&#B529;.</strong> &#C704;&#C131; &#BC1C;&#C0AC; &#C131;&#ACF5;&#C73C;&#B85C; &#BAA8;&#BA58;&#D138; &#AC15;&#D568;. $67 &#D655;&#C778; &#C2DC; 1&#CC28; &#BD84;&#D560; &#B9E4;&#C218; &#AC80;&#D1A0;.</div>
+      </div>
+      <div class="stock-para">
+        <div class="stock-title">MSTX &#8212; &#BE44;&#D2B8;&#CF54;&#C778; &#C57D;&#C138; &#C5F0;&#B3D9; &#D558;&#B77D;</div>
+        &#D604;&#C7AC;&#AC00; $6.76 (-7.78%). MSTR $82.31 (-3.54%). 2&#BC30; &#B808;&#BC84;&#B9AC;&#C9C0; &#D2B9;&#C131;&#C0C1; &#C190;&#C2E4; &#D655;&#B300;.
+        <div class="verdict">Claude &#D310;&#B2E8;: <strong>&#C7A5;&#AE30; &#D640;&#B529; &#C720;&#C9C0;.</strong> &#BE44;&#D2B8;&#CF54;&#C778; &#C0AC;&#C774;&#D074; &#C0C1;&#B2E8;&#C5D0;&#C11C; &#BD84;&#D560; &#B9E4;&#B3C4; &#C804;&#B7B5; &#C720;&#C9C0;.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">&#9889; 4. &#C790;&#B3D9;&#B9E4;&#C218; &#C784;&#BC15; &#C54C;&#B9BC;</div>
+  <div class="section-body">
+    <table>
+      <tr><th>&#C885;&#BAA9;</th><th>&#D604;&#C7AC;&#AC00;</th><th>&#C790;&#B3D9;&#B9E4;&#C218; 1&#CC28;</th><th>1&#CC28; &#AC70;&#B9AC;</th><th>&#C790;&#B3D9;&#B9E4;&#C218; 2&#CC28;</th><th>&#C190;&#C808;&#AC00;</th><th>&#C0C1;&#D0DC;</th></tr>
+      <tr>
+        <td><strong>NVDA</strong></td><td class="down">$192.53</td><td>$217.00</td>
+        <td class="down">&#9660; $24.47 &#C774;&#D0C8;</td>
+        <td>$201.00 <span class="down">(&#9660;$8.47)</span></td><td>$185</td>
+        <td><span class="badge badge-red">&#128680; &#C591;&#C120; &#C774;&#D0C8;</span></td>
+      </tr>
+      <tr>
+        <td><strong>ASTS</strong></td><td class="up">$71.45</td><td>$67.00</td>
+        <td class="warn">&#9650; $4.45 (6.2%)</td>
+        <td>$57.00</td><td>$45</td>
+        <td><span class="badge badge-yellow">&#9888; 1&#CC28; &#C784;&#BC15;</span></td>
+      </tr>
+      <tr>
+        <td><strong>AVGO</strong></td><td class="down">$365.02</td><td>$435.00</td>
+        <td class="down">&#9660; $69.98 &#C774;&#D0C8;</td>
+        <td>$420.00 <span class="down">(&#9660;$54.98)</span></td><td>$390</td>
+        <td><span class="badge badge-red">&#128680; &#C591;&#C120; &#C774;&#D0C8;</span></td>
+      </tr>
+      <tr>
+        <td><strong>INTC</strong></td><td class="neutral">$128.32</td><td>$104.50</td>
+        <td class="up">&#9650; $23.82 (18.6%)</td>
+        <td>$99.00</td><td>$95</td>
+        <td><span class="badge badge-green">&#10003; &#C5EC;&#C720;</span></td>
+      </tr>
+      <tr>
+        <td><strong>&#D604;&#B300;&#CC28;</strong></td><td class="neutral">&#8361;503,000</td><td>&#8361;665,000</td>
+        <td class="down">&#9660; &#8361;162,000 &#C774;&#D0C8;</td>
+        <td>&#8361;635,000</td><td>&#8361;600,000</td>
+        <td><span class="badge badge-red">&#128680; &#C591;&#C120; &#C774;&#D0C8;</span></td>
+      </tr>
+    </table>
+    <p class="footnote">&#8251; "&#C774;&#D0C8;" = &#D604;&#C7AC;&#AC00;&#AC00; &#C790;&#B3D9;&#B9E4;&#C218; &#C124;&#C815;&#AC00; &#C774;&#D558; (&#AE30; &#D2B8;&#B9AC;&#AC70; &#C0C1;&#D0DC;). NVDA&#183;AVGO&#183;&#D604;&#B300;&#CC28;&#B294; &#C124;&#C815;&#AC00; &#C7AC;&#AC80;&#D1A0; &#AD8C;&#C7A5;.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">&#128293; 5. &#C624;&#B298;&#C758; &#CD94;&#CC9C; &#C885;&#BAA9; (4&#C885;&#BAA9;) &#8212; VCP&#183;Weinstein&#183;C&amp;H&#183;M2 &#BCF5;&#D569;&#BD84;&#C11D;</div>
+  <div class="section-body">
+    <table>
+      <tr>
+        <th>&#C21C;&#C704;</th><th>&#C885;&#BAA9;</th><th>&#D2F0;&#CEE4;</th><th>&#D604;&#C7AC;&#AC00;</th>
+        <th>MA50&gt;MA200?</th><th>&#BA38;&#ADF8;&#CEF5;</th>
+        <th>&#C9C4;&#C785;&#AC00;</th><th>&#C190;&#C808;&#AC00;</th><th>&#BAA9;&#D45C;&#AC00;</th><th>R/R</th><th>&#AD6C;&#AC04;&#D310;&#BCC4;</th>
+      </tr>
+      <tr>
+        <td>1</td><td><strong>&#B9C8;&#C774;&#D06C;&#B860; &#D14C;&#D06C;</strong></td><td>MU</td>
+        <td class="down">$1,132</td>
+        <td class="up">&#10003; &#ACE8;&#B4E0;&#D06C;&#B85C;&#C2A4;</td><td class="up">&#9749; &#D615;&#C131; &#C911;</td>
+        <td>$1,100~1,130</td><td>$980</td><td>$1,400+</td>
+        <td class="up">~2:1</td>
+        <td><span class="badge badge-blue">&#127775; &#ACE8;&#B4E0;&#D06C;&#B85C;&#C2A4;+20&#C120;</span></td>
+      </tr>
+      <tr>
+        <td>2</td><td><strong>&#BE0C;&#B85C;&#B4DC;&#CEF4;</strong></td><td>AVGO</td>
+        <td class="down">$365</td>
+        <td class="up">&#10003; &#ACE8;&#B4E0;&#D06C;&#B85C;&#C2A4;</td><td class="neutral">&#9888; &#C870;&#C815; &#C911;</td>
+        <td>$355~375</td><td>$320</td><td>$500</td>
+        <td class="up">~2.5:1</td>
+        <td><span class="badge badge-green">&#10003; &#C9C0;&#C9C0;&#C120; &#AD FC;&#C811;</span></td>
+      </tr>
+      <tr>
+        <td>3</td><td><strong>&#B300;&#B9CC;&#BC18;&#B3C4;&#CCB4;</strong></td><td>TSM</td>
+        <td class="neutral">$185 &#CD94;&#C815;</td>
+        <td class="up">&#10003; &#ACE8;&#B4E0;&#D06C;&#B85C;&#C2A4;</td><td class="neutral">&#9888; &#C870;&#C815;</td>
+        <td>$180~190</td><td>$160</td><td>$240</td>
+        <td class="up">~2.5:1</td>
+        <td><span class="badge badge-blue">&#127775; &#ACE8;&#B4E0;&#D06C;&#B85C;&#C2A4;+20&#C120;</span></td>
+      </tr>
+      <tr>
+        <td>4</td><td><strong>&#C544;&#B9AC;&#C2A4;&#D0C0; &#B124;&#D2B8;&#C6CD;&#C2A4;</strong></td><td>ANET</td>
+        <td class="neutral">$390 &#CD94;&#C815;</td>
+        <td class="up">&#10003; &#ACE8;&#B4E0;&#D06C;&#B85C;&#C2A4;</td><td class="up">&#9749; &#BA38;&#ADF8;&#CEF5; &#C9C4;&#D589;</td>
+        <td>$380~400</td><td>$340</td><td>$520</td>
+        <td class="up">~3:1</td>
+        <td><span class="badge badge-orange">&#9749; &#BA38;&#ADF8;&#CEF5;</span></td>
+      </tr>
+    </table>
+
+    <div style="margin-top:16px;">
+      <div class="stock-para">
+        <div class="stock-title">&#9312; MU (Micron Technology) &#8212; AI &#BA54;&#BAA8;&#B9AC; &#C218;&#D37C;&#C0AC;&#C774;&#D074;, &#C2E4;&#C801; &#C11C;&#D504;&#B77C;&#C774;&#C988; &#D6C4; &#C870;&#C815;</div>
+        &#D604;&#C7AC;&#AC00; $1,132 (6/26 -6.7%, 25&#C77C; ATH $1,255 &#B300;&#BE44; -9.8%). FY3Q &#C2E4;&#C801; +16% &#AE09;&#B4F1; &#D6C4; &#CE5C;&#C8FC; &#B3D9;&#BC18; &#D558;&#B77D;. YTD +325%. &#C560;&#B110;&#B9AC;&#C2A4;&#D2B8; 27/30 &#B9E4;&#C218;. Strong Buy &#AE30;&#C220;&#C801; &#C2E0;&#D638; &#C720;&#C9C0;.
+        <div class="four-strat">
+          <span class="strat-badge">VCP &#10003; 3&#D68C; &#C218;&#CD95; &#D655;&#C778;</span>
+          <span class="strat-badge">Weinstein &#10003; Stage 2</span>
+          <span class="strat-badge">C&amp;H &#9749; &#D615;&#C131; &#C911;</span>
+          <span class="strat-badge">M2 &#10003; &#AE00;&#B85C;&#BC8C; M2 &#D655;&#C7A5;</span>
+        </div>
+        <div class="verdict">Claude &#D310;&#B2E8;: <strong class="up">&#C9C0;&#AE08; &#B4E4;&#C5B4;&#AC00;&#C57C; &#D568; (&#BD84;&#D560;).</strong> &#C2E4;&#C801; &#D6FC;&#C190; &#C5C6;&#B294; &#C870;&#C815;. $1,100 1&#CC28;, $1,050 2&#CC28; &#BD84;&#D560; &#C9C4;&#C785;. &#C190;&#C808; $980.</div>
+      </div>
+      <div class="stock-para">
+        <div class="stock-title">&#9313; AVGO (Broadcom) &#8212; AI &#B124;&#D2B8;&#C6CC;&#D0B9;&#183;&#CE74;&#C2A4;&#D140; &#CE81; &#B3C5;&#C810;, &#C9C0;&#C9C0;&#C120; &#D14C;&#C2A4;&#D2B8;</div>
+        &#D604;&#C7AC;&#AC00; $365.02 (-3.7%). AI &#CE74;&#C2A4;&#D140; ASIC(*ASIC: Application-Specific Integrated Circuit, &#D2B9;&#C815; &#C6A9;&#B3C4; &#CD5C;&#C801;&#D654; &#BC18;&#B3C4;&#CCB4;) &#BC0F; &#B370;&#C774;&#D130;&#C13C;&#D130; &#B124;&#D2B8;&#C6CC;&#D0B9; &#B3C5;&#C810;. $355~365 &#AC15;&#D55C; &#C9C0;&#C9C0;&#C120;.
+        <div class="four-strat">
+          <span class="strat-badge">VCP &#10003; &#C218;&#CD95; &#C9C4;&#D589;</span>
+          <span class="strat-badge">Weinstein &#10003; Stage 2</span>
+          <span class="strat-badge">C&amp;H &#9888; &#C870;&#C815; &#B2E8;&#ACC4;</span>
+          <span class="strat-badge">M2 &#10003; &#C720;&#B3D9;&#C131; &#C6B0;&#D638;</span>
+        </div>
+        <div class="verdict">Claude &#D310;&#B2E8;: <strong class="up">&#C9C0;&#AE08; &#B4E4;&#C5B4;&#AC00;&#C57C; &#D568; (&#C18C;&#B7C9; &#C120;&#CDE8;).</strong> $355~375 &#BD84;&#D560; &#C9C4;&#C785;. &#C190;&#C808; $320. &#BAA9;&#D45C; $500.</div>
+      </div>
+      <div class="stock-para">
+        <div class="stock-title">&#9314; TSM (Taiwan Semiconductor) &#8212; AI &#D30C;&#C6B4;&#B4DC;&#B9AC; &#B3C5;&#C810;, &#C870;&#C815; &#B9E4;&#C218;</div>
+        &#CD94;&#C815; $185 (6/26 &#CE5C;&#C8FC; &#B3D9;&#BC18; &#D558;&#B77D;). &#C5D4;&#BE44;&#B514;&#C544;&#183;&#C560;&#D50C;&#183;AMD &#C81C;&#D488; &#C804;&#B7C9; &#C704;&#D0C1;. 2nm &#ACF5;&#C815; &#C591;&#C0B0; &#C9C4;&#D589;. &#B300;&#B9CC;&#D574;&#D611; &#C9C0;&#C815;&#D559; &#B9AC;&#C2A4;&#D06C; &#C0C1;&#C874;.
+        <div class="four-strat">
+          <span class="strat-badge">VCP &#10003; &#C218;&#CD95; &#D655;&#C778;</span>
+          <span class="strat-badge">Weinstein &#10003; Stage 2</span>
+          <span class="strat-badge">C&amp;H &#9888; &#C9C4;&#D589; &#C911;</span>
+          <span class="strat-badge">M2 &#10003; &#C720;&#B3D9;&#C131; &#C6B0;&#D638;</span>
+        </div>
+        <div class="verdict">Claude &#D310;&#B2E8;: <strong>&#AE30;&#B2E4;&#B838;&#B2E4; &#B4E4;&#C5B4;&#AC00;&#C57C; &#D568;.</strong> $180 &#C9C0;&#C9C0; &#D655;&#C778; &#D6C4; &#C9C4;&#C785;. &#C190;&#C808; $160.</div>
+      </div>
+      <div class="stock-para">
+        <div class="stock-title">&#9315; ANET (Arista Networks) &#8212; AI &#B370;&#C774;&#D130;&#C13C;&#D130; &#C774;&#B354;&#B137; &#B124;&#D2B8;&#C6CC;&#D0B9; &#B3C5;&#C810;</div>
+        &#CD94;&#C815; ~$390. Meta&#183;Microsoft&#183;Google AI &#D074;&#B7EC;&#C2A4;&#D130; &#B124;&#D2B8;&#C6CC;&#D0B9; &#C218;&#D61C;. 400GbE &#C804;&#D658; &#AC00;&#C18D;&#D654; &#D63C;&#C790; &#C218;&#D61C;. &#BA38;&#ADF8;&#CEF5;(*C&amp;H: Cup &amp; Handle, U&#C790;&#D615; &#CEF5;+&#D578;&#B4E4; &#BAA8;&#C591;&#C758; &#AC15;&#C138; &#AE30;&#C220;&#C801; &#D328;&#D134;) &#D328;&#D134; &#C9C4;&#D589; &#C911;.
+        <div class="four-strat">
+          <span class="strat-badge">VCP &#10003; 3&#D68C; &#C218;&#CD95;</span>
+          <span class="strat-badge">Weinstein &#10003; Stage 2</span>
+          <span class="strat-badge">C&amp;H &#9749; &#BA38;&#ADF8;&#CEF5; &#C9C4;&#D589;</span>
+          <span class="strat-badge">M2 &#10003; &#C720;&#B3D9;&#C131; &#C6B0;&#D638;</span>
+        </div>
+        <div class="verdict">Claude &#D310;&#B2E8;: <strong>&#D578;&#B4E4; &#B3CC;&#D30C; &#C2DC; &#C9C4;&#C785;.</strong> $400 &#BE0C;&#B808;&#C774;&#D06C;&#C544;&#C6C3; &#D655;&#C778; &#D6C4; &#B9E4;&#C218;. &#C190;&#C808; $340. &#BAA9;&#D45C; $520 (R/R 3:1).</div>
+      </div>
+    </div>
+    <p class="footnote">&#8251; TSM&#183;ANET &#D604;&#C7AC;&#AC00;&#B294; &#CD94;&#C815;&#AC12;. &#C9C4;&#C785; &#C804; TradingView &#C2E4;&#AC00; &#D655;&#C778; &#D544;&#C218;. AMD &#C81C;&#C678; (&#C0AC;&#C6A9;&#C790; &#C9C0;&#CE68;). &#B370;&#B4DC;&#D06C;&#B85C;&#C2A4; &#C885;&#BAA9; &#C2A4;&#D06C;&#B9AC;&#B2DD; &#C644;&#B8CC;.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">&#127760; 6. &#C9C0;&#C815;&#D559;&#183;&#C815;&#CC45; &#8594; &#D3EC;&#D2B8;&#D3F4;&#B9AC;&#C624; &#C601;&#D5A5; &#C9C1;&#C811; &#C9C0;&#C2DC;</div>
+  <div class="section-body">
+    <table>
+      <tr><th>&#C774;&#C288;</th><th>&#C601;&#D5A5; &#C885;&#BAA9;</th><th>&#BC29;&#D5A5;</th><th>&#C9C0;&#C2DC;</th></tr>
+      <tr>
+        <td>&#BBF8;&#C911; &#AD70;&#C0AC;&#AE30;&#C5C5; &#C9C0;&#C815; &#D655;&#B300; + &#D76C;&#D1A0;&#B958; &#C218;&#CD9C;&#D1B5;&#C81C; &#BCF4;&#BCF5;</td>
+        <td>NVDA, INTC</td><td class="down">&#BD80;&#C815; &#8595;</td>
+        <td><strong>&#D640;&#B529;, &#CD94;&#AC00; &#B9E4;&#C218; &#C790;&#C81C;.</strong> NVDA &#C190;&#C808;&#C120; $185 &#C900;&#C218;.</td>
+      </tr>
+      <tr>
+        <td>&#D2B8;&#B7FC;&#D504; PQC EO</td>
+        <td>INTC (&#B370;&#C774;&#D130;&#C13C;&#D130;)</td><td class="up">&#C911;&#B9BD;&#8594;&#AE0D;&#C815; &#8593;</td>
+        <td><strong>&#D640;&#B529;.</strong> &#C5F0;&#BC29; &#C778;&#D504;&#B77C; &#C5C5;&#ADF8;&#B808;&#C774;&#B4DC; &#C218;&#D61C; &#C911;&#C7A5;&#AE30; &#AE0D;&#C815;.</td>
+      </tr>
+      <tr>
+        <td>ASTS &#C704;&#C131; &#BC1C;&#C0AC; &#C131;&#ACF5; + &#B77C;&#CF70;&#D150; JV</td>
+        <td>ASTS</td><td class="up">&#AE0D;&#C815; &#8593;</td>
+        <td><strong>&#D640;&#B529;.</strong> $67 &#C790;&#B3D9;&#B9E4;&#C218; 1&#CC28; &#B3C4;&#B2EC; &#C2DC; &#BD84;&#D560; &#CD94;&#AC00; &#B9E4;&#C218; &#AC80;&#D1A0;.</td>
+      </tr>
+      <tr>
+        <td>&#C911;&#B3D9; &#C804;&#C7C1; &#8594; &#C5D0;&#B108;&#C9C0; &#BE44;&#C6A9; &#C0C1;&#C2B9;</td>
+        <td>VRT</td><td class="down">&#ACBD;&#BBF8; &#BD80;&#C815; &#8595;</td>
+        <td><strong>&#D640;&#B529;.</strong> AI &#C778;&#D504;&#B77C; &#C218;&#C694;&#B85C; &#C0C1;&#C1C4;. $290 &#C9C0;&#C9C0; &#C8FC;&#C2DC;.</td>
+      </tr>
+      <tr>
+        <td>USD/KRW 1,542 (&#ACE0;&#D658;&#C728;)</td>
+        <td>&#D604;&#B300;&#CC28; 005380</td><td class="up">&#C218;&#CD9C; &#AE0D;&#C815; &#8593;</td>
+        <td><strong>&#D640;&#B529;.</strong> &#C218;&#CD9C; &#D658;&#CC28;&#C775; &#C720;&#D6A8;. &#8361;480,000 &#C9C0;&#C9C0; &#BAA8;&#B2C8;&#D130;&#B9C1;.</td>
+      </tr>
+      <tr>
+        <td>&#B098;&#C2A4;&#B2E5; 5&#C5F0;&#C18D; &#D558;&#B77D;, &#B514;&#D39C;&#C2DC;&#BC0C; &#B85C;&#D14C;&#C774;&#C158;</td>
+        <td>&#C804; &#BCF4;&#C720;&#C885;&#BAA9;</td><td class="down">&#B2E8;&#AE30; &#BD80;&#C815; &#8595;</td>
+        <td><strong>&#CD94;&#AC00; &#B9E4;&#C218; &#AE08;&#C9C0;, &#D640;&#B529;.</strong> 7/2 NFP &#D655;&#C778; &#D6C4; &#C7AC;&#BC30;&#CE58;.</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">&#128302; 7. &#B0B4;&#C77C; &#C8FC;&#BAA9; &#C774;&#BC A4;&#D2B8; / &#D55C; &#C904; &#CD1D;&#D3C9;</div>
+  <div class="section-body">
+    <p><strong>&#B0B4;&#C77C;(6/29 &#C6D4;):</strong> &#C8FC;&#C694; &#C9C0;&#D45C; &#BD80;&#C7AC;. &#C544;&#C2DC;&#C544; &#C2DC;&#C7A5; &#AC1C;&#C7A5; &#B3D9;&#D5A5; &#BC0F; &#BBF8;&#AD6D; &#C120;&#BB3C; &#C2DC;&#C7A5; &#BD84;&#C704;&#AE30; &#D655;&#C778;. &#CE5C;&#C8FC; &#C138;&#D130; &#BC18;&#B4F1; &#C5EC;&#BD80;&#AC00; NVDA&#183;INTC &#BC29;&#D5A5; &#ACB0;&#C815;.</p>
+    <p style="margin-top:10px;"><strong>&#C774;&#BC88; &#C8FC; &#CD5C;&#B300; &#C774;&#BC A4;&#D2B8;:</strong> &#128293; <strong>7/2(&#BAA9;) NFP &#ACE0;&#C6A9;&#BCF4;&#ACE0;&#C11C;</strong> &#8212; &#CEE8;&#C13C;&#C11C;&#C2A4; +172,000&#BA85;. &#AC15;&#D55C; &#ACE0;&#C6A9; = &#C5F0;&#C900; &#AE34;&#CD95; &#C6B0;&#B824; = &#C131;&#C7A5;&#C8FC;&#183;&#AE30;&#C220;&#C8FC; &#C555;&#BC15;. &#C57D;&#D55C; &#ACE0;&#C6A9; = &#C644;&#D654; &#AE30;&#B300; = &#BC18;&#B4F1; &#CD09;&#A9E2;. <strong>7/1(&#C218;) &#C6CC;&#C2DC; &#C5F0;&#C900; &#C758;&#C7A5; &#C5F0;&#C124;</strong>&#B3C4; &#C8FC;&#C694; &#D78C;&#D2B8;.</p>
+    <p style="margin-top:10px;"><strong>&#D55C; &#C904; &#CD1D;&#D3C9;:</strong> <em>&#34;&#CE5C;&#C8FC; &#C138;&#D130; 5&#C5F0;&#C18D; &#D558;&#B77D; + NVDA &#C190;&#C808;&#C120; &#ADC0;&#C811; &#8212; &#C774;&#BC88; &#C8FC; NFP&#183;&#C6CC;&#C2DC; &#BC1C;&#C5B8;&#C774; &#BC29;&#D5A5; &#ACB0;&#C815;. &#C9C0;&#AE08;&#C740; &#D640;&#B529; &#C804;&#B7B5;, &#C12C;&#BD80;&#B978; &#CD94;&#AC00; &#B9E4;&#C218; &#AE08;&#C9C0;. MU&#183;AVGO &#C9C0;&#C9C0;&#C120; &#BD84;&#D560; &#C9C4;&#C785;&#B9CC; &#D5C8;&#C6A9;.&#34;</em></p>
+  </div>
+</div>
+
+<div style="text-align:center; color:var(--muted); font-size:11px; padding:16px 0;">
+  &#C790;&#B3D9; &#C0DD;&#C131; &#BE0C;&#B9AC;&#D551; &#8212; 2026-06-28 21:00 KST | Claude AI &#183; ETHAN DASH<br>
+  &#9888; &#D22C;&#C790; &#D310;&#B2E8;&#C758; &#CD5C;&#C885; &#CC45;&#C784;&#C740; &#BCF8;&#C778;&#C5D0;&#AC8C; &#C788;&#C2B5;&#B2C8;&#B2E4;. &#BCF8; &#BE0C;&#B9AC;&#D551;&#C740; &#CC38;&#ACE0;&#C6A9;&#C774;&#BA70; &#D22C;&#C790; &#AD8C;&#C720;&#AC00; &#C544;&#B2D9;&#B2C8;&#B2E4;.
+</div>
+
+</div>
+</body>
+</html>
