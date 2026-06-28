@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림 2026-06-29</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d1117; color: #e6edf3; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 16px; }
+  .header { background: #161b22; border: 1px solid #f85149; border-radius: 10px; padding: 16px; margin-bottom: 16px; text-align: center; }
+  .header h1 { font-size: 1.2em; color: #f85149; }
+  .header .timestamp { font-size: 0.85em; color: #8b949e; margin-top: 4px; }
+  table { width: 100%; border-collapse: collapse; background: #161b22; border-radius: 10px; overflow: hidden; margin-bottom: 16px; }
+  th { background: #21262d; color: #8b949e; font-size: 0.75em; padding: 10px 8px; text-align: center; }
+  td { padding: 10px 8px; text-align: center; font-size: 0.9em; border-top: 1px solid #21262d; }
+  .ticker { font-weight: 700; color: #f0f6fc; }
+  .price { color: #58a6ff; font-weight: 600; }
+  .trigger { color: #ffa657; }
+  .stoploss { color: #f85149; }
+  .target { color: #3fb950; }
+  .warning-row { background: #3d1a1a; }
+  .warning-label { font-size: 0.7em; color: #f85149; display: block; }
+  .section-title { font-size: 0.9em; color: #ffa657; margin: 12px 0 8px 0; font-weight: 600; }
+  .footer { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px; font-size: 0.75em; color: #8b949e; }
+  .badge-trigger { display: inline-block; background: #f85149; color: #fff; border-radius: 4px; padding: 1px 6px; font-size: 0.72em; margin-left: 4px; }
+  .badge-warn { display: inline-block; background: #9e6a03; color: #fff; border-radius: 4px; padding: 1px 6px; font-size: 0.72em; margin-left: 4px; }
+  .note { font-size: 0.8em; color: #f85149; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-06-29 15:03 KST &nbsp;|&nbsp; ETHAN AUTO MONITOR</div>
+</div>
+
+<div class="section-title">📌 트리거 도달 종목 (4개)</div>
+<table>
+  <thead>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+      <th>비고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="warning-row">
+      <td class="ticker">AVGO</td>
+      <td class="price">$365.02<br><span class="note">▼ 손절가 하회!</span></td>
+      <td class="trigger">$420</td>
+      <td class="stoploss">$390</td>
+      <td class="target">$480</td>
+      <td><span class="badge-trigger">트리거</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td class="price">$232.69<br><span class="note" style="color:#ffa657;">⚠ 손절가 근접</span></td>
+      <td class="trigger">$255</td>
+      <td class="stoploss">$230</td>
+      <td class="target">$320</td>
+      <td><span class="badge-trigger">트리거</span></td>
+    </tr>
+    <tr class="warning-row">
+      <td class="ticker">ORCL</td>
+      <td class="price">$148.53<br><span class="note">▼ 손절가 하회!</span></td>
+      <td class="trigger">$178</td>
+      <td class="stoploss">$162</td>
+      <td class="target">$225</td>
+      <td><span class="badge-trigger">트리거</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">PLTR</td>
+      <td class="price">$112.93</td>
+      <td class="trigger">$122</td>
+      <td class="stoploss">$105</td>
+      <td class="target">$170</td>
+      <td><span class="badge-trigger">트리거</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="section-title">📊 미도달 종목 현황</div>
+<table>
+  <thead>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>괴리율</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ticker">INTC</td>
+      <td class="price">$128.32</td>
+      <td class="trigger">$104.50</td>
+      <td style="color:#3fb950;">+22.8%</td>
+    </tr>
+    <tr>
+      <td class="ticker">TSM</td>
+      <td class="price">$432.35</td>
+      <td class="trigger">$395</td>
+      <td style="color:#3fb950;">+9.5%</td>
+    </tr>
+    <tr>
+      <td class="ticker">MRVL</td>
+      <td class="price">$265.34</td>
+      <td class="trigger">$168</td>
+      <td style="color:#3fb950;">+57.9%</td>
+    </tr>
+    <tr>
+      <td class="ticker">ASTS</td>
+      <td class="price">$71.45</td>
+      <td class="trigger">$68</td>
+      <td style="color:#3fb950;">+5.1%</td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td>
+      <td class="price" style="color:#8b949e;">미확인</td>
+      <td class="trigger">$410</td>
+      <td style="color:#8b949e;">-</td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td>
+      <td class="price" style="color:#8b949e;">미확인</td>
+      <td class="trigger">$385</td>
+      <td style="color:#8b949e;">-</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer">
+  ⚠️ <strong>주의사항</strong><br>
+  · AVGO ($365.02)와 ORCL ($148.53)은 이미 설정 손절가를 하회 중입니다. 매수 전 추가 확인 필요.<br>
+  · AMZN ($232.69)은 손절가 $230 에서 1.2% 위에 위치. 매수 시 극히 주의 요망.<br>
+  · MSFT·GOOGL 실시간가 미수신 — 별도 확인 권장.<br>
+  · 본 알림은 자동 생성이며, 투자 결정은 본인 판단하에 하시기 바랍니다.
+</div>
+</body>
+</html>
