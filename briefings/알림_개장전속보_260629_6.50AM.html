@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⚡ 개장 전 속보 | 260629 06:50</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0f0f1a;
+    color: #e0e0f0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #2a2a4a;
+    padding-bottom: 10px;
+  }
+  .header-left { display: flex; flex-direction: column; }
+  .title { font-size: 1.1rem; font-weight: 700; color: #ffd700; letter-spacing: 0.05em; }
+  .subtitle { font-size: 0.72rem; color: #888; margin-top: 2px; }
+  .time-badge {
+    background: #1a1a2e;
+    border: 1px solid #ffd700;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 0.78rem;
+    color: #ffd700;
+    text-align: center;
+  }
+  .time-badge .time { font-size: 1.1rem; font-weight: 700; display: block; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+  }
+  thead tr {
+    background: #1a1a2e;
+  }
+  thead th {
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 0.72rem;
+    color: #ffd700;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+  tbody tr {
+    border-bottom: 1px solid #1e1e30;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  tbody td {
+    padding: 9px 10px;
+    vertical-align: middle;
+  }
+  .label { color: #aab; font-size: 0.82rem; }
+  .val { font-weight: 700; font-size: 0.95rem; }
+  .up { color: #ff4f4f; }
+  .dn { color: #4f9fff; }
+  .neu { color: #ffd700; }
+  .note { font-size: 0.72rem; color: #777; margin-top: 2px; }
+
+  .news-box {
+    background: #131326;
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 11px 13px;
+    margin-bottom: 12px;
+  }
+  .news-title {
+    font-size: 0.72rem;
+    color: #ffd700;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .news-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-bottom: 7px;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: #ccd;
+  }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-dot { color: #ffd700; margin-top: 1px; flex-shrink: 0; }
+
+  .predict-box {
+    background: #0d1a2e;
+    border: 1px solid #2a3a5a;
+    border-radius: 10px;
+    padding: 11px 13px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .predict-icon { font-size: 1.6rem; }
+  .predict-text { flex: 1; }
+  .predict-label { font-size: 0.72rem; color: #ffd700; letter-spacing: 0.08em; font-weight: 600; }
+  .predict-val { font-size: 0.9rem; color: #e0e8ff; margin-top: 3px; line-height: 1.35; }
+
+  .watchbox {
+    background: #1a0d2e;
+    border: 1px solid #6a3aaa;
+    border-radius: 10px;
+    padding: 11px 13px;
+    margin-bottom: 12px;
+  }
+  .watchbox-label { font-size: 0.72rem; color: #bf9aff; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 6px; }
+  .watchbox-item { font-size: 0.88rem; color: #e0d0ff; line-height: 1.4; }
+
+  .summary-box {
+    background: #1a1a0a;
+    border: 1px solid #3a3a00;
+    border-radius: 10px;
+    padding: 10px 13px;
+    font-size: 0.83rem;
+    color: #ddd8a0;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+  }
+  .summary-label {
+    font-size: 0.7rem;
+    color: #ffd700;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+  }
+
+  .footer { font-size: 0.65rem; color: #444; text-align: center; margin-top: auto; padding-top: 8px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <span class="title">⚡ 개장 전 속보</span>
+    <span class="subtitle">ETHAN 대표님 전용 · 한국장 9:00 개장 D-10min</span>
+  </div>
+  <div class="time-badge">
+    <span class="time">06:50</span>
+    2026.06.29 (월)
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>지표</th>
+      <th>현재가</th>
+      <th>등락</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="label">나스닥 (전일 종가)</td>
+      <td class="val">25,297.62</td>
+      <td class="val dn">▼ -0.24%</td>
+    </tr>
+    <tr>
+      <td class="label">S&amp;P 500 (전일 종가)</td>
+      <td class="val">7,354.02</td>
+      <td class="val dn">▼ -0.05%</td>
+    </tr>
+    <tr>
+      <td class="label">코스피 200 선물</td>
+      <td class="val neu">1,458.90</td>
+      <td class="val up">↑ Strong Buy</td>
+    </tr>
+    <tr>
+      <td class="label">USD/KRW</td>
+      <td class="val">1,543.05</td>
+      <td class="val dn">▼ 원화 약세</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="news-box">
+  <div class="news-title">🔥 오버나이트 핵심 뉴스</div>
+  <div class="news-item">
+    <span class="news-dot">▸</span>
+    <span><strong>삼성전자</strong>, 국내 10조원 투자 계획 발표 예정 — HBM·파운드리 집중 투자로 AI 반도체 주도권 회복 기대</span>
+  </div>
+  <div class="news-item">
+    <span class="news-dot">▸</span>
+    <span><strong>반도체 7월 가격 급등</strong> — Murata·Infineon 등 10개社 MLCC·커패시터 10~40% 가격 인상 예고, AI 서버 수요 폭증</span>
+  </div>
+  <div class="news-item">
+    <span class="news-dot">▸</span>
+    <span><strong>NVIDIA × TSMC</strong> AI 제조 파트너십 확대 — 컴퓨테이셔널 리소그래피·결함검사에 AI 적용, 수율·생산속도 개선 목표</span>
+  </div>
+</div>
+
+<div class="predict-box">
+  <div class="predict-icon">📊</div>
+  <div class="predict-text">
+    <div class="predict-label">오늘 한국장 갭 예측</div>
+    <div class="predict-val">
+      <strong style="color:#ffd700">보합~소폭 갭상</strong> 전망<br>
+      나스닥 소폭 하락(–0.24%)이나 코스피 선물 Strong Buy 신호 + 삼성 10조 투자 모멘텀이 하방 압력 상쇄. 환율 1,543원대 원화 약세는 수출주 우호.
+    </div>
+  </div>
+</div>
+
+<div class="watchbox">
+  <div class="watchbox-label">👁 오늘 주목 종목</div>
+  <div class="watchbox-item">
+    <strong style="color:#ffd700">삼성전자 (005930)</strong><br>
+    국내 10조원 투자 계획 발표 시 주가 모멘텀 기대. HBM3E 양산 일정 및 파운드리 수주 관련 추가 언급 여부 주시. 개장 초 거래량 급증 시 편승 고려.
+  </div>
+</div>
+
+<div class="summary-box">
+  <div class="summary-label">📝 한 줄 총평</div>
+  미국 증시 소폭 하락 속에도 코스피 선물 강세 + 삼성 투자 모멘텀으로 <strong>코스피 보합~갭상</strong> 출발 예상 — 반도체·AI 섹터 중심 매수세 유입 가능성 높음.
+</div>
+
+<div class="footer">ETHAN_AUTO · auto@ethan · 260629_6.50AM · 데이터 기준: 2026.06.26 미국장 마감 / 당일 선물·환율</div>
+
+</body>
+</html>
