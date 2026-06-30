@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🇺🇸 프리마켓 브리핑 260630 9:10PM</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --green: #3fb950;
+    --red: #f85149;
+    --yellow: #d29922;
+    --blue: #58a6ff;
+    --orange: #f0883e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; padding: 12px; }
+  .header { text-align: center; padding: 12px 0 8px; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
+  .header h1 { font-size: 18px; font-weight: 700; }
+  .header .time { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .summary { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; font-size: 13px; color: var(--blue); font-weight: 600; }
+  .section-title { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 14px; }
+  th { background: #1c2128; color: var(--muted); font-size: 11px; font-weight: 600; padding: 7px 10px; text-align: left; }
+  td { padding: 7px 10px; border-top: 1px solid var(--border); font-size: 13px; }
+  .up { color: var(--green); font-weight: 600; }
+  .down { color: var(--red); font-weight: 600; }
+  .flat { color: var(--muted); }
+  .alert { color: var(--red); font-weight: 700; }
+  .ok { color: var(--green); }
+  .warn { color: var(--yellow); font-weight: 600; }
+  .event-box { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; }
+  .event-item { padding: 5px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .event-item:last-child { border-bottom: none; }
+  .event-time { color: var(--muted); font-size: 11px; }
+  .badge { display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 4px; font-weight: 700; margin-left: 6px; }
+  .badge-red { background: rgba(248,81,73,0.2); color: var(--red); }
+  .badge-blue { background: rgba(88,166,255,0.15); color: var(--blue); }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🇺🇸 미장 프리마켓 브리핑</h1>
+  <div class="time">2026년 6월 30일(화) 오후 9:10 KST &nbsp;|&nbsp; 개장까지 약 20분</div>
+</div>
+
+<div class="summary">
+  📢 총평: S&P500·나스닥 선물 동반 상승(+0.8%/+1.2%), 전일 다우 52,000 첫 돌파 후 추세 연장. VIX 17.5 안정, 목요일 고용보고서 대기.
+</div>
+
+<!-- 표1: 매크로 지표 -->
+<div class="section-title">📊 주요 지표 (프리마켓 기준)</div>
+<table>
+  <thead>
+    <tr><th>지표</th><th>현재값</th><th>변동</th><th>비고</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>S&amp;P500 선물 (ES)</td><td class="up">7,500 수준</td><td class="up">+0.8%</td><td>전일 종가 7,440 (사상최고)</td></tr>
+    <tr><td>나스닥100 선물 (NQ)</td><td class="up">상승</td><td class="up">+1.2%</td><td>기술주 랠리 연장</td></tr>
+    <tr><td>VIX (공포지수)</td><td>17.53</td><td class="down">-0.68%</td><td>안정권</td></tr>
+    <tr><td>10년물 국채금리</td><td>4.38%</td><td class="flat">보합</td><td>전일 대비 +1bp</td></tr>
+  </tbody>
+</table>
+
+<!-- 표2: 자동매수 알림 종목 현재가 -->
+<div class="section-title">🔔 자동매수 알림 종목 점검 (트리거 하회 시 🚨)</div>
+<table>
+  <thead>
+    <tr><th>종목</th><th>트리거</th><th>현재가 (추정)</th><th>상태</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>AVGO (Broadcom)</td><td>$420</td><td>$373</td><td class="alert">🚨 하회 -$47</td></tr>
+    <tr><td>MSFT (Microsoft)</td><td>$410</td><td>$368</td><td class="alert">🚨 하회 -$42</td></tr>
+    <tr><td>GOOGL (Alphabet)</td><td>$385</td><td>$353</td><td class="alert">🚨 하회 -$32</td></tr>
+    <tr><td>AMZN (Amazon)</td><td>$255</td><td>$240</td><td class="alert">🚨 하회 -$15</td></tr>
+    <tr><td>ORCL (Oracle)</td><td>$178</td><td>$175</td><td class="warn">⚠️ 근접 -$3</td></tr>
+    <tr><td>INTC (Intel)</td><td>$104.50</td><td>$131.72</td><td class="ok">✅ +$27.22</td></tr>
+    <tr><td>TSM</td><td>$395</td><td>$432</td><td class="ok">✅ +$37</td></tr>
+    <tr><td>MRVL (Marvell)</td><td>$168</td><td>$277.75</td><td class="ok">✅ +$109.75</td></tr>
+    <tr><td>PLTR (Palantir)</td><td>$122</td><td>$129.50</td><td class="ok">✅ +$7.50</td></tr>
+    <tr><td>ASTS (AST SpaceMobile)</td><td>$68</td><td>$86.77</td><td class="ok">✅ +$18.77</td></tr>
+  </tbody>
+</table>
+
+<!-- 보유종목 현황 -->
+<div class="section-title">💼 보유 종목 모니터링</div>
+<div class="event-box">
+  <div class="event-item">
+    <strong>NVDA</strong> &nbsp;<span class="down">$193.80 (-0.66%)</span>&nbsp; — 프리마켓 소폭 하락, 전일 $194.97 종가
+  </div>
+  <div class="event-item">
+    <strong>AVGO</strong> &nbsp;<span class="up">$373.04 (+0.16%)</span>&nbsp; — 전일 종가 $372.45, 소폭 반등 <span class="badge badge-red">트리거 하회</span>
+  </div>
+  <div class="event-item">
+    <strong>ASTS</strong> &nbsp;<span class="up">$86.77</span>&nbsp; — 트리거($68) 대비 충분한 버퍼 유지
+  </div>
+  <div class="event-item">
+    <strong>VRT</strong> &nbsp;<span class="flat">$307.30 (-0.07%)</span>&nbsp; — 보합권 유지
+  </div>
+  <div class="event-item">
+    <strong>MSTX</strong> &nbsp;<span class="flat">데이터 미수집</span>&nbsp; — 직접 확인 요망
+  </div>
+</div>
+
+<!-- 오늘 이벤트 -->
+<div class="section-title">📅 오늘 미장 주요 이벤트</div>
+<div class="event-box">
+  <div class="event-item">
+    <div class="event-time">전체 (화, 6/30)</div>
+    <div>경제지표 119건 예정 | 실적발표 11건 | IPO 프라이싱 6건</div>
+  </div>
+  <div class="event-item">
+    <div class="event-time">주간 최대 이벤트</div>
+    <div><strong>목 7/2</strong> — 6월 비농업취업자수(NFP) 발표 <span class="badge badge-red">HIGH IMPACT</span> 컨센서스 +172K</div>
+  </div>
+  <div class="event-item">
+    <div class="event-time">시장 배경</div>
+    <div>미 연준 이사 Lisa Cook 해임 시도 대법원 기각 → 연준 독립성 회복 기대 ↑<br>알파벳 다우존스 편입 첫날 +4% 급등</div>
+  </div>
+</div>
+
+<div style="text-align:center; color: var(--muted); font-size: 11px; padding: 10px 0;">
+  ⚡ Auto-generated | ETHAN_AUTO | 260630_9.10PM KST
+</div>
+</body>
+</html>
