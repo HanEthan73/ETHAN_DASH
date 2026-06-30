@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 자동매수 트리거 도달</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; padding: 16px; }
+  h1 { color: #ff4444; font-size: 1.1em; margin-bottom: 6px; }
+  .meta { color: #888; font-size: 0.8em; margin-bottom: 16px; }
+  h2 { color: #ff6600; font-size: 0.95em; margin: 16px 0 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
+  th { background: #1a1a1a; color: #aaa; padding: 8px 6px; text-align: center; border-bottom: 1px solid #333; }
+  td { padding: 8px 6px; text-align: center; border-bottom: 1px solid #222; }
+  tr:hover td { background: #1a1a1a; }
+  .ticker { font-weight: bold; color: #fff; }
+  .price { color: #ff4444; font-weight: bold; }
+  .trigger { color: #ffaa00; }
+  .stoploss { color: #ff6666; }
+  .target { color: #44ff88; }
+  .gap-neg { color: #ff4444; font-size: 0.8em; }
+  .footer { margin-top: 20px; color: #555; font-size: 0.75em; text-align: center; }
+</style>
+</head>
+<body>
+<h1>&#128680; &#51088;&#46041;&#47588;&#49688; &#53944;&#47532;&#44144; &#46020;&#45813; &#50508;&#47548;</h1>
+<div class="meta">&#128197; 2026&#45380; 06&#50900; 30&#51068; 19:04 KST</div>
+
+<h2>&#128308; &#53944;&#47532;&#44140; &#46020;&#45813; &#51333;&#47785; (4&#51333;&#47785;)</h2>
+<table>
+  <thead>
+    <tr>
+      <th>&#51333;&#47785;</th><th>&#54788;&#51116;&#44032;</th><th>&#53944;&#47532;&#44140;&#44032;</th><th>&#51060;&#44201;(%)</th><th>&#49552;&#51208;</th><th>&#47785;&#54364;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="ticker">AVGO</td><td class="price">$372.45</td><td class="trigger">$420.00</td><td class="gap-neg">-11.3%</td><td class="stoploss">$390</td><td class="target">$480</td></tr>
+    <tr><td class="ticker">AMZN</td><td class="price">$240.14</td><td class="trigger">$255.00</td><td class="gap-neg">-5.8%</td><td class="stoploss">$230</td><td class="target">$320</td></tr>
+    <tr><td class="ticker">ORCL</td><td class="price">$147.09</td><td class="trigger">$178.00</td><td class="gap-neg">-17.4%</td><td class="stoploss">$162</td><td class="target">$225</td></tr>
+    <tr><td class="ticker">PLTR</td><td class="price">$117.68</td><td class="trigger">$122.00</td><td class="gap-neg">-3.5%</td><td class="stoploss">$105</td><td class="target">$170</td></tr>
+  </tbody>
+</table>
+
+<div style="margin-top:12px;padding:10px;background:#1a0a0a;border-left:3px solid #ff4444;border-radius:4px;font-size:0.8em;color:#ccc;">
+  &#9888;&#65039; <strong style="color:#ffaa00">&#51452;&#51032;</strong>: MSFT, GOOGL &#44032;&#44201; &#45370;&#51060;&#53552; &#48120;&#49688;&#49888; &#8212; &#48324;&#46020; &#54869;&#51064; &#50836;&#47581;
+</div>
+
+<h2 style="color:#888;margin-top:20px;">&#128202; &#51204;&#52404; &#54788;&#54665;</h2>
+<table>
+  <thead>
+    <tr><th>&#51333;&#47785;</th><th>&#54788;&#51116;&#44032;</th><th>&#53944;&#47532;&#44140;&#44032;</th><th>&#49345;&#53468;</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="ticker">AVGO</td><td class="price">$372.45</td><td class="trigger">$420</td><td style="color:#ff4444">&#128308; &#46020;&#45813;</td></tr>
+    <tr><td class="ticker">MSFT</td><td style="color:#555">&#48120;&#49688;&#49888;</td><td class="trigger">$410</td><td style="color:#888">&#10067; &#54869;&#51064;&#54596;&#50836;</td></tr>
+    <tr><td class="ticker">INTC</td><td>$131.72</td><td class="trigger">$104.50</td><td style="color:#44aa44">&#9989; &#48120;&#46020;&#45813;</td></tr>
+    <tr><td class="ticker">GOOGL</td><td style="color:#555">&#48120;&#49688;&#49888;</td><td class="trigger">$385</td><td style="color:#888">&#10067; &#54869;&#51064;&#54596;&#50836;</td></tr>
+    <tr><td class="ticker">TSM</td><td>$455.10</td><td class="trigger">$395</td><td style="color:#44aa44">&#9989; &#48120;&#46020;&#45813;</td></tr>
+    <tr><td class="ticker">MRVL</td><td>$296.30</td><td class="trigger">$168</td><td style="color:#44aa44">&#9989; &#48120;&#46020;&#45813;</td></tr>
+    <tr><td class="ticker">AMZN</td><td class="price">$240.14</td><td class="trigger">$255</td><td style="color:#ff4444">&#128308; &#46020;&#45813;</td></tr>
+    <tr><td class="ticker">ORCL</td><td class="price">$147.09</td><td class="trigger">$178</td><td style="color:#ff4444">&#128308; &#46020;&#45813;</td></tr>
+    <tr><td class="ticker">PLTR</td><td class="price">$117.68</td><td class="trigger">$122</td><td style="color:#ff4444">&#128308; &#46020;&#45813;</td></tr>
+    <tr><td class="ticker">ASTS</td><td>$86.77</td><td class="trigger">$68</td><td style="color:#44aa44">&#9989; &#48120;&#46020;&#45813;</td></tr>
+  </tbody>
+</table>
+
+<div class="footer">&#51088;&#46041;&#49373;&#49457; &middot; ETHAN_AUTO &middot; 2026-06-30 19:04</div>
+</body>
+</html>
