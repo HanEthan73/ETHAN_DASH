@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 자동매수 트리거 도달 알림 2026-07-01</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    padding: 12px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a1f2e, #161b27);
+    border: 1px solid #ff4444;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .header h1 { font-size: 18px; color: #ff4444; margin-bottom: 6px; }
+  .header .ts { font-size: 12px; color: #8b949e; }
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 14px 0 8px;
+    padding-left: 4px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+  }
+  th {
+    background: #161b22;
+    color: #8b949e;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 8px 6px;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+  }
+  td {
+    padding: 10px 6px;
+    text-align: center;
+    border-bottom: 1px solid #21262d;
+    font-size: 13px;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #1a1f2e; }
+  .ticker { font-weight: 700; color: #58a6ff; font-size: 14px; }
+  .price-now { font-weight: 700; color: #ff4444; }
+  .price-trigger { color: #f0883e; }
+  .price-stop { color: #ff7b7b; }
+  .price-target { color: #3fb950; }
+  .badge-red {
+    display: inline-block;
+    background: rgba(255,68,68,0.18);
+    color: #ff4444;
+    border: 1px solid #ff4444;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .badge-orange {
+    display: inline-block;
+    background: rgba(240,136,62,0.18);
+    color: #f0883e;
+    border: 1px solid #f0883e;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .badge-yellow {
+    display: inline-block;
+    background: rgba(210,153,34,0.18);
+    color: #d2991f;
+    border: 1px solid #d2991f;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .row-danger td { background: rgba(255,68,68,0.06); }
+  .row-warn td { background: rgba(240,136,62,0.04); }
+  .note-box {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 14px;
+  }
+  .note-box p { margin-bottom: 6px; font-size: 12px; color: #8b949e; line-height: 1.6; }
+  .note-box p:last-child { margin-bottom: 0; }
+  .note-box strong { color: #c9d1d9; }
+  .no-near { color: #8b949e; font-size: 12px; padding: 8px 4px; }
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #484f58;
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px solid #21262d;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="ts">2026년 07월 01일 (장중 기준) · StockAnalysis / Web 실시간 데이터</div>
+</div>
+
+<div class="section-title">🔴 트리거 도달 종목 (6종목)</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="row-danger">
+      <td class="ticker">AVGO<br><span class="badge-red">⚠️ 손절이탈</span></td>
+      <td class="price-now">$370.20</td>
+      <td class="price-trigger">$420</td>
+      <td class="price-stop">$390</td>
+      <td class="price-target">$480</td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td>
+      <td class="price-now">$388.54</td>
+      <td class="price-trigger">$410</td>
+      <td class="price-stop">$360</td>
+      <td class="price-target">$500</td>
+    </tr>
+    <tr class="row-warn">
+      <td class="ticker">GOOGL<br><span class="badge-orange">⚠️ 손절 0.7%</span></td>
+      <td class="price-now">$357.37</td>
+      <td class="price-trigger">$385</td>
+      <td class="price-stop">$355</td>
+      <td class="price-target">$450</td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td class="price-now">$243.19</td>
+      <td class="price-trigger">$255</td>
+      <td class="price-stop">$230</td>
+      <td class="price-target">$320</td>
+    </tr>
+    <tr class="row-danger">
+      <td class="ticker">ORCL<br><span class="badge-red">⚠️ 손절이탈</span></td>
+      <td class="price-now">$144.31</td>
+      <td class="price-trigger">$178</td>
+      <td class="price-stop">$162</td>
+      <td class="price-target">$225</td>
+    </tr>
+    <tr class="row-warn">
+      <td class="ticker">PLTR<br><span class="badge-yellow">장중 터치→반등</span></td>
+      <td class="price-now">$126.98*</td>
+      <td class="price-trigger">$122</td>
+      <td class="price-stop">$105</td>
+      <td class="price-target">$170</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note-box">
+  <p>⚠️ <strong>AVGO:</strong> 현재가 $370.20 → 손절가 $390 이미 이탈 (-5.1%). AI 펀드 데이터센터 집중투자 수혜 기대 유효하나 주의 요망.</p>
+  <p>⚠️ <strong>ORCL:</strong> 현재가 $144.31 → 손절가 $162 이미 이탈 (-10.9%). 25년 만의 최악 주간 낙폭(–19%) 기록. AI 과잉투자 우려 및 $70B CapEx 부담.</p>
+  <p>⚠️ <strong>GOOGL:</strong> 손절가 $355까지 단 $2.37 ($357.37 현재가). 손절 트리거 임박.</p>
+  <p>📌 <strong>PLTR:</strong> 장 전 $119.87 터치(트리거 $122 하회) → NVIDIA AI 파트너십 발표 후 반등, 종가 ~$126.98. 장중 트리거 도달 이력 있음.</p>
+</div>
+
+<div class="section-title">⚠️ 트리거 2% 이내 근접 종목</div>
+<p class="no-near">해당 없음 — 미도달 4종목(INTC·TSM·MRVL·ASTS) 모두 트리거가 대비 10% 이상 상회</p>
+
+<div class="section-title">📊 미도달 종목 현황</div>
+<table>
+  <thead>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>괴리율</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ticker">INTC</td>
+      <td>~$128.73</td>
+      <td class="price-trigger">$104.50</td>
+      <td style="color:#3fb950">+23.2%</td>
+    </tr>
+    <tr>
+      <td class="ticker">TSM</td>
+      <td>$445.51</td>
+      <td class="price-trigger">$395</td>
+      <td style="color:#3fb950">+12.8%</td>
+    </tr>
+    <tr>
+      <td class="ticker">MRVL</td>
+      <td>~$285</td>
+      <td class="price-trigger">$168</td>
+      <td style="color:#3fb950">+69.6%</td>
+    </tr>
+    <tr>
+      <td class="ticker">ASTS</td>
+      <td>~$92</td>
+      <td class="price-trigger">$68</td>
+      <td style="color:#3fb950">+35.3%</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer">
+  자동 생성 | ETHAN_AUTO | 2026-07-01 19:07 KST<br>
+  데이터: StockAnalysis.com / WebSearch 실시간 · *PLTR 종가 추정치
+</div>
+
+</body>
+</html>
