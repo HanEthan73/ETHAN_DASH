@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 도달 알림</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif; padding: 16px; font-size: 14px; }
+h1 { font-size: 18px; color: #ff6b6b; margin-bottom: 4px; }
+.meta { color: #8b949e; font-size: 12px; margin-bottom: 20px; }
+h2 { font-size: 14px; color: #f0c040; margin: 20px 0 10px; border-bottom: 1px solid #30363d; padding-bottom: 4px; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
+th { background: #161b22; color: #8b949e; font-weight: 600; padding: 8px 10px; text-align: center; border-bottom: 2px solid #30363d; font-size: 12px; }
+td { padding: 9px 10px; text-align: center; border-bottom: 1px solid #21262d; }
+tr:hover td { background: #161b22; }
+.ticker { font-weight: 700; font-size: 15px; color: #79c0ff; }
+.price { font-weight: 700; color: #ff7b72; }
+.trigger { color: #f85149; }
+.stop { color: #ffa657; }
+.target { color: #3fb950; }
+.warn td { background: #3d1a00 !important; }
+.badge-alert { background: #3d0000; color: #ff6b6b; border: 1px solid #f85149; border-radius: 4px; padding: 2px 6px; font-size: 11px; font-weight: 700; }
+.badge-warn { background: #3d2600; color: #ffa657; border: 1px solid #ffa657; border-radius: 4px; padding: 2px 6px; font-size: 11px; font-weight: 700; }
+.notice { margin-top:16px; padding:12px; background:#1c2128; border-left:3px solid #ffa657; border-radius:4px; }
+.notice strong { color:#ffa657; }
+.notice ul { margin-top:8px; padding-left:16px; color:#c9d1d9; line-height:2; }
+.footer { margin-top:20px; color:#484f58; font-size:11px; text-align:center; }
+@media (max-width:480px) { td, th { padding:6px 4px; font-size:12px; } .ticker { font-size:13px; } }
+</style>
+</head>
+<body>
+<h1>&#x1F6A8; 자동매수 트리거 도달</h1>
+<div class="meta">2026-07-02 &nbsp;|&nbsp; ETHAN 자동매수 모니터링</div>
+
+<h2>&#x1F534; 트리거 도달 종목 (6종목)</h2>
+<table>
+  <thead>
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th><th>상태</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td class="price">$375.51</td>
+      <td class="trigger">&le; $420</td>
+      <td class="stop">$390</td>
+      <td class="target">$480</td>
+      <td><span class="badge-alert">매수 검토</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td>
+      <td class="price">$373.02</td>
+      <td class="trigger">&le; $410</td>
+      <td class="stop">$360</td>
+      <td class="target">$500</td>
+      <td><span class="badge-alert">매수 검토</span></td>
+    </tr>
+    <tr class="warn">
+      <td class="ticker">GOOGL</td>
+      <td class="price" style="color:#ffa657">$357.37</td>
+      <td class="trigger">&le; $385</td>
+      <td class="stop">$355</td>
+      <td class="target">$450</td>
+      <td><span class="badge-warn">&#x26A0;&#xFE0F; 손절 근접</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td class="price">$238.26</td>
+      <td class="trigger">&le; $255</td>
+      <td class="stop">$230</td>
+      <td class="target">$320</td>
+      <td><span class="badge-alert">매수 검토</span></td>
+    </tr>
+    <tr class="warn">
+      <td class="ticker">ORCL</td>
+      <td class="price" style="color:#ffa657">$146.87</td>
+      <td class="trigger">&le; $178</td>
+      <td class="stop">$162</td>
+      <td class="target">$225</td>
+      <td><span class="badge-warn">&#x26A0;&#xFE0F; 손절가 이탈</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">PLTR</td>
+      <td class="price">$117.34</td>
+      <td class="trigger">&le; $122</td>
+      <td class="stop">$105</td>
+      <td class="target">$170</td>
+      <td><span class="badge-alert">매수 검토</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>&#x2705; 미도달 종목</h2>
+<table>
+  <thead>
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>여유</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="ticker">INTC</td><td>$133.79</td><td class="trigger">&le; $104.50</td><td style="color:#3fb950">+28.0%</td></tr>
+    <tr><td class="ticker">TSM</td><td>$450.00</td><td class="trigger">&le; $395</td><td style="color:#3fb950">+13.9%</td></tr>
+    <tr><td class="ticker">MRVL</td><td>$296.30</td><td class="trigger">&le; $168</td><td style="color:#3fb950">+76.4%</td></tr>
+    <tr><td class="ticker">ASTS</td><td>$88.86</td><td class="trigger">&le; $68</td><td style="color:#3fb950">+30.7%</td></tr>
+  </tbody>
+</table>
+
+<div class="notice">
+  <strong>&#x26A0;&#xFE0F; 주요 주의사항</strong>
+  <ul>
+    <li><strong>ORCL ($146.87)</strong> — 손절가 $162 이미 이탈. 신규 매수 재검토 필요</li>
+    <li><strong>GOOGL ($357.37)</strong> — 손절가 $355까지 $2.37 (0.7%) 근접. 추이 주시</li>
+  </ul>
+</div>
+
+<div class="footer">ETHAN_AUTO &middot; 자동매수 모니터 &middot; 2026-07-02 &middot; 가격 출처: Yahoo Finance / MarketBeat</div>
+</body>
+</html>
