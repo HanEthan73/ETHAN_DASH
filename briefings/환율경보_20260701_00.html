@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>환율 경보 USD/KRW 1,541</title>
+<style>
+:root{--bg:#0d0d0d;--card:#1a1a1a;--border:#2a2a2a;--accent:#ff4444;--warn:#ff8c00;--text:#e0e0e0;--muted:#888}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:16px;max-width:600px;margin:0 auto;line-height:1.6}
+.header{text-align:center;padding:24px 0 20px;border-bottom:1px solid var(--border);margin-bottom:20px}
+.badge{display:inline-block;background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:1px;margin-bottom:12px}
+.rate{font-size:52px;font-weight:800;color:var(--accent);letter-spacing:-1px}
+.rate-label{font-size:14px;color:var(--muted);margin-top:4px}
+.chip{display:inline-block;background:rgba(255,68,68,.15);border:1px solid var(--accent);color:var(--accent);font-size:13px;padding:3px 10px;border-radius:6px;margin-top:8px;font-weight:600}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:14px}
+.card-title{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.breach{border:2px solid var(--accent);border-radius:12px;padding:16px;margin-bottom:14px;background:rgba(255,68,68,.05);text-align:center}
+.breach .big{font-size:22px;font-weight:800;color:var(--accent)}
+.breach .sub{font-size:13px;color:var(--muted);margin-top:4px}
+.row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
+.row:last-child{border-bottom:none}
+.label{color:var(--muted)}
+.value{font-weight:600}
+.up{color:var(--accent)}
+.neutral{color:var(--warn)}
+.action-list{list-style:none}
+.action-list li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:14px;align-items:flex-start}
+.action-list li:last-child{border-bottom:none}
+.icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.footer{text-align:center;font-size:11px;color:var(--muted);padding:20px 0 10px;border-top:1px solid var(--border);margin-top:8px}
+@media(max-width:400px){.rate{font-size:40px}body{padding:12px}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="badge">ALARM: USD/KRW</div>
+  <div class="rate">1,541</div>
+  <div class="rate-label">USD / KRW &nbsp;|&nbsp; 2026-07-01 00:07 KST</div>
+  <div class="chip">&#9650; +5.74 (+0.37%) vs 전일</div>
+</div>
+<div class="breach">
+  <div class="big">1,500 돌파 확인</div>
+  <div class="sub">경계선 1,480 대비 <strong>+61원 초과</strong> / 1,500선 <strong>+41원 상회</strong></div>
+</div>
+<div class="card">
+  <div class="card-title">환율 현황</div>
+  <div class="row"><span class="label">현재 환율</span><span class="value up">1,541.14 원</span></div>
+  <div class="row"><span class="label">전일 종가 (6/30)</span><span class="value">1,547.79 원</span></div>
+  <div class="row"><span class="label">금주 레인지</span><span class="value">1,532 ~ 1,547</span></div>
+  <div class="row"><span class="label">금주 평균</span><span class="value neutral">1,538.01 원</span></div>
+  <div class="row"><span class="label">경보 기준선</span><span class="value">1,480 원</span></div>
+  <div class="row"><span class="label">1,500 돌파</span><span class="value up">YES</span></div>
+</div>
+<div class="card">
+  <div class="card-title">코스피 외국인 수급 영향</div>
+  <div class="row"><span class="label">원화 약세 심화</span><span class="value up">달러 환산 수익률 하락</span></div>
+  <div class="row"><span class="label">외국인 매도 압력</span><span class="value up">확대 우려</span></div>
+  <div class="row"><span class="label">수출주 수혜</span><span class="value neutral">반도체·자동차 긍정</span></div>
+  <div class="row"><span class="label">원자재 수입 부담</span><span class="value up">원가 상승 압력</span></div>
+  <div class="row"><span class="label">외국인 순매도 가능성</span><span class="value up">단기 높음</span></div>
+</div>
+<div class="card">
+  <div class="card-title">권고 조치</div>
+  <ul class="action-list">
+    <li><span class="icon">&#128308;</span><span>달러 매수 포지션 유지 — 추가 원화 약세 시 환차익 기대</span></li>
+    <li><span class="icon">&#128993;</span><span>코스피 외국인 동향 모니터링 — 순매도 확대 시 방어 전략 검토</span></li>
+    <li><span class="icon">&#128993;</span><span>수출 비중 종목(반도체·자동차) 단기 긍정, 글로벌 수요 리스크 병행 확인</span></li>
+    <li><span class="icon">&#128309;</span><span>1,550 돌파 여부 주시 — 돌파 시 추가 경보</span></li>
+    <li><span class="icon">&#128309;</span><span>한국은행 외환 개입 발언 체크 — 단기 되돌림 대비</span></li>
+  </ul>
+</div>
+<div class="footer">
+  ETHAN AUTO MONITOR | Data: XE.com / Yahoo Finance<br>
+  2026-07-01 00:07 KST
+</div>
+</body>
+</html>
