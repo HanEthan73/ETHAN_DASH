@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 자동매수 트리거 도달 알림</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif; padding: 16px; font-size: 15px; }
+  h1 { color: #ff6b6b; font-size: 1.2em; margin-bottom: 6px; }
+  .timestamp { color: #8b949e; font-size: 0.85em; margin-bottom: 20px; }
+  .section-title { color: #f0883e; font-size: 1em; font-weight: bold; margin: 18px 0 8px; border-left: 3px solid #f0883e; padding-left: 8px; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+  th { background: #161b22; color: #79c0ff; padding: 10px 8px; text-align: left; font-size: 0.85em; border-bottom: 1px solid #30363d; }
+  td { padding: 10px 8px; border-bottom: 1px solid #21262d; font-size: 0.9em; }
+  tr:last-child td { border-bottom: none; }
+  .trigger-row { background: #1a0d0d; }
+  .near-row { background: #0d1a0d; }
+  .ticker { font-weight: bold; color: #ff6b6b; font-size: 1em; }
+  .price { font-weight: bold; color: #ff4444; }
+  .trigger { color: #ffa657; }
+  .stop { color: #f85149; }
+  .target { color: #3fb950; }
+  .badge { display: inline-block; background: #da3633; color: #fff; font-size: 0.7em; padding: 2px 6px; border-radius: 4px; margin-left: 4px; }
+  .note { color: #8b949e; font-size: 0.8em; margin-top: 12px; border-top: 1px solid #21262d; padding-top: 10px; }
+  @media (max-width: 480px) { th, td { padding: 8px 5px; font-size: 0.82em; } h1 { font-size: 1.05em; } }
+</style>
+</head>
+<body>
+
+<h1>🚨 자동매수 트리거 도달</h1>
+<div class="timestamp">2026년 07월 02일 (목) 13:04 KST</div>
+
+<div class="section-title">🔴 트리거 도달 종목</div>
+<table>
+  <thead>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="trigger-row">
+      <td><span class="ticker">AVGO</span> <span class="badge">매수신호</span></td>
+      <td><span class="price">$369.34</span></td>
+      <td><span class="trigger">$420 이하</span></td>
+      <td><span class="stop">$390</span></td>
+      <td><span class="target">$480</span></td>
+    </tr>
+    <tr class="trigger-row">
+      <td><span class="ticker">MSFT</span> <span class="badge">매수신호</span></td>
+      <td><span class="price">$381.65</span></td>
+      <td><span class="trigger">$410 이하</span></td>
+      <td><span class="stop">$360</span></td>
+      <td><span class="target">$500</span></td>
+    </tr>
+    <tr class="trigger-row">
+      <td><span class="ticker">GOOGL</span> <span class="badge">매수신호</span></td>
+      <td><span class="price">$360.17</span></td>
+      <td><span class="trigger">$385 이하</span></td>
+      <td><span class="stop">$355</span></td>
+      <td><span class="target">$450</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note">
+  ℹ️ 미확인 종목: AMZN, ORCL, PLTR, ASTS (검색 결과 데이터 미반환)<br>
+  ℹ️ INTC $132.08 / TSM $444.23 / MRVL $310.58 — 트리거 미도달
+</div>
+
+</body>
+</html>
