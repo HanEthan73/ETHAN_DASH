@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 자동매수 트리거 도달 알림</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    padding: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a1f2e, #21262d);
+    border: 1px solid #f85149;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .header h1 { font-size: 1.4em; color: #f85149; margin-bottom: 8px; }
+  .header .datetime { font-size: 0.9em; color: #8b949e; }
+  .section-title {
+    font-size: 1em;
+    font-weight: 700;
+    color: #f85149;
+    margin: 20px 0 10px 0;
+    padding: 8px 12px;
+    background: rgba(248,81,73,0.12);
+    border-left: 3px solid #f85149;
+    border-radius: 4px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    font-size: 0.88em;
+  }
+  th {
+    background: #161b22;
+    color: #8b949e;
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+    font-weight: 600;
+    font-size: 0.82em;
+  }
+  td {
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid #21262d;
+  }
+  tr:hover td { background: #161b22; }
+  .ticker { font-weight: 700; color: #79c0ff; font-size: 1em; }
+  .price { font-weight: 700; color: #f0f6fc; }
+  .trigger { color: #ffa657; }
+  .stop { color: #f85149; }
+  .target { color: #3fb950; }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 700;
+  }
+  .badge-triggered { background: rgba(248,81,73,0.2); color: #f85149; border: 1px solid #f85149; }
+  .badge-warn { background: rgba(255,166,87,0.2); color: #ffa657; border: 1px solid #ffa657; }
+  .warn-row td { background: rgba(255,166,87,0.04); }
+  .footer {
+    text-align: center;
+    color: #484f58;
+    font-size: 0.78em;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #21262d;
+  }
+  .note {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 0.82em;
+    color: #8b949e;
+    line-height: 1.6;
+  }
+  .note .warn-icon { color: #ffa657; }
+  @media (max-width: 600px) {
+    table { font-size: 0.78em; }
+    th, td { padding: 8px 4px; }
+    .header h1 { font-size: 1.1em; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🚨 자동매수 트리거 도달 알림</h1>
+  <div class="datetime">기준일: 2026년 7월 2일 (목) 장마감 기준 · 7/3 시장 휴장 (독립기념일)</div>
+</div>
+
+<div class="section-title">🔴 트리거 도달 종목 (5개)</div>
+<table>
+  <thead>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절가</th>
+      <th>목표가</th>
+      <th>상태</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td class="price">$370.03</td>
+      <td class="trigger">$420</td>
+      <td class="stop">$390</td>
+      <td class="target">$480</td>
+      <td><span class="badge badge-triggered">TRIGGERED</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td>
+      <td class="price">$390.67</td>
+      <td class="trigger">$410</td>
+      <td class="stop">$360</td>
+      <td class="target">$500</td>
+      <td><span class="badge badge-triggered">TRIGGERED</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td>
+      <td class="price">$360.22</td>
+      <td class="trigger">$385</td>
+      <td class="stop">$355</td>
+      <td class="target">$450</td>
+      <td><span class="badge badge-triggered">TRIGGERED</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td class="price">$241.70</td>
+      <td class="trigger">$255</td>
+      <td class="stop">$230</td>
+      <td class="target">$320</td>
+      <td><span class="badge badge-triggered">TRIGGERED</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">ORCL</td>
+      <td class="price">$143.39</td>
+      <td class="trigger">$178</td>
+      <td class="stop">$162</td>
+      <td class="target">$225</td>
+      <td><span class="badge badge-triggered">TRIGGERED</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note">
+  <span class="warn-icon">⚠️</span> <strong>주의 사항:</strong><br>
+  · <strong>AVGO $370.03</strong> — 손절가($390) 이미 하회. 52주 최저 $262.66 / 최고 $495. 신규 진입 전 재검토 필요.<br>
+  · <strong>GOOGL $360.22</strong> — 손절가($355)까지 약 $5.22(1.4%) 여유. EU 반독점 벌금($46.7억) 확정 영향.<br>
+  · <strong>ORCL $143.39</strong> — 손절가($162) 이미 하회. 7연속 하락(데이터센터 리스 공시 리스크). 신규 진입 전 재검토 필요.
+</div>
+
+<div class="section-title">⬜ 미도달 종목 현황</div>
+<table>
+  <thead>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>트리거까지</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ticker">INTC</td>
+      <td class="price">$127.02</td>
+      <td class="trigger">$104.50</td>
+      <td>-$22.52 (-17.7%)</td>
+    </tr>
+    <tr>
+      <td class="ticker">TSM</td>
+      <td class="price">$454.87</td>
+      <td class="trigger">$395</td>
+      <td>-$59.87 (-13.2%)</td>
+    </tr>
+    <tr>
+      <td class="ticker">MRVL</td>
+      <td class="price">$272.05</td>
+      <td class="trigger">$168</td>
+      <td>-$104.05 (-38.2%)</td>
+    </tr>
+    <tr>
+      <td class="ticker">PLTR</td>
+      <td class="price">$125.40</td>
+      <td class="trigger">$122</td>
+      <td>-$3.40 (-2.8%)</td>
+    </tr>
+    <tr>
+      <td class="ticker">ASTS</td>
+      <td class="price">$86.50</td>
+      <td class="trigger">$68</td>
+      <td>+$18.50 (-)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer">
+  ETHAN 자동매수 모니터링 에이전트 · 생성: 2026-07-03 · 데이터 기준: 2026-07-02 장마감
+</div>
+
+</body>
+</html>
