@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌆 저녁 6시 진입타이밍 브리핑 — 2026년 7월 2일</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    background: #0a0e1a;
+    color: #e0e6f0;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a2340 0%, #0d1829 100%);
+    border: 1px solid #2a3a5c;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #f5a623, #e8721a, #ff6b35);
+  }
+  .header h1 { font-size: 1.7rem; font-weight: 700; color: #ffd166; margin-bottom: 6px; }
+  .header .subtitle { font-size: 0.85rem; color: #8899bb; }
+  .alert-bar {
+    background: #2d1a00;
+    border: 1px solid #f5a623;
+    border-left: 4px solid #f5a623;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    font-size: 0.88rem;
+    color: #ffd166;
+  }
+  .critical-bar {
+    background: #2d0a0a;
+    border: 1px solid #ff4444;
+    border-left: 4px solid #ff4444;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    font-size: 0.88rem;
+    color: #ff9999;
+  }
+  .section {
+    background: #111827;
+    border: 1px solid #1e2d45;
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #60a5fa;
+    border-bottom: 1px solid #1e2d45;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+  th {
+    background: #0f1a2e;
+    color: #93c5fd;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  td { padding: 9px 12px; border-bottom: 1px solid #1a2540; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #131f35; }
+  .ok { color: #4ade80; }
+  .warn { color: #fbbf24; }
+  .danger { color: #f87171; }
+  .up { color: #4ade80; }
+  .down { color: #f87171; }
+  .badge-ok { background: #064e3b; color: #4ade80; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; }
+  .badge-warn { background: #451a03; color: #fbbf24; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; }
+  .badge-danger { background: #450a0a; color: #f87171; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; }
+  .badge-hold { background: #1e3a5f; color: #7dd3fc; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; }
+  .badge-golden { background: #3b2f00; color: #fde68a; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; }
+  .badge-cup { background: #1a3a2a; color: #6ee7b7; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; }
+  .price-big { font-size: 1.05rem; font-weight: 700; color: #f0f9ff; }
+  .stock-card {
+    background: #0f1a2e;
+    border: 1px solid #1e2d45;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-top: 12px;
+  }
+  .stock-card h4 { font-size: 0.95rem; font-weight: 700; color: #a5b4fc; margin-bottom: 8px; }
+  .stock-card p { font-size: 0.83rem; color: #94a3b8; line-height: 1.65; }
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 0.78rem;
+  }
+  .strategy-item {
+    background: #0a1525;
+    border: 1px solid #1e2d45;
+    border-radius: 6px;
+    padding: 6px 10px;
+    text-align: center;
+    color: #94a3b8;
+  }
+  .strategy-item strong { display: block; color: #7dd3fc; font-size: 0.75rem; margin-bottom: 2px; }
+  .rank-num {
+    display: inline-block;
+    width: 22px; height: 22px;
+    background: #1e3a5f;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 22px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #93c5fd;
+    margin-right: 6px;
+  }
+  .insight-box {
+    background: #0f1a2e;
+    border-left: 3px solid #60a5fa;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    margin-top: 10px;
+    font-size: 0.84rem;
+    color: #cbd5e1;
+    line-height: 1.7;
+  }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #4b5563;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #1e2d45;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🌆 저녁 6시 진입타이밍 브리핑</h1>
+  <div class="subtitle">2026년 7월 2일 (목) 18:00 KST &nbsp;|&nbsp; 미장 개장 4.5시간 전 (22:30 KST) &nbsp;|&nbsp; 자동 생성</div>
+</div>
+
+<div class="critical-bar">
+  🚨 <strong>긴급 경보 2건</strong><br>
+  ① <strong>현대차(005380) ₩502,500</strong> — 손절가(₩600,000) 이미 이탈. 포지션 즉시 재검토 필요<br>
+  ② <strong>AVGO $370.03</strong> — 손절가($390) 이미 이탈. 자동매수 설정 재검토 필요
+</div>
+
+<div class="alert-bar">
+  ⚠️ <strong>선제 알림 발동 2건</strong> &nbsp;|&nbsp;
+  10년물 금리 4.475% → 4.5% 경계 근접 ⚠️ &nbsp;|&nbsp;
+  USD/KRW 1,554 → 1,450 초과 경고 ⚠️ &nbsp;|&nbsp;
+  오늘 NFP(비농업고용) 발표 — 개장 전 변동성 주의 🔴
+</div>
+
+<!-- 섹션 1 -->
+<div class="section">
+  <div class="section-title">📊 1. 미장 개장 전 시장 온도</div>
+  <table>
+    <tr><th>지수/지표</th><th>현재</th><th>전일 대비</th><th>판단</th></tr>
+    <tr>
+      <td>나스닥 선물</td>
+      <td class="price-big">30,211</td>
+      <td class="up">+0.39%</td>
+      <td><span class="badge-ok">✅ 상승</span></td>
+    </tr>
+    <tr>
+      <td>S&P500 선물</td>
+      <td class="price-big">신고가 영역</td>
+      <td class="up">+0.26%</td>
+      <td><span class="badge-ok">✅ 사상 최고</span></td>
+    </tr>
+    <tr>
+      <td>VIX <small style="color:#6b7280">*공포지수, 낮을수록 안정</small></td>
+      <td class="price-big">16.59</td>
+      <td class="up">+0.85%</td>
+      <td><span class="badge-ok">✅ 안정 (25 미만)</span></td>
+    </tr>
+    <tr>
+      <td>10년물 금리 <small style="color:#6b7280">*4.5% 이상시 기술주 압박</small></td>
+      <td class="price-big warn">4.475%</td>
+      <td class="up">+1.29%</td>
+      <td><span class="badge-warn">⚠️ 4.5% 경계 근접</span></td>
+    </tr>
+    <tr>
+      <td>USD/KRW</td>
+      <td class="price-big danger">1,554.22</td>
+      <td class="up">+0.22%</td>
+      <td><span class="badge-danger">⚠️ 1,450 초과 경고</span></td>
+    </tr>
+  </table>
+  <div class="insight-box" style="margin-top:14px;">
+    <strong style="color:#fbbf24;">선제 알림 8대 지표 현황</strong><br>
+    VIX≥25 ✅ 이하 | S&P200일선 이탈 ✅ 유지 | 10년물≥4.5% ⚠️ 근접(4.475%) | 연준 매파 ✅ 완화적 |
+    지정학 급등 ✅ 없음 | M2 급감 ✅ 없음 | 나스닥 -5% 연속 ✅ 없음 | USD/KRW≥1,450 🔴 발동(1,554)<br>
+    → 전반 시장 온도: <strong style="color:#4ade80;">긍정적</strong>. 단 원화 약세 지속 및 금리 경계 주시. NFP 결과에 따라 추가 경보 가능.
+  </div>
+</div>
+
+<!-- 섹션 2 -->
+<div class="section">
+  <div class="section-title">📅 2. 이번 주 주요 일정</div>
+  <table>
+    <tr><th>날짜</th><th>종류</th><th>내용</th><th>영향 종목</th></tr>
+    <tr>
+      <td><strong style="color:#f87171;">7/2 오늘</strong></td>
+      <td><span style="background:#7f1d1d;color:#fca5a5;padding:2px 7px;border-radius:10px;font-size:0.78rem;">경제지표 🔴</span></td>
+      <td><strong>비농업고용(NFP)</strong> + 실업률 + 시간당임금 — 오늘 최대 이벤트</td>
+      <td>전 종목</td>
+    </tr>
+    <tr>
+      <td><strong style="color:#f87171;">7/2 오늘</strong></td>
+      <td><span style="background:#7f1d1d;color:#fca5a5;padding:2px 7px;border-radius:10px;font-size:0.78rem;">경제지표</span></td>
+      <td>공장 주문 (Factory Orders)</td>
+      <td>VRT, 산업재</td>
+    </tr>
+    <tr>
+      <td>7/3 (목)</td>
+      <td><span style="background:#374151;color:#9ca3af;padding:2px 7px;border-radius:10px;font-size:0.78rem;">미국 휴장</span></td>
+      <td>🇺🇸 독립기념일 — 미국 증시 전일 휴장</td>
+      <td>전 종목 (거래 없음)</td>
+    </tr>
+    <tr>
+      <td>7/6 (월)</td>
+      <td><span style="background:#7f1d1d;color:#fca5a5;padding:2px 7px;border-radius:10px;font-size:0.78rem;">경제지표</span></td>
+      <td>ISM 6월 서비스 PMI <small style="color:#6b7280">*구매관리자지수, 50 이상 확장</small></td>
+      <td>전 종목</td>
+    </tr>
+    <tr>
+      <td>7/8 (수)</td>
+      <td><span style="background:#312e81;color:#a5b4fc;padding:2px 7px;border-radius:10px;font-size:0.78rem;">FOMC 의사록</span></td>
+      <td>FOMC 6월 의사록 공개 — Kevin Warsh 의장 발언 주목</td>
+      <td>전 종목, NVDA, INTC</td>
+    </tr>
+    <tr>
+      <td>7/8 (수)</td>
+      <td>실적</td>
+      <td>Levi Strauss (LEVI) 실적 발표</td>
+      <td>소비재 섹터</td>
+    </tr>
+  </table>
+  <div class="insight-box">
+    💡 <strong>오늘 핵심</strong>: NFP 결과 → 고용 강세 시 금리 추가 상승 → 기술주 압박 / 고용 약세 시 금리 하락 → 기술주 반등.
+    7/3 미국 휴장으로 오늘 밤 변동성 증폭 가능. 무리한 추격매수 자제.
+  </div>
+</div>
+
+<!-- 섹션 3 -->
+<div class="section">
+  <div class="section-title">🧱 3. 보유 종목 지지선 vs 허공 분석</div>
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>주요 지지선</th><th>구간판별</th><th>한 줄 판단</th></tr>
+    <tr>
+      <td><strong>NVDA</strong></td>
+      <td class="price-big down">$197.58</td>
+      <td>$200~205 / $215~220</td>
+      <td><span class="badge-warn">⚠️ 지지선 이탈</span></td>
+      <td>$200 이탈 후 공방 중, 손절($185) 위</td>
+    </tr>
+    <tr>
+      <td><strong>VRT</strong></td>
+      <td class="price-big down">$334.82</td>
+      <td>$340~350</td>
+      <td><span class="badge-warn">⚠️ 지지선 이탈</span></td>
+      <td>지지선 $340 회복 여부 관찰 필요</td>
+    </tr>
+    <tr>
+      <td><strong>INTC</strong></td>
+      <td class="price-big up">$133.79</td>
+      <td>$125~128 (신규) / $104~106</td>
+      <td><span class="badge-golden">🌟 52주 신고가</span></td>
+      <td>278% YTD 급등, 신고가 후 조정. 오버슈팅 주의</td>
+    </tr>
+    <tr>
+      <td><strong>현대차</strong></td>
+      <td class="price-big danger">₩502,500</td>
+      <td>₩660,000~670,000</td>
+      <td><span class="badge-danger">🚨 손절가 이탈</span></td>
+      <td>손절가(₩600K) 이미 이탈. 긴급 재검토</td>
+    </tr>
+    <tr>
+      <td><strong>ASTS</strong></td>
+      <td class="price-big up">$86.50</td>
+      <td>$65~68 / $55~60</td>
+      <td><span class="badge-golden">🌟 지지선 상방</span></td>
+      <td>자동매수까지 22.5% 여유, 강한 상승세 유지</td>
+    </tr>
+    <tr>
+      <td><strong>MSTX</strong></td>
+      <td class="price-big up">$7.13</td>
+      <td>장기보유</td>
+      <td><span class="badge-hold">🔒 장기홀딩</span></td>
+      <td>+25.44% (BTC 상승 연동). 레버리지 ETF 특성 상 홀딩</td>
+    </tr>
+  </table>
+
+  <div class="stock-card">
+    <h4>NVDA (엔비디아) — 지지선 이탈, NFP 이후 반등 여부 관건</h4>
+    <p>현재가 $197.58 (AH $195.70). 자동매수 1차($217), 2차($201) 모두 이미 통과. 손절가 $185까지 약 6.4% 여유. 오늘 NFP 결과가 예상치 하회 시 금리 하락 → NVDA 반등 시나리오 유효. <strong style="color:#fbbf24;">Claude 판단: 신규 진입 대기. NFP 이후 $200 회복 확인 후 분할매수 고려.</strong></p>
+  </div>
+  <div class="stock-card">
+    <h4>VRT (버티브) — 지지선 $340 이탈, 홀딩 유지</h4>
+    <p>현재가 $334.82. 지지선 $340~350 이탈 상태. 데이터센터 냉각 수요 테마는 견고. <strong style="color:#fbbf24;">Claude 판단: 기존 보유 홀딩. $330 이탈 시 추가 하락 주의. 신규 진입 자제.</strong></p>
+  </div>
+  <div class="stock-card">
+    <h4>INTC (인텔) — 52주 신고가(₩140) 달성, 오버슈팅 경계</h4>
+    <p>현재가 $133.79. 52주 신고가 $140 도달 후 소폭 조정. YTD +278%로 극강 모멘텀. AI 반도체 반등 기대와 구조조정 성과 반영. 자동매수 설정($104.50)과 현재가 괴리 $29.29로 기존 설정 재검토 권장. <strong style="color:#fbbf24;">Claude 판단: 신고가 근처 신규 진입 위험. $125~128 풀백 시 분할매수 기회.</strong></p>
+  </div>
+  <div class="stock-card" style="border-color:#f87171;">
+    <h4>현대차 (005380) — 🚨 손절가(₩600,000) 이탈. 즉시 재검토</h4>
+    <p>현재가 ₩502,500. 손절가 ₩600,000 대비 ₩97,500(16.3%) 이탈. 미국 자동차 관세 25% + 원화 약세 이중 충격 지속. 지지선 ₩660K와 현재가 괴리 33%. <strong style="color:#f87171;">Claude 판단: 즉시 포지션 재검토. 추가 하락 방어 위해 손절가 하향 재설정 또는 포지션 정리 검토.</strong></p>
+  </div>
+  <div class="stock-card">
+    <h4>ASTS (AST 스페이스모바일) — 강한 상승세, 자동매수까지 여유</h4>
+    <p>현재가 $86.50 (일중 고가 $91.81). 위성 직통통신(D2C) 상업화 기대로 모멘텀 강함. 자동매수 1차($67)까지 22.5% 여유. <strong style="color:#4ade80;">Claude 판단: 기존 보유 홀딩. 추가 매수는 $70~75 풀백 시 고려.</strong></p>
+  </div>
+  <div class="stock-card">
+    <h4>MSTX — 🔒 장기보유. BTC 연동 2x 레버리지 ETF</h4>
+    <p>현재가 $7.13 (+25.44%). MicroStrategy 2배 추종 레버리지 ETF. 비트코인 상승 시 급등. 장기보유 원칙 유지. 일간 변동 무시.</p>
+  </div>
+</div>
+
+<!-- 섹션 4 -->
+<div class="section">
+  <div class="section-title">⚡ 4. 자동매수 임박 알림</div>
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>자동매수 1차</th><th>거리</th><th>자동매수 2차</th><th>손절가</th><th>상태</th></tr>
+    <tr>
+      <td><strong>NVDA</strong></td>
+      <td class="down">$197.58</td>
+      <td>$217.00</td>
+      <td class="danger"><strong>이미 이탈</strong></td>
+      <td>$201.00 <small class="danger">(이탈)</small></td>
+      <td>$185</td>
+      <td><span class="badge-warn">⚠️ 1·2차 통과</span></td>
+    </tr>
+    <tr>
+      <td><strong>INTC</strong></td>
+      <td class="up">$133.79</td>
+      <td>$104.50</td>
+      <td class="ok">↓21.9% 필요</td>
+      <td>$99.00</td>
+      <td>$95</td>
+      <td><span class="badge-ok">✅ 대기중</span></td>
+    </tr>
+    <tr>
+      <td><strong>현대차</strong></td>
+      <td class="danger">₩502,500</td>
+      <td>₩665,000</td>
+      <td class="danger"><strong>이미 이탈</strong></td>
+      <td>₩635,000 <small class="danger">(이탈)</small></td>
+      <td>₩600,000</td>
+      <td><span class="badge-danger">🚨 손절 이탈</span></td>
+    </tr>
+    <tr>
+      <td><strong>ASTS</strong></td>
+      <td class="up">$86.50</td>
+      <td>$67.00</td>
+      <td class="ok">↓22.5% 필요</td>
+      <td>$57.00</td>
+      <td>$45</td>
+      <td><span class="badge-ok">✅ 대기중</span></td>
+    </tr>
+    <tr>
+      <td><strong>AVGO</strong></td>
+      <td class="down">$370.03</td>
+      <td>$435.00</td>
+      <td class="danger"><strong>이미 이탈</strong></td>
+      <td>$420.00 <small class="danger">(이탈)</small></td>
+      <td>$390</td>
+      <td><span class="badge-danger">🚨 손절가 이탈</span></td>
+    </tr>
+  </table>
+  <div class="insight-box" style="border-color:#f87171;margin-top:12px;">
+    🚨 <strong style="color:#f87171;">재검토 대상</strong><br>
+    • <strong>현대차</strong>: 자동매수 1·2차 모두 통과 후 손절가(₩600K)도 이탈 → 기 보유 시 긴급 점검<br>
+    • <strong>AVGO</strong>: 자동매수 1·2차 통과, 손절가($390)도 이탈($370 거래 중) → 신규 진입 시 손절가 $345로 재설정 검토<br>
+    • <strong>NVDA</strong>: 1·2차 통과, 손절 $185까지 여유 $12.58(6.4%) — 오늘 NFP 이후 방향 확인
+  </div>
+</div>
+
+<!-- 섹션 5 -->
+<div class="section">
+  <div class="section-title">🔥 5. 오늘의 추천 종목 (4종목 + 4전략 복합분석)</div>
+  <p style="font-size:0.82rem;color:#94a3b8;margin-bottom:14px;">
+    선정 기준: ⭐골든크로스+MA20 → ☕머그컵 → ✅지지선근접 → 촉매 → AI/반도체 우선 | 데드크로스·AMD 제외<br>
+    <em>*MA50/MA200: 50일/200일 이동평균선 | R/R: 리스크리워드비율 (1:2 이상 권장)</em>
+  </p>
+  <table>
+    <tr><th>순위</th><th>종목</th><th>티커</th><th>현재가</th><th>MA50>MA200</th><th>머그컵</th><th>진입가</th><th>손절가</th><th>목표가</th><th>R/R</th><th>구간판별</th></tr>
+    <tr>
+      <td><span class="rank-num">1</span></td>
+      <td><strong>AVGO</strong></td>
+      <td>NASDAQ</td>
+      <td class="down">$370.03</td>
+      <td class="ok">✅ 골든크로스</td>
+      <td class="warn">⚠️ 형성 중</td>
+      <td>$365~375</td>
+      <td>$345</td>
+      <td>$430</td>
+      <td class="ok">1:2.3</td>
+      <td><span class="badge-golden">✅ 지지선 근접</span></td>
+    </tr>
+    <tr>
+      <td><span class="rank-num">2</span></td>
+      <td><strong>NVDA</strong></td>
+      <td>NASDAQ</td>
+      <td class="down">$197.58</td>
+      <td class="ok">✅ 골든크로스</td>
+      <td class="warn">⚠️ 핸들 형성 중</td>
+      <td>$195~200</td>
+      <td>$183</td>
+      <td>$230</td>
+      <td class="ok">1:2.1</td>
+      <td><span class="badge-warn">✅ 지지선 테스트</span></td>
+    </tr>
+    <tr>
+      <td><span class="rank-num">3</span></td>
+      <td><strong>INTC</strong></td>
+      <td>NASDAQ</td>
+      <td class="up">$133.79</td>
+      <td class="ok">✅ 골든크로스</td>
+      <td class="warn">⚠️ 고점 부근</td>
+      <td>$125~128 풀백</td>
+      <td>$118</td>
+      <td>$155</td>
+      <td class="ok">1:2.5</td>
+      <td><span class="badge-golden">🌟 골든크로스+모멘텀</span></td>
+    </tr>
+    <tr>
+      <td><span class="rank-num">4</span></td>
+      <td><strong>ASTS</strong></td>
+      <td>NASDAQ</td>
+      <td class="up">$86.50</td>
+      <td class="ok">✅ 골든크로스</td>
+      <td class="ok">✅ U형 컵 진행</td>
+      <td>$80~83 풀백</td>
+      <td>$70</td>
+      <td>$105</td>
+      <td class="ok">1:1.9</td>
+      <td><span class="badge-cup">☕ 머그컵 진행</span></td>
+    </tr>
+  </table>
+
+  <div style="margin-top:18px;">
+    <div style="font-size:0.88rem;font-weight:700;color:#a5b4fc;margin-bottom:10px;">📐 4전략 복합분석 상세</div>
+
+    <div class="stock-card">
+      <h4><span class="rank-num">1</span> AVGO (브로드컴) — AI 반도체 핵심, 매력적 가격대 진입</h4>
+      <div class="strategy-grid">
+        <div class="strategy-item"><strong>VCP</strong><span class="warn">⚠️ 수축 진행</span><br><small>단기 수축 중, 3회 확인 필요</small></div>
+        <div class="strategy-item"><strong>Weinstein</strong><span class="ok">✅ Stage 2</span><br><small>MA200 위, 골든크로스 유지</small></div>
+        <div class="strategy-item"><strong>C&H</strong><span class="warn">⚠️ 형성 중</span><br><small>컵 형성 가능성, 핸들 미완</small></div>
+        <div class="strategy-item"><strong>M2</strong><span class="ok">✅ 수혜</span><br><small>글로벌 M2 완화 + AI 수요</small></div>
+      </div>
+      <p style="margin-top:10px;">현재가 $370.03. AI 커스텀 칩·네트워킹 수요 강세 지속. 자동매수 1차($435), 2차($420) 이미 통과한 상태로 현재가는 오히려 더 좋은 진입 구간. <strong style="color:#4ade80;">Claude 판단: $365~375 분할매수. 손절 $345로 재설정. NFP 방향 확인 후 즉시 대응 권장.</strong></p>
+    </div>
+
+    <div class="stock-card">
+      <h4><span class="rank-num">2</span> NVDA (엔비디아) — 지지선 테스트, NFP 이후 반등 기회</h4>
+      <div class="strategy-grid">
+        <div class="strategy-item"><strong>VCP</strong><span class="warn">⚠️ 수축 중</span><br><small>조정 중 변동성 수축</small></div>
+        <div class="strategy-item"><strong>Weinstein</strong><span class="ok">✅ Stage 2</span><br><small>장기 골든크로스 유지</small></div>
+        <div class="strategy-item"><strong>C&H</strong><span class="warn">⚠️ 핸들 형성</span><br><small>컵 완성 후 핸들 진행 가능</small></div>
+        <div class="strategy-item"><strong>M2</strong><span class="ok">✅ 수혜</span><br><small>AI 인프라 투자 사이클</small></div>
+      </div>
+      <p style="margin-top:10px;">현재가 $197.58. 블랙웰 GPU 수요 견조, AI 데이터센터 투자 지속. NFP 약세 시 금리 하락 → 반등 시나리오 기대. <strong style="color:#fbbf24;">Claude 판단: NFP 발표 후 $195~200 유지 확인 시 소량 진입. 손절 $183.</strong></p>
+    </div>
+
+    <div class="stock-card">
+      <h4><span class="rank-num">3</span> INTC (인텔) — 52주 신고가 랠리, 풀백 대기</h4>
+      <div class="strategy-grid">
+        <div class="strategy-item"><strong>VCP</strong><span class="ok">✅ 3회 수축</span><br><small>278% 랠리 과정 수축 확인</small></div>
+        <div class="strategy-item"><strong>Weinstein</strong><span class="ok">✅ Stage 2</span><br><small>명확한 골든크로스, MA 상방</small></div>
+        <div class="strategy-item"><strong>C&H</strong><span class="warn">⚠️ 고점권</span><br><small>52주 신고가 오버슈팅 위험</small></div>
+        <div class="strategy-item"><strong>M2</strong><span class="ok">✅ 수혜</span><br><small>AI·반도체 턴어라운드 기대</small></div>
+      </div>
+      <p style="margin-top:10px;">현재가 $133.79. 52주 신고가 $140 달성 후 조정. 278% YTD 랠리로 모멘텀 최강이나 오버슈팅 가능성. AI PC·파운드리 성장 기대감. <strong style="color:#fbbf24;">Claude 판단: 현재가 신규 진입 리스크. $125~128 풀백 대기 후 분할매수가 최적. 손절 $118.</strong></p>
+    </div>
+
+    <div class="stock-card">
+      <h4><span class="rank-num">4</span> ASTS (AST 스페이스모바일) — 위성통신 성장, 머그컵 패턴</h4>
+      <div class="strategy-grid">
+        <div class="strategy-item"><strong>VCP</strong><span class="ok">✅ 수축 확인</span><br><small>변동성 수축 후 돌파 패턴</small></div>
+        <div class="strategy-item"><strong>Weinstein</strong><span class="ok">✅ Stage 2</span><br><small>강한 상승 추세 유지</small></div>
+        <div class="strategy-item"><strong>C&H</strong><span class="ok">✅ U형 컵</span><br><small>머그컵 패턴 진행 중</small></div>
+        <div class="strategy-item"><strong>M2</strong><span class="ok">✅ 수혜</span><br><small>성장주 유동성 확대 수혜</small></div>
+      </div>
+      <p style="margin-top:10px;">현재가 $86.50. AT&T·Verizon 파트너십 체결로 D2C 위성통신 사업화 기대. 자동매수 1차($67)까지 22.5% 여유. 4전략 모두 긍정적. <strong style="color:#4ade80;">Claude 판단: $80~83 풀백 시 1차 매수. 손절 $70. 목표 $105 (R/R 1:1.9).</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- 섹션 6 -->
+<div class="section">
+  <div class="section-title">💡 6. 미장 개장 전 전략 인사이트</div>
+  <div class="two-col">
+    <div class="insight-box" style="margin-top:0;">
+      <strong style="color:#4ade80;">✅ 오늘 밤 진입 가능 종목</strong><br><br>
+      • <strong>AVGO</strong>: $365~375 분할매수. NFP 확인 후 대응<br>
+      • <strong>NVDA</strong>: $195~200 유지 확인 시 소량 진입<br>
+      • <strong>ASTS</strong>: $80~83 풀백 오면 즉시 1차 매수
+    </div>
+    <div class="insight-box" style="margin-top:0;border-color:#fbbf24;">
+      <strong style="color:#fbbf24;">⚠️ 오늘 기다려야 할 종목</strong><br><br>
+      • <strong>INTC</strong>: 52주 신고가 추격 금지. $125 풀백 대기<br>
+      • <strong>VRT</strong>: $340 회복 전 신규 진입 자제<br>
+      • <strong>현대차</strong>: 손절 이탈 상태. 기존 포지션 정리 우선
+    </div>
+  </div>
+  <div class="insight-box" style="border-color:#a78bfa;margin-top:14px;">
+    <strong style="color:#c4b5fd;">🎯 오늘 밤 핵심 시나리오</strong><br><br>
+    <strong>[시나리오 A — NFP 예상치 부합/하회]</strong>: 10년물 하락 → 기술주 반등 → NVDA $200 회복 시도, AVGO 반등. 진입 기회 ✅<br><br>
+    <strong>[시나리오 B — NFP 예상치 대폭 상회]</strong>: 10년물 4.5% 돌파 → 기술주 압박 → 섣부른 진입 금지. NVDA $193 이탈 시 관망.<br><br>
+    <strong>전략 원칙</strong>: "시장 좋을 때 사팔사팔, 나쁠 때 풀매수 장기보유" — NFP 결과 확인 전 대량 매수 자제.
+    7/3 휴장 감안, 오늘 밤 포지션은 가볍게 유지.
+  </div>
+</div>
+
+<div class="footer">
+  📌 본 브리핑은 자동 생성 투자 참고 자료입니다. 최종 투자 결정은 본인 판단으로 하시기 바랍니다.<br>
+  생성 시각: 2026-07-02 18:00 KST &nbsp;|&nbsp; ETHAN 전략 브리핑 시스템
+</div>
+
+</body>
+</html>
