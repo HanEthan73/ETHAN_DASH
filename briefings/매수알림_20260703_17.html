@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 자동매수 트리거 도달 알림</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    padding: 16px;
+  }
+  .header {
+    background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .header h1 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  .header .time { font-size: 13px; opacity: 0.9; }
+  .section-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ff6b6b;
+    margin-bottom: 10px;
+    padding-left: 4px;
+    border-left: 3px solid #ff4444;
+    padding-left: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    font-size: 13px;
+  }
+  thead tr {
+    background: #161b22;
+    color: #8b949e;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+  th, td {
+    padding: 11px 10px;
+    text-align: center;
+    border-bottom: 1px solid #21262d;
+  }
+  tbody tr:hover { background: #161b22; }
+  .ticker {
+    font-weight: 700;
+    font-size: 14px;
+    color: #58a6ff;
+  }
+  .price { font-weight: 600; color: #ff6b6b; }
+  .trigger { color: #8b949e; }
+  .stop { color: #f85149; }
+  .target { color: #3fb950; }
+  .gap-badge {
+    display: inline-block;
+    background: #1f2937;
+    border-radius: 20px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #ffa500;
+  }
+  .footer {
+    text-align: center;
+    color: #484f58;
+    font-size: 11px;
+    margin-top: 10px;
+    padding-top: 12px;
+    border-top: 1px solid #21262d;
+  }
+  .all-check {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+    font-size: 12px;
+    color: #8b949e;
+    line-height: 1.8;
+  }
+  .all-check .ok { color: #3fb950; }
+  .all-check .ng { color: #ff6b6b; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="time">2026년 7월 3일 (금) · 기준가: 7/1~7/2 종가</div>
+</div>
+
+<div class="section-title">✅ 트리거 도달 종목 (6개)</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>하락폭</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td class="price">$371.00</td>
+      <td class="trigger">$420</td>
+      <td><span class="gap-badge">-11.7%</span></td>
+      <td class="stop">$390</td>
+      <td class="target">$480</td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td>
+      <td class="price">$385.89</td>
+      <td class="trigger">$410</td>
+      <td><span class="gap-badge">-5.9%</span></td>
+      <td class="stop">$360</td>
+      <td class="target">$500</td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td>
+      <td class="price">$360.22</td>
+      <td class="trigger">$385</td>
+      <td><span class="gap-badge">-6.4%</span></td>
+      <td class="stop">$355</td>
+      <td class="target">$450</td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td class="price">$241.70</td>
+      <td class="trigger">$255</td>
+      <td><span class="gap-badge">-5.2%</span></td>
+      <td class="stop">$230</td>
+      <td class="target">$320</td>
+    </tr>
+    <tr>
+      <td class="ticker">ORCL</td>
+      <td class="price">$144.99</td>
+      <td class="trigger">$178</td>
+      <td><span class="gap-badge">-18.5%</span></td>
+      <td class="stop">$162</td>
+      <td class="target">$225</td>
+    </tr>
+    <tr>
+      <td class="ticker">PLTR</td>
+      <td class="price">$117.33</td>
+      <td class="trigger">$122</td>
+      <td><span class="gap-badge">-3.8%</span></td>
+      <td class="stop">$105</td>
+      <td class="target">$170</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="section-title" style="color:#3fb950; border-left-color:#3fb950;">📋 전체 종목 현황</div>
+
+<div class="all-check">
+  <span class="ng">🔴 AVGO $371 ← 트리거 $420</span><br>
+  <span class="ng">🔴 MSFT $385.89 ← 트리거 $410</span><br>
+  <span class="ok">🟢 INTC $128.32 / 트리거 $104.50</span><br>
+  <span class="ng">🔴 GOOGL $360.22 ← 트리거 $385</span><br>
+  <span class="ok">🟢 TSM $432.35 / 트리거 $395</span><br>
+  <span class="ok">🟢 MRVL $272.05 / 트리거 $168</span><br>
+  <span class="ng">🔴 AMZN $241.70 ← 트리거 $255</span><br>
+  <span class="ng">🔴 ORCL $144.99 ← 트리거 $178</span><br>
+  <span class="ng">🔴 PLTR $117.33 ← 트리거 $122</span><br>
+  <span class="ok">🟢 ASTS $86.50 / 트리거 $68</span>
+</div>
+
+<div class="footer">
+  ETHAN AUTO MONITOR · 가격은 실시간이 아닌 최근 종가 기준 · 매매 전 실시간 확인 필수
+</div>
+
+</body>
+</html>
