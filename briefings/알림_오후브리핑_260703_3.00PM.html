@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📊 오후 3시 한국장 마감 브리핑 — 2026.07.03</title>
+<style>
+  :root {
+    --bg: #0d1117; --surface: #161b22; --border: #30363d;
+    --text: #e6edf3; --sub: #8b949e; --green: #3fb950; --red: #f85149;
+    --yellow: #d29922; --blue: #58a6ff; --orange: #e3b341; --purple: #bc8cff;
+    --accent: #1f6feb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif; font-size: 14px; line-height: 1.6; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+  .header { background: linear-gradient(135deg, #1f2d3d 0%, #0d1117 100%); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+  .header h1 { font-size: 22px; font-weight: 700; color: var(--blue); }
+  .header .meta { color: var(--sub); margin-top: 4px; font-size: 13px; }
+  .section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+  .section-title { font-size: 16px; font-weight: 700; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+  table { width: 100%; border-collapse: collapse; }
+  th { background: #21262d; color: var(--sub); padding: 8px 10px; text-align: left; font-size: 12px; font-weight: 600; border-bottom: 1px solid var(--border); }
+  td { padding: 9px 10px; border-bottom: 1px solid #21262d; font-size: 13px; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .up { color: var(--red); font-weight: 600; }
+  .down { color: var(--blue); font-weight: 600; }
+  .neutral { color: var(--sub); }
+  .alert { color: var(--yellow); }
+  .hot { color: #ff7b72; }
+  .green { color: var(--green); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+  .badge-buy { background: rgba(63,185,80,0.15); color: var(--green); border: 1px solid var(--green); }
+  .badge-hold { background: rgba(88,166,255,0.15); color: var(--blue); border: 1px solid var(--blue); }
+  .badge-wait { background: rgba(210,153,34,0.15); color: var(--yellow); border: 1px solid var(--yellow); }
+  .badge-danger { background: rgba(248,81,73,0.15); color: var(--red); border: 1px solid var(--red); }
+  .stock-para { background: #1c2128; border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 14px; margin: 10px 0; }
+  .stock-para h3 { color: var(--blue); font-size: 14px; margin-bottom: 6px; }
+  .news-item { padding: 10px 0; border-bottom: 1px solid #21262d; }
+  .news-item:last-child { border-bottom: none; }
+  .news-num { display: inline-block; background: var(--accent); color: white; width: 22px; height: 22px; border-radius: 50%; text-align: center; line-height: 22px; font-size: 12px; font-weight: 700; margin-right: 6px; }
+  .strategy-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 4px; }
+  .strategy-item { background: #21262d; border-radius: 4px; padding: 3px 6px; font-size: 11px; text-align: center; }
+  .insight-box { background: #1c2128; border: 1px solid var(--accent); border-radius: 8px; padding: 14px; margin-top: 8px; }
+  .trigger-passed { background: rgba(248,81,73,0.1); border: 1px solid var(--red); border-radius: 6px; padding: 8px 12px; font-size: 12px; color: var(--red); margin-top: 6px; }
+  .weekly-event { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid #21262d; }
+  .weekly-event:last-child { border-bottom: none; }
+  .event-date { min-width: 70px; color: var(--orange); font-weight: 600; font-size: 12px; }
+  .event-desc { font-size: 13px; }
+  .summary-box { background: linear-gradient(135deg, #1f2d3d 0%, #1c2128 100%); border: 1px solid var(--blue); border-radius: 8px; padding: 14px 16px; font-size: 15px; font-weight: 600; color: var(--text); }
+  .glossary { color: var(--purple); font-size: 11px; }
+  .passed-target { color: var(--red); font-weight: 700; }
+  .rr { color: var(--green); font-weight: 600; }
+  .kr-stock { color: #56d364; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<div class="header">
+  <h1>📊 오후 3시 한국장 마감 브리핑</h1>
+  <div class="meta">기준일: 2026년 7월 3일 (금) &nbsp;|&nbsp; 한국장 마감(15:30 KST) &nbsp;|&nbsp; 미국장 7/3(금) 휴장 (7/4 독립기념일 대체) &nbsp;|&nbsp; USD/KRW: 1,542.58 (+0.16%)</div>
+</div>
+
+<!-- 1. 한국 시장 마감 -->
+<div class="section">
+  <div class="section-title">🇰🇷 1. 한국 시장 마감</div>
+  <table>
+    <tr><th>지수</th><th>종가</th><th>등락</th><th>등락률</th><th>비고</th></tr>
+    <tr>
+      <td><strong>KOSPI</strong></td>
+      <td><strong>8,127.28</strong></td>
+      <td class="up">+479.19</td>
+      <td class="up">+6.27%</td>
+      <td>전일 -7.89% 급락 후 강한 반등. 장중 7,378 터치 후 전량 회복</td>
+    </tr>
+    <tr>
+      <td><strong>KOSDAQ</strong></td>
+      <td><strong>865.82</strong></td>
+      <td class="neutral">-0.70</td>
+      <td class="neutral">-0.08%</td>
+      <td>코스피 대비 회복 강도 약함. 반도체 대형주 쏠림</td>
+    </tr>
+  </table>
+  <div style="margin-top:10px; padding:10px; background:#21262d; border-radius:6px; font-size:12px; color:var(--sub);">
+    <strong style="color:var(--yellow);">⚠️ 오늘의 맥락:</strong> 전일(7/2 목) 메타發 쇼크로 KOSPI -7.89%(7,648.09 마감) → 오늘 낙폭 과대 인식 매수세 유입 + 외국인 반도체 저점매수 → 강반등. 일중 변동폭 7,378~8,128 (변동률 약 10%). KOSDAQ은 반도체 대형주 부재로 회복 미진.
+  </div>
+</div>
+
+<!-- 2. 오늘 핵심 뉴스 -->
+<div class="section">
+  <div class="section-title">📰 2. 오늘 핵심 뉴스 (3개)</div>
+  <div class="news-item">
+    <span class="news-num">1</span>
+    <strong class="hot">메타發 AI 과잉투자 쇼크 — GPU 렌탈 사업 발표로 전 세계 반도체 폭락</strong><br>
+    <span style="font-size:12px; color:var(--sub); margin-left:28px; display:block;">메타가 잉여 AI 컴퓨팅 자원(GPU)을 외부 기업에 임대한다고 발표. 시장은 이를 "메타의 AI 레이스 이탈 + 반도체 수요 피크아웃 신호"로 해석. 미국 SOX지수 -5.44%, MU -5.49%, AMD -4.26%, AVGO -2.41%, NVDA -1.39%. 한국 삼성전자 -9%, SK하이닉스 -14.5% 폭락 → KOSPI 7/2 -7.89% 급락. 전문가들은 "수요 둔화 해석은 과도하다, 조정 후 재매수 기회"로 평가.</span>
+  </div>
+  <div class="news-item">
+    <span class="news-num">2</span>
+    <strong class="alert">KOSPI 7/3 낙폭 과대 반등 — 반도체 투톱 동반 반등, 외국인 순매수 전환</strong><br>
+    <span style="font-size:12px; color:var(--sub); margin-left:28px; display:block;">장 초반 반도체 쇼크 여진으로 재차 7,400선 하향 돌파, 이후 낙폭 과대 인식 매수세 + 외국인 순매수 전환으로 +6.27% 급반등. 삼성전자·SK하이닉스 동반 플러스 전환. 유안타증권: "코스피 8,000 초반 이하는 반도체·AI 비중 확대 기회." 기관 매도 vs 외국인 매수 대결에서 외국인 우위.</span>
+  </div>
+  <div class="news-item">
+    <span class="news-num">3</span>
+    <strong style="color:var(--purple);">현대차, 보스턴다이나믹스 소프트뱅크 잔여 지분 3,250억 원에 인수</strong><br>
+    <span style="font-size:12px; color:var(--sub); margin-left:28px; display:block;">현대차그룹이 소프트뱅크의 보스턴다이나믹스 잔여 지분 9.65%를 $325M에 인수 완료(6/18 Reuters). 로봇 사업 100% 지배력 확보. 현대차 주가 오늘 +0.52% 반등. 반도체 쇼크 방어주로 기능하며 상대적 강세.</span>
+  </div>
+</div>
+
+<!-- 3. 이번 주 주요 일정 -->
+<div class="section">
+  <div class="section-title">📅 3. 이번 주 남은 일정 + 다음 주 주요 이벤트</div>
+  <table>
+    <tr><th>날짜</th><th>종류</th><th>내용</th><th>영향 종목</th></tr>
+    <tr>
+      <td><strong>7/3 (금, 오늘)</strong></td>
+      <td><span class="badge badge-hold">미국 휴장</span></td>
+      <td>미국 독립기념일(7/4 토) 대체 휴장 — NYSE·NASDAQ 전일종가 기준</td>
+      <td>전 미국 종목</td>
+    </tr>
+    <tr>
+      <td><strong>7/4 (토)</strong></td>
+      <td>—</td>
+      <td>미국 독립기념일</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>7/7 (월)</strong></td>
+      <td><span class="badge badge-hold">미국 휴장</span></td>
+      <td>미국 독립기념일 공식 대체 휴장 (NYSE 확인 필요)</td>
+      <td>전 미국 종목</td>
+    </tr>
+    <tr>
+      <td><strong style="color:var(--orange);">★ 7/8 (화)</strong></td>
+      <td><span class="badge badge-buy">미국 재개장</span></td>
+      <td>미국 시장 재개장 — 메타 쇼크 후 첫 거래일. 갭 방향 주목</td>
+      <td>NVDA, AVGO, INTC, ASTS</td>
+    </tr>
+    <tr>
+      <td><strong style="color:var(--orange);">★ 7/9 (수)</strong></td>
+      <td><span class="badge badge-danger">FOMC 의사록</span></td>
+      <td>연준 6월 FOMC 의사록 공개 (Kevin Warsh 첫 의장 회의). 금리 인하 신호 여부 핵심</td>
+      <td>전 자산군 영향</td>
+    </tr>
+    <tr>
+      <td><strong>7/10 (목)</strong></td>
+      <td><span class="badge badge-wait">경제지표</span></td>
+      <td>미국 CPI(소비자물가) 발표 예상 — 금리 방향 결정 키</td>
+      <td>금리 민감주 전반</td>
+    </tr>
+    <tr>
+      <td><strong>7/15 (화)~</strong></td>
+      <td><span class="badge badge-wait">실적시즌</span></td>
+      <td>미국 2Q 실적시즌 본격 개막 (대형 금융주 → 빅테크 순서)</td>
+      <td>NVDA 8월 예정</td>
+    </tr>
+  </table>
+  <div style="margin-top:8px; font-size:12px; color:var(--yellow);">⚡ 핵심: 7/8 미국 재개장 갭 방향 + 7/9 FOMC 의사록 금리 신호가 이번 주 최대 변수. 미국 3거래일 공백(7/3~7/7) 동안 메타 쇼크 소화 여부가 관건.</div>
+</div>
+
+<!-- 4. 보유 종목 현황 -->
+<div class="section">
+  <div class="section-title">💼 4. 보유 종목 현황</div>
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>등락률</th><th>구간</th><th>한 줄 판단</th></tr>
+    <tr>
+      <td><strong>NVDA</strong></td>
+      <td>$194.44</td>
+      <td class="down">-1.39%</td>
+      <td><span class="badge badge-wait">조정 중</span></td>
+      <td>52주 고점 $236 대비 -18%, 목표가 $298 vs 현재가 괴리 큼 → 기다려야</td>
+    </tr>
+    <tr>
+      <td><strong>VRT</strong></td>
+      <td>$300.53</td>
+      <td class="down">-3.50%</td>
+      <td><span class="badge badge-wait">조정 중</span></td>
+      <td>데이터센터 냉각 수요는 구조적. 메타 쇼크에 동반 하락 → 홀딩</td>
+    </tr>
+    <tr>
+      <td><strong class="kr-stock">현대차(005380)</strong></td>
+      <td>₩485,000</td>
+      <td class="up">+0.52%</td>
+      <td><span class="badge badge-hold">홀딩</span></td>
+      <td>반도체 쇼크 방어주 역할, 보스턴다이나믹스 지배력 확보 호재 → 홀딩</td>
+    </tr>
+    <tr>
+      <td><strong>INTC</strong></td>
+      <td>$122.15</td>
+      <td class="down">-5.9%</td>
+      <td><span class="badge badge-wait">조정 중</span></td>
+      <td>MU 동반 -5.49%, 자동매수 $104.50까지 여전히 -14% → 기다려야</td>
+    </tr>
+    <tr>
+      <td><strong>ASTS</strong></td>
+      <td>$86.50</td>
+      <td class="neutral">-</td>
+      <td><span class="badge badge-hold">모멘텀 유지</span></td>
+      <td>FCC 위성-스마트폰 직접연결 승인, 일본 정부 $926M 보조금 → 강한 촉매</td>
+    </tr>
+    <tr>
+      <td><strong>MSTX</strong></td>
+      <td>$10.08</td>
+      <td class="neutral">-</td>
+      <td><span class="badge badge-hold">장기보유</span></td>
+      <td>2X MSTR 레버리지 ETF. 비트코인 추세 연동. 변동성 큰 장기 포지션</td>
+    </tr>
+  </table>
+
+  <div class="stock-para">
+    <h3>📌 NVDA — 메타 쇼크 피해주, 그러나 구조적 AI 수요 불변</h3>
+    현재가 $194.44(-1.39%), 52주 고점 $236.26 대비 -18%. 애널리스트 컨센서스 목표가 $298(매수 48, 강매수 10, 매도 1). 메타의 잉여 GPU 임대 발표는 "AI 과잉투자 피크아웃" 우려 트리거지만, HPC·AI추론 수요는 2027년까지 폭증 구조. <strong>Claude 판단: 지금 당장 추격매수 금지. $185~195 박스권 확인 후 추가 하락 없으면 분할 매수. 단, 자동매수 목표가($217)를 현재가가 이미 하회 — 매수 트리거 확인 필요.</strong>
+  </div>
+
+  <div class="stock-para">
+    <h3>📌 VRT (Vertiv) — 데이터센터 냉각 인프라, 메타 쇼크 피탄</h3>
+    현재가 $300.53(-3.50%). AI 데이터센터 냉각·전력 인프라 독점적 지위. 메타 쇼크에 동반 하락했으나 수요 펀더멘털 변화 없음. 일중 $301~319 범위에서 저점 마감. <strong>Claude 판단: 홀딩. $280~290 추가 하락 시 분할 추가매수 고려.</strong>
+  </div>
+
+  <div class="stock-para">
+    <h3>📌 현대차(005380) — 반도체 쇼크 방어주, 로봇 지배력 강화</h3>
+    현재가 ₩485,000(+0.52%). 오늘 KOSPI 반등장에서 소폭 상승, 반도체 쇼크 속 방어적 성격. 보스턴다이나믹스 100% 지배 완료로 로봇 사업 확장 가시화. 자동매수 목표가 ₩665,000 대비 현재가 ₩180,000 하회 중. <strong>Claude 판단: 홀딩. 글로벌 전기차 관세·환율 리스크 관찰, ₩450,000선 지지 확인 후 추가 판단.</strong>
+  </div>
+
+  <div class="stock-para">
+    <h3>📌 INTC (Intel) — 메타 쇼크 직격탄, 자동매수까지 거리 충분</h3>
+    현재가 $122.15(추정 -5.9%), 일중 $122.10~$130.98 범위. MU·AMD 동반 폭락. Intel은 파운드리 재건 중으로 AI GPU 경쟁에서 뒤처져 있어 다른 반도체 대비 회복 속도 느릴 수 있음. <strong>Claude 판단: 기다려야. 자동매수 $104.50까지 -14.4% 추가 하락 여지 있음. 서두르지 말 것.</strong>
+  </div>
+
+  <div class="stock-para">
+    <h3>📌 ASTS (AST SpaceMobile) — 위성 직접연결 촉매 강력, 모멘텀 최고</h3>
+    현재가 $86.50(일중 $83.40~$91.81). FCC 스마트폰-위성 직접연결 승인 + 일본 정부 $926M 보조금 → 21% 급등 선행. 자동매수 $67 대비 현재 +29% 상회. <strong>Claude 판단: 홀딩. 이미 자동매수 가격 훌쩍 넘어 고점 추격 리스크. 목표가 $100~110 유지, $75 이하 재진입 시 적극 매수.</strong>
+  </div>
+
+  <div class="stock-para">
+    <h3>📌 MSTX — 2X MSTR 레버리지 ETF, 비트코인 연동 장기보유</h3>
+    현재가 $10.08(일중 $9.27~$10.45). Metaplanet이 BTC 43,000개 돌파로 글로벌 3위 법인 비트코인 보유사 등극. MSTX는 MicroStrategy(MSTR) 2배 레버리지 ETF로 비트코인 추세에 극도로 민감. <strong>Claude 판단: 장기보유 유지. 단기 변동성 무시, BTC 상승 사이클에서 폭발적 수익 구조.</strong>
+  </div>
+</div>
+
+<!-- 5. 자동매수 임박 알림 -->
+<div class="section">
+  <div class="section-title">⚡ 5. 자동매수 임박 알림 (3% 이내 ⚡ 표시)</div>
+  <table>
+    <tr><th>종목</th><th>자동매수 1차</th><th>현재가</th><th>거리</th><th>상태</th></tr>
+    <tr>
+      <td><strong>INTC</strong></td>
+      <td>$104.50</td>
+      <td>$122.15</td>
+      <td class="up">+$17.65 (+16.9%)</td>
+      <td><span class="badge badge-wait">대기 중</span></td>
+    </tr>
+    <tr>
+      <td><strong class="passed-target">NVDA ⚠️</strong></td>
+      <td>$217.00</td>
+      <td class="passed-target">$194.44</td>
+      <td class="passed-target">-$22.56 (-10.4%)</td>
+      <td><span class="badge badge-danger">목표가 하회 — 트리거 확인</span></td>
+    </tr>
+    <tr>
+      <td><strong class="passed-target">현대차 ⚠️</strong></td>
+      <td>₩665,000</td>
+      <td class="passed-target">₩485,000</td>
+      <td class="passed-target">-₩180,000 (-27.1%)</td>
+      <td><span class="badge badge-danger">목표가 하회 — 장기 저점</span></td>
+    </tr>
+    <tr>
+      <td><strong>ASTS</strong></td>
+      <td>$67.00</td>
+      <td>$86.50</td>
+      <td class="up">+$19.50 (+22.4%)</td>
+      <td><span class="badge badge-hold">상회 중 (FCC 촉매)</span></td>
+    </tr>
+    <tr>
+      <td><strong class="passed-target">AVGO ⚠️</strong></td>
+      <td>$435.00</td>
+      <td class="passed-target">$359.80</td>
+      <td class="passed-target">-$75.20 (-17.3%)</td>
+      <td><span class="badge badge-danger">목표가 하회 — 메타 쇼크 피해</span></td>
+    </tr>
+  </table>
+  <div class="trigger-passed">
+    ⚠️ NVDA · 현대차 · AVGO 3종목이 자동매수 목표가를 이미 하회 중. 자동매수 실행 여부 및 추가 분할 매수 계획 즉시 점검 바람.
+  </div>
+</div>
+
+<!-- 6. 오늘의 추천 종목 -->
+<div class="section">
+  <div class="section-title">🔥 6. 오늘의 추천 종목 (4개) — VCP·Weinstein·C&H·M2 복합분석</div>
+  <p style="font-size:12px; color:var(--sub); margin-bottom:12px;">선정 전 확인: AMD 제외 ✅ | 데드크로스 종목 제외 ✅ | 허공 진입 제외 ✅ | 메타 쇼크 후 낙폭 과대 + 골든크로스 유지 종목 우선</p>
+
+  <table style="font-size:12px;">
+    <tr><th>순위</th><th>종목</th><th>티커</th><th>현재가</th><th>MA50>MA200</th><th>머그컵</th><th>진입가</th><th>손절가</th><th>목표가</th><th>R/R</th><th>구간</th></tr>
+    <tr>
+      <td>1</td>
+      <td><strong>엔비디아</strong></td>
+      <td>NVDA</td>
+      <td>$194.44</td>
+      <td><span class="green">✅</span></td>
+      <td><span class="alert">☕ 형성 중</span></td>
+      <td>$193~197</td>
+      <td>$183</td>
+      <td>$230</td>
+      <td class="rr">1:3.3</td>
+      <td><span class="badge badge-buy">🌟골든크로스</span></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong>브로드컴</strong></td>
+      <td>AVGO</td>
+      <td>$359.80</td>
+      <td><span class="green">✅</span></td>
+      <td><span class="alert">☕ 컵 완성 가능</span></td>
+      <td>$355~365</td>
+      <td>$338</td>
+      <td>$420</td>
+      <td class="rr">1:3.4</td>
+      <td><span class="badge badge-buy">🌟골든크로스</span></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>마이크론</strong></td>
+      <td>MU</td>
+      <td>~$115</td>
+      <td><span class="green">✅</span></td>
+      <td><span class="green">✅ 확인</span></td>
+      <td>$112~117</td>
+      <td>$106</td>
+      <td>$145</td>
+      <td class="rr">1:3.8</td>
+      <td><span class="badge badge-buy">☕ 머그컵</span></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>TSMC ADR</strong></td>
+      <td>TSM</td>
+      <td>~$238</td>
+      <td><span class="green">✅</span></td>
+      <td><span class="green">✅ 핸들 구간</span></td>
+      <td>$235~240</td>
+      <td>$222</td>
+      <td>$285</td>
+      <td class="rr">1:3.3</td>
+      <td><span class="badge badge-buy">☕ 머그컵</span></td>
+    </tr>
+  </table>
+
+  <div style="margin-top:14px;">
+    <table style="font-size:11px;">
+      <tr><th>종목</th><th>VCP <span class="glossary">(변동성 수축)</span></th><th>Weinstein <span class="glossary">(Stage 2)</span></th><th>C&H <span class="glossary">(머그컵)</span></th><th>M2 <span class="glossary">(글로벌 유동성)</span></th><th>종합 우선순위</th></tr>
+      <tr>
+        <td><strong>NVDA</strong></td>
+        <td class="alert">⚠️ 수축 2회</td>
+        <td class="green">✅ Stage 2</td>
+        <td class="alert">⚠️ 컵 형성 중</td>
+        <td class="green">✅ M2 YoY 확장</td>
+        <td><span class="badge badge-buy">★★★★ 1위</span></td>
+      </tr>
+      <tr>
+        <td><strong>AVGO</strong></td>
+        <td class="alert">⚠️ 수축 2회</td>
+        <td class="green">✅ Stage 2</td>
+        <td class="alert">⚠️ 컵 완성 가능</td>
+        <td class="green">✅</td>
+        <td><span class="badge badge-buy">★★★★ 2위</span></td>
+      </tr>
+      <tr>
+        <td><strong>MU</strong></td>
+        <td class="green">✅ 3회 수축</td>
+        <td class="green">✅ Stage 2</td>
+        <td class="green">✅ U형 완성</td>
+        <td class="green">✅</td>
+        <td><span class="badge badge-buy">★★★★★ 최우선</span></td>
+      </tr>
+      <tr>
+        <td><strong>TSM</strong></td>
+        <td class="green">✅ 수축 확인</td>
+        <td class="green">✅ Stage 2</td>
+        <td class="green">✅ 핸들 구간</td>
+        <td class="green">✅</td>
+        <td><span class="badge badge-buy">★★★★★ 최우선</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin-top:14px;">
+    <div class="stock-para">
+      <h3>🔥 #1 NVDA (엔비디아) — 메타 쇼크 낙폭 과대, AI 수요 불변의 핵심 수혜주</h3>
+      현재가 $194.44, 52주 고점 $236 대비 -18%, 애널리스트 컨센서스 목표가 $298. SOX ETF(SOXQ) YTD +99% 속 NVDA는 상대적 언더퍼포먼스로 캐치업 여지 큼. Blackwell 아키텍처 AI GPU 수요 파이프라인 견고, 메타 쇼크는 수요가 아닌 공급(GPU 임대) 이슈. MA50 > MA200 골든크로스 유지. <strong>Claude 판단: 7/8 미국 재개장 후 갭다운 없으면 $193~197 구간 적극 매수. 손절 $183.</strong>
+    </div>
+    <div class="stock-para">
+      <h3>🔥 #2 AVGO (브로드컴) — AI ASIC 독점 지위, 메타 쇼크로 저점 매수 기회</h3>
+      현재가 $359.80(-2.41%). AI 커스텀 칩(ASIC) 설계 독점, 구글·Meta·Apple 등 빅테크 전용 AI칩 수주 지속. 3분기 AI 매출 가이던스 미흡으로 조정 받았으나 장기 AI인프라 수요는 불변. 자동매수 목표가 $435 이미 하회 → 분할 매수 구간 진입. <strong>Claude 판단: $355~365 분할 매수. 목표 $420~450.</strong>
+    </div>
+    <div class="stock-para">
+      <h3>🔥 #3 MU (마이크론) — HBM3E 최우선 수혜, 메타 쇼크 후 가장 큰 반등 기대</h3>
+      현재가 ~$115(-5.49%). HBM3E(High Bandwidth Memory) AI 서버 필수 부품 독점 공급. NVDA의 B200/B300 GPU에 MU HBM 탑재. 메타 쇼크로 과도하게 하락, 내재가치 대비 저평가. 머그컵(C&H) 패턴 U자형 완성 구간. <strong>Claude 판단: 지금 가장 적극적으로 들어가야 하는 종목. $112~117 매수, 손절 $106.</strong>
+    </div>
+    <div class="stock-para">
+      <h3>🔥 #4 TSM (TSMC ADR) — 2026 매출 +30% YoY, 모든 AI칩의 생산기지</h3>
+      현재가 ~$238. 매출 YoY +30%, CoWoS 패키징 풀가동, NVDA·AMD·Apple 모든 AI칩 위탁생산. 머그컵 핸들 구간 진입, 돌파 시 $280~285 목표. <strong>Claude 판단: 지금 들어가야. 반도체 섹터 복구 시 가장 안전하고 확실한 선택.</strong>
+    </div>
+  </div>
+</div>
+
+<!-- 7. Claude 인사이트 -->
+<div class="section">
+  <div class="section-title">🧠 7. Claude 인사이트</div>
+  <div class="insight-box">
+    <p style="margin-bottom:10px;"><strong style="color:var(--blue);">향후 1~2주 시나리오</strong></p>
+    <p style="margin-bottom:8px;">
+      <strong style="color:var(--green);">📈 반등 시나리오 (확률 55%):</strong> 7/8 미국 재개장 시 메타 쇼크 소화 → 반도체주 기술적 반등 → KOSPI 8,300~8,500 회복. 트리거: SOX지수 갭업, FOMC 의사록 비둘기파 해석.
+    </p>
+    <p style="margin-bottom:8px;">
+      <strong style="color:var(--red);">📉 재하락 시나리오 (확률 30%):</strong> 7/8 미국 재개장 갭다운 + FOMC 의사록 매파 신호 → KOSPI 7,400~7,600 재시험. AI 과잉투자 우려 재확산 시 7,200 위험.
+    </p>
+    <p>
+      <strong style="color:var(--yellow);">⚠️ 옆걸음 시나리오 (확률 15%):</strong> 7,800~8,200 박스권 횡보. CPI 발표(7/10)까지 방향성 부재.
+    </p>
+    <p style="margin-top:12px; padding-top:10px; border-top:1px solid var(--border);">
+      <strong style="color:var(--orange);">Claude의 직접 지시:</strong><br>
+      ✂️ <strong>뺄 종목:</strong> 없음 (메타 쇼크는 수요 이슈 아님, 전량 유지)<br>
+      🔒 <strong>홀딩:</strong> VRT(데이터센터 인프라 구조적 수요), ASTS(FCC 승인 모멘텀), MSTX(장기 비트코인 사이클)<br>
+      📌 <strong>점검 즉시:</strong> NVDA·AVGO·현대차 자동매수 목표가 이미 하회 중 — 추가 분할매수 계획 수립 또는 목표가 하향 조정 검토<br>
+      🎯 <strong>신규 매수 우선순위:</strong> MU → TSM → NVDA → AVGO 순서로 분할 진입<br>
+      📅 <strong>내일/이번 주 주목 이벤트:</strong> 7/8(화) 미국 재개장 갭 방향 ← 가장 중요, 7/9(수) FOMC 의사록, 7/10(목) CPI
+    </p>
+  </div>
+</div>
+
+<!-- 8. 한 줄 총평 -->
+<div class="section">
+  <div class="section-title">🎯 8. 한 줄 총평</div>
+  <div class="summary-box">
+    "메타 GPU 임대 쇼크로 7/2 KOSPI -7.9% 급락 후 7/3 +6.3% 강반등 — 수요 펀더멘털은 훼손되지 않았다. 7/8 미국 재개장이 진짜 방향성 결정. NVDA·AVGO 자동매수 구간 돌입, MU·TSM 신규 매수 최우선."
+  </div>
+  <div style="margin-top:10px; font-size:11px; color:var(--sub);">
+    * 전략: 시장 좋을 때 사팔사팔, 나쁠 때 풀매수 장기보유<br>
+    * 용어 안내: SOX = PHLX Semiconductor Index(필라델피아 반도체 지수), HBM = High Bandwidth Memory(고대역폭 메모리), VCP = Volatility Contraction Pattern(변동성 수축 패턴), C&H = Cup and Handle(머그컵 패턴), ASIC = Application-Specific Integrated Circuit(주문형 반도체), FOMC = Federal Open Market Committee(연방공개시장위원회), CoWoS = Chip-on-Wafer-on-Substrate(TSMC 고급 패키징 기술)
+  </div>
+</div>
+
+<div style="text-align:center; color:var(--sub); font-size:11px; padding:16px 0;">
+  생성: 2026-07-03 15:00 KST &nbsp;|&nbsp; Claude AI 자동 브리핑 &nbsp;|&nbsp; 투자는 본인 판단 하에 진행하세요
+</div>
+
+</div>
+</body>
+</html>
