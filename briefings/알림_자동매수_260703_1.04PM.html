@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 자동매수 트리거 도달 - 2026.07.03</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d1117; color: #e6edf3; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 16px; font-size: 14px; }
+  .header { background: linear-gradient(135deg, #1f1b24, #2d1b3d); border: 1px solid #7c3aed; border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; }
+  .header h1 { font-size: 18px; color: #f85149; margin-bottom: 4px; }
+  .header .time { color: #8b949e; font-size: 12px; }
+  .section-title { font-size: 13px; font-weight: 700; color: #f85149; margin: 16px 0 8px; letter-spacing: 0.5px; }
+  .section-title.warn { color: #e3b341; }
+  table { width: 100%; border-collapse: collapse; background: #161b22; border: 1px solid #30363d; border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+  th { background: #21262d; color: #8b949e; font-size: 11px; font-weight: 600; padding: 10px 8px; text-align: center; border-bottom: 1px solid #30363d; }
+  td { padding: 10px 8px; text-align: center; border-bottom: 1px solid #21262d; font-size: 13px; }
+  tr:last-child td { border-bottom: none; }
+  .ticker { font-weight: 700; color: #58a6ff; font-size: 14px; }
+  .price { font-weight: 700; color: #f0f6fc; }
+  .trigger { color: #8b949e; }
+  .stop { color: #f85149; }
+  .target { color: #3fb950; }
+  .badge-red { background: #f851491a; color: #f85149; border: 1px solid #f8514966; border-radius: 4px; padding: 2px 6px; font-size: 10px; font-weight: 700; }
+  .badge-yellow { background: #e3b3411a; color: #e3b341; border: 1px solid #e3b34166; border-radius: 4px; padding: 2px 6px; font-size: 10px; font-weight: 700; }
+  .stopwarning { background: #f851491a; }
+  .summary { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 12px 16px; }
+  .summary p { color: #8b949e; font-size: 12px; line-height: 1.6; }
+  .divider { border: none; border-top: 1px solid #30363d; margin: 16px 0; }
+  .chip { display: inline-block; background: #21262d; border-radius: 20px; padding: 3px 10px; font-size: 11px; color: #8b949e; margin: 2px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="time">2026년 7월 3일 (금) &nbsp;|&nbsp; 오후 1:04 PM KST &nbsp;|&nbsp; 5종목 트리거 도달</div>
+</div>
+
+<div class="section-title">🔴 트리거 도달 종목 (5종목)</div>
+<table>
+  <thead>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절가</th>
+      <th>목표가</th>
+      <th>상태</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="stopwarning">
+      <td class="ticker">AVGO</td>
+      <td class="price">$360.45</td>
+      <td class="trigger">$420</td>
+      <td class="stop">$390</td>
+      <td class="target">$480</td>
+      <td><span class="badge-red">손절 이탈⚠️</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td>
+      <td class="price">$389.48</td>
+      <td class="trigger">$410</td>
+      <td class="stop">$360</td>
+      <td class="target">$500</td>
+      <td><span class="badge-red">매수 신호</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td>
+      <td class="price">$359.07</td>
+      <td class="trigger">$385</td>
+      <td class="stop">$355</td>
+      <td class="target">$450</td>
+      <td><span class="badge-red">매수 신호</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td class="price">$242.67</td>
+      <td class="trigger">$255</td>
+      <td class="stop">$230</td>
+      <td class="target">$320</td>
+      <td><span class="badge-red">매수 신호</span></td>
+    </tr>
+    <tr class="stopwarning">
+      <td class="ticker">ORCL</td>
+      <td class="price">$140.17</td>
+      <td class="trigger">$178</td>
+      <td class="stop">$162</td>
+      <td class="target">$225</td>
+      <td><span class="badge-red">손절 이탈⚠️</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="section-title warn">⚠️ 경고: 손절가 이탈 종목</div>
+<div class="summary">
+  <p>
+    <strong style="color:#f85149">AVGO $360.45</strong> &nbsp;→&nbsp; 손절가 $390 대비 <strong style="color:#f85149">-7.6%</strong> 이탈 (Broadcom, 반도체 섹터 약세)<br>
+    <strong style="color:#f85149">ORCL $140.17</strong> &nbsp;→&nbsp; 손절가 $162 대비 <strong style="color:#f85149">-13.5%</strong> 이탈 (Oracle, 이번주 -19% 급락)<br><br>
+    <span style="color:#e3b341">⚡ 손절 이탈 종목은 추가 매수 신중 검토 필요</span>
+  </p>
+</div>
+
+<hr class="divider">
+
+<div class="section-title" style="color:#3fb950">✅ 미도달 종목 (참고)</div>
+<div class="summary">
+  <p>
+    <span class="chip">INTC $120.35</span>
+    <span class="chip">TSM $434.16</span>
+    <span class="chip">MRVL ~$310</span>
+    <span class="chip">PLTR $129.30</span>
+    <span class="chip">ASTS $85.13</span>
+  </p>
+</div>
+
+</body>
+</html>
