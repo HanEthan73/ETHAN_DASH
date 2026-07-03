@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETHAN 주간정산 260703</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --green: #3fb950;
+    --red: #f85149;
+    --yellow: #d29922;
+    --blue: #58a6ff;
+    --purple: #bc8cff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:14px; padding:16px; max-width:900px; margin:0 auto; }
+  h1 { font-size:20px; font-weight:700; margin-bottom:4px; color:var(--blue); }
+  .subtitle { color:var(--muted); font-size:12px; margin-bottom:20px; }
+  h2 { font-size:14px; font-weight:600; color:var(--purple); margin:20px 0 8px; text-transform:uppercase; letter-spacing:0.05em; }
+  table { width:100%; border-collapse:collapse; margin-bottom:12px; }
+  th { background:var(--border); color:var(--muted); font-size:11px; text-transform:uppercase; padding:8px 10px; text-align:left; font-weight:600; }
+  td { padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td { background:rgba(255,255,255,0.02); }
+  .up { color:var(--green); font-weight:600; }
+  .dn { color:var(--red); font-weight:600; }
+  .neu { color:var(--yellow); font-weight:600; }
+  .label { color:var(--muted); font-size:11px; }
+  .badge-win { background:#1a3a25; color:var(--green); border-radius:4px; padding:2px 6px; font-size:11px; font-weight:600; }
+  .badge-loss { background:#3d1a1a; color:var(--red); border-radius:4px; padding:2px 6px; font-size:11px; font-weight:600; }
+  .goal-bar-wrap { background:var(--border); border-radius:6px; height:10px; margin:6px 0; }
+  .goal-bar { background:var(--green); height:10px; border-radius:6px; }
+  .note { background:var(--card); border:1px solid var(--border); border-left:3px solid var(--yellow); border-radius:6px; padding:10px 14px; font-size:13px; margin-top:12px; line-height:1.6; }
+  .warn { border-left-color:var(--red); }
+  .info { border-left-color:var(--blue); }
+  .footer { color:var(--muted); font-size:11px; margin-top:24px; border-top:1px solid var(--border); padding-top:12px; }
+  @media(max-width:600px) {
+    body { padding:10px; font-size:13px; }
+    h1 { font-size:17px; }
+    th,td { padding:7px 6px; font-size:12px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>📊 ETHAN 주간 포트폴리오 정산</h1>
+<div class="subtitle">기준일: 2026년 7월 3일 (금) 17:00 KST &nbsp;|&nbsp; 자동 생성 by ETHAN_AUTO</div>
+
+<!-- 지수 요약 -->
+<h2>📈 주요 지수 주간 성과</h2>
+<table>
+  <tr>
+    <th>지수</th>
+    <th>주간 등락</th>
+    <th>비고</th>
+  </tr>
+  <tr>
+    <td>S&P 500</td>
+    <td class="dn">▼ -2.0%</td>
+    <td class="label">기술주 매도세, 등가중 지수는 소폭 플러스</td>
+  </tr>
+  <tr>
+    <td>NASDAQ</td>
+    <td class="dn">▼ -3.0%</td>
+    <td class="label">AI 반도체 중심 셀오프 주도</td>
+  </tr>
+  <tr>
+    <td>KOSPI</td>
+    <td class="dn">▼ 약 -8~10%</td>
+    <td class="label">목 -7.89%(7,648) 급락 → 금 +1% 회복(7,760). 반도체·외국인 매도 압박</td>
+  </tr>
+</table>
+
+<!-- 포트폴리오 -->
+<h2>💼 보유 종목 주간 성과</h2>
+<table>
+  <tr>
+    <th>종목</th>
+    <th>현재가</th>
+    <th>평균매수가</th>
+    <th>평가손익(추정)</th>
+    <th>주간 등락</th>
+    <th>비고</th>
+  </tr>
+  <tr>
+    <td><strong>NVDA</strong></td>
+    <td>$194.28</td>
+    <td>~$180</td>
+    <td class="up">+7.9%</td>
+    <td class="dn">▼ ≈-3~5%</td>
+    <td class="label">월간 -13.4% / AI 셀오프 영향. 매수가 대비 수익권 유지</td>
+  </tr>
+  <tr>
+    <td><strong>AVGO</strong></td>
+    <td>$360.45</td>
+    <td>—</td>
+    <td class="label">—</td>
+    <td class="dn">▼ -4.3%</td>
+    <td class="label">월간 -17.8% / Strong Buy 컨센서스 유지, 목표가 $523</td>
+  </tr>
+  <tr>
+    <td><strong>ASTS</strong></td>
+    <td>$86.50</td>
+    <td>—</td>
+    <td class="label">—</td>
+    <td class="up"><span class="badge-win">▲ +31.2%</span></td>
+    <td class="label">일본정부 $926M 보조금 + FCC 위성직접접속 승인 → 급등</td>
+  </tr>
+  <tr>
+    <td><strong>VRT</strong></td>
+    <td>~$300</td>
+    <td>—</td>
+    <td class="label">—</td>
+    <td class="dn">▼ -7.2%</td>
+    <td class="label">52주 고점 $379 대비 21%↓. AI 데이터센터 기본 수요는 견조</td>
+  </tr>
+  <tr>
+    <td><strong>MSTX</strong></td>
+    <td>$9.83</td>
+    <td>~$182.73</td>
+    <td class="dn" style="color:#f85149;font-weight:700;">-94.6%</td>
+    <td class="up">▲ +15.2% (당일)</td>
+    <td class="label"><span class="badge-loss">경고</span> 52주 고점 $497.55 → 현재 $9.83. MSTR 연동 2x 레버리지 ETF 장기보유 고비용</td>
+  </tr>
+  <tr>
+    <td><strong>현대차 (005380)</strong></td>
+    <td>₩493,000</td>
+    <td>—</td>
+    <td class="label">—</td>
+    <td class="dn"><span class="badge-loss">▼ -14.9%</span></td>
+    <td class="label">코스피 급락·외국인 매도 직격. 52주 저점 ₩203,500 / 고점 ₩783,000</td>
+  </tr>
+</table>
+
+<!-- 이번 주 MVP / 아쉬운 종목 -->
+<h2>🏆 이번 주 평가</h2>
+<table>
+  <tr>
+    <th>구분</th>
+    <th>종목</th>
+    <th>사유</th>
+  </tr>
+  <tr>
+    <td><span class="badge-win">BEST</span></td>
+    <td><strong>ASTS</strong></td>
+    <td class="label">+31.2% / 일본 보조금 + FCC 승인 이벤트 드리븐. 포트 내 단독 상승 기여</td>
+  </tr>
+  <tr>
+    <td><span class="badge-loss">WORST</span></td>
+    <td><strong>현대차 + MSTX</strong></td>
+    <td class="label">현대차 -14.9% 코스피 쇼크. MSTX 누적 -94.6% 지속 부담</td>
+  </tr>
+</table>
+
+<!-- 자동매수 트리거 -->
+<h2>⚡ 자동매수 트리거 회고</h2>
+<table>
+  <tr>
+    <th>종목</th>
+    <th>트리거 여부</th>
+    <th>비고</th>
+  </tr>
+  <tr>
+    <td>NVDA</td>
+    <td class="neu">확인 필요</td>
+    <td class="label">주간 하락 중 $180 이하 접근 여부 재확인 권장</td>
+  </tr>
+  <tr>
+    <td>VRT</td>
+    <td class="neu">확인 필요</td>
+    <td class="label">$300 이하 진입 시 매수 판단 기준 점검 권장</td>
+  </tr>
+  <tr>
+    <td>현대차</td>
+    <td class="dn">미달</td>
+    <td class="label">-14.9% 급락 중 분할 매수 트리거 점검 필요</td>
+  </tr>
+</table>
+
+<!-- 2억 목표 -->
+<h2>🎯 2억 목표 진행 현황</h2>
+<table>
+  <tr>
+    <th>구분</th>
+    <th>목표</th>
+    <th>이번 주 추정</th>
+    <th>상태</th>
+  </tr>
+  <tr>
+    <td>연간 목표</td>
+    <td>₩200,000,000</td>
+    <td rowspan="3" class="label" style="vertical-align:middle;">
+      포지션 규모 미확인으로<br>정확한 손익 환산 불가.<br>
+      ASTS +31% 단독 기여 추정,<br>현대차·VRT 하락 상쇄.<br>
+      <strong>순 기여: 마이너스 추정</strong>
+    </td>
+    <td rowspan="3" class="dn">▼ 목표 미달 추정</td>
+  </tr>
+  <tr>
+    <td>월간 목표</td>
+    <td>₩16,700,000</td>
+  </tr>
+  <tr>
+    <td>주간 목표</td>
+    <td>₩3,850,000</td>
+  </tr>
+</table>
+
+<div class="note warn">
+  <strong>⚠️ MSTX 리스크 점검:</strong> 평균 매수가 $182.73 대비 현재 $9.83 (-94.6%). 2x 레버리지 ETF 특성상 장기 보유 시 지수 회복에도 NAV 회복 제한. 포지션 정리 또는 손절 기준 재설정 검토 권장.
+</div>
+
+<!-- 다음 주 이벤트 -->
+<h2>📅 다음 주 주목 이벤트</h2>
+<div class="note info">
+  <strong>7/7 (월)</strong> 삼성전자 잠정실적 발표 → 코스피·현대차 방향성 영향 주시<br>
+  <strong>7/7~8</strong> NATO 정상회의 → 지정학·방산 관련 모멘텀<br>
+  <strong>7/14~15</strong> 연준 의장 반기 의회 증언 + 베이지북 → 금리 경로 힌트<br>
+  <strong>Q2 어닝시즌 본격화</strong> → 개별 종목 변동성 확대 예상
+</div>
+
+<div class="footer">
+  자동 생성 에이전트: ETHAN_AUTO &nbsp;|&nbsp; 데이터 출처: Yahoo Finance, CNN Markets, KuCoin, Investing.com<br>
+  본 보고서는 참고용이며 투자 판단은 대표님께 있습니다.
+</div>
+
+</body>
+</html>
