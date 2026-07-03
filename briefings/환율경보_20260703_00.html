@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 환율 경보 | USD/KRW 1,554</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d0d0d;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+    padding: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .alert-banner {
+    background: linear-gradient(135deg, #8b0000, #cc0000);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 16px;
+    border: 1px solid #ff3333;
+    box-shadow: 0 0 20px rgba(255,0,0,0.3);
+  }
+  .alert-banner h1 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: #ffaaaa;
+    margin-bottom: 8px;
+  }
+  .rate-big {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ff4444;
+    text-shadow: 0 0 10px rgba(255,68,68,0.5);
+    line-height: 1.1;
+  }
+  .rate-unit {
+    font-size: 1rem;
+    color: #ffaaaa;
+    margin-top: 4px;
+  }
+  .card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border: 1px solid #2a2a2a;
+  }
+  .card-title {
+    font-size: 0.75rem;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #252525;
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-label { color: #aaa; font-size: 0.85rem; }
+  .stat-value { font-size: 0.9rem; font-weight: 700; }
+  .up { color: #ff5555; }
+  .warn { color: #ffaa00; }
+  .green { color: #44cc88; }
+
+  .breach-box {
+    background: #1a0000;
+    border: 2px solid #ff3333;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .breach-label {
+    font-size: 0.8rem;
+    color: #ff8888;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .breach-value {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #ff3333;
+  }
+
+  .action-list { list-style: none; }
+  .action-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #252525;
+    font-size: 0.85rem;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .action-list li:last-child { border-bottom: none; }
+  .icon { flex-shrink: 0; }
+
+  .timestamp {
+    text-align: center;
+    color: #555;
+    font-size: 0.7rem;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="alert-banner">
+  <h1>🚨 USD/KRW 환율 경보</h1>
+  <div class="rate-big">1,554</div>
+  <div class="rate-unit">원 / 1달러 (2026.07.03 기준)</div>
+</div>
+
+<div class="breach-box">
+  <div class="breach-label">⚠️ 임계선 돌파 현황</div>
+  <div class="breach-value">1,500 돌파 확인</div>
+  <div style="color:#ff8888; font-size:0.8rem; margin-top:6px;">경보 기준 1,480 대비 +74원 초과</div>
+</div>
+
+<div class="card">
+  <div class="card-title">📊 환율 현황</div>
+  <div class="stat-row">
+    <span class="stat-label">현재 환율</span>
+    <span class="stat-value up">1,554.22 원</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">전일 대비</span>
+    <span class="stat-value up">+0.22% ▲</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">최근 7일 범위</span>
+    <span class="stat-value warn">1,535 ~ 1,549</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">최근 1개월</span>
+    <span class="stat-value up">+1.28% 원화 약세</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">경보 기준선</span>
+    <span class="stat-value warn">1,480 원</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">📉 코스피 외국인 수급 영향</div>
+  <div class="stat-row">
+    <span class="stat-label">원화 약세 영향</span>
+    <span class="stat-value up">외국인 수익률 환차손 발생</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">외국인 매도 압력</span>
+    <span class="stat-value up">강화 가능성 ↑</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">헤지펀드 포지션</span>
+    <span class="stat-value warn">달러 롱 지속 우려</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">코스피 외인 수급</span>
+    <span class="stat-value warn">방어주·수출주 혼조</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">수출 기업 영향</span>
+    <span class="stat-value green">삼성·현대 환율 수혜 가능</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">⚡ 권고 조치</div>
+  <ul class="action-list">
+    <li><span class="icon">🔴</span><span>달러 자산 비중 점검 — 현 환율 수준에서 추가 달러 매입 신중 검토</span></li>
+    <li><span class="icon">📌</span><span>수입 결제 일정 확인 — 결제 지연 시 추가 비용 발생 리스크</span></li>
+    <li><span class="icon">📊</span><span>코스피 외국인 순매도 동향 모니터링 강화</span></li>
+    <li><span class="icon">🏦</span><span>외환당국(한국은행) 구두 개입 가능성 주시</span></li>
+    <li><span class="icon">💡</span><span>수출 수혜주(반도체·자동차) 단기 트레이딩 기회 검토</span></li>
+  </ul>
+</div>
+
+<div class="timestamp">⏱ 자동 생성: 2026-07-03 00:07 KST | ETHAN_AUTO</div>
+
+</body>
+</html>
