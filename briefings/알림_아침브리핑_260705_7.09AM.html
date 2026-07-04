@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아침 브리핑 260705</title>
+<style>
+:root{
+  --bg:#111111; --card:#1a1a1a; --card2:#1f1f1f; --border:#2c2c2c;
+  --gold:#e8b84b; --gold2:#f4d374; --red:#ff5c5c; --green:#4caf7a;
+  --text:#e8e8e8; --sub:#9a9a9a;
+}
+*{box-sizing:border-box;}
+body{
+  background:var(--bg); color:var(--text); font-family:-apple-system,'Segoe UI',Roboto,'Malgun Gothic',sans-serif;
+  margin:0; padding:0; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:680px; margin:0 auto; padding:18px 14px 60px;}
+.header{
+  text-align:center; padding:22px 10px 18px; border-bottom:2px solid var(--gold);
+  margin-bottom:20px;
+}
+.header .badge{
+  display:inline-block; background:var(--gold); color:#111; font-weight:700;
+  font-size:12px; padding:4px 10px; border-radius:12px; margin-bottom:10px;
+}
+.header h1{ font-size:22px; margin:6px 0 4px; color:var(--gold2); }
+.header .date{ font-size:13px; color:var(--sub); }
+h2.section{
+  font-size:16px; color:var(--gold2); border-left:4px solid var(--gold);
+  padding-left:10px; margin:30px 0 12px; letter-spacing:0.3px;
+}
+.card{
+  background:var(--card); border:1px solid var(--border); border-radius:10px;
+  padding:14px 14px; margin-bottom:12px;
+}
+table{ width:100%; border-collapse:collapse; font-size:12.5px; }
+th, td{ padding:8px 6px; text-align:center; border-bottom:1px solid var(--border); }
+th{ color:var(--gold2); font-weight:600; background:#161616; font-size:11.5px; }
+td{ color:var(--text); }
+tr:last-child td{ border-bottom:none; }
+.up{ color:var(--red); font-weight:700; }
+.down{ color:#5b9bff; font-weight:700; }
+.flat{ color:var(--sub); }
+.gold-text{ color:var(--gold); font-weight:700; }
+.tag{
+  display:inline-block; font-size:10.5px; padding:2px 7px; border-radius:8px; font-weight:700;
+}
+.tag.buy{ background:rgba(76,175,122,0.18); color:var(--green); }
+.tag.hold{ background:rgba(232,184,75,0.18); color:var(--gold); }
+.tag.watch{ background:rgba(154,154,154,0.18); color:var(--sub); }
+.tag.alert{ background:rgba(255,92,92,0.18); color:var(--red); }
+.stockcard{
+  background:var(--card2); border:1px solid var(--border); border-left:3px solid var(--gold);
+  border-radius:8px; padding:13px 14px; margin-bottom:10px;
+}
+.stockcard h3{ margin:0 0 6px; font-size:14.5px; color:#fff; }
+.stockcard .price{ font-size:19px; font-weight:800; color:var(--gold2); }
+.stockcard .meta{ font-size:11.5px; color:var(--sub); margin:4px 0 8px; }
+.stockcard p{ font-size:12.5px; line-height:1.6; margin:4px 0; color:#d5d5d5; }
+.judge{
+  margin-top:8px; padding:8px 10px; border-radius:6px; font-size:12.5px; font-weight:700;
+  background:#151515; border:1px dashed var(--border);
+}
+.judge.hold-j{ color:var(--gold); }
+.judge.buy-j{ color:var(--green); }
+.judge.watch-j{ color:var(--sub); }
+.progress-outer{
+  background:#0c0c0c; border:1px solid var(--border); border-radius:20px; height:22px;
+  overflow:hidden; margin:10px 0;
+}
+.progress-inner{
+  background:linear-gradient(90deg,var(--gold),var(--gold2)); height:100%;
+  display:flex; align-items:center; justify-content:flex-end; padding-right:8px;
+  color:#111; font-size:11px; font-weight:800;
+}
+.reco-card{
+  background:var(--card2); border:1px solid var(--border); border-radius:8px;
+  padding:13px 14px; margin-bottom:10px; border-left:3px solid var(--green);
+}
+.reco-card h3{ margin:0 0 6px; font-size:14.5px; color:#fff; }
+.reco-card .rank{ color:var(--gold); font-weight:800; margin-right:6px; }
+.check{ color:var(--green); font-weight:800; }
+.cross{ color:var(--red); font-weight:800; }
+.note{
+  background:#161616; border:1px solid var(--border); border-radius:8px; padding:10px 12px;
+  font-size:11.5px; color:var(--sub); line-height:1.6; margin-top:10px;
+}
+.alert-badge{
+  display:inline-block; background:var(--red); color:#fff; font-weight:800; font-size:11px;
+  padding:2px 8px; border-radius:6px; margin-left:6px;
+}
+.footer{ text-align:center; color:var(--sub); font-size:11px; margin-top:36px; padding-top:14px; border-top:1px solid var(--border); }
+.divider{ height:1px; background:var(--border); margin:18px 0; }
+.small{ font-size:11px; color:var(--sub); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="badge">DAILY BRIEFING</div>
+    <h1>🌅 ETHAN 아침 주식 브리핑</h1>
+    <div class="date">2026년 7월 5일(일) · 07:09 KST 발행 (미국 7/2 목 정규장 · 한국 7/3 금 정규장 기준)</div>
+  </div>
+
+  <h2 class="section">1. 📅 오늘 · 이번주 주요 일정</h2>
+  <div class="card">
+    <table>
+      <tr><th>시간(KST)</th><th>국가</th><th>이벤트</th><th>중요도</th></tr>
+      <tr><td>7/4(토)</td><td>🇺🇸</td><td>독립기념일 휴장 (전일 조기마감)</td><td class="flat">-</td></tr>
+      <tr><td>7/7(화)</td><td>🇺🇸</td><td>연준 위원 발언 다수 (증시 변동성 주의)</td><td class="gold-text">중</td></tr>
+      <tr><td>7/9(목)</td><td>🇺🇸</td><td>주간 신규 실업수당 청구건수</td><td class="gold-text">중</td></tr>
+      <tr><td>7/10(금)</td><td>🇺🇸</td><td>소비자심리지수(미시간대) 예비치</td><td class="gold-text">중</td></tr>
+      <tr><td>7/14(화)</td><td>🇺🇸</td><td>6월 CPI 발표 (이번주 대상 아님, 예고)</td><td class="up">상</td></tr>
+      <tr><td>7/23(목)</td><td>🇺🇸</td><td>Intel(INTC) 2Q 실적발표</td><td class="up">상 (보유종목)</td></tr>
+      <tr><td>7/28~29</td><td>🇺🇸</td><td>FOMC 회의 (이번주 아님, 예고)</td><td class="up">상</td></tr>
+    </table>
+    <div class="note">※ 이번주(7/6~7/10)는 굵직한 매크로 이벤트가 적은 주. CPI(7/14)·FOMC(7/28~29)는 다음 관찰 대상. 반도체 섹터는 6월 말 급등 후 차익실현 매물 출회 중이라 변동성 확대 가능.</div>
+  </div>
+
+  <h2 class="section">2. 📊 시장 전반 흐름</h2>
+  <div class="card">
+    <table>
+      <tr><th>지수</th><th>종가</th><th>등락</th></tr>
+      <tr><td>다우존스</td><td>52,844</td><td class="up">+539 (+1.03%)</td></tr>
+      <tr><td>S&P500</td><td>7,483.24</td><td class="down">-16.13 (-0.22%)</td></tr>
+      <tr><td>나스닥종합</td><td>26,040.03</td><td class="down">-1.27%</td></tr>
+      <tr><td>코스피</td><td>8,088.34</td><td class="up">+440.25 (+5.76%)</td></tr>
+      <tr><td>코스닥</td><td>966.59</td><td class="down">-34.34 (-3.43%)</td></tr>
+    </table>
+    <div class="divider"></div>
+    <table>
+      <tr><th>VIX</th><th>美 10년물</th><th>USD/KRW</th></tr>
+      <tr><td>16.15</td><td>4.48~4.49%</td><td>약 1,530원</td></tr>
+    </table>
+    <div class="note">
+      <b style="color:var(--gold2)">⚠ 선제알림 8대 지표 점검</b><br>
+      VIX≥25 <span class="tag watch">미해당(16.15)</span> · S&P200일선이탈 <span class="tag watch">미해당</span> · 10년물≥4.5% <span class="tag hold">근접(4.48~4.49%)</span> · 연준매파 <span class="tag watch">특이사항 없음</span> · 지정학급등 <span class="tag watch">없음</span> · M2급감 <span class="tag watch">없음</span> · 나스닥-5%연속 <span class="tag watch">미해당</span> · USD/KRW≥1450 <span class="tag alert">해당(1,530)<span class="alert-badge">경보</span></span>
+    </div>
+    <div class="note">코스피는 7/2(목) 반도체 글로벌 동반급락 여파로 -7.89% 폭락(7,648선) 후, 7/3(금) 저가매수 유입+반도체 반등으로 +5.76% 급반등하며 8,000선 회복. 변동성 매우 큰 한 주였음. 나스닥은 밸류에이션 부담 속 차익실현 지속 중.</div>
+  </div>
+
+  <h2 class="section">3. 💼 보유 종목 브리핑</h2>
+  <div class="card">
+    <table>
+      <tr><th>종목</th><th>현재가</th><th>전일대비</th><th>구간</th><th>한줄판단</th></tr>
+      <tr><td>NVDA</td><td>$194.83</td><td class="down">-1.39%</td><td>52주 중단(153~237)</td><td class="gold-text">홀딩</td></tr>
+      <tr><td>현대차</td><td>₩492,500</td><td class="down">-1.9%(추정)</td><td>단기 조정</td><td class="gold-text">홀딩</td></tr>
+      <tr><td>INTC</td><td>$120.35</td><td class="down">-5.25%</td><td>52주 상단권(19~142)</td><td class="hold">홀딩(눌림)</td></tr>
+      <tr><td>ASTS</td><td>~$86.1</td><td class="down">-1.65%</td><td>52주 중상단(32~134)</td><td class="gold-text">홀딩</td></tr>
+      <tr><td>MSTX</td><td>~$9.83</td><td class="up">+15.2%</td><td>리버스스플릿 이후 급변동</td><td class="watch">관망</td></tr>
+    </table>
+  </div>
+
+  <div class="stockcard">
+    <h3>🟢 NVDA — NVIDIA Corporation</h3>
+    <div class="price">$194.83 <span class="down" style="font-size:13px;">-2.75 (-1.39%)</span></div>
+    <div class="meta">7/2(목) 종가 · 52주: $152.97 ~ $236.54 · 애널리스트 컨센서스: Strong Buy (목표가 $301.62, +54.8%)</div>
+    <p>RSI/이평선: 최근 $200 저항 돌파 실패 후 반락, 단기 조정 국면(중기 상승추세는 유지). MA50 위에서 등락 중으로 추정.</p>
+    <p>주요이슈: AI 스타트업 대상 컴퓨팅 파워-매출 공유 프로그램 발표. Michael Burry의 반도체 숏베팅 지속 뉴스로 단기 심리 위축. 로보틱스 '피지컬 AI' 성장 스토리는 유효.</p>
+    <div class="judge hold-j">Claude 판단: 홀딩. 보유단가 $213.75 대비 -8.8%이나 펀더멘털·컨센서스 견조. 추가 조정 시 $185 부근 2차 매수 관찰 구간.</div>
+  </div>
+
+  <div class="stockcard">
+    <h3>🟢 현대차 (005380)</h3>
+    <div class="price">₩492,500</div>
+    <div class="meta">7/2(목) 종가 기준 · 52주 범위 넓게 형성 · 애널리스트 매수 우위 (12개월 목표가 상단 언급)</div>
+    <p>RSI/이평선: 코스피 급등락(-7.9%→+5.8%) 장세 속 동반 변동성 확대. 단기 수급 불안정.</p>
+    <p>주요이슈: 반도체 및 자동차 섹터 전반 글로벌 매크로 리스크(관세·환율)에 연동. 코스피 반등 시 동반 회복 흐름.</p>
+    <div class="judge hold-j">Claude 판단: 홀딩. 시장 전체 변동성 장세로 개별 이슈보다 지수 흐름에 연동. 자동매수 라인(₩635K/₩600K)은 현재가 대비 이미 하회한 상태로 추가 하락 시 대응 라인 재점검 필요.</div>
+  </div>
+
+  <div class="stockcard">
+    <h3>🟡 INTC — Intel Corporation</h3>
+    <div class="price">$120.35 <span class="down" style="font-size:13px;">-6.67 (-5.25%)</span></div>
+    <div class="meta">7/2(목) 종가 · 52주: $18.97 ~ $142.35 · 컨센서스: Hold (평균목표가 $98.5, 단 HSBC는 $200로 상향)</div>
+    <p>RSI/이평선: 최근 200% 랠리 이후 급격한 되돌림(-5.25%), 단기 과열 해소 구간. $130 부근 저항, $117 부근 지지 테스트.</p>
+    <p>주요이슈: HSBC가 파운드리 사업 반영해 목표가 $100→$200로 대폭 상향(Buy 유지). 반면 반도체 섹터 전반 차익실현 매물+테슬라 테라팹 협력 뉴스는 혼재. 7/23 2분기 실적 발표 예정(핵심 변수).</p>
+    <div class="judge hold-j">Claude 판단: 홀딩(눌림목 관찰). 애널리스트 목표가 상향은 긍정적이나 단기 변동성 확대. 자동매수 1차($99)·2차($95)는 현재가 대비 아직 거리 있음(약 +22%~+27%). 실적발표 전까지 신규 매수는 보수적 접근 권장.</div>
+  </div>
+
+  <div class="stockcard">
+    <h3>🟡 ASTS — AST SpaceMobile</h3>
+    <div class="price">~$86.10 <span class="down" style="font-size:13px;">-1.65%(전후 거래 기준)</span></div>
+    <div class="meta">52주: $32.25 ~ $133.86 · 컨센서스: Hold (목표가 $82.02, -10.9%)</div>
+    <p>RSI/이평선: 5월 말 Blue Origin 로켓 폭발 여파로 고점($133) 대비 -35% 조정 후 $85~$97 박스권 등락 중.</p>
+    <p>주요이슈: Blue Origin 연내 재발사 기대감이 저가 매수세 유발. 다만 Barclays는 목표가 $60로 하향(비중축소 유지)하는 등 애널리스트 의견 분분.</p>
+    <div class="judge hold-j">Claude 판단: 홀딩. 보유단가 $94.56 대비 -9%대. 로켓 재발사 성공 여부가 단기 변곡점. 자동매수 라인($57/$45)까지는 아직 거리 큼(현재가 대비 -34%~-48%).</div>
+  </div>
+
+  <div class="stockcard">
+    <h3>⚪ MSTX — Defiance 2x Long MSTR ETF (장기보유)</h3>
+    <div class="price">~$9.83 <span class="up" style="font-size:13px;">전일比 변동 확대</span></div>
+    <div class="meta">52주: $6.72 ~ $497.55 (수차례 리버스스플릿 반영) · MSTR 일간수익률 2배 추종 레버리지 ETF</div>
+    <p>주의: 2026년 2~3월 다수 Defiance ETF에 대해 리버스 스톡스플릿이 시행되어 주가·보유수량 기준이 과거와 단순 비교 불가. 보유단가 $182.73은 스플릿 반영 전 취득단가일 가능성이 높아 실제 손익률 재계산이 필요함.</p>
+    <p>주요이슈: 비트코인/MSTR 변동성에 연동한 일중 급등락 지속. 레버리지 상품 특성상 장기 보유 시 변동성 감가(decay) 누적 위험.</p>
+    <div class="judge watch-j">Claude 판단: 관망. 정확한 손익 파악을 위해 보유수량·평단 최신화 필요. 장기보유 목적이라도 레버리지 ETF 특성상 정기적 재평가 권장.</div>
+  </div>
+
+  <h2 class="section">4. 🎯 목표 달성 현황</h2>
+  <div class="card">
+    <p style="font-size:13px; margin:0 0 10px;">최종 목표: <b class="gold-text">2억원</b> · 총 투자원금: 약 20,374,881원</p>
+    <div class="progress-outer">
+      <div class="progress-inner" style="width:11%;">약 10~11%</div>
+    </div>
+    <table>
+      <tr><th>구분</th><th>금액(추정)</th></tr>
+      <tr><td>NVDA 평가액 (7주 × $194.83)</td><td>약 $1,364 (₩2,086,000)</td></tr>
+      <tr><td>ASTS 평가액 (8주 × ~$86.1)</td><td>약 $689 (₩1,054,000)</td></tr>
+      <tr><td>MSTX 평가액 (17주 × ~$9.83, 스플릿 영향 재확인 필요)</td><td>약 $167 (₩256,000)</td></tr>
+      <tr><td>현대차 · INTC 평가액</td><td class="small">보유수량 데이터 미기재 - 산출 불가</td></tr>
+    </table>
+    <div class="note">⚠ 현대차·INTC 보유수량 정보가 기록에 없어 전체 포트폴리오 정확한 평가액·달성률 산출이 제한적입니다. 다음 브리핑 전 정확한 보유수량을 확인해 주시면 정밀 계산이 가능합니다. (현재 확인 가능한 NVDA/ASTS/MSTX 3종목 평가액 합계는 약 ₩3,396,000)</div>
+    <p style="font-size:12px; color:var(--sub); margin-top:8px;">잔여금액(목표 2억 기준): 약 1억 9,660만원+ (전체 평가액 미확정으로 추정치)</p>
+  </div>
+
+  <h2 class="section">5. ⚡ 자동매수 임박 알림</h2>
+  <div class="card">
+    <table>
+      <tr><th>종목</th><th>현재가</th><th>1차</th><th>거리</th><th>2차</th><th>상태</th></tr>
+      <tr><td>INTC</td><td>$120.35</td><td>$99</td><td>+21.6%</td><td>$95</td><td class="tag watch">거리 있음</td></tr>
+      <tr><td>NVDA</td><td>$194.83</td><td>$201</td><td>1차 하회</td><td>$185</td><td class="tag hold">2차 근접(5.3%)</td></tr>
+      <tr><td>현대차</td><td>₩492,500</td><td>₩635K</td><td>1·2차 모두 하회</td><td>₩600K</td><td class="tag alert">라인 재점검 필요</td></tr>
+      <tr><td>ASTS</td><td>$86.10</td><td>$57</td><td>+50.9%</td><td>$45</td><td class="tag watch">거리 큼</td></tr>
+      <tr><td>AVGO</td><td>$360.45</td><td>$420</td><td>1·2차 모두 하회</td><td>$390</td><td class="tag alert">라인 재점검 필요</td></tr>
+    </table>
+    <div class="note">오늘 3% 이내 ⚡근접 종목은 없음. 다만 현대차·AVGO는 설정된 1차·2차 매수라인을 이미 하회한 상태로, 라인이 과거 고점 기준으로 설정되어 현재 시세와 괴리가 있을 수 있습니다 — 매수 라인 재설정을 권장합니다. NVDA는 2차($185) 라인에 5.3% 근접 중으로 다음 조정 시 주시 필요.</div>
+  </div>
+
+  <h2 class="section">6. 🔥 오늘의 추천 종목 (5선)</h2>
+  <div class="card">
+    <table>
+      <tr><th>순위</th><th>종목</th><th>현재가</th><th>골든크로스</th><th>진입가</th><th>목표</th></tr>
+      <tr><td>1</td><td>MU</td><td>$975.56</td><td class="check">✅</td><td>$920 부근</td><td>$1,150+</td></tr>
+      <tr><td>2</td><td>CRDO</td><td>$241.91</td><td class="check">✅</td><td>$225 부근</td><td>$300+</td></tr>
+      <tr><td>3</td><td>MRVL</td><td>$246.05</td><td class="check">✅</td><td>$235 부근</td><td>$300+</td></tr>
+      <tr><td>4</td><td>RKLB</td><td>$100.46</td><td class="check">✅</td><td>$95 부근</td><td>$115+</td></tr>
+      <tr><td>5</td><td>AVGO</td><td>$360.45</td><td class="check">✅</td><td>$350 부근</td><td>$430+</td></tr>
+    </table>
+    <div class="note">※ AMD는 데드크로스(MA50&lt;MA200) 확인되어 추천 대상에서 제외.</div>
+  </div>
+
+  <div class="reco-card">
+    <h3><span class="rank">1위</span>MU — Micron Technology</h3>
+    <p>$975.56 (-5.49%) · VCP <span class="check">✅</span> · Weinstein 2단계(상승국면) · C&H 패턴 형성 중</p>
+    <p>골든크로스 확인, 연초 이후 +285% 급등한 메모리 대장주. 펀더멘털 Strong Buy vs 단기 기술적 Sell 신호 혼재 — 과열 구간 조정 가능성 유의.</p>
+    <div class="judge buy-j">Claude 판단: 눌림목 분할매수 관찰. 단기 급등 후 조정 중이라 즉시 진입보다 $920대 1차 지지 확인 후 접근 권장.</div>
+  </div>
+
+  <div class="reco-card">
+    <h3><span class="rank">2위</span>CRDO — Credo Technology</h3>
+    <p>$241.91 (-6.63%) · VCP <span class="check">✅</span> · Weinstein 2단계 · AI 데이터센터 연결 솔루션 테마</p>
+    <p>애널리스트 전원(18명) 매수 의견, Strong Buy 컨센서스. 최근 조정으로 밸류에이션 부담 완화.</p>
+    <div class="judge buy-j">Claude 판단: 분할매수 검토. 52주 최고 $308 대비 -21% 조정 구간으로 리스크 대비 매력적 진입 구간 형성.</div>
+  </div>
+
+  <div class="reco-card">
+    <h3><span class="rank">3위</span>MRVL — Marvell Technology</h3>
+    <p>$246.05 · VCP <span class="check">✅</span> · Weinstein 2단계 · AI 네트워킹 칩 테마</p>
+    <p>7/10 배당락 예정($0.06). 52주 최고 $329.88 대비 조정 중이나 AI 인프라 수혜주로 분류.</p>
+    <div class="judge watch-j">Claude 판단: 관망 후 진입. 밸류에이션(P/E 83.8) 부담 있어 추가 조정 시 매수 접근이 합리적.</div>
+  </div>
+
+  <div class="reco-card">
+    <h3><span class="rank">4위</span>RKLB — Rocket Lab</h3>
+    <p>$100.46 · VCP <span class="check">✅</span> · Weinstein 2단계 · 우주/발사체 테마</p>
+    <p>Iridium Communications 인수($80억) 발표로 사업 확장 기대감. 애널리스트 Buy 컨센서스(목표가 $111.86, +11.4%).</p>
+    <div class="judge buy-j">Claude 판단: 분할매수 관찰. 인수 관련 변동성 있으나 중장기 우주산업 성장 스토리 유효.</div>
+  </div>
+
+  <div class="reco-card">
+    <h3><span class="rank">5위</span>AVGO — Broadcom</h3>
+    <p>$360.45 (-2.41%) · VCP <span class="check">✅</span> · Weinstein 2단계(단기 조정) · RSI 36~45(중립~과매도 근접)</p>
+    <p>Strong Buy 컨센서스(목표가 $523.73, +45.3%). 자동매수 라인($420/$390)을 이미 하회한 상태라 라인 재설정 필요.</p>
+    <div class="judge buy-j">Claude 판단: 분할매수 유효 구간. 기존 설정 라인보다 낮은 현재가는 오히려 매력적 진입가일 수 있음 - 라인 재점검 후 매수 검토.</div>
+  </div>
+
+  <h2 class="section">7. 💼 채용공고 알림 (전력전자 · BMS · EV)</h2>
+  <div class="card">
+    <p style="font-size:12.5px; line-height:1.7;">
+    최근 1주일 내 신규 확인된 대규모 신규공고는 제한적입니다. 최근 확인된 관련 공고 현황:
+    </p>
+    <table>
+      <tr><th>기업</th><th>직무</th><th>비고</th></tr>
+      <tr><td>현대모비스</td><td>EV 배터리시스템 설계 인턴십</td><td>2~7월 기간, 마감 임박 가능성</td></tr>
+      <tr><td>현대자동차</td><td>배터리/R&D 기술인력</td><td>상시채용 형태 공고</td></tr>
+      <tr><td>LG에너지솔루션</td><td>BMS SW/HW 개발</td><td>상반기 공고 마감, 하반기 신규 대기</td></tr>
+    </table>
+    <div class="note">이번주 기준 삼성전자·삼성전기·LG전자 등에서 전력전자/BMS 특化 신규 공고는 명확히 확인되지 않음. 각 사 채용 페이지 직접 확인 권장.</div>
+  </div>
+
+  <div class="footer">
+    ⚠ 모든 가격은 웹서치 기반 실시간/최근 종가 데이터이며, 소스별 시차·오차가 있을 수 있습니다.<br>
+    본 브리핑은 투자 참고용이며 최종 투자판단과 책임은 본인에게 있습니다.<br>
+    ETHAN_DASH 자동 브리핑 시스템 · Powered by Claude
+  </div>
+
+</div>
+</body>
+</html>
