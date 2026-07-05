@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  body {
+    background-color: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 20px;
+    color: #ff6b6b;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    color: #8b949e;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #161b22;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+    font-size: 14px;
+  }
+  th {
+    background-color: #21262d;
+    color: #58a6ff;
+    font-weight: 600;
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+  .ticker {
+    font-weight: 700;
+    color: #f0f6fc;
+  }
+  .price-down {
+    color: #ff7b72;
+    font-weight: 600;
+  }
+  .warn-row {
+    background-color: #2d1a1a;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 4px;
+  }
+  .badge-stop {
+    background-color: #da3633;
+    color: #fff;
+  }
+  .badge-near {
+    background-color: #9e6a03;
+    color: #fff;
+  }
+  .section-title {
+    font-size: 15px;
+    color: #e6edf3;
+    margin: 20px 0 8px 0;
+    border-left: 3px solid #58a6ff;
+    padding-left: 8px;
+  }
+  .note {
+    font-size: 12px;
+    color: #8b949e;
+    line-height: 1.6;
+    margin-top: 16px;
+    padding: 12px;
+    background-color: #161b22;
+    border-radius: 8px;
+  }
+</style>
+</head>
+<body>
+  <h1>&#128680; 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-07-06 (월) 04:05 KST 기준 | 데이터: 2026-07-02 정규장 종가</div>
+
+  <div class="section-title">트리거 도달 종목 (5건)</div>
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+    <tr class="warn-row">
+      <td class="ticker">AVGO</td>
+      <td class="price-down">$360.45</td>
+      <td>$420 이하</td>
+      <td>$390 <span class="badge badge-stop">손절가 하회</span></td>
+      <td>$480</td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td>
+      <td class="price-down">$390.49</td>
+      <td>$410 이하</td>
+      <td>$360</td>
+      <td>$500</td>
+    </tr>
+    <tr class="warn-row">
+      <td class="ticker">GOOGL</td>
+      <td class="price-down">$357.77</td>
+      <td>$385 이하</td>
+      <td>$355 <span class="badge badge-near">근접(0.8%)</span></td>
+      <td>$450</td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td class="price-down">$242.67</td>
+      <td>$255 이하</td>
+      <td>$230</td>
+      <td>$320</td>
+    </tr>
+    <tr class="warn-row">
+      <td class="ticker">ORCL</td>
+      <td class="price-down">$140.27</td>
+      <td>$178 이하</td>
+      <td>$162 <span class="badge badge-stop">손절가 하회</span></td>
+      <td>$225</td>
+    </tr>
+  </table>
+
+  <div class="section-title">미도달 종목 (참고)</div>
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>괴리율</th>
+    </tr>
+    <tr>
+      <td class="ticker">PLTR</td>
+      <td>$129.30</td>
+      <td>$122 이하</td>
+      <td>+6.0%</td>
+    </tr>
+    <tr>
+      <td class="ticker">TSM</td>
+      <td>$434.16</td>
+      <td>$395 이하</td>
+      <td>+9.9%</td>
+    </tr>
+    <tr>
+      <td class="ticker">INTC</td>
+      <td>$120.35</td>
+      <td>$104.50 이하</td>
+      <td>+15.2%</td>
+    </tr>
+    <tr>
+      <td class="ticker">ASTS</td>
+      <td>$85.13</td>
+      <td>$68 이하</td>
+      <td>+25.2%</td>
+    </tr>
+    <tr>
+      <td class="ticker">MRVL</td>
+      <td>$245.29</td>
+      <td>$168 이하</td>
+      <td>+46.0%</td>
+    </tr>
+  </table>
+
+  <div class="note">
+    &#9888;&#65039; AVGO, ORCL은 트리거가뿐 아니라 손절가(stop-loss)도 이미 하회한 상태입니다 (AI 버블 우려에 따른 반도체/소프트웨어 섹터 전반 급락, ORCL은 2001년 이후 최악의 주간 하락 기록). GOOGL은 손절가 $355와 불과 0.8% 차이로 근접해 있습니다.<br><br>
+    데이터 출처: StockAnalysis.com (2026-07-02 정규장 종가 기준, 미국 증시는 7/3~7/6 연휴로 최신 거래일 데이터). 실시간 시세와 오차가 있을 수 있으니 매수 전 반드시 재확인하세요.
+  </div>
+</body>
+</html>
