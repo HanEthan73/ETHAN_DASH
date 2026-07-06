@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>환율 경보 - USD/KRW</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    padding: 20px;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .header {
+    text-align: center;
+    padding: 16px 0 20px;
+    border-bottom: 1px solid #30363d;
+    margin-bottom: 20px;
+  }
+  .header .badge {
+    display: inline-block;
+    background: #f85149;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #f0f6fc;
+  }
+  .header .time {
+    font-size: 12px;
+    color: #8b949e;
+    margin-top: 6px;
+  }
+  .rate-card {
+    background: linear-gradient(135deg, #1c2128, #161b22);
+    border: 1px solid #30363d;
+    border-radius: 14px;
+    padding: 22px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .rate-card .label { font-size: 13px; color: #8b949e; margin-bottom: 6px; }
+  .rate-card .rate {
+    font-size: 40px;
+    font-weight: 800;
+    color: #f85149;
+    letter-spacing: -1px;
+  }
+  .rate-card .unit { font-size: 16px; color: #8b949e; margin-left: 4px; }
+  .rate-card .change {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #f85149;
+  }
+  .section {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .section h2 {
+    font-size: 14px;
+    color: #58a6ff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section p, .section li {
+    font-size: 14px;
+    color: #c9d1d9;
+  }
+  .section ul { padding-left: 18px; margin-top: 6px; }
+  .section li { margin-bottom: 6px; }
+  .alert-box {
+    background: #3d1418;
+    border: 1px solid #f85149;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+  }
+  .alert-box strong { color: #ff7b72; }
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #6e7681;
+    margin-top: 20px;
+    padding-top: 14px;
+    border-top: 1px solid #30363d;
+  }
+  .footer .disclaimer { margin-top: 6px; color: #58606a; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">⚠ 환율 경보</div>
+    <h1>USD/KRW 급등 경보</h1>
+    <div class="time">2026년 7월 6일(월) 15:10 KST 기준</div>
+  </div>
+
+  <div class="rate-card">
+    <div class="label">현재 원/달러 환율</div>
+    <div><span class="rate">1,529.30</span><span class="unit">원</span></div>
+    <div class="change">▲ +0.29원 (+0.02%) 전일 대비</div>
+  </div>
+
+  <div class="alert-box">
+    <strong>1,500원 이미 돌파 상태</strong><br>
+    2026년 3월 3일 미-이란 전쟁 여파로 1,500원을 최초 돌파한 이후, 현재까지 1,500원대 위에서 등락 지속 중입니다.
+    금일 환율은 경보 기준선(1,480원)을 <strong>약 49원 초과</strong>했으며, 최근 거래 범위는 1,525.6원~1,548.8원입니다.
+  </div>
+
+  <div class="section">
+    <h2>📊 코스피·외국인 수급 영향</h2>
+    <ul>
+      <li>2026년 상반기 외국인 투자자들이 삼성전자·SK하이닉스 등 코스피 대형주를 순매도하는 흐름이 이어지고 있습니다.</li>
+      <li>글로벌 투자 자금의 관심이 한국에서 일본 등 인접 아시아 시장으로 이동하는 신호가 관측됩니다.</li>
+      <li>아시아 외환시장 전반이 약세이며, 달러 인덱스는 최근 13개월 최고치 부근에서 형성되고 있어 원화 약세 압력이 당분간 이어질 가능성이 있습니다.</li>
+      <li>원화 약세 심화 시 외국인 자금의 추가 이탈 및 코스피 변동성 확대 우려가 존재합니다.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>✅ 권고 조치</h2>
+    <ul>
+      <li>수출입 기업: 환헤지(선물환·통화옵션) 비중 및 계약 만기 점검</li>
+      <li>외화 자산·부채 보유 시 환노출 규모 재점검</li>
+      <li>해외여행·유학 등 실수요 환전은 분할 매수 고려</li>
+      <li>코스피 비중 확대 시 외국인 수급 동향 및 환율 변동성 지속 모니터링 필요</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    자동 모니터링 시스템 · 기준: 1,480원 초과 시 경보
+    <div class="disclaimer">본 자료는 정보 제공 목적이며 투자 판단의 근거로 사용할 수 없습니다. 실제 투자·환전 결정은 전문가와 상담 후 진행하시기 바랍니다.</div>
+  </div>
+
+</body>
+</html>
