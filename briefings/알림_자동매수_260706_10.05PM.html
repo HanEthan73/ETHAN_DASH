@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, "Segoe UI", Roboto, "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 1.2rem;
+    color: #ff6b6b;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+  }
+  th, td {
+    padding: 8px 6px;
+    text-align: center;
+    border-bottom: 1px solid #21262d;
+  }
+  th {
+    background: #161b22;
+    color: #58a6ff;
+  }
+  tr:nth-child(even) { background: #131820; }
+  .trigger { color: #ff6b6b; font-weight: bold; }
+  .warn-row td { color: #f0a500; }
+  .section-title {
+    font-size: 1rem;
+    margin: 20px 0 8px;
+    color: #f0a500;
+  }
+  .note {
+    font-size: 0.75rem;
+    color: #8b949e;
+    margin-top: 16px;
+  }
+  @media (max-width: 480px) {
+    th, td { padding: 6px 3px; font-size: 0.75rem; }
+    h1 { font-size: 1.05rem; }
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달 [2026-07-06 22:05]</h1>
+  <div class="subtitle">기술주 섹터 조정으로 5개 종목 트리거가 도달</div>
+
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+    <tr><td>AVGO</td><td class="trigger">$369.27</td><td>$420</td><td>$390</td><td>$480</td></tr>
+    <tr><td>MSFT</td><td class="trigger">$390.80</td><td>$410</td><td>$360</td><td>$500</td></tr>
+    <tr><td>GOOGL</td><td class="trigger">$359.91</td><td>$385</td><td>$355</td><td>$450</td></tr>
+    <tr><td>AMZN</td><td class="trigger">$244.97</td><td>$255</td><td>$230</td><td>$320</td></tr>
+    <tr><td>ORCL</td><td class="trigger">$140.86</td><td>$178</td><td>$162</td><td>$225</td></tr>
+  </table>
+
+  <div class="note">
+    ⚠️ AVGO는 현재가($369.27)가 손절가($390)보다 낮은 상태, ORCL은 현재가($140.86)가 손절가($162)보다 낮은 상태입니다. 단순 트리거 통과가 아니라 손절선까지 이탈한 구간이니 매수 여부 재검토 필요.<br>
+    미도달/근접 종목(INTC, TSM, MRVL, PLTR, ASTS)은 트리거가 대비 2% 이내 근접 없음 — 표에서 생략.
+  </div>
+</body>
+</html>
