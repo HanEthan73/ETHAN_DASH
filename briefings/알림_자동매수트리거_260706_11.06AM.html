@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 도달 알림</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    margin: 0;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 1.25rem;
+    color: #ff6b6b;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  .warning {
+    background: #3d1f1f;
+    border: 1px solid #ff6b6b;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+    color: #ffb3b3;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161b22;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+    font-size: 0.9rem;
+  }
+  th {
+    background: #21262d;
+    color: #58a6ff;
+    font-weight: 600;
+  }
+  td.ticker {
+    font-weight: 700;
+    color: #f0f6fc;
+  }
+  td.below-stop {
+    color: #ff6b6b;
+    font-weight: 700;
+  }
+  .note {
+    font-size: 0.78rem;
+    color: #8b949e;
+    line-height: 1.5;
+  }
+  @media (max-width: 480px) {
+    th, td { font-size: 0.78rem; padding: 8px 4px; }
+    h1 { font-size: 1.05rem; }
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달 [2026-07-06 11:06 AM EDT]</h1>
+  <div class="timestamp">기준: stockanalysis.com 실시간 시세 (Jul 6, 2026 장중)</div>
+
+  <div class="warning">
+    ⚠️ AVGO, ORCL은 현재가가 트리거가는 물론 손절가(stop-loss)보다도 낮은 상태입니다. 진입 시 즉시 손절 라인 재검토가 필요합니다.
+  </div>
+
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td class="below-stop">$375.53</td>
+      <td>$420 이하</td>
+      <td>$390</td>
+      <td>$480</td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td>
+      <td>$384.25</td>
+      <td>$410 이하</td>
+      <td>$360</td>
+      <td>$500</td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td>
+      <td>~$359.07</td>
+      <td>$385 이하</td>
+      <td>$355</td>
+      <td>$450</td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td>$243.10</td>
+      <td>$255 이하</td>
+      <td>$230</td>
+      <td>$320</td>
+    </tr>
+    <tr>
+      <td class="ticker">ORCL</td>
+      <td class="below-stop">$141.85</td>
+      <td>$178 이하</td>
+      <td>$162</td>
+      <td>$225</td>
+    </tr>
+  </table>
+
+  <div class="note">
+    미도달 종목: INTC(~$120~124, 트리거 $104.50), TSM($455.77, 트리거 $395), MRVL($256.00, 트리거 $168), PLTR($131.36, 트리거 $122, 근접 아님), ASTS($86.18, 트리거 $68) — 모두 트리거가 대비 여유 있음.<br>
+    GOOGL 현재가는 최근 거래일(7/4) 기준 근사치이며 실시간 값과 다소 차이가 있을 수 있습니다.
+  </div>
+</body>
+</html>
