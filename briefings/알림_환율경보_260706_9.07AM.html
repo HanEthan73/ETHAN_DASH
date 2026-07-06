@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>환율 경보 - USD/KRW</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    padding: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  .header {
+    text-align: center;
+    padding: 20px 0 16px;
+  }
+  .alert-badge {
+    display: inline-block;
+    background: #f85149;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+  .header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #f0f6fc;
+  }
+  .header .date {
+    font-size: 13px;
+    color: #8b949e;
+    margin-top: 4px;
+  }
+  .rate-card {
+    background: linear-gradient(135deg, #1c2128, #161b22);
+    border: 1px solid #f85149;
+    border-radius: 14px;
+    padding: 24px 20px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .rate-card .label {
+    font-size: 13px;
+    color: #8b949e;
+    margin-bottom: 6px;
+  }
+  .rate-card .value {
+    font-size: 40px;
+    font-weight: 800;
+    color: #ff7b72;
+  }
+  .rate-card .change {
+    font-size: 14px;
+    color: #f85149;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+  .section {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .section h2 {
+    font-size: 14px;
+    color: #58a6ff;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .section p {
+    font-size: 14px;
+    color: #c9d1d9;
+    margin-bottom: 6px;
+  }
+  .breach {
+    background: #2d0f0f;
+    border: 1px solid #f85149;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: #ffa198;
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  td {
+    padding: 6px 0;
+    border-bottom: 1px solid #21262d;
+    color: #c9d1d9;
+  }
+  td:first-child {
+    color: #8b949e;
+    width: 40%;
+  }
+  .action-list {
+    list-style: none;
+  }
+  .action-list li {
+    font-size: 14px;
+    color: #c9d1d9;
+    padding: 6px 0 6px 20px;
+    position: relative;
+  }
+  .action-list li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #58a6ff;
+  }
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #6e7681;
+    padding: 16px 0 8px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="alert-badge">⚠ 환율 경보</div>
+    <h1>USD/KRW 환율 경보</h1>
+    <div class="date">2026년 7월 6일 09:07 기준</div>
+  </div>
+
+  <div class="rate-card">
+    <div class="label">현재 환율 (USD/KRW)</div>
+    <div class="value">1,529.3</div>
+    <div class="change">전일 종가 1,529.0 대비 +0.3원 (보합)</div>
+  </div>
+
+  <div class="breach">
+    🚨 기준선(1,480원) 초과 확정 — 현재 1,500원선도 이미 돌파한 상태입니다. 금일 변동폭은 1,525.6~1,548.8원으로 고점 기준 1,550원 근접.
+  </div>
+
+  <div class="section">
+    <h2>환율 현황</h2>
+    <table>
+      <tr><td>현재가</td><td>1,529.30원</td></tr>
+      <tr><td>전일 종가</td><td>1,529.01원</td></tr>
+      <tr><td>금일 시가</td><td>1,539.86원</td></tr>
+      <tr><td>금일 저점</td><td>1,525.62원</td></tr>
+      <tr><td>금일 고점</td><td>1,548.75원</td></tr>
+      <tr><td>1,480원 기준 초과분</td><td>+49.3원</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>코스피 외국인 수급 영향</h2>
+    <p>외국인 투자자, 한국 기술주 비중 축소하며 8거래일 연속 순매도 지속.</p>
+    <p>상반기 누적 기준 코스피 외국인 순매도 기조 — 글로벌 자금이 한국에서 일본 등으로 이동 중.</p>
+    <p>원화 약세와 외국인 주식 순매도가 상호 강화되는 흐름으로, 자본유출 우려가 환율 상승 압력으로 이어지는 구조.</p>
+  </div>
+
+  <div class="section">
+    <h2>권고 조치</h2>
+    <ul class="action-list">
+      <li>달러 환전/송금 계획 있을 경우 분할 실행 검토 (추가 상승 리스크 존재)</li>
+      <li>수출입 기업은 환헤지(선물환) 비중 점검</li>
+      <li>코스피 외국인 순매도 지속 여부 일일 모니터링</li>
+      <li>1,550원, 1,600원 저항선 돌파 여부 주시</li>
+      <li>한국은행/기재부 구두개입 또는 실개입 뉴스 확인</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    자동 생성 리포트 · USD/KRW 모니터링
+  </div>
+
+</body>
+</html>
