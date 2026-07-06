@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  body {
+    background-color: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 1.2rem;
+    color: #ff6b6b;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+  th, td {
+    padding: 8px 6px;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+  }
+  th {
+    background-color: #161b22;
+    color: #58a6ff;
+  }
+  tr:nth-child(even) {
+    background-color: #12181f;
+  }
+  .below-stop {
+    color: #ff4d4d;
+    font-weight: bold;
+  }
+  .note {
+    font-size: 0.8rem;
+    color: #f0b429;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+  .section-title {
+    font-size: 1rem;
+    color: #e6edf3;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+  @media (max-width: 480px) {
+    th, td { font-size: 0.8rem; padding: 6px 4px; }
+    h1 { font-size: 1.05rem; }
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달 [2026-07-07 확인]</h1>
+  <div class="timestamp">데이터 기준: 2026-07-06~07 실시간 검색 결과</div>
+
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+    <tr>
+      <td>AVGO</td>
+      <td class="below-stop">$361.98</td>
+      <td>$420</td>
+      <td>$390</td>
+      <td>$480</td>
+    </tr>
+    <tr>
+      <td>MSFT</td>
+      <td>$383.86</td>
+      <td>$410</td>
+      <td>$360</td>
+      <td>$500</td>
+    </tr>
+    <tr>
+      <td>GOOGL</td>
+      <td>$366.42</td>
+      <td>$385</td>
+      <td>$355</td>
+      <td>$450</td>
+    </tr>
+    <tr>
+      <td>AMZN</td>
+      <td>$242.19</td>
+      <td>$255</td>
+      <td>$230</td>
+      <td>$320</td>
+    </tr>
+    <tr>
+      <td>ORCL</td>
+      <td class="below-stop">$140.27</td>
+      <td>$178</td>
+      <td>$162</td>
+      <td>$225</td>
+    </tr>
+  </table>
+
+  <div class="note">
+    ⚠️ AVGO, ORCL은 현재가가 손절가(Stop)마저 하회한 상태입니다. 단순 트리거 매수보다 재검토가 필요할 수 있습니다.<br>
+    미도달 종목: INTC($120.35), TSM($434.16), MRVL($254.28), PLTR($133.36), ASTS($85.13) — 2% 이내 근접 종목 없음.
+  </div>
+</body>
+</html>
