@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>환율 경보 - USD/KRW</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    padding: 20px;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .badge {
+    display: inline-block;
+    background: #f85149;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 22px;
+    margin-bottom: 4px;
+    color: #f0f6fc;
+  }
+  .timestamp {
+    font-size: 13px;
+    color: #8b949e;
+    margin-bottom: 20px;
+  }
+  .rate-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .rate-main {
+    font-size: 42px;
+    font-weight: 800;
+    color: #ff7b72;
+  }
+  .rate-sub {
+    font-size: 14px;
+    color: #8b949e;
+    margin-top: 6px;
+  }
+  .change {
+    font-size: 15px;
+    color: #ff7b72;
+    font-weight: 600;
+    margin-top: 8px;
+  }
+  .section {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .section h2 {
+    font-size: 15px;
+    color: #58a6ff;
+    margin-bottom: 8px;
+  }
+  .section p {
+    font-size: 14px;
+    color: #c9d1d9;
+    margin-bottom: 6px;
+  }
+  .alert-1500 {
+    background: #3d1b1b;
+    border: 1px solid #f85149;
+    color: #ffa198;
+    font-weight: 700;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    font-size: 15px;
+  }
+  .action-list {
+    font-size: 14px;
+    color: #c9d1d9;
+    padding-left: 18px;
+  }
+  .action-list li { margin-bottom: 6px; }
+  .footer {
+    font-size: 12px;
+    color: #6e7681;
+    text-align: center;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+  <span class="badge">환율 경보</span>
+  <h1>USD/KRW 1,480원 초과</h1>
+  <div class="timestamp">2026년 7월 7일 09:08 기준</div>
+
+  <div class="rate-card">
+    <div class="rate-main">1,528.93</div>
+    <div class="rate-sub">1 USD = KRW (실시간 기준)</div>
+    <div class="change">전일 종가 1,529.01 대비 -0.08 (보합)</div>
+    <div class="rate-sub">당일 변동폭: 1,526.57 ~ 1,537.61</div>
+  </div>
+
+  <div class="alert-1500">⚠ 1,500원 이미 돌파 &mdash; 고환율 국면 지속 중</div>
+
+  <div class="section">
+    <h2>코스피 외국인 수급 영향</h2>
+    <p>최근 원화 약세 국면에서 외국인 투자자의 국내 증시 순매도 흐름이 이어지고 있습니다. 한미 금리 격차, 미국 자산 쏠림, 엔화 약세 등이 겹치며 외국인 자금 이탈 압력이 지속되는 것으로 관측됩니다.</p>
+    <p>국내 주요 금융기관들은 2026년에도 1,500원 안팎의 고환율 기조가 이어질 가능성을 제기하고 있어, 코스피 수급 개선은 환율 안정 여부에 달려 있다는 시각이 우세합니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>권고 조치</h2>
+    <ul class="action-list">
+      <li>달러 환전/송금 예정 건은 분할 실행 검토</li>
+      <li>수출입 기업은 환헤지 비중 점검</li>
+      <li>해외자산 비중 및 환노출 재점검</li>
+      <li>코스피 외국인 수급 동향 일일 모니터링 유지</li>
+    </ul>
+  </div>
+
+  <div class="footer">자동 모니터링 시스템 · usdkrw-monitor</div>
+</body>
+</html>
