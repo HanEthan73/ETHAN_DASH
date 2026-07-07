@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    margin: 0;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 1.25rem;
+    color: #ff6b6b;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+  .ticker {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #58a6ff;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 0.85rem;
+  }
+  th, td {
+    padding: 6px 4px;
+    text-align: right;
+    border-bottom: 1px solid #21262d;
+  }
+  th:first-child, td:first-child {
+    text-align: left;
+  }
+  th {
+    color: #8b949e;
+    font-weight: 500;
+  }
+  .price { color: #f0f6fc; font-weight: 600; }
+  .warn { color: #f85149; font-size: 0.78rem; margin-top: 6px; }
+  .footer {
+    color: #6e7681;
+    font-size: 0.75rem;
+    margin-top: 20px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <h1>&#128680; 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-07-07 09:06 AM EDT (현지 실시간 기준)</div>
+
+  <div class="card">
+    <div class="ticker">AVGO (Broadcom)</div>
+    <table>
+      <tr><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+      <tr><td class="price">$373.90</td><td>$420 이하</td><td>$390</td><td>$480</td></tr>
+    </table>
+    <div class="warn">&#9888;&#65039; 현재가가 손절가($390)보다도 낮은 상태입니다.</div>
+  </div>
+
+  <div class="card">
+    <div class="ticker">MSFT (Microsoft)</div>
+    <table>
+      <tr><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+      <tr><td class="price">$386.74</td><td>$410 이하</td><td>$360</td><td>$500</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="ticker">GOOGL (Alphabet)</div>
+    <table>
+      <tr><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+      <tr><td class="price">$366.46</td><td>$385 이하</td><td>$355</td><td>$450</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="ticker">AMZN (Amazon)</div>
+    <table>
+      <tr><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+      <tr><td class="price">$244.16</td><td>$255 이하</td><td>$230</td><td>$320</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="ticker">ORCL (Oracle)</div>
+    <table>
+      <tr><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+      <tr><td class="price">$143.76</td><td>$178 이하</td><td>$162</td><td>$225</td></tr>
+    </table>
+    <div class="warn">&#9888;&#65039; 현재가가 손절가($162)보다도 낮은 상태입니다.</div>
+  </div>
+
+  <div class="footer">
+    미도달 종목: INTC $122.20 / TSM $451.79 / MRVL $249.27 / PLTR $132.54 / ASTS $86.18 (전부 트리거가 상회, 2% 근접 없음)<br>
+    자동매수 모니터링 · ETHAN
+  </div>
+</body>
+</html>
