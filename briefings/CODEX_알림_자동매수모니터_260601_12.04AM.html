@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX 알림 자동매수모니터 260601 12.04AM</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d1118;--panel:#141b26;--panel2:#182130;--line:#2a3447;
+  --text:#eaf0f8;--muted:#99a7ba;--gold:#f5c518;--goldbg:#2a2412;
+  --green:#62e0a1;--greenbg:#10261b;--yellow:#ffe082;--yellowbg:#2d2814;
+  --red:#ff9b9b;--redbg:#2d1719;--blue:#8ab4ff;--bluebg:#122238;
+}
+body{
+  background:radial-gradient(circle at top,#182236 0,#0d1118 52%);
+  color:var(--text);font-family:"Malgun Gothic","Apple SD Gothic Neo","Segoe UI",sans-serif;
+  line-height:1.62;padding:24px 14px 40px;
+}
+.wrap{max-width:1280px;margin:0 auto}
+header{padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:18px}
+h1{font-size:30px;color:var(--gold);margin-bottom:8px}
+.sub{font-size:13px;color:var(--muted)}
+.stamp{display:inline-block;margin-top:12px;padding:6px 12px;border-radius:999px;background:var(--goldbg);border:1px solid #5d4b18;color:var(--gold);font-size:12px;font-weight:800}
+.summary-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+.summary-card{background:rgba(245,197,24,.09);border:1px solid rgba(245,197,24,.28);border-radius:12px;padding:14px}
+.summary-card b{display:block;color:var(--gold);font-size:12px;margin-bottom:6px}
+.summary-card span{display:block;font-size:22px;font-weight:900}
+.summary-card small{display:block;color:var(--muted);font-size:11px;margin-top:6px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:16px}
+.lead{background:#1d1910;border-left:4px solid var(--gold)}
+.risk{background:#231417;border-left:4px solid #ff6b6b}
+h2{font-size:19px;color:var(--blue);margin-bottom:12px}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px;background:#111722}
+.table-wrap table{min-width:1240px}
+table{width:100%;border-collapse:collapse}
+th{background:#202a3a;color:var(--gold);text-align:left;padding:10px;font-size:12px;border-bottom:1px solid #314055;white-space:nowrap}
+td{padding:10px;border-bottom:1px solid #1f2938;font-size:13px;vertical-align:top}
+tr:nth-child(even) td{background:#101620}
+tr:last-child td{border-bottom:0}
+.money,.center{font-variant-numeric:tabular-nums;white-space:nowrap}
+.center{text-align:center}
+.tag{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:800;border:1px solid transparent}
+.ok{background:var(--greenbg);color:var(--green);border-color:#25593f}
+.wait{background:var(--yellowbg);color:var(--yellow);border-color:#6e5b1a}
+.stop{background:var(--redbg);color:var(--red);border-color:#ffb3b3}
+.info{background:var(--bluebg);color:var(--blue);border-color:#29486f}
+.watch-row td{background:rgba(245,197,24,.08)!important}
+.note{margin-top:12px;padding:12px 14px;border-radius:8px;background:#241f14;border-left:4px solid var(--gold);color:#eadfb0;font-size:13px}
+ul{padding-left:18px}
+li{margin:5px 0}
+a{color:var(--blue);text-decoration:none}
+footer{margin-top:18px;text-align:right;color:#768399;font-size:12px}
+@media(max-width:960px){.summary-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){
+  body{padding:16px 8px 32px}
+  .summary-strip{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>CODEX 알림 자동매수 모니터</h1>
+    <div class="sub">생성 2026-06-01 00:04 KST | 가격 기준: 2026-05-29 미국장 종가 및 애프터마켓 | 추격매수 금지 원칙 유지</div>
+    <div class="stamp">파일명 규칙 준수: CODEX_알림_자동매수모니터_260601_12.04AM.html</div>
+  </header>
+
+  <div class="panel lead">
+    <b>대표님 결론:</b> 오늘 00:00 자동매수 모니터의 실행 결론은 <b>TSM과 NVDA만 조건부 1차 분할매수 가능</b>, <b>AVGO는 대기</b>, <b>MU는 제외</b>입니다.
+    기준은 단순합니다. 현재가가 1차 밴드 상단 3% 이내여도 <b>밴드 밖에서 출발하면 추격매수 금지</b>이며, 밴드 안으로 다시 내려오는지 확인되기 전에는 자동매수를 실행하지 않습니다.
+  </div>
+
+  <div class="summary-strip">
+    <div class="summary-card"><b>매수 가능</b><span>TSM · NVDA</span><small>둘 다 1차 밴드 상단 3% 이내이며, 재진입 확인 시 1차 분할만 허용합니다.</small></div>
+    <div class="summary-card"><b>대기</b><span>AVGO</span><small>목표가 3% 이내지만 아직 1차 밴드 안착 확인이 없어 자동매수는 보류합니다.</small></div>
+    <div class="summary-card"><b>제외</b><span>MU</span><small>1차 밴드 상단 대비 약 4.4% 위라서 오늘 기준 추격 구간입니다.</small></div>
+    <div class="summary-card"><b>공통 지침</b><span>No Chase</span><small>미국장 재개는 2026-06-01 09:30 EDT, 개장 직후 30~90분만 밴드 복귀 여부를 확인합니다.</small></div>
+  </div>
+
+  <section class="panel">
+    <h2>1. 자동매수 실행표</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>최신 확인 시각</th>
+          <th>목표가 3% 이내 여부</th>
+          <th>진입 대기 구간</th>
+          <th>1차 분할매수 조건</th>
+          <th>2차 분할매수 조건</th>
+          <th>3차 분할매수 조건</th>
+          <th>무효화 조건</th>
+          <th>최종 실행 결론</th>
+        </tr>
+        <tr class="watch-row">
+          <td><b>TSM</b></td>
+          <td class="money">$419.28 / AH $419.04</td>
+          <td>2026-05-29 16:00 EDT / 20:00 EDT<br><span class="tag info">2026-05-31 09:00 KST 반영</span></td>
+          <td><span class="tag ok">예</span> 1차 $416 대비 +0.8%</td>
+          <td>$416~404</td>
+          <td>2026-06-01 미국장 개장 후 $416 재진입과 10~30분 지지 확인 시 20%</td>
+          <td>$404 부근 눌림 확인 시 추가 30%</td>
+          <td>$390 부근 급락 방어 확인 시 나머지 50%</td>
+          <td>$390 종가 이탈 또는 개장 직후 $416 위 갭상승 고착 시 중단</td>
+          <td><span class="tag ok">매수 가능</span> 단, $416 위에서 출발하면 당일 추격 금지</td>
+        </tr>
+        <tr class="watch-row">
+          <td><b>NVDA</b></td>
+          <td class="money">$211.14 / AH $212.49</td>
+          <td>2026-05-29 16:00 EDT / 19:59 EDT<br><span class="tag info">2026-05-31 08:59 KST 반영</span></td>
+          <td><span class="tag ok">예</span> 1차 $208 대비 +1.5%</td>
+          <td>$208~201</td>
+          <td>$208 재진입과 개장 초 지지 확인 시 20%</td>
+          <td>$201 부근 조정 시 추가 30%</td>
+          <td>$193 부근 급락 후 반전 확인 시 나머지 50%</td>
+          <td>$193 종가 이탈 또는 $208 밴드 재진입 실패 시 자동매수 중단</td>
+          <td><span class="tag ok">매수 가능</span> 밴드 재진입이 없으면 대기로 전환</td>
+        </tr>
+        <tr>
+          <td><b>AVGO</b></td>
+          <td class="money">$446.77 / AH $446.20</td>
+          <td>2026-05-29 16:00 EDT / 20:00 EDT<br><span class="tag info">2026-05-31 09:00 KST 반영</span></td>
+          <td><span class="tag ok">예</span> 1차 $438 대비 +2.0%</td>
+          <td>$438~425</td>
+          <td>$438 재진입과 지지 확인 전까지는 실행 금지</td>
+          <td>$425 부근 조정 시 추가 30%</td>
+          <td>$410 부근 급락 방어 확인 시 나머지 50%</td>
+          <td>$410 종가 이탈 또는 실적 전 갭상승 추격 시 자동매수 제외</td>
+          <td><span class="tag wait">대기</span> 숫자는 근접하지만 밴드 안착 확인이 먼저입니다</td>
+        </tr>
+        <tr>
+          <td><b>MU</b></td>
+          <td class="money">$970.47 / AH $964.78</td>
+          <td>2026-05-29 15:59 EDT / 20:00 EDT<br><span class="tag info">2026-05-31 09:00 KST 반영</span></td>
+          <td><span class="tag stop">아니오</span> 1차 $930 대비 +4.4%</td>
+          <td>$930~885</td>
+          <td>오늘은 불가. 최소 1차 밴드 복귀 전까지 자동매수 금지</td>
+          <td>$885 부근 조정 시 추가 35%</td>
+          <td>$840 부근 급락 방어 확인 시 나머지 50%</td>
+          <td>$840 종가 이탈 시 메모리 사이클 재평가</td>
+          <td><span class="tag stop">제외</span> 강세 종목이지만 오늘 기준은 추격 구간</td>
+        </tr>
+      </table>
+    </div>
+    <div class="note">핵심은 "좋은 종목"이 아니라 "대표님 기준 가격대"입니다. 3% 이내는 준비 신호일 뿐 즉시 매수 신호가 아니며, 밴드 재진입 확인이 없으면 자동매수는 실행하지 않습니다.</div>
+  </section>
+
+  <section class="panel">
+    <h2>2. 실제 실행 구분</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>구분</th><th>종목</th><th>근거</th><th>실행 지침</th></tr>
+        <tr><td><span class="tag ok">매수 가능</span></td><td>TSM</td><td>1차 밴드 상단과의 거리 +0.8%, 반도체 리더 중 가장 근접</td><td>$416 재진입 확인 시에만 1차 20%</td></tr>
+        <tr><td><span class="tag ok">매수 가능</span></td><td>NVDA</td><td>1차 밴드 상단과의 거리 +1.5%, 개장 초 눌림만 나오면 대응 가능</td><td>$208 재진입 없으면 즉시 대기 전환</td></tr>
+        <tr class="watch-row"><td><span class="tag wait">대기</span></td><td>AVGO</td><td>목표가 3% 이내이지만 실적 이벤트 앞두고 밴드 위 체류</td><td>$438 회복 확인 전 자동매수 금지</td></tr>
+        <tr><td><span class="tag stop">제외</span></td><td>MU</td><td>1차 밴드 상단 대비 +4.4% 상회</td><td>오늘은 관찰만 하고 추격매수 금지</td></tr>
+        <tr><td><span class="tag stop">공통 제외</span></td><td>개장 직후 갭상승 추격</td><td>밴드 밖 시가 형성은 자동매수 규칙 위반</td><td>모든 종목 공통으로 당일 실행 보류</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel risk">
+    <h2>3. 대표님 주의사항</h2>
+    <ul>
+      <li>이 보고서는 2026-06-01 00:04 KST 기준이며, 미국장은 아직 열리지 않았습니다. 최신 실제 체결 기준은 2026-05-29 종가와 애프터마켓입니다.</li>
+      <li>미국 정규장은 Nasdaq 기준 2026-06-01 09:30 a.m. ET에 재개합니다. 오늘은 개장 직후 30~90분 밴드 복귀 확인이 핵심입니다.</li>
+      <li>TSM과 NVDA는 "조건부 가능"이지 "즉시 매수"가 아닙니다. 개장가가 1차 밴드 위에서 고착되면 둘 다 자동 대기로 돌리는 것이 맞습니다.</li>
+      <li>AVGO는 목표가 근접 숫자만 보면 유혹적이지만, 밴드 안착이 먼저입니다. 숫자보다 위치가 중요합니다.</li>
+      <li>MU는 오늘의 대표적인 추격 금지 사례입니다. 강한 종목일수록 규칙을 더 엄격히 적용해야 합니다.</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>4. 최종 요약</h2>
+    <p>최종 실행 결론은 명확합니다. <b>TSM과 NVDA는 조건부 1차 분할매수 가능</b>, <b>AVGO는 대기</b>, <b>MU는 제외</b>입니다. 오늘 00:00 자동매수 모니터의 기준은 종목 선호가 아니라 <b>1차 밴드 재진입 확인 전에는 절대 추격하지 않는 것</b>입니다.</p>
+  </section>
+
+  <section class="panel">
+    <h2>5. CODEX 인사이트</h2>
+    <p>지금처럼 반도체 리더들이 동반 강세인 구간에서는 대부분의 실수가 "강한 종목을 놓칠까 봐 기준을 완화하는 것"에서 나옵니다. 자동매수 모니터의 역할은 종목을 더 찾는 것이 아니라, <b>좋아 보이는 종목도 밴드 밖이면 기계적으로 제외하는 규율을 유지하는 것</b>입니다.</p>
+  </section>
+
+  <section class="panel">
+    <h2>6. 근거 링크</h2>
+    <ul>
+      <li><a href="https://finance.yahoo.com/quote/TSM/">Yahoo Finance TSM</a></li>
+      <li><a href="https://finance.yahoo.com/quote/NVDA/">Yahoo Finance NVDA</a></li>
+      <li><a href="https://finance.yahoo.com/quote/AVGO/">Yahoo Finance AVGO</a></li>
+      <li><a href="https://finance.yahoo.com/quote/MU/">Yahoo Finance MU</a></li>
+      <li><a href="https://www.nasdaq.com/market-activity/stock-market-holiday-schedule">Nasdaq U.S. stock market schedule</a></li>
+      <li><a href="CODEX_알림_자동매수모니터_260527_12.06AM.html">직전 자동매수 모니터</a></li>
+    </ul>
+  </section>
+
+  <footer>ETHAN DASH · CODEX AUTO BUY MONITOR · 2026-06-01 00:04 KST</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX_알림_자동매수모니터_260606_12.04AM | 자동매수 모니터</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#f3f0e8;--ink:#191919;--muted:#5f5a52;--line:#d8d0c3;
+  --card:#fffdf8;--navy:#1f3558;--gold:#9b7a29;--green:#146c43;
+  --greenbg:#e8f4ee;--amber:#8c5a00;--amberbg:#fff1d6;--red:#9f2f2f;--redbg:#fdeaea;
+}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at top left, rgba(155,122,41,.12), transparent 28%),
+    linear-gradient(180deg, #f8f5ee 0%, var(--bg) 100%);
+  color:var(--ink);
+  font-family:"Malgun Gothic","Apple SD Gothic Neo","Segoe UI",sans-serif;
+  line-height:1.6;
+  padding:20px 12px 40px;
+}
+.wrap{max-width:1200px;margin:0 auto}
+header{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:24px 20px;
+  box-shadow:0 18px 40px rgba(31,53,88,.08);
+}
+h1{margin:0 0 10px;font-size:30px;color:var(--navy)}
+.sub{color:var(--muted);font-size:13px}
+.stamp{
+  display:inline-block;margin-top:12px;padding:7px 12px;border-radius:999px;
+  background:#f6ecd2;color:var(--gold);font-weight:800;font-size:12px;border:1px solid #e4d3a0;
+}
+.lead,.panel{
+  margin-top:16px;background:var(--card);border:1px solid var(--line);
+  border-radius:18px;padding:18px 16px;box-shadow:0 10px 28px rgba(25,25,25,.05);
+}
+.lead{border-left:6px solid var(--navy)}
+.summary-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px
+}
+.summary-card{
+  background:#fcf8ee;border:1px solid #eadfca;border-radius:14px;padding:14px
+}
+.summary-card b{display:block;color:var(--gold);font-size:12px;margin-bottom:5px}
+.summary-card strong{display:block;font-size:22px;color:var(--navy)}
+.summary-card small{display:block;color:var(--muted);margin-top:6px;font-size:12px}
+h2{margin:0 0 12px;font-size:20px;color:var(--navy)}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;min-width:1120px;background:#fff}
+th,td{padding:11px 10px;border-bottom:1px solid #ebe4d8;vertical-align:top;font-size:13px}
+th{background:#f6f0e4;color:var(--navy);text-align:left;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.money,.center{font-variant-numeric:tabular-nums;white-space:nowrap}
+.center{text-align:center}
+.tag{
+  display:inline-block;padding:4px 9px;border-radius:999px;font-size:11px;font-weight:800;border:1px solid transparent
+}
+.ok{background:var(--greenbg);color:var(--green);border-color:#bcdcc9}
+.wait{background:var(--amberbg);color:var(--amber);border-color:#ecd59d}
+.stop{background:var(--redbg);color:var(--red);border-color:#efc0c0}
+.note{
+  margin-top:12px;padding:13px 14px;border-radius:12px;background:#f7f1e6;border:1px solid #ead9ba;color:#4e4438;font-size:13px
+}
+ul{margin:0;padding-left:18px}
+li{margin:6px 0}
+a{color:var(--navy);text-decoration:none}
+footer{margin-top:18px;text-align:right;color:var(--muted);font-size:12px}
+@media (max-width:900px){.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){
+  body{padding:14px 8px 28px}
+  h1{font-size:25px}
+  .summary-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>CODEX 알림 자동매수 모니터</h1>
+    <div class="sub">생성 2026-06-06 00:04 KST | 최신 시세 확인: 2026-06-05 미국장 실시간 | 기준 전략: 2026-06-05 16:00 KST 전략보고와 22:33 KST 저녁 브리핑 | 원칙: No Chase, 1차 체결 전 추격 금지</div>
+    <div class="stamp">파일명 규칙 준수: CODEX_알림_자동매수모니터_260606_12.04AM.html</div>
+  </header>
+
+  <section class="lead">
+    <b>대표님 결론:</b> 2026-06-06 00:04 KST 기준 자동매수 즉시 집행 대상은 <b>NVDA와 TSM의 1차 분할</b>입니다. 반면 <b>AVGO는 가격이 1차권에 들어와도 실적 충격 안정화 전이라 대기</b>, <b>MU는 2차권 근접이어도 변동성 과열로 제외</b>가 맞습니다.
+    오늘 핵심은 종목 선호가 아니라 <b>정해 둔 밴드에서만 1차를 실행하고, 2차·3차는 절대 선행하지 않는 규율</b>입니다.
+  </section>
+
+  <div class="summary-grid">
+    <div class="summary-card"><b>실제 매수 가능</b><strong>NVDA · TSM</strong><small>두 종목 모두 1차 밴드 3% 이내를 넘어서 실제 1차 가격대 안으로 진입했습니다. 단, 오늘 밤 허용 범위는 1차 20%뿐입니다.</small></div>
+    <div class="summary-card"><b>대기 유지</b><strong>AVGO</strong><small>현재가는 1차 밴드 안이지만 2026-06-05 10:40 EDT 기준 약세가 이어지고 있습니다. 실적 충격 후 첫 반등 구조 확인 전 체결 금지입니다.</small></div>
+    <div class="summary-card"><b>제외 유지</b><strong>MU</strong><small>현재가가 2차 밴드 근처까지 내려왔지만 2026-06-05 10:34 EDT 기준 낙폭과 변동성이 과합니다. 오늘 밤은 스토리보다 체결 안정성이 우선입니다.</small></div>
+    <div class="summary-card"><b>공통 실행 원칙</b><strong>No Chase</strong><small>1차를 이미 놓쳤거나 밴드 밖에서 반등이 나오면 매수하지 않습니다. 오늘 밤은 좋은 회사보다 좋은 가격만 받는 밤입니다.</small></div>
+  </div>
+
+  <section class="panel">
+    <h2>1. 자동매수 실행표</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>최신 확인 시각</th>
+          <th>목표가 3% 이내 여부</th>
+          <th>진입 대기 구간</th>
+          <th>1차 분할매수 조건</th>
+          <th>2차 분할매수 조건</th>
+          <th>3차 분할매수 조건</th>
+          <th>무효화 조건</th>
+          <th>최종 실행 결론</th>
+        </tr>
+        <tr>
+          <td><b>NVDA</b></td>
+          <td class="money">$211.26</td>
+          <td>2026-06-05 10:43 EDT<br>Stock Analysis 실시간가<br>2026-06-06 00:04 KST 반영</td>
+          <td><span class="tag ok">예</span> 1차 $214 대비 -1.28%</td>
+          <td>$214 ~ $206</td>
+          <td>$214 이하 실제 체결 확인 시 20%만 허용</td>
+          <td>$206 재접근과 지지 확인 시 추가 30%</td>
+          <td>$198 부근 반전 확인 시 나머지 50%</td>
+          <td>$198 하향 이탈 또는 대중국 규제 충격 재확대 시 전략 중단</td>
+          <td><span class="tag ok">매수 가능</span> 1차 20%만 허용, 추격 금지</td>
+        </tr>
+        <tr>
+          <td><b>TSM</b></td>
+          <td class="money">$429.32</td>
+          <td>2026-06-05 10:49 EDT<br>Stock Analysis 실시간가<br>2026-06-06 00:04 KST 반영</td>
+          <td><span class="tag ok">예</span> 1차 $438 대비 -1.98%</td>
+          <td>$438 ~ $426</td>
+          <td>$438 이하 체결 상태 유지 시 20%만 허용</td>
+          <td>$426 재확인과 지지 확인 시 추가 30%</td>
+          <td>$412 부근 방어 확인 시 나머지 50%</td>
+          <td>$412 하향 이탈 또는 공급망/지정학 리스크 급등 시 무효화</td>
+          <td><span class="tag ok">매수 가능</span> 1차 20%만 허용, 선행 확대 금지</td>
+        </tr>
+        <tr>
+          <td><b>AVGO</b></td>
+          <td class="money">$401.62</td>
+          <td>2026-06-05 10:40 EDT<br>Stock Analysis 실시간가<br>2026-06-06 00:04 KST 반영</td>
+          <td><span class="tag ok">예</span> 1차 $404 대비 -0.59%</td>
+          <td>$404 ~ $390</td>
+          <td>가격 조건은 충족했지만 실적 충격 진정과 첫 반등 구조 확인 전 체결 금지</td>
+          <td>$390 부근 지지와 거래 안정 확인 시 35%</td>
+          <td>$372 부근 과매도 반전 확인 시 나머지 50%</td>
+          <td>$372 하향 이탈 또는 실적 해석 악화 지속 시 계획 폐기</td>
+          <td><span class="tag wait">대기</span> 가격보다 구조 복원이 먼저</td>
+        </tr>
+        <tr>
+          <td><b>MU</b></td>
+          <td class="money">$941.49</td>
+          <td>2026-06-05 10:34 EDT<br>Stock Analysis 실시간가<br>2026-06-06 00:04 KST 반영</td>
+          <td><span class="tag stop">아니오</span> 1차 $980 대비 -3.93%, 2차 $945 대비 -0.37%</td>
+          <td>$980 ~ $945 ~ $900</td>
+          <td>오늘 밤 신규 체결 금지. 1차 이미 이탈했고 낙폭 진정이 선행돼야 함</td>
+          <td>$945 부근 지지 캔들과 낙폭 축소 확인 후에만 재검토</td>
+          <td>$900 부근 구조 복원 전에는 계획만 유지</td>
+          <td>$900 하향 이탈 또는 반도체 체인 약세 확산 시 계획 폐기</td>
+          <td><span class="tag stop">제외</span> 변동성 과열, tonight 체결 금지</td>
+        </tr>
+      </table>
+    </div>
+    <div class="note">자동매수는 종목 사랑이 아니라 가격 통제입니다. NVDA와 TSM은 1차 체결권에 들어왔지만, 오늘 허용되는 것은 1차 소량뿐입니다. AVGO와 MU는 가격이 내려와도 구조와 변동성이 아직 체결 친화적이지 않습니다.</div>
+  </section>
+
+  <section class="panel">
+    <h2>2. 실제 매수 가능 / 대기 / 제외 구분</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>구분</th><th>종목</th><th>판정 근거</th><th>대표님 실행 지시</th></tr>
+        <tr><td><span class="tag ok">매수 가능</span></td><td>NVDA</td><td>실시간가가 1차 $214 아래입니다. 16:00 전략표와 저녁 브리핑의 No Chase 규칙을 훼손하지 않습니다.</td><td>1차 20%만 허용. $214 위 반등 추격 금지.</td></tr>
+        <tr><td><span class="tag ok">매수 가능</span></td><td>TSM</td><td>실시간가가 1차 $438 아래이며 아직 2차 $426은 미도달입니다. 가장 정석적인 1차 체결권입니다.</td><td>1차 20%만 허용. 2차는 $426 재확인 전 집행 금지.</td></tr>
+        <tr><td><span class="tag wait">대기</span></td><td>AVGO</td><td>가격은 1차권이지만 2026-06-05 장중 실적 후 약세가 이어지고 있습니다. 계획보다 구조 복원이 우선입니다.</td><td>오늘 밤 체결 금지. 첫 반등 구조 확인 뒤 재판단.</td></tr>
+        <tr><td><span class="tag stop">제외</span></td><td>MU</td><td>2차권 근처까지 빠졌지만 변동성이 너무 큽니다. 스토리는 살아 있어도 오늘 밤은 기계적 체결 구간이 아닙니다.</td><td>오늘 밤 신규 체결 금지. 안정화 후 다시 보겠습니다.</td></tr>
+        <tr><td><span class="tag stop">공통 금지</span></td><td>추격매수</td><td>밴드 밖 상승봉 추종은 오늘 규칙 위반입니다.</td><td>모든 종목 공통으로 시장가 추격 금지입니다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>3. 대표님 주의사항</h2>
+    <ul>
+      <li>이번 보고서는 2026-06-05 미국장 실시간 가격을 반영했기 때문에 전일 종가 기준 보고서보다 NVDA·TSM 판정이 한 단계 앞으로 이동했습니다.</li>
+      <li>NVDA와 TSM은 매수 가능이지만 어디까지나 1차 분할 허용입니다. 2차와 3차는 아직 아닙니다.</li>
+      <li>AVGO는 숫자만 보면 1차권이지만 오늘 예외 처리 종목입니다. 실적 충격 직후에는 싸 보이는 가격보다 반등 구조가 더 중요합니다.</li>
+      <li>MU는 2차권 근접만 보고 기계적으로 받으면 안 됩니다. 오늘 밤은 스토리보다 낙폭 진정 확인이 먼저입니다.</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>4. 최종 요약</h2>
+    <p>오늘 00:04 KST 기준 최종 실행 결론은 명확합니다. <b>NVDA와 TSM은 1차 분할 매수 가능</b>, <b>AVGO는 대기</b>, <b>MU는 제외</b>입니다. 자동매수 모니터의 목적은 많이 사는 것이 아니라 <b>미리 정한 가격에서만 정확히 반응하는 것</b>입니다. 오늘 밤 수익률을 지키는 길은 공격이 아니라 규율입니다.</p>
+  </section>
+
+  <section class="panel">
+    <h2>5. CODEX 인사이트</h2>
+    <p>오늘 진짜 차이는 "좋은 회사냐"가 아니라 "좋은 회사가 지금 체결 가능한 가격이냐"입니다. NVDA와 TSM은 그 조건을 만족해 1차가 열렸고, AVGO와 MU는 숫자상 눌림이 와도 여전히 질 좋은 체결 구간이 아닙니다. 이런 장에서는 예측력보다 <b>체결 품질을 구분하는 절제</b>가 수익률을 지킵니다.</p>
+  </section>
+
+  <section class="panel">
+    <h2>6. 근거 링크</h2>
+    <ul>
+      <li><a href="https://stockanalysis.com/stocks/nvda/">Stock Analysis NVDA</a></li>
+      <li><a href="https://stockanalysis.com/stocks/tsm/">Stock Analysis TSM</a></li>
+      <li><a href="https://stockanalysis.com/stocks/avgo/">Stock Analysis AVGO</a></li>
+      <li><a href="https://stockanalysis.com/stocks/mu/">Stock Analysis MU</a></li>
+      <li><a href="CODEX_알림_주식추천전략보고_260605_4.00PM.html">2026-06-05 16:00 전략보고</a></li>
+      <li><a href="CODEX_알림_저녁브리핑_260605_10.33PM.html">2026-06-05 22:33 저녁 브리핑</a></li>
+    </ul>
+  </section>
+
+  <footer>ETHAN DASH | CODEX AUTO BUY MONITOR | 2026-06-06 00:04 KST</footer>
+</div>
+</body>
+</html>

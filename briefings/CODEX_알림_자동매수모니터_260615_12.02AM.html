@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX_알림_자동매수모니터_260615_12.02AM | 자동매수 모니터</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#07131d;--panel:#0f1d2a;--line:#2f465d;--text:#e9eef5;--muted:#9eb0c4;
+  --gold:#f2c35d;--goldbg:#302512;--blue:#9fd7ff;--green:#86e7a8;--greenbg:#10281a;
+  --yellow:#ffe18d;--yellowbg:#302913;--red:#ffabab;--redbg:#341719;--cyan:#99ddff;--cyanbg:#122939;
+}
+body{
+  margin:0;
+  background:radial-gradient(circle at top,#17314a 0,#07131d 58%),linear-gradient(180deg,#07131d 0,#0b1622 100%);
+  color:var(--text);
+  font-family:"Malgun Gothic","Apple SD Gothic Neo","Segoe UI",sans-serif;
+  line-height:1.65;
+  padding:18px 10px 34px;
+}
+.wrap{max-width:1440px;margin:0 auto}
+header{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+h1{margin:0 0 8px;font-size:31px;line-height:1.25;color:var(--gold)}
+h2{margin:0 0 12px;font-size:20px;color:var(--blue)}
+p{margin:0;font-size:14px;color:#dbe4ef}
+.sub{color:var(--muted);font-size:13px}
+.stamp{display:inline-block;margin-top:12px;padding:7px 12px;border-radius:999px;border:1px solid #6e5920;background:var(--goldbg);color:var(--gold);font-size:12px;font-weight:800}
+.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+.summary-card{padding:14px;border:1px solid rgba(242,195,93,.22);border-radius:12px;background:rgba(242,195,93,.08)}
+.summary-card b{display:block;margin-bottom:6px;color:var(--gold);font-size:12px}
+.summary-card strong{display:block;font-size:20px;line-height:1.25}
+.summary-card small{display:block;margin-top:6px;color:var(--muted);font-size:11px}
+.panel{margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.lead{background:#1a180f;border-left:4px solid var(--gold)}
+.final{background:#131d29;border:1px solid #35506d}
+.insight{background:#102019;border:1px solid #2d5f49;border-left:4px solid #7be5a5}
+.note{margin-top:12px;padding:12px 14px;border-radius:10px;background:#1c2f42;border-left:4px solid var(--gold);font-size:13px;color:#dbe4ef}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#0d1722;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:1340px}
+th,td{padding:10px;border-bottom:1px solid #1f3144;text-align:left;vertical-align:top;font-size:13px}
+th{background:#1c2b3b;color:var(--gold);font-size:12px;white-space:nowrap}
+tr:nth-child(even) td{background:#0c141e}
+tr:last-child td{border-bottom:0}
+.money,.center,.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.center{text-align:center}
+.tag{display:inline-block;padding:3px 9px;border-radius:999px;border:1px solid transparent;font-size:11px;font-weight:800}
+.ok{background:var(--greenbg);border-color:#245a3c;color:var(--green)}
+.wait{background:var(--yellowbg);border-color:#6f5a18;color:var(--yellow)}
+.stop{background:var(--redbg);border-color:#6c2c31;color:var(--red)}
+.info{background:var(--cyanbg);border-color:#305c78;color:var(--cyan)}
+.watch-row td{background:rgba(242,195,93,.07)!important}
+.danger-row td{background:rgba(255,120,120,.08)!important}
+ul{margin:0;padding-left:20px}
+li{margin:6px 0;color:#d4dcea}
+a{color:var(--blue);text-decoration:none}
+footer{margin-top:18px;text-align:right;color:#8998aa;font-size:12px}
+@media(max-width:1050px){.summary-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){
+  body{padding:14px 8px 28px}
+  h1{font-size:25px}
+  h2{font-size:18px}
+  .summary-grid{grid-template-columns:1fr}
+  .panel{padding:12px}
+  th,td{padding:8px;font-size:12px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>CODEX 알림 자동매수 모니터</h1>
+    <div class="sub">생성 2026-06-15 00:02 KST | 대표님 보고용 00:00 자동매수 모니터 | 파일명 규칙: CODEX_알림_자동매수모니터_YYMMDD_H.MMPM.html</div>
+    <div class="stamp">최신 확인 시각 2026-06-15 00:02 KST / 미국 기준 2026-06-14 11:02 EDT 일요일 | 최신 체결 가능한 가격 기준: 2026-06-12 19:59 EDT after-hours</div>
+  </header>
+
+  <div class="summary-grid">
+    <div class="summary-card"><b>오늘 실행 결론</b><strong>매수 가능 0 / 대기 5 / 제외 3</strong><small>미국 시장이 아직 열리지 않은 주말 구간입니다. MSFT, NVDA, TSM, META, ORCL만 다음 세션 1차 밴드 확인 대상으로 유지합니다.</small></div>
+    <div class="summary-card"><b>시장 모드</b><strong>주말 대기 / No Chase 유지</strong><small>QQQ는 2026-06-12 19:59 EDT after-hours 722.98로 강세를 유지했지만, 오늘 밤은 가격 추격보다 다음 개장 초반 30~90분 검증이 우선입니다.</small></div>
+    <div class="summary-card"><b>3% 이내 감시</b><strong>MSFT · NVDA · TSM · META · ORCL · AVGO</strong><small>1차 밴드 3% 이내 종목은 많지만, 3% 이내 자체가 매수 신호는 아닙니다. AVGO는 3% 이내여도 재평가 구간이라 실행 제외입니다.</small></div>
+    <div class="summary-card"><b>거시 체크</b><strong>USD/KRW 1,518.23 / VIX 17.68 / 10Y 4.45</strong><small>USD/KRW는 2026-06-13 06:23 UTC, VIX는 2026-06-12 15:15 GMT-5, DGS10은 2026-06-11 관측치 4.45입니다. 공격 전환보다 규율 유지가 맞습니다.</small></div>
+  </div>
+
+  <section class="panel lead">
+    <h2>1. 설명 먼저 드리겠습니다</h2>
+    <p>대표님, 이번 00:00 자동매수 모니터의 핵심은 <b>강세 종목이 보이더라도 오늘 밤 실제 체결은 하지 않는 것</b>입니다. 현재 시각은 <b>2026-06-15 00:02 KST</b>이고 미국 기준으로는 <b>2026-06-14 11:02 EDT 일요일</b>이라 정규장도, 프리마켓도 아닙니다. 따라서 오늘 보고서는 <b>2026-06-12 미국장 종가와 after-hours 가격을 기준으로 다음 개장 때 자동매수 감시 순서를 고정하는 보고</b>입니다. 결론은 명확합니다. <b>No Chase</b>, 즉시 매수 0건, 그리고 1차 밴드 근접 종목도 개장 후 지지 확인 전까지는 전부 대기입니다.</p>
+    <div class="note">실행 문장: 1) 미국 시장이 닫혀 있으므로 오늘 체결은 하지 않습니다. 2) 다음 개장 전에는 1차 밴드 확인 없는 추격매수를 금지합니다. 3) AVGO, PLTR, MU는 숫자가 가까워 보여도 오늘 자동매수 대상이 아닙니다. 4) 좋은 종목보다 좋은 체결가를 우선합니다.</div>
+  </section>
+
+  <section class="panel">
+    <h2>2. 자동매수 실행표</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>최신 확인 시각</th>
+          <th>목표가 3% 이내 여부</th>
+          <th>진입 대기 구간</th>
+          <th>1차 분할매수 조건</th>
+          <th>2차 분할매수 조건</th>
+          <th>3차 분할매수 조건</th>
+          <th>무효화 조건</th>
+          <th>최종 실행 결론</th>
+        </tr>
+        <tr class="watch-row">
+          <td><b>MSFT</b></td>
+          <td class="money">$390.68<br><span class="num">종가 $390.74</span></td>
+          <td class="num">2026-06-12 19:59 EDT<br>Stock Analysis</td>
+          <td><span class="tag ok">예</span> 1차 $389 대비 +0.43%</td>
+          <td class="money">$389 / $381 / $373</td>
+          <td>다음 개장 후 <b>$389 지지 확인</b>이 먼저입니다. 1차는 총 예산의 25%만 허용하고 추격은 금지합니다.</td>
+          <td>$381 부근 안착과 QQQ 지지 동반 시 추가 30%</td>
+          <td>$373 부근 과매도 진정 확인 시 나머지 45%</td>
+          <td>$373 종가 이탈 시 방어주 우위 가정 보류</td>
+          <td><span class="tag wait">대기</span> 가격은 거의 닿았지만 주말이라 오늘 체결 0건이 맞습니다.</td>
+        </tr>
+        <tr class="watch-row">
+          <td><b>NVDA</b></td>
+          <td class="money">$205.42<br><span class="num">종가 $205.19</span></td>
+          <td class="num">2026-06-12 19:59 EDT<br>Stock Analysis</td>
+          <td><span class="tag ok">예</span> 1차 $202 대비 +1.69%</td>
+          <td class="money">$202 / $195 / $187</td>
+          <td>$202 하향 또는 터치 후 지지 확인 시 20%</td>
+          <td>$195 지지와 반도체 수급 안정 확인 시 30%</td>
+          <td>$187 부근 과매도 진정 확인 시 50%</td>
+          <td>$187 종가 이탈 시 AI 리더 조정이 아니라 구조 약화로 판단</td>
+          <td><span class="tag wait">대기</span> 리더주는 맞지만 자동매수 신호를 오늘 단계에서 줄 수는 없습니다.</td>
+        </tr>
+        <tr class="watch-row">
+          <td><b>TSM</b></td>
+          <td class="money">$425.80<br><span class="num">종가 $423.93</span></td>
+          <td class="num">2026-06-12 19:59 EDT<br>Stock Analysis</td>
+          <td><span class="tag ok">예</span> 1차 $418 대비 +1.87%</td>
+          <td class="money">$418 / $406 / $394</td>
+          <td>$418 터치 후 반도체 지수 급락 진정 확인 시 20%</td>
+          <td>$406 지지 확인 시 30%</td>
+          <td>$394 부근 반전 확인 시 50%</td>
+          <td>$394 종가 이탈 시 공급망 강세 가정 보류</td>
+          <td><span class="tag wait">대기</span> 3% 이내지만 밴드 미도달 상태라 추격 금지입니다.</td>
+        </tr>
+        <tr class="watch-row">
+          <td><b>META</b></td>
+          <td class="money">$569.30<br><span class="num">종가 $566.98</span></td>
+          <td class="num">2026-06-12 19:59 EDT<br>Stock Analysis</td>
+          <td><span class="tag ok">예</span> 1차 $560 대비 +1.66%</td>
+          <td class="money">$560 / $546 / $532</td>
+          <td>$560 지지와 QQQ 안정 동반 시 20%</td>
+          <td>$546 지지 확인 시 35%</td>
+          <td>$532 부근 반전 확인 시 45%</td>
+          <td>$532 종가 이탈 시 메타 플랫폼 방어 가정 재평가</td>
+          <td><span class="tag wait">대기</span> 보조 감시 종목으로 유지하되 오늘 체결 대상은 아닙니다.</td>
+        </tr>
+        <tr class="watch-row">
+          <td><b>ORCL</b></td>
+          <td class="money">$183.94<br><span class="num">종가 $184.13</span></td>
+          <td class="num">2026-06-12 19:59 EDT<br>Stock Analysis</td>
+          <td><span class="tag ok">예</span> 1차 $179 대비 +2.76%</td>
+          <td class="money">$179 / $169 / $159</td>
+          <td>$179 확인 전에는 실적 재평가 진정이 먼저여야 하고 15%만 허용</td>
+          <td>$169 지지 확인 시 30%</td>
+          <td>$159 부근 안정 확인 시 55%</td>
+          <td>$159 종가 이탈 시 구조 재평가로 보고 중단</td>
+          <td><span class="tag wait">대기</span> 숫자는 가깝지만 이벤트 해석이 완전히 끝나지 않았습니다.</td>
+        </tr>
+        <tr class="danger-row">
+          <td><b>AVGO</b></td>
+          <td class="money">$381.96<br><span class="num">종가 $382.07</span></td>
+          <td class="num">2026-06-12 19:59 EDT<br>Stock Analysis</td>
+          <td><span class="tag ok">예</span> 1차 $376 대비 +1.59%</td>
+          <td class="money">$376 / $362 / $348</td>
+          <td>$376 근접만으로는 부족합니다. <b>실적 후 재평가 종료 확인</b>이 먼저입니다.</td>
+          <td>$362 지지 확인 시 35%</td>
+          <td>$348 부근 반전 확인 시 50%</td>
+          <td>$348 종가 이탈 시 실적 후 수급 불안 장기화로 판단</td>
+          <td><span class="tag stop">제외</span> 3% 이내여도 오늘 자동매수 규칙상 제외가 맞습니다.</td>
+        </tr>
+        <tr class="danger-row">
+          <td><b>PLTR</b></td>
+          <td class="money">$128.12<br><span class="num">종가 $127.99</span></td>
+          <td class="num">2026-06-12 19:59 EDT<br>Stock Analysis</td>
+          <td><span class="tag stop">아니오</span> 1차 $124 대비 +3.32%</td>
+          <td class="money">$124 / $118 / $112</td>
+          <td>$124 재테스트 확인 전에는 1차도 보류</td>
+          <td>$118 지지와 금리 안정 동반 시 35%</td>
+          <td>$112 비상 밴드에서만 나머지 50%</td>
+          <td>$112 종가 이탈 시 고밸류 프리미엄 붕괴로 중단</td>
+          <td><span class="tag stop">제외</span> 좋은 스토리보다 좋은 체결가가 먼저입니다.</td>
+        </tr>
+        <tr class="danger-row">
+          <td><b>MU</b></td>
+          <td class="money">$989.60<br><span class="num">종가 $981.61</span></td>
+          <td class="num">2026-06-12 19:59 EDT<br>Stock Analysis</td>
+          <td><span class="tag stop">아니오</span> 1차 $940 대비 +5.28%</td>
+          <td class="money">$940 / $900 / $860</td>
+          <td>$940 복귀와 급등 후 변동성 해소 확인 시 10%</td>
+          <td>$900 지지 확인 시 30%</td>
+          <td>$860 부근 반전 확인 시 60%</td>
+          <td>$860 종가 이탈 시 변동성 추세 심화로 중단</td>
+          <td><span class="tag stop">제외</span> 급등 이후 사진적 추격 금지가 오늘 자동매수 원칙입니다.</td>
+        </tr>
+      </table>
+    </div>
+    <div class="note">데이터 주의: 본 보고서는 2026-06-15 00:02 KST 기준 작성이며, 미국은 2026-06-14 일요일이어서 신규 시세가 없습니다. 따라서 가격과 최신 확인 시각은 2026-06-12 19:59 EDT after-hours 기준을 유지했습니다.</div>
+  </section>
+
+  <section class="panel">
+    <h2>3. 매수 가능 / 대기 / 제외 분리</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>구분</th><th>종목</th><th>판단 근거</th><th>대표님 실행 지침</th></tr>
+        <tr>
+          <td><span class="tag info">매수 가능</span></td>
+          <td>없음</td>
+          <td>오늘은 미국 주말 폐장 구간이므로 실제 자동매수 실행 대상이 없습니다.</td>
+          <td>다음 미국장 개장 전에는 1차 밴드 확인 없는 추격매수를 금지합니다.</td>
+        </tr>
+        <tr class="watch-row">
+          <td><span class="tag wait">대기</span></td>
+          <td>MSFT, NVDA, TSM, META, ORCL</td>
+          <td>좋은 종목군은 맞지만 아직 숫자보다 체결 확인이 먼저입니다. 모두 다음 세션 1차 밴드 지지 확인이 필요합니다.</td>
+          <td>우선순위는 MSFT, NVDA, TSM 순입니다. 밴드 미도달이면 체결 0건을 그대로 유지합니다.</td>
+        </tr>
+        <tr class="danger-row">
+          <td><span class="tag stop">제외</span></td>
+          <td>AVGO, PLTR, MU</td>
+          <td>AVGO는 실적 후 재평가, PLTR은 가격 미도달, MU는 급등 직후 변동성 부담입니다.</td>
+          <td>3% 이내 신호만 보고 예외를 만들지 않습니다. 오늘 자동매수 규칙은 제외 유지입니다.</td>
+        </tr>
+        <tr>
+          <td><span class="tag stop">공통 금지</span></td>
+          <td>추격매수</td>
+          <td>QQQ가 강해도 밴드 확인 없이 따라붙는 순간 평균단가가 훼손됩니다.</td>
+          <td>1차 미체결 상태에서 2차를 먼저 넣는 행동, 개장 반등 캔들만 보고 따라붙는 행동 모두 금지입니다.</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel final">
+    <h2>4. 최종 요약</h2>
+    <ul>
+      <li>오늘 00:02 KST 자동매수 최종 결론은 <b>주말 대기 / No Chase 유지</b>입니다.</li>
+      <li><b>매수 가능 종목은 0건</b>입니다. 시장이 닫혀 있는 만큼 이 결론이 가장 정확합니다.</li>
+      <li><b>대기 종목은 MSFT, NVDA, TSM, META, ORCL</b>입니다. 모두 다음 세션 1차 밴드 지지 확인이 먼저입니다.</li>
+      <li><b>제외 종목은 AVGO, PLTR, MU</b>입니다. 숫자 근접보다 구조 안정 확인이 우선입니다.</li>
+      <li>대표님 기준 오늘 자동매수의 핵심은 많이 사는 것이 아니라 <b>다음 개장 첫 체결을 얼마나 싸고 정확하게 시작하느냐</b>에 있습니다.</li>
+    </ul>
+  </section>
+
+  <section class="panel insight">
+    <h2>5. CODEX 인사이트</h2>
+    <p>자동매수 규칙의 성과를 좌우하는 것은 종목 발굴보다 <b>예외를 얼마나 엄격하게 막느냐</b>입니다. 오늘은 1차 밴드 3% 이내 종목이 여섯 개나 보이지만, 그중 실제 실행 가능 종목을 하나도 만들지 않는 것이 이번 자동화의 강점입니다. 특히 AVGO처럼 숫자는 가깝더라도 구조가 불안한 종목을 제외로 묶는 판단이 자동매수 성과를 지키는 핵심입니다.</p>
+  </section>
+
+  <footer>Sources checked: <a href="https://stockanalysis.com/etf/qqq/">Stock Analysis QQQ</a>, <a href="https://stockanalysis.com/stocks/msft/">MSFT</a>, <a href="https://stockanalysis.com/stocks/nvda/">NVDA</a>, <a href="https://stockanalysis.com/stocks/tsm/">TSM</a>, <a href="https://stockanalysis.com/stocks/meta/">META</a>, <a href="https://stockanalysis.com/stocks/orcl/">ORCL</a>, <a href="https://stockanalysis.com/stocks/avgo/">AVGO</a>, <a href="https://stockanalysis.com/stocks/pltr/">PLTR</a>, <a href="https://stockanalysis.com/stocks/mu/">MU</a>, <a href="https://www.google.com/finance/quote/USD-KRW">Google Finance USD/KRW</a>, <a href="https://www.google.com/finance/quote/VIX:INDEXCBOE">Google Finance VIX</a>, <a href="https://fred.stlouisfed.org/series/DGS10">FRED DGS10</a>. 최종 생성: 2026-06-15 00:02 KST</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#study CODEX PSIM Variable Step Simulation 보고</title>
+  <style>
+    :root{--bg:#0f1115;--panel:#171a20;--line:#2a2f38;--text:#e8edf4;--muted:#9ca6b4;--gold:#f4c430;--green:#4ade80;--red:#fb7185;--blue:#60a5fa;--warn:#fff4bf;--warnText:#3f3200}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif;line-height:1.55}
+    main{max-width:1120px;margin:0 auto;padding:28px 18px 64px}
+    h1{font-size:28px;margin:0 0 8px}
+    h2{font-size:19px;margin:30px 0 12px}
+    .meta,.small{color:var(--muted);font-size:13px}
+    .hero{border:1px solid var(--line);background:linear-gradient(180deg,#171a20,#11141a);border-radius:8px;padding:22px;margin-bottom:16px}
+    .strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0}
+    .box{border:1px solid var(--line);background:#141820;border-radius:8px;padding:13px}
+    .box b{display:block;font-size:18px;color:var(--gold)}
+    .box span{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:10px 0 20px}
+    table{border-collapse:collapse;width:100%;min-width:940px}
+    th,td{border-bottom:1px solid var(--line);padding:10px 11px;vertical-align:top;text-align:left;font-size:13px}
+    th{background:#20242b;color:var(--gold);white-space:nowrap}
+    td:first-child,th:first-child{position:sticky;left:0;background:#191d24;z-index:1;font-weight:700}
+    tr:last-child td{border-bottom:0}
+    .ok{color:var(--green);font-weight:700}.bad{color:var(--red);font-weight:700}.watch{color:var(--gold);font-weight:700}.blue{color:var(--blue);font-weight:700}
+    .warn{background:var(--warn);color:var(--warnText);border-radius:8px;padding:12px 14px;margin:14px 0;font-size:13px}
+    code{background:#0b0f16;border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:#dbeafe}
+    a{color:#93c5fd}
+    @media(max-width:720px){.strip{grid-template-columns:1fr 1fr}h1{font-size:23px}main{padding:20px 12px 48px}}
+  </style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <h1>#study CODEX PSIM Variable Step Simulation 보고</h1>
+    <div class="meta">작성: 2026-05-25 23:45 KST · 주제: PSIM 고정 step 대신 유동 step 적용 가능성</div>
+    <div class="warn">결론부터 말하면 “유동 step을 쓰면 된다”는 말은 절반만 맞습니다. 60Hz PFC/CLLC처럼 긴 시간축을 빠르게 보려면 유동 step이 유리하지만, 스위칭 edge, dead time, SR zero-crossing을 놓치지 않도록 <b>Max Step 제한</b>을 반드시 걸어야 합니다.</div>
+    <div class="strip">
+      <div class="box"><b>가능</b><span>PSIM v12+ Variable Timestep 존재</span></div>
+      <div class="box"><b>조건</b><span>Max Step을 스위칭보다 충분히 작게</span></div>
+      <div class="box"><b>위험</b><span>PWM/SR edge 누락 시 파형이 거짓</span></div>
+      <div class="box"><b>권장</b><span>평균모델 먼저, 스위칭모델은 검증용</span></div>
+    </div>
+  </section>
+
+  <h2>1. 먼저 설명: Fixed Step과 Variable Step의 차이</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>구분</th><th>Fixed Step</th><th>Variable Step</th><th>대표님 회로에서의 의미</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>계산 방식</td><td>처음부터 끝까지 같은 시간 간격으로 계산</td><td>변화가 빠른 곳은 작게, 느린 곳은 크게 계산</td><td>60Hz 입력 한 주기를 오래 돌릴 때 유동 step이 속도 이점이 있음</td>
+        </tr>
+        <tr>
+          <td>장점</td><td>스위칭 이벤트가 예측 가능하고 디버깅 쉬움</td><td>긴 시뮬레이션에서 계산량을 줄일 수 있음</td><td>PFC 60Hz 전체 파형 확인은 variable이 유리</td>
+        </tr>
+        <tr>
+          <td>단점</td><td>고주파 스위칭 기준으로 잡으면 60Hz 전체가 너무 느림</td><td>Max Step이 크면 edge, peak, zero-crossing을 놓칠 수 있음</td><td>CLLC SR timing 검증에는 variable만 믿으면 위험</td>
+        </tr>
+        <tr>
+          <td>결론</td><td>정밀 검증용</td><td>초기 탐색/긴 시간축용</td><td>두 방식을 역할 분리해야 함</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>2. PSIM에서 실제로 봐야 할 설정</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>설정</th><th>의미</th><th>권장 판단</th><th>잘못 잡으면 생기는 문제</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Time Step</td><td>기본 계산 step 또는 출력/분석 기준 step</td><td>스위칭 모델이면 너무 크게 잡지 말 것</td><td>파형은 그럴듯한데 peak current가 틀릴 수 있음</td>
+        </tr>
+        <tr>
+          <td>Max Step</td><td>Variable solver가 아무리 느슨해져도 넘지 못하는 최대 step</td><td class="ok">핵심 설정. 스위칭 edge 기준으로 제한</td><td>PWM edge, diode/SR 전환, ZCD 위치가 밀림</td>
+        </tr>
+        <tr>
+          <td>Print Step</td><td>결과 저장/표시 간격</td><td>계산 step보다 커도 됨. 파일 용량 줄이는 용도</td><td>Print Step만 줄여도 계산 정확도가 오르는 것은 아님</td>
+        </tr>
+        <tr>
+          <td>Error Tolerance</td><td>Variable step 조절 민감도</td><td>전류 ripple/zero-crossing이 중요하면 보수적으로</td><td>너무 느슨하면 속도는 빠르나 결과 신뢰도 하락</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>3. 대표님 회로별 적용 판단표</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>회로/목적</th><th>Variable Step 사용</th><th>권장 Max Step 기준</th><th>검증해야 할 파형</th><th>판정</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>60Hz PFC 입력전류 전체 파형</td><td class="ok">사용 권장</td><td><code>min(Tsw/50, 1us~2us)</code>부터 시작</td><td>입력전류 THD 모양, Vbus 리플, 인덕터 전류 envelope</td><td class="ok">속도 개선 가치 큼</td>
+        </tr>
+        <tr>
+          <td>PFC MOSFET/Diode switching loss</td><td class="watch">조건부</td><td><code>Tsw/100</code> 이하, edge 주변 더 작게</td><td>Vds, Ids, turn-on/off overlap</td><td class="watch">정밀 손실은 fixed로 재검증</td>
+        </tr>
+        <tr>
+          <td>CLLC 정상상태 gain/전압비</td><td class="ok">가능</td><td><code>Tsw/80~Tsw/100</code></td><td>1차 전류, 2차 전류, 출력전압 ripple</td><td class="ok">탐색용 가능</td>
+        </tr>
+        <tr>
+          <td>CLLC SR timing / zero-crossing</td><td class="bad">단독 사용 비권장</td><td><code>deadtime/5</code> 또는 ZCD window/10</td><td>SR gate, Isec zero-crossing, body diode conduction</td><td class="bad">fixed step 검증 필요</td>
+        </tr>
+        <tr>
+          <td>Startup transient</td><td class="watch">가능하지만 주의</td><td>초기 돌입 구간만 작은 Max Step</td><td>inrush, Vbus overshoot, current limit 동작</td><td class="watch">구간별 step 전략이 좋음</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>4. 실전 설정 순서</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>순서</th><th>조치</th><th>판단 기준</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>평균모델로 60Hz 전체 동작 먼저 확인</td><td>Vbus, 입력전류 envelope, 제어 루프가 정상인지 빠르게 본다</td></tr>
+        <tr><td>2</td><td>스위칭 모델에서 Variable Step + Max Step 제한</td><td>Max Step은 최소 <code>Tsw/50</code>, SR/ZCD는 더 보수적으로</td></tr>
+        <tr><td>3</td><td>Print Step은 크게 두고 필요한 노드만 저장</td><td>파일 용량과 표시 속도를 줄인다</td></tr>
+        <tr><td>4</td><td>문제 구간 2~3ms만 잘라 Fixed Step 재검증</td><td>Variable 결과와 peak, zero-crossing, ripple이 같은지 비교</td></tr>
+        <tr><td>5</td><td>결과가 1~2% 이내면 Variable Step을 작업용으로 채택</td><td>손실/SR timing은 계속 fixed 검증을 붙인다</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>5. 최종 요약</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>질문</th><th>답</th></tr></thead>
+      <tbody>
+        <tr><td>고정 step 안 하고 유동 step으로 하면 되나?</td><td class="ok">60Hz 전체 파형/초기 탐색은 된다.</td></tr>
+        <tr><td>그럼 항상 유동 step만 쓰면 되나?</td><td class="bad">아니다. SR, deadtime, switching loss는 fixed step 또는 아주 작은 Max Step 검증이 필요하다.</td></tr>
+        <tr><td>가장 중요한 설정은?</td><td><span class="blue">Max Step</span>. Variable Step의 자유도를 주되, 스위칭 이벤트를 건너뛰지 못하게 막는 안전장치다.</td></tr>
+        <tr><td>대표님에게 맞는 결론</td><td>PFC 60Hz는 variable로 빠르게 돌리고, CLLC SR 매핑은 문제 구간만 fixed로 확대 검증한다.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>6. CODEX 인사이트</h2>
+  <div class="warn">시뮬레이션 속도를 올리는 핵심은 “step을 크게 한다”가 아니라 “관심 없는 시간에는 크게, 물리 이벤트가 있는 순간에는 작게”입니다. 대표님 회로에서는 60Hz envelope와 수십~수백 kHz switching이 한 파일 안에 섞여 있으므로, 하나의 고정 step으로 전부 해결하려는 순간 시간이 폭발합니다. 반대로 variable step을 방치하면 가장 중요한 SR zero-crossing을 지나쳐 버립니다. 따라서 좋은 전략은 solver를 믿는 것이 아니라 solver에게 <b>어디까지 건너뛰어도 되는지</b>를 숫자로 명령하는 것입니다.</div>
+
+  <h2>7. 참고 출처</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>출처</th><th>확인한 내용</th><th>링크</th></tr></thead>
+      <tbody>
+        <tr><td>Altair Community</td><td>PSIM v12 이상 Variable Timestep 기능 소개 및 속도/정확도 목적</td><td><a href="https://community.altair.com/discussion/38937/variable-time-step-intro">Variable Time Step Intro</a></td></tr>
+        <tr><td>Altair Twin Activate PSIM Co-Simulation</td><td>PSIM co-simulation block에는 fixed stepsize 항목이 있어 연동 방식에 따라 step 처리 방식이 달라짐</td><td><a href="https://2023.help.altair.com/2023/twinactivate/help/en_us/block_reference_guide/Activate/CoSimulation/PSIM.html">PSIM block reference</a></td></tr>
+        <tr><td>Altair PSIM SPICE tutorial</td><td>Transient 설정에서 Time Step, Max Step, Integration Method, tolerance 항목 확인</td><td><a href="https://2023.help.altair.com/psim-tut/tutorials/Tutorial%20-%20How%20to%20Use%20the%20SPICE%20Module.pdf">How to Use the SPICE Module</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,371 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CODEX CLLC 1차 2차 전류 비교 SR 매핑 보고</title>
+  <style>
+    :root{--bg:#0f1115;--panel:#171a20;--panel2:#1f232b;--line:#303642;--text:#eef3ff;--muted:#9ca8ba;--gold:#f5c518;--blue:#4ea1ff;--red:#ff6b6b;--green:#45d483;--violet:#b58cff}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif;line-height:1.58}
+    .wrap{max-width:1180px;margin:0 auto;padding:28px 18px 46px}
+    header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:22px}
+    .eyebrow{font-size:12px;color:var(--gold);font-weight:800;letter-spacing:.4px}
+    h1{font-size:30px;line-height:1.22;margin:8px 0 10px}
+    h2{font-size:20px;margin:28px 0 12px}
+    h3{font-size:16px;margin:16px 0 8px;color:#dfe8f8}
+    .sub{color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}
+    .k{font-size:11px;color:var(--muted);font-weight:800}
+    .v{font-size:18px;font-weight:900;margin-top:4px}
+    .warn{border-color:rgba(245,197,24,.45);background:rgba(245,197,24,.08)}
+    .blue{border-color:rgba(78,161,255,.42);background:rgba(78,161,255,.08)}
+    .green{border-color:rgba(69,212,131,.35);background:rgba(69,212,131,.07)}
+    .red{border-color:rgba(255,107,107,.40);background:rgba(255,107,107,.07)}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+    table{width:100%;border-collapse:collapse;min-width:880px}
+    th,td{border-bottom:1px solid var(--line);padding:10px 12px;vertical-align:top;font-size:13px}
+    th{background:var(--panel2);color:var(--gold);text-align:left;font-weight:900;white-space:nowrap}
+    tr:last-child td{border-bottom:0}
+    .tag{display:inline-block;padding:2px 7px;border-radius:999px;font-size:11px;font-weight:900;border:1px solid var(--line);color:#d8e2f1;background:#222733}
+    .tag.g{border-color:rgba(69,212,131,.35);color:#8ff0b4;background:rgba(69,212,131,.08)}
+    .tag.y{border-color:rgba(245,197,24,.38);color:#ffe68a;background:rgba(245,197,24,.08)}
+    .tag.r{border-color:rgba(255,107,107,.38);color:#ffb3b3;background:rgba(255,107,107,.08)}
+    .figure{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;margin:12px 0}
+    .figure svg{width:100%;height:auto;display:block}
+    .note{background:#121720;border-left:4px solid var(--gold);padding:12px 14px;color:#dce6f6;margin:14px 0;border-radius:0 8px 8px 0}
+    .muted{color:var(--muted)}
+    ul{margin:8px 0 0 20px;padding:0}
+    footer{margin-top:28px;border-top:1px solid var(--line);padding-top:14px;color:var(--muted);font-size:12px}
+    @media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}h1{font-size:24px}.wrap{padding:22px 12px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">CODEX TECHNICAL BRIEFING</div>
+    <h1>CLLC Above / Below Resonance별 1차·2차 전류 비교와 SR 매핑</h1>
+    <div class="sub">생성 2026-05-25 18:05 KST | 보강 요청: 2차측 전류 그래프에 1차측 전류량 비교 포함 | 파일명: CODEX_CLLC_PrimarySecondaryCurrentSRMap_260525_6.05PM.html</div>
+  </header>
+
+  <section class="grid">
+    <div class="card warn"><div class="k">핵심 판단</div><div class="v">1차 전류와 2차 전류를 같은 시간축에 겹쳐야 함</div></div>
+    <div class="card blue"><div class="k">Below f<sub>r</sub></div><div class="v">고이득, 전류 피크 증가</div></div>
+    <div class="card green"><div class="k">Near f<sub>r</sub></div><div class="v">가장 단순한 50% 근접 매핑</div></div>
+    <div class="card red"><div class="k">Above f<sub>r</sub></div><div class="v">저이득, 조기 소호 가능</div></div>
+  </section>
+
+  <section>
+    <h2>1. 먼저 결론</h2>
+    <div class="note">
+      CLLC에서 SR 게이트를 1차 브리지 PWM에 단순 동기화하면 위험합니다. Above / Below resonance로 넘어갈 때 1차 탱크 전류와 2차 권선 전류의 크기비, 위상차, zero-crossing 위치가 같이 바뀌기 때문입니다. 실무 매핑은 <b>1차 전류 I<sub>pri</sub>로 에너지 흐름과 순환전류를 보고, 2차 전류 I<sub>sec</sub>의 부호로 SR ON/OFF를 결정</b>해야 합니다.
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>동작 구간</th><th>공진곡선 위치</th><th>전압 이득 경향</th><th>2차 전류 모양</th><th>SR 매핑 핵심</th><th>위험</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag y">Below resonance</span><br>f<sub>sw</sub> &lt; f<sub>r</sub></td>
+            <td>공진점 왼쪽, gain 상승 영역</td>
+            <td>출력 전압을 끌어올리는 high-gain 영역. 부하가 커지면 피크 전류가 빠르게 증가</td>
+            <td>전류 폭이 넓고 피크가 큼. zero-crossing이 PWM 경계와 어긋날 수 있음</td>
+            <td>SR을 길게 켜기보다 current zero 이전에 선제 OFF. reverse tail 감지 중요</td>
+            <td>SR 늦게 끄면 역전류가 SR FET로 흘러 손실/발열 증가</td>
+          </tr>
+          <tr>
+            <td><span class="tag g">Near resonance</span><br>f<sub>sw</sub> ≈ f<sub>r</sub></td>
+            <td>gain 1 근처, 가장 예측 가능</td>
+            <td>변환비가 설계 턴비와 가장 잘 맞음</td>
+            <td>거의 사인파. zero-crossing이 반주기 경계에 가깝다</td>
+            <td>각 반주기 50% 근접 on-window + deadtime + 전류 threshold로 충분</td>
+            <td>부하 급변 시 zero-crossing drift만 보정하면 됨</td>
+          </tr>
+          <tr>
+            <td><span class="tag r">Above resonance</span><br>f<sub>sw</sub> &gt; f<sub>r</sub></td>
+            <td>공진점 오른쪽, gain 하락 영역</td>
+            <td>저이득 buck-like 영역. 출력 조절은 쉬우나 순환전류/소호 타이밍 확인 필요</td>
+            <td>전류가 더 좁아지고 조기 소호될 수 있음. 경부하에서는 펄스가 끊김</td>
+            <td>SR on-window를 짧게 제한. |I<sub>s</sub>|가 threshold 아래면 diode emulation처럼 OFF</td>
+            <td>무조건 50% ON이면 경부하 reverse conduction 발생</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. 공진곡선 그래프: 어느 영역인지 먼저 찍어야 한다</h2>
+    <div class="figure">
+      <svg viewBox="0 0 1100 420" role="img" aria-label="CLLC resonant gain curve">
+        <rect x="0" y="0" width="1100" height="420" fill="#171a20"/>
+        <line x1="90" y1="330" x2="1030" y2="330" stroke="#566073" stroke-width="2"/>
+        <line x1="90" y1="60" x2="90" y2="330" stroke="#566073" stroke-width="2"/>
+        <text x="92" y="42" fill="#9ca8ba" font-size="18">Voltage Gain M</text>
+        <text x="830" y="382" fill="#9ca8ba" font-size="18">Normalized frequency f<tspan baseline-shift="sub" font-size="12">sw</tspan>/f<tspan baseline-shift="sub" font-size="12">r</tspan></text>
+        <path d="M105,312 C190,265 260,170 335,105 C405,45 470,92 535,155 C610,225 710,265 840,292 C925,309 980,318 1025,323" fill="none" stroke="#f5c518" stroke-width="5"/>
+        <path d="M105,288 C205,250 275,205 345,165 C430,116 508,145 590,205 C700,275 855,305 1025,322" fill="none" stroke="#4ea1ff" stroke-width="3" stroke-dasharray="9 8"/>
+        <path d="M105,326 C205,278 260,122 326,72 C390,23 455,72 525,140 C610,225 720,275 1025,326" fill="none" stroke="#ff6b6b" stroke-width="3" stroke-dasharray="5 8"/>
+        <line x1="485" y1="62" x2="485" y2="335" stroke="#45d483" stroke-width="3" stroke-dasharray="10 8"/>
+        <text x="462" y="358" fill="#45d483" font-size="17" font-weight="700">f<tspan baseline-shift="sub" font-size="11">r</tspan></text>
+        <rect x="110" y="78" width="250" height="58" rx="8" fill="rgba(245,197,24,.08)" stroke="rgba(245,197,24,.45)"/>
+        <text x="128" y="103" fill="#ffe68a" font-size="16" font-weight="700">Below f<tspan baseline-shift="sub" font-size="11">r</tspan>: gain 상승</text>
+        <text x="128" y="125" fill="#dbe5f4" font-size="13">전류 피크/순환전류 증가</text>
+        <rect x="510" y="76" width="210" height="58" rx="8" fill="rgba(69,212,131,.08)" stroke="rgba(69,212,131,.38)"/>
+        <text x="528" y="103" fill="#8ff0b4" font-size="16" font-weight="700">Near f<tspan baseline-shift="sub" font-size="11">r</tspan></text>
+        <text x="528" y="125" fill="#dbe5f4" font-size="13">전류 부호 예측 쉬움</text>
+        <rect x="760" y="178" width="250" height="58" rx="8" fill="rgba(255,107,107,.08)" stroke="rgba(255,107,107,.40)"/>
+        <text x="778" y="203" fill="#ffb3b3" font-size="16" font-weight="700">Above f<tspan baseline-shift="sub" font-size="11">r</tspan>: gain 하락</text>
+        <text x="778" y="225" fill="#dbe5f4" font-size="13">경부하 조기 소호/역전류 주의</text>
+        <text x="720" y="68" fill="#f5c518" font-size="14">실선: 기준 Q</text>
+        <text x="720" y="90" fill="#4ea1ff" font-size="14">파선: 경부하</text>
+        <text x="720" y="112" fill="#ff6b6b" font-size="14">점선: 중부하/고부하</text>
+      </svg>
+    </div>
+    <div class="note">
+      위 그래프는 정량 설계값이 아니라 판단용 도식입니다. 실제 CLLC는 L<sub>r</sub>, C<sub>r</sub>, L<sub>m</sub>, 변압기 누설, 양방향 브리지의 C<sub>oss</sub>, 부하 Q에 따라 곡선이 바뀝니다. 그래도 SR 기준은 같습니다. <b>곡선의 어느 쪽이든 SR은 2차 전류 zero-crossing을 넘겨 켜면 안 됩니다.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. 2차측 전류 모양 예시</h2>
+    <div class="figure">
+      <svg viewBox="0 0 1100 520" role="img" aria-label="secondary current waveforms">
+        <rect x="0" y="0" width="1100" height="520" fill="#171a20"/>
+        <defs>
+          <pattern id="grid" width="50" height="40" patternUnits="userSpaceOnUse">
+            <path d="M50 0 H0 V40" fill="none" stroke="#242a34" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect x="70" y="40" width="960" height="410" fill="url(#grid)" stroke="#303642"/>
+        <line x1="70" y1="245" x2="1030" y2="245" stroke="#778196" stroke-width="2"/>
+        <text x="78" y="32" fill="#9ca8ba" font-size="15">I<tspan baseline-shift="sub" font-size="10">sec</tspan> polarity examples over one switching period</text>
+        <text x="76" y="470" fill="#9ca8ba" font-size="13">0</text>
+        <text x="1008" y="470" fill="#9ca8ba" font-size="13">T<tspan baseline-shift="sub" font-size="9">sw</tspan></text>
+
+        <path d="M85,245 C145,80 225,62 305,245 C358,365 420,376 470,255 C480,232 487,224 496,228" fill="none" stroke="#f5c518" stroke-width="4"/>
+        <path d="M496,245 C560,80 642,62 722,245 C775,365 838,376 888,255 C898,232 905,224 914,228" fill="none" stroke="#f5c518" stroke-width="4" opacity=".72"/>
+        <text x="95" y="88" fill="#ffe68a" font-size="15" font-weight="700">Below f<tspan baseline-shift="sub" font-size="10">r</tspan></text>
+        <text x="95" y="110" fill="#dbe5f4" font-size="12">피크 큼, zero-crossing drift</text>
+
+        <path d="M85,245 C165,105 245,105 325,245 C405,385 485,385 565,245 C645,105 725,105 805,245 C885,385 965,385 1025,285" fill="none" stroke="#45d483" stroke-width="3" transform="translate(0,12)" opacity=".95"/>
+        <text x="430" y="145" fill="#8ff0b4" font-size="15" font-weight="700">Near f<tspan baseline-shift="sub" font-size="10">r</tspan></text>
+        <text x="430" y="167" fill="#dbe5f4" font-size="12">거의 사인, 반주기 대칭</text>
+
+        <path d="M95,245 C138,160 198,158 246,245 C270,286 303,288 330,252 M500,245 C544,160 605,158 652,245 C676,286 710,288 737,252 M880,245 C920,170 970,170 1015,245" fill="none" stroke="#ff6b6b" stroke-width="4"/>
+        <text x="820" y="312" fill="#ffb3b3" font-size="15" font-weight="700">Above f<tspan baseline-shift="sub" font-size="10">r</tspan></text>
+        <text x="820" y="334" fill="#dbe5f4" font-size="12">좁은 펄스, 조기 소호</text>
+
+        <line x1="485" y1="40" x2="485" y2="450" stroke="#596273" stroke-dasharray="8 8"/>
+        <line x1="725" y1="40" x2="725" y2="450" stroke="#596273" stroke-dasharray="8 8"/>
+        <text x="470" y="488" fill="#9ca8ba" font-size="13">half-cycle boundary</text>
+        <text x="70" y="505" fill="#9ca8ba" font-size="12">노란색은 below, 초록색은 near, 빨간색은 above 영역의 대표적 형태를 겹쳐 표시한 도식</text>
+      </svg>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. 1차측 전류량 대비 2차측 전류 비교</h2>
+    <div class="note">
+      대표님 지적대로 2차 전류만 보면 SR 타이밍은 잡히지만, CLLC가 지금 효율 좋은 전달 상태인지, 순환전류가 큰 상태인지 판단이 약합니다. 그래서 아래 그래프처럼 <b>I<sub>pri</sub>와 I<sub>sec</sub>를 같은 시간축에 겹쳐</b> 봐야 합니다. 1차 전류가 큰데 2차 전류가 작으면 에너지가 부하로 잘 전달되지 않고 탱크 안에서 순환하는 구간입니다.
+    </div>
+    <div class="figure">
+      <svg viewBox="0 0 1100 650" role="img" aria-label="primary secondary current comparison">
+        <rect x="0" y="0" width="1100" height="650" fill="#171a20"/>
+        <defs>
+          <pattern id="grid2" width="50" height="40" patternUnits="userSpaceOnUse">
+            <path d="M50 0 H0 V40" fill="none" stroke="#242a34" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect x="70" y="50" width="960" height="500" fill="url(#grid2)" stroke="#303642"/>
+        <line x1="70" y1="175" x2="1030" y2="175" stroke="#596273" stroke-width="2"/>
+        <line x1="70" y1="340" x2="1030" y2="340" stroke="#596273" stroke-width="2"/>
+        <line x1="70" y1="505" x2="1030" y2="505" stroke="#596273" stroke-width="2"/>
+        <text x="80" y="35" fill="#9ca8ba" font-size="15">Blue: I<tspan baseline-shift="sub" font-size="10">pri</tspan> tank current / Yellow: reflected I<tspan baseline-shift="sub" font-size="10">sec</tspan> to primary side</text>
+        <text x="78" y="80" fill="#ffe68a" font-size="15" font-weight="700">Below f<tspan baseline-shift="sub" font-size="10">r</tspan>: Ipri peak &gt; reflected Isec, circulating current large</text>
+        <path d="M95,175 C155,60 235,60 300,175 C360,290 440,290 500,175 C560,60 640,60 705,175 C765,290 845,290 905,175 C955,85 1000,100 1025,145" fill="none" stroke="#4ea1ff" stroke-width="4"/>
+        <path d="M95,175 C150,90 215,88 265,175 C315,250 382,252 430,180 C485,96 560,90 610,175 C660,250 730,250 780,180 C835,96 910,90 965,175" fill="none" stroke="#f5c518" stroke-width="4" stroke-dasharray="10 7"/>
+        <line x1="70" y1="175" x2="1030" y2="175" stroke="#778196" stroke-width="1"/>
+
+        <text x="78" y="244" fill="#8ff0b4" font-size="15" font-weight="700">Near f<tspan baseline-shift="sub" font-size="10">r</tspan>: Ipri and reflected Isec match best</text>
+        <path d="M95,340 C170,230 250,230 325,340 C400,450 480,450 555,340 C630,230 710,230 785,340 C860,450 940,450 1020,350" fill="none" stroke="#4ea1ff" stroke-width="4"/>
+        <path d="M95,340 C175,238 250,238 325,340 C400,442 480,442 555,340 C630,238 710,238 785,340 C860,442 940,442 1020,350" fill="none" stroke="#f5c518" stroke-width="4" stroke-dasharray="10 7"/>
+        <line x1="70" y1="340" x2="1030" y2="340" stroke="#778196" stroke-width="1"/>
+
+        <text x="78" y="410" fill="#ffb3b3" font-size="15" font-weight="700">Above f<tspan baseline-shift="sub" font-size="10">r</tspan>: Isec narrows early, Ipri tail remains</text>
+        <path d="M95,505 C150,425 215,425 270,505 C325,585 390,585 445,505 C500,425 565,425 620,505 C675,585 740,585 795,505 C850,425 925,425 1005,505" fill="none" stroke="#4ea1ff" stroke-width="4"/>
+        <path d="M100,505 C135,455 185,455 220,505 C245,540 280,540 305,510 M470,505 C505,455 555,455 590,505 C615,540 650,540 675,510 M835,505 C875,455 935,455 980,505" fill="none" stroke="#f5c518" stroke-width="4" stroke-dasharray="10 7"/>
+        <line x1="70" y1="505" x2="1030" y2="505" stroke="#778196" stroke-width="1"/>
+
+        <rect x="740" y="70" width="265" height="86" rx="8" fill="rgba(245,197,24,.08)" stroke="rgba(245,197,24,.40)"/>
+        <text x="758" y="96" fill="#ffe68a" font-size="14" font-weight="700">읽는 법</text>
+        <text x="758" y="119" fill="#dbe5f4" font-size="12">두 선의 면적 차이 = 순환전류/무효전류 힌트</text>
+        <text x="758" y="140" fill="#dbe5f4" font-size="12">SR은 노란선 zero-crossing 전에 OFF</text>
+        <text x="80" y="598" fill="#9ca8ba" font-size="13">주의: 노란선은 2차 전류를 턴비로 1차측에 환산한 도식입니다. 실제 비교는 Ipri와 n*Isec 또는 Isec/n 등 센스 정의를 통일해야 합니다.</text>
+      </svg>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>비교 항목</th><th>Below f<sub>r</sub></th><th>Near f<sub>r</sub></th><th>Above f<sub>r</sub></th><th>SR 판단 의미</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>I<sub>pri</sub> 피크</td>
+            <td>가장 커지기 쉬움. 자화전류+순환전류 포함</td>
+            <td>전달전류와 가장 균형</td>
+            <td>부하가 가벼우면 tail이 남음</td>
+            <td>I<sub>pri</sub>만 크고 I<sub>sec</sub>가 작으면 SR을 오래 켜도 이득보다 역전류 위험이 커짐</td>
+          </tr>
+          <tr>
+            <td>I<sub>sec</sub> 폭</td>
+            <td>넓고 피크 큼</td>
+            <td>반주기와 잘 맞음</td>
+            <td>좁고 조기 소호 가능</td>
+            <td>SR ON width는 I<sub>sec</sub> 폭을 따라가야 함. PWM 50% 고정 금지</td>
+          </tr>
+          <tr>
+            <td>두 전류의 면적 차이</td>
+            <td>큰 편. 순환전류 많음</td>
+            <td>작음. 효율 최고점 후보</td>
+            <td>경부하에서 커질 수 있음</td>
+            <td>차이가 커질수록 SR보다 frequency shift 또는 burst/skip 전략 검토</td>
+          </tr>
+          <tr>
+            <td>zero-crossing 기준</td>
+            <td>I<sub>sec</sub>가 먼저 기준. I<sub>pri</sub> tail에 속지 않기</td>
+            <td>둘 다 근접</td>
+            <td>I<sub>sec</sub>가 빨리 0으로 감</td>
+            <td>SR OFF는 I<sub>pri</sub>가 아니라 I<sub>sec</sub> zero-crossing 직전</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. SR 매핑 표: 게이트명보다 전류 부호가 먼저다</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>검출 조건</th><th>권장 SR 상태</th><th>실제 구현 기준</th><th>비고</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>I<sub>sec</sub> &gt; +I<sub>ON</sub></td>
+            <td><span class="tag g">+방향 SR ON</span><br>예: SR_A / SR_C pair</td>
+            <td>해당 반주기의 동기정류 FET를 켠다. 단, commutation 직후 blanking 100~300ns 이후 허용</td>
+            <td>게이트 이름은 보드/변압기 dot polarity에 따라 바뀜. 오실로스코프로 실제 전류 부호 확인 필요</td>
+          </tr>
+          <tr>
+            <td>I<sub>sec</sub> &lt; -I<sub>ON</sub></td>
+            <td><span class="tag g">-방향 SR ON</span><br>예: SR_B / SR_D pair</td>
+            <td>반대 방향 동기정류 FET를 켠다. 마찬가지로 blanking 이후 허용</td>
+            <td>양방향 CLLC에서는 power flow 방향이 바뀌면 primary/secondary 역할도 바뀐다</td>
+          </tr>
+          <tr>
+            <td>|I<sub>sec</sub>| &lt; I<sub>OFF</sub></td>
+            <td><span class="tag y">모든 SR OFF</span></td>
+            <td>diode emulation. zero-crossing 근처에서는 양쪽 SR 모두 끈다</td>
+            <td>I<sub>OFF</sub>는 노이즈보다 충분히 높게. 보통 I<sub>ON</sub> &gt; I<sub>OFF</sub> hysteresis 적용</td>
+          </tr>
+          <tr>
+            <td>V<sub>DS,SR</sub> &lt; -V<sub>TH</sub> 보조 감지</td>
+            <td><span class="tag">보조 ON 근거</span></td>
+            <td>전류센스가 없거나 경부하에서 noisy할 때 Vds negative conduction 확인</td>
+            <td>Vds만으로는 ringing에 속을 수 있어 blanking과 minimum on/off time 필요</td>
+          </tr>
+          <tr>
+            <td>Commutation 전후 deadtime</td>
+            <td><span class="tag r">강제 OFF</span></td>
+            <td>1차/2차 브리지 전환 직전·직후 SR 금지 창 삽입</td>
+            <td>Below resonance에서 reverse current tail을 막는 핵심 보호장치</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>6. Above / Below별 SR window 설정값</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>영역</th><th>SR ON 시작</th><th>SR OFF</th><th>권장 window</th><th>튜닝 우선순위</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Below f<sub>r</sub></td>
+            <td>전류 부호가 명확해진 뒤. commutation 직후 blanking 이후</td>
+            <td>전류가 zero-crossing에 접근하면 조기 OFF. PWM half-cycle 끝까지 끌지 않음</td>
+            <td>넓게 열되, zero-crossing 기반 OFF를 반드시 우선 적용</td>
+            <td>reverse current 제거 → 발열 확인 → deadtime 최소화</td>
+          </tr>
+          <tr>
+            <td>Near f<sub>r</sub></td>
+            <td>반주기 시작 + blanking</td>
+            <td>반주기 종료 - deadtime 또는 전류 threshold</td>
+            <td>45~48% T<sub>sw</sub> 수준에서 시작 후 전류 기반 보정</td>
+            <td>효율 최대점 찾기. SR body diode conduction time 최소화</td>
+          </tr>
+          <tr>
+            <td>Above f<sub>r</sub></td>
+            <td>전류가 실제로 흐르는 짧은 구간만</td>
+            <td>조기 소호 시 바로 OFF. 경부하에서는 아예 비활성 가능</td>
+            <td>짧게 제한. minimum pulse 및 no-current skip 로직 필요</td>
+            <td>경부하 역전류 방지 → EMI/ringing 확인 → 효율 확인</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>7. 실험실에서 바로 확인할 파형 세트</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>측정 채널</th><th>확인 목표</th><th>정상 판단</th><th>이상 징후</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>CH1: 1차 브리지 midpoint</td><td>PWM half-cycle 기준점</td><td>deadtime 포함한 전환이 명확함</td><td>전환 ringing 과다, shoot-through 의심</td></tr>
+          <tr><td>CH2: 2차 권선 전류 I<sub>sec</sub></td><td>SR 매핑의 절대 기준</td><td>SR ON 중 전류 부호가 유지됨</td><td>SR ON 상태에서 전류 부호가 반대로 넘어감</td></tr>
+          <tr><td>CH3: SR V<sub>DS</sub></td><td>body diode conduction 및 reverse conduction 확인</td><td>ON 전 짧은 diode conduction 후 Vds가 낮아짐</td><td>SR OFF 후에도 큰 reverse current tail 또는 Vds ringing</td></tr>
+          <tr><td>CH4: SR gate</td><td>전류 부호와 gate window 매칭</td><td>전류가 + 또는 - 임계값을 넘은 구간에서만 ON</td><td>전류 0 근처에서 양쪽 SR이 켜지거나 overlap 발생</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>최종 요약</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>질문</th><th>답</th></tr></thead>
+        <tbody>
+          <tr><td>Above / Below에 따라 2차 전류 모양이 바뀌나?</td><td>바뀐다. Below는 고이득·고피크·zero-crossing drift가 커지고, Above는 좁은 펄스·조기 소호·경부하 skip 가능성이 커진다.</td></tr>
+          <tr><td>SR은 primary PWM 기준으로 고정해도 되나?</td><td>초기 bring-up용으로만 가능하다. 양산/고효율 기준은 2차 전류 부호와 zero-crossing 기반이어야 한다.</td></tr>
+          <tr><td>가장 안전한 매핑 원칙은?</td><td>I<sub>sec</sub> &gt; +I<sub>ON</sub>이면 +방향 SR, I<sub>sec</sub> &lt; -I<sub>ON</sub>이면 -방향 SR, |I<sub>sec</sub>| &lt; I<sub>OFF</sub>이면 모두 OFF.</td></tr>
+          <tr><td>왜 1차 전류도 같이 봐야 하나?</td><td>I<sub>pri</sub>는 탱크 전체 전류와 순환전류를 보여주고, I<sub>sec</sub>는 실제 부하 전달 전류와 SR 타이밍을 보여준다. 둘의 차이가 CLLC 운전점 품질이다.</td></tr>
+          <tr><td>가장 먼저 봐야 하는 파형은?</td><td>2차 권선 전류와 SR Vds를 같은 시간축에 올린 파형. 이 둘이 맞지 않으면 SR 매핑은 아직 틀린 것이다.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>CODEX 최종 인사이트</h2>
+    <div class="note">
+      CLLC SR 튜닝을 “몇 도 지연해서 켠다” 문제로 보면 계속 흔들립니다. 이 회로는 주파수로 전압 이득을 바꾸는 동시에 1차 탱크 전류와 2차 전달 전류의 비율도 바꿉니다. 그래서 최종 판단은 <b>파란선 I<sub>pri</sub>와 노란선 환산 I<sub>sec</sub>의 간격</b>입니다. 간격이 작으면 에너지 전달이 잘 되는 지점이고, 간격이 크면 SR을 더 오래 켜는 문제가 아니라 순환전류를 줄이는 문제가 됩니다. SR은 PWM의 자식이 아니라 2차 전류 sign detector의 자식이어야 하고, PWM은 그저 허용 창만 줘야 합니다.
+    </div>
+  </section>
+
+  <footer>
+    주의: 본 보고서는 회로 토폴로지 판단 프레임입니다. 실제 SR_A/SR_B 명칭은 변압기 dot polarity, 센스 방향, full-bridge/center-tap 구성에 따라 달라지므로 첫 bring-up에서는 낮은 전압·전류 제한·절연 프로브로 검증해야 합니다.
+  </footer>
+</div>
+</body>
+</html>
+

@@ -30,13 +30,17 @@ body{
 .mc{display:flex;align-items:center;gap:4px}
 .mc-n{font-weight:800;color:var(--gold);font-size:13px}
 .source-badge{background:var(--s2);border:1px solid var(--bd);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--t3);font-weight:700;letter-spacing:.3px}
+.meta-actions{display:flex;align-items:center;gap:6px}
+.refresh-btn{background:var(--s2);border:1px solid var(--bd);border-radius:20px;color:var(--t2);font-size:9px;font-weight:800;letter-spacing:.2px;padding:3px 9px;cursor:pointer}
+.refresh-btn:hover{border-color:rgba(245,197,24,.45);color:var(--gold)}
+.refresh-btn:disabled{opacity:.55;cursor:wait}
 
 /* ─── MAIN TABS ─── */
-.main-tabs{display:flex;gap:6px;padding:10px 16px;border-bottom:1px solid var(--bd);background:var(--bg);position:sticky;top:78px;z-index:90}
+.main-tabs{display:flex;gap:6px;padding:10px 16px;border-bottom:1px solid var(--bd);background:var(--bg);position:sticky;top:78px;z-index:90;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .main-tab{
-  flex:1;font-size:12px;font-weight:800;padding:8px 10px;border-radius:8px;cursor:pointer;
+  flex:0 0 auto;min-width:84px;height:38px;font-size:12px;font-weight:800;padding:8px 10px;border-radius:8px;cursor:pointer;
   background:var(--s1);border:1px solid var(--bd);color:var(--t3);text-align:center;
-  -webkit-tap-highlight-color:transparent;user-select:none;
+  -webkit-tap-highlight-color:transparent;user-select:none;white-space:nowrap;display:flex;align-items:center;justify-content:center;
 }
 .main-tab.active{background:rgba(245,197,24,.12);border-color:rgba(245,197,24,.45);color:var(--gold)}
 .tab-panel{display:none}
@@ -51,6 +55,12 @@ body{
   transition:background .15s,border-color .15s,color .15s;
 }
 .sort-btn.active{background:rgba(245,197,24,.12);border-color:rgba(245,197,24,.4);color:var(--gold)}
+.category-tabs{display:flex;gap:6px;width:100%;order:3}
+.category-tab{
+  flex:1;font-size:11px;font-weight:800;padding:6px 10px;border-radius:8px;cursor:pointer;
+  background:var(--s2);border:1px solid var(--bd);color:var(--t3);text-align:center;
+}
+.category-tab.active{background:rgba(91,164,245,.12);border-color:rgba(91,164,245,.45);color:var(--blu)}
 .search-box{
   display:flex;align-items:center;gap:8px;flex:1;min-width:170px;
   background:var(--bg);border:1px solid var(--bd);border-radius:8px;
@@ -92,7 +102,7 @@ body{
 
 /* ─── FILE ROW ─── */
 .file-row{
-  display:flex;align-items:center;gap:10px;
+  display:grid;grid-template-columns:24px minmax(0,1fr) auto 10px;align-items:center;gap:10px;
   padding:10px 14px;background:var(--s1);border:1px solid var(--bd);
   border-radius:8px;text-decoration:none;color:var(--t1);
   transition:background .15s,border-color .15s;
@@ -104,8 +114,8 @@ body{
 .file-row.alert-file:hover{background:rgba(245,197,24,.13);border-color:rgba(245,197,24,.45)}
 
 .file-icon{font-size:15px;flex-shrink:0;width:20px;text-align:center}
-.file-info{flex:1;min-width:0}
-.file-label{font-size:13px;font-weight:700;color:var(--t1)}
+.file-info{min-width:0}
+.file-label{font-size:13px;font-weight:800;color:var(--t1);line-height:1.3;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-break:keep-all}
 .file-name{font-size:10px;color:var(--t4);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .file-summary{
   margin-top:5px;font-size:11px;line-height:1.45;color:var(--t2);
@@ -113,7 +123,7 @@ body{
 }
 .file-summary:empty{display:none}
 
-.file-meta{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.file-meta{display:flex;align-items:center;gap:6px;min-width:0}
 .file-time{font-size:11px;font-weight:800;color:var(--t3);font-variant-numeric:tabular-nums;white-space:nowrap}
 .type-badge{
   font-size:9px;font-weight:800;padding:2px 7px;border-radius:3px;
@@ -156,21 +166,101 @@ body{
   width:30px;height:28px;border-radius:7px;border:1px solid var(--bd);background:var(--s2);
   color:var(--t2);font-size:14px;font-weight:900;cursor:pointer;
 }
-.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;min-width:0}
 .cal-dow{font-size:10px;color:var(--t3);text-align:center;font-weight:800;padding-bottom:4px}
 .cal-day{
   min-height:64px;border:1px solid var(--bd);border-radius:8px;background:#151515;
-  padding:6px;display:flex;flex-direction:column;gap:4px;color:var(--t3);
+  padding:6px;display:flex;flex-direction:column;gap:4px;color:var(--t3);min-width:0;overflow:hidden;
 }
 .cal-day.empty{opacity:.35}
 .cal-day.has-files{border-color:rgba(245,197,24,.45);background:rgba(245,197,24,.06);cursor:pointer}
 .cal-day.selected{outline:2px solid rgba(91,164,245,.6);outline-offset:1px}
 .cal-num{font-size:11px;font-weight:900;color:var(--t2);line-height:1}
 .cal-count{font-size:10px;color:var(--gold);font-weight:800}
-.cal-label{font-size:9px;color:var(--t3);line-height:1.25;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.cal-label{font-size:9px;color:var(--t3);line-height:1.25;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-break:keep-all}
 .calendar-list{margin-top:12px;display:flex;flex-direction:column;gap:5px}
 .calendar-list-title{font-size:12px;font-weight:900;color:var(--t2);margin-top:10px}
 .calendar-empty{font-size:12px;color:var(--t3);padding:20px 0;text-align:center}
+.qna-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:12px;padding:18px}
+.qna-card{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:16px}
+.qna-title{font-size:15px;font-weight:900;color:var(--gold);margin-bottom:10px}
+.qna-chat{
+  min-height:360px;max-height:56vh;overflow-y:auto;background:#0b0d11;border:1px solid var(--bd);
+  border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:9px;margin-bottom:12px;
+}
+.qna-bubble{max-width:82%;padding:9px 11px;border-radius:12px;font-size:12px;line-height:1.45;white-space:pre-wrap}
+.qna-bubble.in{align-self:flex-start;background:#20242b;color:var(--t2);border-top-left-radius:4px}
+.qna-bubble.out{align-self:flex-end;background:rgba(245,197,24,.16);color:var(--t1);border:1px solid rgba(245,197,24,.28);border-top-right-radius:4px}
+.qna-bubble .qna-meta{display:block;font-size:9px;color:var(--t4);font-weight:800;margin-bottom:3px}
+.qna-compose{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:end}
+.qna-field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+.qna-field label{font-size:11px;font-weight:800;color:var(--t3)}
+.qna-field input,.qna-field textarea,.qna-field select{
+  width:100%;background:var(--bg);border:1px solid var(--bd);border-radius:8px;
+  color:var(--t1);padding:9px 10px;font:inherit;font-size:12px;outline:0;
+}
+.qna-field textarea{min-height:74px;resize:vertical}
+.qna-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.qna-btn{border:1px solid rgba(245,197,24,.42);background:rgba(245,197,24,.12);color:var(--gold);border-radius:8px;padding:9px 12px;font-size:12px;font-weight:900;cursor:pointer;text-decoration:none}
+.qna-btn.secondary{border-color:var(--bd);background:var(--s2);color:var(--t2)}
+.qna-file-input{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.qna-file-list{min-height:32px;background:var(--bg);border:1px dashed var(--bd);border-radius:8px;color:var(--t3);font-size:11px;line-height:1.45;padding:8px 10px}
+.qna-file-list b{color:var(--gold)}
+.qna-file-tools{display:flex;flex-wrap:wrap;gap:8px}
+.qna-preview{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:8px;margin-top:8px}
+.qna-preview figure{position:relative;margin:0;background:#080a0d;border:1px solid var(--bd);border-radius:8px;overflow:hidden}
+.qna-preview img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.qna-preview figcaption{font-size:9px;color:var(--t3);padding:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qna-remove{position:absolute;right:4px;top:4px;width:22px;height:22px;border:0;border-radius:50%;background:rgba(0,0,0,.72);color:#fff;font-size:14px;font-weight:900;cursor:pointer}
+.qna-modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:none;align-items:center;justify-content:center;padding:18px}
+.qna-modal.active{display:flex}
+.qna-modal img{max-width:96vw;max-height:86vh;border-radius:10px;border:1px solid var(--bd)}
+.qna-modal button{position:absolute;right:18px;top:18px}
+.qna-share-link{word-break:break-all}
+.qna-public-feed{display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.qna-public-item{display:block;border:1px solid var(--bd);background:#0b0d11;border-radius:8px;padding:10px;text-decoration:none}
+.qna-public-item strong{display:block;color:var(--t1);font-size:12px;margin-bottom:4px}
+.qna-public-item span{display:block;color:var(--t3);font-size:10px;line-height:1.45}
+.qna-note{font-size:11px;color:var(--t3);line-height:1.6}
+.qna-note b{color:var(--t1)}
+.guide-wrap{padding:18px 16px 0}
+.guide-card{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:16px}
+.guide-title{font-size:15px;font-weight:900;color:var(--gold);margin-bottom:8px}
+.guide-lead{font-size:12px;color:var(--t2);line-height:1.7;margin-bottom:12px}
+.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.guide-box{background:#0d0f13;border:1px solid var(--bd);border-radius:8px;padding:11px;min-width:0}
+.guide-box b{display:block;color:var(--t1);font-size:12px;margin-bottom:4px}
+.guide-box span{display:block;color:var(--t3);font-size:11px;line-height:1.55}
+.guide-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--bd);border-radius:8px;margin-top:12px}
+.guide-table{width:100%;min-width:620px;border-collapse:collapse;font-size:11px}
+.guide-table th{background:var(--s2);color:var(--gold);padding:8px;text-align:left;white-space:nowrap}
+.guide-table td{border-top:1px solid var(--bd);padding:8px;color:var(--t2);vertical-align:top}
+@media(max-width:760px){
+  body{max-width:none;width:100%}
+  .masthead{padding:18px 14px 12px}
+  .blog-title{font-size:18px}
+  .main-tabs{top:74px;padding:8px 12px}
+  .main-tab{min-width:76px;height:36px;font-size:11px;padding:7px 9px}
+  .feed{padding:0 10px}
+  .file-row{grid-template-columns:22px minmax(0,1fr) 76px 8px;gap:8px;padding:10px 10px}
+  .file-label{font-size:12px;-webkit-line-clamp:2}
+  .file-name{font-size:9px}
+  .file-summary{font-size:10px;-webkit-line-clamp:2}
+  .file-meta{width:76px;flex-direction:column;align-items:flex-end;gap:4px}
+  .file-time{font-size:11px;line-height:1}
+  .type-badge{max-width:76px;overflow:hidden;text-overflow:ellipsis;font-size:8px;padding:2px 5px}
+  .calendar-wrap{padding:12px 10px 0}
+  .calendar-card{padding:12px 10px}
+  .calendar-grid{gap:4px}
+  .cal-day{min-height:54px;padding:5px 3px;border-radius:7px}
+  .cal-dow{font-size:9px}
+  .cal-num{font-size:10px}
+  .cal-count{font-size:9px}
+  .cal-label{font-size:8px;-webkit-line-clamp:1}
+  .guide-wrap{padding:12px 10px 0}
+  .guide-grid{grid-template-columns:1fr}
+  .qna-grid{grid-template-columns:1fr;padding:12px}.qna-compose{grid-template-columns:1fr}.qna-bubble{max-width:94%}
+}
 </style>
 </head>
 <body>
@@ -184,7 +274,10 @@ body{
       <div class="mc"><span class="mc-n" id="mc-dates">—</span><span>일</span></div>
       <div class="mc"><span class="mc-n" id="mc-visits">—</span><span>방문</span></div>
     </div>
-    <span class="source-badge" id="source-badge">로딩 중</span>
+    <div class="meta-actions">
+      <button class="refresh-btn" id="refresh-btn" type="button" onclick="refreshArchive()">새로고침</button>
+      <span class="source-badge" id="source-badge">로딩 중</span>
+    </div>
   </div>
 </div>
 
@@ -193,6 +286,8 @@ body{
   <button class="main-tab" id="tab-calendar" onclick="showPanel('calendar')">📅 달력</button>
   <button class="main-tab" id="tab-schedule" onclick="showPanel('schedule')">🔔 알림 스케줄</button>
   <button class="main-tab" id="tab-codex" onclick="showPanel('codex')">CODEX</button>
+  <button class="main-tab" id="tab-guide" onclick="showPanel('guide')">가이드</button>
+  <button class="main-tab" id="tab-qna" onclick="showPanel('qna')">Q&A</button>
 </div>
 
 <div class="tab-panel active" id="panel-archive">
@@ -203,6 +298,11 @@ body{
       <span>⌕</span>
       <input id="archive-search" type="search" placeholder="파일명·제목·요약 검색" autocomplete="off" oninput="setSearch(this.value)">
       <button class="search-clear" id="search-clear" type="button" onclick="clearSearch()" hidden>×</button>
+    </div>
+    <div class="category-tabs" aria-label="카테고리 필터">
+      <button class="category-tab active" id="cat-all" type="button" onclick="setCategory('all')">전체</button>
+      <button class="category-tab" id="cat-study" type="button" onclick="setCategory('study')">Study</button>
+      <button class="category-tab" id="cat-stock" type="button" onclick="setCategory('stock')">주식</button>
     </div>
   </div>
 
@@ -289,6 +389,148 @@ body{
   </div>
 </div>
 
+<div class="tab-panel" id="panel-guide">
+  <div class="guide-wrap">
+    <div class="guide-card">
+      <div class="guide-title">Claude 주식 추천 전략 전체 가이드</div>
+      <div class="guide-lead">앞으로 CODEX 주식추천전략보고의 기본 판단 프레임입니다. 핵심 운용 철학은 평소에는 사팔사팔로 회전 수익을 쌓고, 장이 정말 나빠졌을 때만 현금 비중을 크게 써서 풀매수급 분할 진입을 준비하는 것입니다. 보고서는 종목 추천보다 먼저 시장 모드와 리스크를 판정하고, 이후 종목별로 4전략 기준을 만족/부분만족/불만족으로 분해합니다.</div>
+      <div class="guide-grid">
+        <div class="guide-box"><b>1. 평시 운용: 사팔사팔</b><span>강세장 또는 애매한 장에서는 풀베팅이 아니라 1차·2차 밴드 중심으로 짧게 사고팔며 현금과 회전율을 유지합니다.</span></div>
+        <div class="guide-box"><b>2. 위기 운용: 장 안 좋을 때 풀매수</b><span>VIX 급등, 나스닥 연속 급락, 금리/환율 충격 등 공포가 겹칠 때만 풀매수급 준비. 단 한 번에 몰빵이 아니라 3단계 분할 진입입니다.</span></div>
+        <div class="guide-box"><b>3. No Chase</b><span>급등 직후 시장가 매수 금지. 돌파는 확인만 하고, 실제 매수는 얕은 눌림·확인 눌림·과매도 눌림으로 분리합니다.</span></div>
+        <div class="guide-box"><b>4. 4전략 복합분석</b><span>VCP, Weinstein 4단계, Cup & Handle, M2 유동성 사이클을 종목마다 통과/부분통과/불합격으로 표기합니다.</span></div>
+        <div class="guide-box"><b>5. 매크로 필터</b><span>VIX, 10년물 금리, USD/KRW, M2, 나스닥 연속 하락, Hindenburg Omen을 먼저 보고 시장 환경을 안전/경고/위험으로 나눕니다.</span></div>
+        <div class="guide-box"><b>6. 실행표 우선</b><span>매수/대기/제외, 1차·2차·3차 진입가, 목표가, 손절·무효화 조건, 다음 확인 시간을 표로 고정합니다.</span></div>
+      </div>
+      <div class="guide-table-wrap">
+        <table class="guide-table">
+          <tr><th>전략</th><th>창시자/출처</th><th>핵심 원리</th><th>합격 기준</th><th>불합격 기준</th><th>보고서 표기</th></tr>
+          <tr><td>VCP</td><td>Mark Minervini</td><td>변동성 수축, 거래량 감소, 에너지 압축 후 돌파</td><td>수축 3회 이상, 각 수축 깊이 감소, 돌파 거래량 평균 대비 +40% 이상</td><td>수축 없이 급등, 핸들 거래량 급증, 돌파 거래량 미동반</td><td>VCP 통과 / 부분통과 / 불합격</td></tr>
+          <tr><td>Weinstein 4단계</td><td>Stan Weinstein</td><td>Stage 1 바닥, Stage 2 상승, Stage 3 천장, Stage 4 하락. Stage 2만 매수</td><td>MA30 위, 상승 전환, Stage 2 초입 또는 진행</td><td>MA30 아래, Stage 4, 반등만 있고 추세 미전환</td><td>Stage 2 매수 / Stage 1 관찰 / Stage 4 제외</td></tr>
+          <tr><td>Cup & Handle</td><td>William O'Neil CANSLIM</td><td>7~65주 U자형 컵, -15~33% 조정, 1~4주 핸들 후 돌파</td><td>컵 깊이 -15~33%, 핸들 5~15%, 핸들 거래량 수축, 돌파 거래량 +40%</td><td>7주 미만 V자 반등, -33% 초과, 핸들 거래량 급증, R/R 2:1 미만</td><td>완벽 / 양호 / 불합격</td></tr>
+          <tr><td>M2 유동성 사이클</td><td>거시경제 분석</td><td>M2 증가 시 시장 유동성 확대, 감소 시 매도 압력</td><td>M2 증가 추세, 연준 대차대조표 우호, 시중 유동성 개선</td><td>M2 감소 전환, 장기금리 급등, 달러/환율 압박</td><td>유동성 순풍 / 중립 / 역풍</td></tr>
+          <tr><td>매크로 경보</td><td>시장 환경 필터</td><td>개별 종목보다 시장 악화 복합 신호를 우선 확인</td><td>VIX 20 미만, 10년물 안정, USD/KRW 안정, 나스닥 추세 유지</td><td>VIX 25 이상, 나스닥 -5% 이상 2일, 10년물 4.8% 돌파, Hindenburg Omen 동시 발동</td><td>사팔사팔 / 현금대기 / 공포분할 풀매수 준비</td></tr>
+        </table>
+      </div>
+      <div class="guide-table-wrap">
+        <table class="guide-table">
+          <tr><th>시장 상태</th><th>대표님 운용 모드</th><th>매수 방식</th><th>금지 행동</th><th>보고서 필수 문구</th></tr>
+          <tr><td>강세·평온</td><td>사팔사팔</td><td>눌림 1차 위주, 짧은 익절, 현금 유지</td><td>고점 추격, 풀매수</td><td>회전 수익 구간. 풀베팅 금지.</td></tr>
+          <tr><td>애매한 장</td><td>선별 사팔사팔</td><td>4전략 3개 이상 통과 종목만 1차·2차</td><td>테마만 보고 진입, 손절선 없는 매수</td><td>조건부 진입. 다음 체크 시간 명시.</td></tr>
+          <tr><td>급락 초기</td><td>현금대기</td><td>관찰만, 1차 밴드 재계산</td><td>첫 하락날 물타기</td><td>아직 풀매수 아님. 공포 확인 전 대기.</td></tr>
+          <tr><td>복합 공포</td><td>풀매수급 분할 준비</td><td>1차 30%, 2차 30%, 3차 40% 식으로 공포 가격대 분할</td><td>한 번에 몰빵, 레버리지 과다</td><td>장이 안 좋을수록 기회. 단 분할만 허용.</td></tr>
+        </table>
+      </div>
+      <div class="guide-table-wrap">
+        <table class="guide-table">
+          <tr><th>참고자료</th><th>용도</th><th>링크</th></tr>
+          <tr><td>Claude 주식 전략 원본</td><td>4전략·눌림목·시장필터 기본 참고</td><td><a href="stock_strategy_20260522_22.html">stock_strategy_20260522_22.html</a></td></tr>
+          <tr><td>Claude 주식 추천 원본</td><td>종목 추천 구성과 보고 순서 참고</td><td><a href="stock_recommendation_20260522_22.html">stock_recommendation_20260522_22.html</a></td></tr>
+          <tr><td>Claude 신규 수정본</td><td>최신 추천표 스타일과 근거 전개 참고</td><td><a href="주식추천신규수정_260523_9.45AM.html">주식추천신규수정_260523_9.45AM.html</a></td></tr>
+          <tr><td>Claude 신규 추천본</td><td>초기 종목 선별 흐름 참고</td><td><a href="주식추천신규_260523_9.30AM.html">주식추천신규_260523_9.30AM.html</a></td></tr>
+          <tr><td>Claude 주식추천 기록</td><td>이전 추천 문체와 실행표 비교</td><td><a href="주식추천_260523_12.15AM.html">주식추천_260523_12.15AM.html</a></td></tr>
+        </table>
+      </div>
+      <div class="guide-lead" style="margin-top:12px;margin-bottom:0">CODEX 최종 인사이트는 일반 요약이 아니라, 지금 장에서 대표님 계좌가 실제로 당할 수 있는 착시와 함정을 하나 집어서 실행 규칙으로 바꿔야 합니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-panel" id="panel-qna">
+  <div class="qna-grid" style="grid-template-columns:1fr">
+    <div class="qna-card">
+      <div class="qna-title">익명 Q&A</div>
+      <div class="qna-note" id="qna-live-status">Firebase 설정값이 연결되면 이 화면에서 누구나 익명으로 등록하고, 누구나 같은 목록을 볼 수 있습니다.</div>
+      <div id="qna-live-feed" class="qna-public-feed">
+        <div class="qna-note">공개 Q&A 연결 대기 중입니다.</div>
+      </div>
+      <div class="qna-field">
+        <label for="qna-live-body">메시지</label>
+        <textarea id="qna-live-body" placeholder="익명 메시지를 입력하세요. 이름/연락처는 남기지 않습니다."></textarea>
+      </div>
+      <div class="qna-actions">
+        <button class="qna-btn" type="button" onclick="postFirebaseQna()">익명 등록</button>
+        <button class="qna-btn secondary" type="button" onclick="refreshFirebaseQna()">새로고침</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-panel" id="panel-qna-legacy" hidden>
+  <div class="qna-grid">
+    <div class="qna-card">
+      <div class="qna-title">Q&A 대화방</div>
+      <div class="qna-chat" id="qna-chat">
+        <div class="qna-bubble in"><span class="qna-meta">ETHAN Q&A</span>내 폰 말풍선은 기기 안에만 남습니다. 다른 사람도 보게 하려면 공개 등록을 눌러 익명 Q&A로 올려야 합니다.</div>
+      </div>
+      <div class="qna-compose">
+        <div>
+          <div class="qna-field">
+            <label for="qna-body">메시지</label>
+            <textarea id="qna-body" placeholder="메시지를 입력하세요. Enter는 줄바꿈, 버튼으로 전송"></textarea>
+          </div>
+          <div class="qna-field">
+            <label>첨부</label>
+            <div class="qna-file-tools">
+              <button class="qna-btn secondary" type="button" onclick="pickQnaPhotos()">사진 선택</button>
+              <button class="qna-btn secondary" type="button" onclick="pickQnaFiles()">파일 선택</button>
+              <button class="qna-btn secondary" type="button" onclick="shareQnaAnonymous()">익명 공유</button>
+            </div>
+            <input id="qna-photo-input" class="qna-file-input" type="file" accept="image/*,video/*" multiple onchange="handleQnaFiles(this.files)">
+            <input id="qna-file-input" class="qna-file-input" type="file" multiple onchange="handleQnaFiles(this.files)">
+            <div id="qna-picked-list" class="qna-file-list">선택된 첨부 없음</div>
+            <div id="qna-preview" class="qna-preview"></div>
+            <div id="qna-share-output" class="qna-file-list qna-share-link" hidden></div>
+            <input id="qna-files" type="text" placeholder="첨부 메모를 추가로 적으세요">
+          </div>
+        </div>
+        <div class="qna-actions">
+          <button class="qna-btn" type="button" onclick="sendQnaLocal()">말풍선 남기기</button>
+          <button class="qna-btn" type="button" onclick="openQnaPublicIssue()">공개 등록</button>
+          <button class="qna-btn secondary" type="button" onclick="shareQnaAnonymous()">카톡식 익명 공유</button>
+          <button class="qna-btn secondary" type="button" onclick="loadPublicQna()">공개글 새로고침</button>
+          <button class="qna-btn secondary" type="button" onclick="clearQnaShareOutput()">공유상태 지우기</button>
+          <button class="qna-btn secondary" type="button" onclick="openQnaMail()">메일</button>
+        </div>
+      </div>
+      <div class="qna-title">공개 Q&A</div>
+      <div id="qna-public-feed" class="qna-public-feed">
+        <div class="qna-note">공개 등록된 익명 Q&A를 불러오는 중입니다.</div>
+      </div>
+    </div>
+    <div class="qna-card">
+      <div class="qna-title">공유 설정</div>
+      <div class="qna-field">
+        <label for="qna-topic">분류</label>
+        <select id="qna-topic">
+          <option>주식/시장</option>
+          <option>전력전자/PSIM/CLLC</option>
+          <option>브리핑 오류 수정</option>
+          <option>자료 공유</option>
+          <option>기타 토론</option>
+        </select>
+      </div>
+      <div class="qna-field">
+        <label for="qna-title-input">제목</label>
+        <input id="qna-title-input" type="text" placeholder="토론 제목">
+      </div>
+      <div class="qna-actions">
+        <button class="qna-btn secondary" type="button" onclick="clearQnaForm()">비우기</button>
+      </div>
+      <div class="qna-note">
+        <p><b>공개 등록</b>은 이름/연락처 없이 모두가 볼 수 있는 Q&A 목록에 올리는 방식입니다.</p>
+        <p><b>익명 공유</b>는 카톡·메시지·메일 공유시트로 보내는 기능이며, 공개 저장은 공개 등록으로 처리합니다.</p>
+        <p>사진은 선택 즉시 미리보기로 보입니다. 전송 후 선택 목록과 미리보기는 초기화됩니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="qna-modal" id="qna-modal" onclick="closeQnaModal()">
+  <button class="qna-btn secondary" type="button">X</button>
+  <img id="qna-modal-img" alt="첨부 확대">
+</div>
+
 <div class="footer">
   <span>ETHAN BRIEFINGS</span>
   <span id="footer-info"></span>
@@ -299,6 +541,10 @@ body{
 const TYPES = [
   { key:'아침브리핑',         label:'아침 브리핑', icon:'🌅', badge:'tb-gold', time:'09:00' },
   { key:'저녁브리핑',         label:'저녁 브리핑', icon:'🌆', badge:'tb-prp',  time:'18:00' },
+  { key:'CODEX 알림 주식 추천 전략보고', label:'CODEX 알림 주식 추천 전략보고', icon:'📈', badge:'tb-gold', time:null },
+  { key:'CODEX_알림_주식추천전략보고', label:'CODEX 알림 주식 추천 전략보고', icon:'📈', badge:'tb-gold', time:null },
+  { key:'주식 추천 전략보고', label:'주식 추천 전략보고', icon:'📈', badge:'tb-gold', time:null },
+  { key:'주식추천전략보고',   label:'주식 추천 전략보고', icon:'📈', badge:'tb-gold', time:null },
   { key:'주식추천',           label:'주식 추천',   icon:'📈', badge:'tb-gold', time:null    },
   { key:'주식전략',           label:'주식 전략',   icon:'📈', badge:'tb-gold', time:null    },
   { key:'stock_recommendation', label:'주식 추천', icon:'📈', badge:'tb-gold', time:null    },
@@ -326,7 +572,7 @@ const OFFICIAL_NAME = /^(.+?)_(\d{6})_(\d{1,2})(?:[._-](\d{1,2}))?\s*_?\s*(AM|PM
 
 function parseFile(name) {
   const raw = name.replace('.html','');
-  const isAlert = raw.startsWith('알림_');
+  const isAlert = raw.startsWith('알림_') || raw.startsWith('CODEX_알림_');
   const toolFile = parseToolFile(name, raw);
   if (toolFile) return toolFile;
 
@@ -364,6 +610,26 @@ function parseFile(name) {
            icon: info.icon,
            badge: isAlert ? 'tb-alert' : info.badge,
            isAlert };
+}
+
+function applyManifestMeta(file, meta) {
+  if (!meta) return file;
+  const dateKey = meta.displayDate || meta.updatedDate || file.dateKey;
+  const timeStr = meta.displayTime || meta.updatedTime || file.timeStr;
+  const [y, m, d] = dateKey.split('-');
+  const dow = WEEKDAYS[localDateFromKey(dateKey).getDay()];
+  return {
+    ...file,
+    dateKey,
+    dateLabel: `${y}년 ${+m}월 ${+d}일 ${dow}요일`,
+    timeStr,
+    timeNum: timeStr ? parseInt(timeStr.replace(':','')) : file.timeNum,
+    updatedIso: meta.updatedIso,
+    updatedEpoch: meta.updatedEpoch,
+    displayEpoch: meta.displayEpoch,
+    label: meta.label || meta.displayLabel || file.label,
+    category: meta.category || file.category || inferCategory(file.name, file.label)
+  };
 }
 
 function parseToolFile(name, raw) {
@@ -441,14 +707,420 @@ function localDateFromKey(dateKey) {
 let files = [];
 let sort = 'newest';
 let searchQuery = '';
+let categoryFilter = 'all';
 let calendarMonth = null;
 let selectedCalendarDate = null;
+let qnaFirebaseApp = null;
+let qnaFirebaseDb = null;
+let qnaFirebaseRef = null;
+
+const ETHAN_QNA_FIREBASE_CONFIG = window.ETHAN_QNA_FIREBASE_CONFIG || {
+  apiKey: '',
+  authDomain: '',
+  databaseURL: '',
+  projectId: '',
+  appId: ''
+};
 
 function showPanel(id) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.main-tab').forEach(t => t.classList.remove('active'));
   document.getElementById(`panel-${id}`).classList.add('active');
   document.getElementById(`tab-${id}`).classList.add('active');
+}
+
+function qnaFirebaseConfigured() {
+  return ['apiKey', 'authDomain', 'databaseURL', 'projectId', 'appId']
+    .every(key => String(ETHAN_QNA_FIREBASE_CONFIG[key] || '').trim());
+}
+
+function setQnaLiveStatus(message, mode = '') {
+  const box = document.getElementById('qna-live-status');
+  if (!box) return;
+  box.textContent = message;
+  box.style.color = mode === 'error' ? '#ff6b6b' : '';
+}
+
+function renderQnaLiveRows(rows) {
+  const feed = document.getElementById('qna-live-feed');
+  if (!feed) return;
+  if (!rows.length) {
+    feed.innerHTML = '<div class="qna-note">아직 공개 Q&A가 없습니다. 첫 익명 메시지를 등록하세요.</div>';
+    return;
+  }
+  feed.innerHTML = '';
+  rows.slice(-50).reverse().forEach(row => {
+    const item = document.createElement('div');
+    item.className = 'qna-public-item';
+    const title = document.createElement('strong');
+    title.textContent = '익명';
+    const meta = document.createElement('span');
+    const createdAt = row.createdAt ? new Date(row.createdAt).toLocaleString('ko-KR', { month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' }) : '방금';
+    meta.textContent = createdAt;
+    const body = document.createElement('span');
+    body.textContent = row.body || '';
+    item.appendChild(title);
+    item.appendChild(meta);
+    item.appendChild(body);
+    feed.appendChild(item);
+  });
+}
+
+async function initFirebaseQna() {
+  if (!document.getElementById('qna-live-feed')) return;
+  if (!qnaFirebaseConfigured()) {
+    setQnaLiveStatus('Firebase 설정값 필요: apiKey, authDomain, databaseURL, projectId, appId. 설정 후 누구나 익명 등록/조회됩니다.', 'error');
+    renderQnaLiveRows([]);
+    return;
+  }
+  try {
+    const appMod = await import('https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js');
+    const dbMod = await import('https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js');
+    qnaFirebaseApp = appMod.initializeApp(ETHAN_QNA_FIREBASE_CONFIG);
+    qnaFirebaseDb = dbMod.getDatabase(qnaFirebaseApp);
+    qnaFirebaseRef = dbMod.ref(qnaFirebaseDb, 'ethan_qna/messages');
+    const q = dbMod.query(qnaFirebaseRef, dbMod.limitToLast(50));
+    dbMod.onValue(q, snap => {
+      const rows = [];
+      snap.forEach(child => rows.push(child.val() || {}));
+      renderQnaLiveRows(rows);
+      setQnaLiveStatus('공개 Q&A 연결 완료. 닉네임 없이 익명으로 등록됩니다.');
+    });
+  } catch (error) {
+    setQnaLiveStatus('Firebase 연결 실패: 설정값 또는 Realtime Database 규칙을 확인해야 합니다.', 'error');
+  }
+}
+
+async function postFirebaseQna() {
+  const bodyEl = document.getElementById('qna-live-body');
+  const body = bodyEl?.value.trim();
+  if (!body) {
+    setQnaLiveStatus('메시지를 입력해야 등록됩니다.', 'error');
+    return;
+  }
+  if (!qnaFirebaseConfigured() || !qnaFirebaseRef) {
+    setQnaLiveStatus('아직 Firebase 설정값이 없어 공개 등록은 대기 상태입니다. 설정값 연결 후 바로 작동합니다.', 'error');
+    return;
+  }
+  try {
+    const dbMod = await import('https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js');
+    await dbMod.push(qnaFirebaseRef, {
+      body,
+      createdAt: Date.now(),
+      source: 'briefings-qna'
+    });
+    bodyEl.value = '';
+    setQnaLiveStatus('익명 Q&A가 등록되었습니다.');
+  } catch (error) {
+    setQnaLiveStatus('등록 실패: Firebase 권한 또는 네트워크를 확인해야 합니다.', 'error');
+  }
+}
+
+function refreshFirebaseQna() {
+  initFirebaseQna();
+}
+
+function qnaPayload() {
+  const topic = document.getElementById('qna-topic')?.value || '기타 토론';
+  const title = document.getElementById('qna-title-input')?.value.trim() || 'Q&A 토론';
+  const body = document.getElementById('qna-body')?.value.trim() || '내용 미기재';
+  const files = qnaAttachmentText();
+  const text = [
+    `분류: ${topic}`,
+    `첨부 예정 자료: ${files}`,
+    '',
+    '내용:',
+    body
+  ].join('\n');
+  return { title: `[Q&A] ${title}`, text };
+}
+
+function openQnaPublicIssue() {
+  const q = qnaPayload();
+  const body = q.text
+    + '\n\n---\n익명 공개 Q&A입니다. 이름/연락처는 저장하지 않습니다.'
+    + '\n사진/파일은 GitHub 작성 화면에서 직접 첨부하면 모두에게 보입니다.';
+  const url = 'https://github.com/HanEthan73/ETHAN_DASH/issues/new?title='
+    + encodeURIComponent(q.title)
+    + '&labels=' + encodeURIComponent('Q&A')
+    + '&body=' + encodeURIComponent(body);
+  window.open(url, '_blank', 'noopener');
+}
+
+function openQnaMail() {
+  const q = qnaPayload();
+  const url = 'mailto:?subject=' + encodeURIComponent(q.title)
+    + '&body=' + encodeURIComponent(q.text + '\n\n아이폰에서는 메일 작성창이 열린 뒤 선택한 파일을 다시 첨부해야 합니다. 브라우저 보안상 mailto는 파일을 자동 첨부하지 못합니다.');
+  window.location.href = url;
+}
+
+function clearQnaForm() {
+  ['qna-title-input','qna-body','qna-files'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  selectedQnaFiles = [];
+  updateQnaFileList();
+  clearQnaFileInputs();
+  clearQnaShareOutput();
+  localStorage.removeItem('ethan-qna-chat');
+  renderQnaChat([]);
+}
+
+let selectedQnaFiles = [];
+let selectedQnaImages = [];
+
+function pickQnaPhotos() {
+  document.getElementById('qna-photo-input')?.click();
+}
+
+function pickQnaFiles() {
+  document.getElementById('qna-file-input')?.click();
+}
+
+function handleQnaFiles(files) {
+  selectedQnaFiles = Array.from(files || []);
+  selectedQnaImages = [];
+  updateQnaFileList();
+  prepareQnaImages();
+}
+
+function updateQnaFileList() {
+  const box = document.getElementById('qna-picked-list');
+  const preview = document.getElementById('qna-preview');
+  if (!box) return;
+  if (preview) preview.innerHTML = '';
+  if (!selectedQnaFiles.length) {
+    box.textContent = '선택된 첨부 없음';
+    return;
+  }
+  const total = selectedQnaFiles.reduce((sum, file) => sum + (file.size || 0), 0);
+  const mb = (total / 1024 / 1024).toFixed(2);
+  box.innerHTML = `<b>${selectedQnaFiles.length}개 선택</b> · ${mb} MB<br>` +
+    selectedQnaFiles.map(file => qnaEscape(file.name)).join('<br>');
+  if (!preview) return;
+  selectedQnaFiles
+    .map((file, originalIndex) => ({ file, originalIndex }))
+    .filter(item => item.file.type && item.file.type.startsWith('image/'))
+    .slice(0, 12)
+    .forEach(({ file, originalIndex }) => {
+      const fig = document.createElement('figure');
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(file);
+      img.alt = file.name;
+      img.onclick = () => openQnaModal(img.src);
+      img.onload = () => URL.revokeObjectURL(img.src);
+      const remove = document.createElement('button');
+      remove.className = 'qna-remove';
+      remove.type = 'button';
+      remove.textContent = 'X';
+      remove.onclick = () => removeQnaFile(originalIndex);
+      const cap = document.createElement('figcaption');
+      cap.textContent = file.name;
+      fig.appendChild(remove);
+      fig.appendChild(img);
+      fig.appendChild(cap);
+      preview.appendChild(fig);
+    });
+}
+
+function removeQnaFile(index) {
+  selectedQnaFiles.splice(index, 1);
+  selectedQnaImages = [];
+  updateQnaFileList();
+  prepareQnaImages();
+  clearQnaShareOutput();
+}
+
+function openQnaModal(src) {
+  const modal = document.getElementById('qna-modal');
+  const img = document.getElementById('qna-modal-img');
+  if (!modal || !img) return;
+  img.src = src;
+  modal.classList.add('active');
+}
+
+function closeQnaModal() {
+  const modal = document.getElementById('qna-modal');
+  const img = document.getElementById('qna-modal-img');
+  if (modal) modal.classList.remove('active');
+  if (img) img.removeAttribute('src');
+}
+
+function qnaEscape(value) {
+  return String(value).replace(/[&<>"']/g, ch => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[ch]));
+}
+
+function qnaAttachmentText() {
+  const memo = document.getElementById('qna-files')?.value.trim();
+  const picked = selectedQnaFiles.map(file => `${file.name} (${Math.round((file.size || 0) / 1024)}KB)`);
+  const rows = [];
+  if (picked.length) rows.push(`선택 파일: ${picked.join(', ')}`);
+  if (memo) rows.push(`메모: ${memo}`);
+  return rows.length ? rows.join(' / ') : '없음';
+}
+
+async function prepareQnaImages() {
+  const imageFiles = selectedQnaFiles.filter(file => file.type && file.type.startsWith('image/')).slice(0, 6);
+  selectedQnaImages = [];
+  for (const file of imageFiles) {
+    try {
+      selectedQnaImages.push({ name: file.name, dataUrl: await compressQnaImage(file) });
+    } catch (_) {}
+  }
+}
+
+function compressQnaImage(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = reject;
+    reader.onload = () => {
+      const img = new Image();
+      img.onerror = reject;
+      img.onload = () => {
+        const max = 1000;
+        const scale = Math.min(1, max / Math.max(img.width, img.height));
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.max(1, Math.round(img.width * scale));
+        canvas.height = Math.max(1, Math.round(img.height * scale));
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL('image/jpeg', .72));
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+async function shareQnaAnonymous() {
+  const out = document.getElementById('qna-share-output');
+  const body = document.getElementById('qna-body')?.value.trim();
+  const title = document.getElementById('qna-title-input')?.value.trim() || '익명 Q&A';
+  const topic = document.getElementById('qna-topic')?.value || '기타';
+  const memo = document.getElementById('qna-files')?.value.trim();
+  const text = [
+    `[익명 Q&A] ${title}`,
+    `분류: ${topic}`,
+    '',
+    body || '내용 미기재',
+    memo ? `\n첨부 메모: ${memo}` : ''
+  ].join('\n').trim();
+  try {
+    if (navigator.share) {
+      const imageFiles = selectedQnaFiles.filter(file => file.type && file.type.startsWith('image/')).slice(0, 8);
+      if (imageFiles.length && navigator.canShare && navigator.canShare({ files: imageFiles })) {
+        await navigator.share({ title: `[익명 Q&A] ${title}`, text, files: imageFiles });
+      } else {
+        await navigator.share({ title: `[익명 Q&A] ${title}`, text });
+      }
+      if (out) {
+        out.hidden = false;
+        out.innerHTML = '<b>익명 공유 완료</b><br>아이폰 공유시트로 내용과 가능한 첨부를 넘겼습니다.';
+      }
+      return;
+    }
+  } catch (_) {}
+  try { await navigator.clipboard.writeText(text); } catch (_) {}
+  if (out) {
+    out.hidden = false;
+    out.innerHTML = '<b>익명 공유 대기</b><br>이 브라우저는 공유시트를 지원하지 않아 익명 메시지 내용을 클립보드에 복사했습니다.';
+  }
+}
+
+function clearQnaShareOutput() {
+  const out = document.getElementById('qna-share-output');
+  if (!out) return;
+  out.hidden = true;
+  out.innerHTML = '';
+}
+
+function sendQnaLocal() {
+  const body = document.getElementById('qna-body')?.value.trim();
+  if (!body) return;
+  const files = qnaAttachmentText();
+  const item = {
+    name: '익명',
+    body: files !== '없음' ? `${body}\n\n첨부: ${files}` : body,
+    ts: new Date().toLocaleString('ko-KR', { hour:'2-digit', minute:'2-digit' })
+  };
+  const rows = readQnaChat();
+  rows.push(item);
+  localStorage.setItem('ethan-qna-chat', JSON.stringify(rows.slice(-50)));
+  renderQnaChat(rows);
+  clearQnaShareOutput();
+  const textarea = document.getElementById('qna-body');
+  if (textarea) textarea.value = '';
+  selectedQnaFiles = [];
+  updateQnaFileList();
+  clearQnaFileInputs();
+}
+
+function clearQnaFileInputs() {
+  ['qna-photo-input','qna-file-input'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+}
+
+function readQnaChat() {
+  try { return JSON.parse(localStorage.getItem('ethan-qna-chat') || '[]'); }
+  catch (_) { return []; }
+}
+
+function renderQnaChat(rows = readQnaChat()) {
+  const chat = document.getElementById('qna-chat');
+  if (!chat) return;
+  chat.innerHTML = '<div class="qna-bubble in"><span class="qna-meta">ETHAN Q&A</span>내 폰 말풍선은 기기 안에만 남습니다. 다른 사람도 보게 하려면 공개 등록을 눌러 익명 Q&A로 올려야 합니다.</div>';
+  rows.forEach(row => {
+    const bubble = document.createElement('div');
+    bubble.className = 'qna-bubble out';
+    const meta = document.createElement('span');
+    meta.className = 'qna-meta';
+    meta.textContent = `${row.name || '익명'} · ${row.ts || ''}`;
+    bubble.appendChild(meta);
+    bubble.append(document.createTextNode(row.body || ''));
+    chat.appendChild(bubble);
+  });
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function loadPublicQna() {
+  const feed = document.getElementById('qna-public-feed');
+  if (!feed) return;
+  feed.innerHTML = '<div class="qna-note">공개 Q&A를 불러오는 중입니다.</div>';
+  fetch('https://api.github.com/repos/HanEthan73/ETHAN_DASH/issues?state=open&labels=Q%26A&per_page=20&ts=' + Date.now())
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(items => {
+      const qnas = (items || []).filter(item => item.title && item.title.startsWith('[Q&A]')).slice(0, 10);
+      if (!qnas.length) {
+        feed.innerHTML = '<div class="qna-note">아직 공개 등록된 Q&A가 없습니다. 공개 등록을 완료하면 다른 사람에게도 여기 표시됩니다.</div>';
+        return;
+      }
+      feed.innerHTML = '';
+      qnas.forEach(item => {
+        const a = document.createElement('a');
+        a.className = 'qna-public-item';
+        a.href = item.html_url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        const title = document.createElement('strong');
+        title.textContent = item.title.replace(/^\[Q&A\]\s*/, '');
+        const meta = document.createElement('span');
+        meta.textContent = `익명 · #${item.number} · ${new Date(item.created_at).toLocaleString('ko-KR', { month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' })}`;
+        const body = document.createElement('span');
+        body.textContent = (item.body || '').replace(/\s+/g, ' ').slice(0, 160);
+        a.appendChild(title);
+        a.appendChild(meta);
+        a.appendChild(body);
+        feed.appendChild(a);
+      });
+    })
+    .catch(() => {
+      feed.innerHTML = '<div class="qna-note">공개 Q&A를 불러오지 못했습니다. 새로고침 후 다시 확인하세요.</div>';
+    });
 }
 
 function setSort(s) {
@@ -472,19 +1144,40 @@ function clearSearch() {
   if (input) input.focus();
 }
 
+function setCategory(category) {
+  categoryFilter = category;
+  ['all','study','stock'].forEach(c => {
+    const btn = document.getElementById(`cat-${c}`);
+    if (btn) btn.classList.toggle('active', c === category);
+  });
+  render();
+}
+
 function getVisibleFiles() {
-  if (!searchQuery) return files;
-  return files.filter(f => normalizeSearch([
+  let visible = files;
+  if (categoryFilter !== 'all') {
+    visible = visible.filter(f => (f.category || inferCategory(f.name, f.label)) === categoryFilter);
+  }
+  if (!searchQuery) return visible;
+  return visible.filter(f => normalizeSearch([
     f.name,
     f.label,
     f.dateLabel,
     f.timeStr,
+    f.category || '',
     f.summary || ''
   ].join(' ')).includes(searchQuery));
 }
 
 function normalizeSearch(text) {
   return cleanText(text).toLowerCase();
+}
+
+function inferCategory(name, label) {
+  const text = normalizeSearch(`${name || ''} ${label || ''}`);
+  if (text.includes('#study') || text.includes('study') || text.includes('cllc') || text.includes('psim') || text.includes('pfc')) return 'study';
+  if (text.includes('주식') || text.includes('stock') || text.includes('pltr') || text.includes('nvda') || text.includes('시장')) return 'stock';
+  return 'stock';
 }
 
 function render() {
@@ -769,9 +1462,20 @@ function hydrateVisitorCount() {
     .then(r => r.ok ? r.json() : Promise.reject(r.status))
     .then(data => {
       el.textContent = Number(data.value || 0).toLocaleString('ko-KR');
+      el.title = '외부 방문자 API 기준';
     })
     .catch(() => {
-      el.textContent = '—';
+      const key = 'ethan-briefings-local-visits';
+      const todayKey = 'ethan-briefings-local-visit-date';
+      const today = new Date().toISOString().slice(0, 10);
+      let value = Number(localStorage.getItem(key) || '0');
+      if (localStorage.getItem(todayKey) !== today) {
+        value += 1;
+        localStorage.setItem(key, String(value));
+        localStorage.setItem(todayKey, today);
+      }
+      el.textContent = value.toLocaleString('ko-KR');
+      el.title = '외부 방문자 API가 응답하지 않아 이 브라우저 기준 방문수로 대체 표시 중';
     });
 }
 
@@ -790,26 +1494,60 @@ const STATIC = [
   'pltr_tool_v2.html',
 ];
 
-function load(names) {
+function load(names, manifest = {}) {
   files = names
     .filter(n => n !== 'index.html' && n.endsWith('.html'))
     .map(parseFile)
-    .filter(Boolean);
+    .filter(Boolean)
+    .map(f => applyManifestMeta(f, manifest[f.name]));
   render();
 }
 
 hydrateVisitorCount();
 
-fetch('https://api.github.com/repos/hanethan73/ethan_dash/contents/briefings')
-  .then(r => r.ok ? r.json() : Promise.reject(r.status))
-  .then(data => {
-    load(data.map(f => f.name));
-    document.getElementById('source-badge').textContent = 'GitHub 실시간';
-  })
-  .catch(() => {
-    load(STATIC);
-    document.getElementById('source-badge').textContent = '정적 목록';
-  });
+function setSourceBadge(text) {
+  const badge = document.getElementById('source-badge');
+  if (badge) badge.textContent = text;
+}
+
+function setRefreshBusy(isBusy) {
+  const btn = document.getElementById('refresh-btn');
+  if (!btn) return;
+  btn.disabled = isBusy;
+  btn.textContent = isBusy ? '갱신 중' : '새로고침';
+}
+
+function loadArchiveData() {
+  setRefreshBusy(true);
+  return fetch('https://api.github.com/repos/hanethan73/ethan_dash/contents/briefings?ts=' + Date.now())
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(data => {
+      return fetch('manifest.json?v=' + Date.now())
+        .then(r => r.ok ? r.json() : [])
+        .catch(() => [])
+        .then(manifestRows => {
+          const manifest = Object.fromEntries((manifestRows || []).map(row => [row.name, row]));
+          load(data.map(f => f.name), manifest);
+          setSourceBadge(manifestRows.length ? '보고 시간 기준' : 'GitHub 실시간');
+        });
+    })
+    .catch(() => {
+      load(STATIC);
+      setSourceBadge('정적 목록');
+    })
+    .finally(() => setRefreshBusy(false));
+}
+
+function refreshArchive() {
+  setSourceBadge('새로고침 중');
+  hydrateVisitorCount();
+  loadArchiveData();
+}
+
+renderQnaChat();
+loadPublicQna();
+initFirebaseQna();
+loadArchiveData();
 </script>
 </body>
 </html>

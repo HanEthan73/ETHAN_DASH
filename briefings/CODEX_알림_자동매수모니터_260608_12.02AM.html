@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX_알림_자동매수모니터_260608_12.02AM</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#f4efe6;--card:#fffdf8;--ink:#1b1b1b;--muted:#5f5b54;--line:#ddd2c0;
+  --navy:#18324a;--gold:#9d7a28;--green:#16613b;--greenbg:#e8f4ec;
+  --amber:#8a5b05;--amberbg:#fff0d4;--red:#9c2f2f;--redbg:#fde9e9;
+}
+body{
+  margin:0;
+  background:radial-gradient(circle at top left, rgba(157,122,40,.12), transparent 28%), linear-gradient(180deg,#faf7f0 0%,var(--bg) 100%);
+  color:var(--ink);
+  font-family:"Malgun Gothic","Apple SD Gothic Neo","Segoe UI",sans-serif;
+  line-height:1.62;
+  padding:18px 10px 34px;
+}
+.wrap{max-width:1280px;margin:0 auto}
+header,.panel,.lead{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:0 14px 34px rgba(24,50,74,.06);
+}
+header{padding:24px 20px}
+.lead,.panel{margin-top:16px;padding:18px 16px}
+.lead{border-left:6px solid var(--navy)}
+h1{margin:0 0 8px;font-size:30px;color:var(--navy)}
+h2{margin:0 0 12px;font-size:20px;color:var(--navy)}
+.sub{font-size:13px;color:var(--muted)}
+.stamp{
+  display:inline-block;margin-top:12px;padding:7px 12px;border-radius:999px;
+  background:#f7ecd0;border:1px solid #e7d39a;color:var(--gold);font-size:12px;font-weight:800;
+}
+.summary-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px;
+}
+.summary-card{
+  background:#fcf8ee;border:1px solid #eadfca;border-radius:14px;padding:14px;
+}
+.summary-card b{display:block;font-size:12px;color:var(--gold);margin-bottom:6px}
+.summary-card strong{display:block;font-size:21px;color:var(--navy);line-height:1.3}
+.summary-card small{display:block;margin-top:6px;font-size:12px;color:var(--muted)}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;min-width:1160px;background:#fff}
+th,td{padding:11px 10px;border-bottom:1px solid #ebe2d5;vertical-align:top;font-size:13px}
+th{background:#f6efe2;color:var(--navy);text-align:left;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.money,.center{font-variant-numeric:tabular-nums;white-space:nowrap}
+.center{text-align:center}
+.tag{
+  display:inline-block;padding:4px 9px;border-radius:999px;font-size:11px;font-weight:800;
+  border:1px solid transparent;white-space:nowrap;
+}
+.ok{background:var(--greenbg);color:var(--green);border-color:#bedbc7}
+.wait{background:var(--amberbg);color:var(--amber);border-color:#ead39c}
+.stop{background:var(--redbg);color:var(--red);border-color:#efc1c1}
+.note{
+  margin-top:12px;padding:12px 14px;border-radius:12px;background:#f7f1e7;
+  border:1px solid #ebdcc0;color:#4d4438;font-size:13px;
+}
+ul{margin:0;padding-left:18px}
+li{margin:6px 0}
+a{color:var(--navy)}
+footer{margin-top:18px;text-align:right;color:var(--muted);font-size:12px}
+@media(max-width:920px){.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){
+  body{padding:14px 8px 26px}
+  h1{font-size:25px}
+  .summary-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>CODEX 알림 자동매수 모니터</h1>
+    <div class="sub">생성 2026-06-08 00:02 KST | 대표님 00:00 자동매수 점검 | 파일명 규칙: CODEX_알림_자동매수모니터_YYMMDD_H.MMPM.html</div>
+    <div class="stamp">최신 정책 재확인 2026-06-07 22:34 KST | 최신 가격 기준 2026-06-05 19:59 EDT | 2026-06-08 00:02 KST 현재 미국 정규장은 아직 개장 전입니다</div>
+  </header>
+
+  <div class="summary-grid">
+    <div class="summary-card"><b>시장 모드</b><strong>방어 우위, No Chase 유지</strong><small>2026-06-05 미국장 급락 이후 주말 비세션 구간입니다. 오늘 밤도 종목 추가보다 가격 규율 유지가 우선입니다.</small></div>
+    <div class="summary-card"><b>즉시 실행 결론</b><strong>실제 매수 가능 0종목</strong><small>2026-06-08 00:02 KST는 미국장 개장 전입니다. 선행 체결과 갭상승 추격은 전면 금지입니다.</small></div>
+    <div class="summary-card"><b>우선 대기</b><strong>NVDA, TSM</strong><small>두 종목 모두 1차 밴드 3% 이내입니다. 다만 실제 실행은 2026-06-08 미국장 첫 현물 체결 확인 뒤 1차 20%만 허용합니다.</small></div>
+    <div class="summary-card"><b>즉시 제외</b><strong>AVGO, MU</strong><small>AVGO는 실적 후 재평가 구간, MU는 급락 후 안정화 미확인 구간입니다. 가격이 가까워 보여도 tonight 기준 체결 대상이 아닙니다.</small></div>
+  </div>
+
+  <section class="lead">
+    <h2>1. 설명 먼저 드리겠습니다</h2>
+    <p>대표님, 오늘 00:00 자동매수 모니터의 핵심은 <b>무엇을 더 사느냐가 아니라 2026-06-08 미국장 개장 전까지 어떤 가격에서만 반응할지 고정하는 것</b>입니다. 2026-06-05 미국장은 고용지표 서프라이즈와 금리 부담으로 성장주와 반도체가 함께 눌렸고, 지금 시각인 <b>2026-06-08 00:02 KST</b>는 아직 미국 정규장 개장 전이라 새 현물 체결이 없습니다. 따라서 오늘 결론은 공격적 실행이 아니라 <b>NVDA와 TSM만 1차 분할 대기 명단에 남기고, AVGO와 MU는 제외 상태를 유지하며, No Chase 원칙을 다시 고정하는 것</b>입니다.</p>
+    <div class="note">실행 문장: 오늘 밤 질문은 "무엇을 당장 살까"가 아니라 "오늘 밤에도 같은 가격에서만 반응할 수 있는가"입니다. 1차 밴드 미체결 상태의 선행 매수와 갭상승 추격은 모두 금지입니다.</div>
+  </section>
+
+  <section class="panel">
+    <h2>2. 자동매수 실행표</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>최신 확인 시각</th>
+          <th>목표가 3% 이내 여부</th>
+          <th>진입 대기 구간</th>
+          <th>1차 분할매수 조건</th>
+          <th>2차 분할매수 조건</th>
+          <th>3차 분할매수 조건</th>
+          <th>무효화 조건</th>
+          <th>최종 실행 결론</th>
+        </tr>
+        <tr>
+          <td><b>NVDA</b></td>
+          <td class="money">$204.04</td>
+          <td>2026-06-05 19:59 EDT 시간외<br>2026-06-07 22:34 KST 정책 재확인</td>
+          <td><span class="tag ok">예</span> 1차 $202 대비 +1.01%</td>
+          <td class="money">$202 / $194 / $186</td>
+          <td>2026-06-08 미국장 개장 후 $202 하향 체결 확인 시 20%만 1차 허용</td>
+          <td>$194 재시험 뒤 지지 확인 시 추가 30%</td>
+          <td>$186 부근 반전 확인 시 나머지 50%</td>
+          <td>$186 종가 이탈 또는 반도체 재투매 확대 시 계획 중단</td>
+          <td><span class="tag wait">대기</span> 가격은 근접했지만 실제 체결 확인 전까지 금지</td>
+        </tr>
+        <tr>
+          <td><b>TSM</b></td>
+          <td class="money">$411.53</td>
+          <td>2026-06-05 19:59 EDT 시간외<br>2026-06-07 22:34 KST 정책 재확인</td>
+          <td><span class="tag ok">예</span> 1차 $410 대비 +0.37%</td>
+          <td class="money">$410 / $398 / $384</td>
+          <td>2026-06-08 미국장 개장 후 $410 하향 체결 확인 시 20%만 1차 허용</td>
+          <td>$398 지지 확인 시 추가 30%</td>
+          <td>$384 방어 확인 시 나머지 50%</td>
+          <td>$384 종가 이탈 또는 AI 공급망 리더십 훼손 시 중단</td>
+          <td><span class="tag wait">대기</span> 1차 밴드 근접이지만 개장 전 선행매수 금지</td>
+        </tr>
+        <tr>
+          <td><b>AVGO</b></td>
+          <td class="money">$385.02</td>
+          <td>2026-06-05 19:59 EDT 시간외<br>2026-06-07 22:34 KST 정책 재확인</td>
+          <td><span class="tag ok">예</span> 1차 $378 대비 +1.86%</td>
+          <td class="money">$378 / $362 / $344</td>
+          <td>실적 후 재평가 종료와 $378 재시험 지지 확인 전까지 체결 금지</td>
+          <td>$362 부근 거래 안정과 반등 확인 시 35%</td>
+          <td>$344 부근 과매도 반전 확인 시 50%</td>
+          <td>$344 종가 이탈 또는 실적 후 추가 디레이팅 지속 시 폐기</td>
+          <td><span class="tag stop">제외</span> 가격보다 구조 복원이 먼저입니다</td>
+        </tr>
+        <tr>
+          <td><b>MU</b></td>
+          <td class="money">$857.20</td>
+          <td>2026-06-05 19:59 EDT 시간외<br>2026-06-07 22:34 KST 정책 재확인</td>
+          <td><span class="tag ok">예</span> 1차 $840 대비 +2.05%</td>
+          <td class="money">$840 / $790 / $740</td>
+          <td>급락 진정 없이 1차 선행매수 금지, $840 확인 시에도 15% 이하만 검토</td>
+          <td>$790 부근 거래축소와 지지 확인 시 35%</td>
+          <td>$740 부근 구조 복원 확인 시 50%</td>
+          <td>$740 종가 이탈 또는 변동성 재확대 시 중단</td>
+          <td><span class="tag stop">제외</span> 급락 안정화 전이라 자동매수 대상에서 유지 제외</td>
+        </tr>
+      </table>
+    </div>
+    <div class="note">핵심 해석: 네 종목 모두 1차 밴드 3% 이내에 들어왔지만, <b>3% 이내 = 즉시 매수</b>는 아닙니다. 지금은 가격 근접보다 실제 체결 구조와 미국장 첫 현물 흐름이 더 중요합니다.</div>
+  </section>
+
+  <section class="panel">
+    <h2>3. 실제 매수 가능 / 대기 / 제외 구분</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>구분</th><th>종목</th><th>판정 근거</th><th>대표님 실행 지침</th></tr>
+        <tr>
+          <td><span class="tag stop">실제 매수 가능</span></td>
+          <td>없음</td>
+          <td>2026-06-08 00:02 KST 현재 미국 정규장 개장 전입니다. 현물 체결을 확인할 수 있는 세션이 아직 열리지 않았습니다.</td>
+          <td>오늘 밤 선행 체결은 하지 않습니다.</td>
+        </tr>
+        <tr>
+          <td><span class="tag wait">대기</span></td>
+          <td>NVDA, TSM</td>
+          <td>1차 진입가 3% 이내까지 근접했고 리더십도 유지됩니다. 다만 2026-06-08 미국장 개장 후 하향 체결 확인이 먼저입니다.</td>
+          <td>개장 직후 갭상승이면 추격 금지, 1차 밴드 하향 체결일 때만 얇게 1차 진입합니다.</td>
+        </tr>
+        <tr>
+          <td><span class="tag stop">제외</span></td>
+          <td>AVGO, MU</td>
+          <td>AVGO는 실적 후 재평가 구간이고 MU는 급락 후 안정화가 확인되지 않았습니다.</td>
+          <td>가격이 가까워 보여도 자동매수 대상에서는 제외 유지합니다.</td>
+        </tr>
+        <tr>
+          <td><span class="tag stop">공통 금지</span></td>
+          <td>추격매수</td>
+          <td>주말 뒤 첫 세션은 갭과 변동성이 동시에 커질 가능성이 높습니다.</td>
+          <td>1차 미체결 상태의 2차 선행과 갭상승 추격은 전면 금지입니다.</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>4. 대표님 주의사항</h2>
+    <ul>
+      <li>이번 보고서는 새로운 미국장 실시간 체결 데이터가 아니라 2026-06-05 19:59 EDT까지 확인된 최신 접근 가능 시세를 기준으로 작성했습니다.</li>
+      <li>NVDA와 TSM은 자동매수 후보를 유지하지만, 둘 다 1차만 얇게 허용하는 보수 운용이 맞습니다.</li>
+      <li>AVGO와 MU는 숫자상 1차 구간 근처라도 tonight 기준 체결 명분이 약하므로 제외가 맞습니다.</li>
+      <li>오늘 밤 2026-06-08 미국장 개장 직후 강한 반등이 나와도 좋은 신호가 아니라 추격 유혹일 수 있습니다. 첫 체결 품질을 먼저 보셔야 합니다.</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>5. 최종 요약</h2>
+    <p>오늘 00:02 KST 기준 자동매수 최종 결론은 명확합니다. <b>실제 매수 가능 종목은 없고</b>, <b>NVDA와 TSM은 2026-06-08 미국장 개장 후 1차 밴드 하향 체결 확인이 있을 때만 대기</b>, <b>AVGO와 MU는 제외</b>입니다. 이번 자동매수 모니터의 목적은 많이 사는 것이 아니라, <b>살 수 있는 가격이 올 때만 반응하는 규율을 지키는 것</b>입니다.</p>
+  </section>
+
+  <section class="panel">
+    <h2>6. CODEX 인사이트</h2>
+    <p>이번 구간에서 진짜 차이는 종목 선택보다 <b>체결을 늦출 수 있는 인내</b>에서 납니다. 지금처럼 고용과 금리가 동시에 멀티플을 누르는 장에서는 1차 밴드 근처 숫자만 보고 매수 버튼을 누르면 안 됩니다. 오늘 밤 봐야 할 것은 "무엇이 반등하느냐"가 아니라, <b>NVDA와 TSM이 1차 가격에서 실제로 수급을 받느냐</b>입니다. 그 확인이 없으면 현금이 전략이고, 그 확인이 생기면 그때만 1차 비중을 허용하는 것이 이번 주 가장 방어적인 공격입니다.</p>
+  </section>
+
+  <section class="panel">
+    <h2>7. 참고 출처</h2>
+    <ul>
+      <li><a href="https://stockanalysis.com/stocks/nvda/">Stock Analysis NVDA</a></li>
+      <li><a href="https://stockanalysis.com/stocks/tsm/">Stock Analysis TSM</a></li>
+      <li><a href="https://stockanalysis.com/stocks/avgo/">Stock Analysis AVGO</a></li>
+      <li><a href="https://stockanalysis.com/stocks/mu/">Stock Analysis MU</a></li>
+    </ul>
+  </section>
+
+  <footer>CODEX 자동매수 모니터 | 생성 2026-06-08 00:02 KST | 저장 위치: briefings/CODEX_알림_자동매수모니터_260608_12.02AM.html</footer>
+</div>
+</body>
+</html>

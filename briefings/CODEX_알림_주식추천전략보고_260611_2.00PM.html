@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX_알림_주식추천전략보고_260611_2.00PM | 주식 추천 전략보고</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#081019;--panel:#101a27;--panel2:#162435;--line:#2e4258;
+  --text:#e7eef8;--muted:#99a9bb;--gold:#f4ca64;--blue:#9dd7ff;
+  --green:#80ebb0;--greenbg:#11281d;--yellow:#ffe28f;--yellowbg:#342c12;
+  --red:#ffabab;--redbg:#34181c;--cyan:#9be1ff;--cyanbg:#133041;
+}
+body{margin:0;background:radial-gradient(circle at top,#1a3351 0,#081019 58%);color:var(--text);font-family:"Malgun Gothic","Apple SD Gothic Neo","Segoe UI",sans-serif;line-height:1.65;padding:18px 10px 32px}
+.wrap{max-width:1460px;margin:0 auto}
+header{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+h1{margin:0 0 8px;font-size:31px;line-height:1.25;color:var(--gold)}
+.sub{color:var(--muted);font-size:13px}
+.stamp{display:inline-block;margin-top:12px;padding:7px 12px;border-radius:999px;border:1px solid #6d5720;background:#302612;color:var(--gold);font-size:12px;font-weight:800}
+.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+.summary-card{padding:14px;border:1px solid rgba(244,202,100,.22);border-radius:12px;background:rgba(244,202,100,.07)}
+.summary-card b{display:block;margin-bottom:6px;color:var(--gold);font-size:12px}
+.summary-card strong{display:block;font-size:20px;line-height:1.25}
+.summary-card small{display:block;margin-top:6px;color:var(--muted);font-size:11px}
+.panel{margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.lead{background:#1b170f;border-left:4px solid var(--gold)}
+h2{margin:0 0 12px;font-size:20px;color:var(--blue)}
+p{margin:0;font-size:14px;color:#d9e2ef}
+.note{margin-top:12px;padding:12px 14px;border-radius:9px;background:#1c2b3b;border-left:4px solid var(--gold);font-size:13px;color:#dbe4ef}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#0d1621;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:1120px}
+th,td{padding:10px;border-bottom:1px solid #1f2d3d;text-align:left;vertical-align:top;font-size:13px}
+th{background:#1d2a39;color:var(--gold);font-size:12px;white-space:nowrap}
+tr:nth-child(even) td{background:#0b131d}
+tr:last-child td{border-bottom:0}
+.money,.center{white-space:nowrap;font-variant-numeric:tabular-nums}
+.center{text-align:center}
+.tag{display:inline-block;padding:3px 9px;border-radius:999px;border:1px solid transparent;font-size:11px;font-weight:800}
+.ok{background:var(--greenbg);border-color:#24593e;color:var(--green)}
+.wait{background:var(--yellowbg);border-color:#6d5a1a;color:var(--yellow)}
+.stop{background:var(--redbg);border-color:#6a2d31;color:var(--red)}
+.info{background:var(--cyanbg);border-color:#2d5873;color:var(--cyan)}
+.watch-row td{background:rgba(244,202,100,.07)!important}
+.danger-row td{background:rgba(255,110,110,.07)!important}
+ul{margin:0;padding-left:20px}
+li{margin:6px 0;color:#d4dcea}
+a{color:var(--blue);text-decoration:none}
+footer{margin-top:18px;text-align:right;color:#8390a2;font-size:12px}
+@media(max-width:1050px){.summary-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){
+  body{padding:14px 8px 28px}
+  h1{font-size:25px}
+  h2{font-size:18px}
+  .summary-grid{grid-template-columns:1fr}
+  .panel{padding:12px}
+  th,td{padding:8px;font-size:12px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>CODEX 알림 주식 추천 전략보고</h1>
+    <div class="sub">생성 2026-06-11 14:02 KST | 14:00 정규 알림 | 문서 제목 고정: 주식 추천 전략보고 | 파일명 규칙: CODEX_알림_주식추천전략보고_YYMMDD_H.MMPM.html</div>
+    <div class="stamp">최신 가격 확인 시각: 미국 주식 2026-06-10 16:00~16:00:54 EDT 종가 및 시간외, 환율 2026-06-11 02:01 UTC, 최종 생성 2026-06-11 14:02 KST</div>
+  </header>
+
+  <div class="summary-grid">
+    <div class="summary-card"><b>시장 모드</b><strong>방어 우선 / No Chase</strong><small>QQQ는 2026-06-10 16:00 EDT에 693.69로 마감했고 시간외는 689.73입니다. 미국 CPI 부담과 중동 리스크가 남아 있어 추격 매수는 금지입니다.</small></div>
+    <div class="summary-card"><b>즉시 실행 판정</b><strong>즉시 매수 0종목</strong><small>MSFT와 TSM은 1차 밴드 근처지만 오늘 14:00 기준 결론은 확인 전 대기입니다. ORCL은 실적 직후 재평가 구간이라 이벤트 소화 확인이 먼저입니다.</small></div>
+    <div class="summary-card"><b>집중 감시 5종목</b><strong>MSFT, TSM, NVDA, META, ORCL</strong><small>추천 대상은 유지하되 체결 가격만 더 엄격하게 봅니다. AVGO, PLTR, MU는 오늘 14:00 실행 대상에서 제외합니다.</small></div>
+    <div class="summary-card"><b>거시 기준선</b><strong>10Y 4.53 / USDKRW 1527.40 / M2 22,804.5</strong><small>DGS10 최신 공식 관측일은 2026-06-09, USD/KRW 실시간 체크는 2026-06-11 02:01 UTC, M2는 2026-04 기준입니다.</small></div>
+  </div>
+
+  <section class="panel lead">
+    <h2>1. 시장/전략 상황 설명</h2>
+    <p>대표님, 오늘 14:00 결론은 <b>좋은 종목을 고르는 단계가 아니라 좋은 가격에서만 반응하는 단계</b>입니다. 2026-06-10 미국장은 CPI 4.2% 부담과 중동 긴장 확대로 기술주가 다시 밀렸고, AP 집계 기준 나스닥은 2.0% 하락했습니다. QQQ는 693.69, MSFT는 397.36, NVDA는 200.42, TSM은 408.75로 마감했습니다. 동시에 미 10년물은 FRED 기준 2026-06-09 관측치 4.53%, USD/KRW는 Google Finance 기준 2026-06-11 02:01 UTC에 1,527.4001입니다. 따라서 오늘 전략의 핵심은 종목 확대가 아니라 <b>1차·2차·3차 밴드를 지키는 방어 우선 / No Chase</b>입니다.</p>
+    <div class="note">시장 악화 7대 경보 재점검: 1) QQQ 693.69, 확인 2026-06-10 16:00 EDT. 2) QQQ 시간외 689.73, 확인 2026-06-10 16:00:01 EDT 기준 시간외 표시. 3) 미 10년물 DGS10 4.53, 관측일 2026-06-09, 업데이트 2026-06-10 15:16 CDT. 4) USD/KRW 1,527.4001, 확인 2026-06-11 02:01 UTC. 5) ORCL은 201.26 종가 후 180.89 시간외로 -10.12%, 확인 2026-06-10 16:00:54 EDT. 6) 반도체 대표주 NVDA -3.73%, TSM -4.48%, AVGO -5.12%, MU -4.70%, 모두 2026-06-10 종가 기준 약세입니다. 7) M2SL은 22,804.5로 중기 유동성은 남아 있지만 단기 금리 충격을 지우지 못합니다.</div>
+  </section>
+
+  <section class="panel">
+    <h2>2. 오늘의 선별 기준과 제외 기준</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>구분</th><th>최신 확인</th><th>판정</th><th>실행 해석</th></tr>
+        <tr><td>시장 모드</td><td>QQQ 693.69 / AH 689.73, 확인 2026-06-10 16:00 EDT</td><td><span class="tag wait">방어 우선</span></td><td>반등 시도보다 하단 방어와 1차 밴드 도달 여부가 먼저입니다.</td></tr>
+        <tr><td>선별 기준</td><td>컴포트존 진입 가능, 3단 분할, 현재 시장 모드 적합, 7대 경보 방어 가능</td><td><span class="tag ok">적용</span></td><td>MSFT, TSM, NVDA, META, ORCL을 감시 대상으로 유지합니다.</td></tr>
+        <tr><td>제외 기준</td><td>실적 직후 재평가, 1차 밴드 상단 추격, 고밸류 성장주 금리 민감, 반도체 변동성 과다</td><td><span class="tag stop">엄격 적용</span></td><td>AVGO, PLTR, MU는 오늘 14:00 실행 대상에서 제외합니다.</td></tr>
+        <tr><td>금리 경보</td><td>DGS10 4.53, 관측일 2026-06-09 / 업데이트 2026-06-10 15:16 CDT</td><td><span class="tag stop">경보</span></td><td>1차 밴드 도달 전 성장주 추격 매수는 금지입니다.</td></tr>
+        <tr><td>환율 경보</td><td>USD/KRW 1,527.4001, 확인 2026-06-11 02:01 UTC</td><td><span class="tag stop">경보</span></td><td>동시다발 분산 진입보다 1종목 소액 1차만 허용하는 쪽이 맞습니다.</td></tr>
+        <tr><td>유동성 보조</td><td>M2SL 22,804.5, 2026-04 / 업데이트 2026-05-26 12:01 CDT</td><td><span class="tag ok">보조</span></td><td>중기 유동성은 살아 있지만 오늘 공격 매수 근거로 쓰기엔 부족합니다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>3. 종목별 상세 전략표</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>순위</th><th>종목</th><th>현재가</th><th>최신 확인 시각</th><th>1차 / 2차 / 3차</th><th>비중</th><th>목표가</th><th>지금 판정</th><th>실행 코멘트</th></tr>
+        <tr class="watch-row"><td class="center">1</td><td><b>MSFT</b></td><td class="money">$397.36 / AH $396.60</td><td>2026-06-10 16:00:01 EDT</td><td class="money">$392 / $384 / $374</td><td>25% / 30% / 45%</td><td class="money">$418 / $432</td><td><span class="tag wait">대기</span></td><td>리더주는 맞지만 아직 1차 밴드 위입니다. 392달러 확인 전 추격은 금지입니다.</td></tr>
+        <tr class="watch-row"><td class="center">2</td><td><b>TSM</b></td><td class="money">$408.75 / AH $407.09</td><td>2026-06-10 16:00:04 EDT</td><td class="money">$404 / $394 / $382</td><td>20% / 30% / 50%</td><td class="money">$428 / $444</td><td><span class="tag wait">대기</span></td><td>1차 밴드와 거리가 크지 않지만 반도체 전반 약세가 남아 있어 오늘은 관찰 우선입니다.</td></tr>
+        <tr class="watch-row"><td class="center">3</td><td><b>NVDA</b></td><td class="money">$200.42 / AH $199.18</td><td>2026-06-10 16:00:00 EDT</td><td class="money">$196 / $188 / $180</td><td>20% / 30% / 50%</td><td class="money">$216 / $228</td><td><span class="tag wait">대기</span></td><td>AI 리더이지만 200달러선 방어 확인이 먼저입니다. 196달러 이하에서만 1차 검토가 가능합니다.</td></tr>
+        <tr><td class="center">4</td><td><b>META</b></td><td class="money">$570.98 / AH $568.11</td><td>2026-06-10 16:00:01 EDT</td><td class="money">$564 / $552 / $540</td><td>20% / 35% / 45%</td><td class="money">$598 / $620</td><td><span class="tag wait">보조 대기</span></td><td>현금창출은 좋지만 고점 밸류 부담이 남았습니다. 메인 후보보다 보조 감시가 맞습니다.</td></tr>
+        <tr><td class="center">5</td><td><b>ORCL</b></td><td class="money">$201.26 / AH $180.89</td><td>2026-06-10 16:00:54 EDT</td><td class="money">$188 / $176 / $168</td><td>15% / 25% / 60%</td><td class="money">$214 / $228</td><td><span class="tag wait">이벤트 대기</span></td><td>실적은 좋았지만 시간외 -10.12% 재평가가 나왔습니다. 오늘은 가격 안정 확인 전 체결 금지입니다.</td></tr>
+        <tr class="danger-row"><td class="center">6</td><td><b>AVGO</b></td><td class="money">$372.10 / AH $367.70</td><td>2026-06-10 16:00:01 EDT</td><td class="money">$364 / $350 / $336</td><td>15% / 35% / 50%</td><td class="money">$392 / $410</td><td><span class="tag stop">제외</span></td><td>실적 후 재평가와 반도체 약세가 겹쳤습니다. 계획은 유지하되 오늘 실행은 제외입니다.</td></tr>
+        <tr class="danger-row"><td class="center">7</td><td><b>PLTR</b></td><td class="money">$130.21 / AH $128.80</td><td>2026-06-10 16:00:01 EDT</td><td class="money">$128 / $122 / $116</td><td>15% / 35% / 50%</td><td class="money">$142 / $152</td><td><span class="tag stop">제외</span></td><td>1차 밴드와 가깝지만 고밸류 성장주라 금리 4.53 환경에서는 우선순위가 낮습니다.</td></tr>
+        <tr class="danger-row"><td class="center">8</td><td><b>MU</b></td><td class="money">$891.88 / AH $877.00</td><td>2026-06-10 16:00:01 EDT</td><td class="money">$872 / $840 / $804</td><td>15% / 35% / 50%</td><td class="money">$930 / $980</td><td><span class="tag stop">제외</span></td><td>메모리 업황 기대는 남지만 하루 낙폭과 변동성이 커서 오늘 체결 대상은 아닙니다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>4. 종목별 4대 전략 만족/불만족/보류 근거</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>종목</th><th>컴포트존 진입</th><th>눌림목 분할매수</th><th>시장 모드 적합</th><th>7대 경보 방어</th><th>4렌즈 근거</th></tr>
+        <tr><td><b>MSFT</b></td><td><span class="tag wait">보류</span><br>397.36, 확인 2026-06-10 16:00 EDT. 1차 392 위라 아직 비쌉니다.</td><td><span class="tag ok">만족</span><br>392-384-374와 25/30/45 구조가 방어형 리더주에 적합합니다.</td><td><span class="tag ok">만족</span><br>방어 우선 장세에서 현금창출 리더로 가장 무난합니다.</td><td><span class="tag ok">만족</span><br>반도체보다 금리 충격 방어력이 상대적으로 낫습니다.</td><td>VCP 보류, Weinstein Stage 2 유지, CANSLIM 양호, M2 중립 이상.</td></tr>
+        <tr><td><b>TSM</b></td><td><span class="tag wait">보류</span><br>408.75, 확인 2026-06-10 16:00 EDT. 1차 404 위입니다.</td><td><span class="tag ok">만족</span><br>404-394-382와 20/30/50이 변동성 대응에 적절합니다.</td><td><span class="tag ok">만족</span><br>핵심 공급망 리더라 후보 유지가 맞습니다.</td><td><span class="tag wait">보류</span><br>반도체 섹터 전반 약세가 커서 1차 체결 전엔 보수적입니다.</td><td>VCP 재정비 필요, Weinstein Stage 2 유지, CANSLIM 업종 리더, M2 중립.</td></tr>
+        <tr><td><b>NVDA</b></td><td><span class="tag wait">보류</span><br>200.42, 확인 2026-06-10 16:00 EDT. 1차 196 아래가 더 안전합니다.</td><td><span class="tag ok">만족</span><br>196-188-180과 20/30/50이 리더주 관리에 맞습니다.</td><td><span class="tag ok">만족</span><br>시장 반등 시 제일 먼저 반응할 확률이 높습니다.</td><td><span class="tag wait">보류</span><br>금리와 반도체 변동성에 동시에 민감합니다.</td><td>VCP 보류, Weinstein Stage 2 유지, CANSLIM 리더주 유지, M2 순풍이나 단기 역풍 공존.</td></tr>
+        <tr><td><b>META</b></td><td><span class="tag wait">보류</span><br>570.98, 확인 2026-06-10 16:00 EDT. 1차 564까지 기다리는 편이 낫습니다.</td><td><span class="tag ok">만족</span><br>564-552-540 구조는 하단 방어용으로 무난합니다.</td><td><span class="tag ok">만족</span><br>현금창출과 AI 투자 여력이 동시에 있습니다.</td><td><span class="tag wait">보류</span><br>고점 밸류 부담이 완전히 해소되진 않았습니다.</td><td>VCP 보류, Weinstein Stage 2 유지, CANSLIM 양호, M2 중립 이상.</td></tr>
+        <tr><td><b>ORCL</b></td><td><span class="tag stop">불만족</span><br>시간외 180.89, 확인 2026-06-10 16:00:54 EDT. 가격 재평가가 끝나지 않았습니다.</td><td><span class="tag ok">만족</span><br>188-176-168과 15/25/60이 이벤트 대응형 분할에 맞습니다.</td><td><span class="tag wait">보류</span><br>AI 스토리는 좋지만 오늘은 이벤트 소화가 우선입니다.</td><td><span class="tag stop">불만족</span><br>실적 후 -10.12%는 경보 항목에 해당합니다.</td><td>VCP 훼손, Weinstein Stage 2 재점검, CANSLIM 실적은 양호, M2보다 이벤트 변수가 우세.</td></tr>
+        <tr><td><b>AVGO</b></td><td><span class="tag stop">불만족</span><br>372.10, 확인 2026-06-10 16:00 EDT. 오늘은 실적 후 재평가 구간입니다.</td><td><span class="tag wait">보류</span><br>계획은 유효하지만 오늘 체결보다 구조 안정이 먼저입니다.</td><td><span class="tag wait">보류</span><br>중장기 AI 수혜는 유지되지만 단기 모드와 충돌합니다.</td><td><span class="tag stop">불만족</span><br>반도체 약세와 금리 부담을 동시에 받습니다.</td><td>VCP 훼손, Weinstein Stage 2 재점검, CANSLIM 스토리 유효, M2보다 금리 역풍 우세.</td></tr>
+        <tr><td><b>PLTR</b></td><td><span class="tag stop">불만족</span><br>130.21, 확인 2026-06-10 16:00 EDT. 1차 128 위이고 밸류 부담이 큽니다.</td><td><span class="tag ok">만족</span><br>128-122-116 계획 자체는 명확합니다.</td><td><span class="tag wait">보류</span><br>좋은 회사지만 오늘 장세에선 우선순위가 낮습니다.</td><td><span class="tag stop">불만족</span><br>고밸류 성장주는 10년물 4.53에 취약합니다.</td><td>VCP 미완성, Weinstein Stage 2 고변동성, CANSLIM 스토리 강함, M2 순풍보다 금리 역풍이 큼.</td></tr>
+        <tr><td><b>MU</b></td><td><span class="tag stop">불만족</span><br>891.88, 확인 2026-06-10 16:00 EDT. 1차 872 위이고 낙폭이 큽니다.</td><td><span class="tag ok">만족</span><br>872-840-804와 15/35/50 구조는 급락 대응용입니다.</td><td><span class="tag wait">보류</span><br>업황 기대는 남지만 오늘 시장 모드엔 과합니다.</td><td><span class="tag stop">불만족</span><br>반도체 낙폭, 금리, 변동성이 동시에 부담입니다.</td><td>VCP 훼손, Weinstein Stage 2 흔들림, CANSLIM 업황 기대는 남음, M2보다 섹터 역풍이 큼.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>5. 1차·2차·3차 눌림목 진입가와 비중</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>종목</th><th>1차 / 2차 / 3차 진입가</th><th>비중</th><th>실행 메모</th></tr>
+        <tr><td><b>MSFT</b></td><td class="money">$392 / $384 / $374</td><td>25% / 30% / 45%</td><td>오늘 14:00 기준 1차 확인 전에는 대기만 합니다.</td></tr>
+        <tr><td><b>TSM</b></td><td class="money">$404 / $394 / $382</td><td>20% / 30% / 50%</td><td>반도체는 1차도 소액 확인용만 허용합니다.</td></tr>
+        <tr><td><b>NVDA</b></td><td class="money">$196 / $188 / $180</td><td>20% / 30% / 50%</td><td>200달러선 방어 실패 시 1차까지 기다리는 전략이 맞습니다.</td></tr>
+        <tr><td><b>META</b></td><td class="money">$564 / $552 / $540</td><td>20% / 35% / 45%</td><td>메인보다 보조 후보라 2차 이후 비중을 더 크게 둡니다.</td></tr>
+        <tr><td><b>ORCL</b></td><td class="money">$188 / $176 / $168</td><td>15% / 25% / 60%</td><td>실적 후 재평가가 끝나기 전에는 1차도 유보가 기본입니다.</td></tr>
+        <tr><td><b>AVGO</b></td><td class="money">$364 / $350 / $336</td><td>15% / 35% / 50%</td><td>오늘은 계획만 유지하고 실행은 금지합니다.</td></tr>
+        <tr><td><b>PLTR</b></td><td class="money">$128 / $122 / $116</td><td>15% / 35% / 50%</td><td>성장 프리미엄이 커서 1차 비중을 최소로 둡니다.</td></tr>
+        <tr><td><b>MU</b></td><td class="money">$872 / $840 / $804</td><td>15% / 35% / 50%</td><td>급락 대응형이라 3차 비중을 크게 둡니다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>6. 목표주가/목표 도달 조건/예상 체크일</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>종목</th><th>1차 목표 / 2차 목표</th><th>목표 도달 조건</th><th>예상 체크일</th></tr>
+        <tr><td><b>MSFT</b></td><td class="money">$418 / $432</td><td>$392 지지 확인, QQQ 693 회복, DGS10 4.50 이하 안정</td><td>2026-06-12 / 2026-06-18</td></tr>
+        <tr><td><b>TSM</b></td><td class="money">$428 / $444</td><td>$404 지지, 반도체 매도 압력 완화, 미국장 초반 약세 축소</td><td>2026-06-12 / 2026-06-19</td></tr>
+        <tr><td><b>NVDA</b></td><td class="money">$216 / $228</td><td>$196 지지, AI 리더십 유지, 필라델피아 반도체지수 안정</td><td>2026-06-12 / 2026-06-19</td></tr>
+        <tr><td><b>META</b></td><td class="money">$598 / $620</td><td>$564 방어, 광고/AI 비용 우려 완화</td><td>2026-06-13 / 2026-06-20</td></tr>
+        <tr><td><b>ORCL</b></td><td class="money">$214 / $228</td><td>실적 후 시간외 급락 안정, $188 지지 확인</td><td>2026-06-12 / 2026-06-23</td></tr>
+        <tr><td><b>AVGO</b></td><td class="money">$392 / $410</td><td>실적 후 재평가 종료, $364 회복</td><td>2026-06-13 / 2026-06-24</td></tr>
+        <tr><td><b>PLTR</b></td><td class="money">$142 / $152</td><td>$128 지지와 금리 안정 동반</td><td>2026-06-13 / 2026-06-24</td></tr>
+        <tr><td><b>MU</b></td><td class="money">$930 / $980</td><td>$872 지지와 메모리 낙폭 축소</td><td>2026-06-13 / 2026-06-25</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>7. 지금 매수·대기·제외 판정</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>종목</th><th>최종 판정</th><th>대표님 실행 메모</th></tr>
+        <tr><td><b>MSFT</b></td><td><span class="tag wait">대기</span></td><td>1차 392달러 확인 전에는 좋은 종목이어도 기다리는 편이 맞습니다.</td></tr>
+        <tr><td><b>TSM</b></td><td><span class="tag wait">대기</span></td><td>1차와 근접하지만 반도체 변동성이 큰 날이라 관찰이 우선입니다.</td></tr>
+        <tr><td><b>NVDA</b></td><td><span class="tag wait">대기</span></td><td>리더주지만 오늘은 숫자가 먼저 와야 합니다.</td></tr>
+        <tr><td><b>META</b></td><td><span class="tag wait">대기</span></td><td>메인 후보보다 한 단계 뒤에서 보는 보조 감시가 맞습니다.</td></tr>
+        <tr><td><b>ORCL</b></td><td><span class="tag wait">대기</span></td><td>이벤트 해석이 끝나기 전에는 체결 금지입니다.</td></tr>
+        <tr><td><b>AVGO</b></td><td><span class="tag stop">제외</span></td><td>실적 후 재평가가 아직 끝나지 않았습니다.</td></tr>
+        <tr><td><b>PLTR</b></td><td><span class="tag stop">제외</span></td><td>1차와 가깝지만 오늘 금리 구간에선 우선순위가 낮습니다.</td></tr>
+        <tr><td><b>MU</b></td><td><span class="tag stop">제외</span></td><td>낙폭과 변동성이 커서 오늘 실행 대상이 아닙니다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>8. 손절·무효화 조건</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>종목</th><th>손절·무효화 조건</th><th>설명</th></tr>
+        <tr><td><b>MSFT</b></td><td class="money">$374 종가 이탈</td><td>방어형 리더주 가정이 깨집니다.</td></tr>
+        <tr><td><b>TSM</b></td><td class="money">$382 종가 이탈</td><td>반도체 전반 약세가 구조 훼손으로 바뀐 것으로 봅니다.</td></tr>
+        <tr><td><b>NVDA</b></td><td class="money">$180 종가 이탈</td><td>AI 리더 조정이 아니라 추세 훼손 구간으로 해석합니다.</td></tr>
+        <tr><td><b>META</b></td><td class="money">$540 종가 이탈</td><td>프리미엄 약화와 수급 악화가 동반된 것으로 봅니다.</td></tr>
+        <tr><td><b>ORCL</b></td><td class="money">$168 종가 이탈</td><td>실적 후 재평가가 단순 흔들림이 아니라 구조 하향으로 바뀝니다.</td></tr>
+        <tr><td><b>AVGO</b></td><td class="money">$336 종가 이탈</td><td>실적 후 재평가가 장기 추세 훼손으로 이어진 것으로 봅니다.</td></tr>
+        <tr><td><b>PLTR</b></td><td class="money">$116 종가 이탈</td><td>성장 프리미엄 회복 가정이 무효화됩니다.</td></tr>
+        <tr><td><b>MU</b></td><td class="money">$804 종가 이탈</td><td>업황 기대보다 변동성 악화가 더 강한 구간입니다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>9. 최종 요약</h2>
+    <ul>
+      <li>오늘 14:00 시장 모드는 <b>방어 우선 / No Chase</b>입니다.</li>
+      <li>추천 대상은 8종목을 유지하되 실제 실행 관리 대상은 <b>MSFT, TSM, NVDA, META, ORCL</b> 5종목입니다.</li>
+      <li>오늘 즉시 매수 종목은 없습니다. AVGO, PLTR, MU는 14:00 기준 제외가 맞습니다.</li>
+      <li>실행의 핵심은 종목 발굴이 아니라 <b>1차 밴드 숫자를 지키는 규율</b>입니다.</li>
+      <li>대표님 기준 최종 결론은 <b>좋은 종목을 더 싸게 받을 기회를 기다리는 쪽</b>입니다.</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>10. 일반적이지 않은 CODEX 최종 인사이트</h2>
+    <p>오늘 장의 함정은 많은 종목이 이미 내려왔기 때문에 싸 보인다는 착시입니다. 그러나 지금은 <b>가격이 내려온 것</b>과 <b>가격이 멈춘 것</b>을 구분해야 합니다. QQQ 693.69, 미 10년물 4.53, USD/KRW 1,527.40, ORCL 시간외 -10.12%라는 숫자는 아직 시장이 멈췄다고 말해주지 않습니다. 이 구간의 알파는 새로운 종목을 더 찾는 데서 나오지 않고, <b>1차 체결을 일부러 늦출 수 있는 인내</b>에서 나옵니다. 오늘 14:00 보고의 승부는 매수 버튼을 빨리 누르는 데 있지 않고, 2026-06-11 미국장 초반에 밴드가 실제로 지지를 만드는지 끝까지 확인하는 데 있습니다.</p>
+  </section>
+
+  <footer>Sources checked: same-day internal artifacts CODEX_알림_오전종합모니터_260611_9.35AM.html, CODEX_알림_낮진입전략_260611_12.30PM.html, CODEX_알림_오후1차모니터_260611_1.32PM.html; Google Finance QQQ/MSFT/NVDA/TSM/META/ORCL/AVGO/PLTR/MU/USD-KRW; FRED DGS10, DEXKOUS, M2SL; BLS Employment Situation for May 2026; AP June 10, 2026 market close summary. 최종 생성: 2026-06-11 14:02 KST</footer>
+</div>
+</body>
+</html>
