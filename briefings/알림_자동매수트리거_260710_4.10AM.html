@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 자동매수 트리거 도달 알림</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 16px;
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Malgun Gothic", sans-serif;
+  }
+  .container { max-width: 640px; margin: 0 auto; }
+  h1 {
+    font-size: 1.25rem;
+    color: #ff6b6b;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+  .ticker {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #58a6ff;
+    margin-bottom: 8px;
+  }
+  table.detail {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  table.detail td {
+    padding: 6px 4px;
+    border-bottom: 1px solid #21262d;
+  }
+  table.detail td.label {
+    color: #8b949e;
+    width: 40%;
+  }
+  table.detail td.value {
+    text-align: right;
+    font-weight: 600;
+  }
+  .price-now { color: #f0f6fc; }
+  .price-trigger { color: #ffa657; }
+  .price-stop { color: #ff7b72; }
+  .price-target { color: #3fb950; }
+  .warn-box {
+    background: #2d2200;
+    border: 1px solid #9e6a03;
+    color: #ffcb60;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    margin-top: 8px;
+  }
+  .footer {
+    color: #6e7681;
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 24px;
+  }
+  .none-note {
+    color: #8b949e;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🚨 자동매수 트리거 도달 [2026-07-10 04:10]</h1>
+  <div class="timestamp">실시간 웹서치 기준 · 5개 종목 트리거 도달</div>
+
+  <div class="card">
+    <div class="ticker">AVGO — Broadcom</div>
+    <table class="detail">
+      <tr><td class="label">현재가</td><td class="value price-now">$404.10</td></tr>
+      <tr><td class="label">트리거가</td><td class="value price-trigger">$420 이하</td></tr>
+      <tr><td class="label">손절</td><td class="value price-stop">$390</td></tr>
+      <tr><td class="label">목표</td><td class="value price-target">$480</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="ticker">MSFT — Microsoft</div>
+    <table class="detail">
+      <tr><td class="label">현재가</td><td class="value price-now">$380.76</td></tr>
+      <tr><td class="label">트리거가</td><td class="value price-trigger">$410 이하</td></tr>
+      <tr><td class="label">손절</td><td class="value price-stop">$360</td></tr>
+      <tr><td class="label">목표</td><td class="value price-target">$500</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="ticker">GOOGL — Alphabet</div>
+    <table class="detail">
+      <tr><td class="label">현재가</td><td class="value price-now">$366.46</td></tr>
+      <tr><td class="label">트리거가</td><td class="value price-trigger">$385 이하</td></tr>
+      <tr><td class="label">손절</td><td class="value price-stop">$355</td></tr>
+      <tr><td class="label">목표</td><td class="value price-target">$450</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="ticker">AMZN — Amazon</div>
+    <table class="detail">
+      <tr><td class="label">현재가</td><td class="value price-now">$242.50</td></tr>
+      <tr><td class="label">트리거가</td><td class="value price-trigger">$255 이하</td></tr>
+      <tr><td class="label">손절</td><td class="value price-stop">$230</td></tr>
+      <tr><td class="label">목표</td><td class="value price-target">$320</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="ticker">ORCL — Oracle</div>
+    <table class="detail">
+      <tr><td class="label">현재가</td><td class="value price-now">$144.04</td></tr>
+      <tr><td class="label">트리거가</td><td class="value price-trigger">$178 이하</td></tr>
+      <tr><td class="label">손절</td><td class="value price-stop">$162</td></tr>
+      <tr><td class="label">목표</td><td class="value price-target">$225</td></tr>
+    </table>
+    <div class="warn-box">⚠️ 현재가가 손절가($162)도 이미 하회한 상태입니다. 트리거만 기준으로 도달 표시했으나, 이미 큰 폭 조정이 진행 중이니 매수 전 재확인 권장.</div>
+  </div>
+
+  <p class="none-note">⚠️ 2% 이내 근접 종목: 없음 (INTC, TSM, MRVL, PLTR, ASTS는 모두 트리거가 대비 7% 이상 위에서 거래 중)</p>
+
+  <div class="footer">ETHAN 자동매수 모니터링 · 실시간 웹서치 기반 (stockanalysis.com 등)</div>
+</div>
+</body>
+</html>
