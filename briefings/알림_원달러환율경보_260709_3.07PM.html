@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>원/달러 환율 경보</title>
+<style>
+  * { box-sizing: border-box; margin:0; padding:0; }
+  body {
+    background:#0d1117;
+    color:#e6edf3;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Malgun Gothic',sans-serif;
+    padding:16px;
+    max-width:480px;
+    margin:0 auto;
+    line-height:1.6;
+  }
+  .badge {
+    display:inline-block;
+    background:#f85149;
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:999px;
+    margin-bottom:12px;
+  }
+  h1 { font-size:20px; margin-bottom:4px; }
+  .timestamp { color:#8b949e; font-size:13px; margin-bottom:20px; }
+  .card {
+    background:#161b22;
+    border:1px solid #30363d;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:14px;
+  }
+  .rate {
+    font-size:36px;
+    font-weight:800;
+    color:#f85149;
+  }
+  .rate small { font-size:16px; color:#8b949e; font-weight:500; }
+  .change {
+    font-size:14px;
+    color:#f0883e;
+    margin-top:4px;
+  }
+  .section-title {
+    font-size:14px;
+    font-weight:700;
+    color:#58a6ff;
+    margin-bottom:8px;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+  .row { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #21262d; font-size:14px; }
+  .row:last-child { border-bottom:none; }
+  .row span:first-child { color:#8b949e; }
+  ul { padding-left:18px; font-size:14px; }
+  li { margin-bottom:8px; color:#c9d1d9; }
+  .highlight {
+    background:#3d1f1f;
+    border-left:3px solid #f85149;
+    padding:10px 12px;
+    border-radius:6px;
+    font-size:14px;
+    margin-top:10px;
+  }
+  .footer { color:#6e7681; font-size:11px; text-align:center; margin-top:20px; }
+</style>
+</head>
+<body>
+
+<span class="badge">⚠ 환율 경보</span>
+<h1>USD/KRW 1,500원 상회</h1>
+<div class="timestamp">2026년 7월 9일 15:07 기준 (자동 모니터링)</div>
+
+<div class="card">
+  <div class="rate">₩1,505 <small>/ USD</small></div>
+  <div class="change">전일 대비 약보합 (-0.02%, 약 -0.3원) · 1,500원 선 상회 지속</div>
+</div>
+
+<div class="card">
+  <div class="section-title">상세 지표</div>
+  <div class="row"><span>기준 환율</span><span>약 1,504.9원</span></div>
+  <div class="row"><span>당일 변동폭</span><span>1,491 ~ 1,508원</span></div>
+  <div class="row"><span>52주 변동폭</span><span>1,347 ~ 1,538원</span></div>
+  <div class="row"><span>1,500원 돌파 여부</span><span style="color:#f85149;font-weight:700;">돌파 (상회 중)</span></div>
+  <div class="highlight">
+    검색 소스별로 1,491~1,508원 사이의 편차가 관측됨(실시간 시세 특성). 다만 모든 소스 공통적으로 <b>1,480원 경보 기준 및 1,500원 심리적 저항선을 상회</b>하고 있음을 확인.
+  </div>
+</div>
+
+<div class="card">
+  <div class="section-title">코스피 · 외국인 수급 영향</div>
+  <ul>
+    <li>환율 1,500원대 진입은 외국인 자금 이탈 압력의 핵심 변수로 작용 중. 상반기 코스피에서 외국인은 약 150조원 순매도.</li>
+    <li>환율 1,500원 상회 구간에서 외국인 매도세가 확대되는 패턴이 반복 관측됨 (원화 약세 → 환차손 우려 → 자금 유출).</li>
+    <li>반도체 업황 개선 및 환율 안정 여부가 하반기 외국인 수급 회복의 핵심 변수로 지목됨.</li>
+    <li>단, 최근 외국인 보유 비중은 연초 대비 상승(36.65%→41%대)한 구간도 있어 방향성은 혼재.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="section-title">권고 조치</div>
+  <ul>
+    <li>달러 강세 국면 지속 시 원화 자산 비중 및 환헤지 전략 재점검.</li>
+    <li>수입 비중이 높은 포트폴리오는 환율 상승분 원가 반영 여부 확인.</li>
+    <li>코스피 외국인 수급 이탈 가속 시 변동성 확대 대비 (레버리지/인버스 등 헤지 수단 점검).</li>
+    <li>1,500원 재차 하회 여부 및 한국은행 구두개입 가능성 모니터링 지속.</li>
+  </ul>
+</div>
+
+<div class="footer">자동 환율 모니터링 스케줄 · usdkrw-monitor</div>
+
+</body>
+</html>
