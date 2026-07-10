@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  :root {
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 16px;
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Malgun Gothic", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  h1 {
+    font-size: 1.2rem;
+    margin: 0 0 4px;
+    color: #ff6b6b;
+  }
+  .subtitle {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  th, td {
+    padding: 8px 6px;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+    white-space: nowrap;
+  }
+  th {
+    color: #8b949e;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+  td.ticker {
+    font-weight: 700;
+    color: #58a6ff;
+  }
+  td.price {
+    color: #ffd33d;
+    font-weight: 600;
+  }
+  td.stop {
+    color: #ff7b72;
+  }
+  td.target {
+    color: #3fb950;
+  }
+  .note {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: #f0883e;
+  }
+  .footer {
+    color: #484f58;
+    font-size: 0.72rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+  @media (max-width: 420px) {
+    body { padding: 10px; font-size: 14px; }
+    th, td { padding: 6px 4px; font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="subtitle">2026-07-10 22:06 (KST 기준 조회)</div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>트리거가</th>
+          <th>손절</th>
+          <th>목표</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker">AVGO</td>
+          <td class="price">$401.11</td>
+          <td>$420 이하</td>
+          <td class="stop">$390</td>
+          <td class="target">$480</td>
+        </tr>
+        <tr>
+          <td class="ticker">MSFT</td>
+          <td class="price">$384.36</td>
+          <td>$410 이하</td>
+          <td class="stop">$360</td>
+          <td class="target">$500</td>
+        </tr>
+        <tr>
+          <td class="ticker">GOOGL</td>
+          <td class="price">$358.89</td>
+          <td>$385 이하</td>
+          <td class="stop">$355</td>
+          <td class="target">$450</td>
+        </tr>
+        <tr>
+          <td class="ticker">AMZN</td>
+          <td class="price">$246.92</td>
+          <td>$255 이하</td>
+          <td class="stop">$230</td>
+          <td class="target">$320</td>
+        </tr>
+        <tr>
+          <td class="ticker">ORCL</td>
+          <td class="price">~$145.00</td>
+          <td>$178 이하</td>
+          <td class="stop">$162</td>
+          <td class="target">$225</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note">
+      ⚠️ GOOGL: 현재가($358.89)가 손절가($355)에 근접(1.1% 차이) — 트리거 도달과 동시에 손절선 근처.<br>
+      ⚠️ ORCL: 현재가(~$145)가 이미 손절가($162) 아래 — 트리거/손절 구간을 모두 하회한 상태로 재검토 필요.
+    </div>
+  </div>
+
+  <div class="footer">자동매수 모니터링 · 검색 기준 실시간 시세 (지연 가능)</div>
+</body>
+</html>
