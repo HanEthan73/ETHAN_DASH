@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아침 브리핑 260712</title>
+<style>
+  :root{
+    --bg:#111111; --card:#1a1a1a; --card2:#1e1e1e; --border:#2a2a2a;
+    --gold:#d4af37; --red:#e5484d; --green:#3ecf8e; --text:#eaeaea; --sub:#9a9a9a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Malgun Gothic',sans-serif;
+    max-width:680px; margin:0 auto; padding:16px; line-height:1.5;
+  }
+  h1{font-size:22px; color:var(--gold); margin:0 0 4px 0;}
+  .sub{color:var(--sub); font-size:13px; margin-bottom:20px;}
+  h2{font-size:17px; color:var(--gold); border-left:4px solid var(--gold); padding-left:8px; margin:28px 0 12px 0;}
+  table{width:100%; border-collapse:collapse; font-size:13px; margin-bottom:8px; background:var(--card);}
+  th,td{padding:8px 6px; text-align:center; border-bottom:1px solid var(--border);}
+  th{background:#232323; color:var(--gold); font-weight:600; font-size:12px;}
+  td{color:var(--text);}
+  .pos{color:var(--green);} .neg{color:var(--red);}
+  .warn{color:var(--red); font-weight:bold;}
+  .card{background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px; margin-bottom:12px;}
+  .card h3{margin:0 0 6px 0; font-size:15px; color:#fff;}
+  .card .price{font-size:20px; font-weight:700; color:var(--gold);}
+  .card .meta{font-size:12px; color:var(--sub); margin:4px 0;}
+  .judge{display:inline-block; padding:3px 10px; border-radius:12px; font-size:12px; font-weight:700; margin-top:6px;}
+  .judge.hold{background:rgba(62,207,142,.15); color:var(--green);}
+  .judge.watch{background:rgba(154,154,154,.15); color:#ccc;}
+  .judge.buy{background:rgba(212,175,55,.15); color:var(--gold);}
+  .judge.sell{background:rgba(229,72,77,.15); color:var(--red);}
+  .badge{display:inline-block; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700; background:#2a2a2a; color:var(--sub); margin-right:4px;}
+  .flash{color:var(--gold); font-weight:800;}
+  .bar-wrap{background:#2a2a2a; border-radius:8px; height:14px; overflow:hidden; margin:6px 0;}
+  .bar-fill{background:linear-gradient(90deg,var(--gold),#f5d576); height:100%;}
+  .footer{color:var(--sub); font-size:11px; text-align:center; margin-top:32px; border-top:1px solid var(--border); padding-top:12px;}
+  .note{font-size:12px; color:var(--sub); background:#191919; border-left:3px solid var(--gold); padding:8px 10px; border-radius:4px; margin:8px 0;}
+  .alertbox{background:rgba(229,72,77,.08); border:1px solid rgba(229,72,77,.4); border-radius:8px; padding:10px 12px; font-size:13px; margin-bottom:10px;}
+  a{color:var(--gold);}
+</style>
+</head>
+<body>
+
+<h1>글로벌 주식 아침 브리핑</h1>
+<div class="sub">2026년 7월 12일(일) 07:09 KST 작성 · 기준: 7/10(금) 미국·한국 정규장 마감 데이터 (7/11 토·7/12 일 휴장)</div>
+
+<h2>1. 📅 오늘·이번주 주요 일정</h2>
+<table>
+<tr><th>시간</th><th>국가</th><th>이벤트</th><th>중요도</th></tr>
+<tr><td>7/14(화) 21:30</td><td>미국</td><td>6월 CPI 발표</td><td>★★★</td></tr>
+<tr><td>7/15(수) 12:00</td><td>한국</td><td>5월 통화 및 유동성</td><td>★</td></tr>
+<tr><td>7/15(수) 18:00</td><td>한국</td><td>6월 수출입물가지수</td><td>★★</td></tr>
+<tr><td>7/15(수)경</td><td>미국</td><td>PPI 발표 (CPI·PPI 고변동 구간)</td><td>★★★</td></tr>
+<tr><td>7/16(목)</td><td>대만/미국</td><td>TSMC(TSM) 2분기 실적</td><td>★★★</td></tr>
+<tr><td>7/23(목)</td><td>미국</td><td>Intel(INTC) 2분기 실적</td><td>★★★★</td></tr>
+<tr><td>7/30(목) 03:00</td><td>미국</td><td>FOMC 발표 (7/29 회의)</td><td>★★★★</td></tr>
+</table>
+<div class="note">7/14~15는 CPI·PPI 발표에 빅테크·반도체 실적 시즌이 겹치는 고변동성 구간입니다.</div>
+
+<h2>2. 📊 시장 전반 흐름</h2>
+<table>
+<tr><th>지수</th><th>종가</th><th>등락률</th></tr>
+<tr><td>NASDAQ</td><td>26,281.61</td><td class="pos">+0.29%</td></tr>
+<tr><td>S&P500</td><td>7,575.39</td><td class="pos">+0.42%</td></tr>
+<tr><td>DOW</td><td>52,637.01</td><td class="pos">+0.29% (+149.6p)</td></tr>
+<tr><td>KOSPI</td><td>7,475.94</td><td class="pos">+2.52% (+184.0p)</td></tr>
+<tr><td>KOSDAQ</td><td>837.43</td><td class="pos">+5.47% (+43.4p)</td></tr>
+<tr><td>VIX</td><td>15.03</td><td class="neg">-5.11%</td></tr>
+<tr><td>美 10년물</td><td>4.569%</td><td class="pos">+0.66%</td></tr>
+<tr><td>USD/KRW</td><td>≈1,505.8원</td><td>1,500.2~1,513.2</td></tr>
+</table>
+
+<div class="alertbox">
+<b>⚠️ 선제알림 8대 지표 — 2/8 경고 발동</b><br>
+① VIX≥25 → 15.03 (미충족)<br>
+② S&P500 200일선 이탈 → 미충족(상승세 유지)<br>
+③ 10년물≥4.5% → <span class="warn">4.569% 충족 ⚠️</span><br>
+④ 연준 매파 전환 → 특이신호 없음<br>
+⑤ 지정학 리스크 급등 → 특이신호 없음<br>
+⑥ M2 급감 → 데이터 미확인(모니터링 필요)<br>
+⑦ 나스닥 -5% 연속하락 → 미충족(오히려 상승)<br>
+⑧ USD/KRW≥1450 → <span class="warn">1,505.8원 충족 ⚠️</span><br>
+<b>→ 금리·환율 부담 동반 확인. 신규 매수 시 환헤지·분할매수 고려 권고.</b>
+</div>
+
+<h2>3. 💼 보유 종목 브리핑</h2>
+<table>
+<tr><th>종목</th><th>현재가</th><th>전일대비</th><th>매입가 대비</th><th>한줄판단</th></tr>
+<tr><td>NVDA</td><td>$210.96</td><td class="pos">+4.03%</td><td class="neg">-1.31%</td><td>홀딩</td></tr>
+<tr><td>현대차</td><td>₩457,500</td><td class="pos">+2.69%</td><td>-</td><td>저점매수 검토</td></tr>
+<tr><td>INTC</td><td>$109.84</td><td class="neg">-2.40%</td><td>-</td><td>실적발표 대기 관망</td></tr>
+<tr><td>ASTS</td><td>$73.32</td><td class="neg">-0.76%</td><td class="neg">-22.44%</td><td>홀딩</td></tr>
+<tr><td>MSTX</td><td>$8.63</td><td>-</td><td class="warn">-95.28% ⚠️</td><td>손절 재검토 시급</td></tr>
+</table>
+
+<div class="card">
+<h3>NVDA <span class="badge">7주 @ $213.75</span></h3>
+<div class="price">$210.96 <span class="pos" style="font-size:13px;">+4.03%(7/10)</span></div>
+<div class="meta">RSI(14) 39.67 (중립) · MA5 202.82 / MA20 208.79 / MA50 210.04 / MA200 207.54 — 50일선 부근 저항, 200일선 위 안착</div>
+<div class="meta">중국 당국이 알리바바·바이트댄스·딥시크 등에 H200 조건부 구매 승인 검토(최대 20만개), Kyber NVL144 랙 지연설 공식 부인. 다만 NVDA는 올해 +3.2%로 반도체 랠리 중 상대적 소외.</div>
+<span class="judge hold">Claude 판단: 홀딩 — 매입가 대비 -1.3%로 손익분기 근접, 중국 승인 뉴스 우호적. $201(2차) 근접 시 분할매수</span>
+</div>
+
+<div class="card">
+<h3>현대차 (005380)</h3>
+<div class="price">₩457,500 <span class="pos" style="font-size:13px;">+2.69%</span></div>
+<div class="meta">52주 범위 204,500~783,000원 — 고점 대비 -41.6% 조정 구간</div>
+<div class="meta">2026년 1~5월 그룹 글로벌 전기차 인도량 24.3%↑(30.3만대), EV 점유율 3.3%→3.9%, 유럽 판매 +27.5%, 中제외 아시아 +75%로 펀더멘털 개선 뚜렷.</div>
+<span class="judge buy">Claude 판단: 저점매수 검토 — EV 판매 호조 대비 주가 저평가, 단 자동매수 트리거(1차 66.5만/2차 63.5만/손절 60만)를 모두 하회한 상태로 트리거 레벨 재설정 필요</span>
+</div>
+
+<div class="card">
+<h3>INTC <span class="badge">보유중</span></h3>
+<div class="price">$109.84 <span class="neg" style="font-size:13px;">-2.40%</span></div>
+<div class="meta">18A 공정 수율 지연 이슈로 최근 21% 급락, AMD 데이터센터 매출 첫 역전, Perplexity 추론 인프라로 Nvidia Vera 선택(Intel·AMD 배제)</div>
+<div class="meta">HSBC 목표가 $200 상향 vs 밸류에이션 버블 경고 상존. 7/23 2분기 실적이 18A 수율·외부 파운드리 매출 방향성의 핵심 분기점</div>
+<span class="judge watch">Claude 판단: 관망 — 실적 발표 전까지 방향성 불투명, 자동매수 1차 $104.50까지 -4.9% 남음</span>
+</div>
+
+<div class="card">
+<h3>ASTS <span class="badge">8주 @ $94.56</span></h3>
+<div class="price">$73.32 <span class="neg" style="font-size:13px;">-0.76%</span></div>
+<div class="meta">Vodafone 아일랜드 비상통신 위성 시험 성공(일반 스마트폰 직접통신), BlueBird 8~10호기 궤도 운영, 11~13호기 8월 발사 예정, 생산계획 37호기까지 확장</div>
+<div class="meta">우주섹터 전반 매도세에 동반 하락, 개별 펀더멘털은 오히려 진전</div>
+<span class="judge hold">Claude 판단: 홀딩 — 매입가 대비 -22.4% 손실이나 위성망 실증 진전 지속. 1차 매수가 $67까지 -8.6%, 근접 시 분할매수 고려</span>
+</div>
+
+<div class="card">
+<h3>MSTX <span class="badge">17주 @ $182.73 · 장기보유</span></h3>
+<div class="price">$8.63 <span class="warn" style="font-size:13px;">52주 최저 $6.72 근접</span></div>
+<div class="meta">52주 최고 $497.55(25.7.15) → 현재 $8.63, 매입가 $182.73 대비 <b>-95.3%</b></div>
+<div class="meta">MSTR(2배 일일 추종 레버리지 ETF)의 구조적 변동성 감가(decay) + MSTR 자체 YTD -40.3%가 겹친 결과. MSTR은 최근 비트코인 매각($216M) 및 최대 $1B 자사주 매입 계획으로 저점 대비 +29% 반등했으나, MSTX는 레버리지 감가로 이를 온전히 반영하지 못함</div>
+<span class="judge sell">Claude 판단: 손절 재검토 시급 — 레버리지 일일추종 ETF는 구조적으로 장기보유에 부적합한 상품입니다. "장기보유" 태그와 무관하게 원금 회복 가능성이 사실상 희박하니, 손절 후 MSTR 현물 등으로 교체하는 방안을 대표님께 강력 권고드립니다.</span>
+</div>
+
+<h2>4. 🎯 목표 달성 현황</h2>
+<div class="note">현대차·INTC는 보유 수량이 기재되어 있지 않아 정확한 총 평가액 산출이 불가합니다. 수량이 확인된 NVDA/ASTS/MSTX 3종목만 우선 집계했습니다. 정확한 달성률 산정을 위해 현대차·INTC 보유 수량 확인이 필요합니다.</div>
+<table>
+<tr><th>종목</th><th>평가액(원)</th><th>매입원가(원)</th><th>손익률</th></tr>
+<tr><td>NVDA</td><td>≈2,223,700</td><td>≈2,253,200</td><td class="neg">-1.3%</td></tr>
+<tr><td>ASTS</td><td>≈883,300</td><td>≈1,139,100</td><td class="neg">-22.4%</td></tr>
+<tr><td>MSTX</td><td>≈220,900</td><td>≈4,678,000</td><td class="warn">-95.3%</td></tr>
+<tr><td><b>소계(3종목)</b></td><td><b>≈3,327,900</b></td><td><b>≈8,070,300</b></td><td class="warn"><b>-58.8%</b></td></tr>
+</table>
+<div class="meta">총 투자원금(전체 5종목): 약 20,374,881원 · 최종 목표: 2억원</div>
+<div class="bar-wrap"><div class="bar-fill" style="width:10.2%;"></div></div>
+<div class="meta">원금 기준 목표 대비 약 10.2% (참고용 — 실제 평가액 기준 달성률은 현대차·INTC 수량 확인 후 재계산 필요)</div>
+
+<h2>5. ⚡ 자동매수 임박 알림</h2>
+<table>
+<tr><th>종목</th><th>현재가</th><th>1차</th><th>거리</th><th>2차</th><th>손절</th><th>상태</th></tr>
+<tr><td>INTC</td><td>$109.84</td><td>$104.50</td><td>-4.9%</td><td>$99</td><td>$95</td><td>대기</td></tr>
+<tr><td>NVDA</td><td>$210.96</td><td>$217</td><td>1차 하회</td><td>$201</td><td>$185</td><td>1차 진입중</td></tr>
+<tr><td>현대차</td><td>₩457,500</td><td>₩665,000</td><td>전구간 하회</td><td>₩635,000</td><td>₩600,000</td><td class="warn">레벨 재설정 필요</td></tr>
+<tr><td>ASTS</td><td>$73.32</td><td>$67</td><td>-8.6%</td><td>$57</td><td>$45</td><td>대기</td></tr>
+<tr><td class="flash">⚡ AVGO</td><td>$400.39</td><td>$435</td><td>1·2차 하회</td><td>$420</td><td class="flash">$390</td><td class="flash">⚡ 손절 -2.6% 임박</td></tr>
+</table>
+<div class="alertbox">⚡ <b>AVGO 손절가($390) 3% 이내 근접</b> — 현재가 $400.39는 1·2차 매수 트리거를 이미 하회한 상태이며 손절선까지 -2.6%. 리스크 관리 필요.</div>
+
+<h2>6. 🔥 오늘의 추천 종목</h2>
+<div class="note">데드크로스(MA50&lt;MA200) 종목 및 AMD 제외. C&H·VCP는 전용 차트 스캐너 없이 뉴스·이평선 데이터로 약식 판단한 것으로 참고용입니다.</div>
+<table>
+<tr><th>순위</th><th>종목</th><th>현재가</th><th>골든크로스</th><th>진입가</th><th>손절</th><th>목표</th><th>R/R</th></tr>
+<tr><td>1</td><td>MU</td><td>$982.98</td><td>✅</td><td>$983</td><td>$900</td><td>$1,100</td><td>1.4</td></tr>
+<tr><td>2</td><td>TSM</td><td>$434.11</td><td>✅</td><td>$434</td><td>$410</td><td>$470</td><td>1.5</td></tr>
+<tr><td>3</td><td>GEV</td><td>$1,093.00</td><td>✅</td><td>$1,093</td><td>$1,000</td><td>$1,200</td><td>1.15</td></tr>
+<tr><td>4</td><td>SKHY(SK하이닉스ADR)</td><td>$168.01</td><td>N/A(신규상장)</td><td>$168</td><td>$149</td><td>$200</td><td>1.7</td></tr>
+</table>
+
+<div class="card">
+<h3>① MU (Micron)</h3>
+<div class="meta">VCP ❌(뉴스發 급등, 전형적 수축패턴 아님) · Weinstein 2단계(상승추세) · C&H 미확인</div>
+<div class="meta">MA50($880.21) &gt; MA200($456.27) 골든크로스 확정, MACD 골든크로스. 메모리 가격 급등에 가이던스 상향, 7/9 하루 +4.5%</div>
+<span class="judge buy">Claude 판단: 매수 — AI 메모리 슈퍼사이클 초입, 단 급등 후 눌림목 분할진입 권장</span>
+</div>
+
+<div class="card">
+<h3>② TSM (TSMC)</h3>
+<div class="meta">VCP ❌(뚜렷한 수축패턴 미확인) · Weinstein 2단계 · C&H 미확인</div>
+<div class="meta">단기 이평선이 장기 이평선 상회하는 일반 매수 신호, 7/16 2분기 실적 발표 예정, AI 수요 기반 견조한 상승추세 유지</div>
+<span class="judge buy">Claude 판단: 매수(실적 발표 전 분할진입) — 서프라이즈 시 추가 상승 여력</span>
+</div>
+
+<div class="card">
+<h3>③ GEV (GE Vernova)</h3>
+<div class="meta">VCP ❌(ATH 이후 조정, 눌림목 아님) · Weinstein 2단계 · C&H 미확인</div>
+<div class="meta">MA5~MA200 전구간 매수신호(9매수/3매도), 기술등급 10/10, 단 RSI 66.5로 과매수 근접. 7/6 사상최고가 $1,195.94 기록 후 조정 중, AI 데이터센터 전력수요 테마 지속</div>
+<span class="judge watch">Claude 판단: 관망 후 매수 — 단기 과열 구간, $1,000선 눌림목 진입 권장</span>
+</div>
+
+<div class="card">
+<h3>④ SKHY (SK하이닉스 ADR)</h3>
+<div class="meta">VCP N/A(신규상장 데이터 부족) · Weinstein 1→2단계 전환 추정 · C&H N/A</div>
+<div class="meta">7/10 나스닥 데뷔, 공모가 $149 대비 +13%인 $168.01 마감, 수요 7배 초과 청약, 265억달러 사상 최대 외국기업 미 상장. NVDA 등 AI 반도체 공급망 핵심 파트너</div>
+<span class="judge buy">Claude 판단: 매수(이벤트 드리븐) — AI 메모리 슈퍼사이클 직접 수혜, 신규상장 초기 변동성 유의</span>
+</div>
+
+<h2>7. 💼 채용공고 알림 (전력전자/BMS/EV)</h2>
+<div class="note">이번 주 신규 대기업 정기공채 공고는 확인되지 않았습니다. 국내 주요 대기업 하반기 공채는 통상 9~10월에 집중되는 패턴으로, 7~8월은 자소서·인적성 준비 기간으로 활용 권장됩니다.</div>
+<table>
+<tr><th>기업</th><th>포지션</th><th>구분</th></tr>
+<tr><td>현대모비스</td><td>BMS(배터리관리시스템) 설계</td><td>상시채용</td></tr>
+<tr><td>현대모비스</td><td>BMS SW 설계</td><td>상시채용</td></tr>
+<tr><td>현대모비스</td><td>EV 배터리시스템 설계</td><td>상시채용(인턴 병행)</td></tr>
+<tr><td>현대모비스</td><td>BMS 로직 검증</td><td>상시채용(인턴 병행)</td></tr>
+<tr><td>LG에너지솔루션</td><td>CFO부문 법무 등 경력직</td><td>수시채용 중</td></tr>
+<tr><td>삼성SDI</td><td>소수 직무 진행 중</td><td>수시채용</td></tr>
+</table>
+<div class="meta">SiC/GaN 차세대 전력반도체 이해가 2026년 채용 변별 포인트로 부각되는 추세입니다.</div>
+
+<div class="footer">
+본 브리핑은 웹 검색 기반 자동 생성 자료이며 투자 판단의 참고용입니다. 투자 책임은 본인에게 있습니다.<br>
+생성: Claude (Cowork) · 2026-07-12 07:09 KST
+</div>
+
+</body>
+</html>
