@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 1.3em;
+    color: #ff5252;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    text-align: center;
+    color: #888;
+    font-size: 0.85em;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    font-size: 0.92em;
+  }
+  th {
+    background-color: #2a2a2a;
+    color: #ffb74d;
+  }
+  td.ticker {
+    font-weight: bold;
+    color: #4fc3f7;
+  }
+  td.price {
+    color: #66bb6a;
+  }
+  .note {
+    background-color: #2a1a1a;
+    border-left: 3px solid #ff5252;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    font-size: 0.85em;
+    color: #ffab91;
+    border-radius: 4px;
+  }
+  .footer {
+    text-align: center;
+    color: #666;
+    font-size: 0.75em;
+    margin-top: 24px;
+  }
+  @media (max-width: 480px) {
+    th, td { padding: 8px 4px; font-size: 0.82em; }
+    h1 { font-size: 1.1em; }
+  }
+</style>
+</head>
+<body>
+  <h1>&#128680; 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-07-13 00:04 KST</div>
+
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td class="price">$399.97</td>
+      <td>$420</td>
+      <td>$390</td>
+      <td>$480</td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td>
+      <td class="price">$385.10</td>
+      <td>$410</td>
+      <td>$360</td>
+      <td>$500</td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td>
+      <td class="price">$357.66</td>
+      <td>$385</td>
+      <td>$355</td>
+      <td>$450</td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td class="price">$245.34</td>
+      <td>$255</td>
+      <td>$230</td>
+      <td>$320</td>
+    </tr>
+    <tr>
+      <td class="ticker">ORCL</td>
+      <td class="price">$140.85</td>
+      <td>$178</td>
+      <td>$162</td>
+      <td>$225</td>
+    </tr>
+  </table>
+
+  <div class="note">
+    &#9888;&#65039; ORCL 현재가($140.85)는 손절가($162)보다도 낮습니다. 트리거 진입 시점을 이미 지난 급락 구간으로 보이니, 매수 전 최신 시세와 뉴스(실적/가이던스 등)를 재확인하세요. GOOGL은 검색 소스 특성상 7/9 종가 기준일 수 있습니다.
+  </div>
+
+  <div class="footer">
+    미도달 종목: INTC($109.84), TSM($434.11), MRVL($236.55), PLTR($126.79), ASTS($73.32) — 2% 근접 종목 없음
+  </div>
+</body>
+</html>
