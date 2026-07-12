@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>🚨 자동매수 트리거 도달 알림</title>
+<style>
+  :root {
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 16px;
+    background: #0b0f14;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    line-height: 1.5;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: 20px;
+    margin: 0 0 4px 0;
+    color: #ff6b6b;
+  }
+  .header .timestamp {
+    font-size: 13px;
+    color: #8b949e;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #58a6ff;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    background: #ff6b6b22;
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b55;
+  }
+  .badge.warn {
+    background: #ffcc0022;
+    color: #ffcc00;
+    border: 1px solid #ffcc0055;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th, td {
+    padding: 8px 6px;
+    text-align: center;
+    border-bottom: 1px solid #21262d;
+  }
+  th {
+    color: #8b949e;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  td.ticker {
+    font-weight: 700;
+    color: #e6edf3;
+  }
+  td.price {
+    color: #f0883e;
+    font-weight: 700;
+  }
+  .note {
+    font-size: 12px;
+    color: #f85149;
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: #f8514915;
+    border-radius: 6px;
+    border-left: 3px solid #f85149;
+  }
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #6e7681;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-07-13 04:04 (KST) · 기준: 2026-07-10(금) 종가</div>
+</div>
+
+<div class="card">
+  <div class="card-title">트리거 도달 종목 (5) <span class="badge">🚨 매수 검토</span></div>
+  <table>
+    <tr>
+      <th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th>
+    </tr>
+    <tr>
+      <td class="ticker">AVGO</td><td class="price">$399.97</td><td>$420</td><td>$390</td><td>$480</td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td><td class="price">$385.10</td><td>$410</td><td>$360</td><td>$500</td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td><td class="price">$357.18</td><td>$385</td><td>$355</td><td>$450</td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td><td class="price">$245.34</td><td>$255</td><td>$230</td><td>$320</td>
+    </tr>
+    <tr>
+      <td class="ticker">ORCL</td><td class="price">$140.64</td><td>$178</td><td>$162</td><td>$225</td>
+    </tr>
+  </table>
+  <div class="note">
+    ⚠️ GOOGL: 현재가($357.18)가 손절가($355)에 근접(약 0.6% 차이) — 트리거와 손절 구간이 거의 겹침, 진입 판단 주의.<br>
+    ⚠️ ORCL: 현재가($140.64)가 손절가($162)보다 이미 낮음 — 트리거 시점 기준 재점검 필요.
+  </div>
+</div>
+
+<div class="footer">
+  자동매수 모니터링 · 실시간 웹서치 기반 · 참고용이며 투자 판단은 본인 책임
+</div>
+
+</body>
+</html>
