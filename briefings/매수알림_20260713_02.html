@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  :root {
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 16px;
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Malgun Gothic", sans-serif;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 18px;
+    margin: 0 0 4px 0;
+    color: #ff6b6b;
+  }
+  .subtitle {
+    font-size: 12px;
+    color: #8b949e;
+    margin-bottom: 16px;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th, td {
+    padding: 8px 6px;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+    white-space: nowrap;
+  }
+  th {
+    color: #8b949e;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  td.ticker {
+    font-weight: 700;
+    color: #58a6ff;
+  }
+  td.price {
+    color: #ff7b72;
+    font-weight: 700;
+  }
+  td.stop {
+    color: #f0883e;
+  }
+  td.target {
+    color: #3fb950;
+  }
+  .note {
+    font-size: 11px;
+    color: #8b949e;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  .badge {
+    display: inline-block;
+    background: #da3633;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+  @media (max-width: 480px) {
+    table { font-size: 12px; }
+    th, td { padding: 6px 4px; }
+  }
+</style>
+</head>
+<body>
+  <div class="badge">TRIGGER ALERT</div>
+  <h1>🚨 자동매수 트리거 도달 — 2026-07-13 02:04 KST</h1>
+  <div class="subtitle">기준 가격: 미국 증시 최근 종가 (2026-07-10 기준, 주말 휴장)</div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>트리거가</th>
+          <th>손절</th>
+          <th>목표</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker">AVGO</td>
+          <td class="price">$399.97</td>
+          <td>$420 이하</td>
+          <td class="stop">$390</td>
+          <td class="target">$480</td>
+        </tr>
+        <tr>
+          <td class="ticker">MSFT</td>
+          <td class="price">$385.38</td>
+          <td>$410 이하</td>
+          <td class="stop">$360</td>
+          <td class="target">$500</td>
+        </tr>
+        <tr>
+          <td class="ticker">GOOGL</td>
+          <td class="price">$357.18</td>
+          <td>$385 이하</td>
+          <td class="stop">$355</td>
+          <td class="target">$450</td>
+        </tr>
+        <tr>
+          <td class="ticker">AMZN</td>
+          <td class="price">$245.34</td>
+          <td>$255 이하</td>
+          <td class="stop">$230</td>
+          <td class="target">$320</td>
+        </tr>
+        <tr>
+          <td class="ticker">ORCL</td>
+          <td class="price">$140.64</td>
+          <td>$178 이하</td>
+          <td class="stop">$162</td>
+          <td class="target">$225</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    ※ 2% 이내 근접 종목 없음 (INTC, TSM, MRVL, PLTR, ASTS는 트리거가 대비 3.7%~40% 이격, 미도달)<br>
+    ※ GOOGL은 손절가($355)에 근접(0.6% 위) — 변동성 주의<br>
+    ※ 데이터: 주말 휴장으로 2026-07-10(금) 미국 정규장 종가 기준. 실제 매매 전 실시간 시세 재확인 필요.
+  </div>
+</body>
+</html>
