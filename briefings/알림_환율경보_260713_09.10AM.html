@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>환율 경보 - USD/KRW</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --sub: #8b949e;
+    --red: #f85149;
+    --orange: #ffa657;
+    --green: #3fb950;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
+    padding: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.55;
+  }
+  .header { text-align: center; padding: 20px 0 12px; }
+  .header .badge {
+    display: inline-block;
+    background: rgba(248,81,73,0.15);
+    color: var(--red);
+    border: 1px solid var(--red);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .header h1 { font-size: 20px; margin-top: 10px; font-weight: 700; }
+  .header .time { color: var(--sub); font-size: 12px; margin-top: 4px; }
+
+  .rate-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 16px;
+    margin: 16px 0;
+    text-align: center;
+  }
+  .rate-card .rate {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--red);
+    letter-spacing: -1px;
+  }
+  .rate-card .unit { font-size: 14px; color: var(--sub); margin-top: 2px; }
+  .rate-card .change {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--orange);
+  }
+
+  .breach {
+    background: rgba(255,166,87,0.12);
+    border: 1px solid var(--orange);
+    border-radius: 12px;
+    padding: 14px;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+  .breach strong { color: var(--orange); }
+
+  .section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+    margin: 14px 0;
+  }
+  .section h2 {
+    font-size: 14px;
+    color: var(--sub);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  .section p { font-size: 14px; margin-bottom: 8px; }
+  .section p:last-child { margin-bottom: 0; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 4px; border-bottom: 1px solid var(--border); }
+  th { color: var(--sub); font-weight: 500; }
+
+  ul { padding-left: 18px; font-size: 14px; }
+  li { margin-bottom: 8px; }
+
+  .footer {
+    text-align: center;
+    color: var(--sub);
+    font-size: 11px;
+    padding: 20px 0 8px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <span class="badge">⚠ 환율 경보 발령</span>
+    <h1>USD/KRW 1,480원 초과</h1>
+    <div class="time">2026-07-13 09:08 KST 기준</div>
+  </div>
+
+  <div class="rate-card">
+    <div class="rate">₩1,500</div>
+    <div class="unit">= 1 USD (주요 소스 평균, 1,499~1,501 범위)</div>
+    <div class="change">▲ 전일(7/10 종가 1,500.29) 대비 보합권 유지</div>
+  </div>
+
+  <div class="breach">
+    <strong>🚨 1,500원 심리적 저항선 근접·돌파 국면</strong><br>
+    지난 5월 환율이 2009년 금융위기 이후 처음으로 1,500원을 돌파한 이후, 등락을 거듭하며 여전히 1,500원 안팎의 고환율이 이어지고 있습니다.
+  </div>
+
+  <div class="section">
+    <h2>코스피 외국인 수급 영향</h2>
+    <p>상반기 외국인은 코스피에서 약 150조 원을 순매도했으며, 반도체 수출 호조로 유입된 달러보다 주식 매도 후 환전 수요가 더 커 환율 상승 압력을 키우고 있습니다.</p>
+    <p>글로벌 인플레이션 우려에 따른 국채금리 상승은 외국인 자금 이탈을 가속화할 수 있는 요인으로 지목됩니다. 역송금 수요와 역외 롱플레이 심리도 겹쳐 있습니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>권고 조치</h2>
+    <ul>
+      <li>달러 표시 자산·수입 결제 비중이 큰 경우 환헤지(선물환·통화옵션) 점검</li>
+      <li>해외여행·유학 송금 등 예정된 환전은 분할 실행 고려</li>
+      <li>수입 원자재 비중이 큰 사업이라면 원가 상승분 가격 전가 계획 점검</li>
+      <li>원화 자산 편중 시 외화자산·달러예금 비중 재검토</li>
+      <li>1,500원 상단 흐름 지속 여부, 한국은행·외환당국 개입 여부 모니터링</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    자동 생성 리포트 · 웹서치 기반 · 투자 판단의 참고 자료이며 투자 권유가 아닙니다.
+  </div>
+
+</body>
+</html>
