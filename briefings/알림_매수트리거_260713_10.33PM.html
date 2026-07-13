@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 20px;
+    color: #ff6b6b;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #8b949e;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161b22;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 13px;
+    border-bottom: 1px solid #30363d;
+  }
+  th {
+    background: #21262d;
+    color: #ff6b6b;
+    font-weight: 600;
+  }
+  tr:last-child td { border-bottom: none; }
+  td.ticker { font-weight: 700; color: #58a6ff; }
+  td.price { color: #f0f6fc; font-weight: 600; }
+  td.trigger { color: #ffa657; }
+  td.stop { color: #ff7b72; }
+  td.target { color: #7ee787; }
+  .note {
+    background: #161b22;
+    border-left: 3px solid #ffa657;
+    padding: 10px 12px;
+    font-size: 12.5px;
+    color: #c9d1d9;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  .footer {
+    text-align: center;
+    color: #6e7681;
+    font-size: 11px;
+    margin-top: 24px;
+  }
+  @media (max-width: 480px) {
+    th, td { font-size: 11.5px; padding: 8px 4px; }
+    h1 { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+  <h1>&#128680; 자동매수 트리거 도달 [2026-07-13 22:33 KST]</h1>
+  <div class="subtitle">데이터 기준: 2026-07-10 종가 / 2026-07-13 프리마켓 (실시간 웹서치)</div>
+
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td class="price">$399.97</td>
+      <td class="trigger">$420 이하</td>
+      <td class="stop">$390</td>
+      <td class="target">$480</td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td>
+      <td class="price">$387.31</td>
+      <td class="trigger">$410 이하</td>
+      <td class="stop">$360</td>
+      <td class="target">$500</td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td>
+      <td class="price">$357.18</td>
+      <td class="trigger">$385 이하</td>
+      <td class="stop">$355</td>
+      <td class="target">$450</td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td class="price">$244.75</td>
+      <td class="trigger">$255 이하</td>
+      <td class="stop">$230</td>
+      <td class="target">$320</td>
+    </tr>
+    <tr>
+      <td class="ticker">ORCL</td>
+      <td class="price">$140.14</td>
+      <td class="trigger">$178 이하</td>
+      <td class="stop">$162</td>
+      <td class="target">$225</td>
+    </tr>
+  </table>
+
+  <div class="note">
+    &#9888;&#65039; GOOGL 주의: 현재가($357.18)가 손절가($355)에 근접 &#8212; 손절선까지 여유 약 0.6%밖에 없음. 매수 시 리스크 확인 필요.
+  </div>
+  <div class="note">
+    &#9888;&#65039; ORCL은 트리거가($178) 대비 -21% 수준까지 깊게 하락한 상태. AI 지출 우려, S&amp;P 신용등급 하향 등 펀더멘털 이슈 동반 — 단순 트리거 도달이 아닌 급락 구간이므로 진입 전 뉴스 확인 권장.
+  </div>
+
+  <div class="footer">
+    미도달 종목 (근접 없음): INTC $109.84 / TSM $434.11 / MRVL $235.81 / PLTR $126.79 / ASTS $73.60
+  </div>
+</body>
+</html>
