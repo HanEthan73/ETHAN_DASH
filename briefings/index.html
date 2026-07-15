@@ -653,6 +653,8 @@ function labelFromOfficialName(raw) {
   const official = raw.match(OFFICIAL_NAME);
   if (!official) return null;
   return official[1]
+    .replace(/^CODEX_알림_?/i, 'CODEX ')
+    .replace(/^알림_?/i, '')
     .replace(/브리핑$/, ' 브리핑')
     .replace(/추천$/, ' 추천')
     .replace(/전략$/, ' 전략')
@@ -1545,9 +1547,4 @@ function refreshArchive() {
 }
 
 renderQnaChat();
-loadPublicQna();
-initFirebaseQna();
-loadArchiveData();
-</script>
-</body>
-</html>
+loadPub
