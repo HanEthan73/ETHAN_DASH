@@ -1521,30 +1521,21 @@ function setRefreshBusy(isBusy) {
 
 function loadArchiveData() {
   setRefreshBusy(true);
-  return fetch('https://api.github.com/repos/hanethan73/ethan_dash/contents/briefings?ts=' + Date.now())
-    .then(r => r.ok ? r.json() : Promise.reject(r.status))
-    .then(data => {
-      return fetch('manifest.json?v=' + Date.now())
-        .then(r => r.ok ? r.json() : [])
-        .catch(() => [])
-        .then(manifestRows => {
-          const manifest = Object.fromEntries((manifestRows || []).map(row => [row.name, row]));
-          load(data.map(f => f.name), manifest);
-          setSourceBadge(manifestRows.length ? '보고 시간 기준' : 'GitHub 실시간');
-        });
+  // manifest.json 우선 → 실패 시 GitHub API → 최후 정적 목록
+  return fetch('manifest.json?v=' + Date.now())
+    .then(r => r.ok ? r.json() : Promise.reject('no-manifest'))
+    .then(manifestRows => {
+      const names = manifestRows.map(r => r.name || r).filter(n => n.endsWith('.html'));
+      const manifest = Object.fromEntries(manifestRows.filter(r=>r.name).map(r => [r.name, r]));
+      load(names, manifest);
+      setSourceBadge('최신 목록');
     })
     .catch(() => {
-      load(STATIC);
-      setSourceBadge('정적 목록');
-    })
-    .finally(() => setRefreshBusy(false));
-}
-
-function refreshArchive() {
-  setSourceBadge('새로고침 중');
-  hydrateVisitorCount();
-  loadArchiveData();
-}
-
-renderQnaChat();
-loadPub
+      const timeout = new Promise((_,rej) => setTimeout(()=>rej('timeout'), 8000));
+      return Promise.race([
+        fetch('https://api.github.com/repos/hanethan73/ethan_dash/contents/briefings?ts=' + Date.now())
+          .then(r => r.ok ? r.json() : Promise.reject(r.status)),
+        timeout
+      ])
+      .then(data => {
+        load(data.map(f => f.name), 
