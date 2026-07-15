@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.3rem;
+    color: #ff7b72;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 1rem;
+    color: #58a6ff;
+    margin: 24px 0 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161b22;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.9rem;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+  }
+  th {
+    background: #21262d;
+    color: #8b949e;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+  td.ticker {
+    font-weight: 700;
+    color: #f0f6fc;
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+  .badge {
+    display: inline-block;
+    background: #da3633;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 4px;
+  }
+  @media (max-width: 480px) {
+    body { padding: 12px; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 8px 4px; }
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-07-16 04:04 KST</div>
+
+  <div class="section-title">트리거 도달 종목</div>
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+    
+        <tr>
+          <td class="ticker">AVGO</td>
+          <td>$389.48 <span class="badge">⚠️ 손절가 이하</span></td>
+          <td>$420</td>
+          <td>$390</td>
+          <td>$480</td>
+        </tr>
+        <tr>
+          <td class="ticker">GOOGL</td>
+          <td>$359.51</td>
+          <td>$385</td>
+          <td>$355</td>
+          <td>$450</td>
+        </tr>
+        <tr>
+          <td class="ticker">ORCL</td>
+          <td>$131.42 <span class="badge">⚠️ 손절가 이하</span></td>
+          <td>$178</td>
+          <td>$162</td>
+          <td>$225</td>
+        </tr>
+  </table>
+
+  <div class="section-title">⚠️ 2% 이내 근접 종목</div>
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>차이</th>
+    </tr>
+    
+        <tr>
+          <td class="ticker">INTC</td>
+          <td>$106.41</td>
+          <td>$104.50</td>
+          <td>1.8%</td>
+        </tr>
+        <tr>
+          <td class="ticker">ASTS</td>
+          <td>$68.82</td>
+          <td>$68</td>
+          <td>1.2%</td>
+        </tr>
+  </table>
+</body>
+</html>
