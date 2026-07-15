@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>실적 경보 - TSM 내일 발표</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
+    padding: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  .header {
+    text-align: center;
+    padding: 16px 0 20px;
+    border-bottom: 1px solid #21262d;
+    margin-bottom: 20px;
+  }
+  .header .badge {
+    display: inline-block;
+    background: #f85149;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+  }
+  .header h1 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .header .date {
+    color: #8b949e;
+    font-size: 13px;
+    margin-top: 4px;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 16px;
+  }
+  .ticker-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .ticker {
+    font-size: 22px;
+    font-weight: 800;
+    color: #58a6ff;
+  }
+  .ticker-name {
+    color: #8b949e;
+    font-size: 13px;
+  }
+  .tag {
+    background: #1f6feb33;
+    color: #58a6ff;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .metric {
+    background: #0d1117;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .metric .label {
+    color: #8b949e;
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+  .metric .value {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .section-title {
+    font-size: 13px;
+    color: #8b949e;
+    font-weight: 600;
+    margin: 14px 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .strategy {
+    background: linear-gradient(135deg, #1f6feb22, #21262d);
+    border-left: 3px solid #3fb950;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+  .strategy .rec {
+    color: #3fb950;
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .note {
+    color: #8b949e;
+    font-size: 12px;
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+  .footer {
+    text-align: center;
+    color: #484f58;
+    font-size: 11px;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #21262d;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="badge">실적 경보</div>
+    <h1>내일 실적 발표 종목</h1>
+    <div class="date">2026-07-16 (목) 발표 예정 · 확인 시각 2026-07-15 20:07 KST</div>
+  </div>
+
+  <div class="card">
+    <div class="ticker-row">
+      <div>
+        <span class="ticker">TSM</span>
+        <div class="ticker-name">Taiwan Semiconductor (TSMC)</div>
+      </div>
+      <span class="tag">2026 Q2</span>
+    </div>
+
+    <div class="note" style="margin-bottom:10px;">
+      발표: 2026-07-16(목) 대만 시간 14:00 / 미국 동부 02:00 (한국 15:00 오후)<br>
+      장소: 타이베이 만다린 오리엔탈, 기관투자자 대상 컨퍼런스콜
+    </div>
+
+    <div class="section-title">컨센서스</div>
+    <div class="metrics">
+      <div class="metric">
+        <div class="label">EPS 컨센서스 (ADR)</div>
+        <div class="value">$3.80 ~ $3.83</div>
+      </div>
+      <div class="metric">
+        <div class="label">전년 동기 대비</div>
+        <div class="value" style="color:#3fb950;">+약 55% YoY</div>
+      </div>
+      <div class="metric">
+        <div class="label">매출 컨센서스</div>
+        <div class="value">$40.0B 안팎</div>
+      </div>
+      <div class="metric">
+        <div class="label">회사 가이던스</div>
+        <div class="value">$39.0~40.2B</div>
+      </div>
+    </div>
+    <div class="note">
+      매출총이익률 가이던스: 65.5~67.5%. AI/HPC 수요와 CoWoS(첨단 패키징) 증설 속도가 핵심 관전 포인트.
+    </div>
+
+    <div class="section-title">전략 권고</div>
+    <div class="strategy">
+      <div class="rec">보유 (HOLD)</div>
+      컨센서스 대비 견조한 가이던스와 AI 수요 지속 확인 시 긍정적. 다만 실적 발표 직후 변동성이 크므로 신규 비중 확대는 발표 확인 후 판단 권고. 가이던스 하회 또는 CoWoS 증설 속도 둔화 시그널 시 단기 조정 가능성 유의.
+    </div>
+  </div>
+
+  <div class="footer">
+    본 리포트는 자동 생성된 정보 요약이며 투자 조언이 아닙니다.<br>
+    보유 종목: NVDA · MU · AVGO · TSM · MRVL · PLTR · 현대차<br>
+    (TSM 외 나머지 종목은 내일 실적 발표 없음 — NVDA 8/26, AVGO 9/3, MRVL 8/27, MU 9/29, PLTR 8/3, 현대차 7/23)
+  </div>
+</body>
+</html>
