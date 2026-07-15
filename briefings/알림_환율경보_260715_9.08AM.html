@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>USD/KRW 환율 경보 - 2026.07.15</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
+    padding: 20px 16px 40px;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .badge {
+    display: inline-block;
+    background: #f85149;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #f0f6fc;
+  }
+  .timestamp {
+    font-size: 12px;
+    color: #8b949e;
+    margin-bottom: 20px;
+  }
+  .rate-card {
+    background: linear-gradient(135deg, #161b22, #1c2128);
+    border: 1px solid #f85149;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .rate-label {
+    font-size: 13px;
+    color: #8b949e;
+    margin-bottom: 6px;
+  }
+  .rate-value {
+    font-size: 42px;
+    font-weight: 800;
+    color: #ff7b72;
+    letter-spacing: -1px;
+  }
+  .rate-unit {
+    font-size: 16px;
+    color: #8b949e;
+    margin-left: 4px;
+  }
+  .rate-change {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #f85149;
+  }
+  .rate-change.down { color: #3fb950; }
+  .section {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #58a6ff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section p {
+    font-size: 14px;
+    color: #c9d1d9;
+    margin-bottom: 8px;
+  }
+  .section p:last-child { margin-bottom: 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 4px;
+  }
+  td {
+    padding: 7px 4px;
+    border-bottom: 1px solid #21262d;
+    color: #c9d1d9;
+  }
+  td.label { color: #8b949e; width: 42%; }
+  td.value { text-align: right; font-weight: 600; color: #e6edf3; }
+  .threshold-bar {
+    margin-top: 14px;
+    background: #21262d;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 13px;
+  }
+  .threshold-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .threshold-row:last-child { margin-bottom: 0; }
+  .threshold-row .tag {
+    color: #8b949e;
+  }
+  .threshold-row .val {
+    font-weight: 700;
+  }
+  .val.current { color: #ff7b72; }
+  .val.target { color: #d29922; }
+  .action-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #c9d1d9;
+  }
+  .action-item:last-child { margin-bottom: 0; }
+  .action-num {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background: #1f6feb;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #6e7681;
+    margin-top: 20px;
+  }
+  .source-list {
+    font-size: 11px;
+    color: #6e7681;
+    margin-top: 8px;
+  }
+  .source-list a { color: #58a6ff; text-decoration: none; }
+</style>
+</head>
+<body>
+
+  <span class="badge">⚠ 환율 경보</span>
+  <h1>USD/KRW 원달러 환율 경보</h1>
+  <div class="timestamp">2026년 7월 15일 09:08 KST 자동 발송 · 기준선 1,480원 초과</div>
+
+  <div class="rate-card">
+    <div class="rate-label">현재 환율 (최근 거래 기준)</div>
+    <div class="rate-value">1,493<span class="rate-unit">원</span></div>
+    <div class="rate-change down">▼ 전일 대비 10.4원 하락 (-0.69%)</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📊 환율 현황</div>
+    <table>
+      <tr><td class="label">전일 종가 (7/14)</td><td class="value">1,493.0원</td></tr>
+      <tr><td class="label">전일 대비 변동</td><td class="value">-10.4원</td></tr>
+      <tr><td class="label">7/14 장중 저점</td><td class="value">1,486.3원 (약 2개월 만 최저)</td></tr>
+      <tr><td class="label">최근 변동 범위</td><td class="value">약 1,486원 ~ 1,507원</td></tr>
+      <tr><td class="label">52주 범위</td><td class="value">1,347원 ~ 1,538원</td></tr>
+    </table>
+    <div class="threshold-bar">
+      <div class="threshold-row"><span class="tag">경보 기준선</span><span class="val target">1,480원</span></div>
+      <div class="threshold-row"><span class="tag">현재 수준</span><span class="val current">약 1,493원 (기준선 +13원)</span></div>
+      <div class="threshold-row"><span class="tag">1,500원까지</span><span class="val target">약 -7원</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🎯 1,500원 돌파 여부</div>
+    <p><strong>현재 1,500원선은 아직 돌파하지 않음.</strong> 다만 최근 1주일 사이 1,500원대 재진입과 1,490원대 하락을 반복하며 변동성이 매우 큰 구간에 머물러 있음.</p>
+    <p>SK하이닉스 ADR 상장대금(약 265억 달러) 유입, 수출기업·한화오션 등의 달러 매도 물량이 하락 압력으로 작용 중이나, 중동 지정학적 리스크(이란 관련 군사 긴장 고조)와 국제유가 급등이 안전자산 선호를 자극하며 하락폭을 제한하고 있어 1,500원 재돌파 가능성도 배제할 수 없음.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">💹 코스피 외국인 수급 영향</div>
+    <p>7/14 유가증권시장에서 외국인 투자자는 약 9,500억원 순매수를 기록하며 원화 강세(환율 하락)를 뒷받침함.</p>
+    <p>다만 최근 코스피는 삼성전자·SK하이닉스 기초 레버리지 ETF의 기계적 매도가 촉발한 급락(-6% 안팎)을 겪은 바 있어, 외국인 수급 흐름이 변동성 구간에 있음. 골드만삭스는 이를 반도체 업황 악화가 아닌 유동성발 포지션 청산으로 진단.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">✅ 권고 조치</div>
+    <div class="action-item"><span class="action-num">1</span><span>기준선(1,480원) 상회 지속 중 — 1,500원 재돌파 여부를 실시간 모니터링 필요.</span></div>
+    <div class="action-item"><span class="action-num">2</span><span>수출입 기업은 선물환 매도/매수 타이밍 재점검, 환헤지 비율 조정 검토.</span></div>
+    <div class="action-item"><span class="action-num">3</span><span>중동 지정학 리스크(이란 관련) 확대 시 원화 재약세 가능성 — 안전자산 비중 점검.</span></div>
+    <div class="action-item"><span class="action-num">4</span><span>코스피 외국인 순매수 지속 여부가 환율 하방 압력의 핵심 변수 — 익일 수급 데이터 확인.</span></div>
+  </div>
+
+  <div class="footer">
+    자동 생성 리포트 · USD/KRW 모니터링 스케줄 작업<br>
+    데이터 출처: Investing.com, 서울경제(김혜란의 FX), 웹서치 종합
+    <div class="source-list">
+      <a href="https://www.sedaily.com/article/20067643">서울경제 - 수출업체 달러 공급 기대에 환율 1490원대…2개월 만에 최저</a><br>
+      <a href="https://kr.investing.com/currencies/usd-krw">Investing.com - USD/KRW</a>
+    </div>
+  </div>
+
+</body>
+</html>
