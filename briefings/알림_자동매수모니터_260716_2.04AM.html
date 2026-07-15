@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 도달 알림</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --red: #f85149;
+    --green: #3fb950;
+    --yellow: #d29922;
+    --blue: #58a6ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 16px;
+    line-height: 1.5;
+  }
+  .header {
+    text-align: center;
+    padding: 20px 12px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 1.3rem;
+    margin: 0 0 6px 0;
+    color: var(--red);
+  }
+  .header .timestamp {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  .section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 20px 4px 10px 4px;
+    color: var(--text);
+  }
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .card.triggered {
+    border-left: 4px solid var(--red);
+  }
+  .card.near {
+    border-left: 4px solid var(--yellow);
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .ticker {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .price {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--blue);
+  }
+  .warn {
+    margin-top: 8px;
+    font-size: 0.78rem;
+    color: var(--yellow);
+    background: rgba(210,153,34,0.1);
+    border-radius: 6px;
+    padding: 6px 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 0.85rem;
+    margin-top: 10px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: rgba(255,255,255,0.04);
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
+  tr:last-child td { border-bottom: none; }
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.75rem;
+    margin-top: 24px;
+    padding-bottom: 12px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🚨 자동매수 트리거 도달</h1>
+    <div class="timestamp">2026년 7월 15일 (미국 동부시간 장중) · 생성 2026-07-16 02:04 KST</div>
+  </div>
+
+  <div class="section-title">트리거 도달 종목 (6)</div>
+  <table>
+    <tr>
+      <th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th>
+    </tr>
+    <tr><td>AVGO</td><td>$388.67</td><td>$420 이하</td><td>$390</td><td>$480</td></tr>
+    <tr><td>MSFT</td><td>$394.40</td><td>$410 이하</td><td>$360</td><td>$500</td></tr>
+    <tr><td>INTC</td><td>$101.95</td><td>$104.50 이하</td><td>$95</td><td>$130</td></tr>
+    <tr><td>GOOGL</td><td>$367.20</td><td>$385 이하</td><td>$355</td><td>$450</td></tr>
+    <tr><td>ORCL</td><td>$131.64</td><td>$178 이하</td><td>$162</td><td>$225</td></tr>
+    <tr><td>ASTS</td><td>$67.41</td><td>$68 이하</td><td>$45</td><td>$100</td></tr>
+  </table>
+
+  <div class="card-list" style="margin-top:14px;">
+    <div class="card triggered">
+      <div class="card-top"><span class="ticker">AVGO</span><span class="price">$388.67</span></div>
+      <div class="warn">⚠️ 현재가가 손절가($390)보다 낮음 — 트리거는 도달했으나 이미 손절 라인 아래. 매수 시 즉시 손절 구간 진입 상태.</div>
+    </div>
+    <div class="card triggered">
+      <div class="card-top"><span class="ticker">ORCL</span><span class="price">$131.64</span></div>
+      <div class="warn">⚠️ 현재가가 손절가($162)보다 크게 낮음 — 고점 대비 대폭 하락(연중 급락) 중. 트리거·손절 모두 이미 하회.</div>
+    </div>
+  </div>
+
+  <div class="section-title">⚠️ 2% 이내 근접 종목 (1)</div>
+  <table>
+    <tr>
+      <th>종목</th><th>현재가</th><th>트리거가</th><th>차이</th>
+    </tr>
+    <tr><td>AMZN</td><td>$255.83</td><td>$255 이하</td><td>+0.33%</td></tr>
+  </table>
+
+  <div class="footer">
+    자동매수 모니터링 · 실시간 웹서치 기반 · AVGO/ORCL은 가격 급락으로 트리거-손절 구간이 좁혀졌으니 매수 전 재확인 권장
+  </div>
+
+</body>
+</html>
