@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>USD/KRW 환율 경보</title>
+<style>
+  :root {
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 20px 16px 40px;
+    background: #0b0e14;
+    color: #e6e9ef;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    line-height: 1.6;
+  }
+  .container { max-width: 480px; margin: 0 auto; }
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .header .badge {
+    display: inline-block;
+    background: #3a1414;
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b;
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 20px;
+    margin: 6px 0 2px;
+    color: #ffffff;
+  }
+  .header .timestamp {
+    font-size: 12px;
+    color: #8a94a6;
+  }
+  .rate-card {
+    background: linear-gradient(145deg, #171c26, #12151d);
+    border: 1px solid #262c3a;
+    border-radius: 16px;
+    padding: 22px 18px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .rate-card .label {
+    font-size: 13px;
+    color: #8a94a6;
+    margin-bottom: 6px;
+  }
+  .rate-card .value {
+    font-size: 40px;
+    font-weight: 800;
+    color: #ff6b6b;
+    letter-spacing: -1px;
+  }
+  .rate-card .unit {
+    font-size: 16px;
+    color: #c7cdd9;
+    margin-left: 4px;
+  }
+  .rate-card .change {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #6fd88a;
+    font-weight: 600;
+  }
+  .section {
+    background: #11151d;
+    border: 1px solid #232838;
+    border-radius: 14px;
+    padding: 16px 16px;
+    margin-bottom: 14px;
+  }
+  .section h2 {
+    font-size: 14px;
+    color: #9fb0ff;
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section p, .section li {
+    font-size: 14px;
+    color: #c7cdd9;
+    margin: 4px 0;
+  }
+  .section ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+  .threshold-box {
+    background: #201509;
+    border: 1px solid #b8860b;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: #f0c264;
+  }
+  .action-box {
+    background: #0d1f14;
+    border: 1px solid #1f6b3a;
+    border-radius: 14px;
+    padding: 16px;
+  }
+  .action-box h2 {
+    color: #6fd88a;
+  }
+  .action-box ol {
+    margin: 0;
+    padding-left: 18px;
+  }
+  .action-box li {
+    font-size: 14px;
+    color: #d3e8d9;
+    margin: 6px 0;
+  }
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #5a6376;
+    margin-top: 24px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  td {
+    padding: 6px 4px;
+    border-bottom: 1px solid #232838;
+    color: #c7cdd9;
+  }
+  td.k { color: #8a94a6; width: 45%; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <span class="badge">⚠ 환율 경보</span>
+    <h1>USD/KRW 환율 알림</h1>
+    <div class="timestamp">2026-07-15 15:06 (KST) 기준</div>
+  </div>
+
+  <div class="rate-card">
+    <div class="label">현재 환율 (USD/KRW)</div>
+    <div class="value">1,489.57<span class="unit">원</span></div>
+    <div class="change">▼ 7.99원 (-0.53%) 전일 대비</div>
+  </div>
+
+  <div class="threshold-box">
+    경보 기준선(1,480원) 상회 중 · 1,500원 심리적 저항선 근접<br>
+    금일 변동 범위: 1,486.19 ~ 1,499.91원
+  </div>
+
+  <div class="section">
+    <h2>📊 주요 지표</h2>
+    <table>
+      <tr><td class="k">현재가</td><td>1,489.57원</td></tr>
+      <tr><td class="k">전일 종가</td><td>1,497.56원</td></tr>
+      <tr><td class="k">일중 최고</td><td>1,499.91원</td></tr>
+      <tr><td class="k">일중 최저</td><td>1,486.19원</td></tr>
+      <tr><td class="k">1,500원 돌파 여부</td><td>미돌파 (근접)</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🌏 코스피 외국인 수급 영향</h2>
+    <p>원화 약세가 1,480원대 후반에서 지속되며 환차손 우려로 외국인 투자자의 국내 증시 매도 압력이 이어질 가능성이 있습니다. 통상 원/달러 환율이 1,480~1,500원 구간에 머무르면 외국인 수급은 관망 내지 순매도 경향을 보이는 경우가 많았으며, 1,500원 돌파 시 매도세가 강화될 수 있습니다. 다만 오늘은 전일 대비 소폭 하락(원화 강세 전환)하고 있어 추가 급등 여부를 지켜볼 필요가 있습니다.</p>
+  </div>
+
+  <div class="action-box">
+    <h2>✅ 권고 조치</h2>
+    <ol>
+      <li>1,500원 돌파 여부 실시간 모니터링 지속</li>
+      <li>달러 자산·수출주 비중 점검, 환헤지 필요성 검토</li>
+      <li>외국인 수급 동향(코스피 순매도 여부) 익일 개장 후 확인</li>
+      <li>추가 급등 시 추가 경보 예정 — 별도 대응 불필요, 관찰 유지</li>
+    </ol>
+  </div>
+
+  <div class="footer">
+    자동 생성 리포트 · USD/KRW 모니터링 시스템<br>
+    데이터 출처: Yahoo Finance / 시장 환율 종합
+  </div>
+
+</div>
+</body>
+</html>
