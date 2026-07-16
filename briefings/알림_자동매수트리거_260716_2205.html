@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 도달 알림</title>
+<style>
+  body { background-color:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;padding:16px; }
+  h1 { font-size:1.2rem;color:#ff6b6b;text-align:center;margin-bottom:4px; }
+  .timestamp { text-align:center;color:#8b949e;font-size:0.85rem;margin-bottom:20px; }
+  table { width:100%;border-collapse:collapse;background-color:#161b22;border-radius:8px;overflow:hidden;font-size:0.85rem; }
+  th, td { padding:10px 6px;text-align:center;border-bottom:1px solid #30363d; }
+  th { background-color:#21262d;color:#58a6ff;font-weight:600; }
+  td.ticker { font-weight:700;color:#f0f6fc; }
+  td.price { color:#3fb950;font-weight:600; }
+  tr:last-child td { border-bottom:none; }
+  .note { margin-top:16px;font-size:0.8rem;color:#8b949e;text-align:center;line-height:1.5; }
+  @media (max-width:480px) { th, td { padding:8px 4px;font-size:0.78rem; } h1 { font-size:1.05rem; } }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-07-16 22:05 KST</div>
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+    <tr><td class="ticker">AVGO</td><td class="price">$394.10</td><td>$420</td><td>$390</td><td>$480</td></tr>
+    <tr><td class="ticker">MSFT</td><td class="price">$398.70</td><td>$410</td><td>$360</td><td>$500</td></tr>
+    <tr><td class="ticker">INTC</td><td class="price">$102.12</td><td>$104.50</td><td>$95</td><td>$130</td></tr>
+    <tr><td class="ticker">GOOGL</td><td class="price">$371.79</td><td>$385</td><td>$355</td><td>$450</td></tr>
+    <tr><td class="ticker">AMZN</td><td class="price">$254.96</td><td>$255</td><td>$230</td><td>$320</td></tr>
+    <tr><td class="ticker">ORCL</td><td class="price">$131.42</td><td>$178</td><td>$162</td><td>$225</td></tr>
+    <tr><td class="ticker">ASTS</td><td class="price">$58.03*</td><td>$68</td><td>$45</td><td>$100</td></tr>
+  </table>
+  <div class="note">
+    * ASTS는 $1B 전환사채 발행 발표 후 시간외 가격 (정규장 종가 $66.31)<br>
+    미도달: TSM($419.13, +6.1%), MRVL($223.43, +33.0%), PLTR($134.72, +10.4%) — 2% 근접 종목 없음
+  </div>
+</body>
+</html>
