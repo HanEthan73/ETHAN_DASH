@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>환율 경보 - 2026.07.16</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --sub: #8b949e;
+    --red: #f85149;
+    --green: #3fb950;
+    --accent: #58a6ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 16px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .header { text-align: center; padding: 20px 0 12px; }
+  .header h1 { font-size: 18px; color: var(--sub); font-weight: 500; margin: 0 0 4px; }
+  .header .date { font-size: 13px; color: var(--sub); }
+  .rate-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .rate-card .label { font-size: 13px; color: var(--sub); margin-bottom: 8px; }
+  .rate-card .rate { font-size: 42px; font-weight: 700; color: var(--red); letter-spacing: -1px; }
+  .rate-card .change { font-size: 15px; margin-top: 8px; color: var(--red); font-weight: 600; }
+  .badge {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(248, 81, 73, 0.15);
+    color: var(--red);
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgba(248, 81, 73, 0.4);
+  }
+  .section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 14px;
+  }
+  .section h2 { font-size: 14px; color: var(--accent); margin: 0 0 10px; display: flex; align-items: center; gap: 6px; }
+  .section p, .section li { font-size: 14px; line-height: 1.6; color: var(--text); margin: 0 0 6px; }
+  .section ul { margin: 0; padding-left: 18px; }
+  .threshold-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .threshold-row:last-child { border-bottom: none; }
+  .threshold-row .val { color: var(--sub); }
+  .not-breached { color: var(--green); font-weight: 600; }
+  .footer { text-align: center; font-size: 11px; color: var(--sub); padding: 12px 0 4px; }
+  .source { font-size: 11px; color: var(--sub); margin-top: 10px; }
+  .source a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>USD/KRW 환율 경보</h1>
+    <div class="date">2026년 7월 16일 (목) 09:06 KST 기준</div>
+  </div>
+
+  <div class="rate-card">
+    <div class="label">현재 환율</div>
+    <div class="rate">1,489.2원</div>
+    <div class="change">▲ +1.7원 (+0.11%) 전일 종가 대비</div>
+    <div class="badge">⚠ 경보 임계치(1,480원) 초과</div>
+  </div>
+
+  <div class="section">
+    <h2>📊 주요 수치</h2>
+    <div class="threshold-row"><span>전일(7/15) 종가</span><span class="val">1,487.5원</span></div>
+    <div class="threshold-row"><span>금일 현재가</span><span class="val">1,489.2원</span></div>
+    <div class="threshold-row"><span>경보 기준선</span><span class="val">1,480원</span></div>
+    <div class="threshold-row"><span>1,500원 돌파 여부</span><span class="not-breached">미돌파 (약 10.8원 남음)</span></div>
+  </div>
+
+  <div class="section">
+    <h2>🌏 코스피 외국인 수급 영향</h2>
+    <p>최근 국내 증시에서 외국인이 순매수로 전환하며(유가증권시장 약 9,500억원 순매수) 원화 강세 요인으로 작용, 지난주 환율이 장중 1,480원대까지 밀렸던 배경이 됨.</p>
+    <p>SK하이닉스 미 나스닥 ADR 상장 첫날 공모가 대비 13% 급등 — 대규모 달러 자금 유입 기대감이 원화에 우호적으로 작용.</p>
+    <p>다만 6월 중 외국인 국내 증권투자자금은 307.2억달러 순유출(주식자금 323.7억달러 유출)로 연초 이후 자금 이탈 기조는 아직 완전히 반전되지 않은 상태. 최근 반등은 미 고용지표 부진에 따른 달러 강세 완화 영향도 일부 겹침.</p>
+  </div>
+
+  <div class="section">
+    <h2>✅ 권고 조치</h2>
+    <ul>
+      <li>수출입 결제 예정 건은 환헤지(선물환) 비중 재점검</li>
+      <li>1,500원 근접 시 2차 경보 예상 — 단기 변동성 확대 구간 진입 여부 모니터링</li>
+      <li>달러 표시 자산/부채 보유 시 리밸런싱 검토</li>
+      <li>코스피 외국인 순매수 지속 여부가 향후 환율 방향의 핵심 변수 — 익일 수급 동향 재확인 권장</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    자동 생성 리포트 · ETHAN_DASH 환율 모니터링<br>
+    <div class="source">
+      출처: Yahoo Finance, XE, Investing.com, 서울경제, 뉴데일리경제, 아시아경제, 뉴스핌
+    </div>
+  </div>
+
+</body>
+</html>
