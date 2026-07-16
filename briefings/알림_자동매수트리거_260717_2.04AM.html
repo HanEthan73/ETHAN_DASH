@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 도달 알림</title>
+<style>
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 20px;
+    color: #ff6b6b;
+    margin: 0 0 4px 0;
+  }
+  .timestamp {
+    color: #8b949e;
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+  .section-title {
+    font-size: 15px;
+    color: #58a6ff;
+    margin: 20px 0 8px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161b22;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 13px;
+  }
+  th, td {
+    padding: 10px 6px;
+    text-align: center;
+    border-bottom: 1px solid #21262d;
+  }
+  th {
+    background: #21262d;
+    color: #c9d1d9;
+    font-weight: 600;
+  }
+  td.ticker {
+    font-weight: 700;
+    color: #ffffff;
+  }
+  tr.warn td {
+    color: #ff7b72;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #3d1d1d;
+    color: #ff7b72;
+    margin-top: 4px;
+  }
+  .note {
+    font-size: 12px;
+    color: #8b949e;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+  .near {
+    color: #d29922;
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-07-17 02:04 (KST)</div>
+
+  <div class="section-title">트리거 도달 종목 (6종목)</div>
+  <table>
+    <tr>
+      <th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th>
+    </tr>
+    <tr>
+      <td class="ticker">AVGO</td><td>$384.16</td><td>$420</td><td>$390</td><td>$480</td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td><td>$384.93</td><td>$410</td><td>$360</td><td>$500</td>
+    </tr>
+    <tr>
+      <td class="ticker">INTC</td><td>$100.32</td><td>$104.50</td><td>$95</td><td>$130</td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td><td>$370.92</td><td>$385</td><td>$355</td><td>$450</td>
+    </tr>
+    <tr>
+      <td class="ticker">ORCL</td><td>$131.42</td><td>$178</td><td>$162</td><td>$225</td>
+    </tr>
+    <tr>
+      <td class="ticker">ASTS</td><td>$66.31</td><td>$68</td><td>$45</td><td>$100</td>
+    </tr>
+  </table>
+
+  <div class="section-title">⚠️ 2% 이내 근접 종목</div>
+  <table>
+    <tr>
+      <th>종목</th><th>현재가</th><th>트리거가</th><th>차이</th>
+    </tr>
+    <tr>
+      <td class="ticker near">AMZN</td><td>$256.60</td><td>$255</td><td class="near">+0.6%</td>
+    </tr>
+  </table>
+
+  <div class="note">
+    ⚠️ <b>AVGO, ORCL은 현재가가 이미 손절가(390 / 162)를 하회한 상태</b>입니다. 급락 국면(반도체·AI 밸류에이션 조정, 오라클 실적 우려)에서 트리거가 발동된 것으로, 매수 시 원래 계획된 손절 라인이 이미 무의미해진 상태이니 진입 전 재검토 필요.<br><br>
+    시장 배경: 7월 들어 AI 인프라 과잉투자 우려 + IBM 어닝 쇼크 + 메타 컴퓨트 발표 여파로 반도체/AI 관련주 전반이 급락 중 (SOX 지수 급락, 인텔 7거래일간 -21% 등).<br><br>
+    MRVL($196.01), PLTR($133.96), TSM($410.18)은 트리거 미도달.
+  </div>
+</body>
+</html>
