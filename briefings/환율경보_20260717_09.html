@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>환율 경보 - USD/KRW</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    padding: 20px;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .badge {
+    display: inline-block;
+    background: #f85149;
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 20px;
+    color: #f0f6fc;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    color: #8b949e;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  .rate-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .rate-value {
+    font-size: 40px;
+    font-weight: 800;
+    color: #f85149;
+    letter-spacing: -1px;
+  }
+  .rate-change {
+    font-size: 15px;
+    color: #ff7b72;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+  .section {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .section h2 {
+    font-size: 14px;
+    color: #58a6ff;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .section p {
+    font-size: 14px;
+    color: #c9d1d9;
+  }
+  .highlight {
+    background: #3d1e1e;
+    border: 1px solid #f85149;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #ffa198;
+  }
+  .action-list {
+    list-style: none;
+  }
+  .action-list li {
+    font-size: 14px;
+    color: #c9d1d9;
+    padding: 8px 0;
+    border-bottom: 1px solid #21262d;
+  }
+  .action-list li:last-child { border-bottom: none; }
+  .action-list li::before {
+    content: "▸ ";
+    color: #58a6ff;
+    font-weight: 700;
+  }
+  footer {
+    text-align: center;
+    color: #6e7681;
+    font-size: 11px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+  <span class="badge">⚠ 환율 경보</span>
+  <h1>USD/KRW 1,480원 상회</h1>
+  <div class="timestamp">2026년 7월 17일(금) 09:03 KST 기준</div>
+
+  <div class="rate-card">
+    <div class="rate-value">1,486.90</div>
+    <div class="rate-change">전일 종가 1,485.04 대비 +1.86원 (+0.13%)</div>
+  </div>
+
+  <div class="highlight">
+    <strong>1,500원 돌파 여부:</strong> 아직 미돌파. 현재가 기준 1,500원까지 약 13.1원 남음. 장중 변동성 확대 시 근접 가능한 구간.
+  </div>
+
+  <div class="section">
+    <h2>코스피 외국인 수급 영향</h2>
+    <p>최근 외국인 투자자들이 국내 증시로 복귀하며 순매수세를 보이고 있어 원화 강세 요인으로 작용 중. 다만 코스피는 하루걸러 급등락하는 변동성 장세를 이어가고 있어, 환율 방향성도 단기 등락이 반복될 가능성. 미 인플레이션 정점론이 확산되며 강달러 압력이 다소 완화된 점도 참고할 부분.</p>
+  </div>
+
+  <div class="section">
+    <h2>권고 조치</h2>
+    <ul class="action-list">
+      <li>1,500원 돌파 시 재경보 필요 - 지속 모니터링</li>
+      <li>달러 환전/해외송금 계획 시 현재 구간에서 분할 실행 검토</li>
+      <li>외국인 수급 전환 여부(순매수 지속성) 익일 확인</li>
+      <li>연준 인플레이션 지표 및 코스피 변동성 지속 체크</li>
+    </ul>
+  </div>
+
+  <footer>자동 생성 · USD/KRW 모니터링 스케줄 작업</footer>
+</body>
+</html>
