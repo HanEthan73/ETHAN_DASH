@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>주간 정산 260717</title>
+<style>
+  :root{
+    --bg:#0d1117;
+    --card:#161b22;
+    --border:#30363d;
+    --text:#e6edf3;
+    --sub:#8b949e;
+    --red:#f85149;
+    --green:#3fb950;
+    --accent:#58a6ff;
+    --amber:#d29922;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Malgun Gothic",sans-serif;
+    padding:16px;
+    font-size:14px;
+    line-height:1.5;
+  }
+  .wrap{max-width:720px;margin:0 auto;}
+  h1{font-size:18px;margin:0 0 4px;}
+  .meta{color:var(--sub);font-size:12px;margin-bottom:18px;}
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px;
+    margin-bottom:14px;
+  }
+  .card h2{
+    font-size:13px;
+    color:var(--accent);
+    margin:0 0 10px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+  }
+  th,td{
+    text-align:right;
+    padding:7px 4px;
+    border-bottom:1px solid var(--border);
+    white-space:nowrap;
+  }
+  th:first-child,td:first-child{text-align:left;}
+  th{color:var(--sub);font-weight:500;font-size:11px;}
+  tr:last-child td{border-bottom:none;}
+  .pos{color:var(--green);}
+  .neg{color:var(--red);}
+  .flat{color:var(--sub);}
+  .badge{
+    display:inline-block;
+    font-size:10px;
+    padding:1px 6px;
+    border-radius:4px;
+    margin-left:4px;
+  }
+  .badge.warn{background:rgba(210,153,34,.15);color:var(--amber);}
+  .note{
+    font-size:11.5px;
+    color:var(--sub);
+    margin-top:8px;
+    padding-top:8px;
+    border-top:1px dashed var(--border);
+  }
+  .kpi-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    text-align:center;
+  }
+  .kpi{
+    background:#0d1117;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:10px 4px;
+  }
+  .kpi .label{font-size:10px;color:var(--sub);margin-bottom:4px;}
+  .kpi .val{font-size:14px;font-weight:600;}
+  .progress-outer{
+    background:#0d1117;
+    border:1px solid var(--border);
+    border-radius:6px;
+    height:10px;
+    overflow:hidden;
+    margin-top:10px;
+  }
+  .progress-inner{
+    height:100%;
+    background:linear-gradient(90deg,var(--accent),var(--green));
+    width:0%;
+  }
+  .footer{
+    text-align:center;
+    color:var(--sub);
+    font-size:11px;
+    margin-top:20px;
+  }
+  ul{margin:6px 0 0;padding-left:18px;font-size:12.5px;color:var(--text);}
+  li{margin-bottom:4px;}
+  .src{font-size:10px;color:var(--sub);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>주간 정산 &middot; 260717 (금)</h1>
+  <div class="meta">자동 생성 &middot; 기준: 미국 7/16 종가 (한국시간 발행 시점 기준 최신 확정 종가) &middot; 2억 목표 관리 에이전트</div>
+
+  <div class="card">
+    <h2>보유 종목 주간 등락률</h2>
+    <table>
+      <tr><th>종목</th><th>7/10 종가</th><th>7/16 종가</th><th>주간 등락</th></tr>
+      <tr><td>NVDA</td><td>$210.96</td><td>$207.40</td><td class="neg">-1.69%</td></tr>
+      <tr><td>AVGO</td><td>$399.97</td><td>$374.45</td><td class="neg">-6.38%</td></tr>
+      <tr><td>ASTS</td><td>$73.32</td><td>$55.01</td><td class="neg">-24.97%</td></tr>
+      <tr><td>VRT</td><td>$318.86</td><td>$294.11</td><td class="neg">-7.76%</td></tr>
+      <tr><td>MSTX <span class="badge warn">추정</span></td><td>-</td><td>$9.06</td><td class="pos">약 +6% 추정</td></tr>
+      <tr><td>현대차 <span class="badge warn">확인필요</span></td><td>-</td><td>약 492,500~502,000원</td><td class="flat">데이터 불일치</td></tr>
+    </table>
+    <div class="note">
+      ASTS: 7/15 $10억 규모 전환사채(2034만기, 전환가 $149.20) 발행 발표로 급락, 주간 최대 낙폭.<br>
+      MSTX: 2배 레버리지 단일종목 ETF. 기초자산 MSTR이 7/10 $94.64→7/14 $97.58(+3.11%)로 반등한 흐름을 반영해 방향성 추정치 표기. 정확한 7/16 종가 미확인.<br>
+      현대차: 소스 간 시세 불일치(492,500원 / 502,000원 대 혼재)로 정확한 주간 등락률 확인 불가. 원 소스 재확인 필요.<br>
+      평균 매수가 대비 손익률: MSTX는 평단 $182.73 대비 약 -95% 구간(현재가 $9.06 기준). NVDA는 평단 $180 대비 +15.2% 구간(현재가 $207.40 기준).
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>지수 주간 수익률</h2>
+    <table>
+      <tr><th>지수</th><th>7/10</th><th>7/16</th><th>주간</th></tr>
+      <tr><td>S&amp;P500 (SPY)</td><td>754.95</td><td>750.72</td><td class="neg">-0.56%</td></tr>
+      <tr><td>나스닥100 (QQQ)</td><td>725.51</td><td>705.94</td><td class="neg">-2.70%</td></tr>
+      <tr><td>코스피 <span class="badge warn">확인필요</span></td><td>-</td><td>-</td><td class="flat">소스 불일치</td></tr>
+    </table>
+    <div class="note">코스피는 조회 소스마다 6,800~8,800pt대까지 값이 상이하게 나와 신뢰 가능한 수치를 확정하지 못함. 직접 확인 권장.</div>
+  </div>
+
+  <div class="card">
+    <h2>이번 주 베스트 / 워스트</h2>
+    <table>
+      <tr><td>베스트</td><td>NVDA</td><td class="neg">-1.69%</td><td class="src">보유종목 중 낙폭 최소</td></tr>
+      <tr><td>워스트</td><td>ASTS</td><td class="neg">-24.97%</td><td class="src">전환사채 발행 이슈</td></tr>
+    </table>
+    <div class="note">이번 주 보유 종목 전체가 하락 마감(MSTX 추정치 제외). NVDA·AVGO·VRT·ASTS 모두 반도체/AI 섹터 조정 및 지정학 리스크 영향권.</div>
+  </div>
+
+  <div class="card">
+    <h2>자동매수 트리거 회고</h2>
+    <div class="note" style="margin-top:0;border-top:none;padding-top:0;">
+      트리거 가격 기준이 설정 파일에 정의되어 있지 않아 이번 주 도달 여부를 자동 판정하지 못함. 평단 대비 -10%/-20%/-30% 등 구간별 기준을 알려주시면 다음 주부터 자동 반영.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>다음 주 주목 이벤트</h2>
+    <ul>
+      <li>7/22(수) 테슬라(TSLA) 실적</li>
+      <li>7/23(목) 현대차·기아 2분기 실적 (컨센서스 합산 영업이익 5.9조원, 전년比 -7.6%)</li>
+      <li>7/29(수) Vertiv(VRT) 2분기 실적</li>
+      <li>7/30(목) Strategy(MSTR) 실적 &mdash; MSTX 변동성 확대 가능</li>
+      <li>8/10(월) AST SpaceMobile(ASTS) 실적</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>2억 목표 진행 관리</h2>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="label">연간 목표</div><div class="val">2억</div></div>
+      <div class="kpi"><div class="label">월평균 목표</div><div class="val">1,670만</div></div>
+      <div class="kpi"><div class="label">주평균 목표</div><div class="val">385만</div></div>
+    </div>
+    <div class="note">
+      이번 주 실현/평가 손익 원화 환산: 종목별 보유 수량 데이터가 입력되어 있지 않아 원화 손익 산출 불가. 위 표의 %변동률만 제공.<br>
+      수량 정보를 알려주시면 다음 주부터 주간 목표(385만원) 대비 진행률을 정량 표기 가능.
+    </div>
+  </div>
+
+  <div class="footer">
+    ETHAN 주간 수익률 정산 에이전트 &middot; 자동 생성 &middot; 2026-07-17 17:14 KST
+  </div>
+
+</div>
+</body>
+</html>
