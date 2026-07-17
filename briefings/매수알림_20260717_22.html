@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 도달 알림</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --red: #f85149;
+    --green: #3fb950;
+    --yellow: #d29922;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 16px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: 20px;
+    margin: 0 0 6px 0;
+    color: var(--red);
+  }
+  .header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 480px;
+  }
+  th {
+    text-align: right;
+    padding: 10px 8px;
+    color: var(--muted);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+  }
+  th:first-child, td:first-child { text-align: left; }
+  td {
+    text-align: right;
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .ticker {
+    font-weight: 700;
+    color: var(--text);
+  }
+  .stop { color: var(--red); }
+  .target { color: var(--green); }
+  .tag-danger {
+    display: inline-block;
+    font-size: 10px;
+    background: rgba(248,81,73,0.15);
+    color: var(--red);
+    border: 1px solid var(--red);
+    border-radius: 4px;
+    padding: 1px 5px;
+    margin-left: 4px;
+  }
+  .tag-warn {
+    display: inline-block;
+    font-size: 10px;
+    background: rgba(210,153,34,0.15);
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
+    border-radius: 4px;
+    padding: 1px 5px;
+    margin-left: 4px;
+  }
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>🚨 자동매수 트리거 도달</h1>
+    <p>2026-07-17 22:10 (KST) · 7개 종목 트리거 도달</p>
+  </div>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>트리거가</th>
+          <th>손절</th>
+          <th>목표</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker">AVGO <span class="tag-danger">손절가 이하</span></td>
+          <td>$374.50</td>
+          <td>$420.00</td>
+          <td class="stop">$390.00</td>
+          <td class="target">$480.00</td>
+        </tr>
+        <tr>
+          <td class="ticker">MSFT</td>
+          <td>$401.10</td>
+          <td>$410.00</td>
+          <td class="stop">$360.00</td>
+          <td class="target">$500.00</td>
+        </tr>
+        <tr>
+          <td class="ticker">INTC <span class="tag-warn">손절가 근접</span></td>
+          <td>$95.17</td>
+          <td>$104.50</td>
+          <td class="stop">$95.00</td>
+          <td class="target">$130.00</td>
+        </tr>
+        <tr>
+          <td class="ticker">GOOGL</td>
+          <td>$370.92</td>
+          <td>$385.00</td>
+          <td class="stop">$355.00</td>
+          <td class="target">$450.00</td>
+        </tr>
+        <tr>
+          <td class="ticker">AMZN</td>
+          <td>$250.91</td>
+          <td>$255.00</td>
+          <td class="stop">$230.00</td>
+          <td class="target">$320.00</td>
+        </tr>
+        <tr>
+          <td class="ticker">ORCL <span class="tag-danger">손절가 이하</span></td>
+          <td>$131.66</td>
+          <td>$178.00</td>
+          <td class="stop">$162.00</td>
+          <td class="target">$225.00</td>
+        </tr>
+        <tr>
+          <td class="ticker">ASTS</td>
+          <td>$56.88</td>
+          <td>$68.00</td>
+          <td class="stop">$45.00</td>
+          <td class="target">$100.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="footer">
+    자동 생성 · ETHAN 자동매수 모니터링
+  </div>
+</body>
+</html>
