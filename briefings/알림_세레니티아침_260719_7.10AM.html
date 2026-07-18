@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity 아침 인사이트 | @aleabitoreddit | 2026-07-19</title>
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --card-bg: #171727;
+    --text: #e8e8f0;
+    --muted: #9a9ab0;
+    --accent: #ffd700;
+    --buy: #4ade80;
+    --sell: #f87171;
+    --hold: #9a9ab0;
+    --border: #26263c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', 'Malgun Gothic', -apple-system, sans-serif;
+    line-height: 1.6;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 24px 20px 60px; }
+  header {
+    padding: 28px 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+  }
+  header h1 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  header .sub {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .alert-banner {
+    margin-top: 14px;
+    background: rgba(248,113,113,0.10);
+    border: 1px solid rgba(248,113,113,0.35);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: var(--text);
+  }
+  .alert-banner b { color: var(--sell); }
+  h2.section-title {
+    font-size: 16px;
+    color: var(--accent);
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+    margin: 36px 0 16px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .card-date { color: var(--muted); font-size: 12px; }
+  .tickers { font-weight: 700; color: var(--accent); font-size: 13px; }
+  .direction {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+  .dir-buy { background: rgba(74,222,128,0.15); color: var(--buy); }
+  .dir-sell { background: rgba(248,113,113,0.15); color: var(--sell); }
+  .dir-hold { background: rgba(154,154,176,0.15); color: var(--hold); }
+  .summary-text { font-size: 14px; color: var(--text); margin: 8px 0; }
+  .interp {
+    font-size: 13px;
+    color: var(--muted);
+    background: rgba(255,215,0,0.05);
+    border-left: 2px solid var(--accent);
+    padding: 8px 12px;
+    margin-top: 8px;
+    border-radius: 0 6px 6px 0;
+  }
+  .interp b { color: var(--accent); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  th {
+    color: var(--accent);
+    font-size: 12px;
+    background: rgba(255,215,0,0.06);
+  }
+  td.ticker-cell { font-weight: 700; }
+  .conf-high { color: var(--buy); font-weight: 700; }
+  .conf-mid { color: var(--accent); font-weight: 700; }
+  .conf-low { color: var(--muted); font-weight: 700; }
+  .picks {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .pick-card {
+    background: linear-gradient(135deg, rgba(255,215,0,0.10), rgba(23,23,39,0.4));
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .pick-rank {
+    display: inline-block;
+    background: var(--accent);
+    color: #1a1a0a;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  .pick-title { font-size: 16px; font-weight: 700; margin: 4px 0; }
+  .pick-desc { font-size: 13px; color: var(--muted); }
+  footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+  .source-note {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Serenity 아침 인사이트 | @aleabitoreddit | 2026-07-19</h1>
+  <div class="sub">AI/반도체 공급망 인플루언서 Serenity(白毛股神, 팔로워 약 91만) 최근 포스트 기반 요약 · Claude 자동 브리핑</div>
+  <div class="alert-banner"><b>리스크 노트:</b> Serenity 본인이 이번 달 포트폴리오 <b>-49.4% 드로다운</b>을 공개 인정. CPO 급락 구간에서 레버리지(약 1.4배 마진) 노출이 컸던 것이 원인으로, 아래 매수 의견들은 고변동성 구간에서 나온 것임을 감안할 것.</div>
+</header>
+
+<h2 class="section-title">섹션 1. 최근 포스트 인사이트</h2>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">2026-07-17경</span><span class="tickers">AI·메모리·포토닉스·휴머노이드 전반</span><span class="direction dir-buy">매수(확신 유지)</span></div>
+  <div class="summary-text">"다들 AI가 버블이다, 메모리/코스피가 버블이다, 포토닉스가 버블이다, 휴머노이드는 안 될 거다"라는 회의론에 정면 반박. 이번 달 -49.4% 드로다운을 겪었음에도 구조적 매출 성장과 기술적 전환이 뒷받침하는 테마라며 장기 확신을 재확인.</div>
+  <div class="interp"><b>Claude 해석:</b> 대규모 손실 이후에도 공개적으로 신념을 재확인하는 것은 컨트래리언 스타일의 전형이나, 동시에 손절 없이 버티는 성향을 보여주기도 함. 추종 투자자는 그의 레버리지 수준과 변동성 감내력이 자신과 다를 수 있음을 반드시 감안해야 함.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근(7월 초)</span><span class="tickers">$AXTI · $SOI · $AAOI</span><span class="direction dir-sell">손실 인정</span></div>
+  <div class="summary-text">본인 전략을 스스로 "분산된 손실(Diversified Losses)"이라 부르며 AXTI, SOI, AAOI 등에서 대규모 드로다운 발생을 인정. CPO 노출 종목(Foci, Msscorp 등)이 가장 크게 타격받았고, "레버리지를 너무 많이 썼다"는 게 개인적 교훈이라고 밝힘.</div>
+  <div class="interp"><b>Claude 해석:</b> 손실을 숨기지 않고 공개하는 드문 투명성은 신뢰도를 높이는 요소. 다만 동일한 포지션 사이징 문제가 반복될 경우 향후 매수 시그널도 같은 리스크를 안고 있다는 경고로 읽어야 함.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">2026-07-09</span><span class="tickers">$SIVE</span><span class="direction dir-buy">매수</span></div>
+  <div class="summary-text">Sivers Semiconductors CEO가 7월 초 광학 섹터 전반 30~60% 급락 이후 공개시장에서 약 100만 SEK 규모 자사주를 매입, 다른 임원들도 동참. Rosenblatt는 숏커버링과 2027년 CPO 램프업을 근거로 낙관 전환. "확신은 특정일 주가가 아니라 장기 매출에 연동돼야 한다"는 논평.</div>
+  <div class="interp"><b>Claude 해석:</b> Nvidia의 지연설 부인, Meta의 capex 축소설 해명 등 악재 해소 국면에서 경영진 매수는 신뢰 회복 시그널. 다만 매입 규모 자체는 크지 않아 단기 반등 재료 이상으로 보기엔 근거가 제한적.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">$AAOI</span><span class="direction dir-buy">매수</span></div>
+  <div class="summary-text">"$AAOI는 $28부터 계속 물타기(평단 상향)하고 있는 종목. 800G/1.6T 광트랜시버 수요가 워낙 커서 실행만 되면 2~3배는 임박했다"는 요지로 반복 언급. 최대 하이퍼스케일러向 공급을 목표로 한다고 언급.</div>
+  <div class="interp"><b>Claude 해석:</b> 본인이 가장 반복적으로 언급하는 최애 포토닉스 롱 포지션. "실행되면"이라는 조건부 표현은 아직 실적으로 완전히 증명되지 않은 기대치 리스크를 내포.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">$AXTI</span><span class="direction dir-buy">매수(검증됨)</span></div>
+  <div class="summary-text">"$AXTI는 초반에 극심한 반발을 샀고, WSB 포럼에서 밴까지 당했다. 다들 사기성 중국 기업이라 여겼지만"이라며 당시 조롱받던 컨트래리언 포지션이 로이터 보도와 IntelliEPI CEO의 InP(인화인듐) 공급부족 공개 확인으로 결국 검증됐음을 회고.</div>
+  <div class="interp"><b>Claude 해석:</b> 예측이 업계 발언으로 실제 검증된 대표 성공 사례. 신뢰도는 높지만 이미 시총이 큰 폭 상승한 종목이라 신규 진입 시 밸류에이션 부담 재확인 필요.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">$RPI · $AXTI · $IQE · $EWY · $SNDK · $AAOI · $SOI</span><span class="direction dir-hold">관망(회고)</span></div>
+  <div class="summary-text">"RPI 약 3배 수익. '밈주식'으로 언론에 낙인찍힌 뒤 리테일이 내 논지를 보고도 AXTI→RPI→IQE→EWY→SNDK→AAOI→SOI 순서로 전부 페이퍼핸드(조기 매도)하는 걸 지켜봤다. 그리고 그 종목들은 전부 3~15배 이상 올랐다"는 요지.</div>
+  <div class="interp"><b>Claude 해석:</b> 리테일의 조기 매도 패턴을 지적하며 장기 보유 중요성을 강조하는 심리적 메시지에 가까움. 구체적 매수 추천이 아니라 과거 성과 나열이므로 생존편향 가능성을 감안해야 함.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">$ALAB · $LITE · $AAOI · $NBIS · $RKLB · $TSM</span><span class="direction dir-hold">관망(회고)</span></div>
+  <div class="summary-text">"팔로워가 거의 없을 때부터의 2025년 고확신 아이디어들이 훌륭하게 성장했다"며 ALAB $97→$372, LITE $330→$904, AAOI $30→$175 등 실적을 공유. NBIS, RKLB, TSM도 함께 언급.</div>
+  <div class="interp"><b>Claude 해석:</b> 과거 성과를 자평하는 게시물로 신규 매수 시그널은 아님. 검증 가능한 종목들이나 승자만 골라 나열했을 가능성이 있어 참고 자료 이상으로 취급하지 않는 것이 안전.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">로보틱스 섹터 전반</span><span class="direction dir-buy">매수 관심</span></div>
+  <div class="summary-text">SVRC Research의 "State of Robotics 2026" 보고서(4월 발간)를 인용, Figure AI·Agility Robotics($CCXI)·Apptronik·$TSLA·Boston Dynamics·Physical Intelligence·1X Technologies·$AMZN 로보틱스 등 주요 휴머노이드 플레이어 지도를 공유.</div>
+  <div class="interp"><b>Claude 해석:</b> 직접적 매수 추천이라기보다 업종 지도(mapping) 성격의 리서치 공유. 관심 종목 발굴용 참고자료로 활용은 가능하나 즉시 매매 근거로는 약함.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">Harmonic Drive(6324.T)</span><span class="direction dir-buy">매수</span></div>
+  <div class="summary-text">휴머노이드 상류 부품 노출로 정밀 감속기 업체 Harmonic Drive Systems를 보유 중이라고 언급. 고정밀 감속기(하모닉 리듀서) 공급망은 일본·독일·중국에 편중돼 있다는 병목 논리 전개.</div>
+  <div class="interp"><b>Claude 해석:</b> 완제품 대신 상류 부품 병목에 베팅하는 그의 전형적 "Chokepoint" 프레임워크 적용 사례. 일본 소형주라 유동성·정보접근성이 낮아 국내 개인투자자의 직접 접근성은 제한적.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">2026-06-30 / 07-02</span><span class="tickers">$CCXI → $AGLT</span><span class="direction dir-buy">매수</span></div>
+  <div class="summary-text">6/30 로보틱스 관련 콜 게시 직후 7/2 BlueCrest Capital(마이클 플랫 펀드)이 Agility Robotics-Churchill Capital XI SPAC 합병 건에 5.6% 지분 공시. 같은 날 Unitree IPO 승인 소식까지 겹치며 로보틱스 섹터 전반이 강세.</div>
+  <div class="interp"><b>Claude 해석:</b> 콜 이후 이틀 만에 대형 기관 지분 공시가 나온 것은 테마의 시의성을 뒷받침하는 사례. 다만 SPAC 구조 특성상 변동성과 희석 리스크는 상존.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">$SNDK · $MU · SK Hynix · $SIVE</span><span class="direction dir-hold">신규 진입 구간(3단계)</span></div>
+  <div class="summary-text">"기관 병목 순환을 정확히 짚었다"며 1단계 메모리($SNDK/삼성/SK하이닉스/$MU, 완료) → 2단계 포토닉스($AAOI/$AXTI/$LITE/$COHR, 현재 진행) → 3단계 SiPh/ELS/CPO($SIVE/$AAOI/$POET/Celestial AI, 신규 진입 구간)로 자금이 순환 중이라는 3단계 프레임워크 제시.</div>
+  <div class="interp"><b>Claude 해석:</b> "다음 단계가 컨센서스가 될 때쯤엔 비대칭적 상승 여력이 사라진다"는 그의 논리대로라면 3단계 진입이 지금이라는 주장. 프레임워크 자체가 본인 주장이라 독립적 검증은 필요.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">$IREN</span><span class="direction dir-sell">매도(포지션 전환)</span></div>
+  <div class="summary-text">기존 롱 포지션이었던 IREN을 60억 달러 규모 ATM(시장가 증자) 발행 이후 베어리시로 전환했다고 공개.</div>
+  <div class="interp"><b>Claude 해석:</b> 자본구조 희석 우려로 실시간 포지션을 뒤집은 사례. 조건이 바뀌면 신속히 대응하는 스타일을 보여주며, 추종 투자자는 매수 근거였던 조건(자본구조)의 변화 여부를 함께 추적할 필요.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">$LNG · $CVX</span><span class="direction dir-hold">보유(관망)</span></div>
+  <div class="summary-text">지정학적 긴장(이란 리스크 등) 헤지 성격으로 Cheniere Energy($LNG, +52.74% YTD)와 Chevron($CVX, +35.44% YTD)을 "가장 명확한 에너지 전쟁 수혜주"로 보유 중.</div>
+  <div class="interp"><b>Claude 해석:</b> 포토닉스/AI 테마와 무관한 별도 매크로 헤지 포지션. 지정학 리스크 완화 시 되돌림 가능성 있어 신규 진입보다는 관망 권고.</div>
+</div>
+
+<h2 class="section-title">섹션 2. 주목 종목 요약표</h2>
+
+<table>
+<thead>
+<tr><th>종목</th><th>방향</th><th>핵심 근거</th><th>신뢰도</th></tr>
+</thead>
+<tbody>
+<tr><td class="ticker-cell">$AAOI</td><td>매수</td><td>800G/1.6T 광트랜시버 수요 확대, 최애 반복 매수 종목, 실적 실행이 관건</td><td class="conf-high">상</td></tr>
+<tr><td class="ticker-cell">$SIVE</td><td>매수</td><td>경영진 자사주 매입, CPO 급락 후 숏커버링·2027 램프 기대, 크로스체크된 시그널</td><td class="conf-high">상</td></tr>
+<tr><td class="ticker-cell">$AGLT (Agility)</td><td>매수</td><td>BlueCrest 등 기관 지분 공시, 본인 최대 비중 포지션, 대형 후원사 다수</td><td class="conf-mid">중</td></tr>
+<tr><td class="ticker-cell">$AXTI</td><td>매수(검증됨)</td><td>InP 공급부족 예측 적중(IntelliEPI CEO 확인), 단 최근 CPO발 급락에 손실 노출</td><td class="conf-mid">중</td></tr>
+<tr><td class="ticker-cell">$SOI</td><td>손실 인정</td><td>"분산된 손실" 포지션 중 하나로 CPO 급락 직격, 레버리지 과다 자인</td><td class="conf-low">하</td></tr>
+<tr><td class="ticker-cell">Harmonic Drive(6324.T)</td><td>매수</td><td>휴머노이드 감속기 상류 부품 병목, 일본 소형주로 접근성 제한</td><td class="conf-low">하</td></tr>
+<tr><td class="ticker-cell">$IREN</td><td>매도</td><td>60억달러 ATM 증자로 자본구조 희석 우려, 롱→베어 전환</td><td class="conf-mid">중</td></tr>
+<tr><td class="ticker-cell">$SNDK · $MU</td><td>관망</td><td>1단계(메모리) 테마는 이미 종료 국면, 후속 3단계로 자금 이동 중</td><td class="conf-low">하</td></tr>
+<tr><td class="ticker-cell">$LNG · $CVX</td><td>관망</td><td>지정학 헤지 목적의 별도 포지션, 신규 진입 매력 낮음</td><td class="conf-low">하</td></tr>
+</tbody>
+</table>
+
+<h2 class="section-title">섹션 3. 오늘의 핵심 픽</h2>
+
+<div class="picks">
+  <div class="pick-card">
+    <span class="pick-rank">PICK 1</span>
+    <div class="pick-title">$SIVE — 경영진 매수 신호 + CPO 급락 후 저점 반등 기대</div>
+    <div class="pick-desc">업종 전반 30~60% 급락 후 CEO 자사주 매입, Rosenblatt 숏커버링·2027 CPO 램프 기대감이 겹치는 구간. 리스크 배너에서 언급된 드로다운의 진앙지인 CPO 섹터 내에서 그나마 펀더멘털 신호가 가장 뚜렷한 이름.</div>
+  </div>
+  <div class="pick-card">
+    <span class="pick-rank">PICK 2</span>
+    <div class="pick-title">$AAOI — 반복 확신 최애 포토닉스 롱</div>
+    <div class="pick-desc">$28부터 지속 매수, 800G/1.6T 수요 사이클의 대표 수혜주로 반복 언급되는 최고 확신 종목. 다만 "실행되면"이라는 조건부 표현대로 향후 실적 발표가 검증 포인트.</div>
+  </div>
+  <div class="pick-card">
+    <span class="pick-rank">PICK 3</span>
+    <div class="pick-title">$AGLT (Agility Robotics) — 기관 검증된 로보틱스 베팅</div>
+    <div class="pick-desc">콜 이후 BlueCrest 5.6% 지분 공시로 이틀 만에 검증. 폭스콘·엔비디아·아마존·소프트뱅크 후원, 본인 최대 비중 포지션이나 SPAC 구조 변동성 유의.</div>
+  </div>
+</div>
+
+<footer>
+  * Not Financial Advice, DYOR. Serenity 원문 기반 요약이며 투자 조언이 아닙니다.<br>
+  본 리포트는 @aleabitoreddit의 공개 포스트 및 공개 트래커(trackserenity.com, semiconstocks.com 등)를 참고해 Claude가 자동 생성했습니다. 자기보고 성과이며 검증되지 않은 수익률(1Y +122%, YTD +3,612% 등)과 이번 달 -49.4% 드로다운이 함께 존재하는 고변동성 계정임을 감안할 것.
+  <div class="source-note">Generated by Claude · Scheduled task: serenity-morning-insights-710am</div>
+</footer>
+
+</div>
+</body>
+</html>
