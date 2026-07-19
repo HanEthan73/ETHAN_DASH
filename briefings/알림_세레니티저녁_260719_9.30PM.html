@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity 저녁 인사이트 | @aleabitoreddit | 2026-07-19</title>
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --card-bg: #171727;
+    --text: #e8e8f0;
+    --muted: #9a9ab0;
+    --accent: #ffd700;
+    --buy: #4ade80;
+    --sell: #f87171;
+    --hold: #9a9ab0;
+    --border: #26263c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', 'Malgun Gothic', -apple-system, sans-serif;
+    line-height: 1.6;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 24px 20px 60px; }
+  header {
+    padding: 28px 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+  }
+  header h1 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  header .sub {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .alert-banner {
+    margin-top: 14px;
+    background: rgba(248,113,113,0.10);
+    border: 1px solid rgba(248,113,113,0.35);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: var(--text);
+  }
+  .alert-banner b { color: var(--sell); }
+  .info-banner {
+    margin-top: 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.30);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: var(--text);
+  }
+  .info-banner b { color: var(--accent); }
+  h2.section-title {
+    font-size: 16px;
+    color: var(--accent);
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+    margin: 36px 0 16px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .card-date { color: var(--muted); font-size: 12px; }
+  .tickers { font-weight: 700; color: var(--accent); font-size: 13px; }
+  .direction {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+  .dir-buy { background: rgba(74,222,128,0.15); color: var(--buy); }
+  .dir-sell { background: rgba(248,113,113,0.15); color: var(--sell); }
+  .dir-hold { background: rgba(154,154,176,0.15); color: var(--hold); }
+  .summary-text { font-size: 14px; color: var(--text); margin: 8px 0; }
+  .interp {
+    font-size: 13px;
+    color: var(--muted);
+    background: rgba(255,215,0,0.05);
+    border-left: 2px solid var(--accent);
+    padding: 8px 12px;
+    margin-top: 8px;
+    border-radius: 0 6px 6px 0;
+  }
+  .interp b { color: var(--accent); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  th {
+    color: var(--accent);
+    font-size: 12px;
+    background: rgba(255,215,0,0.06);
+  }
+  td.ticker-cell { font-weight: 700; }
+  .conf-high { color: var(--buy); font-weight: 700; }
+  .conf-mid { color: var(--accent); font-weight: 700; }
+  .conf-low { color: var(--muted); font-weight: 700; }
+  .picks {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .pick-card {
+    background: linear-gradient(135deg, rgba(255,215,0,0.10), rgba(23,23,39,0.4));
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .pick-rank {
+    display: inline-block;
+    background: var(--accent);
+    color: #1a1a0a;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  .pick-title { font-size: 16px; font-weight: 700; margin: 4px 0; }
+  .pick-desc { font-size: 13px; color: var(--muted); }
+  .compare-table td, .compare-table th { font-size: 12.5px; }
+  .badge-up { color: var(--buy); font-weight: 700; }
+  .badge-down { color: var(--sell); font-weight: 700; }
+  .badge-same { color: var(--muted); font-weight: 700; }
+  footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+  .source-note {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Serenity 저녁 인사이트 | @aleabitoreddit | 2026-07-19</h1>
+  <div class="sub">AI/반도체 공급망 인플루언서 Serenity(白毛股神, 팔로워 약 91만) 최근 포스트 기반 요약 · Claude 자동 브리핑</div>
+  <div class="info-banner"><b>수집 안내:</b> 오늘(일요일)은 미국 증시 휴장일로 실시간 장중 코멘트는 없음. Chrome 브라우저 미연결로 X 프로필 직접 크롤링 대신 공개 검색 결과(X 게시물 캐시, trackserenity.com, semiconstocks.com 등) 기반으로 최근 공개된 포스트를 재구성함. 정확한 게시 시각(KST) 특정이 어려운 항목은 "최근"으로 표기.</div>
+  <div class="alert-banner"><b>리스크 노트:</b> Serenity 본인이 이번 달 포트폴리오 <b>-49.4% 드로다운</b>을 공개 인정, 이란 리스크로 마진 레버리지는 0으로 축소. CPO 급락 구간 노출이 컸던 종목(AXTI·SOI 등)은 여전히 회복 중.</div>
+</header>
+
+<h2 class="section-title">섹션 1. 오늘(주말) 포스트 인사이트</h2>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근(7월 중순)</span><span class="tickers">$AAOI · $LITE</span><span class="direction dir-buy">매수(확신 유지)</span></div>
+  <div class="summary-text">"AAOI는 오늘 내 논지 발표 후 24% 상승, LITE는 5% 상승. BOM 분석상 LITE($27B)는 TPU Ironwood向 OCS에 레버리지, AAOI($2.5B)는 MSFT MAIA 램프와 Amazon Trainium에 레버리지. InP는 HBM처럼 2026년 병목이 될 것"이라는 요지.</div>
+  <div class="interp"><b>Claude 해석:</b> 공급망 상류(InP 기판) 병목 논리를 재확인하며 AAOI·LITE 두 종목을 하이퍼스케일러별로 구분해 설명. 발표 직후 급등을 근거로 제시했으나 단기 모멘텀과 장기 펀더멘털 구분이 필요.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">$TSEM · $AAOI</span><span class="direction dir-buy">매수(촉매 발생)</span></div>
+  <div class="summary-text">"오늘 TSEM과 AAOI에서 각각 생산능력 확장 발표가 나왔다. 일본 정부 지원을 받는 Tower Semi는 300mm 실리콘포토닉스·SiGe·첨단패키징 확장을 통해 $1.2B 순이익을 목표로 한다"고 언급.</div>
+  <div class="interp"><b>Claude 해석:</b> 공급 측 확장 발표는 수요가 확장을 정당화할 만큼 강하다는 방증으로 해석 가능. 다만 CAPEX 집행과 실제 수율 확보까지는 시차가 존재.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">$AAOI</span><span class="direction dir-buy">매수(밸류에이션 강조)</span></div>
+  <div class="summary-text">"AAOI가 2027년 3분기 초 분기매출 $1.4B(연환산 $5.6B)에 도달한다면, 현재 시총 $8B 대비 극단적 저평가"라며 "월 매출 $471m이 계속 증가할 것"이라는 시나리오 제시.</div>
+  <div class="interp"><b>Claude 해석:</b> 2027년 시점의 장기 시나리오라 단기 매매 근거로는 약하지만, 본인의 최고 확신 포지션임을 재확인하는 코멘트. 목표 시점까지 1년 이상 남아 있어 실현 여부는 다수의 실적 발표를 거쳐야 확인 가능.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">주말(신규)</span><span class="tickers">$XFAB</span><span class="direction dir-buy">매수 관심(초기 단계)</span></div>
+  <div class="summary-text">"주말 샤워하다 든 생각... XFAB, 여전히 다음 TSEM이 될 수 있다고 느낀다. 시총 $1.4B의 초기 단계일 뿐. 현재 TSEM이 물량을 받고 있는 세대를 건너뛰어 2027년 하반기 CPO 스케일업 변곡점을 겨냥하고 있다"는 요지.</div>
+  <div class="interp"><b>Claude 해석:</b> "샤워 생각"이라는 캐주얼한 표현대로 아직 정식 리서치가 아닌 초기 아이디어 단계. 오늘 새로 부상한 관심 종목으로 아침 리포트에는 없었던 신규 항목.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">$SIVE</span><span class="direction dir-buy">매수(커뮤니티 반응 확인)</span></div>
+  <div class="summary-text">팔로워 반응: "Serenity의 SIVE 관련 포스트는 이상하게 안심시키는 효과가 있다. 각자 리서치를 했고 이미 여러 번 읽은 내용인데도 여전히 묘하게 든든하다"는 댓글이 확산되며 SIVE에 대한 커뮤니티 내 신뢰가 재확인됨.</div>
+  <div class="interp"><b>Claude 해석:</b> 오늘 아침 픽 1위였던 SIVE에 대한 확신이 팔로워 반응으로도 뒷받침됨. 다만 이는 군중심리 강화 신호이기도 해 과열 리스크는 별도로 점검 필요.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">$FIG</span><span class="direction dir-hold">불확실(미답변)</span></div>
+  <div class="summary-text">팔로워 질문: "@aleabitoreddit 아직도 FIG에 강세인가요?"라는 질문이 올라왔으나 본인의 공개 답변은 확인되지 않음.</div>
+  <div class="interp"><b>Claude 해석:</b> 명확한 포지션 변경 발표가 없어 기존 스탠스 유지로 추정되나 확답 불가. 확인 전까지는 신뢰도 낮은 참고 항목으로만 취급 권장.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">$WUS · $ACMR · $CAMT · Bit Digital</span><span class="direction dir-hold">관망(개인 메모)</span></div>
+  <div class="summary-text">"Priortech가 $CAMT의 21% 지분(시총의 약 1.35배) 보유, 지주회사 성격. Bit Digital는 사람들이 떠들지만 NAV 디스카운트가 깔끔하지 않음(WYFI 희석 이슈, AI 모회사 아님). Wistron(3231)이 SIVE·Ayar 이후 본 것 중 최고"라는 개인 메모 공유. WUS는 액티비스트 Palliser Capital과 NAV 디스카운트 이슈에 동조.</div>
+  <div class="interp"><b>Claude 해석:</b> 직접 매수 추천이 아닌 리서치 노트 성격. NAV 디스카운트 테마를 새로운 발굴 축으로 탐색 중임을 시사하나 아직 확신도는 낮음.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">$SIVE · $AAOI · $POET · Celestial AI</span><span class="direction dir-hold">신규 진입 구간(3단계)</span></div>
+  <div class="summary-text">"기관 병목 순환을 정확히 짚었다: 1단계 메모리($SNDK·삼성·SK하이닉스·$MU) → 2단계 포토닉스($AAOI·$AXTI·$LITE·$COHR) → 지금은 SiPh/ELS/CPO($SIVE·$AAOI·$POET·Celestial AI)에 집중 매수 중"이라는 3단계 로테이션 프레임워크 재확인. COHR은 InP 기판 단계까지만 수직계열화 중이며 아직 원료/정제 단계는 아니라고 첨언.</div>
+  <div class="interp"><b>Claude 해석:</b> 아침 리포트와 동일한 프레임워크가 유지되고 있음. POET·Celestial AI는 비상장/신규 상장 종목이라 국내 개인투자자 접근성이 제한적임을 감안해야 함.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">로보틱스(Unitree·Agility·Harmonic Drive)</span><span class="direction dir-buy">매수 유지</span></div>
+  <div class="summary-text">휴머노이드 선호주로 Unitree·Agility Robotics를 재확인, 본인 최대 비중은 Agility Robotics. 상류 부품으로는 Harmonic Drive(정밀 감속기) 보유를 유지 중이라고 언급.</div>
+  <div class="interp"><b>Claude 해석:</b> 아침 리포트 대비 포지션 변화 없음. BlueCrest 지분 공시·Unitree IPO 승인 등 촉매는 이미 지난 주 반영되어 신규 정보 업데이트는 제한적.</div>
+</div>
+
+<div class="card">
+  <div class="card-top"><span class="card-date">최근</span><span class="tickers">$AXTI · $SOI · $AAOI</span><span class="direction dir-sell">리스크 유지</span></div>
+  <div class="summary-text">본인 표현 "분산된 손실(Diversified Losses)" 전략 상태 지속. CPO 노출 종목(Foci, Msscorp 등)이 이번 드로다운의 진앙지였다는 인정을 재확인하며 레버리지 축소 기조 유지.</div>
+  <div class="interp"><b>Claude 해석:</b> 신규 악재는 없으나 리스크 경고는 계속 유효. 해당 종목군 신규 진입 시 변동성 감내 여부를 재확인할 것.</div>
+</div>
+
+<h2 class="section-title">섹션 2. 주목 종목 요약표</h2>
+
+<table>
+<thead>
+<tr><th>종목</th><th>방향</th><th>핵심 근거</th><th>신뢰도</th></tr>
+</thead>
+<tbody>
+<tr><td class="ticker-cell">$AAOI</td><td>매수</td><td>당일 24% 급등 촉발 논지, TSEM 동반 증설 발표, 2027년 $5.6B 연환산 매출 시나리오</td><td class="conf-high">상</td></tr>
+<tr><td class="ticker-cell">$SIVE</td><td>매수</td><td>경영진 매수 + 커뮤니티 신뢰 재확인, 3단계(SiPh/ELS/CPO) 로테이션 핵심 종목</td><td class="conf-high">상</td></tr>
+<tr><td class="ticker-cell">$XFAB</td><td>매수 관심(초기)</td><td>주말 신규 발굴 아이디어, 다음 TSEM 후보, 시총 $1.4B 초기 단계</td><td class="conf-mid">중</td></tr>
+<tr><td class="ticker-cell">$AGLT(Agility)</td><td>매수</td><td>본인 최대 비중 로보틱스 포지션, 기관(BlueCrest) 지분 검증됨, 신규 촉매는 소강</td><td class="conf-mid">중</td></tr>
+<tr><td class="ticker-cell">$LITE</td><td>매수</td><td>TPU Ironwood向 OCS 레버리지, AAOI 동반 상승</td><td class="conf-mid">중</td></tr>
+<tr><td class="ticker-cell">$POET · Celestial AI</td><td>관망(신규진입 구간)</td><td>3단계 CPO 로테이션 후보, 비상장/접근성 낮음</td><td class="conf-low">하</td></tr>
+<tr><td class="ticker-cell">$WUS · $CAMT</td><td>관망(리서치 메모)</td><td>NAV 디스카운트 테마 탐색 중, 아직 확신도 낮은 개인 메모</td><td class="conf-low">하</td></tr>
+<tr><td class="ticker-cell">$FIG</td><td>불확실</td><td>팔로워 질문에 공개 답변 미확인</td><td class="conf-low">하</td></tr>
+<tr><td class="ticker-cell">$AXTI · $SOI</td><td>리스크 유지</td><td>CPO 급락 직격, "분산된 손실" 상태 지속</td><td class="conf-low">하</td></tr>
+</tbody>
+</table>
+
+<h2 class="section-title">섹션 3. 내일(월요일) 주목 픽</h2>
+
+<div class="picks">
+  <div class="pick-card">
+    <span class="pick-rank">PICK 1</span>
+    <div class="pick-title">$AAOI — 촉매 다수 확인, 최고 확신 유지</div>
+    <div class="pick-desc">주말 사이 24% 급등 논지, TSEM 동반 증설 발표, 2027년 분기매출 $1.4B 시나리오까지 겹치며 아침보다 근거가 더 두터워짐. 월요일 개장 시 갭업 반응 여부를 우선 확인할 만한 종목.</div>
+  </div>
+  <div class="pick-card">
+    <span class="pick-rank">PICK 2</span>
+    <div class="pick-title">$SIVE — 아침 픽 1위 유지, 커뮤니티 신뢰 재확인</div>
+    <div class="pick-desc">경영진 자사주 매입 이후 팔로워 반응까지 우호적으로 확인됨. 3단계 CPO 로테이션의 핵심 종목으로 반복 언급.</div>
+  </div>
+  <div class="pick-card">
+    <span class="pick-rank">PICK 3</span>
+    <div class="pick-title">$XFAB — 주말 신규 부상 아이디어</div>
+    <div class="pick-desc">"다음 TSEM" 후보로 새롭게 언급된 초기 단계 아이디어. 아직 정식 리서치 전이라 신뢰도는 중간이나, 월요일 이후 후속 코멘트 여부를 지켜볼 필요.</div>
+  </div>
+</div>
+
+<h2 class="section-title">섹션 4. 아침 대비 변화</h2>
+
+<table class="compare-table">
+<thead>
+<tr><th>종목</th><th>아침(7:10AM) 순위/의견</th><th>저녁 변화</th></tr>
+</thead>
+<tbody>
+<tr><td class="ticker-cell">$SIVE</td><td>PICK 1 (매수, 신뢰도 상)</td><td><span class="badge-same">유지</span> — 커뮤니티 반응으로 확신 재확인, 저녁에도 PICK 유지</td></tr>
+<tr><td class="ticker-cell">$AAOI</td><td>PICK 2 (매수, 신뢰도 상)</td><td><span class="badge-up">강화 → PICK 1로 상승</span> — 24% 급등 논지·증설 발표·매출 시나리오 등 신규 재료 다수 추가</td></tr>
+<tr><td class="ticker-cell">$AGLT(Agility)</td><td>PICK 3 (매수, 신뢰도 중)</td><td><span class="badge-down">3위 밖으로 밀림</span> — 포지션 자체는 유지되나 신규 촉매 없어 XFAB에 우선순위 내줌</td></tr>
+<tr><td class="ticker-cell">$XFAB</td><td>언급 없음</td><td><span class="badge-up">신규 진입</span> — 주말 샤워 생각 포스트로 오늘 처음 부상, PICK 3</td></tr>
+<tr><td class="ticker-cell">$FIG</td><td>언급 없음</td><td><span class="badge-same">신규 등장(불확실)</span> — 팔로워 질문만 있고 본인 답변 미확인 상태로 남음</td></tr>
+</tbody>
+</table>
+
+<footer>
+  * Not Financial Advice, DYOR. Serenity 원문 기반 요약이며 투자 조언이 아닙니다.<br>
+  본 리포트는 @aleabitoreddit의 공개 포스트 및 공개 트래커(trackserenity.com, semiconstocks.com 등)를 참고해 Claude가 자동 생성했습니다. 오늘은 일요일 휴장으로 실시간 장중 코멘트가 아닌 최근 공개 포스트 기반 재구성임을 감안할 것. 자기보고 성과이며 검증되지 않은 수익률과 이번 달 -49.4% 드로다운이 함께 존재하는 고변동성 계정임.
+  <div class="source-note">Generated by Claude · Scheduled task: serenity-evening-insights-930pm</div>
+</footer>
+
+</div>
+</body>
+</html>
