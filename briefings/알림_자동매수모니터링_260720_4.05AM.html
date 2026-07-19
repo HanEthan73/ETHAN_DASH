@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --border:#30363d;
+    --text:#e6edf3; --muted:#8b949e;
+    --red:#f85149; --green:#3fb950; --yellow:#d29922; --blue:#58a6ff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    margin:0; padding:16px;
+  }
+  .wrap{max-width:720px; margin:0 auto;}
+  h1{
+    font-size:20px; margin:0 0 4px; color:var(--red);
+  }
+  .sub{color:var(--muted); font-size:13px; margin-bottom:18px;}
+  .card{
+    background:var(--card); border:1px solid var(--border);
+    border-radius:10px; padding:14px; margin-bottom:16px;
+  }
+  h2{font-size:15px; margin:0 0 10px; color:var(--text);}
+  table{width:100%; border-collapse:collapse; font-size:13px;}
+  th,td{padding:8px 6px; text-align:center; border-bottom:1px solid var(--border); white-space:nowrap;}
+  th{color:var(--muted); font-weight:600; font-size:12px;}
+  td.ticker{font-weight:700; color:var(--blue); text-align:left;}
+  td.price{color:var(--red); font-weight:700;}
+  td.note{font-size:11px; color:var(--yellow); text-align:left; white-space:normal;}
+  .near td.price{color:var(--yellow);}
+  .badge{
+    display:inline-block; font-size:10px; padding:2px 6px; border-radius:6px;
+    background:rgba(248,81,73,0.15); color:var(--red); margin-left:4px;
+  }
+  .badge.warn{background:rgba(210,153,34,0.15); color:var(--yellow);}
+  .footer{color:var(--muted); font-size:11px; text-align:center; margin-top:20px;}
+  @media (max-width:480px){
+    table{font-size:11.5px;}
+    th,td{padding:6px 4px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="sub">2026-07-19 (미국 정규장 종가 기준) · 생성: 2026-07-20 04:05 KST</div>
+
+  <div class="card">
+    <h2>트리거 도달 종목 (7)</h2>
+    <table>
+      <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+      <tr class=""><td class="ticker">AVGO</td><td class="price">$370.83</td><td>$420</td><td>$390</td><td>$480</td></tr>
+      <tr class=""><td class="ticker">MSFT</td><td class="price">$393.82</td><td>$410</td><td>$360</td><td>$500</td></tr>
+      <tr class=""><td class="ticker">INTC</td><td class="price">$95.04</td><td>$104.50</td><td>$95</td><td>$130</td></tr>
+      <tr class=""><td class="ticker">GOOGL</td><td class="price">$354.46</td><td>$385</td><td>$355</td><td>$450</td></tr>
+      <tr class=""><td class="ticker">AMZN</td><td class="price">$247.23</td><td>$255</td><td>$230</td><td>$320</td></tr>
+      <tr class=""><td class="ticker">ORCL</td><td class="price">$126.41</td><td>$178</td><td>$162</td><td>$225</td></tr>
+      <tr class=""><td class="ticker">ASTS</td><td class="price">$57.80</td><td>$68</td><td>$45</td><td>$100</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ 2% 이내 근접 종목</h2>
+    <table>
+      <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+      <tr class="near"><td class="ticker">TSM</td><td class="price">$398.37</td><td>$395</td><td>$355</td><td>$455</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ 리스크 경고</h2>
+    <table style="font-size:12px;">
+      <tr><th style="text-align:left;">항목</th><th style="text-align:left;">내용</th></tr>
+      <tr><td class="ticker">ORCL</td><td class="note">현재가($126.41)가 이미 손절가($162)보다 훨씬 낮음. 트리거 매수 시 진입가가 계획된 손절선 아래에 위치하게 되어 리스크 관리 로직이 성립하지 않음. 매수 전 재검토 필요.</td></tr>
+      <tr><td class="ticker">INTC</td><td class="note">현재가($95.04)가 손절가($95)에 거의 근접. 트리거 도달과 손절 조건이 사실상 동시 충족 상태.</td></tr>
+      <tr><td class="ticker">전반</td><td class="note">10개 관심종목 중 7개가 트리거 도달 — AI/반도체 밸류에이션 우려 및 하이퍼스케일러 지출 둔화 이슈로 인한 전반적 기술주 조정 국면으로 보임 (오라클 -62% 고점 대비, MSFT/GOOGL 실적 앞두고 약세).</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">자동 생성 · 실시간 웹서치 기반 · 투자 판단은 본인 책임</div>
+</div>
+</body>
+</html>
