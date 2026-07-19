@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>주간 전략 브리핑 260719</title>
+<style>
+  :root{
+    --bg:#0b0e14;
+    --card:#141922;
+    --card2:#1a2130;
+    --border:#2a3242;
+    --text:#e6e9ef;
+    --sub:#9aa4b5;
+    --red:#ff5d5d;
+    --green:#3ddc84;
+    --amber:#ffc857;
+    --blue:#5b9dff;
+    --accent:#7c8cff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    line-height:1.55;
+    padding:0 0 60px 0;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:20px 16px;}
+  header{padding:24px 16px 18px;border-bottom:1px solid var(--border);}
+  header .tag{
+    display:inline-block;font-size:12px;color:var(--accent);
+    background:rgba(124,140,255,0.12);border:1px solid rgba(124,140,255,0.35);
+    padding:3px 10px;border-radius:20px;margin-bottom:10px;letter-spacing:0.3px;
+  }
+  h1{font-size:21px;margin:0 0 6px;font-weight:700;}
+  .meta{font-size:13px;color:var(--sub);}
+  h2{
+    font-size:15px;margin:34px 0 12px;color:var(--text);
+    display:flex;align-items:center;gap:8px;font-weight:700;
+  }
+  h2 .num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:22px;height:22px;border-radius:6px;background:var(--accent);
+    color:#0b0e14;font-size:12px;font-weight:800;
+  }
+  .card{
+    background:var(--card);border:1px solid var(--border);border-radius:12px;
+    padding:14px;margin-bottom:12px;
+  }
+  .lead{font-size:13.5px;color:var(--sub);margin:-4px 0 14px;}
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th{
+    text-align:left;color:var(--sub);font-weight:600;font-size:11.5px;
+    padding:7px 8px;border-bottom:1px solid var(--border);white-space:nowrap;
+  }
+  td{
+    padding:9px 8px;border-bottom:1px solid var(--border);vertical-align:top;
+  }
+  tr:last-child td{border-bottom:none;}
+  .pos{color:var(--green);font-weight:700;}
+  .neg{color:var(--red);font-weight:700;}
+  .warn{color:var(--amber);font-weight:700;}
+  .pill{
+    display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;font-weight:700;
+  }
+  .pill.buy{background:rgba(61,220,132,0.15);color:var(--green);border:1px solid rgba(61,220,132,0.4);}
+  .pill.wait{background:rgba(255,200,87,0.15);color:var(--amber);border:1px solid rgba(255,200,87,0.4);}
+  .pill.risk{background:rgba(255,93,93,0.15);color:var(--red);border:1px solid rgba(255,93,93,0.4);}
+  .badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+  .badge{
+    flex:1;min-width:100px;background:var(--card2);border:1px solid var(--border);
+    border-radius:10px;padding:10px 12px;text-align:center;
+  }
+  .badge .v{font-size:17px;font-weight:800;}
+  .badge .l{font-size:11px;color:var(--sub);margin-top:2px;}
+  .note{
+    font-size:12.5px;color:var(--sub);background:var(--card2);border-left:3px solid var(--accent);
+    padding:10px 12px;border-radius:8px;margin-top:10px;
+  }
+  .regime-box{
+    background:linear-gradient(135deg, rgba(255,93,93,0.12), rgba(255,200,87,0.08));
+    border:1px solid rgba(255,93,93,0.35);border-radius:12px;padding:16px;margin-bottom:12px;
+  }
+  .regime-box .title{font-size:16px;font-weight:800;color:var(--red);margin-bottom:6px;}
+  .regime-box p{margin:0;font-size:13.5px;color:var(--text);}
+  .strategy-item{
+    display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--border);
+  }
+  .strategy-item:last-child{border-bottom:none;}
+  .strategy-item .ico{
+    width:26px;height:26px;border-radius:7px;background:var(--card2);
+    display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;
+  }
+  .strategy-item .body b{display:block;font-size:13.5px;margin-bottom:3px;}
+  .strategy-item .body span{font-size:12.5px;color:var(--sub);}
+  footer{
+    text-align:center;color:var(--sub);font-size:11.5px;margin-top:30px;padding-top:16px;
+    border-top:1px solid var(--border);
+  }
+  a{color:var(--blue);}
+  @media (max-width:420px){
+    h1{font-size:19px;}
+    table{font-size:12px;}
+    th,td{padding:7px 5px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="tag">WEEKLY STRATEGY BRIEFING</span>
+  <h1>ETHAN 대표님 주간 전략 브리핑</h1>
+  <div class="meta">2026년 7월 19일(일) 19:10 KST 발송 · 다음 주 7/20(월) ~ 7/26(일) 대응 전략</div>
+</header>
+
+<h2><span class="num">1</span>이번 주 시장 리뷰 (7/13~7/17)</h2>
+<div class="card">
+  <table>
+    <tr><th>지수</th><th>주간 등락</th><th>비고</th></tr>
+    <tr><td>S&amp;P500</td><td class="neg">-1.5%</td><td>반도체 약세가 지수 전체 하방 압력</td></tr>
+    <tr><td>나스닥</td><td class="neg">-2.9%</td><td>AI/반도체 대형주 중심 조정 심화</td></tr>
+    <tr><td>다우</td><td class="neg">-1.0%</td><td>상대적으로 낙폭 제한적</td></tr>
+    <tr><td>코스피</td><td class="neg">-8.77%</td><td>주간 -655pt, 6,820.60 마감 · 사이드카 매일 발동</td></tr>
+  </table>
+  <div class="note">
+    <b>핵심 이슈:</b> AI 자본지출(capex) 지속가능성 우려 + 빅테크 자체 커스텀 칩(OpenAI·아마존·Cerebras 등)의 엔비디아 대체 가능성 부각 → 필라델피아 반도체지수 약 -10%, 마이크론 시총 약 380억달러 증발, 인텔 21% 급락. 국내는 삼성전자 -8.77%, SK하이닉스 -11.53% 급락 + 한국은행 깜짝 기준금리 인상(2.50%→2.75%, 3년6개월 만의 인상) + 중동 지정학 리스크(호르무즈 해협 관련 이란 발언) 겹악재.
+  </div>
+</div>
+
+<h2><span class="num">2</span>다음 주 매크로 · 연준 캘린더</h2>
+<div class="card">
+  <table>
+    <tr><th>일자</th><th>이벤트</th></tr>
+    <tr><td>7/20(월)</td><td>CB 경기선행지수(6월) · 단기국채 입찰</td></tr>
+    <tr><td>7/21(화)</td><td>ADP 주간 고용동향</td></tr>
+    <tr><td>7/22(수)</td><td>MBA 모기지 신청지수 · EIA 원유재고</td></tr>
+    <tr><td>7/23(목)</td><td>시카고 연은 전미경기활동지수(6월)</td></tr>
+    <tr><td>7/24(금)</td><td>S&amp;P Global 제조업·서비스업 PMI 플래시(7월) 발표 예상</td></tr>
+  </table>
+  <div class="note">
+    <b>연준(Fed):</b> 7/28~29 FOMC를 앞두고 <b>블랙아웃 기간(7/18~30)</b> 진입 — 다음 주 연준 위원 공개 발언 없음. 금리 결정 발표는 7/29(수) 14:00 ET, 파월 의장 기자회견 14:30 ET(재확인 필요). 이번 주는 상대적으로 굵직한 매크로 이벤트가 적은 &ldquo;소강 국면&rdquo;이나, 반도체발 변동성이 지수를 계속 흔들 가능성.
+  </div>
+</div>
+
+<h2><span class="num">3</span>다음 주 실적 발표 일정</h2>
+<div class="card">
+  <table>
+    <tr><th>일자</th><th>종목</th><th>비고</th></tr>
+    <tr><td>7/22(수)</td><td>TSLA · GOOGL</td><td>장 마감 후 발표</td></tr>
+    <tr><td>7/23(목)</td><td>INTC</td><td>반도체 업황 가늠자, 변동성 주의</td></tr>
+    <tr><td>7/23(목)</td><td><b>현대차</b> (보유)</td><td>2Q 컨센서스 영업이익 약 5.9조원(현대차+기아 합산, 전년比 -7.6%) · 아산공장 화재발 생산차질 반영 전망</td></tr>
+  </table>
+  <div class="note">
+    <b>참고(다음 주 이후 근접 일정):</b> VRT(보유) 7/29, MSFT 7/29, AMZN 7/30, MSTR(MSTX 추종자산) 7/30 · NVDA 8/26, AVGO 9/3, MRVL 8/20 — 다다음주 초반 실적 시즌 본격화 예정으로 사전 포지션 점검 필요.
+  </div>
+</div>
+
+<h2><span class="num">4</span>보유 종목 현황</h2>
+<div class="card">
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>비고</th></tr>
+    <tr><td>NVDA</td><td class="neg">$202.81 (-2.2%)</td><td>커스텀 실리콘 경쟁 우려 직격</td></tr>
+    <tr><td>AVGO</td><td class="neg">$370.83</td><td>52주 고점 $495 대비 -25%</td></tr>
+    <tr><td>ASTS</td><td class="neg">$55~58</td><td>10억달러 전환사채 발행 + 시장 조정 겹악재</td></tr>
+    <tr><td>VRT</td><td class="neg">$289~294</td><td>AI 데이터센터向 전력·냉각, 7/29 실적 대기</td></tr>
+    <tr><td>MSTX</td><td class="neg">-</td><td>MSTR 2배 레버리지 추종 · MSTR 7/30 실적 변동성 주의</td></tr>
+    <tr><td>현대차</td><td class="neg">약 36.9만원 부근</td><td>원화 약세 + 금리인상 + 반도체발 수급 악화 3중고</td></tr>
+  </table>
+</div>
+
+<h2><span class="num">5</span>자동매수 모니터링</h2>
+<div class="card">
+  <table>
+    <tr><th>종목</th><th>트리거가</th><th>현재가(대략)</th><th>상태</th></tr>
+    <tr><td>AVGO</td><td>$420</td><td>$370.83</td><td><span class="pill buy">트리거 하회</span></td></tr>
+    <tr><td>ASTS</td><td>$68</td><td>$55~58</td><td><span class="pill buy">트리거 하회</span></td></tr>
+    <tr><td>MSFT</td><td>$410</td><td>확인 필요</td><td><span class="pill wait">개별 확인</span></td></tr>
+    <tr><td>INTC</td><td>$104.50</td><td>확인 필요</td><td><span class="pill wait">개별 확인</span></td></tr>
+    <tr><td>GOOGL</td><td>$385</td><td>확인 필요</td><td><span class="pill wait">개별 확인</span></td></tr>
+    <tr><td>TSM</td><td>$395</td><td>확인 필요</td><td><span class="pill wait">개별 확인</span></td></tr>
+    <tr><td>MRVL</td><td>$168</td><td>확인 필요</td><td><span class="pill wait">개별 확인</span></td></tr>
+    <tr><td>AMZN</td><td>$255</td><td>확인 필요</td><td><span class="pill wait">개별 확인</span></td></tr>
+    <tr><td>ORCL</td><td>$178</td><td>확인 필요</td><td><span class="pill wait">개별 확인</span></td></tr>
+    <tr><td>PLTR</td><td>$122</td><td>확인 필요</td><td><span class="pill wait">개별 확인</span></td></tr>
+  </table>
+  <div class="note">
+    AVGO·ASTS는 이미 트리거가를 하회한 상태로 확인됨 — 자동매수 체결 여부 점검 권고. 나머지 종목은 이번 조사에서 정확한 종가를 확보하지 못해 &ldquo;개별 확인&rdquo;으로 표기 — 반도체·AI 섹터 전반이 조정 중인 만큼 다수가 트리거가에 근접했을 가능성이 높아 장 시작 전 직접 확인 권장.
+  </div>
+</div>
+
+<h2><span class="num">6</span>시장 국면 판단</h2>
+<div class="regime-box">
+  <div class="title">약세 전환 국면 (반도체·AI 주도 조정)</div>
+  <p>
+    미국 증시는 AI capex 지속가능성 의구심과 커스텀 실리콘발 경쟁 심화로 조정 국면에 진입했고, 한국 증시는 반도체 패닉 매도 + 금통위 깜짝 금리인상 + 원화 약세가 겹치며 &ldquo;패닉성 급락&rdquo;에 가깝게 나타남(주간 -8.77%, 사이드카 매일 발동). 다만 VIX는 18.77(주간 +12%)로 아직 25를 넘지 않아 역발상 매수 트리거는 미도달 상태.
+  </p>
+</div>
+<div class="badge-row">
+  <div class="badge"><div class="v warn">18.77</div><div class="l">VIX (주간 +12%)</div></div>
+  <div class="badge"><div class="v neg">1,571~1,595</div><div class="l">USD/KRW (원)</div></div>
+  <div class="badge"><div class="v warn">2.75%</div><div class="l">한국 기준금리</div></div>
+</div>
+
+<h2><span class="num">7</span>다음 주 전략 권고</h2>
+<div class="card">
+  <div class="strategy-item">
+    <div class="ico">💵</div>
+    <div class="body"><b>현금 비중 확대</b><span>약세 전환 신호 확인 — 원칙에 따라 현금 비중을 늘리고 자동매수 트리거 대기 모드로 전환. 신규 매수는 지지선 재확인 후 분할 진입.</span></div>
+  </div>
+  <div class="strategy-item">
+    <div class="ico">🎯</div>
+    <div class="body"><b>트레일링 스탑 점검</b><span>NVDA·AVGO·VRT 등 보유 반도체/AI 관련주는 트레일링 스탑 라인 재점검. 추가 급락 시 손절 라인이 과도하게 좁지 않은지 확인.</span></div>
+  </div>
+  <div class="strategy-item">
+    <div class="ico">🇰🇷</div>
+    <div class="body"><b>한국주(현대차) 비중 축소 검토</b><span>USD/KRW 1,500 초과 지속 원칙 발동 조건 충족(1,571~1,595원). 현대차는 7/23 실적 발표 전후 변동성까지 겹쳐 비중 축소를 우선 검토.</span></div>
+  </div>
+  <div class="strategy-item">
+    <div class="ico">🔻</div>
+    <div class="body"><b>AVGO·ASTS 자동매수 확인</b><span>두 종목 모두 트리거가 하회 확인 — 자동매수 체결 여부와 잔여 매수 여력 점검. 다만 반도체 업황 우려가 진행형이므로 분할 매수 원칙 유지.</span></div>
+  </div>
+  <div class="strategy-item">
+    <div class="ico">⚠️</div>
+    <div class="body"><b>VIX 25 돌파 시 역발상 매수 준비</b><span>현재 18.77로 아직 트리거 미도달. 반도체 셀오프가 지속되며 VIX가 20대 중반까지 상승할 경우 역발상 분할 매수 시나리오 사전 준비.</span></div>
+  </div>
+  <div class="strategy-item">
+    <div class="ico">📅</div>
+    <div class="body"><b>실적 시즌 대응</b><span>7/22 TSLA·GOOGL, 7/23 INTC·현대차 실적 변동성 유의. 다다음주(7/29~30) VRT·MSFT·AMZN·MSTR 실적까지 이어지는 만큼 포지션 사이즈 사전 조정 권장.</span></div>
+  </div>
+</div>
+
+<footer>
+  본 브리핑은 자동 수집된 공개 정보를 기반으로 작성되었으며, 투자 판단의 참고 자료입니다. 정확한 실시간 가격 및 트리거 상태는 매매 전 반드시 재확인하시기 바랍니다.<br>
+  Generated by ETHAN Weekly Strategy Agent · 2026-07-19 19:10 KST
+</footer>
+
+</div>
+</body>
+</html>
