@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USD/KRW 환율 경보</title>
+<style>
+  :root{
+    --bg:#0b0f14; --card:#151b23; --border:#232b36;
+    --text:#e6edf3; --sub:#8b949e; --red:#ff6b6b; --orange:#ffa94d;
+    --green:#51cf66; --accent:#4dabf7;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:16px; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    max-width:520px; margin:0 auto; line-height:1.5;
+  }
+  .header{padding:18px 4px 10px;}
+  .badge{
+    display:inline-block; background:var(--red); color:#fff; font-weight:700;
+    font-size:13px; padding:4px 10px; border-radius:20px; letter-spacing:0.5px;
+  }
+  h1{font-size:20px; margin:10px 0 2px; color:var(--text);}
+  .timestamp{color:var(--sub); font-size:12px; margin-bottom:4px;}
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:16px; margin:12px 0;
+  }
+  .rate-main{text-align:center; padding:8px 0;}
+  .rate-num{font-size:40px; font-weight:800; color:var(--orange); letter-spacing:-1px;}
+  .rate-unit{font-size:14px; color:var(--sub); margin-top:2px;}
+  .rate-change{font-size:14px; margin-top:8px; color:var(--sub);}
+  .rate-change b{color:var(--orange);}
+  .section-title{
+    font-size:13px; font-weight:700; color:var(--accent); text-transform:uppercase;
+    letter-spacing:0.5px; margin-bottom:8px;
+  }
+  .row{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--border); font-size:14px;}
+  .row:last-child{border-bottom:none;}
+  .row .label{color:var(--sub);}
+  .row .val{font-weight:600; text-align:right;}
+  .warn-box{
+    background:rgba(255,107,107,0.08); border:1px solid rgba(255,107,107,0.3);
+    border-radius:10px; padding:12px; font-size:13px; color:var(--red); margin-top:10px;
+  }
+  .safe-note{
+    background:rgba(81,207,102,0.08); border:1px solid rgba(81,207,102,0.3);
+    border-radius:10px; padding:12px; font-size:13px; color:var(--green); margin-top:10px;
+  }
+  p{font-size:14px; color:var(--text); margin:6px 0;}
+  ul{margin:6px 0; padding-left:18px; font-size:14px;}
+  li{margin-bottom:6px;}
+  .action-item{
+    display:flex; gap:10px; padding:8px 0; font-size:14px; align-items:flex-start;
+  }
+  .action-num{
+    flex-shrink:0; width:22px; height:22px; border-radius:50%; background:var(--accent);
+    color:#08131f; font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center;
+  }
+  .footer{color:var(--sub); font-size:11px; text-align:center; margin:20px 0 6px; line-height:1.7;}
+  .footer a{color:var(--sub);}
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <span class="badge">환율 경보 · 1,480원 초과</span>
+    <h1>USD/KRW 환율 경보</h1>
+    <div class="timestamp">2026년 7월 20일(월) 15:05 KST 기준 자동 모니터링</div>
+  </div>
+
+  <div class="card rate-main">
+    <div class="rate-num">1,488.30</div>
+    <div class="rate-unit">KRW / 1 USD (서울외환시장, 오전 9시 시가)</div>
+    <div class="rate-change">전일 종가 대비 <b>약보합~소폭 상승</b> (전 거래일 종가 1,487.7~1,488.5원 부근)</div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">1,500원 돌파 여부</div>
+    <div class="safe-note">
+      아직 <b>1,500원 미돌파</b>. 현재 1,480원대 후반에서 등락 중이며, 1,500원까지 약 12원 남음.
+      중동 리스크 및 코스피 급락이 지속될 경우 추가 상승(원화 약세) 압력 가능성 있음.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">코스피·외국인 수급 영향</div>
+    <div class="row"><span class="label">코스피 시가</span><span class="val">6,643.58 (전일比 -177.02p, -2.59%)</span></div>
+    <div class="row"><span class="label">장중 저점</span><span class="val">6,515.24 (6,500선 위협)</span></div>
+    <div class="row"><span class="label">매도 사이드카</span><span class="val">11:21:26 코스피 발동 (코스닥 동반)</span></div>
+    <div class="row"><span class="label">주요 원인</span><span class="val">중동 지정학 리스크·국제유가 급등</span></div>
+    <div class="warn-box">
+      이란-이스라엘발 공습 9일째 지속, 국제유가 80달러대 재진입으로 위험자산 회피(리스크오프) 심리 확산.
+      코스피·코스닥 동반 급락 속 외국인 매도세가 원화 약세를 동반 압박하는 구도. 뉴욕 반도체주 약세도 국내 증시에 부담.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">권고 조치</div>
+    <div class="action-item"><div class="action-num">1</div><div>달러 필요 자금(해외송금·유학비 등)이 있다면 분할 매수·환전 타이밍 분산 검토</div></div>
+    <div class="action-item"><div class="action-num">2</div><div>환헤지 상품(선물환 등) 보유 시 헤지 비율 점검</div></div>
+    <div class="action-item"><div class="action-num">3</div><div>국내 주식 비중이 크다면 변동성 확대 구간이므로 신규 진입은 분할 대응</div></div>
+    <div class="action-item"><div class="action-num">4</div><div>1,500원 근접·돌파 시 재경보 예정 — 중동 정세 뉴스 지속 모니터링 권장</div></div>
+  </div>
+
+  <div class="footer">
+    자동 생성 리포트 · USD/KRW 모니터링 스케줄 작업<br>
+    출처: 뉴스핌, 비즈니스코리아, 뉴스1 등 공개 보도 종합
+  </div>
+
+</body>
+</html>
