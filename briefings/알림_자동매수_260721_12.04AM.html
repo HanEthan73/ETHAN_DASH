@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 16px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.25rem;
+    color: #ff6b6b;
+    text-align: center;
+    margin: 8px 0 4px;
+  }
+  .timestamp {
+    text-align: center;
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 1rem;
+    color: #58a6ff;
+    margin: 24px 0 8px;
+    border-left: 3px solid #58a6ff;
+    padding-left: 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161b22;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.85rem;
+  }
+  th, td {
+    padding: 10px 6px;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+  }
+  th {
+    background: #21262d;
+    color: #f0f6fc;
+    font-weight: 600;
+  }
+  td { color: #c9d1d9; }
+  tr:last-child td { border-bottom: none; }
+  .warn { color: #f7768e; font-weight: 600; }
+  .ok { color: #7ee787; }
+  .ticker { font-weight: 700; color: #ffd580; }
+  .note {
+    margin-top: 20px;
+    padding: 12px;
+    background: #1c2128;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #8b949e;
+    line-height: 1.6;
+  }
+  @media (max-width: 480px) {
+    table { font-size: 0.75rem; }
+    th, td { padding: 8px 4px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>🚨 자동매수 트리거 도달</h1>
+<div class="timestamp">2026-07-21 00:04 (KST)</div>
+
+<div class="section-title">도달 종목 (7 / 10)</div>
+<table>
+  <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th><th>상태</th></tr>
+  <tr><td class="ticker">AVGO</td><td>$370.83</td><td>$420</td><td>$390</td><td>$480</td><td class="warn">손절가 하회</td></tr>
+  <tr><td class="ticker">MSFT</td><td>$394.01</td><td>$410</td><td>$360</td><td>$500</td><td class="ok">정상권</td></tr>
+  <tr><td class="ticker">INTC</td><td>$95.04</td><td>$104.50</td><td>$95</td><td>$130</td><td class="warn">손절가 초근접</td></tr>
+  <tr><td class="ticker">GOOGL</td><td>$346.45</td><td>$385</td><td>$355</td><td>$450</td><td class="warn">손절가 하회</td></tr>
+  <tr><td class="ticker">AMZN</td><td>$247.23</td><td>$255</td><td>$230</td><td>$320</td><td class="ok">정상권</td></tr>
+  <tr><td class="ticker">ORCL</td><td>$126.50</td><td>$178</td><td>$162</td><td>$225</td><td class="warn">손절가 하회</td></tr>
+  <tr><td class="ticker">ASTS</td><td>$57.80</td><td>$68</td><td>$45</td><td>$100</td><td class="ok">정상권</td></tr>
+</table>
+
+<div class="section-title">⚠️ 2% 이내 근접 (미도달)</div>
+<table>
+  <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>차이</th></tr>
+  <tr><td class="ticker">TSM</td><td>$398.37</td><td>$395</td><td>0.85%</td></tr>
+</table>
+
+<div class="note">
+※ AVGO, GOOGL, ORCL은 현재가가 손절가 아래에 있음 — 트리거 도달 시점 이미 손절 구간 진입.<br>
+※ INTC는 손절가($95)와 $0.04 차이로 사실상 손절선.<br>
+※ MRVL, PLTR은 트리거·근접 구간 밖이라 표에서 제외.
+</div>
+
+</body>
+</html>
