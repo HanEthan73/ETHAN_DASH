@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 자동매수 트리거 도달 알림</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding: 16px;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  h1 {
+    font-size: 20px;
+    color: #ff6b6b;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    font-size: 13px;
+    color: #8b949e;
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 15px;
+    color: #58a6ff;
+    margin: 24px 0 10px;
+    font-weight: 600;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 480px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid #21262d;
+    white-space: nowrap;
+  }
+  th {
+    background: #161b22;
+    color: #8b949e;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  tr:last-child td { border-bottom: none; }
+  td.ticker {
+    font-weight: 700;
+    color: #f0f6fc;
+  }
+  td.price {
+    color: #ffa657;
+    font-weight: 600;
+  }
+  td.warn {
+    color: #ff6b6b;
+    font-weight: 700;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    background: #ff6b6b22;
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b55;
+    border-radius: 6px;
+    padding: 2px 6px;
+    margin-top: 4px;
+  }
+  .note {
+    font-size: 12.5px;
+    color: #8b949e;
+    margin-top: 8px;
+    padding: 10px 12px;
+    background: #161b22;
+    border-left: 3px solid #58a6ff;
+    border-radius: 6px;
+  }
+  .footer {
+    margin-top: 28px;
+    font-size: 11px;
+    color: #6e7681;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-07-21 04:05 (KST) · 기준 시세: 2026-07-20 미국 정규장 중 (실시간)</div>
+
+  <div class="section-title">✅ 트리거 도달 종목 (7)</div>
+  <div class="table-wrap">
+    <table>
+      <tr>
+        <th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th>
+      </tr>
+      <tr>
+        <td class="ticker">AVGO</td><td class="price">$379.11</td><td>$420 이하</td><td class="warn">$390</td><td>$480</td>
+      </tr>
+      <tr>
+        <td class="ticker">MSFT</td><td class="price">$400.11</td><td>$410 이하</td><td>$360</td><td>$500</td>
+      </tr>
+      <tr>
+        <td class="ticker">INTC</td><td class="price">$98.41</td><td>$104.50 이하</td><td>$95</td><td>$130</td>
+      </tr>
+      <tr>
+        <td class="ticker">GOOGL</td><td class="price">$354.46</td><td>$385 이하</td><td class="warn">$355</td><td>$450</td>
+      </tr>
+      <tr>
+        <td class="ticker">AMZN</td><td class="price">$249.23</td><td>$255 이하</td><td>$230</td><td>$320</td>
+      </tr>
+      <tr>
+        <td class="ticker">ORCL</td><td class="warn">$123.35</td><td>$178 이하</td><td class="warn">$162</td><td>$225</td>
+      </tr>
+      <tr>
+        <td class="ticker">ASTS</td><td class="price">$58.00*</td><td>$68 이하</td><td>$45</td><td>$100</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="note">
+    <b>AVGO</b>: 트리거가는 물론 손절가($390)도 이미 하회한 상태 — 진입 시 리스크 재검토 필요.<br>
+    <b>GOOGL</b>: 손절가($355)에 근접/일부 하회 — 7/22 실적 발표 앞두고 변동성 주의.<br>
+    <b>ORCL</b>: 트리거가는 물론 손절가($162)도 크게 하회. 고점 대비 약 -64% 폭락 중 (AI 부채·자본지출 우려). 진입보다 관망 권고.<br>
+    <b>ASTS*</b>: 소스 간 시세 편차 존재 ($57.80~$70). 최신 거래일 기준 추정치이며 실제 체결가 재확인 권장.
+  </div>
+
+  <div class="section-title">⚠️ 트리거 2% 이내 근접 종목 (1)</div>
+  <div class="table-wrap">
+    <table>
+      <tr>
+        <th>종목</th><th>현재가</th><th>트리거가</th><th>차이</th>
+      </tr>
+      <tr>
+        <td class="ticker">TSM</td><td class="price">$402.48</td><td>$395 이하</td><td>+1.9%</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section-title" style="color:#8b949e;">— 미도달 (참고) —</div>
+  <div class="table-wrap">
+    <table>
+      <tr>
+        <th>종목</th><th>현재가</th><th>트리거가</th><th>차이</th>
+      </tr>
+      <tr>
+        <td class="ticker">MRVL</td><td class="price">$196.58</td><td>$168 이하</td><td>+17.0%</td>
+      </tr>
+      <tr>
+        <td class="ticker">PLTR</td><td class="price">$132.68</td><td>$122 이하</td><td>+8.8%</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="footer">ETHAN 자동매수 모니터링 · stockanalysis.com 실시간 시세 기준</div>
+
+</body>
+</html>
