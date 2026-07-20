@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>USD/KRW 환율 경보 - 2026.07.20</title>
+<style>
+  :root{
+    --bg:#0b0e14;
+    --card:#151a24;
+    --border:#262d3a;
+    --red:#ff5c5c;
+    --red-dim:#ff5c5c33;
+    --green:#3ddc84;
+    --text:#e8ebf1;
+    --sub:#8b93a7;
+    --accent:#ffb020;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Malgun Gothic',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:480px;
+    margin:0 auto;
+    padding:20px 16px 40px;
+  }
+  .header{
+    text-align:center;
+    padding:8px 0 20px;
+    border-bottom:1px solid var(--border);
+    margin-bottom:20px;
+  }
+  .header .tag{
+    display:inline-block;
+    background:var(--red-dim);
+    color:var(--red);
+    font-size:12px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:20px;
+    letter-spacing:0.5px;
+    margin-bottom:10px;
+  }
+  .header h1{
+    font-size:20px;
+    margin:0 0 4px;
+    font-weight:800;
+  }
+  .header .time{
+    font-size:12px;
+    color:var(--sub);
+  }
+  .rate-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:24px 20px;
+    text-align:center;
+    margin-bottom:16px;
+  }
+  .rate-card .label{
+    font-size:13px;
+    color:var(--sub);
+    margin-bottom:6px;
+  }
+  .rate-card .rate{
+    font-size:42px;
+    font-weight:800;
+    color:var(--red);
+    line-height:1.1;
+  }
+  .rate-card .change{
+    margin-top:8px;
+    font-size:15px;
+    font-weight:700;
+    color:var(--red);
+  }
+  .rate-card .change.up::before{content:"▲ ";}
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:16px;
+  }
+  .mini-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:14px;
+  }
+  .mini-card .l{
+    font-size:11px;
+    color:var(--sub);
+    margin-bottom:4px;
+  }
+  .mini-card .v{
+    font-size:16px;
+    font-weight:700;
+  }
+  .section{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:12px;
+  }
+  .section h2{
+    font-size:14px;
+    margin:0 0 10px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+  }
+  table th, table td{
+    text-align:left;
+    padding:8px 6px;
+    border-bottom:1px solid var(--border);
+  }
+  table th{
+    color:var(--sub);
+    font-weight:600;
+    font-size:12px;
+  }
+  table td.num{
+    text-align:right;
+    font-variant-numeric:tabular-nums;
+  }
+  .badge-warn{
+    display:inline-block;
+    background:var(--red-dim);
+    color:var(--red);
+    font-size:12px;
+    font-weight:700;
+    padding:10px 12px;
+    border-radius:10px;
+    width:100%;
+    text-align:center;
+    margin-bottom:10px;
+  }
+  .neg{color:var(--red);}
+  .pos{color:var(--green);}
+  ul.actions{
+    margin:0;
+    padding-left:18px;
+    font-size:13px;
+    line-height:1.7;
+    color:var(--text);
+  }
+  ul.actions li{margin-bottom:4px;}
+  .footer{
+    text-align:center;
+    font-size:11px;
+    color:var(--sub);
+    margin-top:20px;
+    line-height:1.6;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <span class="tag">⚠ 환율 경보</span>
+    <h1>USD/KRW 1,480원 상회</h1>
+    <div class="time">2026년 7월 20일(월) 09:24 KST 기준</div>
+  </div>
+
+  <div class="rate-card">
+    <div class="label">현재 원/달러 환율</div>
+    <div class="rate">1,495.33</div>
+    <div class="change up">+2.34원 (+0.16%) 전일 종가 대비</div>
+  </div>
+
+  <div class="grid">
+    <div class="mini-card">
+      <div class="l">금일 저가</div>
+      <div class="v">1,492.99</div>
+    </div>
+    <div class="mini-card">
+      <div class="l">금일 고가</div>
+      <div class="v neg">1,507.62</div>
+    </div>
+    <div class="mini-card">
+      <div class="l">52주 최고</div>
+      <div class="v">1,538.45</div>
+    </div>
+    <div class="mini-card">
+      <div class="l">52주 최저</div>
+      <div class="v">1,347.07</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="badge-warn">🚨 장중 1,507.62원까지 상승 — 1,500선 일시 돌파 후 1,495원대로 반락</div>
+    <table>
+      <tr><th>구분</th><th>수치</th></tr>
+      <tr><td>전일 종가</td><td class="num">1,492.99</td></tr>
+      <tr><td>현재가</td><td class="num neg">1,495.33</td></tr>
+      <tr><td>장중 최고</td><td class="num neg">1,507.62 (1,500 돌파)</td></tr>
+      <tr><td>1,480선 대비</td><td class="num neg">+15.33원 상회</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>📉 코스피 · 외국인 수급 영향</h2>
+    <table>
+      <tr><th>지수</th><th>종가</th><th>등락</th></tr>
+      <tr><td>코스피</td><td class="num">7,493.18</td><td class="num neg">-488.23 (-6.12%)</td></tr>
+    </table>
+    <p style="font-size:12px;color:var(--sub);margin:10px 0 0;line-height:1.6;">
+      원화 약세와 코스피 급락(-6%대)이 동시 진행 중. 통상 원/달러 급등 국면은 외국인 순매도(자본 유출) 압력으로 이어지며, 환차손 우려로 외국인 이탈이 지수 낙폭을 확대하는 악순환 가능성 있음.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>✅ 권고 조치</h2>
+    <ul class="actions">
+      <li>달러 보유/환전 예정 자금은 분할 대응, 추격 매수는 자제</li>
+      <li>수입 결제·해외 지출 예정 건은 환헤지(선물환) 검토</li>
+      <li>코스피 급락과 겹친 상황이므로 원화 자산 익스포저 점검</li>
+      <li>1,500원 재돌파·안착 여부 장중 추가 확인 필요</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    자동 생성 리포트 · 데이터 출처: Investing.com<br>
+    본 리포트는 참고용이며 투자 판단의 근거로 사용 시 유의 바랍니다.
+  </div>
+
+</div>
+</body>
+</html>
