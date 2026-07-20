@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity 저녁 인사이트 | @aleabitoreddit | 2026-07-20</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0f0f1a;
+    color: #e8e8f0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    line-height: 1.6;
+    padding: 24px 16px 60px;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  header {
+    border-bottom: 1px solid #2a2a3d;
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+  }
+  header h1 {
+    font-size: 22px;
+    margin: 0 0 6px;
+    color: #ffd700;
+    font-weight: 700;
+  }
+  header .sub {
+    font-size: 13px;
+    color: #9a9ab0;
+  }
+  .notice {
+    background: rgba(255,215,0,0.06);
+    border: 1px solid #3a3a2a;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 12.5px;
+    color: #b7b7d0;
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-size: 16px;
+    color: #ffd700;
+    border-left: 3px solid #ffd700;
+    padding-left: 10px;
+    margin: 36px 0 16px;
+  }
+  .card {
+    background: #17172a;
+    border: 1px solid #2a2a3d;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .card-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .date {
+    font-size: 12px;
+    color: #7a7a95;
+    font-variant-numeric: tabular-nums;
+  }
+  .ticker {
+    font-weight: 700;
+    color: #ffd700;
+    font-size: 14px;
+  }
+  .badge {
+    font-size: 11px;
+    padding: 2px 9px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  .badge.buy { background: rgba(76, 201, 106, 0.15); color: #4cc96a; }
+  .badge.sell { background: rgba(233, 88, 88, 0.15); color: #e95858; }
+  .badge.hold { background: rgba(154, 154, 176, 0.15); color: #b7b7d0; }
+  .orig {
+    font-size: 13.5px;
+    color: #c7c7dd;
+    margin: 0 0 8px;
+    white-space: pre-line;
+  }
+  .interp {
+    font-size: 13.5px;
+    color: #e8e8f0;
+    margin: 0;
+    background: rgba(255, 215, 0, 0.05);
+    padding: 8px 10px;
+    border-radius: 6px;
+  }
+  .interp .tag {
+    color: #ffd700;
+    font-weight: 700;
+    font-size: 11.5px;
+    margin-right: 6px;
+  }
+  .src {
+    display: block;
+    margin-top: 8px;
+    font-size: 11px;
+    color: #5a5a75;
+  }
+  .src a { color: #5a5a75; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: #17172a;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #2a2a3d;
+    vertical-align: top;
+  }
+  th {
+    background: #1e1e33;
+    color: #ffd700;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  td.tkr { font-weight: 700; color: #fff; white-space: nowrap; }
+  .conf { font-weight: 700; padding: 2px 8px; border-radius: 6px; font-size: 12px; }
+  .conf.high { background: rgba(76,201,106,.15); color:#4cc96a; }
+  .conf.mid { background: rgba(255,215,0,.15); color:#ffd700; }
+  .conf.low { background: rgba(233,88,88,.15); color:#e95858; }
+  .picks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 14px;
+  }
+  .pick {
+    background: linear-gradient(145deg, #1e1e33, #17172a);
+    border: 1px solid #3a3a2a;
+    border-left: 4px solid #ffd700;
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .pick .rank {
+    font-size: 11px;
+    color: #ffd700;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .pick .name {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    margin: 4px 0 6px;
+  }
+  .pick .desc {
+    font-size: 12.5px;
+    color: #b7b7d0;
+  }
+  .diffwrap {
+    background: #17172a;
+    border: 1px solid #2a2a3d;
+    border-radius: 10px;
+    padding: 4px 18px;
+  }
+  .diffrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #2a2a3d;
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+  .diffrow:last-child { border-bottom: none; }
+  .diffrow .tkr2 { font-weight: 700; color: #fff; min-width: 130px; }
+  .diffrow .arrow { color: #7a7a95; }
+  .diffrow .from { color: #9a9ab0; }
+  .diffrow .to { color: #e8e8f0; }
+  .tagchg {
+    font-size: 10.5px;
+    padding: 1px 7px;
+    border-radius: 10px;
+    font-weight: 700;
+  }
+  .tagchg.new { background: rgba(76,201,106,.15); color:#4cc96a; }
+  .tagchg.same { background: rgba(154,154,176,.15); color:#b7b7d0; }
+  .tagchg.fade { background: rgba(233,88,88,.15); color:#e95858; }
+  footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid #2a2a3d;
+    font-size: 12px;
+    color: #7a7a95;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Serenity 저녁 인사이트 | @aleabitoreddit | 2026-07-20</h1>
+    <div class="sub">AI·반도체 공급망 투자 인플루언서 (팔로워 약 91만) · 미국장 개장 후 장중 코멘트 기반 자동 요약</div>
+  </header>
+
+  <div class="notice">
+    ※ 데이터 수집 참고: X(트위터) 비로그인 접근 시 최신 타임라인이 로그인 월(wall)로 제한되어, 개별 포스트 직접 열람(7/16~7/17)과 공개 파생 트래커(Serenity Tracker, Buzzberg, semiconstocks.com)를 교차 확인하여 검증 가능한 최근 포스트만 반영했습니다. 오늘(7/20) 장중 신규 포스트가 트래커에 아직 반영되지 않아, 확인 가능한 가장 최신 시점(7/16~7/18)까지의 코멘트를 저녁 리포트에 포함합니다.
+  </div>
+
+  <h2>섹션 1 · 최근 포스트 인사이트</h2>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="date">07-17 오후 4:11</span>
+      <span class="ticker">$AAOI 외 포트폴리오 전반</span>
+      <span class="badge hold">방어</span>
+    </div>
+    <p class="orig">"이번 달 -49.4% 드로다운, 솔직히 힘들다. 포트폴리오는 메모리·포토닉스·로보틱스·업스트림 반도체 중심(마진 1.4x)으로 베타가 높다. 'AI는 버블'이라는 조롱이 많지만, 구조적 매출 성장이 뒷받침한다고 확신한다. H2 2027 매출 변곡점을 보고 있는데 아직 2026년이라 테제가 틀렸다고 보긴 이르다." (답글 스레드에서) "AAOI가 Q3 2027 분기매출 $1.4B(연환산 $5.6B, 시총 $8B 대비)를 찍으면 아직 '끝난' 게 아니다."</p>
+    <p class="interp"><span class="tag">Claude 해석</span> 급락장에서 드로다운을 투명하게 공개하며 손절이 아닌 홀딩을 택함. AAOI 밸류에이션 근거($8B 시총 대비 연환산 $5.6B 매출)를 재확인해 여전히 핵심 롱으로 유지 중임을 시사.</p>
+    <span class="src">출처: x.com/aleabitoreddit/status/2078150537074373117</span>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="date">07-16 오후 3:57</span>
+      <span class="ticker">$INTC / $LITE / $RDDT</span>
+      <span class="badge hold">저점 관측</span>
+    </div>
+    <p class="orig">"내 추측으로는 $INTC부터 $LITE까지 반도체가 바닥권 근처인 것 같다. 좋은 지표 하나는 $RDDT(레딧 커뮤니티)에서 다들 포트폴리오를 0으로 날렸는지 여부다."</p>
+    <p class="interp"><span class="tag">Claude 해석</span> 반도체 섹터 전반의 투매 심리(캐피튤레이션)를 바닥 신호로 해석하는 역발상적 코멘트. 직접적 매수 신호는 아니지만 저가 매수 준비 심리를 시사.</p>
+    <span class="src">출처: x.com/aleabitoreddit/status/2077784594959725056</span>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="date">07-18 (토)</span>
+      <span class="ticker">$AAOI / $MRVL / $NBIS / $INTC</span>
+      <span class="badge buy">핵심 롱 재확인</span>
+    </div>
+    <p class="orig">드로다운을 인정하면서도 4개 핵심 롱을 재확인: AAOI(Made-in-America 광트랜시버, 800G/1.6T 수요), MRVL(CPO·커스텀 ASIC 허브), NBIS(선호 네오클라우드, 최고 재무), INTC(정책 베팅·파운드리 챔피언 보호). 신규 매수 언급은 없었음.</p>
+    <p class="interp"><span class="tag">Claude 해석</span> 신규 진입보다 기존 포지션 방어에 무게. 4종목 모두 "큰 폭 상승 후 조정" 국면이라 재확인 자체가 저가 매수 유지 시그널로 읽힘.</p>
+    <span class="src">출처: Serenity Tracker 파생 코멘터리 (serenitytrades.com/commentary/2026-07-18)</span>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="date">07-18 (토)</span>
+      <span class="ticker">$SKHY (SK하이닉스 ADR)</span>
+      <span class="badge buy">신규 관찰</span>
+    </div>
+    <p class="orig">SK하이닉스 미국 ADR이 한국 현지 주식 대비 25% 이상 프리미엄에 거래 중이며, 7월 29일부로 ADR-현지주 전환이 가능해진다는 점을 지적. 현재 ADR에 유통물량의 약 2.5%만 있어, 나머지 22.5%가 전환될 경우 프리미엄이 압축될 수 있다고 분석.</p>
+    <p class="interp"><span class="tag">Claude 해석</span> 이번 주 등장한 사실상 유일한 신규 액션 아이템. 방향성 베팅이 아닌 캘린더 기반 차익거래(arbitrage) 아이디어로, 7/29를 전후한 단기 이벤트 트레이드로 분류.</p>
+    <span class="src">출처: Serenity Tracker 파생 코멘터리 (serenitytrades.com/commentary/2026-07-18)</span>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="date">07-09</span>
+      <span class="ticker">$SIVE</span>
+      <span class="badge buy">매수 강화</span>
+    </div>
+    <p class="orig">"경영진 확신을 보여주는 가장 명확한 신호"라며 Sivers CEO가 하락 후 자사주 ~100만 SEK를 공개시장에서 매수했다고 언급. CPO 지연 보도·메타 설비과잉 헤드라인發 30~60% 급락을 리테일 패닉으로 규정, 로젠블라트도 낙관으로 전환.</p>
+    <p class="interp"><span class="tag">Claude 해석</span> Serenity 본인이 최대·최고 확신 포지션으로 꼽는 SIVE에 대한 내부자 매수 근거. 이후 7/17 드로다운 공개 게시글에서도 포트폴리오 핵심축(포토닉스)으로 재확인됨.</p>
+    <span class="src">출처: semiconstocks.com "Latest call" (2026-07-10 업데이트 기준)</span>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="date">최근 2~4주</span>
+      <span class="ticker">$CCXI / $CBRS / 138080.KQ</span>
+      <span class="badge hold">언급 소강</span>
+    </div>
+    <p class="orig">Buzzberg 트래커 기준 최근 등록된 콜은 CCXI(2주 전), CBRS(3주 전), 138080.KQ(4주 전) 순으로, 7/16~7/18 구간에는 세 종목 모두 직접 언급이 확인되지 않음. 154건 콜 누적 승률 44.7%, 평균 수익률 +21.1%(Buzzberg Alpha 랭킹 1위).</p>
+    <p class="interp"><span class="tag">Claude 해석</span> 아침 리포트의 1순위였던 CCXI(로보틱스)와 3순위 CBRS(추론 반도체)는 이번 저녁 구간에서 신규 코멘트가 확인되지 않아, 관심도가 포토닉스·메모리·SK하이닉스 이벤트 쪽으로 일시 이동한 것으로 보임.</p>
+    <span class="src">출처: buzzberg.ai/speakers/aleabitoreddit</span>
+  </div>
+
+  <h2>섹션 2 · 주목 종목 요약표</h2>
+  <table>
+    <thead>
+      <tr><th>종목</th><th>방향</th><th>핵심 근거</th><th>신뢰도</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tkr">SIVE (Sivers Semiconductors)</td>
+        <td><span class="badge buy">매수</span></td>
+        <td>본인 최대·최고 확신 포지션(포토닉스 CPO 레이저). CEO 자사주 매입 + 로젠블라트 낙관 전환. 드로다운 국면에서도 핵심축으로 재확인.</td>
+        <td><span class="conf high">상</span></td>
+      </tr>
+      <tr>
+        <td class="tkr">AAOI (Applied Optoelectronics)</td>
+        <td><span class="badge buy">매수</span></td>
+        <td>Made-in-America 광트랜시버. Q3'27 분기매출 $1.4B(연환산 $5.6B) 목표 재확인. 급락 후에도 핵심 롱 유지.</td>
+        <td><span class="conf high">상</span></td>
+      </tr>
+      <tr>
+        <td class="tkr">SKHY (SK하이닉스 ADR)</td>
+        <td><span class="badge hold">관망(차익거래)</span></td>
+        <td>ADR 프리미엄 25%+, 7/29 전환성 개시로 프리미엄 압축 기대. 방향성 베팅이 아닌 이벤트 트레이드.</td>
+        <td><span class="conf mid">중</span></td>
+      </tr>
+      <tr>
+        <td class="tkr">NBIS (Nebius)</td>
+        <td><span class="badge hold">보유</span></td>
+        <td>선호 네오클라우드, 그룹 내 최고 재무 상태로 평가. 이번 구간 신규 매수 언급은 없음.</td>
+        <td><span class="conf mid">중</span></td>
+      </tr>
+      <tr>
+        <td class="tkr">MRVL (Marvell) / INTC (Intel)</td>
+        <td><span class="badge hold">보유</span></td>
+        <td>MRVL은 CPO·커스텀 ASIC 허브, INTC는 정책 베팅(파운드리 챔피언 보호)으로 각각 재확인. 신규 액션 없음.</td>
+        <td><span class="conf mid">중</span></td>
+      </tr>
+      <tr>
+        <td class="tkr">CCXI / CBRS (로보틱스·추론 반도체)</td>
+        <td><span class="badge hold">관망</span></td>
+        <td>아침 리포트 상위 픽이었으나 7/16~7/18 구간 직접 언급 미확인. 관심도 일시 소강 가능성.</td>
+        <td><span class="conf low">하</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>섹션 3 · 내일 주목 픽</h2>
+  <div class="picks">
+    <div class="pick">
+      <div class="rank">PICK 1</div>
+      <div class="name">$SIVE · Sivers Semiconductors</div>
+      <div class="desc">최대·최고 확신 포지션. CEO 내부자 매수 + 셀사이드 낙관 전환. 드로다운 국면에서도 흔들리지 않은 핵심축.</div>
+    </div>
+    <div class="pick">
+      <div class="rank">PICK 2</div>
+      <div class="name">$SKHY · SK하이닉스 ADR</div>
+      <div class="desc">7/29 ADR-현지주 전환성 개시를 앞둔 캘린더형 차익거래 아이디어. 25%+ 프리미엄 압축 여부가 관전 포인트.</div>
+    </div>
+    <div class="pick">
+      <div class="rank">PICK 3</div>
+      <div class="name">$AAOI · Applied Optoelectronics</div>
+      <div class="desc">급락에도 방어된 핵심 롱. Q3'27 분기매출 $1.4B 리레이팅 테제가 유효한지가 다음 관전 포인트.</div>
+    </div>
+  </div>
+
+  <h2>섹션 4 · 아침 대비 변화</h2>
+  <div class="diffwrap">
+    <div class="diffrow">
+      <span class="tkr2">$SIVE</span>
+      <span class="from">아침 PICK 2 (매수, CEO 매입 신호)</span>
+      <span class="arrow">→</span>
+      <span class="to">저녁 PICK 1로 격상 (핵심 확신주 재확인)</span>
+      <span class="tagchg same">유지·강화</span>
+    </div>
+    <div class="diffrow">
+      <span class="tkr2">$CCXI</span>
+      <span class="from">아침 PICK 1 (매수, 3주 반복 언급)</span>
+      <span class="arrow">→</span>
+      <span class="to">저녁 구간 신규 언급 없음, 신뢰도 하로 하향</span>
+      <span class="tagchg fade">관심 소강</span>
+    </div>
+    <div class="diffrow">
+      <span class="tkr2">$CBRS</span>
+      <span class="from">아침 PICK 3 (매수·스타터, 신뢰도 중)</span>
+      <span class="arrow">→</span>
+      <span class="to">저녁 구간 신규 언급 없음</span>
+      <span class="tagchg fade">관심 소강</span>
+    </div>
+    <div class="diffrow">
+      <span class="tkr2">$SKHY</span>
+      <span class="from">아침 리포트 미언급</span>
+      <span class="arrow">→</span>
+      <span class="to">저녁 PICK 2로 신규 진입 (ADR 차익거래, 7/29 촉매)</span>
+      <span class="tagchg new">신규 등장</span>
+    </div>
+    <div class="diffrow">
+      <span class="tkr2">$AAOI / $MRVL / $NBIS / $INTC</span>
+      <span class="from">아침 리포트에서 "기존 핵심 테마"로만 언급, 신규 매수 없음</span>
+      <span class="arrow">→</span>
+      <span class="to">저녁엔 -49.4% 드로다운 공개와 함께 4종목 모두 명시적으로 재확인·방어</span>
+      <span class="tagchg same">확신 재확인</span>
+    </div>
+    <div class="diffrow">
+      <span class="tkr2">전반적 톤</span>
+      <span class="from">아침: 매수 시그널 위주, 공격적 톤</span>
+      <span class="arrow">→</span>
+      <span class="to">저녁: 드로다운 인정 + 방어적·장기 홀딩 톤으로 전환</span>
+      <span class="tagchg fade">톤 전환</span>
+    </div>
+  </div>
+
+  <footer>
+    * Not Financial Advice, DYOR. Serenity 원문 기반 요약이며 투자 조언이 아닙니다.
+  </footer>
+</div>
+</body>
+</html>
