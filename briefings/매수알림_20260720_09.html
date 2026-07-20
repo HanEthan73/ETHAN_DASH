@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 도달 알림</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --red: #f85149;
+    --green: #3fb950;
+    --yellow: #d29922;
+    --accent: #58a6ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 16px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Malgun Gothic", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  h1 {
+    font-size: 19px;
+    margin: 0 0 4px 0;
+    color: var(--red);
+  }
+  .timestamp {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+  .section-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 22px 0 10px 0;
+    color: var(--accent);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 13px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  th {
+    background: #1c2128;
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 12px;
+  }
+  tr:last-child td { border-bottom: none; }
+  .ticker { font-weight: 700; color: var(--text); text-align: left; }
+  .price { color: var(--yellow); font-weight: 600; }
+  .stop { color: var(--red); }
+  .target { color: var(--green); }
+  .flag {
+    display: inline-block;
+    margin-top: 3px;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(248,81,73,0.15);
+    color: var(--red);
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+  .card-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    font-size: 13px;
+  }
+  .card-row .label { color: var(--muted); }
+  .approach-table td.price { color: var(--accent); }
+  .footer {
+    margin-top: 24px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .scroll-wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<h1>&#128680; 자동매수 트리거 도달</h1>
+<div class="timestamp">2026-07-20 09:06 EDT (프리마켓) &middot; ETHAN 자동매수 모니터링</div>
+
+<div class="section-title">트리거 도달 종목 (7건)</div>
+<div class="scroll-wrap">
+<table>
+<tr>
+  <th>종목</th>
+  <th>현재가</th>
+  <th>트리거가</th>
+  <th>손절</th>
+  <th>목표</th>
+</tr>
+<tr>
+  <td class="ticker">AVGO<br><span class="flag">손절가 이하</span></td>
+  <td class="price">$375.56</td>
+  <td>$420</td>
+  <td class="stop">$390</td>
+  <td class="target">$480</td>
+</tr>
+<tr>
+  <td class="ticker">MSFT</td>
+  <td class="price">$390.01</td>
+  <td>$410</td>
+  <td class="stop">$360</td>
+  <td class="target">$500</td>
+</tr>
+<tr>
+  <td class="ticker">INTC</td>
+  <td class="price">$98.23</td>
+  <td>$104.50</td>
+  <td class="stop">$95</td>
+  <td class="target">$130</td>
+</tr>
+<tr>
+  <td class="ticker">GOOGL<br><span class="flag">손절가 근접</span></td>
+  <td class="price">$354.46</td>
+  <td>$385</td>
+  <td class="stop">$355</td>
+  <td class="target">$450</td>
+</tr>
+<tr>
+  <td class="ticker">AMZN</td>
+  <td class="price">$247.88</td>
+  <td>$255</td>
+  <td class="stop">$230</td>
+  <td class="target">$320</td>
+</tr>
+<tr>
+  <td class="ticker">ORCL<br><span class="flag">손절가 이하</span></td>
+  <td class="price">$125.00</td>
+  <td>$178</td>
+  <td class="stop">$162</td>
+  <td class="target">$225</td>
+</tr>
+<tr>
+  <td class="ticker">ASTS</td>
+  <td class="price">$57.80</td>
+  <td>$68</td>
+  <td class="stop">$45</td>
+  <td class="target">$100</td>
+</tr>
+</table>
+</div>
+
+<div class="section-title">&#9888;&#65039; 2% 이내 근접 종목</div>
+<div class="scroll-wrap">
+<table class="approach-table">
+<tr>
+  <th>종목</th>
+  <th>현재가</th>
+  <th>트리거가</th>
+  <th>차이</th>
+</tr>
+<tr>
+  <td class="ticker">TSM</td>
+  <td class="price">$398.37 (종가)</td>
+  <td>$395</td>
+  <td>+0.85%</td>
+</tr>
+</table>
+</div>
+<div class="footer" style="margin-top:6px; margin-bottom:6px; border-top:none; padding-top:0;">
+  ※ TSM은 프리마켓에서 $408 부근으로 반등해 트리거에서 다소 멀어졌으나 종가 기준 근접 상태였습니다.
+</div>
+
+<div class="section-title">미도달 종목</div>
+<div class="card">
+  <div class="card-row"><span class="label">MRVL</span><span>$193.00 (트리거 $168)</span></div>
+  <div class="card-row"><span class="label">PLTR</span><span>$130.82 (트리거 $122)</span></div>
+</div>
+
+<div class="footer">
+  가격은 2026-07-20 프리마켓 기준(일부 종목은 직전 거래일 종가). AVGO, ORCL은 현재가가 손절가 이하로 이미 하락한 상태이며 GOOGL은 손절가 부근입니다. 실제 매수 판단 전 최신 시세를 다시 확인하세요.
+</div>
+
+</body>
+</html>
