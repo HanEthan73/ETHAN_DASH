@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국장 인사이트 | 염승환·박세익·이효석 | 2026-07-22</title>
+  <style>
+    :root {
+      --bg: #0f0f1a;
+      --bg2: #16162a;
+      --bg3: #1e1e35;
+      --border: #2a2a45;
+      --text: #e8e8f0;
+      --muted: #9090b0;
+      --gold: #ffd700;
+      --gold2: #ffaa00;
+      --green: #00e676;
+      --red: #ff5252;
+      --blue: #448aff;
+      --purple: #b39ddb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', 'Noto Sans KR', sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #0f0f1a 0%, #1a1a40 50%, #0f0f1a 100%);
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle at 50% 50%, rgba(255,215,0,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .header .sub {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .header .badge {
+      display: inline-block;
+      background: rgba(255,215,0,0.12);
+      border: 1px solid rgba(255,215,0,0.35);
+      color: var(--gold);
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      margin-top: 10px;
+    }
+    /* ── Section headers ── */
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 32px 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    /* ── Person card ── */
+    .person-block {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .person-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .person-avatar {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .avatar-1 { background: linear-gradient(135deg,#ff6b35,#f7931e); }
+    .avatar-2 { background: linear-gradient(135deg,#1a73e8,#0d47a1); }
+    .avatar-3 { background: linear-gradient(135deg,#00bcd4,#006064); }
+    .person-info h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .person-info .role {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .person-info .handle {
+      font-size: 11px;
+      color: var(--blue);
+      margin-top: 2px;
+    }
+    /* ── Insight cards ── */
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .insight-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold2);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .insight-card .date {
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .insight-card .orig {
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 8px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .insight-card .claim {
+      font-size: 12px;
+      color: var(--gold);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    .insight-card .claude-take {
+      font-size: 11px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 6px;
+      margin-top: 6px;
+      font-style: italic;
+    }
+    .claude-take::before { content: '🤖 Claude: '; color: var(--purple); }
+    /* ── Watch list ── */
+    .watchlist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .watchlist-label {
+      font-size: 11px;
+      color: var(--muted);
+      width: 100%;
+      margin-bottom: 2px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .tag {
+      background: rgba(255,215,0,0.1);
+      border: 1px solid rgba(255,215,0,0.3);
+      color: var(--gold);
+      padding: 3px 10px;
+      border-radius: 14px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .tag.green { background: rgba(0,230,118,0.08); border-color: rgba(0,230,118,0.3); color: var(--green); }
+    .tag.blue { background: rgba(68,138,255,0.1); border-color: rgba(68,138,255,0.3); color: var(--blue); }
+    /* ── Summary table ── */
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+    }
+    .summary-table th {
+      background: var(--bg3);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 10px 14px;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .summary-table td {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      font-size: 12px;
+      vertical-align: top;
+      color: var(--text);
+    }
+    .summary-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    .dir-up { color: var(--green); font-weight: 700; }
+    .dir-watch { color: var(--gold2); font-weight: 700; }
+    .conf-high { color: var(--green); font-weight: 700; }
+    .conf-mid { color: var(--gold2); font-weight: 700; }
+    /* ── Top pick ── */
+    .top-pick {
+      background: linear-gradient(135deg, rgba(255,215,0,0.06) 0%, rgba(255,170,0,0.04) 100%);
+      border: 1px solid rgba(255,215,0,0.4);
+      border-radius: 12px;
+      padding: 22px 26px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .top-pick h3 {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .pick-list {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .pick-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .pick-name {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--gold);
+    }
+    .pick-count {
+      font-size: 10px;
+      color: var(--muted);
+    }
+    .pick-divider {
+      font-size: 24px;
+      color: var(--border);
+      align-self: center;
+    }
+    /* ── Disclaimer ── */
+    .disclaimer {
+      background: rgba(255,82,82,0.05);
+      border: 1px solid rgba(255,82,82,0.2);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 28px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+    .disclaimer strong { color: var(--red); }
+    /* ── Source links ── */
+    .sources { margin-top: 10px; }
+    .sources a {
+      color: var(--blue);
+      font-size: 10px;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 8px;
+    }
+    .sources a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<!-- ════════════ HEADER ════════════ -->
+<div class="header">
+  <h1>🇰🇷 한국장 인사이트 브리핑</h1>
+  <div class="sub">염승환 · 박세익 · 이효석 | 2026-07-22 (수) 오전 08:26 KST</div>
+  <span class="badge">⚡ ETHAN_DASH 자동 수집 리포트</span>
+</div>
+
+<!-- ════════════ 염승환 ════════════ -->
+<div class="section-title">① 염승환 — LS증권 리테일사업부 이사</div>
+<div class="person-block">
+  <div class="person-header">
+    <div class="person-avatar avatar-1">염</div>
+    <div class="person-info">
+      <h2>염승환</h2>
+      <div class="role">LS증권 리테일사업부 이사 | 거시경제 · 업종 분석 · 중장기 기관 시각</div>
+      <div class="handle">YouTube: 쎈터뷰 / MBC 모닝콜 고정 출연</div>
+    </div>
+  </div>
+
+  <div class="insights-grid">
+    <div class="insight-card">
+      <div class="date">2026-07-01 · 서울경제 머니트렌드 2026</div>
+      <div class="orig">"하반기에는 그동안 반도체에 지나치게 집중됐던 증시가 분산될 것이라는 신호가 나타나고 있다. 7~8월에는 삼성전자와 SK하이닉스뿐 아니라 다른 업종들도 오를 것으로 보인다."</div>
+      <div class="claim">핵심주장 → 7월부터 순환매 장세 본격화, 쏠림 분산 신호 포착</div>
+      <div class="claude-take">반도체 편중 해소는 코스피 체감 수익률 개선의 전제조건. 쏠림 분산 = 시장 건강 신호. 단, 속도가 관건.</div>
+    </div>
+    <div class="insight-card">
+      <div class="date">2026-07-01 · 서울경제 머니트렌드 2026</div>
+      <div class="orig">"대한민국 3대 메가 프로젝트 발표를 보며 반도체보다 데이터센터에 공급할 전력을 어떻게 할 것인가가 더 중요하다는 생각만 들었다. 다음 기회는 에너지저장장치(ESS)에 있다."</div>
+      <div class="claim">핵심주장 → AI 인프라의 병목은 칩이 아니라 '전력'· ESS가 Next Big Thing</div>
+      <div class="claude-take">호남 재생에너지 인프라 + 정부 메가프로젝트 시너지. ESS는 반도체 이후 내러티브의 실질 수혜 섹터.</div>
+    </div>
+    <div class="insight-card">
+      <div class="date">2026-07-01 · 서울경제 머니트렌드 2026</div>
+      <div class="orig">"차기 주도 업종으로 조선·방산·전력기기 등 산업재와 금융, 제약·바이오, 2차전지를 제시. 삼전닉스만 올라 코스피 1만을 달성하는 것보다 순환매가 더 좋은 현상."</div>
+      <div class="claim">핵심주장 → 코스피 1만은 삼전닉스 단독이 아닌 업종 확산으로 달성해야 진짜</div>
+      <div class="claude-take">업종 다변화 없는 지수 상승은 투자자 체감 수익률과 괴리. 순환매가 시장 지속성의 열쇠.</div>
+    </div>
+    <div class="insight-card">
+      <div class="date">2026-07-14 · YouTube 쎈터뷰</div>
+      <div class="orig">"삼전닉스 지금이 세일가?" 제목으로 LS증권 이사로 라이브 방송. 6월 급락 이후 반도체 저가 매수 타이밍 논의.</div>
+      <div class="claim">핵심주장 → 6월 조정 = 세일 구간, 반도체 비중 축소보다 저가 분할매수 기회</div>
+      <div class="claude-take">조정 구간에서의 분할매수 권고는 중장기 관점. 단기 변동성 리스크는 여전히 존재.</div>
+    </div>
+    <div class="insight-card">
+      <div class="date">2025-12 · 2026 대한민국 재테크 박람회</div>
+      <div class="orig">"2027년 폭발적인 버블 장세 연출될 것. 지금은 버블을 향한 예열 단계. 버블의 중심에 설 주도주는 반도체와 로봇."</div>
+      <div class="claim">핵심주장 → 2027년까지 버블 장세 지속, 중장기 강세 시나리오 유지</div>
+      <div class="claude-take">사이클 연장 논리. 버블 인식 + 주도주 집중 병행 전략. 진입 타이밍보다 '주도주 유지'가 핵심 메시지.</div>
+    </div>
+  </div>
+
+  <div class="watchlist">
+    <div class="watchlist-label">📌 주목 종목 / 섹터</div>
+    <span class="tag">삼성전자</span>
+    <span class="tag">SK하이닉스</span>
+    <span class="tag green">조선·방산</span>
+    <span class="tag green">ESS·전력기기</span>
+    <span class="tag green">제약·바이오</span>
+    <span class="tag">2차전지</span>
+    <span class="tag blue">로봇</span>
+  </div>
+  <div class="sources">
+    출처:
+    <a href="https://www.sedaily.com/article/20062685" target="_blank">[서울경제 머니트렌드2026]</a>
+    <a href="https://www.youtube.com/watch?v=7WW1j1GreWg" target="_blank">[쎈터뷰 260714]</a>
+    <a href="https://v.daum.net/v/UIMgDeKpOt" target="_blank">[더비비드 버블장세]</a>
+  </div>
+</div>
+
+<!-- ════════════ 박세익 ════════════ -->
+<div class="section-title">② 박세익 — 체슬리투자자문 대표</div>
+<div class="person-block">
+  <div class="person-header">
+    <div class="person-avatar avatar-2">박</div>
+    <div class="person-info">
+      <h2>박세익</h2>
+      <div class="role">체슬리투자자문 대표 | 매크로 해석 · 금리·환율·업종 로테이션 전문</div>
+      <div class="handle">YouTube: 인포맥스라이브 / 머니특강 고정 출연</div>
+    </div>
+  </div>
+
+  <div class="insights-grid">
+    <div class="insight-card">
+      <div class="date">2026-07 · YouTube "대형주 우위, 7월에도 지속?"</div>
+      <div class="orig">"대형주 우위, 7월에도 지속? 지금은 역발상 전략 필요합니다!" — 반도체 대형주 쏠림 시대에 역발상으로 중소형 가치주나 소외 업종 접근 강조.</div>
+      <div class="claim">핵심주장 → 대형주 일변도 장에서 역발상 전략으로 소외 종목 발굴 시점</div>
+      <div class="claude-take">쏠림 장세에서의 역발상은 타이밍 리스크 높지만 수익 비대칭 기회. 체슬리의 '공수 병행' 철학과 일맥상통.</div>
+    </div>
+    <div class="insight-card">
+      <div class="date">2026-07-06 · YouTube "반도체 설거지 하지 마세요"</div>
+      <div class="orig">"반도체 설거지 하지 마세요. 있는 사람은 이때 팔고 없는 사람은 이걸 사라." — 6월 급락 이후 추격 매도(설거지) 경계, 저점 매수 기회로 제시.</div>
+      <div class="claim">핵심주장 → 6월 급락은 흔들기, 저점 신규 매수 vs. 보유자 익절 기회 동시 제시</div>
+      <div class="claude-take">보유자와 신규 투자자에게 상반된 전략을 제시하는 투트랙 접근. 실전적이고 명쾌한 행동 지침.</div>
+    </div>
+    <div class="insight-card">
+      <div class="date">2026-07 · 반도체 급락장 인포맥스라이브</div>
+      <div class="orig">"위기 속에 나온 반발 매수세... 반도체발 급락장, 끝나가는 걸까?" — 7월 3일 반도체 급락 이후 반발 매수세 유입 분석, 급락 종료 가능성 논의.</div>
+      <div class="claim">핵심주장 → 반도체 급락은 구조적 하락 아닌 일시적 과매도, 반발 매수 기회</div>
+      <div class="claude-take">급락 후 반발 매수세 유입 데이터 확인 중요. 수급 전환 신호를 단기 트레이딩 기회로 활용.</div>
+    </div>
+    <div class="insight-card">
+      <div class="date">2026 · 뉴스톱 인터뷰</div>
+      <div class="orig">"체슬리의 강점은 공수 병행... 수익률로 증명." 조정 예상 시 주식 비중 선제 축소, 현금 확보 후 저점 재진입 전략.</div>
+      <div class="claim">핵심주장 → 강세장에서도 리스크 관리(공수 병행), 현금 비중 기동력이 알파 원천</div>
+      <div class="claude-take">단순 Buy&Hold가 아닌 탄력적 포지션 조정. 변동성 높은 장에서 현금 보유율이 수익률 방어 핵심.</div>
+    </div>
+    <div class="insight-card">
+      <div class="date">2026 · YouTube 머니특강</div>
+      <div class="orig">"삼성전자·SK하이닉스·현대차 분석, 100배 오를 주식 찾는 방법 대공개!" — 대형 우량주 실적 분석 기반 장기 투자 종목 발굴 방법론 제시.</div>
+      <div class="claim">핵심주장 → 실적 성장 + 높은 영업이익률 갖춘 종목만 장기 보유, 퀄리티 투자</div>
+      <div class="claude-take">퀄리티 팩터 중심 종목 선별. 고금리 환경에서 잉여현금흐름 중심 선별 기준과 부합.</div>
+    </div>
+  </div>
+
+  <div class="watchlist">
+    <div class="watchlist-label">📌 주목 종목 / 섹터</div>
+    <span class="tag">삼성전자</span>
+    <span class="tag">SK하이닉스</span>
+    <span class="tag">현대차</span>
+    <span class="tag green">반도체 소부장</span>
+    <span class="tag green">조선·방산</span>
+    <span class="tag blue">중소형 역발상</span>
+  </div>
+  <div class="sources">
+    출처:
+    <a href="https://www.youtube.com/watch?v=V3Zg5lAV5xI" target="_blank">[역발상전략 YouTube]</a>
+    <a href="https://www.youtube.com/watch?v=APv4x-ES4Tk" target="_blank">[반도체설거지 YouTube]</a>
+    <a href="https://www.youtube.com/watch?v=OOJFy7UHMqs" target="_blank">[인포맥스 급락장 260703]</a>
+    <a href="https://www.newstopkorea.com/news/articleView.html?idxno=44448" target="_blank">[뉴스톱 인터뷰]</a>
+  </div>
+</div>
+
+<!-- ════════════ 이효석 ════════════ -->
+<div class="section-title">③ 이효석 — HS아카데미 대표</div>
+<div class="person-block">
+  <div class="person-header">
+    <div class="person-avatar avatar-3">이</div>
+    <div class="person-info">
+      <h2>이효석</h2>
+      <div class="role">HS아카데미 대표 | AI·반도체·미국-한국 증시 연결 · 데이터 기반 분석</div>
+      <div class="handle">X: @HS_academy23 | Telegram: @HS_academy (35.2K) | 네이버 프리미엄콘텐츠 1위</div>
+    </div>
+  </div>
+
+  <div class="insights-grid">
+    <div class="insight-card">
+      <div class="date">2026-07 · Telegram @HS_academy (최신)</div>
+      <div class="orig">"FOMC 프리뷰는 역대급. 소감을 한마디로 하면 'AI버블이 올 것 같다는 확신이 더 커졌다.' 케빈워시 첫 FOMC에서 연준 성명서를 사실상 빨간펜으로 다 지워버렸다."</div>
+      <div class="claim">핵심주장 → 케빈워시 강경 기조 = AI버블 오히려 촉진 신호. 연준 정상화가 버블 확신 강화</div>
+      <div class="claude-take">역설적 논리: 긴축 강화가 버블을 꺼트리기보다 MMF 자금 → 증시 유입 가속 시나리오. 하워드막스와 동일한 버블 내러티브.</div>
+    </div>
+    <div class="insight-card">
+      <div class="date">2026-07 · Telegram @HS_academy (최신)</div>
+      <div class="orig">"AI 자금조달 이슈: 빅테크들 자금조달 계획 다 합쳐봐야 $0.5조가 안된다. 반면 MMF에만 $8.3조가 있다. 0.5 vs. 8.3 → 쫄지만 않으면 됩니다!"</div>
+      <div class="claim">핵심주장 → AI 자금조달 공포는 과장, 유동성 풀 대비 투자 규모는 미미 수준</div>
+      <div class="claude-take">명쾌한 수치 비교. MMF $8.3조 vs 빅테크 조달 $0.5조의 비대칭은 강세 논거. 단, SPV 부외부채 $1.8조 리스크도 자인.</div>
+    </div>
+    <div class="insight-card">
+      <div class="date">2026-07 · Telegram @HS_academy (최신)</div>
+      <div class="orig">"AI Computing 할인율 분석: Google-xAI $8,363/GPU/month vs Anthropic-SpaceX $5,680/GPU/month. 차이 47% → 순수 시간가치 프리미엄 연율 35~48%. 조달이 안되는 게 이상하지 않을까?"</div>
+      <div class="claim">핵심주장 → AI 인프라 수익률 > 조달금리 → 투자 사이클 계속될 수밖에 없는 구조</div>
+      <div class="claude-take">CoE vs ROE 프레임으로 AI 투자 지속성 분석. 데이터 기반 논거 중 가장 정교한 접근. 한국 반도체 수혜 연결 고리.</div>
+    </div>
+    <div class="insight-card">
+      <div class="date">2026-07-22 · YouTube KOSPI 급등 속보</div>
+      <div class="orig">"KOSPI 급등, 조정은 끝난 걸까? 초보탈출 시즌1 마지막. 22일부터 새 시즌 시작. 반도체 소부장으로 자금이 움직이는 게 보인다."</div>
+      <div class="claim">핵심주장 → 오늘(22일) KOSPI 급등 = 조정 마무리 신호, 반도체 소부장 자금 유입 포착</div>
+      <div class="claude-take">수급 데이터 기반 실시간 시장 진단. 소부장 ETF를 통한 간접 접근 권고는 개별 종목 리스크 회피 전략.</div>
+    </div>
+    <div class="insight-card">
+      <div class="date">2026-07 · Naver 프리미엄콘텐츠 (무료공개)</div>
+      <div class="orig">"SpaceX 상장 성공: 급락하지 않은 것뿐 아니라 너무 많이 오르지도 않았기 때문에 성공. 여전히 AI 우려는 있지만 모건스탠리 리스크도 알고 투자해야."</div>
+      <div class="claim">핵심주장 → SpaceX IPO 안착 = AI 자금조달 우려 1차 해소, 그러나 $1.8조 SPV 부채 리스크는 상존</div>
+      <div class="claude-take">균형 잡힌 시각: 낙관론과 위험 동시 제시. 우주 데이터센터 테마까지 한국 증시 상상력 확장 기회.</div>
+    </div>
+  </div>
+
+  <div class="watchlist">
+    <div class="watchlist-label">📌 주목 종목 / 섹터</div>
+    <span class="tag">삼성전자</span>
+    <span class="tag">SK하이닉스</span>
+    <span class="tag green">반도체 소부장 ETF</span>
+    <span class="tag green">AI 인프라</span>
+    <span class="tag blue">SpaceX (미국)</span>
+    <span class="tag blue">엔비디아 (미국)</span>
+  </div>
+  <div class="sources">
+    출처:
+    <a href="https://t.me/s/HS_academy" target="_blank">[Telegram @HS_academy]</a>
+    <a href="https://x.com/HS_academy23" target="_blank">[X @HS_academy23]</a>
+    <a href="https://youtube.com/@hs_academy" target="_blank">[YouTube HS아카데미]</a>
+  </div>
+</div>
+
+<!-- ════════════ 통합 요약표 ════════════ -->
+<div class="section-title">📊 통합 요약표 — 3인 공통 언급 종목/테마</div>
+<table class="summary-table">
+  <thead>
+    <tr>
+      <th>종목 / 테마</th>
+      <th>언급 인물</th>
+      <th>방향</th>
+      <th>신뢰도</th>
+      <th>핵심 근거</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>삼성전자 / SK하이닉스</strong></td>
+      <td>염승환 · 박세익 · 이효석</td>
+      <td class="dir-up">▲ 긍정</td>
+      <td class="conf-high">★★★ 높음</td>
+      <td>AI 수요 지속, 6월 조정 = 세일 구간, 2027년 이익 +33~38% 전망</td>
+    </tr>
+    <tr>
+      <td><strong>반도체 소부장 ETF</strong></td>
+      <td>박세익 · 이효석</td>
+      <td class="dir-up">▲ 긍정</td>
+      <td class="conf-high">★★★ 높음</td>
+      <td>소부장으로 자금 이동 포착, 개별 종목 리스크 대신 ETF 접근</td>
+    </tr>
+    <tr>
+      <td><strong>조선 · 방산</strong></td>
+      <td>염승환 · 박세익</td>
+      <td class="dir-up">▲ 긍정</td>
+      <td class="conf-high">★★★ 높음</td>
+      <td>반도체 이후 순환매 수혜 1순위, 방산 수출 모멘텀 지속</td>
+    </tr>
+    <tr>
+      <td><strong>AI 인프라 (데이터센터·전력)</strong></td>
+      <td>염승환 · 이효석</td>
+      <td class="dir-up">▲ 긍정</td>
+      <td class="conf-high">★★★ 높음</td>
+      <td>Computing 할인율 35~48%, 전력 병목이 반도체보다 중요한 변수</td>
+    </tr>
+    <tr>
+      <td><strong>ESS (에너지저장장치)</strong></td>
+      <td>염승환</td>
+      <td class="dir-up">▲ 긍정</td>
+      <td class="conf-mid">★★☆ 중간</td>
+      <td>메가프로젝트 + 재생에너지 + 데이터센터 전력 = ESS 수혜</td>
+    </tr>
+    <tr>
+      <td><strong>AI 버블 장세 (2027년)</strong></td>
+      <td>염승환 · 이효석</td>
+      <td class="dir-watch">◆ 주목</td>
+      <td class="conf-mid">★★☆ 중간</td>
+      <td>버블 예열 단계 진입 진단, 하워드막스도 버블 가능성 인정</td>
+    </tr>
+    <tr>
+      <td><strong>현대차 / 역발상 중소형</strong></td>
+      <td>박세익</td>
+      <td class="dir-watch">◆ 탐색</td>
+      <td class="conf-mid">★★☆ 중간</td>
+      <td>대형주 쏠림 해소 국면, 역발상 전략으로 소외 종목 발굴</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ════════════ 오늘의 핵심 픽 ════════════ -->
+<div class="section-title">🏆 오늘의 핵심 픽 (3인 합산 최고 언급)</div>
+<div class="top-pick">
+  <h3>3인 공통 최고 언급 — 2026-07-22 기준</h3>
+  <div class="pick-list">
+    <div class="pick-item">
+      <div class="pick-name">삼성전자 / SK하이닉스</div>
+      <div class="pick-count">3인 모두 언급 · 방향 ▲</div>
+    </div>
+    <div class="pick-divider">|</div>
+    <div class="pick-item">
+      <div class="pick-name">반도체 소부장 ETF</div>
+      <div class="pick-count">2인 언급 · 자금 유입 포착</div>
+    </div>
+    <div class="pick-divider">|</div>
+    <div class="pick-item">
+      <div class="pick-name">조선 · 방산</div>
+      <div class="pick-count">2인 언급 · 순환매 1순위</div>
+    </div>
+  </div>
+  <div style="margin-top:16px; font-size:12px; color:var(--muted);">
+    ※ ESS·AI인프라·전력기기는 염승환·이효석 공통 — 중기 관심 섹터
+  </div>
+</div>
+
+<!-- ════════════ 면책 ════════════ -->
+<div class="disclaimer">
+  <strong>⚠️ 면책고지</strong><br>
+  본 리포트는 <strong>투자 조언이 아닙니다.</strong> 공개된 미디어 발언을 Claude AI가 수집·요약한 정보이며, 사실 관계는 원문 출처에서 직접 확인하시기 바랍니다.<br>
+  <strong>DYOR (Do Your Own Research)</strong> — 모든 투자 결정과 책임은 투자자 본인에게 있습니다.<br>
+  생성 시각: 2026-07-22 08:26 KST | ETHAN_DASH 자동 브리핑 시스템
+</div>
+
+</body>
+</html>
