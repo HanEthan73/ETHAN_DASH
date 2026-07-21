@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>환율 경보 - USD/KRW</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    padding: 20px;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .header {
+    text-align: center;
+    padding: 16px 0 20px;
+    border-bottom: 1px solid #30363d;
+    margin-bottom: 20px;
+  }
+  .header .badge {
+    display: inline-block;
+    background: #f85149;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 20px;
+    color: #fff;
+  }
+  .header .timestamp {
+    font-size: 12px;
+    color: #8b949e;
+    margin-top: 6px;
+  }
+  .rate-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .rate-card .label {
+    font-size: 13px;
+    color: #8b949e;
+    margin-bottom: 6px;
+  }
+  .rate-card .rate {
+    font-size: 40px;
+    font-weight: 800;
+    color: #f85149;
+  }
+  .rate-card .change {
+    font-size: 15px;
+    color: #ff7b72;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+  .section {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .section h2 {
+    font-size: 14px;
+    color: #58a6ff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section p, .section li {
+    font-size: 14px;
+    color: #c9d1d9;
+  }
+  .section ul {
+    padding-left: 18px;
+  }
+  .section li {
+    margin-bottom: 6px;
+  }
+  .threshold-bar {
+    margin-top: 12px;
+    background: #21262d;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 13px;
+  }
+  .threshold-bar .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+  .threshold-bar .row.highlight {
+    color: #d29922;
+    font-weight: 700;
+  }
+  .action-list li {
+    background: #0d1117;
+    border-left: 3px solid #58a6ff;
+    padding: 8px 10px;
+    border-radius: 4px;
+    list-style: none;
+    margin-bottom: 8px;
+  }
+  .action-list { padding-left: 0; }
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #6e7681;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #30363d;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">⚠ 환율 경보</div>
+    <h1>USD/KRW 환율 경보</h1>
+    <div class="timestamp">2026년 7월 21일 (화) 15:04 KST 기준</div>
+  </div>
+
+  <div class="rate-card">
+    <div class="label">현재 환율 (USD/KRW)</div>
+    <div class="rate">1,481.5</div>
+    <div class="change">▲ +0.27% (전일 대비 약 +4.0원)</div>
+  </div>
+
+  <div class="section">
+    <h2>📊 1,500원 돌파 여부</h2>
+    <p>아직 <b>1,500원 미돌파</b> 상태입니다. 1,500원까지 약 18.5원 남았습니다.</p>
+    <div class="threshold-bar">
+      <div class="row highlight"><span>경보 기준선</span><span>1,480원</span></div>
+      <div class="row"><span>현재가</span><span>1,481.5원</span></div>
+      <div class="row"><span>심리적 저항선</span><span>1,500원</span></div>
+    </div>
+    <p style="margin-top:10px; font-size:13px; color:#8b949e;">최근 1개월간 원화는 약 3.78% 강세를 보였으나, 최근 12개월 기준으로는 여전히 7.19% 약세 상태입니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>📉 코스피 외국인 수급 영향</h2>
+    <ul>
+      <li>원화 약세(환율 상승)는 통상 외국인 투자자의 원화 표시 자산 평가손 우려를 키워 코스피 순매도 압력으로 작용할 수 있습니다.</li>
+      <li>1,480원선 상회가 이어질 경우, 외국인 자금이 환차손 회피 목적으로 일부 이탈할 가능성에 유의해야 합니다.</li>
+      <li>다만 최근 1개월 원화 강세 흐름이 있었던 만큼, 추세 반전 여부는 추가 확인이 필요합니다.</li>
+      <li>환율 변동성 확대 시 특히 외국인 비중이 높은 대형 수출주·반도체 업종의 수급 변화를 주시할 필요가 있습니다.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>✅ 권고 조치</h2>
+    <ul class="action-list">
+      <li>1,480원 상회 지속 여부를 24~48시간 내 재확인 (단기 노이즈 vs 추세 전환 판단)</li>
+      <li>달러 자산 보유 시 분할 환전/헷지 전략 검토</li>
+      <li>코스피 외국인 순매수/순매도 동향 일일 체크</li>
+      <li>1,500원 돌파 시 2차 경보 대응 계획 사전 점검</li>
+      <li>한국은행 구두개입 또는 실개입 뉴스 모니터링</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    자동 생성 · USD/KRW 모니터링 스케줄 작업<br>
+    데이터 출처: Investing.com, XE.com 등 웹서치 종합
+  </div>
+
+</body>
+</html>
