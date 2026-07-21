@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 도달 알림</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 16px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 {
+    font-size: 1.25rem;
+    color: #ff7b72;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    text-align: center;
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    font-size: 0.9rem;
+  }
+  th, td {
+    padding: 10px 6px;
+    text-align: center;
+    border-bottom: 1px solid #21262d;
+  }
+  th {
+    background: #161b22;
+    color: #ff7b72;
+    font-weight: 600;
+  }
+  tr:nth-child(even) td { background: #11161c; }
+  td.ticker { font-weight: 700; color: #58a6ff; }
+  td.below-stop { color: #f85149; font-weight: 700; }
+  .note {
+    background: #161b22;
+    border-left: 3px solid #d29922;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    color: #d29922;
+    margin-bottom: 20px;
+    border-radius: 4px;
+  }
+  .warn-box {
+    background: #2d1214;
+    border: 1px solid #f85149;
+    padding: 10px 12px;
+    font-size: 0.82rem;
+    color: #ffa198;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  .near-title {
+    font-size: 1rem;
+    color: #d29922;
+    margin-bottom: 8px;
+  }
+  @media (max-width: 480px) {
+    body { padding: 10px; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 6px 3px; }
+  }
+</style>
+</head>
+<body>
+  <h1>&#128680; &#xC790;&#xB3D9;&#xB9E4;&#xC218; &#xD2B8;&#xB9AC;&#xAC70; &#xB3C4;&#xB2EC; [2026-07-21 22:00 KST]</h1>
+  <div class="timestamp">&#xC2E4;&#xC2DC;&#xAC04; &#xC6F9;&#xC11C;&#xCE58; &#xAE30;&#xBC18; &#xB2E4;&#xC7A5; &#xC885;&#xAC00;/&#xCD5C;&#xADFC;&#xAC00; &#xAE30;&#xC900;</div>
+
+  <table>
+    <tr>
+      <th>&#xC885;&#xBAA9;</th>
+      <th>&#xD604;&#xC7AC;&#xAC00;</th>
+      <th>&#xD2B8;&#xB9AC;&#xAC70;&#xAC00;</th>
+      <th>&#xC190;&#xC808;</th>
+      <th>&#xBAA9;&#xD45C;</th>
+    </tr>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td class="below-stop">$378.16</td>
+      <td>$420 &#xC774;&#xD558;</td>
+      <td>$390</td>
+      <td>$480</td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td>
+      <td>$399.32</td>
+      <td>$410 &#xC774;&#xD558;</td>
+      <td>$360</td>
+      <td>$500</td>
+    </tr>
+    <tr>
+      <td class="ticker">INTC</td>
+      <td>$97.06</td>
+      <td>$104.50 &#xC774;&#xD558;</td>
+      <td>$95</td>
+      <td>$130</td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td>
+      <td class="below-stop">$353.43</td>
+      <td>$385 &#xC774;&#xD558;</td>
+      <td>$355</td>
+      <td>$450</td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td>$249.99</td>
+      <td>$255 &#xC774;&#xD558;</td>
+      <td>$230</td>
+      <td>$320</td>
+    </tr>
+    <tr>
+      <td class="ticker">ORCL</td>
+      <td class="below-stop">$121.70</td>
+      <td>$178 &#xC774;&#xD558;</td>
+      <td>$162</td>
+      <td>$225</td>
+    </tr>
+    <tr>
+      <td class="ticker">ASTS</td>
+      <td>$57.89</td>
+      <td>$68 &#xC774;&#xD558;</td>
+      <td>$45</td>
+      <td>$100</td>
+    </tr>
+  </table>
+
+  <div class="warn-box">
+    &#9888;&#65039; <b>AVGO / GOOGL / ORCL</b>&#xB294; &#xD2B8;&#xB9AC;&#xAC70;&#xAC00;&#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; <b>&#xC190;&#xC808;&#xAC00;(Stop)</b>&#xAE4C;&#xC9C0; &#xC774;&#xBBF8; &#xD558;&#xD68C;&#xD55C; &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;. &#xC9C4;&#xC785; &#xC2DC; &#xC190;&#xC808; &#xAE30;&#xC900; &#xC7AC;&#xAC80;&#xD1A0; &#xD544;&#xC694;.
+  </div>
+
+  <div class="near-title">&#9888;&#65039; 2% &#xC774;&#xB0B4; &#xADFC;&#xC811; &#xC885;&#xBAA9;</div>
+  <table>
+    <tr>
+      <th>&#xC885;&#xBAA9;</th>
+      <th>&#xD604;&#xC7AC;&#xAC00;</th>
+      <th>&#xD2B8;&#xB9AC;&#xAC70;&#xAC00;</th>
+      <th>&#xAC34;&#xB9AC;&#xC728;</th>
+    </tr>
+    <tr>
+      <td class="ticker">TSM</td>
+      <td>$402.30</td>
+      <td>$395 &#xC774;&#xD558;</td>
+      <td>+1.85%</td>
+    </tr>
+  </table>
+
+  <div class="note">
+    MRVL($194.94), PLTR($134.85)&#xB294; &#xD2B8;&#xB9AC;&#xAC70; &#xBBF8;&#xB3C4;&#xB2EC;. &#xB370;&#xC774;&#xD130;&#xB294; &#xAC80;&#xC0C9; &#xC2DC;&#xC810; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xC2E4;&#xC81C; &#xD638;&#xAC00;&#xC640; &#xC18C;&#xD3ED; &#xCC28;&#xC774;&#xAC00; &#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+  </div>
+</body>
+</html>
