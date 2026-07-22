@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    margin: 0;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 1.2rem;
+    color: #ff7b72;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161b22;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #30363d;
+  }
+  th {
+    background: #21262d;
+    color: #58a6ff;
+  }
+  td.ticker {
+    font-weight: bold;
+    color: #f0f6fc;
+  }
+  tr.warn td {
+    background: rgba(210,153,34,0.08);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #3fb95044;
+    color: #3fb950;
+    margin-left: 4px;
+  }
+  .badge.risk {
+    background: #f8514944;
+    color: #f85149;
+  }
+  h2 {
+    font-size: 1rem;
+    color: #d29922;
+    margin-top: 8px;
+  }
+  .note {
+    font-size: 0.8rem;
+    color: #8b949e;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달 알림</h1>
+  <div class="timestamp">2026-07-23 02:04 (KST)</div>
+
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td>$390.24</td>
+      <td>$420 이하</td>
+      <td>$390</td>
+      <td>$480</td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td>
+      <td>$397.64</td>
+      <td>$410 이하</td>
+      <td>$360</td>
+      <td>$500</td>
+    </tr>
+    <tr class="warn">
+      <td class="ticker">GOOGL <span class="badge risk">손절가 근접</span></td>
+      <td>$356.42</td>
+      <td>$385 이하</td>
+      <td>$355</td>
+      <td>$450</td>
+    </tr>
+    <tr class="warn">
+      <td class="ticker">ORCL <span class="badge risk">손절가 이미 하회</span></td>
+      <td>$127.05</td>
+      <td>$178 이하</td>
+      <td>$162</td>
+      <td>$225</td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td>$247.55</td>
+      <td>$255 이하</td>
+      <td>$230</td>
+      <td>$320</td>
+    </tr>
+    <tr>
+      <td class="ticker">ASTS</td>
+      <td>$63.34</td>
+      <td>$68 이하</td>
+      <td>$45</td>
+      <td>$100</td>
+    </tr>
+  </table>
+
+  <h2>⚠️ 2% 이내 근접 종목</h2>
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>차이</th>
+    </tr>
+    <tr>
+      <td class="ticker">INTC</td>
+      <td>$105.74</td>
+      <td>$104.50 이하</td>
+      <td>+1.2%</td>
+    </tr>
+  </table>
+
+  <p class="note">
+    ※ GOOGL은 현재가가 손절가($355)에 불과 $1.42 위입니다.<br>
+    ※ ORCL은 현재가($127.05)가 이미 손절가($162)보다 낮은 상태입니다 — 트리거 이후 추가 하락한 것으로 보이니 매수 전 재확인 필요.<br>
+    ※ 본 알림은 실시간 웹서치 기반이며 매수 판단은 사용자 본인 책임입니다.
+  </p>
+</body>
+</html>
