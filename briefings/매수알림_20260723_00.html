@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 자동매수 트리거 도달 알림</title>
+<style>
+  :root{
+    --bg:#0d1117;
+    --card:#161b22;
+    --border:#30363d;
+    --text:#e6edf3;
+    --sub:#8b949e;
+    --red:#f85149;
+    --green:#3fb950;
+    --yellow:#e3b341;
+    --accent:#58a6ff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    padding:16px;
+    line-height:1.5;
+  }
+  .wrap{max-width:640px;margin:0 auto;}
+  h1{
+    font-size:20px;
+    margin:0 0 4px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .timestamp{color:var(--sub);font-size:13px;margin-bottom:20px;}
+  .section-title{
+    font-size:14px;
+    color:var(--sub);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    margin:24px 0 10px;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    overflow:hidden;
+    font-size:14px;
+  }
+  th,td{
+    padding:10px 8px;
+    text-align:center;
+    border-bottom:1px solid var(--border);
+  }
+  th{
+    background:#1c2128;
+    color:var(--sub);
+    font-weight:600;
+    font-size:12px;
+  }
+  tr:last-child td{border-bottom:none;}
+  td.ticker{font-weight:700;color:var(--accent);text-align:left;padding-left:12px;}
+  td.price{color:var(--red);font-weight:700;}
+  td.trigger{color:var(--sub);}
+  td.stop{color:var(--yellow);}
+  td.target{color:var(--green);}
+  .near-table td.price{color:var(--yellow);}
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px 16px;
+    margin-top:10px;
+    font-size:13px;
+    color:var(--sub);
+  }
+  .warn{
+    display:inline-block;
+    background:rgba(248,81,73,0.12);
+    color:var(--red);
+    border:1px solid rgba(248,81,73,0.35);
+    border-radius:6px;
+    padding:2px 8px;
+    font-size:11px;
+    font-weight:700;
+    margin-top:6px;
+  }
+  .note{
+    margin-top:24px;
+    font-size:12px;
+    color:var(--sub);
+    border-top:1px solid var(--border);
+    padding-top:12px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-07-22 (미국 동부시간 11:02 AM EDT 기준) · 한국시간 2026-07-23 00:06</div>
+
+  <div class="section-title">트리거 도달 종목 (6종목)</div>
+  <table>
+    <thead>
+      <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ticker">AVGO</td><td class="price">$390.30</td><td class="trigger">$420 이하</td><td class="stop">$390</td><td class="target">$480</td></tr>
+      <tr><td class="ticker">MSFT</td><td class="price">$389.15</td><td class="trigger">$410 이하</td><td class="stop">$360</td><td class="target">$500</td></tr>
+      <tr><td class="ticker">GOOGL</td><td class="price">$347.15</td><td class="trigger">$385 이하</td><td class="stop">$355</td><td class="target">$450</td></tr>
+      <tr><td class="ticker">AMZN</td><td class="price">$244.03</td><td class="trigger">$255 이하</td><td class="stop">$230</td><td class="target">$320</td></tr>
+      <tr><td class="ticker">ORCL</td><td class="price">$126.79</td><td class="trigger">$178 이하</td><td class="stop">$162</td><td class="target">$225</td></tr>
+      <tr><td class="ticker">ASTS</td><td class="price">$63.88</td><td class="trigger">$68 이하</td><td class="stop">$45</td><td class="target">$100</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card">
+    ⚠️ <strong>AVGO</strong>는 현재가($390.30)가 손절가($390)에 거의 근접해 있습니다. 트리거 진입 시 손절 여유폭이 매우 좁습니다.<br>
+    ⚠️ <strong>ORCL</strong>은 현재가($126.79)가 트리거가는 물론 손절가($162)보다도 이미 훨씬 낮습니다 (52주 최저 $120.03 근접, 고점 대비 -64%). 통상적 진입 로직과 다른 상황이므로 매수 전 재검토가 필요합니다.
+    <div class="warn">데이터 재확인 권장</div>
+  </div>
+
+  <div class="section-title">⚠️ 트리거 근접 종목 (2% 이내)</div>
+  <table class="near-table">
+    <thead>
+      <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>격차</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ticker">INTC</td><td class="price">$105.30</td><td class="trigger">$104.50 이하</td><td class="stop">0.77%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    미도달: TSM($422.29, 트리거 $395), MRVL($210.62, 트리거 $168), PLTR($126.81, 트리거 $122, 격차 3.9%)<br>
+    출처: stockanalysis.com (실시간, 2026-07-22 미 동부시간 오전 기준)
+  </div>
+</div>
+</body>
+</html>
