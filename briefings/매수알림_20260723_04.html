@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --border:#30363d;
+    --text:#e6edf3; --sub:#8b949e;
+    --red:#f85149; --green:#3fb950; --yellow:#d29922;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:20px; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  h1{
+    font-size:18px; margin:0 0 4px 0; color:var(--red);
+  }
+  .timestamp{
+    color:var(--sub); font-size:13px; margin-bottom:20px;
+  }
+  .section-title{
+    font-size:14px; color:var(--sub); margin:24px 0 8px 0; text-transform:uppercase; letter-spacing:0.5px;
+  }
+  table{
+    width:100%; border-collapse:collapse; background:var(--card);
+    border:1px solid var(--border); border-radius:8px; overflow:hidden;
+    font-size:14px;
+  }
+  th,td{
+    padding:10px 8px; text-align:center; border-bottom:1px solid var(--border);
+  }
+  th{
+    background:#1c2128; color:var(--sub); font-weight:600; font-size:12px;
+  }
+  tr:last-child td{ border-bottom:none; }
+  .ticker{ font-weight:700; }
+  .price{ color:var(--yellow); font-weight:600; }
+  .warn-row{ background:rgba(248,81,73,0.08); }
+  .warn-note{
+    color:var(--red); font-size:12px; margin-top:6px; padding:0 4px;
+  }
+  .near-table th, .near-table td{ font-size:13px; }
+  footer{
+    margin-top:24px; color:var(--sub); font-size:11px; text-align:center;
+  }
+  @media (max-width:480px){
+    table, th, td{ font-size:12px; }
+    th,td{ padding:8px 4px; }
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-07-23 04:04 (KST)</div>
+
+  <div class="section-title">도달 종목 (6)</div>
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+    <tr class="warn-row"><td class="ticker">AVGO</td><td class="price">$386.88</td><td>$420</td><td>$390</td><td>$480</td></tr>
+    <tr><td class="ticker">MSFT</td><td class="price">$397.64</td><td>$410</td><td>$360</td><td>$500</td></tr>
+    <tr class="warn-row"><td class="ticker">GOOGL</td><td class="price">$351.99</td><td>$385</td><td>$355</td><td>$450</td></tr>
+    <tr><td class="ticker">AMZN</td><td class="price">$247.55</td><td>$255</td><td>$230</td><td>$320</td></tr>
+    <tr class="warn-row"><td class="ticker">ORCL</td><td class="price">$124.21</td><td>$178</td><td>$162</td><td>$225</td></tr>
+    <tr><td class="ticker">ASTS</td><td class="price">$63.88</td><td>$68</td><td>$45</td><td>$100</td></tr>
+  </table>
+  <div class="warn-note">⚠️ AVGO, GOOGL, ORCL: 현재가가 이미 손절가 이하/근접 — 매수 시 즉시 손절 구간 진입 위험</div>
+
+  <div class="section-title">⚠️ 2% 이내 근접 종목</div>
+  <table class="near-table">
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>차이</th></tr>
+    <tr><td class="ticker">INTC</td><td class="price">$105.74</td><td>$104.50</td><td>+1.2%</td></tr>
+  </table>
+
+  <footer>자동매수 모니터링 · 실시간 웹서치 기반</footer>
+</body>
+</html>
