@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>실적 경보 - 현대차 2Q26</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --border:#30363d;
+    --text:#e6edf3; --sub:#8b949e; --accent:#f0b90b;
+    --red:#f85149; --green:#3fb950; --blue:#58a6ff;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Malgun Gothic",sans-serif;
+    padding:16px; max-width:480px; margin:0 auto; line-height:1.5;
+  }
+  .header{
+    text-align:center; padding:20px 0 16px;
+  }
+  .header .tag{
+    display:inline-block; background:rgba(240,185,11,0.15); color:var(--accent);
+    font-size:12px; font-weight:600; padding:4px 10px; border-radius:20px;
+    margin-bottom:10px; letter-spacing:0.5px;
+  }
+  .header h1{ font-size:20px; font-weight:700; }
+  .header .date{ color:var(--sub); font-size:13px; margin-top:4px; }
+
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:18px; margin-bottom:14px;
+  }
+  .stock-title{
+    display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;
+  }
+  .stock-title h2{ font-size:18px; font-weight:700; }
+  .stock-title .code{ color:var(--sub); font-size:13px; }
+  .badge{
+    background:rgba(88,166,255,0.15); color:var(--blue);
+    font-size:12px; font-weight:600; padding:3px 9px; border-radius:8px;
+  }
+
+  .row{
+    display:flex; justify-content:space-between; padding:10px 0;
+    border-bottom:1px solid var(--border); font-size:14px;
+  }
+  .row:last-child{ border-bottom:none; }
+  .row .label{ color:var(--sub); }
+  .row .value{ font-weight:600; text-align:right; }
+  .value.down{ color:var(--red); }
+  .value.up{ color:var(--green); }
+
+  .section-title{
+    font-size:13px; font-weight:700; color:var(--accent);
+    margin:16px 0 8px; letter-spacing:0.3px;
+  }
+  .note{ font-size:13px; color:var(--sub); line-height:1.6; }
+
+  .strategy{
+    background:rgba(63,185,80,0.12); border:1px solid rgba(63,185,80,0.35);
+    border-radius:12px; padding:16px; margin-top:6px;
+  }
+  .strategy .head{
+    display:flex; align-items:center; gap:8px; margin-bottom:8px;
+  }
+  .strategy .head .dot{
+    width:10px; height:10px; border-radius:50%; background:var(--green);
+  }
+  .strategy .head span{ font-weight:700; font-size:15px; color:var(--green); }
+  .strategy p{ font-size:13.5px; color:var(--text); line-height:1.6; }
+
+  .disclaimer{
+    text-align:center; font-size:11px; color:var(--sub); margin-top:20px; padding:0 8px;
+  }
+  .footer{ text-align:center; font-size:11px; color:var(--sub); margin-top:14px; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="tag">⚡ D-1 실적 경보</div>
+    <h1>내일 실적 발표 종목 확인</h1>
+    <div class="date">2026-07-22 (수) 20:09 기준 · 발표일 2026-07-23(목)</div>
+  </div>
+
+  <div class="card">
+    <div class="stock-title">
+      <div>
+        <h2>현대차</h2>
+        <div class="code">005380 · KOSPI</div>
+      </div>
+      <div class="badge">2Q26 컨콜 예정</div>
+    </div>
+
+    <div class="row">
+      <div class="label">매출 컨센서스</div>
+      <div class="value up">약 50.0조원 (YoY +3.6%)</div>
+    </div>
+    <div class="row">
+      <div class="label">영업이익 컨센서스</div>
+      <div class="value down">약 3.29조원 (YoY -8.6%)</div>
+    </div>
+    <div class="row">
+      <div class="label">EPS 컨센서스</div>
+      <div class="value">공개된 확정치 없음</div>
+    </div>
+    <div class="row">
+      <div class="label">전일 종가 / 평균 목표가</div>
+      <div class="value">39.9만원 / 약 60.2만원</div>
+    </div>
+
+    <div class="section-title">배경</div>
+    <div class="note">
+      부품사(안전공업) 화재 및 해외 공장 생산 차질로 2분기 실적이 시장 기대치를 하회할 전망. 증권사 목표주가는 32만~120만원까지 큰 편차 — 로봇(보스턴다이내믹스) 사업가치 반영 정도 차이가 원인. 컨콜에서 관세 대응, 하반기 신차, HMGMA 가동률 논의가 관건.
+    </div>
+  </div>
+
+  <div class="strategy">
+    <div class="head"><span class="dot"></span><span>전략 권고: 보유 (Hold)</span></div>
+    <p>
+      2분기 이익 부진은 화재·생산차질에 따른 일회성 요인 성격이 강하고, 다수 증권사가 매수 의견과 목표주가 상향/유지를 지속 중. 다만 컨콜에서 하반기 가동률 회복 시그널과 관세 리스크 코멘트를 반드시 확인 후 비중 조정 여부 판단 권장. 실적 발표 당일 주가 변동성 확대 가능성 유의.
+    </p>
+  </div>
+
+  <div class="card" style="padding:14px 18px;">
+    <div class="section-title" style="margin-top:0;">그 외 보유 종목</div>
+    <div class="note">
+      NVDA(8/26), AVGO(9/3), MRVL(8/27), MU(9월말), PLTR(8/3) — 내일 실적 발표 없음. TSM은 7/16 이미 발표 완료.
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    본 자료는 공개된 뉴스·컨센서스 정보를 자동 취합한 것으로 투자 판단의 참고 자료일 뿐 투자 권유가 아닙니다. 최종 투자 결정과 책임은 본인에게 있습니다.
+  </div>
+  <div class="footer">Auto-generated · earnings-d1-alert</div>
+
+</body>
+</html>
