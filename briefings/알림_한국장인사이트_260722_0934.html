@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한국장 인사이트 — 260722</title>
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --bg2: #16162a;
+    --bg3: #1e1e35;
+    --border: #2e2e55;
+    --gold: #ffd700;
+    --gold2: #ffb800;
+    --text: #e8e8f0;
+    --text2: #a0a0c0;
+    --green: #4ade80;
+    --red: #f87171;
+    --blue: #60a5fa;
+    --purple: #c084fc;
+    --badge-bg: #2a2a45;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .header {
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a35 50%, #0f0f1a 100%);
+    border-bottom: 2px solid var(--gold);
+    padding: 28px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+  }
+  .header-title span { color: var(--text2); font-size: 13px; font-weight: 400; display: block; margin-top: 4px; }
+  .header-meta { text-align: right; color: var(--text2); font-size: 12px; }
+  .header-meta strong { color: var(--gold); font-size: 16px; display: block; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+  .section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gold);
+    border-left: 4px solid var(--gold);
+    padding-left: 12px;
+    margin: 32px 0 16px;
+    letter-spacing: 0.03em;
+  }
+  .person-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 28px;
+    overflow: hidden;
+  }
+  .person-header {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .person-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .avatar-1 { background: linear-gradient(135deg, #ffd700, #ff8800); color: #0f0f1a; }
+  .avatar-2 { background: linear-gradient(135deg, #60a5fa, #8b5cf6); color: #fff; }
+  .avatar-3 { background: linear-gradient(135deg, #4ade80, #06b6d4); color: #0f0f1a; }
+  .person-info h3 { font-size: 17px; font-weight: 700; color: var(--text); }
+  .person-info p { font-size: 12px; color: var(--text2); margin-top: 2px; }
+  .source-badge {
+    margin-left: auto;
+    background: var(--badge-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    color: var(--text2);
+  }
+  .source-badge a { color: var(--blue); text-decoration: none; }
+  .source-badge a:hover { text-decoration: underline; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th {
+    background: var(--bg3);
+    color: var(--gold2);
+    font-weight: 600;
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,215,0,0.03); }
+  .ticker {
+    font-family: monospace;
+    font-size: 12px;
+    color: var(--blue);
+    background: #0d1b2a;
+    padding: 2px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .dir-buy { color: var(--green); font-weight: 600; }
+  .dir-hold { color: var(--gold); font-weight: 600; }
+  .dir-watch { color: var(--purple); font-weight: 600; }
+  .unconfirmed { color: var(--text2); font-style: italic; }
+  .note-box {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: var(--text2);
+  }
+  .note-box strong { color: var(--text); }
+  .consolidated-table td:nth-child(2) { text-align: center; }
+  .trust-high { color: var(--green); font-weight: 700; }
+  .trust-med { color: var(--gold); font-weight: 600; }
+  .trust-low { color: var(--text2); }
+  .mention-count {
+    display: inline-block;
+    background: var(--badge-bg);
+    border-radius: 50%;
+    width: 24px; height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .count-3 { background: #1a3a1a; color: var(--green); border: 1px solid var(--green); }
+  .count-2 { background: #2a2a0a; color: var(--gold); border: 1px solid var(--gold2); }
+  .count-1 { background: var(--badge-bg); color: var(--text2); }
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 20px 40px;
+    color: var(--text2);
+    font-size: 11px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .warning {
+    background: #1a1200;
+    border: 1px solid #554400;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 12px;
+    color: #c8a000;
+    margin-bottom: 20px;
+  }
+  .tag {
+    display: inline-block;
+    background: var(--badge-bg);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 11px;
+    margin: 1px;
+    color: var(--text2);
+  }
+  .tag-us { background: #0d1a2a; color: #60a5fa; }
+  .tag-kr { background: #0a1a10; color: #4ade80; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-title">
+    📊 한국장 인사이트 리포트
+    <span>국내 주식 투자 인플루언서 3인 최신 발언 종목 분석</span>
+  </div>
+  <div class="header-meta">
+    <strong>2026년 07월 22일</strong>
+    자동 수집 · AI 분석<br>
+    <span style="color:#f87171; font-size:11px;">⚠️ 투자 판단의 참고용 — 투자 책임은 본인에게 있음</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="warning">
+    ⚠️ <strong>확인 원칙:</strong> 본 리포트는 공개 뉴스·Telegram·유튜브에서 출처와 날짜가 확인된 발언만 기재합니다. 종목코드 미확인 시 공백, 발언 내용 불명확 시 "미확인"으로 표시합니다. 투자 권유가 아닙니다.
+  </div>
+
+  <!-- ===== 염승환 ===== -->
+  <div class="section-title">① 염승환 — LS증권 리테일사업부 이사</div>
+  <div class="person-card">
+    <div class="person-header">
+      <div class="person-avatar avatar-1">염</div>
+      <div class="person-info">
+        <h3>염승환</h3>
+        <p>LS증권 리테일사업부 이사 · 유튜브 쎈터뷰</p>
+      </div>
+      <div class="source-badge">
+        <a href="https://www.sedaily.com/article/20062685" target="_blank">📰 서울경제 2026-07-01</a><br>
+        <a href="https://v.daum.net/v/UIMgDeKpOt" target="_blank">📰 더 비비드 2026-02-23</a>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>종목명</th>
+          <th>종목코드</th>
+          <th>시장</th>
+          <th>방향</th>
+          <th>추천 근거 (발언 요약)</th>
+          <th>출처/날짜</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>삼성전자</strong></td>
+          <td><span class="ticker">005930</span></td>
+          <td><span class="tag tag-kr">KR</span></td>
+          <td class="dir-buy">▲ 매수</td>
+          <td>"엔비디아 시대에서 삼성·하이닉스 주도의 메모리 시대로 왕좌 이동. 테슬라 AI칩 양산으로 강력한 파트너십." 7~8월 반도체 외 업종도 함께 오를 것이나 삼전닉스 지속 보유 시사.</td>
+          <td>더 비비드 2026-02-23<br>서울경제 2026-07-01</td>
+        </tr>
+        <tr>
+          <td><strong>SK하이닉스</strong></td>
+          <td><span class="ticker">000660</span></td>
+          <td><span class="tag tag-kr">KR</span></td>
+          <td class="dir-buy">▲ 매수</td>
+          <td>"AI 비서가 개인 데이터를 평생 저장해야 하는 시대 → 메모리 수요 폭발. 삼전닉스 중심 강세장 지속." (7~8월에도 양사 상승 예상)</td>
+          <td>더 비비드 2026-02-23<br>서울경제 2026-07-01</td>
+        </tr>
+        <tr>
+          <td><strong>현대차</strong></td>
+          <td><span class="ticker">005380</span></td>
+          <td><span class="tag tag-kr">KR</span></td>
+          <td class="dir-buy">▲ 관심</td>
+          <td>"세계 최고 로봇 기업 보스턴 다이내믹스 보유. 미국 제조업 부흥 위해 로봇에 올인할 것 → 현대차 그룹이 피지컬 AI 버블 장세 핵심 수혜주."</td>
+          <td>더 비비드 2026-02-23</td>
+        </tr>
+        <tr>
+          <td><strong>현대모비스</strong></td>
+          <td><span class="ticker">012330</span></td>
+          <td><span class="tag tag-kr">KR</span></td>
+          <td class="dir-watch">◆ 관심</td>
+          <td>"자동차 부품 기술이 로봇으로 전이 → 부품사 가치 재평가." (HL만도와 함께 언급)</td>
+          <td>더 비비드 2026-02-23</td>
+        </tr>
+        <tr>
+          <td><strong>HL만도</strong></td>
+          <td><span class="ticker">204320</span></td>
+          <td><span class="tag tag-kr">KR</span></td>
+          <td class="dir-watch">◆ 관심</td>
+          <td>"로봇 부품 기술 전이 수혜, 밸류 재평가 대상." (현대모비스와 함께 언급)</td>
+          <td>더 비비드 2026-02-23</td>
+        </tr>
+        <tr>
+          <td colspan="6" style="background: var(--bg3); padding: 10px 14px;">
+            <strong style="color: var(--gold2);">업종 언급 (7월 전망, 개별 종목명 미확인)</strong><br>
+            <span class="tag">조선</span> <span class="tag">방산</span> <span class="tag">전력기기</span> <span class="tag">ESS</span> <span class="tag">태양광·풍력</span> <span class="tag">2차전지</span> <span class="tag">제약·바이오</span> <span class="tag">금융</span><br>
+            <span style="color:var(--text2); font-size:12px;">"7월부터 순환매 장세. 반도체 쏠림 완화 → 조선·방산이 차기 주도업종. 메가 프로젝트로 전력 중요성↑, 호남 재생에너지 → ESS 기회." (서울경제 2026-07-01)</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== 박세익 ===== -->
+  <div class="section-title">② 박세익 — 체슬리투자자문 대표</div>
+  <div class="person-card">
+    <div class="person-header">
+      <div class="person-avatar avatar-2">박</div>
+      <div class="person-info">
+        <h3>박세익</h3>
+        <p>체슬리투자자문 대표 · 유튜브 머니특강</p>
+      </div>
+      <div class="source-badge">
+        <a href="https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202512260093" target="_blank">📰 한국경제TV 2025-12-26</a><br>
+        <a href="https://www.youtube.com/watch?v=V3Zg5lAV5xI" target="_blank">▶ 유튜브 2026-07월 (제목 확인)</a>
+      </div>
+    </div>
+
+    <div class="note-box" style="margin: 0; border-radius: 0; border-left: 3px solid var(--blue);">
+      ℹ️ <strong>수집 한계:</strong> 박세익 대표의 7월 구체 한국 종목명은 공개 검색으로 확인되지 않음. 2025-12-26 한국경제TV 출연 발언(주로 미국 종목)과 유튜브 제목("대형주 우위, 7월에도 지속? 역발상 전략")을 기반으로 작성. 한국 개별 종목은 미확인.
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>종목명</th>
+          <th>종목코드</th>
+          <th>시장</th>
+          <th>방향</th>
+          <th>추천 근거 (발언 요약)</th>
+          <th>출처/날짜</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>마이크론테크놀로지</strong></td>
+          <td><span class="ticker">MU</span></td>
+          <td><span class="tag tag-us">US</span></td>
+          <td class="dir-buy">▲ 매수</td>
+          <td>"비메모리보다 메모리 반도체가 상대적으로 강하다. 마이크론이 전고점 돌파하며 추세적 상승을 이어가고 있다."</td>
+          <td>한국경제TV 2025-12-26</td>
+        </tr>
+        <tr>
+          <td><strong>팔란티어 테크놀로지스</strong></td>
+          <td><span class="ticker">PLTR</span></td>
+          <td><span class="tag tag-us">US</span></td>
+          <td class="dir-buy">▲ 매수</td>
+          <td>"AI 하드웨어보다 소프트웨어 쪽이 더 강한 주가 흐름. 팔란티어, 앱플로빈 → AI 소프트웨어에 대한 시장 선호가 뚜렷."</td>
+          <td>한국경제TV 2025-12-26</td>
+        </tr>
+        <tr>
+          <td><strong>앱플로빈</strong></td>
+          <td><span class="ticker">APP</span></td>
+          <td><span class="tag tag-us">US</span></td>
+          <td class="dir-buy">▲ 매수</td>
+          <td>"AI 소프트웨어 선호 사례로 명시. 시장 주도 종목으로 언급."</td>
+          <td>한국경제TV 2025-12-26</td>
+        </tr>
+        <tr>
+          <td><strong>로봇 테마</strong> <span class="unconfirmed">(개별 종목 미확인)</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td class="dir-watch">◆ 관심</td>
+          <td>"성장주 가운데 로봇이 가장 큰 테마. 유니트리 로봇 수준에 일론 머스크도 인상적이라 평가. 메모리 반도체·AI 소프트웨어·로봇 강세 지속 전망."</td>
+          <td>한국경제TV 2025-12-26</td>
+        </tr>
+        <tr>
+          <td><strong>한국 대형주</strong> <span class="unconfirmed">(개별 종목 미확인)</span></td>
+          <td>—</td>
+          <td><span class="tag tag-kr">KR</span></td>
+          <td class="dir-hold">⬛ 역발상</td>
+          <td>유튜브 영상 제목 "대형주 우위, 7월에도 지속? 지금은 역발상 전략 필요" — 구체 종목명은 영상 내부 페이월 또는 비공개 콘텐츠로 확인 불가.</td>
+          <td>YouTube 2026-07월 (제목만 확인)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== 이효석 ===== -->
+  <div class="section-title">③ 이효석 — HS아카데미 대표</div>
+  <div class="person-card">
+    <div class="person-header">
+      <div class="person-avatar avatar-3">이</div>
+      <div class="person-info">
+        <h3>이효석</h3>
+        <p>HS아카데미 대표 · Telegram @HS_academy · X @HS_academy23</p>
+      </div>
+      <div class="source-badge">
+        <a href="https://t.me/s/HS_academy" target="_blank">📱 Telegram 2026-07월 최신</a>
+      </div>
+    </div>
+
+    <div class="note-box" style="margin: 0; border-radius: 0; border-left: 3px solid var(--green);">
+      ℹ️ <strong>특이점:</strong> 이효석은 주로 <strong>미국주식·거시경제</strong> 분석 중심. 한국 종목은 삼성전자·SK하이닉스(반도체 ETF) 위주. 최신 텔레그램(2026-07월)에서 SpaceX IPO, FOMC(케빈워시), AI 버블 확신 심화 발언이 핵심. "AI버블이 올 것 같다는 확신이 더 커졌다" 언급.
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>종목명</th>
+          <th>종목코드</th>
+          <th>시장</th>
+          <th>방향</th>
+          <th>추천 근거 (발언 요약)</th>
+          <th>출처/날짜</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>삼성전자</strong></td>
+          <td><span class="ticker">005930</span></td>
+          <td><span class="tag tag-kr">KR</span></td>
+          <td class="dir-hold">⬛ 보유</td>
+          <td>윤지호 경제평론가와 인터뷰 후 공유: "삼성전자 팔지 마세요!" 글로벌 시가총액 순위 상상 등 긍정적 시각 공유.</td>
+          <td>Telegram 2026-07월</td>
+        </tr>
+        <tr>
+          <td><strong>테슬라</strong></td>
+          <td><span class="ticker">TSLA</span></td>
+          <td><span class="tag tag-us">US</span></td>
+          <td class="dir-buy">▲ 핵심</td>
+          <td>"테슬라 관련 콘텐츠를 한 달 새 세 번째 다뤘다. 9월 투자전략에서 찍어서 맞췄다고 자평. 디플레이셔너리 혁신 관점."</td>
+          <td>Telegram 2026-07월</td>
+        </tr>
+        <tr>
+          <td><strong>스페이스X</strong></td>
+          <td><span class="unconfirmed">IPO완료(비상장→상장)</span></td>
+          <td><span class="tag tag-us">US</span></td>
+          <td class="dir-watch">◆ 관심</td>
+          <td>"SpaceX 상장 성공적. 급락 없이 급등도 없었던 게 좋은 신호. 이제 AI 투자 자금조달 우려 해소 시작. 우주 데이터센터 가능성 연구 중."</td>
+          <td>Telegram 2026-07월</td>
+        </tr>
+        <tr>
+          <td><strong>아이온큐</strong></td>
+          <td><span class="ticker">IONQ</span></td>
+          <td><span class="tag tag-us">US</span></td>
+          <td class="dir-watch">◆ 언급</td>
+          <td>"아이온큐, 로켓랩이 각각 +19%, +10% 급등하며 사상최고치 기록 언급. 양자컴퓨터를 2015년 AI와 유사한 초기 단계로 평가."</td>
+          <td>Telegram (9월 맥락)</td>
+        </tr>
+        <tr>
+          <td><strong>알파벳·코어위브·씨게이트·오클로</strong></td>
+          <td><span class="ticker">GOOGL / CRWV / STX / OKLO</span></td>
+          <td><span class="tag tag-us">US</span></td>
+          <td class="dir-watch">◆ 언급</td>
+          <td>모닝효 종목 이야기 해시태그로 언급: "#테슬라, #알파벳, #코어위브, #씨게이트, #오클로, #아이온큐" — 구체 매수/매도 근거는 유료 콘텐츠(모닝효)에 수록.</td>
+          <td>Telegram (모닝효 해시태그)</td>
+        </tr>
+        <tr>
+          <td><strong>반도체 ETF</strong> <span class="unconfirmed">(개별 명칭 미확인)</span></td>
+          <td>—</td>
+          <td><span class="tag tag-kr">KR</span></td>
+          <td class="dir-watch">◆ 대안</td>
+          <td>"반도체 종목이 너무 비싸서 못 산 분들은 ETF가 좋은 대안. 삼성전자·SK하이닉스 단일종목 레버리지 ETF 언급."</td>
+          <td>Telegram 2026-07월</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== 통합표 ===== -->
+  <div class="section-title">🔗 통합 언급 종목 분석표</div>
+  <div class="note-box">
+    3인 중 2인 이상이 동일 종목(또는 업종) 언급 시 신뢰도 상승. 단, 한국 종목에 집중 — 미국 종목은 참고 표시.
+  </div>
+
+  <div class="person-card">
+    <table class="consolidated-table">
+      <thead>
+        <tr>
+          <th>종목명</th>
+          <th>코드</th>
+          <th>언급자 수</th>
+          <th>언급 인물</th>
+          <th>방향</th>
+          <th>신뢰도</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>삼성전자</strong></td>
+          <td><span class="ticker">005930</span></td>
+          <td><span class="mention-count count-3">3</span></td>
+          <td>염승환 · 이효석 · (윤지호 경유)</td>
+          <td class="dir-buy">▲ 보유/매수</td>
+          <td class="trust-high">★★★ 높음</td>
+          <td>메모리 왕좌, 테슬라 AI칩 파트너</td>
+        </tr>
+        <tr>
+          <td><strong>SK하이닉스</strong></td>
+          <td><span class="ticker">000660</span></td>
+          <td><span class="mention-count count-2">2</span></td>
+          <td>염승환 · 이효석(ETF 맥락)</td>
+          <td class="dir-buy">▲ 매수</td>
+          <td class="trust-high">★★★ 높음</td>
+          <td>HBM, 메모리 AI 사이클 핵심</td>
+        </tr>
+        <tr>
+          <td><strong>로봇 테마</strong></td>
+          <td>—</td>
+          <td><span class="mention-count count-2">2</span></td>
+          <td>염승환 · 박세익</td>
+          <td class="dir-watch">◆ 관심</td>
+          <td class="trust-med">★★☆ 중</td>
+          <td>피지컬 AI. 한국 개별 종목은 미확인</td>
+        </tr>
+        <tr>
+          <td><strong>현대차 그룹</strong></td>
+          <td><span class="ticker">005380</span></td>
+          <td><span class="mention-count count-1">1</span></td>
+          <td>염승환</td>
+          <td class="dir-buy">▲ 관심</td>
+          <td class="trust-low">★☆☆ 단독</td>
+          <td>보스턴 다이내믹스 로봇 보유</td>
+        </tr>
+        <tr>
+          <td><strong>현대모비스</strong></td>
+          <td><span class="ticker">012330</span></td>
+          <td><span class="mention-count count-1">1</span></td>
+          <td>염승환</td>
+          <td class="dir-watch">◆ 관심</td>
+          <td class="trust-low">★☆☆ 단독</td>
+          <td>로봇 부품 전이 수혜</td>
+        </tr>
+        <tr>
+          <td><strong>HL만도</strong></td>
+          <td><span class="ticker">204320</span></td>
+          <td><span class="mention-count count-1">1</span></td>
+          <td>염승환</td>
+          <td class="dir-watch">◆ 관심</td>
+          <td class="trust-low">★☆☆ 단독</td>
+          <td>로봇 부품 전이 수혜</td>
+        </tr>
+        <tr>
+          <td><strong>조선·방산·전력기기</strong></td>
+          <td>—</td>
+          <td><span class="mention-count count-1">1</span></td>
+          <td>염승환</td>
+          <td class="dir-buy">▲ 차기 주도</td>
+          <td class="trust-low">★☆☆ 업종만</td>
+          <td>7월 순환매, 개별 종목 미확인</td>
+        </tr>
+        <tr style="border-top: 2px solid var(--border);">
+          <td colspan="7" style="padding: 10px 14px; background: var(--bg3); color: var(--text2); font-size: 12px;">
+            <strong style="color: var(--gold2);">📌 미국 종목 (참고):</strong>
+            마이크론(MU) — 박세익 / 테슬라(TSLA) — 이효석 핵심 / 팔란티어(PLTR) — 박세익 / 앱플로빈(APP) — 박세익 / 스페이스X — 이효석(상장 후 추이 주목) / 아이온큐(IONQ) — 이효석 언급
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== 주요 매크로 뷰 ===== -->
+  <div class="section-title">📌 3인 공통 매크로 뷰 요약</div>
+  <div class="note-box">
+    <strong>공통점:</strong><br>
+    1. <strong>AI·메모리 반도체 강세</strong> 지속 — 삼성전자·SK하이닉스 핵심 (3인 공통 시각)<br>
+    2. <strong>로봇·피지컬 AI</strong> 차기 메가 테마 — 염승환·박세익 공통<br>
+    3. <strong>AI 버블 형성 중</strong> (염승환 "2027년 폭발 전망" / 이효석 "AI버블 확신 더 커져")<br>
+    4. <strong>7월 순환매</strong> — 반도체 쏠림에서 조선·방산·전력기기·ESS로 분산 (염승환, 2026-07-01 서울경제)<br><br>
+    <strong>차이점:</strong><br>
+    • 염승환: 한국 국내주식 중심 (삼성전자, 현대차, 부품사) + 업종 순환매 뷰<br>
+    • 박세익: 미국 주식(마이크론·팔란티어·앱플로빈) + 역발상 전략<br>
+    • 이효석: 거시경제 분석 + 미국 핵심 성장주(테슬라·SpaceX) + AI 버블론
+  </div>
+
+</div>
+
+<div class="footer">
+  본 리포트는 공개된 뉴스·Telegram·유튜브 정보를 AI가 자동 수집·정리한 참고 자료입니다.<br>
+  금융투자 권유가 아니며, 모든 투자 판단과 책임은 본인에게 있습니다.<br><br>
+  Sources: <a href="https://www.sedaily.com/article/20062685" style="color: var(--blue);">서울경제 2026-07-01</a> |
+  <a href="https://v.daum.net/v/UIMgDeKpOt" style="color: var(--blue);">더 비비드 2026-02-23</a> |
+  <a href="https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202512260093" style="color: var(--blue);">한국경제TV 2025-12-26</a> |
+  <a href="https://t.me/s/HS_academy" style="color: var(--blue);">Telegram @HS_academy 2026-07</a>
+</div>
+
+</body>
+</html>
