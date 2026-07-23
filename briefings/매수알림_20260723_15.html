@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 1.3rem;
+    color: #ff5252;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    text-align: center;
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 1.05rem;
+    color: #ffca28;
+    margin: 24px 0 8px 0;
+    border-left: 4px solid #ffca28;
+    padding-left: 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #2c2c2c;
+  }
+  th {
+    background-color: #262626;
+    color: #90caf9;
+    font-weight: 600;
+  }
+  td.ticker { font-weight: 700; color: #ffffff; }
+  td.price { color: #ff5252; font-weight: 700; }
+  td.stop { color: #ff8a65; }
+  td.target { color: #66bb6a; }
+  tr:last-child td { border-bottom: none; }
+  .near-table td.price { color: #ffd54f; }
+  .note { font-size: 0.78rem; color: #777; margin-top: 6px; line-height: 1.5; }
+  .breach {
+    display: inline-block;
+    font-size: 0.7rem;
+    background-color: #b71c1c;
+    color: #fff;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 4px;
+  }
+</style>
+</head>
+<body>
+  <h1>자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-07-23(목) 미 동부시각 장중 데이터 기준</div>
+
+  <div class="section-title">트리거 도달 종목 (7)</div>
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+    <tr><td class="ticker">AVGO</td><td class="price">$389.84</td><td>$420 이하</td><td class="stop">$390</td><td class="target">$480</td></tr>
+    <tr><td class="ticker">MSFT</td><td class="price">$381.85</td><td>$410 이하</td><td class="stop">$360</td><td class="target">$500</td></tr>
+    <tr><td class="ticker">INTC</td><td class="price">$99.56</td><td>$104.50 이하</td><td class="stop">$95</td><td class="target">$130</td></tr>
+    <tr><td class="ticker">GOOGL</td><td class="price">~$325.7<span class="breach">손절가 하회</span></td><td>$385 이하</td><td class="stop">$355</td><td class="target">$450</td></tr>
+    <tr><td class="ticker">AMZN</td><td class="price">$233.60</td><td>$255 이하</td><td class="stop">$230</td><td class="target">$320</td></tr>
+    <tr><td class="ticker">ORCL</td><td class="price">$119.78<span class="breach">손절가 하회</span></td><td>$178 이하</td><td class="stop">$162</td><td class="target">$225</td></tr>
+    <tr><td class="ticker">ASTS</td><td class="price">$62.29</td><td>$68 이하</td><td class="stop">$45</td><td class="target">$100</td></tr>
+  </table>
+  <div class="note">
+    AVGO는 트리거가($420) 대비 하회이면서 손절가($390)에도 바짝 근접(-$0.16)한 상태입니다.<br>
+    GOOGL, ORCL은 트리거가는 물론 손절가도 이미 하회한 상태로, 진입 여부 재검토가 필요합니다.<br>
+    GOOGL은 7/22 알파벳 실적 발표(컨센서스 상회) 후에도 AI 자본지출 부담 우려로 급락(-6.17%) 중입니다.<br>
+    ORCL은 최근 한 달 데이터센터 전력/신용 우려 등으로 52주 신저가권에서 거래되고 있습니다.
+  </div>
+
+  <div class="section-title">2% 이내 근접 종목 (1)</div>
+  <table class="near-table">
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+    <tr><td class="ticker">PLTR</td><td class="price">$122.23</td><td>$122 이하</td><td class="stop">$105</td><td class="target">$170</td></tr>
+  </table>
+  <div class="note">PLTR은 트리거가 대비 0.2% 이내로 근접, 다음 체크 시 트리거 도달 가능성 높음.</div>
+
+  <div class="note" style="margin-top:24px; border-top:1px solid #2c2c2c; padding-top:10px;">
+    미도달 종목: TSM($414.39, 트리거 $395 대비 +4.9%), MRVL($205.98, 트리거 $168 대비 +22.6%)<br>
+    데이터 출처: StockAnalysis.com, TradingKey (2026-07-23 미 동부시각 장중 기준)
+  </div>
+</body>
+</html>
