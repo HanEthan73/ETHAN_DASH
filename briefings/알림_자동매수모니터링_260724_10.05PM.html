@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 도달 알림</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 16px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 {
+    font-size: 20px;
+    color: #ff6b6b;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    color: #8b949e;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 15px;
+    color: #58a6ff;
+    margin: 24px 0 8px;
+    border-left: 3px solid #58a6ff;
+    padding-left: 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161b22;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 13px;
+    border-bottom: 1px solid #21262d;
+  }
+  th {
+    background: #21262d;
+    color: #8b949e;
+    font-weight: 600;
+  }
+  td.ticker {
+    font-weight: 700;
+    color: #ffffff;
+  }
+  td.price-hit {
+    color: #ff7b72;
+    font-weight: 700;
+  }
+  td.stop {
+    color: #f0883e;
+  }
+  td.target {
+    color: #3fb950;
+  }
+  .warn-badge {
+    display: inline-block;
+    background: #7d1f1f;
+    color: #ffb3ab;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+  .near-table td.ticker { color: #d2a8ff; }
+  .footer-note {
+    font-size: 12px;
+    color: #6e7681;
+    margin-top: 24px;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달 알림</h1>
+  <div class="timestamp">2026년 7월 24일 22:05 (KST 기준 작성)</div>
+
+  <div class="section-title">✅ 트리거 도달 종목 (7개)</div>
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td class="price-hit">$392.47</td>
+      <td>$420 이하</td>
+      <td class="stop">$390</td>
+      <td class="target">$480</td>
+    </tr>
+    <tr>
+      <td class="ticker">MSFT</td>
+      <td class="price-hit">$381.58</td>
+      <td>$410 이하</td>
+      <td class="stop">$360</td>
+      <td class="target">$500</td>
+    </tr>
+    <tr>
+      <td class="ticker">INTC</td>
+      <td class="price-hit">$103.21</td>
+      <td>$104.50 이하</td>
+      <td class="stop">$95</td>
+      <td class="target">$130</td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td>
+      <td class="price-hit">$346.68</td>
+      <td>$385 이하</td>
+      <td class="stop">$355</td>
+      <td class="target">$450</td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td class="price-hit">$233.66</td>
+      <td>$255 이하</td>
+      <td class="stop">$230</td>
+      <td class="target">$320</td>
+    </tr>
+    <tr>
+      <td class="ticker">ORCL</td>
+      <td class="price-hit">$120.04</td>
+      <td>$178 이하</td>
+      <td class="stop">$162</td>
+      <td class="target">$225</td>
+    </tr>
+    <tr>
+      <td class="ticker">ASTS</td>
+      <td class="price-hit">$62.29</td>
+      <td>$68 이하</td>
+      <td class="stop">$45</td>
+      <td class="target">$100</td>
+    </tr>
+  </table>
+
+  <div class="footer-note">
+    ⚠️ <b>GOOGL</b>: 현재가($346.68)가 손절가($355)보다 이미 낮음 — 트리거와 손절을 동시에 통과한 상태.<br>
+    ⚠️ <b>ORCL</b>: 현재가($120.04)가 손절가($162)보다 크게 낮음 — 트리거 대비 -32.6%, 이미 손절 구간 훨씬 아래. 실제 매수 판단 시 급락 배경(AI 클라우드 자본지출 우려, 52주 신저가) 확인 필요.<br>
+    ⚠️ <b>AVGO</b>: 현재가($392.47)가 손절가($390)와 단 $2.47 차이 — 여유 매우 좁음.
+  </div>
+
+  <div class="section-title">🔶 2% 이내 근접 종목</div>
+  <table class="near-table">
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>차이</th>
+    </tr>
+    <tr>
+      <td class="ticker">PLTR</td>
+      <td>$123.37</td>
+      <td>$122 이하</td>
+      <td>+1.1%</td>
+    </tr>
+  </table>
+
+  <div class="footer-note">
+    미도달 (2% 초과 이격): TSM ($415.58, 트리거 $395, +5.2%), MRVL ($209.32, 트리거 $168, +24.6%)<br><br>
+    * 가격 출처: stockanalysis.com (실시간/전일 종가 기준, 2026-07-24 프리마켓)<br>
+    * 본 알림은 자동화 스크립트에 의해 생성되었으며, 실제 매수 실행은 사용자 직접 판단 필요.
+  </div>
+</body>
+</html>
