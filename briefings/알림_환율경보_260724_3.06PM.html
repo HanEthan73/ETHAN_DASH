@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USD/KRW 환율 경보 - 2026.07.24</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --red: #f85149;
+    --green: #3fb950;
+    --amber: #d29922;
+    --blue: #58a6ff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+    padding: 20px 16px 40px;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.55;
+  }
+  .header { text-align: center; margin-bottom: 20px; }
+  .header .badge {
+    display: inline-block;
+    background: rgba(248,81,73,0.15);
+    color: var(--red);
+    border: 1px solid rgba(248,81,73,0.4);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  .header h1 { font-size: 20px; font-weight: 700; color: var(--text); }
+  .header .timestamp { color: var(--muted); font-size: 13px; margin-top: 6px; }
+  .rate-card {
+    background: linear-gradient(180deg, #1a1f27 0%, var(--card) 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .rate-card .label { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+  .rate-card .value { font-size: 42px; font-weight: 800; color: var(--red); letter-spacing: -1px; }
+  .rate-card .unit { font-size: 18px; color: var(--muted); font-weight: 500; }
+  .rate-card .change { margin-top: 10px; font-size: 15px; color: var(--red); font-weight: 600; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+  .stat .label { color: var(--muted); font-size: 12px; margin-bottom: 4px; }
+  .stat .value { font-size: 17px; font-weight: 700; }
+  .section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 14px; }
+  .section h2 { font-size: 15px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .section p, .section li { font-size: 14px; color: #c9d1d9; }
+  .section ul { padding-left: 18px; }
+  .section li { margin-bottom: 6px; }
+  .threshold-box {
+    background: rgba(210,153,34,0.1);
+    border: 1px solid rgba(210,153,34,0.35);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 13px;
+    color: var(--amber);
+    margin-top: 10px;
+  }
+  .action-list { list-style: none; padding: 0; }
+  .action-list li {
+    background: #1c2128;
+    border-left: 3px solid var(--blue);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    font-size: 13.5px;
+  }
+  .footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 24px; }
+  @media (max-width: 400px) {
+    .rate-card .value { font-size: 36px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">⚠ 환율 경보 발령</div>
+    <h1>USD/KRW 환율 경보</h1>
+    <div class="timestamp">2026년 7월 24일 (금) 15:06 KST 기준</div>
+  </div>
+
+  <div class="rate-card">
+    <div class="label">현재 환율 (USD/KRW)</div>
+    <div class="value">1,481.82<span class="unit"> 원</span></div>
+    <div class="change">▲ +6.27원 (+0.42%) 전일 종가(1,475.55원) 대비</div>
+  </div>
+
+  <div class="grid">
+    <div class="stat"><div class="label">전일 종가</div><div class="value">1,475.55원</div></div>
+    <div class="stat"><div class="label">금일 시가</div><div class="value">1,475.27원</div></div>
+    <div class="stat"><div class="label">금일 저가</div><div class="value">1,471.27원</div></div>
+    <div class="stat"><div class="label">금일 고가</div><div class="value">1,482.16원</div></div>
+  </div>
+
+  <div class="section">
+    <h2>🚨 1,500원 돌파 여부</h2>
+    <p>현재 1,481.82원으로 <strong style="color:var(--amber)">1,500원 심리적 저항선까지 약 18원 남은 상태</strong>이며, 아직 미돌파입니다. 다만 사전 설정된 경보 기준선(1,480원)을 상회하여 본 알림이 발령되었습니다.</p>
+    <div class="threshold-box">경보 기준: 1,480원 초과 → 현재 1,481.82원 (기준 대비 +1.82원)</div>
+  </div>
+
+  <div class="section">
+    <h2>📊 코스피 · 외국인 수급 영향</h2>
+    <ul>
+      <li>7월 들어 미 CPI 상승률이 예상치를 하회하며 연준 긴축 완화 기대가 환율 하방 압력으로 작용, 한때 1,480원대 중반까지 안정화되는 모습을 보였습니다.</li>
+      <li>다만 외국인 투자자는 5월 이후 코스피에서 누적 대규모 순매도 기조를 이어가다 최근 며칠간 순매수로 전환하는 등 변동성이 큰 흐름입니다.</li>
+      <li>외국인 순매수 지속 여부가 원화 강세 전환의 핵심 변수이며, 순매도로 재전환 시 환율 추가 상승(1,500원 접근) 압력이 커질 수 있습니다.</li>
+      <li>한국은행도 "환율은 안정세이나 외국인 주식 순유출은 지속"이라고 진단한 바 있어, 자본유출 우려가 완전히 해소되지 않은 상황입니다.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>✅ 권고 조치</h2>
+    <ul class="action-list">
+      <li>수출입 결제 및 해외 송금 예정 건이 있다면 1,480원대 초반 구간에서 분할 실행 검토</li>
+      <li>1,500원 돌파 시 추가 경보를 통해 재점검, 그 전까지는 관망 유지 가능</li>
+      <li>코스피 외국인 순매수/순매도 전환 여부를 익일 개장 전 재확인 권장</li>
+      <li>단기 트레이딩 목적이라면 변동성 확대 구간이므로 손절 라인 사전 설정</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    자동 생성 경보 · 데이터 출처: 웹 검색 종합 (Investing.com, 언론보도 등)<br>
+    본 리포트는 참고용이며 투자·환전 판단의 최종 책임은 본인에게 있습니다.
+  </div>
+
+</body>
+</html>
