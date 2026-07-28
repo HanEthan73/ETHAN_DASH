@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --red: #f85149;
+    --green: #3fb950;
+    --yellow: #d29922;
+    --accent: #58a6ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 16px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+  }
+  .header {
+    text-align: center;
+    padding: 20px 12px;
+    margin-bottom: 16px;
+  }
+  .header .emoji { font-size: 32px; }
+  .header h1 {
+    font-size: 20px;
+    margin: 8px 0 4px;
+    color: var(--red);
+  }
+  .header .timestamp {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+  }
+  .card h2 {
+    font-size: 15px;
+    margin: 0 0 12px;
+    color: var(--text);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    min-width: 420px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  th:first-child, td:first-child { text-align: left; }
+  th {
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .ticker {
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .price {
+    color: var(--red);
+    font-weight: 700;
+  }
+  .stop { color: var(--muted); }
+  .target { color: var(--green); }
+  .note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  .warn {
+    background: rgba(210,153,34,0.1);
+    border: 1px solid var(--yellow);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 12px;
+    color: var(--yellow);
+    margin-top: 12px;
+  }
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    padding: 16px 0 4px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="emoji">🚨</div>
+    <h1>자동매수 트리거 도달</h1>
+    <div class="timestamp">2026년 7월 29일 04:04 KST (美 동부 7/28 장중)</div>
+  </div>
+
+  <div class="card">
+    <h2>트리거 도달 종목 (7개)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>트리거가</th>
+          <th>손절</th>
+          <th>목표</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker">AVGO</td>
+          <td class="price">$379.63</td>
+          <td>$420.00</td>
+          <td class="stop">$390.00</td>
+          <td class="target">$480.00</td>
+        </tr>
+        <tr>
+          <td class="ticker">MSFT</td>
+          <td class="price">$397.48</td>
+          <td>$410.00</td>
+          <td class="stop">$360.00</td>
+          <td class="target">$500.00</td>
+        </tr>
+        <tr>
+          <td class="ticker">INTC</td>
+          <td class="price">$86.11</td>
+          <td>$104.50</td>
+          <td class="stop">$95.00</td>
+          <td class="target">$130.00</td>
+        </tr>
+        <tr>
+          <td class="ticker">GOOGL</td>
+          <td class="price">$326.56</td>
+          <td>$385.00</td>
+          <td class="stop">$355.00</td>
+          <td class="target">$450.00</td>
+        </tr>
+        <tr>
+          <td class="ticker">TSM</td>
+          <td class="price">$390.95</td>
+          <td>$395.00</td>
+          <td class="stop">$355.00</td>
+          <td class="target">$455.00</td>
+        </tr>
+        <tr>
+          <td class="ticker">AMZN</td>
+          <td class="price">$231.17</td>
+          <td>$255.00</td>
+          <td class="stop">$230.00</td>
+          <td class="target">$320.00</td>
+        </tr>
+        <tr>
+          <td class="ticker">ORCL</td>
+          <td class="price">$121.25</td>
+          <td>$178.00</td>
+          <td class="stop">$162.00</td>
+          <td class="target">$225.00</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="warn">⚠️ AMZN은 현재가($231.17)가 손절가($230)에 근접해 있습니다. 실적 발표(7/30) 앞두고 변동성 주의.</div>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ 2% 이내 근접 종목</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>트리거가</th>
+          <th>근접률</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker">PLTR</td>
+          <td class="price">$123.14</td>
+          <td>$122.00</td>
+          <td>0.9%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    반도체/빅테크 전반 AI 스펜딩 우려로 급락 — Alphabet 실적 이후 자본지출 확대 발표가 촉발한 매도세가 Amazon/Meta/Microsoft로 확산. Marvell(-7.7%), Palantir(-6.4%), Intel(-6.1%) 등 낙폭 큼.<br>
+    데이터 출처: StockAnalysis.com 실시간 시세 (CBOE)
+  </div>
+
+  <div class="footer">
+    자동매수 모니터링 · ETHAN
+  </div>
+
+</body>
+</html>
