@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 도달 알림</title>
+<style>
+  :root {
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 16px;
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    line-height: 1.5;
+  }
+  .header {
+    margin-bottom: 18px;
+  }
+  .header h1 {
+    font-size: 1.25rem;
+    margin: 0 0 6px 0;
+    color: #ff7b72;
+  }
+  .header .ts {
+    font-size: 0.85rem;
+    color: #8b949e;
+  }
+  .alert-banner {
+    background: linear-gradient(135deg, #3d1a1a, #2a1010);
+    border: 1px solid #ff4d4d;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+    color: #ffb3b3;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .ticker {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #58a6ff;
+  }
+  .badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 20px;
+    background: #ff4d4d;
+    color: #fff;
+    font-weight: 600;
+  }
+  .badge.stoploss {
+    background: #8b0000;
+  }
+  table.detail {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  table.detail td {
+    padding: 6px 4px;
+    border-bottom: 1px solid #21262d;
+  }
+  table.detail td.label {
+    color: #8b949e;
+    width: 40%;
+  }
+  table.detail td.value {
+    text-align: right;
+    font-weight: 600;
+  }
+  .current-price { color: #f0883e; }
+  .trigger-price { color: #58a6ff; }
+  .stop-price { color: #ff7b72; }
+  .target-price { color: #3fb950; }
+  .note {
+    margin-top: 24px;
+    font-size: 0.78rem;
+    color: #6e7681;
+    border-top: 1px solid #21262d;
+    padding-top: 12px;
+  }
+  @media (min-width: 640px) {
+    .desktop-table {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .cards-mobile { display: none; }
+  }
+  @media (max-width: 639px) {
+    .desktop-table { display: none; }
+  }
+  .desktop-table th, .desktop-table td {
+    padding: 10px 12px;
+    text-align: right;
+    border-bottom: 1px solid #21262d;
+    font-size: 0.9rem;
+  }
+  .desktop-table th:first-child, .desktop-table td:first-child {
+    text-align: left;
+  }
+  .desktop-table th {
+    background: #0d1117;
+    color: #8b949e;
+    font-weight: 600;
+  }
+  .desktop-table tr:last-child td { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🚨 자동매수 트리거 도달 [2026-07-29 00:05 KST / 美 동부 7-28 11:00 AM]</h1>
+  <div class="ts">종목 10개 중 9개 트리거 도달 · 실시간 웹서치 기반</div>
+</div>
+
+<div class="alert-banner">
+  ⚠️ 오늘 반도체·빅테크 전반에 걸친 급락장입니다. AVGO · INTC · ORCL · AMZN은 트리거가뿐 아니라 <b>손절가 부근/이하</b>까지 하락했습니다. 매수 실행 전 반드시 직접 확인하세요.
+</div>
+
+<!-- Desktop table -->
+<table class="desktop-table">
+  <thead>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>AVGO</td><td>$378.18</td><td>$420</td><td>$390</td><td>$480</td></tr>
+    <tr><td>MSFT</td><td>$396.38</td><td>$410</td><td>$360</td><td>$500</td></tr>
+    <tr><td>INTC</td><td>$86.11</td><td>$104.50</td><td>$95</td><td>$130</td></tr>
+    <tr><td>GOOGL</td><td>$326.56</td><td>$385</td><td>$355</td><td>$450</td></tr>
+    <tr><td>TSM</td><td>$386.12</td><td>$395</td><td>$355</td><td>$455</td></tr>
+    <tr><td>AMZN</td><td>$229.33</td><td>$255</td><td>$230</td><td>$320</td></tr>
+    <tr><td>ORCL</td><td>$118.43</td><td>$178</td><td>$162</td><td>$225</td></tr>
+    <tr><td>PLTR</td><td>$120.73</td><td>$122</td><td>$105</td><td>$170</td></tr>
+    <tr><td>ASTS</td><td>$58.29</td><td>$68</td><td>$45</td><td>$100</td></tr>
+  </tbody>
+</table>
+
+<!-- Mobile cards -->
+<div class="cards-mobile">
+
+  <div class="card">
+    <div class="card-header"><span class="ticker">AVGO</span><span class="badge stoploss">손절가 이하</span></div>
+    <table class="detail">
+      <tr><td class="label">현재가</td><td class="value current-price">$378.18</td></tr>
+      <tr><td class="label">트리거가</td><td class="value trigger-price">$420 이하</td></tr>
+      <tr><td class="label">손절</td><td class="value stop-price">$390</td></tr>
+      <tr><td class="label">목표</td><td class="value target-price">$480</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><span class="ticker">MSFT</span><span class="badge">트리거 도달</span></div>
+    <table class="detail">
+      <tr><td class="label">현재가</td><td class="value current-price">$396.38</td></tr>
+      <tr><td class="label">트리거가</td><td class="value trigger-price">$410 이하</td></tr>
+      <tr><td class="label">손절</td><td class="value stop-price">$360</td></tr>
+      <tr><td class="label">목표</td><td class="value target-price">$500</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><span class="ticker">INTC</span><span class="badge stoploss">손절가 이하</span></div>
+    <table class="detail">
+      <tr><td class="label">현재가</td><td class="value current-price">$86.11</td></tr>
+      <tr><td class="label">트리거가</td><td class="value trigger-price">$104.50 이하</td></tr>
+      <tr><td class="label">손절</td><td class="value stop-price">$95</td></tr>
+      <tr><td class="label">목표</td><td class="value target-price">$130</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><span class="ticker">GOOGL</span><span class="badge">트리거 도달</span></div>
+    <table class="detail">
+      <tr><td class="label">현재가</td><td class="value current-price">$326.56</td></tr>
+      <tr><td class="label">트리거가</td><td class="value trigger-price">$385 이하</td></tr>
+      <tr><td class="label">손절</td><td class="value stop-price">$355</td></tr>
+      <tr><td class="label">목표</td><td class="value target-price">$450</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><span class="ticker">TSM</span><span class="badge">트리거 도달</span></div>
+    <table class="detail">
+      <tr><td class="label">현재가</td><td class="value current-price">$386.12</td></tr>
+      <tr><td class="label">트리거가</td><td class="value trigger-price">$395 이하</td></tr>
+      <tr><td class="label">손절</td><td class="value stop-price">$355</td></tr>
+      <tr><td class="label">목표</td><td class="value target-price">$455</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><span class="ticker">AMZN</span><span class="badge stoploss">손절가 근접</span></div>
+    <table class="detail">
+      <tr><td class="label">현재가</td><td class="value current-price">$229.33</td></tr>
+      <tr><td class="label">트리거가</td><td class="value trigger-price">$255 이하</td></tr>
+      <tr><td class="label">손절</td><td class="value stop-price">$230</td></tr>
+      <tr><td class="label">목표</td><td class="value target-price">$320</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><span class="ticker">ORCL</span><span class="badge stoploss">손절가 이하</span></div>
+    <table class="detail">
+      <tr><td class="label">현재가</td><td class="value current-price">$118.43</td></tr>
+      <tr><td class="label">트리거가</td><td class="value trigger-price">$178 이하</td></tr>
+      <tr><td class="label">손절</td><td class="value stop-price">$162</td></tr>
+      <tr><td class="label">목표</td><td class="value target-price">$225</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><span class="ticker">PLTR</span><span class="badge">트리거 도달</span></div>
+    <table class="detail">
+      <tr><td class="label">현재가</td><td class="value current-price">$120.73</td></tr>
+      <tr><td class="label">트리거가</td><td class="value trigger-price">$122 이하</td></tr>
+      <tr><td class="label">손절</td><td class="value stop-price">$105</td></tr>
+      <tr><td class="label">목표</td><td class="value target-price">$170</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><span class="ticker">ASTS</span><span class="badge">트리거 도달</span></div>
+    <table class="detail">
+      <tr><td class="label">현재가</td><td class="value current-price">$58.29</td></tr>
+      <tr><td class="label">트리거가</td><td class="value trigger-price">$68 이하</td></tr>
+      <tr><td class="label">손절</td><td class="value stop-price">$45</td></tr>
+      <tr><td class="label">목표</td><td class="value target-price">$100</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<div class="note">
+  미도달: MRVL ($173.93, 트리거 $168 대비 +3.5%, 2% 근접 범위 밖)<br>
+  데이터 출처: stockanalysis.com (실시간, Jul 28 2026 10:50~11:02 AM EDT 기준)<br>
+  본 알림은 자동 생성되었으며 투자 판단 및 매수 실행은 사용자 본인 책임입니다.
+</div>
+
+</body>
+</html>
