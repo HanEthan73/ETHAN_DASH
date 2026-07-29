@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림 2026-07-30</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+    margin: 0;
+    padding: 16px;
+    line-height: 1.5;
+  }
+  h1 { font-size: 1.25rem; color: #ff6b6b; margin: 0 0 4px 0; }
+  .timestamp { color: #8b949e; font-size: 0.85rem; margin-bottom: 16px; }
+  .warning-box {
+    background: #2d1a1a; border: 1px solid #f85149; border-radius: 8px;
+    padding: 12px 14px; margin-bottom: 18px; font-size: 0.9rem; color: #ffb3b3;
+  }
+  .table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid #30363d; }
+  table { width: 100%; border-collapse: collapse; min-width: 560px; font-size: 0.88rem; }
+  th, td { padding: 10px 10px; text-align: center; border-bottom: 1px solid #21262d; white-space: nowrap; }
+  th { background: #161b22; color: #58a6ff; font-weight: 600; }
+  tbody tr:hover { background: #161b22; }
+  .ticker { font-weight: 700; color: #f0f6fc; text-align: left; padding-left: 14px; }
+  .ok { color: #3fb950; }
+  .flag { color: #f85149; font-weight: 600; }
+  .caution { color: #d29922; font-weight: 600; }
+  .section-title { margin-top: 24px; font-size: 1rem; color: #e6edf3; border-left: 3px solid #58a6ff; padding-left: 8px; }
+  .miss-list { font-size: 0.85rem; color: #8b949e; margin-top: 8px; }
+  footer { margin-top: 24px; font-size: 0.75rem; color: #6e7681; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>&#128680; 자동매수 트리거 도달</h1>
+<div class="timestamp">2026-07-30 02:04 KST 기준 (실시간 웹서치)</div>
+
+<div class="warning-box">
+&#9888;&#65039; <strong>4개 종목(AVGO, INTC, GOOGL, ORCL)은 이미 현재가가 손절가 아래</strong>입니다.
+트리거는 도달했지만 원래 설정한 손절 라인이 이미 깨진 상태이므로, 기계적 매수보다 하락 원인(실적/이슈) 확인 후 판단 권장.
+</div>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th><th>비고</th></tr>
+</thead>
+<tbody>
+<tr><td class="ticker">AVGO</td><td>$380.91</td><td>$420 이하</td><td>$390</td><td>$480</td><td class="flag">손절가 이하</td></tr>
+<tr><td class="ticker">MSFT</td><td>$393.35</td><td>$410 이하</td><td>$360</td><td>$500</td><td class="ok">정상 범위</td></tr>
+<tr><td class="ticker">INTC</td><td>$86.30</td><td>$104.50 이하</td><td>$95</td><td>$130</td><td class="flag">손절가 이하 (-5.86%)</td></tr>
+<tr><td class="ticker">GOOGL</td><td>$333.71</td><td>$385 이하</td><td>$355</td><td>$450</td><td class="flag">손절가 이하</td></tr>
+<tr><td class="ticker">TSM</td><td>$392.31</td><td>$395 이하</td><td>$355</td><td>$455</td><td class="ok">정상 범위</td></tr>
+<tr><td class="ticker">AMZN</td><td>$232.15</td><td>$255 이하</td><td>$230</td><td>$320</td><td class="caution">손절가 근접 ($2.15차)</td></tr>
+<tr><td class="ticker">ORCL</td><td>$119.96</td><td>$178 이하</td><td>$162</td><td>$225</td><td class="flag">손절가 이하 (52주 -53%)</td></tr>
+<tr><td class="ticker">ASTS</td><td>$56.66</td><td>$68 이하</td><td>$45</td><td>$100</td><td class="ok">정상 범위</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-title">미도달 종목</div>
+<div class="miss-list">
+MRVL: $176.74 (트리거 $168, 5.2% 위 · 2% 근접 아님)<br>
+PLTR: $135.90 (트리거 $122, 11.4% 위 · 2% 근접 아님)
+</div>
+
+<footer>ETHAN 자동매수 모니터링 · 데이터 출처: 실시간 웹검색 (Yahoo Finance, stockanalysis.com 등)</footer>
+
+</body>
+</html>
