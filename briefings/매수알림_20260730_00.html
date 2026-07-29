@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --border:#30363d;
+    --text:#e6edf3; --sub:#8b949e; --red:#f85149; --green:#3fb950; --yellow:#d29922;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:16px; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  }
+  .header{margin-bottom:18px;}
+  .header h1{font-size:20px; margin:0 0 4px 0; color:var(--red);}
+  .header .ts{font-size:13px; color:var(--sub);}
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:12px;
+    padding:14px; margin-bottom:16px;
+  }
+  .card h2{font-size:15px; margin:0 0 10px 0; color:var(--text);}
+  table{width:100%; border-collapse:collapse; font-size:13px;}
+  th,td{padding:8px 6px; text-align:right; border-bottom:1px solid var(--border); white-space:nowrap;}
+  th:first-child, td:first-child{text-align:left;}
+  th{color:var(--sub); font-weight:600; font-size:12px;}
+  td.ticker{font-weight:700;}
+  .below-stop{color:var(--red); font-weight:700;}
+  .ok{color:var(--green);}
+  .note{font-size:11px; color:var(--yellow); margin-top:10px; line-height:1.5;}
+  .near{border-left:3px solid var(--yellow);}
+  .scroll{overflow-x:auto;}
+  .warn-box{
+    background:rgba(248,81,73,0.1); border:1px solid var(--red); border-radius:10px;
+    padding:12px; margin-bottom:16px; font-size:13px; line-height:1.6;
+  }
+  .warn-box b{color:var(--red);}
+  footer{font-size:11px; color:var(--sub); text-align:center; margin-top:20px;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="ts">2026-07-29 (수) 미국장 개장 중 기준 · 반도체/빅테크 전반 급락</div>
+</div>
+
+<div class="warn-box">
+  <b>⚠️ 주의:</b> AI 밸류에이션 우려로 인한 급락으로 <b>AVGO, INTC, GOOGL, AMZN, ORCL</b> 5개 종목은 트리거가뿐 아니라 <b>설정된 손절가(Stop)까지 이미 하회</b>한 상태입니다. 매수 진입 시 손절 라인 재검토가 필요합니다.
+</div>
+
+<div class="card">
+  <h2>트리거 도달 종목 (9개)</h2>
+  <div class="scroll">
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절가</th><th>목표가</th></tr>
+    <tr><td class="ticker">AVGO</td><td class="below-stop">$376.50</td><td>$420</td><td class="below-stop">$390</td><td>$480</td></tr>
+    <tr><td class="ticker">MSFT</td><td>$394.42</td><td>$410</td><td>$360</td><td>$500</td></tr>
+    <tr><td class="ticker">INTC</td><td class="below-stop">$83.94</td><td>$104.50</td><td class="below-stop">$95</td><td>$130</td></tr>
+    <tr><td class="ticker">GOOGL</td><td class="below-stop">$331.82†</td><td>$385</td><td class="below-stop">$355</td><td>$450</td></tr>
+    <tr><td class="ticker">TSM</td><td>$378.62</td><td>$395</td><td>$355</td><td>$455</td></tr>
+    <tr><td class="ticker">MRVL</td><td>$166.28</td><td>$168</td><td>$150</td><td>$215</td></tr>
+    <tr><td class="ticker">AMZN</td><td class="below-stop">$227.82</td><td>$255</td><td class="below-stop">$230</td><td>$320</td></tr>
+    <tr><td class="ticker">ORCL</td><td class="below-stop">$117.61</td><td>$178</td><td class="below-stop">$162</td><td>$225</td></tr>
+    <tr><td class="ticker">ASTS</td><td>$55.31</td><td>$68</td><td>$45</td><td>$100</td></tr>
+  </table>
+  </div>
+  <div class="note">† GOOGL 실시간가 미확인으로 GOOG(Class C, 가격差 미미) 대체 사용</div>
+</div>
+
+<div class="card near">
+  <h2>⚠️ 트리거 근접 종목 (미도달, 2% 이내)</h2>
+  <div class="scroll">
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>격차</th></tr>
+    <tr><td class="ticker">PLTR</td><td>$124.06</td><td>$122</td><td class="ok">+1.7%</td></tr>
+  </table>
+  </div>
+</div>
+
+<footer>ETHAN 자동매수 모니터링 · stockanalysis.com 실시간 데이터 기반</footer>
+
+</body>
+</html>
