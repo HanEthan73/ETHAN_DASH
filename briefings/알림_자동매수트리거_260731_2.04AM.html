@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 도달 알림</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    padding: 16px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.25rem;
+    color: #ff6b6b;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    font-size: 0.85rem;
+    color: #8b949e;
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 24px 0 10px;
+    color: #58a6ff;
+  }
+  .warn-title {
+    color: #d29922;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161b22;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.85rem;
+  }
+  th, td {
+    padding: 10px 6px;
+    text-align: center;
+    border-bottom: 1px solid #21262d;
+  }
+  th {
+    background: #21262d;
+    color: #8b949e;
+    font-weight: 600;
+    font-size: 0.78rem;
+  }
+  tr:last-child td { border-bottom: none; }
+  .ticker { font-weight: 700; color: #e6edf3; }
+  .price { color: #3fb950; font-weight: 600; }
+  .below-stop { color: #f85149; font-size: 0.72rem; display: block; margin-top: 2px; }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    color: #c9d1d9;
+    line-height: 1.5;
+  }
+  .badge {
+    display: inline-block;
+    background: #f85149;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+  }
+  footer {
+    margin-top: 28px;
+    font-size: 0.75rem;
+    color: #6e7681;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h1>🚨 자동매수 트리거 도달 알림</h1>
+<div class="timestamp">2026-07-31 02:04 KST (미국 동부시각 2026-07-30 13:04 EDT, 장중)</div>
+
+<div class="section-title">트리거 도달 종목 (7건)</div>
+<table>
+<thead>
+<tr>
+<th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ticker">AVGO</td>
+<td class="price">$384.65<span class="below-stop">손절가 하회</span></td>
+<td>$420</td><td>$390</td><td>$480</td>
+</tr>
+<tr>
+<td class="ticker">INTC</td>
+<td class="price">$92.77<span class="below-stop">손절가 하회</span></td>
+<td>$104.50</td><td>$95</td><td>$130</td>
+</tr>
+<tr>
+<td class="ticker">GOOGL</td>
+<td class="price">$335~337<span class="below-stop">손절가 하회</span></td>
+<td>$385</td><td>$355</td><td>$450</td>
+</tr>
+<tr>
+<td class="ticker">AMZN</td>
+<td class="price">$238.61</td>
+<td>$255</td><td>$230</td><td>$320</td>
+</tr>
+<tr>
+<td class="ticker">ORCL</td>
+<td class="price">$125.63<span class="below-stop">손절가 하회</span></td>
+<td>$178</td><td>$162</td><td>$225</td>
+</tr>
+<tr>
+<td class="ticker">PLTR</td>
+<td class="price">$121.82</td>
+<td>$122</td><td>$105</td><td>$170</td>
+</tr>
+<tr>
+<td class="ticker">ASTS</td>
+<td class="price">$53.27</td>
+<td>$68</td><td>$45</td><td>$100</td>
+</tr>
+</tbody>
+</table>
+
+<div class="card">
+⚠️ <b>주의:</b> AVGO / INTC / GOOGL / ORCL은 트리거가뿐 아니라 <b>손절가(stop-loss)까지 이미 하회</b>한 상태입니다. AI/반도체 섹터 전반의 급락(전일 대비 AI 버블 우려 매도세) 여파로, 단순 "트리거 도달"이 아니라 이미 큰 폭 조정이 진행된 구간입니다. 매수 시 원래 설계된 손절 라인이 이미 무의미해진 상태이므로 재검토가 필요합니다.
+</div>
+
+<div class="section-title warn-title">⚠️ 2% 이내 근접 종목 (1건)</div>
+<table>
+<thead>
+<tr><th>종목</th><th>현재가</th><th>트리거가</th><th>차이</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="ticker">TSM</td>
+<td>$402.39</td>
+<td>$395</td>
+<td>+1.9%</td>
+</tr>
+</tbody>
+</table>
+
+<div class="card">
+<b>미도달 (참고):</b> MSFT $454.62 (트리거 $410, +10.9%) · MRVL $181.02 (트리거 $168, +7.8%)
+</div>
+
+<footer>ETHAN 자동매수 모니터링 · stock-autobuy-monitor</footer>
+
+</body>
+</html>
