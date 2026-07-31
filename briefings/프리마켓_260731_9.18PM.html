@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>프리마켓 브리핑 260731 9:18PM</title>
+<style>
+  :root{color-scheme:dark;}
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:16px;
+    background:#0b0e14; color:#e6e8ee;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Malgun Gothic",sans-serif;
+    font-size:15px; line-height:1.5;
+  }
+  .wrap{max-width:520px; margin:0 auto;}
+  h1{font-size:18px; margin:0 0 2px; color:#fff;}
+  .sub{color:#8b93a7; font-size:12.5px; margin-bottom:16px;}
+  .card{
+    background:#141822; border:1px solid #232838; border-radius:12px;
+    padding:14px; margin-bottom:14px;
+  }
+  .card h2{font-size:13px; color:#7dd3fc; margin:0 0 10px; letter-spacing:.02em;}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .metric{background:#0f1420; border-radius:8px; padding:10px;}
+  .metric .label{font-size:11.5px; color:#8b93a7;}
+  .metric .val{font-size:17px; font-weight:700; margin-top:2px;}
+  .up{color:#4ade80;} .down{color:#f87171;} .flat{color:#e6e8ee;}
+  table{width:100%; border-collapse:collapse; font-size:13px;}
+  th,td{padding:7px 6px; text-align:right; border-bottom:1px solid #1f2432;}
+  th:first-child, td:first-child{text-align:left;}
+  th{color:#8b93a7; font-weight:600; font-size:11.5px;}
+  .tag{display:inline-block; padding:2px 6px; border-radius:5px; font-size:11px; font-weight:700;}
+  .tag-alert{background:#3a1414; color:#f87171;}
+  .tag-ok{background:#122a1c; color:#4ade80;}
+  .note{font-size:12px; color:#6b7280; margin-top:8px; line-height:1.5;}
+  .summary{
+    background:linear-gradient(135deg,#1a1f2e,#141822);
+    border:1px solid #2d3348; border-radius:12px; padding:14px 16px;
+    font-size:13.5px; font-weight:600; color:#fbbf24;
+  }
+  .events li{margin-bottom:6px; font-size:13px;}
+  .events{margin:0; padding-left:18px; color:#c9cedb;}
+  .footer{text-align:center; color:#4b5262; font-size:11px; margin-top:18px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🌙 미장 프리마켓 브리핑</h1>
+  <div class="sub">2026.07.31 (금) 21:18 KST · 개장 20분 전</div>
+
+  <div class="card">
+    <h2>지수 선물 · 변동성 · 금리</h2>
+    <div class="grid2">
+      <div class="metric"><div class="label">S&amp;P500 선물</div><div class="val up">+0.3~0.5%</div></div>
+      <div class="metric"><div class="label">나스닥100 선물</div><div class="val up">+0.5%</div></div>
+      <div class="metric"><div class="label">VIX</div><div class="val down">17.09 ↓</div></div>
+      <div class="metric"><div class="label">美 10년물</div><div class="val flat">4.67%</div></div>
+    </div>
+    <div class="note">아마존 실적 서프라이즈 + 6월 근원 PCE 둔화 기대로 선물 상승. VIX는 20.66(29일)→18.01(30일)→17.09로 3거래일 연속 하락, 변동성 완화 흐름.</div>
+  </div>
+
+  <div class="card">
+    <h2>보유종목 현황 (NVDA·AVGO·ASTS·VRT·MSTX)</h2>
+    <table>
+      <tr><th>종목</th><th>현재가</th><th>등락</th></tr>
+      <tr><td>NVDA</td><td>$196.45</td><td class="flat">약보합</td></tr>
+      <tr><td>AVGO</td><td>$385.53</td><td class="up">+3.98%(전일)</td></tr>
+      <tr><td>ASTS</td><td>~$94.3</td><td class="up">+1.8%</td></tr>
+      <tr><td>VRT</td><td>$227.50</td><td class="flat">보합</td></tr>
+      <tr><td>MSTX</td><td>$8.63</td><td class="up">전일比 소폭↑</td></tr>
+    </table>
+    <div class="note">현대차(KRX)는 미장 프리마켓 대상 아님 — 국내 정규장 시세로 별도 확인 필요.</div>
+  </div>
+
+  <div class="card">
+    <h2>오늘의 주요 이벤트</h2>
+    <ul class="events">
+      <li>6월 근원 PCE 물가지수 발표 — 전월比 +0.1% 예상(둔화 기대, Fed 최선호 지표)</li>
+      <li>실적시즌 절정 — 오늘 108개사 발표(개장 전 41개). 이번 주 애플·MS·아마존·메타 발표 완료</li>
+      <li>아마존 실적 서프라이즈가 빅테크 전반 랠리 견인, AI 투자 지속 기대감 유효</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>자동매수 알림 10종목</h2>
+    <table>
+      <tr><th>종목</th><th>기준가</th><th>현재가</th><th>상태</th></tr>
+      <tr><td>AVGO</td><td>$420</td><td>$385.53</td><td><span class="tag tag-alert">🚨 하회</span></td></tr>
+      <tr><td>MSFT</td><td>$410</td><td>$373.07</td><td><span class="tag tag-alert">🚨 하회</span></td></tr>
+      <tr><td>INTC</td><td>$104.50</td><td>$61.72</td><td><span class="tag tag-alert">🚨 하회</span></td></tr>
+      <tr><td>GOOGL</td><td>$385</td><td>$318.49</td><td><span class="tag tag-alert">🚨 하회</span></td></tr>
+      <tr><td>TSM</td><td>$395</td><td>$419.48</td><td><span class="tag tag-ok">정상</span></td></tr>
+      <tr><td>MRVL</td><td>$168</td><td>$195.22</td><td><span class="tag tag-ok">정상</span></td></tr>
+      <tr><td>AMZN</td><td>$255</td><td>$233.65</td><td><span class="tag tag-alert">🚨 하회</span></td></tr>
+      <tr><td>ORCL</td><td>$178</td><td>$132.49</td><td><span class="tag tag-alert">🚨 하회</span></td></tr>
+      <tr><td>PLTR</td><td>$122</td><td>$130.49</td><td><span class="tag tag-ok">정상</span></td></tr>
+      <tr><td>ASTS</td><td>$68</td><td>$94.25</td><td><span class="tag tag-ok">정상</span></td></tr>
+    </table>
+  </div>
+
+  <div class="summary">
+    📌 총평: PCE 둔화·아마존 실적 호조로 선물↑·VIX↓ 우호적 환경이나, AVGO·MSFT·INTC·GOOGL·AMZN·ORCL 6종목 자동매수 기준선을 이미 하회 중 — 진입 여부 점검 필요.
+  </div>
+
+  <div class="footer">웹 검색 기반 자동 수집 · 실시간 시세와 오차 가능 · 매매 판단은 직접 확인 후 진행</div>
+</div>
+</body>
+</html>
