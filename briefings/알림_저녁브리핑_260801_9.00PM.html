@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>저녁 브리핑 260801</title>
+<style>
+  :root {
+    --bg: #0b0f17;
+    --card: #131a26;
+    --card2: #0f1520;
+    --border: #232d3f;
+    --text: #e6edf3;
+    --muted: #8b96a5;
+    --red: #ff5c5c;
+    --green: #3ddc84;
+    --yellow: #ffcc4d;
+    --blue: #5b9dff;
+    --accent: #7c5cff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 24px 16px 80px;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+  h2 {
+    font-size: 16px;
+    margin: 36px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .card h3 { margin: 0 0 6px; font-size: 14.5px; color: var(--blue); }
+  .card p { margin: 4px 0; font-size: 13.5px; color: var(--text); }
+  .card .judge { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); font-size: 13.5px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-bottom: 10px; }
+  th, td { border: 1px solid var(--border); padding: 7px 8px; text-align: center; }
+  th { background: #1a2333; color: var(--muted); font-weight: 600; white-space: nowrap; }
+  td { white-space: nowrap; }
+  td.left, th.left { text-align: left; white-space: normal; }
+  .up { color: var(--green); font-weight: 600; }
+  .down { color: var(--red); font-weight: 600; }
+  .flat { color: var(--muted); }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11.5px; font-weight: 600; }
+  .tag.buy { background: rgba(61,220,132,0.15); color: var(--green); }
+  .tag.hold { background: rgba(91,157,255,0.15); color: var(--blue); }
+  .tag.wait { background: rgba(255,204,77,0.15); color: var(--yellow); }
+  .tag.sell { background: rgba(255,92,92,0.15); color: var(--red); }
+  .tag.alert { background: rgba(255,92,92,0.25); color: #ff8080; }
+  .alertbox {
+    background: rgba(255,92,92,0.10);
+    border: 1px solid rgba(255,92,92,0.4);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    font-size: 13.5px;
+  }
+  .alertbox b { color: var(--red); }
+  .note { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .badge {
+    background: var(--card2); border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 12px; font-size: 12px; min-width: 90px;
+  }
+  .badge .label { color: var(--muted); font-size: 11px; }
+  .badge .val { font-size: 15px; font-weight: 700; margin-top: 2px; }
+  .term { color: var(--muted); font-size: 11.5px; }
+  .footer { color: var(--muted); font-size: 11.5px; margin-top: 40px; text-align: center; }
+  .scroll-x { overflow-x: auto; }
+  .rank1 { color: var(--yellow); font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>🌙 저녁 9시 브리핑 — 2026년 8월 1일 (토)</h1>
+<div class="sub">국제 정세 · 트럼프 · 중국 브리핑 + 주식 영향 인사이트 &nbsp;|&nbsp; 데이터 기준: 8/1(토) 마감 없음 → 직전 거래일(금, 7/31) 종가 반영 &nbsp;|&nbsp; 가격 출처: TradingView</div>
+
+<div class="alertbox">
+  <b>⚠️ 오늘의 핵심 경보</b> — INTC·AVGO 자동매수 2차·손절가 근접/돌파, 현대차는 손절가(₩600,000)를 이미 크게 하회 중(₩432,000). 이란-이스라엘 전쟁 관련 트럼프의 "이번 주말 추가 공습" 발언으로 주말 갭 리스크 존재. 8/3~8/7 고용·ISM 지표 주간 + 10년물 금리 4.72%로 경보선(4.5%) 상회 중.
+</div>
+
+<h2>1. 오늘의 국제 정세 핵심</h2>
+
+<div class="card">
+  <h3>① 트럼프 - 이란 추가 공습 예고</h3>
+  <p>트럼프 대통령이 "이번 주말 이란을 매우 강하게 타격하겠다(we'll be hitting them very hard)"고 발언. 쿠웨이트에서는 토요일 새벽 드론 공격이 발견돼 "이란의 침략"으로 규정됨. 2월 28일 개시된 미-이스라엘 대이란 군사작전이 6개월째 이어지는 중이며, 6월 협상 이후에도 확전 국면.</p>
+  <p class="judge">→ 포트폴리오 영향: 유가·VIX 변동성 확대 요인. 주말 사이 실제 타격이 발생하면 월요일 개장 갭다운 가능성 - 특히 방산/에너지 민감 섹터 및 위험자산(ASTS, MSTX) 변동성 주의.</p>
+</div>
+
+<div class="card">
+  <h3>② 미중 무역 - 관세 갈등 지속</h3>
+  <p>미 무역대표부(USTR)가 7월 24일부로 중국의 "강제노동 생산품 수입 금지 미이행"을 이유로 12.5%의 신규 301조 관세를 부과, 사실상 대중 관세율이 2.5%p 추가 인상됨. 기존 펜타닐 관세 20%+상호관세 10%(총 30%) 기조는 유지 중이며, 6월 합의로 60일간 추가 인상은 유예된 상태.</p>
+  <p class="judge">→ 포트폴리오 영향: 반도체 대중 수출 통제 이슈가 NVDA·INTC에 잠재 리스크. 관세 확전 시 부품 조달 비용 상승으로 VRT·현대차 마진에도 부담.</p>
+</div>
+
+<div class="card">
+  <h3>③ 가자 평화 협상 진전</h3>
+  <p>트럼프는 하마스 무장해제를 위한 "역사적 합의"가 도출됐다고 발표. 다단계 가자 평화 계획의 핵심 단계로, 중동 리스크 프리미엄의 일부 완화 요인이 될 수 있음. 다만 이란 전선의 확전 가능성이 이를 상쇄.</p>
+  <p class="judge">→ 포트폴리오 영향: 중동 리스크의 부분적 완화 신호이나, 이란 확전 리스크가 더 커서 net 영향은 중립~약간 부정적.</p>
+</div>
+
+<h2>2. 미장 현황 <span class="term">(직전 거래일 7/31 종가 기준, 8/1은 주말 휴장)</span></h2>
+
+<div class="scroll-x">
+<table>
+<tr><th class="left">지수</th><th>현재가/종가</th><th>등락률</th></tr>
+<tr><td class="left">나스닥종합</td><td>25,373.85</td><td class="up">+1.00%</td></tr>
+<tr><td class="left">S&amp;P500</td><td>7,489.72</td><td class="up">+0.70%</td></tr>
+<tr><td class="left">다우존스</td><td>52,485.03</td><td class="up">+0.53%</td></tr>
+<tr><td class="left">VIX</td><td>17.58</td><td class="down">-17.29%(전일比 급락)</td></tr>
+<tr><td class="left">美 10년물 금리</td><td>4.724%</td><td class="flat">주간 -0.77%</td></tr>
+<tr><td class="left">USD/KRW</td><td>1,432.91</td><td class="flat">경보선(1,450) 근접</td></tr>
+</table>
+</div>
+
+<div class="badge-row">
+  <div class="badge"><div class="label">VIX&ge;25</div><div class="val" style="color:var(--green)">OK 미도달</div></div>
+  <div class="badge"><div class="label">S&amp;P 200일선</div><div class="val" style="color:var(--muted)">- 미확인</div></div>
+  <div class="badge"><div class="label">10년물&ge;4.5%</div><div class="val" style="color:var(--red)">경보 도달(4.72%)</div></div>
+  <div class="badge"><div class="label">연준 매파</div><div class="val" style="color:var(--red)">경보 도달(7월 매파적 동결)</div></div>
+  <div class="badge"><div class="label">지정학 급등</div><div class="val" style="color:var(--red)">경보 도달(이란 확전)</div></div>
+  <div class="badge"><div class="label">M2 급감</div><div class="val" style="color:var(--muted)">- 미확인</div></div>
+  <div class="badge"><div class="label">나스닥 -5% 연속</div><div class="val" style="color:var(--green)">OK 미도달</div></div>
+  <div class="badge"><div class="label">USD/KRW&ge;1,450</div><div class="val" style="color:var(--yellow)">주의 근접(1,433)</div></div>
+</div>
+<div class="note">선제 알림 8대 지표 중 3개(10년물·연준 매파·지정학) 도달 - 변동성 확대 국면 인식 필요.</div>
+
+<h2>이번 주 주요 일정 (오늘 + 이번 주 나머지)</h2>
+<div class="scroll-x">
+<table>
+<tr><th>날짜</th><th>종류</th><th class="left">내용</th><th>영향 종목</th></tr>
+<tr><td>8/1(토)</td><td>-</td><td class="left">주말, 휴장. 이란 추가 공습 여부 주시</td><td>전체(갭리스크)</td></tr>
+<tr><td>8/3(월)</td><td>경제지표</td><td class="left">ISM 제조업 PMI(7월)</td><td>전체 증시</td></tr>
+<tr><td>8/3(월)</td><td>실적</td><td class="left">Palantir(PLTR) Q2 실적 (미보유 참고용)</td><td>AI 섹터 전반</td></tr>
+<tr><td>8/4(화)</td><td>경제지표</td><td class="left">JOLTS 구인·이직보고서(6월)</td><td>전체 증시, 연준 정책 기대</td></tr>
+<tr style="background:rgba(91,157,255,0.08)"><td>8/4(화)</td><td>실적</td><td class="left"><b>Arista Networks(ANET) Q2 실적</b> - D-3 임박 [오늘의 추천종목]</td><td>ANET</td></tr>
+<tr><td>8/5(수)</td><td>경제지표</td><td class="left">ISM 서비스업 PMI(7월)</td><td>전체 증시</td></tr>
+<tr><td>8/7(금)</td><td>경제지표</td><td class="left"><b>7월 고용보고서(비농업고용, NFP)</b></td><td>전체 증시, 금리·연준 기대 재조정</td></tr>
+<tr><td>8/17(월)</td><td>실적</td><td class="left">ASTS Q2 실적 예정 (D-16, 추후 강조 예정)</td><td>ASTS(보유)</td></tr>
+<tr><td>8/26(수)</td><td>실적</td><td class="left">NVDA Q2 실적 예정</td><td>NVDA(보유)</td></tr>
+</table>
+</div>
+<div class="note">VRT는 7/29(화) 이미 Q2 실적 발표 완료(EPS 서프라이즈 +16.9%, 매출은 컨센서스 소폭 하회). 이번 주 추가 실적 리스크 없음.</div>
+
+<h2>3. 보유 종목 현황</h2>
+<div class="scroll-x">
+<table>
+<tr><th class="left">종목</th><th>현재가</th><th>등락률</th><th class="left">오늘 주요 이슈</th><th>한 줄 판단</th></tr>
+<tr><td class="left">NVDA</td><td>$206.84</td><td class="down">-0.92%</td><td class="left">젠슨 황, 오픈웨이트 AI 모델 지지 발언</td><td><span class="tag hold">홀딩</span></td></tr>
+<tr><td class="left">VRT</td><td>$305.58</td><td class="up">+5.97%</td><td class="left">Q2 EPS 서프라이즈, 데이터센터 냉각 수요 견조</td><td><span class="tag hold">홀딩/추가매수 검토</span></td></tr>
+<tr><td class="left">현대차(005380)</td><td>&#8361;432,000</td><td class="up">+3.35%(일간)</td><td class="left">최근 1개월 -25.8% 급락, ATH(78.3만) 대비 -45%</td><td><span class="tag alert">손절선 이미 하회</span></td></tr>
+<tr><td class="left">INTC</td><td>$95.04</td><td class="down">-0.74%</td><td class="left">반도체 섹터 조정, 저항선 $100 재시험</td><td><span class="tag alert">손절가 초근접</span></td></tr>
+<tr><td class="left">ASTS</td><td>$74.23</td><td class="down">-4.70%</td><td class="left">8월 초 BlueBird 11~13호 위성 발사 예정(케이프커내버럴)</td><td><span class="tag hold">홀딩(촉매 대기)</span></td></tr>
+<tr><td class="left">MSTX</td><td>$8.04</td><td class="up">+8.79%</td><td class="left">MSTR 2배 레버리지 ETF, 변동성 매우 큼</td><td><span class="tag hold">장기 홀딩 유지</span></td></tr>
+</table>
+</div>
+
+<div class="card">
+  <h3>NVDA - 오픈웨이트 논쟁 속 견조한 흐름, 홀딩</h3>
+  <p>현재가 $206.84(-0.92%), 시총 $5.01T. 젠슨 황이 X에서 오픈웨이트 AI 모델을 옹호하며 OpenAI·Anthropic과의 경쟁을 촉구. 기술적으로 1주일 +2.07%, 1개월 +3.36%로 완만한 상승 흐름이며 기술 지표는 매수 우위. 다음 실적은 8/26.</p>
+  <p class="judge"><b>Claude 판단: 홀딩.</b> 단기 조정은 있으나 추세 자체는 견조. 신규 진입은 실적(8/26) 전 눌림목에서 분할 접근 권장, 지금 당장 대량 매수는 비추천.</p>
+</div>
+
+<div class="card">
+  <h3>VRT - 실적 서프라이즈, 데이터센터 냉각 대장주</h3>
+  <p>현재가 $305.58(+5.97%). 7/29 Q2 실적에서 조정 EPS $1.52(전년比 +60%)로 서프라이즈, 다만 매출은 컨센서스($3.38B)를 소폭 하회한 $3.27B. 3분기 가이던스는 매출 $36.5~38.5억, EPS $1.60으로 견조. 50일선($280)이 200일선($212)을 훨씬 상회하는 강한 골든크로스 상태.</p>
+  <p class="judge"><b>Claude 판단: 홀딩, 눌림목에서 추가매수 검토.</b> AI 데이터센터 전력·냉각 인프라 수요는 구조적이라 장기 그림은 여전히 유효.</p>
+</div>
+
+<div class="card">
+  <h3>현대차(005380) - 손절선 이미 하회, 재점검 필요</h3>
+  <p>현재가 &#8361;432,000(일간 +3.35%). 그러나 최근 1개월 -25.77%, 6개월 -18.49%로 6월 1일 사상 최고가(&#8361;783,000) 대비 이미 -45% 급락한 상태. 설정된 손절가(&#8361;600,000)를 상당폭 하회했음. 원/달러 환율 1,433원대로 수출기업엔 우호적이나 주가 낙폭이 이를 압도.</p>
+  <p class="judge"><b>Claude 판단: 포지션 재점검 필요.</b> 기존 손절 라인이 이미 깨진 상태이므로, 추가 손실 확대를 막을지(현 가격대 유지/추가 매수로 평단 낮추기) 또는 손절 라인을 재설정할지 결정 필요. 신규 매수보다는 관망 후 저점 확인 권장.</p>
+</div>
+
+<div class="card">
+  <h3>INTC - 손절가 초근접, 결단 필요 구간</h3>
+  <p>현재가 $95.04(-0.74%), 설정된 손절가 $95와 사실상 같은 레벨. 최근 1주 -12.32%, 1개월 -21.15%로 급락하며 자동매수 1차($104.50)·2차($99.00) 모두 이미 통과. $100 부근 지지선 재시험 중이며, 애널리스트 목표가는 $45~$200로 극단적으로 분산.</p>
+  <p class="judge"><b>Claude 판단: 손절가 도달 임박 - 대응 필요.</b> $95 이탈 시 계획대로 손절 원칙을 지킬지, AI 파운드리 성장 스토리를 믿고 유지할지 명확한 결정이 필요한 시점. 신규 매수는 비추천, 기존 보유분은 $95 이탈 여부를 다음 거래일 개장 직후 확인 요망.</p>
+</div>
+
+<div class="card">
+  <h3>ASTS - 위성 발사 촉매 대기, 변동성 높음</h3>
+  <p>현재가 $74.23(-4.70%). 8월 초 BlueBird 11~13호 위성을 케이프커내버럴에서 발사해 스마트폰 직접 연결(D2D) 서비스를 확대할 예정 - 단기 긍정 촉매. 다만 최근 1개월 -23.70%로 조정폭이 큼. 자동매수 1차($67)까지는 아직 9.7% 여유.</p>
+  <p class="judge"><b>Claude 판단: 홀딩, 촉매 확인 후 대응.</b> 위성 발사 성공 여부가 단기 변곡점. $67 부근까지 밀리면 분할 매수 후보.</p>
+</div>
+
+<div class="card">
+  <h3>MSTX - 고변동성 레버리지, 장기 관점 유지</h3>
+  <p>현재가 $8.04(+8.79%). MSTR 1.75배 레버리지 ETF로 변동성이 극심(기술 지표는 단기 매도 신호). 장기 보유 전략 종목이므로 단기 등락에 일희일비할 필요는 없음.</p>
+  <p class="judge"><b>Claude 판단: 장기 홀딩 유지.</b> 단기 매매 신호는 무시하고 원래 전략대로 보유.</p>
+</div>
+
+<h2>4. 자동매수 임박 알림</h2>
+<div class="scroll-x">
+<table>
+<tr><th class="left">종목</th><th>현재가</th><th>자동매수 1차</th><th>거리</th><th>자동매수 2차</th><th>손절가</th><th>상태</th></tr>
+<tr><td class="left">INTC</td><td>$95.04</td><td>$104.50</td><td class="down">이미 하회(-9.0%)</td><td>$99.00</td><td>$95</td><td><span class="tag alert">손절가 0.04$ 위</span></td></tr>
+<tr><td class="left">NVDA</td><td>$206.84</td><td>$217.00</td><td class="flat">-4.7% 더 하락 필요</td><td>$201.00</td><td>$185</td><td><span class="tag wait">대기(1차 미도달)</span></td></tr>
+<tr><td class="left">현대차</td><td>&#8361;432,000</td><td>&#8361;665,000</td><td class="down">이미 하회(-35.0%)</td><td>&#8361;635,000</td><td>&#8361;600,000</td><td><span class="tag alert">손절가 -28% 하회</span></td></tr>
+<tr><td class="left">ASTS</td><td>$74.23</td><td>$67.00</td><td class="flat">-9.7% 더 하락 필요</td><td>$57.00</td><td>$45</td><td><span class="tag wait">대기(1차 미도달)</span></td></tr>
+<tr><td class="left">AVGO</td><td>$389.28</td><td>$435.00</td><td class="down">이미 하회(-10.5%)</td><td>$420.00</td><td>$390</td><td><span class="tag alert">손절가 0.72$ 아래</span></td></tr>
+</table>
+</div>
+<div class="note">INTC·AVGO는 손절가 라인 위/아래로 1달러 미만 초근접, 현대차는 손절가를 이미 크게 이탈한 상태 - 세 종목 모두 다음 거래일 개장 시 최우선 확인 필요.</div>
+
+<h2>5. 오늘의 추천 종목</h2>
+<div class="note">선정 전 확인: 데드크로스 종목 제외(AVGO·MRVL·SMCI·CRWV·ORCL 등 검토 후 제외) / AMD 제외 / 허공 구간 종목 제외(PLTR·MU 등)</div>
+
+<div class="scroll-x">
+<table>
+<tr><th>순위</th><th class="left">종목</th><th>티커</th><th>현재가</th><th>MA50&gt;MA200?</th><th>머그컵</th><th>진입가</th><th>손절가</th><th>목표가</th><th>R/R</th><th>구간판별</th></tr>
+<tr><td class="rank1">1</td><td class="left">Arista Networks</td><td>ANET</td><td>$180.35</td><td class="up">O</td><td class="up">O</td><td>$177~181</td><td>$164</td><td>$220</td><td>&asymp;2.4:1</td><td>골든크로스+머그컵</td></tr>
+<tr><td>2</td><td class="left">TSMC</td><td>TSM</td><td>$401.54</td><td class="up">O</td><td class="flat">과열</td><td>$390 눌림 대기</td><td>$365</td><td>$460</td><td>&asymp;2.3:1</td><td>골든크로스(단기 과열)</td></tr>
+<tr><td>3</td><td class="left">ASML Holding</td><td>ASML</td><td>$1,657</td><td class="up">O</td><td class="flat">지지선</td><td>$1,580~1,620</td><td>$1,530</td><td>$2,000</td><td>&asymp;2.2:1</td><td>지지선 근접</td></tr>
+<tr><td>4</td><td class="left">Credo Technology</td><td>CRDO</td><td>$159.68</td><td class="up">O(약화중)</td><td class="flat">주의</td><td>$187 재돌파 확인 후</td><td>$180 부근 재설정</td><td>$279(컨센서스)</td><td>참고용</td><td>단기 하락다이버전스</td></tr>
+</table>
+</div>
+
+<div class="card">
+  <h3>1위. Arista Networks(ANET) - 골든크로스+머그컵, 최우선 후보</h3>
+  <p>$180.35(+8.26%). 50일선이 200일선을 상향 돌파하는 골든크로스 확정, 컵앤핸들 패턴상 $177.48 돌파 시도 중. 지지 $136 / 저항 $175(이미 돌파). 애널리스트 목표가 중앙값 $190(Strong Buy). <b>단, 8/4(화) 실적 발표 D-3 임박 - 실적 전 변동성 주의.</b></p>
+  <p class="judge"><b>Claude 판단: 분할 진입 가능하나 실적 전 베팅은 신중히.</b> VCP-수축 후 거래량 동반 상승(적합) / Weinstein Stage2(적합) / C&amp;H(적합) / M2 유동성 확장 국면 부합(적합) &rarr; 종합 최우선 순위. 실적 후 재확인 권장.</p>
+</div>
+
+<div class="card">
+  <h3>2위. TSMC(TSM) - 강한 골든크로스, 단기 과열 주의</h3>
+  <p>$401.54. RSI 71.3로 단기 과매수 구간, MACD는 매수 신호 유지. AI 파운드리 수요 구조적 성장 스토리는 유효.</p>
+  <p class="judge"><b>Claude 판단: 지금 추격 매수보다 눌림목 대기.</b> VCP-수축 뚜렷하지 않음(주의) / Weinstein Stage2(적합) / C&amp;H-과열로 핸들 형성 전(부적합) / M2(적합) &rarr; 눌림목(-3~5%) 발생 시 진입 우선순위.</p>
+</div>
+
+<div class="card">
+  <h3>3위. ASML Holding - 지지선 근접, 밸류에이션 매력</h3>
+  <p>$1,657. 골든크로스 확정, RSI 45.9 중립. 4월 저점 대비 +245.7% 상승 후 주요 지지($1,530) 테스트 중.</p>
+  <p class="judge"><b>Claude 판단: 지지선 확인 시 분할 매수 후보.</b> VCP(적합) / Weinstein Stage2(적합) / C&amp;H-형성 초기(주의) / M2(적합) &rarr; AI 반도체 장비 독점적 지위 고려 시 안정적 후보.</p>
+</div>
+
+<div class="card">
+  <h3>4위. Credo Technology(CRDO) - 골든크로스이나 단기 약세 다이버전스</h3>
+  <p>$159.68(-2.61%). 골든크로스는 유지되나 MACD 히스토그램 6/26 이후 음전, 7/15 50일선 이탈로 단기 추세 약화. RSI 음의 다이버전스로 추가 조정 위험.</p>
+  <p class="judge"><b>Claude 판단: 관망, 확인 매수 원칙.</b> VCP(주의) / Weinstein Stage2&rarr;3 전환 우려 / C&amp;H(부적합) / M2(적합) &rarr; 4종목 중 리스크 최고, $180 재돌파 확인 전 진입 비추천. 참고용으로만 편입.</p>
+</div>
+
+<h2>6. 지정학·정책 -&gt; 포트폴리오 영향 직접 지시</h2>
+<div class="card">
+  <p><b>이란 확전 리스크:</b> 트럼프의 주말 추가 공습 예고로 월요일 갭리스크 존재. ASTS·MSTX 등 고베타 종목은 주말 뉴스에 따라 개장 변동성이 클 수 있음 &rarr; <b>월요일 개장 전 뉴스 재확인 후 대응, 지금 신규 매수 확대는 보류.</b></p>
+  <p><b>미중 관세 확전:</b> 반도체 관련주(NVDA, INTC) 대중 수출 통제 리스크 존재하나 아직 직접 타격은 제한적 &rarr; <b>보유 유지, 관세 헤드라인 급변 시에만 축소 검토.</b></p>
+  <p><b>연준 매파적 동결 + 10년물 4.72%:</b> 성장주 밸류에이션에 부담 요인 &rarr; <b>레버리지 상품(MSTX)과 고PER 성장주(ASTS) 비중 확대는 자제, 우량 현금흐름 종목(VRT) 중심 대응 권장.</b></p>
+  <p><b>현대차·INTC 손절선 이슈:</b> 지정학 이슈와 무관하게 개별 종목 기술적 손절 라인에 이미 도달/이탈 &rarr; <b>매크로 판단과 별개로 리스크 관리 원칙을 우선 적용할 것을 권고.</b></p>
+</div>
+
+<h2>7. 내일(월) 주목 이벤트 / 한 줄 총평</h2>
+<div class="card">
+  <p><b>내일 주목:</b> 이란 관련 주말 공습 여부(가장 중요), ISM 제조업 PMI(7월, 월요일 10AM ET), 유가·VIX 변동성.</p>
+  <p><b>한 줄 총평:</b> 지수는 견조하나(나스닥 4주 만에 반등) 지정학·금리·개별 종목 손절선 이슈가 동시에 몰린 살얼음판 국면 - 신규 확대보다 리스크 점검이 우선인 주말.</p>
+</div>
+
+<div class="footer">
+  본 브리핑은 자동화된 리서치 결과이며 투자 자문이 아닙니다. 모든 매매 판단과 실행은 본인 책임 하에 이루어져야 합니다.<br>
+  *ISM: Institute for Supply Management, 미 공급관리협회 제조업/서비스업 구매관리자지수 &nbsp;|&nbsp; *JOLTS: Job Openings and Labor Turnover Survey, 구인·이직 보고서 &nbsp;|&nbsp; *VCP: Volatility Contraction Pattern, 변동성 수축 패턴
+</div>
+
+</div>
+</body>
+</html>
