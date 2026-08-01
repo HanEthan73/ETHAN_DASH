@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity 아침 인사이트 | @aleabitoreddit | 2026-08-02</title>
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --text: #e8e8f0;
+    --accent: #ffd700;
+    --card-bg: #171726;
+    --border: #2a2a3d;
+    --muted: #9a9ab0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.6;
+    padding: 32px 16px 64px;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 32px;
+  }
+  header h1 {
+    font-size: 24px;
+    margin: 0 0 6px;
+    color: var(--accent);
+  }
+  header .sub {
+    color: var(--muted);
+    font-size: 14px;
+  }
+  h2 {
+    font-size: 18px;
+    color: var(--accent);
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+    margin: 40px 0 18px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .card-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .date {
+    font-size: 12px;
+    color: var(--muted);
+    background: #0f0f1a;
+    border: 1px solid var(--border);
+    padding: 2px 8px;
+    border-radius: 12px;
+  }
+  .tickers {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .badge {
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+  .badge-buy { background: rgba(255,215,0,0.15); color: var(--accent); border: 1px solid rgba(255,215,0,0.4); }
+  .badge-sell { background: rgba(255,90,90,0.15); color: #ff7a7a; border: 1px solid rgba(255,90,90,0.4); }
+  .badge-hold { background: rgba(154,154,176,0.15); color: var(--muted); border: 1px solid rgba(154,154,176,0.4); }
+  .summary { font-size: 14px; margin: 0 0 10px; }
+  .take {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+    border-top: 1px dashed var(--border);
+    padding-top: 8px;
+  }
+  .take-label {
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 6px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 13px;
+  }
+  th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    background: #1c1c30;
+    color: var(--accent);
+    font-size: 12px;
+  }
+  tr:last-child td { border-bottom: none; }
+  .t-ticker { font-weight: 700; white-space: nowrap; }
+  .t-reason { color: var(--text); }
+  .conf {
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+  .conf-high { color: var(--accent); background: rgba(255,215,0,0.12); }
+  .conf-mid { color: #b7b7d9; background: rgba(154,154,176,0.12); }
+  .conf-low { color: #ff7a7a; background: rgba(255,90,90,0.12); }
+  .picks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .pick {
+    background: linear-gradient(145deg, #1c1c30, #14141f);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .pick .rank {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .pick .name {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .pick p {
+    font-size: 13px;
+    color: var(--text);
+    margin: 0;
+  }
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Serenity 아침 인사이트 | @aleabitoreddit | 2026-08-02</h1>
+    <div class="sub">AI/반도체 공급망 투자 인플루언서 · 팔로워 약 91만 · 데이터: X 공개 포스트 아카이브 + 3자 트래커(semiconstocks.com, trackserenity.com) 기반 재구성 — Chrome 미연결로 실시간 X 접속 대신 웹 검색 기반 수집</div>
+  </header>
+
+  <h2>섹션 1. 최근 포스트 인사이트</h2>
+  <div class="cards">
+        <div class="card">
+          <div class="card-head">
+            <span class="date">2026-07-29</span>
+            <span class="tickers">AXTI, SIVE, GFS</span>
+            <span class="badge badge-buy">매수</span>
+          </div>
+          <p class="summary">"AI 셀오프는 이제 명백히 과도했다" — Lumentum이 $AXTI와 2031년까지 InP 장기공급계약 체결($8,700만 규모, 선급금 $4,350만). 美 정부는 GlobalFoundries에 CHIPS 자금 최대 $3억 + 지분 1% LOI 체결(CPO 국산화 가속, Sivers가 GFS CPO 프로그램의 레퍼런스 레이저로 명시). MSFT/META 실적은 capex 유지(각 ~$1,750억, $1,300~1,450억), Meta는 "컴퓨트 공급은 당분간 타이트" 언급.</p>
+          <p class="take"><span class="take-label">Claude 해석</span> 3중 검증(고객사 선급금, 정부 LOI, 빅테크 capex 유지)이 동시에 터진 날. 7월 드로다운 이후 반등 근거로는 가장 탄탄한 뉴스 플로우. InP·CPO 초크포인트 테마 유지 근거 강화.</p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="date">2026-07 중순</span>
+            <span class="tickers">AXTI, SOI, AAOI</span>
+            <span class="badge badge-hold">관망</span>
+          </div>
+          <p class="summary">"전략은 '분산된 손실'" — AXTI, SOI, AAOI 등 다수 종목에서 대규모 드로다운 발생, CPO 익스포저(Foci, Msscorp 등)가 가장 크게 타격. 레버리지 과다 사용을 자인.</p>
+          <p class="take"><span class="take-label">Claude 해석</span> 본인 스스로 -49.4% 월간 손실을 공개한 시점. 확신은 유지하되 포지션 사이징 실수를 인정 — 팔로워에게 사이징 복제 금지를 시사하는 대목.</p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="date">2026-06 하순</span>
+            <span class="tickers">AAOI</span>
+            <span class="badge badge-buy">매수</span>
+          </div>
+          <p class="summary">"$84 부근에서 $AAOI 상당량 매수. 시총 $66억은 너무 저평가, 신규 $5억 실탄까지 보유" — 2027년 하반기 광트랜시버 매출 10배 성장 테제.</p>
+          <p class="take"><span class="take-label">Claude 해석</span> 밸류에이션+현금여력 기반 저가 매수 논리. 트랜시버 볼륨램프 직전 구간이라는 프레이밍.</p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="date">2026-06 하순</span>
+            <span class="tickers">AXTI</span>
+            <span class="badge badge-buy">매수</span>
+          </div>
+          <p class="summary">IntelliEPI CEO가 Q1 실적에서 "InP 공급 부족이 AI 인프라 전체의 병목"이라고 공개 언급 — Serenity가 1년 전 먼저 지목한 $AXTI InP 기판 병목론이 실적 콜로 검증됨.</p>
+          <p class="take"><span class="take-label">Claude 해석</span> 가장 자주 인용하는 '선행 적중' 사례. 기관보다 먼저 병목을 짚었다는 서사의 핵심 근거.</p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="date">2026-06 중순</span>
+            <span class="tickers">AAOI, LITE, AXTI</span>
+            <span class="badge badge-buy">매수</span>
+          </div>
+          <p class="summary">2025년 초기 테마 회고: $AAOI 시총 $20억→$153.7억, Lumentum $260억→$744.7억, $AXTI $5억→$72.4억으로 성장.</p>
+          <p class="take"><span class="take-label">Claude 해석</span> 장기 보유 포지션의 결과값 홍보성 회고. 신규 매수 시그널이라기보다 기존 확신 재확인.</p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="date">2026-06 초</span>
+            <span class="tickers">ALAB, LITE, AAOI, NBIS, RKLB, TSM</span>
+            <span class="badge badge-buy">매수</span>
+          </div>
+          <p class="summary">고확신 종목 회고: $ALAB $97→$372, $LITE $330→$904, $AAOI $30→$175, 그 외 NBIS/RKLB/TSM 언급.</p>
+          <p class="take"><span class="take-label">Claude 해석</span> 팔로워 급증 이전(무명 시절) 콜이었다는 점을 강조하며 신뢰도 어필. 장기 확신 리스트 성격.</p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="date">2026-05 하순</span>
+            <span class="tickers">XFAB</span>
+            <span class="badge badge-buy">매수</span>
+          </div>
+          <p class="summary">$XFAB(프랑스 상장 반도체 파운드리)에 대한 로이터/블룸버그의 중립 보도를 언급. 800VDC 전력반도체의 $NVDA 노출, $NVDA/$NOK 포토닉스 협력 평가, EU CHIPS Act 연계 구조적 테제 강조.</p>
+          <p class="take"><span class="take-label">Claude 해석</span> 유럽 반도체로 테마 확장. 미국 CHIPS Act류 촉매를 유럽에도 적용하는 국제 초크포인트 발굴 사례.</p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="date">2026-05 중순</span>
+            <span class="tickers">AAOI, LITE, AXTI</span>
+            <span class="badge badge-buy">매수</span>
+          </div>
+          <p class="summary">"CPO가 내 1순위 테마 롱. 시장은 아직 포토닉스 패러다임 전환을 모른다" — 2025년 $AAOI ~$30, $LITE ~$300대, $AXTI ~$13에서 선제 진입했다고 회고.</p>
+          <p class="take"><span class="take-label">Claude 해석</span> CPO(Co-Packaged Optics)를 최우선 테마로 재확인. 비미국 시장 비중 확대 이유도 함께 설명.</p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="date">2026-05 초</span>
+            <span class="tickers">SOI, SIVE, IQE, AXTI</span>
+            <span class="badge badge-buy">매수</span>
+          </div>
+          <p class="summary">"$SOI $40에서 콜했을 때 은행 애널리스트들이 반발했지만 이후 125% 상승. $SIVE도 수백% 상승 중, 기관들은 뒤늦게 $IQE~$AXTI를 사들이는 중."</p>
+          <p class="take"><span class="take-label">Claude 해석</span> 기관 대비 선행성을 강조하는 전형적 톤. SIVE·SOI 모멘텀 지속 시사.</p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="date">2026-04 하순</span>
+            <span class="tickers">IREN</span>
+            <span class="badge badge-sell">매도</span>
+          </div>
+          <p class="summary">$6B 규모 ATM(시장가 유상증자) 발표 이후 $IREN 롱에서 숏(약세) 관점으로 전환.</p>
+          <p class="take"><span class="take-label">Claude 해석</span> 자본구조 악화 시 신속히 방향을 트는 사례. 테마 확신과 별개로 개별 이벤트 리스크 관리하는 패턴.</p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="date">2026-04 중순</span>
+            <span class="tickers">MRVL, AMD, ARM, AAOI, AEHR</span>
+            <span class="badge badge-buy">매수</span>
+          </div>
+          <p class="summary">"최근 2주간 좋아했던 종목 30개 중 대다수가 급등. $MRVL/$AMD/$ARM 등 장기 의견은 불변, 다만 $AAOI~$AEHR 등은 단기 진입가가 바뀜."</p>
+          <p class="take"><span class="take-label">Claude 해석</span> 장기 테제와 단기 진입 타이밍을 분리해서 설명 — 눌림목 매수 관점 반영.</p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="date">2026-03 하순</span>
+            <span class="tickers">AAOI, IQE, SIVE, LITE, TSEM, SOI, AXTI</span>
+            <span class="badge badge-buy">매수</span>
+          </div>
+          <p class="summary">패닉셀 당일에도 "$AAOI +233%, $IQE +100%, $SIVE +100%대, $LITE +88%, $TSEM +48%, $SOI +36%, $AXTI는 여전히 +680%"라며 조정장에서도 장기 수익률 유지를 강조.</p>
+          <p class="take"><span class="take-label">Claude 해석</span> 변동성 장세에서 "계속 투자 유지가 정답"이라는 메시지. 패닉 국면 대응 사례로 자주 인용됨.</p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="date">2026-초</span>
+            <span class="tickers">RKLB, TSM, HOOD, BTC</span>
+            <span class="badge badge-buy">매수</span>
+          </div>
+          <p class="summary">첫 고확신 리스트 공개: 5년 장기 보유 롱 6종목 — $RKLB($16→$28), $TSM($120→$245), $HOOD($11.27→$18), $BTC($3K~) 등.</p>
+          <p class="take"><span class="take-label">Claude 해석</span> 테마주(반도체·포토닉스) 외에 로켓랩·TSMC·로빈후드·비트코인 등 초장기 코어 보유군을 별도로 분리해 제시.</p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="date">2025-말</span>
+            <span class="tickers">NBIS, RKLB, CRCL, ALAB, SNAP</span>
+            <span class="badge badge-buy">매수</span>
+          </div>
+          <p class="summary">"시장 리랭킹 테이블 기준 재조정" — $NBIS $92 목표가 $400(1년), $RKLB $43 목표가 $500(5년), $CRCL $72 목표가 $150(8개월), $ALAB $143.4 목표가 $250(6개월), $SNAP 언급.</p>
+          <p class="take"><span class="take-label">Claude 해석</span> 구체적 목표가·기간을 제시한 드문 사례. 포트폴리오 리밸런싱 로직을 공개.</p>
+        </div>
+  </div>
+
+  <h2>섹션 2. 주목 종목 요약표</h2>
+  <table>
+    <thead>
+      <tr><th>종목</th><th>방향</th><th>핵심 근거</th><th>신뢰도</th></tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td class="t-ticker">AXTI</td>
+            <td><span class="badge badge-buy">매수</span></td>
+            <td class="t-reason">InP 기판 독점적 병목, Lumentum 장기계약(총 $8,700만)·IntelliEPI 실적 검증·GFS CHIPS LOI 레퍼런스</td>
+            <td><span class="conf conf-high">상</span></td>
+          </tr>
+          <tr>
+            <td class="t-ticker">SIVE</td>
+            <td><span class="badge badge-buy">매수</span></td>
+            <td class="t-reason">CPO용 CW레이저 공급, GFS CPO 프로그램 레퍼런스 레이저로 지목, 수백% 상승 모멘텀</td>
+            <td><span class="conf conf-high">상</span></td>
+          </tr>
+          <tr>
+            <td class="t-ticker">AAOI</td>
+            <td><span class="badge badge-buy">매수</span></td>
+            <td class="t-reason">$84 부근 저가 매수, $5억 현금여력, 2027년 하반기 트랜시버 매출 10배 테제</td>
+            <td><span class="conf conf-high">상</span></td>
+          </tr>
+          <tr>
+            <td class="t-ticker">LITE</td>
+            <td><span class="badge badge-buy">매수</span></td>
+            <td class="t-reason">CPO/포토닉스 밸류체인 코어 보유, 2025년 선제 진입 포지션 대형 수익</td>
+            <td><span class="conf conf-mid">중</span></td>
+          </tr>
+          <tr>
+            <td class="t-ticker">IQE</td>
+            <td><span class="badge badge-buy">매수</span></td>
+            <td class="t-reason">에피웨이퍼 공급망, 기관 후행 매수 대상으로 지목</td>
+            <td><span class="conf conf-mid">중</span></td>
+          </tr>
+          <tr>
+            <td class="t-ticker">SOI</td>
+            <td><span class="badge badge-buy">매수</span></td>
+            <td class="t-reason">$40 콜 이후 +125%, 지속 보유 중</td>
+            <td><span class="conf conf-mid">중</span></td>
+          </tr>
+          <tr>
+            <td class="t-ticker">XFAB</td>
+            <td><span class="badge badge-buy">매수(관심)</span></td>
+            <td class="t-reason">유럽 파운드리, 800VDC 전력반도체+EU CHIPS Act 2 촉매</td>
+            <td><span class="conf conf-mid">중</span></td>
+          </tr>
+          <tr>
+            <td class="t-ticker">TSEM</td>
+            <td><span class="badge badge-buy">매수</span></td>
+            <td class="t-reason">조정장에서도 +48% 유지, 포트폴리오 내 비중 존재</td>
+            <td><span class="conf conf-mid">중</span></td>
+          </tr>
+          <tr>
+            <td class="t-ticker">IREN</td>
+            <td><span class="badge badge-sell">매도/관망</span></td>
+            <td class="t-reason">$6B ATM 이후 자본구조 악화로 롱→숏 전환</td>
+            <td><span class="conf conf-mid">중</span></td>
+          </tr>
+          <tr>
+            <td class="t-ticker">RKLB / TSM / HOOD / BTC</td>
+            <td><span class="badge badge-buy">매수</span></td>
+            <td class="t-reason">5년 장기 확신 보유군, 초기 콜 대비 대폭 상승</td>
+            <td><span class="conf conf-high">상</span></td>
+          </tr>
+          <tr>
+            <td class="t-ticker">NBIS / ALAB / CRCL / SNAP</td>
+            <td><span class="badge badge-buy">매수</span></td>
+            <td class="t-reason">목표가·기간 명시된 리밸런싱 대상</td>
+            <td><span class="conf conf-mid">중</span></td>
+          </tr>
+          <tr>
+            <td class="t-ticker">MRVL / AMD / ARM / AEHR</td>
+            <td><span class="badge badge-buy">매수</span></td>
+            <td class="t-reason">장기 의견 불변, 단기 진입가만 조정되는 눌림목 매수 대상</td>
+            <td><span class="conf conf-mid">중</span></td>
+          </tr>
+    </tbody>
+  </table>
+
+  <h2>섹션 3. 오늘의 핵심 픽</h2>
+  <div class="picks">
+    <div class="pick">
+      <div class="rank">PICK 1</div>
+      <div class="name">$AXTI</div>
+      <p>InP 기판 초크포인트 핵심 종목. Lumentum과 2031년까지 총 $8,700만 규모 장기공급계약, IntelliEPI 실적으로 병목론 검증 완료. Serenity 프레임워크의 상징적 종목("The Strait of AXTI").</p>
+    </div>
+    <div class="pick">
+      <div class="rank">PICK 2</div>
+      <div class="name">$SIVE</div>
+      <p>CPO(공동패키지광학) 레이저 소스 공급사. GlobalFoundries CPO 프로그램의 레퍼런스 레이저로 명시되며 정부 CHIPS 자금($3억 LOI)과 연결.</p>
+    </div>
+    <div class="pick">
+      <div class="rank">PICK 3</div>
+      <div class="name">$AAOI</div>
+      <p>광트랜시버 밸류체인. $84 부근 저가 매수, $5억 현금여력, 2027년 하반기 매출 10배 성장 테제로 저평가 프레이밍 지속.</p>
+    </div>
+  </div>
+
+  <footer>
+    * Not Financial Advice, DYOR. Serenity 원문 기반 요약이며 투자 조언이 아닙니다.
+  </footer>
+</div>
+</body>
+</html>
