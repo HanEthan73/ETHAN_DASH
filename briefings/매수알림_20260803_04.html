@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 자동매수 트리거 도달 알림</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --red: #f85149;
+    --green: #3fb950;
+    --yellow: #d29922;
+    --blue: #58a6ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", Roboto, sans-serif;
+    margin: 0;
+    padding: 16px;
+    line-height: 1.5;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: 1.3rem;
+    margin: 0 0 4px 0;
+    color: var(--red);
+  }
+  .header .ts {
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  .section-title {
+    font-size: 1rem;
+    margin: 22px 0 10px 0;
+    padding-left: 8px;
+    border-left: 4px solid var(--red);
+  }
+  .section-title.warn {
+    border-left-color: var(--yellow);
+  }
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .stock-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .stock-card.breach {
+    border-color: var(--red);
+    box-shadow: 0 0 0 1px rgba(248,81,73,0.25) inset;
+  }
+  .stock-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+  .ticker {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--blue);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    font-size: 0.82rem;
+  }
+  .grid div { text-align: center; }
+  .grid .label { color: var(--muted); font-size: 0.72rem; margin-bottom: 2px; }
+  .val-trigger { color: var(--yellow); font-weight: 600; }
+  .val-stop { color: var(--red); font-weight: 600; }
+  .val-target { color: var(--green); font-weight: 600; }
+  .flag {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    background: rgba(248,81,73,0.12);
+    color: var(--red);
+    border-radius: 6px;
+    padding: 6px 8px;
+  }
+  .flag.info {
+    background: rgba(210,153,34,0.12);
+    color: var(--yellow);
+  }
+  .near-card {
+    border-color: var(--yellow) !important;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4px;
+    font-size: 0.85rem;
+  }
+  th, td {
+    padding: 8px 6px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    color: var(--muted);
+    font-weight: 500;
+    font-size: 0.78rem;
+  }
+  .footer {
+    margin-top: 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.72rem;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🚨 자동매수 트리거 도달</h1>
+    <div class="ts">2026-08-03 04:05 (KST) · 기준 종가: 2026-07-31 (미 동부시간 16:00)</div>
+  </div>
+
+  <div class="section-title">도달 종목 (5)</div>
+  <div class="card-list">
+
+    <div class="stock-card breach">
+      <div class="stock-top"><span class="ticker">AVGO · Broadcom</span><span class="price">$389.28</span></div>
+      <div class="grid">
+        <div><div class="label">트리거가</div><span class="val-trigger">$420</span></div>
+        <div><div class="label">손절</div><span class="val-stop">$390</span></div>
+        <div><div class="label">목표</div><span class="val-target">$480</span></div>
+      </div>
+      <div class="flag">⚠️ 현재가가 손절가($390)보다 낮음 — 트리거·손절 동시 하회</div>
+    </div>
+
+    <div class="stock-card breach">
+      <div class="stock-top"><span class="ticker">INTC · Intel</span><span class="price">$90.20</span></div>
+      <div class="grid">
+        <div><div class="label">트리거가</div><span class="val-trigger">$104.50</span></div>
+        <div><div class="label">손절</div><span class="val-stop">$95</span></div>
+        <div><div class="label">목표</div><span class="val-target">$130</span></div>
+      </div>
+      <div class="flag">⚠️ 이미 손절가($95) 하회 중 — 진입 시 즉시 손절권</div>
+    </div>
+
+    <div class="stock-card breach">
+      <div class="stock-top"><span class="ticker">GOOGL · Alphabet</span><span class="price">$356.13</span></div>
+      <div class="grid">
+        <div><div class="label">트리거가</div><span class="val-trigger">$385</span></div>
+        <div><div class="label">손절</div><span class="val-stop">$355</span></div>
+        <div><div class="label">목표</div><span class="val-target">$450</span></div>
+      </div>
+      <div class="flag">⚠️ 손절가와 $1.13 차이 — 매우 근접</div>
+    </div>
+
+    <div class="stock-card breach">
+      <div class="stock-top"><span class="ticker">ORCL · Oracle</span><span class="price">$129.87</span></div>
+      <div class="grid">
+        <div><div class="label">트리거가</div><span class="val-trigger">$178</span></div>
+        <div><div class="label">손절</div><span class="val-stop">$162</span></div>
+        <div><div class="label">목표</div><span class="val-target">$225</span></div>
+      </div>
+      <div class="flag">⚠️ 이미 손절가($162) 크게 하회 (-27%) — 트리거 대비도 -27%</div>
+    </div>
+
+    <div class="stock-card breach">
+      <div class="stock-top"><span class="ticker">ASTS · AST SpaceMobile</span><span class="price">$58.44</span></div>
+      <div class="grid">
+        <div><div class="label">트리거가</div><span class="val-trigger">$68</span></div>
+        <div><div class="label">손절</div><span class="val-stop">$45</span></div>
+        <div><div class="label">목표</div><span class="val-target">$100</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-title warn">⚠️ 2% 이내 근접 종목 (1)</div>
+  <div class="card-list">
+    <div class="stock-card near-card">
+      <div class="stock-top"><span class="ticker">PLTR · Palantir</span><span class="price">$123.06</span></div>
+      <div class="grid">
+        <div><div class="label">트리거가</div><span class="val-trigger">$122</span></div>
+        <div><div class="label">손절</div><span class="val-stop">$105</span></div>
+        <div><div class="label">목표</div><span class="val-target">$170</span></div>
+      </div>
+      <div class="flag info">트리거가 대비 +0.87% (미도달, 근접)</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    자동매수 모니터링 · ETHAN<br>
+    미도달 종목: MSFT, TSM, MRVL, AMZN (2% 초과)
+  </div>
+
+</body>
+</html>
