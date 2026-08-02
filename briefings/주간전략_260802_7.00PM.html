@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주간 전략 브리핑 - 2026.08.02</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-dim: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --red: #f85149;
+    --yellow: #d29922;
+    --purple: #bc8cff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 16px;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  header {
+    text-align: center;
+    padding: 20px 10px 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+  header .tag {
+    display: inline-block;
+    background: rgba(88,166,255,0.12);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+  header h1 { font-size: 22px; margin: 6px 0; }
+  header .sub { color: var(--text-dim); font-size: 13px; }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .card h2 {
+    font-size: 15px;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+  }
+  .card h2 .num {
+    background: var(--accent);
+    color: #0d1117;
+    width: 20px; height: 20px;
+    border-radius: 6px;
+    font-size: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--border); }
+  th { color: var(--text-dim); font-weight: 600; font-size: 12px; }
+  td { color: var(--text); }
+  tr:last-child td { border-bottom: none; }
+  .up { color: var(--green); font-weight: 600; }
+  .down { color: var(--red); font-weight: 600; }
+  .flat { color: var(--yellow); font-weight: 600; }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .badge.hold { background: rgba(63,185,80,0.15); color: var(--green); }
+  .badge.watch { background: rgba(88,166,255,0.15); color: var(--accent); }
+  .badge.risk { background: rgba(248,81,73,0.15); color: var(--red); }
+  .phase-box {
+    background: linear-gradient(135deg, rgba(188,140,255,0.1), rgba(88,166,255,0.08));
+    border: 1px solid var(--purple);
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+  .phase-box .label { font-size: 12px; color: var(--purple); font-weight: 700; margin-bottom: 4px; }
+  .phase-box .value { font-size: 17px; font-weight: 700; }
+  .note { color: var(--text-dim); font-size: 12.5px; margin-top: 6px; }
+  ul.strategy { margin: 0; padding-left: 18px; font-size: 13.5px; }
+  ul.strategy li { margin-bottom: 8px; }
+  .principle-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 12.5px;
+  }
+  .principle-row:last-child { border-bottom: none; }
+  .principle-row .cond { color: var(--text-dim); }
+  .principle-row .status { font-weight: 700; }
+  footer { text-align: center; color: var(--text-dim); font-size: 11px; padding: 20px 0 6px; }
+  @media (max-width: 480px) {
+    body { padding: 10px; }
+    table { font-size: 12px; }
+    th, td { padding: 6px 4px; }
+    header h1 { font-size: 19px; }
+    .phase-box .value { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="tag">ETHAN 주간 전략 브리핑</div>
+  <h1>2026년 8월 3주차 전략 리포트</h1>
+  <div class="sub">발행일 2026.08.02(일) 19:00 · 대상기간 08.03(월) ~ 08.09(일)</div>
+</header>
+
+<div class="card">
+  <h2><span class="num">1</span>다음주 FOMC · 연준 · 경제지표 일정</h2>
+  <table>
+    <tr><th>일자</th><th>이벤트</th><th>비고</th></tr>
+    <tr><td>08.03(월)</td><td>ISM 제조업 PMI</td><td>경기 모멘텀 확인</td></tr>
+    <tr><td>08.04(화)</td><td>JOLTS 구인건수</td><td>고용 선행지표</td></tr>
+    <tr><td>08.05(수)</td><td>Musalem 연은총재 발언</td><td>21:30(한국시간)</td></tr>
+    <tr><td>08.06(목)</td><td>주간 신규 실업수당 청구</td><td>-</td></tr>
+    <tr><td>08.07(금)</td><td><b>7월 비농업고용(NFP)</b></td><td class="badge risk">최대 변수</td></tr>
+    <tr><td>08.07(금)</td><td>Barkin 연은총재 발언</td><td>NFP 직후</td></tr>
+  </table>
+  <div class="note">※ 8월 FOMC 정례회의 없음. 다음 회의는 9/15~16. 7/28~29 회의록은 8/19 공개 예정.<br>※ CPI(8/12)·PPI(8/14)는 다다음주 발표 — 이번 주는 고용지표가 핵심 변수.</div>
+</div>
+
+<div class="card">
+  <h2><span class="num">2</span>보유·관심 종목 실적 일정</h2>
+  <table>
+    <tr><th>종목</th><th>일정</th><th>상태</th></tr>
+    <tr><td>VRT (보유)</td><td>7/29 발표 완료</td><td class="up">EPS $1.52 (컨센 상회)</td></tr>
+    <tr><td>현대차 (보유)</td><td>7/23 발표 완료</td><td class="up">분기 최대 매출, 수익성 둔화</td></tr>
+    <tr><td>PLTR (모니터링)</td><td>8/3(월) 장마감 후</td><td class="badge watch">임박</td></tr>
+    <tr><td>AMD (참고)</td><td>8/5(화) 장마감 후</td><td style="font-size:12px" class="note">AI 반도체 센티먼트 참고지표</td></tr>
+    <tr><td>ASTS (보유)</td><td>8/10(월) 예정</td><td class="badge watch">다음주 후반 임박</td></tr>
+    <tr><td>NVDA (보유)</td><td>8/26 예정</td><td>이번 주 해당없음</td></tr>
+    <tr><td>AVGO (보유·모니터링)</td><td>9/3 예정</td><td>이번 주 해당없음</td></tr>
+    <tr><td>MSTX (보유)</td><td>MSTR 연동, 별도 실적 없음</td><td>비트코인 변동성 연동 주의</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2><span class="num">3</span>이번 주 지수 등락 요약 (7/27~8/1)</h2>
+  <table>
+    <tr><th>지수</th><th>등락률</th><th>비고</th></tr>
+    <tr><td>S&amp;P500</td><td class="up">+1.05%</td><td>Fed발 중반 조정 후 반등, 매그니피센트7 견인</td></tr>
+    <tr><td>나스닥</td><td class="up">+1.6%</td><td>기술주 랠리, 7월 월간은 -3.2%</td></tr>
+    <tr><td>다우존스</td><td class="up">+1.0%</td><td>4개월 연속 월간 상승</td></tr>
+    <tr><td>코스피</td><td class="down">-2.37%</td><td>6595.45 마감 (전주 6755.75)</td></tr>
+    <tr><td>VIX</td><td class="flat">18~20선</td><td>7/29 20.66 → 7/30 18.01, 변동성 완화 중이나 경계 필요</td></tr>
+    <tr><td>USD/KRW</td><td class="down">1,442.92</td><td>당국 개입 추정, 원화 7월 한달 8%+ 강세</td></tr>
+  </table>
+  <div class="note">※ 코스피는 7/28~29 이틀 연속 서킷브레이커 발동, 장중 5500선까지 급락 후 7/31 반도체 대형주(삼성전자·SK하이닉스) 중심 급반등. 7월 한달 누적 -33% 수준의 이례적 급락.<br>※ 원인: AI 피크아웃 우려 + 중국 반도체 추격 우려 + 단일종목 레버리지 ETF 쏠림에 따른 반대매매·청산 압력.</div>
+</div>
+
+<div class="card">
+  <h2><span class="num">4</span>시장 국면 판단</h2>
+  <div class="phase-box">
+    <div class="label">미국 시장</div>
+    <div class="value">🟢 변동성 속 강세 지속 (조정 후 반등)</div>
+    <div class="note">Fed 불확실성에 따른 미드위크 조정을 매그니피센트7·소비재가 흡수하며 재차 상승 마감. NFP(8/7) 결과에 따라 방향성 재확인 구간.</div>
+  </div>
+  <div class="phase-box" style="border-color: var(--red);">
+    <div class="label" style="color: var(--red);">한국 시장</div>
+    <div class="value">🔴 급락 후 반등 시도 (변동성 극단 국면)</div>
+    <div class="note">레버리지 ETF발 강제청산 + AI 버블 논란이 겹치며 단기 패닉 발생. 7/31 반등으로 진정 신호는 있으나 추세 전환 확인까지는 관망 필요.</div>
+  </div>
+
+  <table style="margin-top:10px;">
+    <tr><th>전략 원칙</th><th>현재 상태</th><th>적용 여부</th></tr>
+    <tr><td>VIX 25 초과 → 역발상 매수 준비</td><td>18~20선</td><td class="flat">미충족 (대기)</td></tr>
+    <tr><td>USD/KRW 1,500 초과 지속 → 韓주 비중 축소</td><td>1,442.92</td><td class="up">미충족 (비중 유지)</td></tr>
+    <tr><td>시장 강세 → 지지선 분할매수</td><td>美 강세 / 韓 반등 시도</td><td class="badge watch">부분 적용 (미국 중심)</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2><span class="num">5</span>다음 주 전략 권고</h2>
+  <ul class="strategy">
+    <li><b>포지션 비중</b> — 미국 보유종목(NVDA·AVGO·VRT·MSTX)은 유지, 신규 확대는 NFP(8/7) 확인 후 결정. 코스피 급락 여진 가능성을 감안해 현대차 비중은 유지하되 신규 추가는 보류.</li>
+    <li><b>트레일링 스탑</b> — VRT는 실적 서프라이즈 이후 상승분 보호 위해 트레일링 스탑 적용 권고. NVDA·AVGO는 실적 발표 전(각 8/26, 9/3)까지 변동성 확대 가능성 낮아 기존 스탑 유지.</li>
+    <li><b>자동매수 트리거 점검</b> — PLTR($122)는 8/3 실적 발표 직후 갭 변동 가능, 트리거 근접 시 체결 확인 필요. ASTS($68)는 자체 보유 중이나 8/10 실적 앞두고 트리거 재점검. AVGO($420)·TSM($395)·MRVL($168)은 AI 반도체 센티먼트(AMD 실적, 코스피發 반도체 우려) 영향권이라 트리거 도달 시 분할 진입 권장.</li>
+    <li><b>현금 비중</b> — VIX가 25 미만이라 전면 방어 전환은 이르나, NFP 서프라이즈 리스크와 코스피 변동성 잔존을 감안해 현금 비중을 소폭 상향(관망성 대기) 권고.</li>
+    <li><b>리스크 워치</b> — 코스피發 &quot;AI 피크아웃&quot; 논란은 미국 반도체·AI 밸류체인(NVDA·AVGO)에도 심리적 전이 가능성 있음. AMD 실적(8/5) 반응을 선행지표로 활용 권장.</li>
+  </ul>
+</div>
+
+<footer>
+  ETHAN_DASH 자동 생성 · 본 리포트는 투자 참고 자료이며 투자 판단의 책임은 투자자 본인에게 있습니다.
+</footer>
+
+</div>
+</body>
+</html>
