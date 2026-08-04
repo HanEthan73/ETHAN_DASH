@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity 아침 인사이트 | @aleabitoreddit | 2026-08-05</title>
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --card-bg: #17182a;
+    --text: #e8e8f0;
+    --accent: #ffd700;
+    --muted: #9a9ab0;
+    --green: #4ade80;
+    --red: #f87171;
+    --border: #2a2b42;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+    margin: 0;
+    padding: 0 0 60px 0;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  header {
+    padding: 36px 20px 28px 20px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #1a1b30 0%, #0f0f1a 100%);
+  }
+  header .inner { max-width: 880px; margin: 0 auto; }
+  header .tag {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 13px;
+    letter-spacing: 1px;
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    padding: 3px 12px;
+    margin-bottom: 14px;
+  }
+  header h1 { margin: 0 0 8px 0; font-size: 26px; color: #fff; }
+  header .sub { color: var(--muted); font-size: 14px; }
+  h2.section-title {
+    color: var(--accent);
+    font-size: 19px;
+    margin: 44px 0 18px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .card .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .card .date { color: var(--muted); font-size: 12px; }
+  .ticker-badge {
+    display: inline-block;
+    background: #232445;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin-right: 6px;
+  }
+  .dir-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 6px;
+  }
+  .dir-buy { background: rgba(74,222,128,0.15); color: var(--green); }
+  .dir-sell { background: rgba(248,113,113,0.15); color: var(--red); }
+  .dir-watch { background: rgba(154,154,176,0.15); color: var(--muted); }
+  .card .orig {
+    font-size: 14px;
+    color: #cfcfe0;
+    margin: 8px 0;
+    padding: 10px 12px;
+    background: #101124;
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+  }
+  .card .claude {
+    font-size: 13.5px;
+    color: var(--text);
+    margin-top: 8px;
+  }
+  .card .claude .label {
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 13.5px;
+  }
+  th, td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: #1d1e38;
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  tr:last-child td { border-bottom: none; }
+  .conf-high { color: var(--green); font-weight: 700; }
+  .conf-mid { color: var(--accent); font-weight: 700; }
+  .conf-low { color: var(--muted); font-weight: 700; }
+  .picks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .pick-card {
+    background: linear-gradient(160deg, #232445 0%, #17182a 100%);
+    border: 1px solid var(--accent);
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .pick-card .rank {
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .pick-card .ticker { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .pick-card .why { font-size: 13px; color: #cfcfe0; }
+  footer {
+    max-width: 880px;
+    margin: 50px auto 0 auto;
+    padding: 18px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+  }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <span class="tag">MORNING BRIEF</span>
+    <h1>Serenity 아침 인사이트</h1>
+    <div class="sub">@aleabitoreddit (팔로워 약 91만 · AI/반도체 공급망 투자 인플루언서) · 2026-08-05 07:10 AM</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <h2 class="section-title">1. 최근 포스트 인사이트</h2>
+
+  <div class="card">
+    <div class="meta">
+      <div><span class="ticker-badge">$AAOI</span><span class="ticker-badge">$LITE</span><span class="ticker-badge">$COHR</span><span class="ticker-badge">$SIVE.ST</span><span class="dir-badge dir-buy">매수(서구 공급망 수혜)</span></div>
+      <div class="date">2026-08-04</div>
+    </div>
+    <div class="orig">"A very material catalyst came about for Western supply chains from $AAOI, $SIVE / Jabil, to $LITE and Coherent: The Trump administration is drafting a ban of new Chinese optical transceivers and DC devices... We'll likely see a larger bifurcation of supply [chains]."</div>
+    <div class="claude"><span class="label">Claude 해석:</span>미 행정부의 중국산 광트랜시버·데이터센터 장비 수입 규제 초안이 보도되며, 코히런트·루멘텀·AAOI·Sivers 등 비중국계 광통신 공급망이 반사 수혜 테마로 부상. 실제 발표 당일 AAOI +16%, COHR +13%, LITE +11%, Corning +8% 급등이 확인되어(Reuters/Yahoo Finance 보도) 시장에서도 즉각 반응한 고신뢰 테마.</div>
+  </div>
+
+  <div class="card">
+    <div class="meta">
+      <div><span class="ticker-badge">$JBL</span><span class="dir-badge dir-buy">매수(2차 수혜)</span></div>
+      <div class="date">2026-08-04</div>
+    </div>
+    <div class="orig">Jabil($JBL)을 Sivers Semiconductors($SIVE.ST)와 함께 중국산 광트랜시버 수입 규제안의 "서구 공급망 수혜주"로 재차 언급.</div>
+    <div class="claude"><span class="label">Claude 해석:</span>동일 테마의 후속 언급으로, 광모듈 EMS(위탁생산) 밸류체인까지 수혜 범위를 확장. 다만 JBL은 8/4 기준 전일대비 -0.1%로 즉각적 주가 반응은 미미해 후속 확인이 필요.</div>
+  </div>
+
+  <div class="card">
+    <div class="meta">
+      <div><span class="ticker-badge">$300308.SZ</span><span class="ticker-badge">$300502.SZ</span><span class="dir-badge dir-sell">매도(중국 광통신 부품주)</span></div>
+      <div class="date">2026-08-04</div>
+    </div>
+    <div class="orig">중국산 광트랜시버 신규 수입 금지안으로 인해 중국 로컬 광통신 부품 업체(선전 증시 300308.SZ, 300502.SZ)는 부정적 영향을 받을 것으로 전망.</div>
+    <div class="claude"><span class="label">Claude 해석:</span>수출 통제의 반대편 리스크로 지목된 종목들. 다만 언급 횟수가 2회로 적고, 실제 3~4월 최초 언급 이후 오히려 +79.5%, +31.7% 급등한 상태라 "규제 우려 vs 내수 대체 수혜" 해석이 엇갈릴 수 있어 신뢰도는 낮게 평가.</div>
+  </div>
+
+  <div class="card">
+    <div class="meta">
+      <div><span class="ticker-badge">$MU</span><span class="ticker-badge">$SNDK</span><span class="ticker-badge">005930.KS(삼성전자)</span><span class="ticker-badge">000660.KS(SK하이닉스)</span><span class="ticker-badge">285A.T(키옥시아)</span><span class="dir-badge dir-buy">매수(메모리 초과수요)</span></div>
+      <div class="date">2026-08-04</div>
+    </div>
+    <div class="orig">삼성전자·SK하이닉스가 2027년 DRAM/HBM 생산능력을 완판했고, 마이크론·샌디스크의 연간 낸드 생산능력도 완판(샌디스크는 주문량의 60~70%만 배정)됐다는 내용을 근거로 "메모리 공급과잉론은 틀렸다"는 논지 제시. 키옥시아는 8월까지 낸드 배분을 확정할 것으로 전망.</div>
+    <div class="claude"><span class="label">Claude 해석:</span>2026년 하반기 메모리 업사이클 지속 테마. HBM/DRAM/NAND 전방위 완판 소식은 마이크론(+7.3%), 샌디스크(+11.1%) 등 언급 이후 실제 주가 상승으로 일부 확인됨. 다만 삼성전자(-29.5%)·SK하이닉스(-39.8%)는 언급 이후 오히려 큰 폭 하락해 있어, 개별 종목보다는 업종 사이클 관점의 참고 지표로 해석 권장.</div>
+  </div>
+
+  <div class="card">
+    <div class="meta">
+      <div><span class="ticker-badge">$NBIS</span><span class="ticker-badge">$AXTI</span><span class="ticker-badge">$IREN</span><span class="dir-badge dir-watch">장기 추적종목</span></div>
+      <div class="date">누적 (~2026-07-30)</div>
+    </div>
+    <div class="orig">2025년 하반기부터 반복 언급되어온 최다 언급 종목군: $NBIS(네비우스, 683회, 뉴클라우드 AWS급 성장 베팅), $AXTI(451회, 희토류/InP 병목 수혜), $IREN(375회, AI 클라우드 컴퓨트 레이어 병목).</div>
+    <div class="claude"><span class="label">Claude 해석:</span>Serenity의 대표 "병목이론(Bottleneck Theory)" 장기 확신 종목들. 최초 언급 대비 각각 +19.0%, +7.4%, +7.2%로 꾸준한 완만한 상승 추세를 유지 중이며, 단기 이벤트보다 멀티이어 테마로 접근하는 것이 적절.</div>
+  </div>
+
+  <div class="card">
+    <div class="meta">
+      <div><span class="ticker-badge">$TTD</span><span class="ticker-badge">$SMCI</span><span class="ticker-badge">$INTC</span><span class="ticker-badge">$TSM</span><span class="ticker-badge">$CIFR</span><span class="ticker-badge">$HUT</span><span class="ticker-badge">$WULF</span><span class="ticker-badge">$META</span><span class="dir-badge dir-watch">2026년 연간 Strong Buy</span></div>
+      <div class="date">2026-01-01 (연초 랭킹, 참고용)</div>
+    </div>
+    <div class="orig">"Welcome to 2026. Jan 1st ratings: Strong Buy: $TTD $SMCI $AIRO $INTC $HIMS $AXTI $TSM $NBIS $CIFR 삼성전자 $HUT $IREN $WULF $GLXY $TSSI $META $ETOR $CRCL / Buy: $KRKNF $ONDS $GEMI $NVDA $MU $AMKR SK하이닉스 $SNAP $RDDT $AAOI $COHR..."</div>
+    <div class="claude"><span class="label">Claude 해석:</span>연초 전체 유니버스 랭킹. 8월 현재 시점 재확인된 종목(AAOI, COHR, LITE, MU, IREN, NBIS, AXTI)이 여전히 상위 테마로 유지되고 있어 일관성이 높은 편.</div>
+  </div>
+
+  <div class="card">
+    <div class="meta">
+      <div><span class="ticker-badge">$AXTI</span><span class="ticker-badge">$LITE</span><span class="ticker-badge">$GOOGL</span><span class="ticker-badge">$NVDA</span><span class="ticker-badge">$INTC</span><span class="ticker-badge">$TSM</span><span class="dir-badge dir-watch">2026 테마 4선</span></div>
+      <div class="date">2026-01-01 (연초 뉴스레터)</div>
+    </div>
+    <div class="orig">"2026 Newsletter. Thematic Investments: 1. Soft Robotics(Tesla, ONDS, Boston Dynamics) 2. SiPh - InP Bottleneck($AXTI, $LITE, $GOOGL) 3. Glass Substrates($NVDA, $INTC, $TSM) 4. Money Movement - Disruption..."</div>
+    <div class="claude"><span class="label">Claude 해석:</span>실리콘포토닉스(InP 병목)·유리기판·소프트로보틱스를 2026년 4대 테마로 제시. 이 중 SiPh/InP 테마(AXTI, LITE)는 8월 현재까지도 반복 언급되며 테마 지속성이 확인된 상태.</div>
+  </div>
+
+  <h2 class="section-title">2. 주목 종목 요약표</h2>
+  <table>
+    <thead>
+      <tr><th>종목</th><th>방향</th><th>핵심 근거</th><th>신뢰도</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>$LITE</b> (Lumentum)</td><td style="color:var(--green)">매수</td><td>중국산 광트랜시버 수입 규제 반사수혜, 발표 당일 +11%</td><td class="conf-high">상</td></tr>
+      <tr><td><b>$COHR</b> (Coherent)</td><td style="color:var(--green)">매수</td><td>동일 규제 테마 수혜, 발표 당일 +13%</td><td class="conf-high">상</td></tr>
+      <tr><td><b>$AAOI</b> (Applied Optoelectronics)</td><td style="color:var(--green)">매수</td><td>동일 규제 테마 수혜, 발표 당일 +16%</td><td class="conf-high">상</td></tr>
+      <tr><td><b>$SIVE.ST</b> (Sivers Semi.)</td><td style="color:var(--green)">매수</td><td>420회 최다 언급, 서구 광통신 공급망 수혜</td><td class="conf-mid">중</td></tr>
+      <tr><td><b>$JBL</b> (Jabil)</td><td style="color:var(--green)">매수</td><td>광모듈 EMS 2차 수혜, 즉각 주가반응은 미미(-0.1%)</td><td class="conf-mid">중</td></tr>
+      <tr><td><b>$MU</b> (Micron)</td><td style="color:var(--green)">매수</td><td>2027 DRAM/HBM·연간 NAND 완판, 언급 후 +7.3%</td><td class="conf-mid">중</td></tr>
+      <tr><td><b>$SNDK</b> (SanDisk)</td><td style="color:var(--green)">매수</td><td>NAND 완판(주문 대비 60~70%만 배정), 언급 후 +11.1%</td><td class="conf-mid">중</td></tr>
+      <tr><td><b>005930.KS</b> (삼성전자)</td><td style="color:var(--green)">매수</td><td>2027 DRAM/HBM 완판 근거, 단 언급 후 주가는 -29.5%</td><td class="conf-low">하</td></tr>
+      <tr><td><b>000660.KS</b> (SK하이닉스)</td><td style="color:var(--green)">매수</td><td>2027 DRAM/HBM 완판, 단 언급 후 주가는 -39.8%</td><td class="conf-low">하</td></tr>
+      <tr><td><b>$NBIS</b> (Nebius)</td><td>관망(장기보유)</td><td>683회 최다 누적 언급, 뉴클라우드 장기 테마</td><td class="conf-mid">중</td></tr>
+      <tr><td><b>$AXTI</b></td><td>관망(장기보유)</td><td>451회 언급, 희토류/InP 병목 테마 지속</td><td class="conf-mid">중</td></tr>
+      <tr><td><b>300308.SZ / 300502.SZ</b> (중국 광부품)</td><td style="color:var(--red)">매도</td><td>중국산 광부품 수입규제 리스크 지목, 언급 2회에 그침</td><td class="conf-low">하</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-title">3. 오늘의 핵심 픽</h2>
+  <div class="picks">
+    <div class="pick-card">
+      <div class="rank">PICK 1</div>
+      <div class="ticker">$LITE / $COHR / $AAOI</div>
+      <div class="why">미 행정부의 중국산 광트랜시버 수입 규제 초안 — 발표 당일 실제 주가 급등(+11~16%)까지 확인된 가장 확실한 단기 촉매. 규제 확정 시점(2026년 내 발표 목표)까지 모멘텀 지속 가능성.</div>
+    </div>
+    <div class="pick-card">
+      <div class="rank">PICK 2</div>
+      <div class="ticker">$MU / $SNDK</div>
+      <div class="why">DRAM/HBM/NAND 전방위 완판 확인 — 메모리 업사이클이 2027년까지 이어질 것이라는 공급측 근거. "공급과잉론 반박" 논지는 3분기 실적 시즌에서 재확인 가능성.</div>
+    </div>
+    <div class="pick-card">
+      <div class="rank">PICK 3</div>
+      <div class="ticker">$SIVE.ST</div>
+      <div class="why">Serenity 언급 누적 420회로 광통신 테마 내 최다 반복 종목. 규제 수혜주 중 아직 시장 반영이 가장 덜 된(최근 대비 -0.0%) 종목으로 후행 반응 가능성.</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  * Not Financial Advice, DYOR. Serenity(@aleabitoreddit) 원문 및 공개 트래킹 사이트(serenitystock.com) 기반 요약이며 투자 조언이 아닙니다.<br>
+  데이터 출처: x.com/aleabitoreddit, serenitystock.com, trackserenity.com · 생성: Claude (Cowork)
+</footer>
+
+</body>
+</html>
