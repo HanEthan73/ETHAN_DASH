@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>프리마켓 브리핑 260804 9.18PM</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --border:#2a2f3a;
+    --text:#e6edf3; --sub:#8b949e; --green:#3fb950; --red:#f85149;
+    --yellow:#d29922; --accent:#58a6ff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Malgun Gothic",sans-serif;
+    padding:16px; max-width:480px; margin:0 auto; font-size:15px; line-height:1.5;
+  }
+  h1{font-size:18px; margin-bottom:2px;}
+  .sub{color:var(--sub); font-size:12px; margin-bottom:16px;}
+  .summary{
+    background:linear-gradient(135deg,#1f2937,#111827);
+    border:1px solid var(--border); border-radius:10px;
+    padding:12px 14px; margin-bottom:18px; font-size:14px; font-weight:600;
+    color:var(--accent);
+  }
+  h2{font-size:14px; color:var(--sub); margin:20px 0 8px; text-transform:uppercase; letter-spacing:0.5px;}
+  table{width:100%; border-collapse:collapse; background:var(--card); border-radius:8px; overflow:hidden; font-size:13px;}
+  th,td{padding:8px 8px; text-align:right; border-bottom:1px solid var(--border);}
+  th:first-child, td:first-child{text-align:left; color:var(--sub);}
+  th{color:var(--sub); font-weight:500; font-size:12px;}
+  tr:last-child td{border-bottom:none;}
+  .up{color:var(--green);}
+  .down{color:var(--red);}
+  .alert{color:var(--red); font-weight:700;}
+  .ok{color:var(--sub);}
+  ul.plain{list-style:none;}
+  ul.plain li{
+    background:var(--card); border:1px solid var(--border); border-radius:8px;
+    padding:10px 12px; margin-bottom:6px; font-size:13px;
+  }
+  ul.plain li b{color:var(--text);}
+  .tag{display:inline-block; font-size:11px; padding:1px 6px; border-radius:4px; margin-left:4px;}
+  .tag.red{background:rgba(248,81,73,0.15); color:var(--red);}
+  .tag.green{background:rgba(63,185,80,0.15); color:var(--green);}
+  footer{margin-top:20px; font-size:11px; color:var(--sub); text-align:center;}
+</style>
+</head>
+<body>
+
+<h1>🌙 미장 프리마켓 브리핑</h1>
+<div class="sub">2026-08-04 (화) 21:18 KST · 개장 20분 전</div>
+
+<div class="summary">
+📌 총평: 나스닥·S&P 선물 상승 출발 + VIX 안정(15.8)이나, ASTS·AVGO·INTC·GOOGL·ORCL 5종목이 자동매수 트리거를 하회 중 — PLTR 실적 서프라이즈발 급등이 최대 변수.
+</div>
+
+<h2>시장 지표</h2>
+<table>
+  <tr><th>지표</th><th>현재</th><th>등락</th></tr>
+  <tr><td>나스닥100 선물</td><td>NQ=F</td><td class="up">+0.9%</td></tr>
+  <tr><td>S&P500 선물</td><td>ES=F</td><td class="up">+0.3%</td></tr>
+  <tr><td>다우 선물</td><td>YM=F</td><td class="up">+0.8%</td></tr>
+  <tr><td>VIX</td><td>15.79</td><td class="down">-1.25%</td></tr>
+  <tr><td>美 10년물</td><td>4.69~4.73%</td><td class="ok">고점권</td></tr>
+</table>
+
+<h2>자동매수 알림 10종목 (트리거 대비)</h2>
+<table>
+  <tr><th>종목</th><th>트리거</th><th>현재가</th><th>상태</th></tr>
+  <tr><td>AVGO</td><td>$420</td><td>$393.81</td><td class="alert">🚨 하회</td></tr>
+  <tr><td>MSFT</td><td>$410</td><td>$479.20</td><td class="ok">상회</td></tr>
+  <tr><td>INTC</td><td>$104.50</td><td>$93.09</td><td class="alert">🚨 하회</td></tr>
+  <tr><td>GOOGL</td><td>$385</td><td>$370.89</td><td class="alert">🚨 하회</td></tr>
+  <tr><td>TSM</td><td>$395</td><td>$400~406</td><td class="ok">상회</td></tr>
+  <tr><td>MRVL</td><td>$168</td><td>$193.78</td><td class="ok">상회</td></tr>
+  <tr><td>AMZN</td><td>$255</td><td>$284.02</td><td class="ok">상회</td></tr>
+  <tr><td>ORCL</td><td>$178</td><td>$139.67</td><td class="alert">🚨 하회</td></tr>
+  <tr><td>PLTR</td><td>$122</td><td>$144.90~146.51</td><td class="ok">상회</td></tr>
+  <tr><td>ASTS</td><td>$68</td><td>$63.52~64.60</td><td class="alert">🚨 하회</td></tr>
+</table>
+
+<h2>보유 종목 체크</h2>
+<ul class="plain">
+  <li><b>NVDA</b> $206.64 <span class="tag green">+2.93%</span> — 전일 강세 마감</li>
+  <li><b>AVGO</b> $393.81(프리) <span class="tag green">+0.40%</span> — 자동매수 트리거 하회 중 🚨</li>
+  <li><b>ASTS</b> $63.52~64.60 <span class="tag green">+7.70%</span> — 급등 중이나 트리거 $68 아직 미달 🚨</li>
+  <li><b>VRT</b> $238.77(프리) <span class="tag red">-1.13%</span></li>
+  <li><b>MSTX</b> $8.04 <span class="tag red">-8.53%</span> — MSTR 레버리지 감쇠 지속, MSTR 본체는 +1.69%</li>
+</ul>
+
+<h2>프리마켓 급등락 Top 3</h2>
+<ul class="plain">
+  <li>🚀 <b>PLTR</b> +15~16% — Q2 실적 서프라이즈(전 지표 예상 상회), 가이던스 상향</li>
+  <li>🚀 <b>CAT</b> +9% — 매출 첫 200억달러 돌파</li>
+  <li>🚀 <b>ASTS</b> +7.7% — 자체 모멘텀 지속</li>
+</ul>
+
+<h2>오늘 주요 이벤트</h2>
+<ul class="plain">
+  <li>📅 무역수지(6월) 08:30 ET — 예상 -$76.5B</li>
+  <li>📅 팩토리오더(6월) 10:00 ET — 예상 -0.8%</li>
+  <li>📊 실적: AMD, McDonald's 등 다수 발표 예정 (당일 326개사)</li>
+  <li>🌍 중동 지정학 리스크 — 이란 관련 협상 불확실성 지속, 전일 코스피 급락 요인</li>
+  <li>💰 AMZN 시총 $3조 돌파 (전일 실적 서프라이즈 후 랠리 지속)</li>
+</ul>
+
+<footer>ETHAN 프리마켓 속보 에이전트 · 자동 생성 · 투자 참고용</footer>
+
+</body>
+</html>
