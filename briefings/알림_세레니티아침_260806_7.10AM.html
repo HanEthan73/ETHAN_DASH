@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity 아침 인사이트 | @aleabitoreddit | 2026-08-06</title>
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --card-bg: #161625;
+    --text: #e8e8f0;
+    --muted: #9a9ab0;
+    --accent: #ffd700;
+    --green: #4ade80;
+    --red: #f87171;
+    --gray: #9a9ab0;
+    --border: #2a2a3d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 24px 18px 60px; }
+  header {
+    padding: 28px 24px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 28px;
+  }
+  header h1 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    color: var(--accent);
+    letter-spacing: -0.2px;
+  }
+  header .sub {
+    color: var(--muted);
+    font-size: 14px;
+  }
+  h2.section-title {
+    font-size: 16px;
+    color: var(--accent);
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+    margin: 36px 0 16px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .card-date {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .tickers {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .ticker-pill {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 20px;
+    background: rgba(255,215,0,0.12);
+    color: var(--accent);
+    border: 1px solid rgba(255,215,0,0.3);
+  }
+  .direction {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-left: 6px;
+  }
+  .dir-bull { background: rgba(74,222,128,0.15); color: var(--green); }
+  .dir-bear { background: rgba(248,113,113,0.15); color: var(--red); }
+  .dir-neutral { background: rgba(154,154,176,0.15); color: var(--gray); }
+  .orig {
+    font-size: 14.5px;
+    color: var(--text);
+    margin: 10px 0;
+  }
+  .interp {
+    font-size: 13.5px;
+    color: var(--muted);
+    background: rgba(255,215,0,0.05);
+    border-left: 3px solid var(--accent);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+  .interp b { color: var(--accent); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 13.5px;
+  }
+  th, td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: rgba(255,215,0,0.08);
+    color: var(--accent);
+    font-size: 12.5px;
+    letter-spacing: 0.3px;
+  }
+  tr:last-child td { border-bottom: none; }
+  .conf-high { color: var(--green); font-weight: 700; }
+  .conf-mid { color: var(--accent); font-weight: 700; }
+  .conf-low { color: var(--muted); font-weight: 700; }
+  .picks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .pick-card {
+    background: linear-gradient(135deg, rgba(255,215,0,0.10), rgba(255,215,0,0.02));
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .pick-rank {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .pick-ticker {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .pick-reason {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  footer {
+    margin-top: 40px;
+    padding: 16px 20px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  .meta-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: -6px;
+    margin-bottom: 24px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Serenity 아침 인사이트 | @aleabitoreddit | 2026-08-06</h1>
+    <div class="sub">AI/반도체 공급망 인플루언서 Serenity(백만 팔로워, 白毛股神) 최근 포스트 기반 투자 인사이트 요약</div>
+  </header>
+
+  <div class="meta-note">
+    * X(트위터) 직접 접속 제한으로 트래커 사이트(trackserenity.com, serenitystock.com) 및 웹 검색을 통해 최근 게시물·언급 종목을 교차 수집했습니다. 원문 링크는 각 카드에 포함.
+  </div>
+
+  <h2 class="section-title">📌 최근 포스트 인사이트</h2>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-date">2026-08-04 (X 원문 기준 최신)</span>
+      <span class="tickers"><span class="ticker-pill">$AAOI</span><span class="ticker-pill">$COHR</span><span class="ticker-pill">$LITE</span><span class="ticker-pill">$SIVE.ST</span><span class="ticker-pill">$JBL</span><span class="direction dir-bull">매수</span></span>
+    </div>
+    <div class="orig">트럼프 행정부가 AI 데이터센터 핵심 부품인 중국산 광트랜시버(optical transceiver) 신규 수입 금지를 추진 중이라는 보도가 나오자, Serenity는 AAOI·COHR·LITE·SIVE·JBL을 "서구권 공급망 수혜주"로 재확인. 반대로 중국 광부품 업체 300502.SZ, 300308.SZ는 타격 종목으로 지목.</div>
+    <div class="interp"><b>Claude 해석:</b> 실제로 보도 당일 AAOI +17%, COHR +11~13%, 루멘텀 +6~13% 급등이 확인됨. 규제 드리븐 테마라 확정 전까지 변동성 크고, 법안 통과 여부·시행 시점이 핵심 리스크. 이미 급등한 만큼 추격매수보다 조정 시 분할 접근이 합리적.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-date">2026-08-04</span>
+      <span class="tickers"><span class="ticker-pill">$MU</span><span class="ticker-pill">$SNDK</span><span class="ticker-pill">$000660.KS</span><span class="ticker-pill">$005930.KS</span><span class="ticker-pill">$285A.T</span><span class="direction dir-bull">매수</span></span>
+    </div>
+    <div class="orig">"SK Hynix, Micron, Samsung이 2027년 DRAM/HBM 생산능력을 완판했다. SanDisk·Samsung·Micron 연간 NAND 생산능력도 완판, 고객사엔 요청 물량의 60~70%만 배정되고 있다. Kioxia·SK Hynix는 8월 중 NAND 배정 확정 예정." (원문 인용 요약)</div>
+    <div class="interp"><b>Claude 해석:</b> 메모리 공급 부족 테마는 다수 외신(Digitimes, TechPowerUp 등)이 교차 확인한 실질적 뉴스. AI발 수요 초과가 구조적으로 이어지는 국면이라 메모리 3사 밸류에이션 리레이팅 여력 존재. 다만 SK하이닉스·삼성전자는 최근 주가가 이미 크게 오른 뒤 조정 국면(-27~36%)이라 진입 타이밍은 분할 매수 권장.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-date">2026-08-04</span>
+      <span class="tickers"><span class="ticker-pill">$RKLB</span><span class="direction dir-neutral">관망</span></span>
+    </div>
+    <div class="orig">Rocket Lab이 미 우주군(Space Force)으로부터 3.97억 달러 규모 계약을 수주. Neutron 로켓으로 발사할 "Flatellite" 위성을 개발·운용하는 계약.</div>
+    <div class="interp"><b>Claude 해석:</b> 국방 계약은 로켓랩의 "발사체 기업→종합 방산기업" 전환 스토리를 강화하는 뉴스지만, Serenity는 이 종목에 대해 132회 언급에도 "중립" 스탠스 유지. Neutron 로켓 자체가 아직 첫 발사 전이라 실행 리스크가 남아있다는 신중론으로 해석됨.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-date">2026-07-30</span>
+      <span class="tickers"><span class="ticker-pill">$NBIS</span><span class="direction dir-neutral">관망</span></span>
+    </div>
+    <div class="orig">"$NBIS, Reflection AI와 GB300 관련 10억 달러 이상 컴퓨트 계약 체결." Serenity는 계약 자체는 긍정적이나 상대방(Reflection AI)의 자금력을 OpenAI에 빗대며 "메타·MS 대비 지불 능력 우려"를 코멘트. 발표 당일 주가는 오히려 -5%.</div>
+    <div class="interp"><b>Claude 해석:</b> 매출 대비 계약 비중이 상당히 커서(연 매출의 약 55% 수준 추정) 카운터파티 리스크에 대한 지적은 타당. 고객 다변화가 강점이라는 반론도 함께 제시한 점에서 단순 호재로만 보지 않는 균형잡힌 시각. 신규 매수보다는 기존 포지션 홀드 관점.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-date">최근 지속 언급 (누적 451회)</span>
+      <span class="tickers"><span class="ticker-pill">$AXTI</span><span class="direction dir-bull">매수</span></span>
+    </div>
+    <div class="orig">InP(인듐인화물)·GaAs(갈륨비소) 반도체 기판 공급망의 핵심 병목(chokepoint) 종목으로 지속 강조. 전 세계 고순도 InP 공급사 3곳 중 하나(VGF 결정성장 기술 보유).</div>
+    <div class="interp"><b>Claude 해석:</b> Serenity의 "병목 이론(Bottleneck Theory)" 대표 종목. IntelliEPI CEO가 2026년 1분기 InP 공급부족을 공개 경고하기 약 1년 전부터 선제적으로 지목했다는 점에서 트랙레코드 신뢰도 높음. 다만 이미 451회 언급된 합의된 픽이라 초과수익 여력은 초기 대비 축소.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-date">최근 지속 언급 (누적 420회)</span>
+      <span class="tickers"><span class="ticker-pill">$SIVE.ST</span><span class="direction dir-bull">매수</span></span>
+    </div>
+    <div class="orig">스웨덴 광통신 부품社 SIVE.ST를 "알고리즘이 자주 놓치는" 저평가 광학 공급망 수혜주로 재조명. LITE와의 밸류에이션 갭도 함께 언급.</div>
+    <div class="interp"><b>Claude 해석:</b> 유동성이 낮은 유럽 소형주라 미국 알고리즘 트레이딩의 사각지대라는 논리는 합리적. 실제 2025년 12월 첫 언급(4 SEK 부근) 이후 현재까지 수익률이 매우 높았던 것으로 트래킹됨. 다만 유동성 낮은 종목 특성상 슬리피지·환리스크 유의 필요.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-date">최근 지속 언급 (누적 375회)</span>
+      <span class="tickers"><span class="ticker-pill">$IREN</span><span class="direction dir-neutral">관망</span></span>
+    </div>
+    <div class="orig">비트코인 채굴에서 AI 데이터센터·GPU 클라우드로 전환 중인 IREN을 "AI 전력 부족 해소" 테마주로 지속 트래킹. MS와의 97억 달러 GPU 클라우드 계약이 배경.</div>
+    <div class="interp"><b>Claude 해석:</b> 전력 확보(2,310MW)와 대형 계약이 실체 있는 성장 스토리. 다만 채굴업체의 AI 피벗 스토리는 이미 시장에 상당 부분 반영된 상태라 밸류에이션 부담 존재. 신규 대형 계약 발표 등 추가 촉매 확인 후 접근 권장.</div>
+  </div>
+
+  <h2 class="section-title">📊 주목 종목 요약표</h2>
+
+  <table>
+    <thead>
+      <tr><th>종목</th><th>방향</th><th>핵심 근거</th><th>신뢰도</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>$AAOI</td><td class="dir-bull" style="font-weight:700;">매수</td><td>중국 광트랜시버 수입금지 추진, 서구권 수혜 (+17% 당일 반응)</td><td class="conf-high">상</td></tr>
+      <tr><td>$COHR</td><td class="dir-bull" style="font-weight:700;">매수</td><td>동일 테마 수혜, 대형주라 유동성 우수</td><td class="conf-high">상</td></tr>
+      <tr><td>$LITE</td><td class="dir-bull" style="font-weight:700;">매수</td><td>374회 최다 언급, 광통신 공급망 핵심주</td><td class="conf-high">상</td></tr>
+      <tr><td>$MU</td><td class="dir-bull" style="font-weight:700;">매수</td><td>2027 DRAM/HBM 완판, 구조적 공급부족</td><td class="conf-high">상</td></tr>
+      <tr><td>$SNDK</td><td class="dir-bull" style="font-weight:700;">매수</td><td>NAND 완판, 60~70%만 배정되는 초과수요</td><td class="conf-mid">중</td></tr>
+      <tr><td>$AXTI</td><td class="dir-bull" style="font-weight:700;">매수</td><td>InP/GaAs 기판 독점적 공급망 지위, 트랙레코드 검증됨</td><td class="conf-mid">중</td></tr>
+      <tr><td>$SIVE.ST</td><td class="dir-bull" style="font-weight:700;">매수</td><td>저유동성 유럽 소형주, 알고리즘 사각지대 논리</td><td class="conf-mid">중</td></tr>
+      <tr><td>$005930.KS (삼성전자)</td><td class="dir-bull" style="font-weight:700;">매수</td><td>메모리 완판이나 최근 주가 -27.8% 조정</td><td class="conf-mid">중</td></tr>
+      <tr><td>$000660.KS (SK하이닉스)</td><td class="dir-bull" style="font-weight:700;">매수</td><td>메모리 완판이나 최근 주가 -36.4% 조정, 밸류 부담</td><td class="conf-low">하</td></tr>
+      <tr><td>$NBIS</td><td style="color:var(--gray);font-weight:700;">관망</td><td>대형 계약이나 카운터파티 자금력 우려 (Serenity 본인도 신중)</td><td class="conf-mid">중</td></tr>
+      <tr><td>$IREN</td><td style="color:var(--gray);font-weight:700;">관망</td><td>AI 피벗 스토리 이미 반영, 추가 촉매 대기</td><td class="conf-low">하</td></tr>
+      <tr><td>$RKLB</td><td style="color:var(--gray);font-weight:700;">관망</td><td>국방 계약 호재이나 Neutron 로켓 실행 리스크 잔존</td><td class="conf-low">하</td></tr>
+      <tr><td>300502.SZ / 300308.SZ (中 광부품)</td><td class="dir-bear" style="font-weight:700;">매도</td><td>미국 규제 리스크에 따른 수출 타격 우려</td><td class="conf-mid">중</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-title">⭐ 오늘의 핵심 픽</h2>
+
+  <div class="picks">
+    <div class="pick-card">
+      <div class="pick-rank">PICK 1</div>
+      <div class="pick-ticker">$AAOI / $COHR</div>
+      <div class="pick-reason">중국 광트랜시버 수입금지 추진 뉴스로 실제 급등(+11~17%) 확인된 최우선 테마. 규제 확정 전까지 헤드라인 변동성 큼 — 조정 시 분할 접근.</div>
+    </div>
+    <div class="pick-card">
+      <div class="pick-rank">PICK 2</div>
+      <div class="pick-ticker">$MU (Micron)</div>
+      <div class="pick-reason">2027 DRAM/HBM 완판이라는 다수 외신 교차 검증된 구조적 공급부족 테마. 메모리 3사 중 밸류 부담이 가장 적은 편.</div>
+    </div>
+    <div class="pick-card">
+      <div class="pick-rank">PICK 3</div>
+      <div class="pick-ticker">$AXTI</div>
+      <div class="pick-reason">Serenity 병목 이론의 대표 종목이자 트랙레코드가 검증된 장기 보유 후보. InP 기판 공급망 지위는 구조적 해자.</div>
+    </div>
+  </div>
+
+  <footer>
+    * Not Financial Advice, DYOR. Serenity 원문 기반 요약이며 투자 조언이 아닙니다.
+  </footer>
+
+</div>
+</body>
+</html>
