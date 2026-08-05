@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 1.15rem;
+    color: #ff6b6b;
+    text-align: center;
+    margin: 0 0 4px 0;
+  }
+  .timestamp {
+    text-align: center;
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161b22;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 0.85rem;
+  }
+  th, td {
+    padding: 10px 6px;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+  }
+  th {
+    background: #21262d;
+    color: #58a6ff;
+    font-weight: 600;
+  }
+  tr:last-child td { border-bottom: none; }
+  td.ticker { font-weight: 700; color: #f0f6fc; }
+  td.price { color: #ff7b72; font-weight: 700; }
+  td.stop { color: #ffa657; }
+  td.target { color: #3fb950; }
+  .note {
+    margin-top: 18px;
+    font-size: 0.78rem;
+    color: #8b949e;
+    text-align: center;
+    line-height: 1.5;
+  }
+  @media (max-width: 480px) {
+    th, td { padding: 8px 4px; font-size: 0.78rem; }
+    h1 { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-08-05 22:05</div>
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td class="price">$417.75</td>
+      <td>$420</td>
+      <td class="stop">$390</td>
+      <td class="target">$480</td>
+    </tr>
+    <tr>
+      <td class="ticker">INTC</td>
+      <td class="price">$100.86</td>
+      <td>$104.50</td>
+      <td class="stop">$95</td>
+      <td class="target">$130</td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td>
+      <td class="price">$379.72</td>
+      <td>$385</td>
+      <td class="stop">$355</td>
+      <td class="target">$450</td>
+    </tr>
+    <tr>
+      <td class="ticker">ORCL</td>
+      <td class="price">$144.05</td>
+      <td>$178</td>
+      <td class="stop">$162</td>
+      <td class="target">$225</td>
+    </tr>
+    <tr>
+      <td class="ticker">ASTS</td>
+      <td class="price">$66.64</td>
+      <td>$68</td>
+      <td class="stop">$45</td>
+      <td class="target">$100</td>
+    </tr>
+  </table>
+  <div class="note">
+    미도달 종목 (MSFT, TSM, MRVL, AMZN, PLTR)은 트리거가 대비 2% 이내 근접 없음<br>
+    실시간 시세 기준, 매수 실행 전 재확인 권장
+  </div>
+</body>
+</html>
