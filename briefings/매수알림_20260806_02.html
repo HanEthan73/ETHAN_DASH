@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 자동매수 트리거 도달</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Malgun Gothic", sans-serif;
+    padding: 20px 14px 40px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 4px;
+    color: #ff7b72;
+  }
+  .timestamp {
+    text-align: center;
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .ticker-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .ticker {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #58a6ff;
+  }
+  .price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #f0f6fc;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    text-align: center;
+  }
+  .grid div {
+    background: #0d1117;
+    border-radius: 6px;
+    padding: 8px 4px;
+  }
+  .label {
+    display: block;
+    font-size: 0.7rem;
+    color: #8b949e;
+    margin-bottom: 2px;
+  }
+  .val { font-size: 0.9rem; font-weight: 600; }
+  .trigger-val { color: #ffa657; }
+  .stop-val { color: #f85149; }
+  .target-val { color: #3fb950; }
+  .warn {
+    background: #2d2411;
+    border: 1px solid #9e6a03;
+    color: #e3b341;
+    font-size: 0.78rem;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-top: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+  }
+  th, td {
+    padding: 8px 6px;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+  }
+  th {
+    color: #8b949e;
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
+  td.ticker-cell { color: #58a6ff; font-weight: 700; }
+  .footer {
+    text-align: center;
+    color: #6e7681;
+    font-size: 0.72rem;
+    margin-top: 24px;
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-08-06 02:05 (KST) · 기준시장데이터 2026-08-05 미국장중</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="ticker-cell">AVGO</td><td>$419.32</td><td>$420</td><td>$390</td><td>$480</td>
+      </tr>
+      <tr>
+        <td class="ticker-cell">INTC</td><td>$102.44</td><td>$104.50</td><td>$95</td><td>$130</td>
+      </tr>
+      <tr>
+        <td class="ticker-cell">GOOGL</td><td>$363.04</td><td>$385</td><td>$355</td><td>$450</td>
+      </tr>
+      <tr>
+        <td class="ticker-cell">ORCL</td><td>$144.45</td><td>$178</td><td>$162</td><td>$225</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card">
+    <div class="ticker-row"><span class="ticker">AVGO</span><span class="price">$419.32</span></div>
+    <div class="grid">
+      <div><span class="label">트리거</span><span class="val trigger-val">$420</span></div>
+      <div><span class="label">손절</span><span class="val stop-val">$390</span></div>
+      <div><span class="label">목표</span><span class="val target-val">$480</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ticker-row"><span class="ticker">INTC</span><span class="price">$102.44</span></div>
+    <div class="grid">
+      <div><span class="label">트리거</span><span class="val trigger-val">$104.50</span></div>
+      <div><span class="label">손절</span><span class="val stop-val">$95</span></div>
+      <div><span class="label">목표</span><span class="val target-val">$130</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ticker-row"><span class="ticker">GOOGL</span><span class="price">$363.04</span></div>
+    <div class="grid">
+      <div><span class="label">트리거</span><span class="val trigger-val">$385</span></div>
+      <div><span class="label">손절</span><span class="val stop-val">$355</span></div>
+      <div><span class="label">목표</span><span class="val target-val">$450</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ticker-row"><span class="ticker">ORCL</span><span class="price">$144.45</span></div>
+    <div class="grid">
+      <div><span class="label">트리거</span><span class="val trigger-val">$178</span></div>
+      <div><span class="label">손절</span><span class="val stop-val">$162</span></div>
+      <div><span class="label">목표</span><span class="val target-val">$225</span></div>
+    </div>
+    <div class="warn">⚠️ 현재가($144.45)가 손절가($162)보다 이미 낮음 — 트리거 도달이지만 하락 추세 지속 중, 진입 전 재확인 필요</div>
+  </div>
+
+  <div class="footer">실시간 웹서치 기반 · 자동매수 모니터링 에이전트</div>
+</body>
+</html>
