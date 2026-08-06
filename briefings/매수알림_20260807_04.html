@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    margin: 0;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 1.1rem;
+    color: #ff7b72;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    text-align: center;
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161b22;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #30363d;
+  }
+  th {
+    background: #21262d;
+    color: #58a6ff;
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+  .triggered td.ticker {
+    color: #f0883e;
+    font-weight: bold;
+  }
+  .price-hit {
+    color: #3fb950;
+    font-weight: bold;
+  }
+  .approach-section h2 {
+    font-size: 0.95rem;
+    color: #d29922;
+    margin-bottom: 8px;
+  }
+  .approach td.ticker {
+    color: #d29922;
+    font-weight: bold;
+  }
+  @media (max-width: 480px) {
+    th, td { font-size: 0.78rem; padding: 8px 4px; }
+    h1 { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<h1>🚨 자동매수 트리거 도달</h1>
+<div class="timestamp">2026-08-07 04:05 KST (기준가: 2026-08-06 미국장 종가/현재가)</div>
+
+<table class="triggered">
+  <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+  <tr>
+    <td class="ticker">INTC</td>
+    <td class="price-hit">$102.54</td>
+    <td>$104.50 이하</td>
+    <td>$95</td>
+    <td>$130</td>
+  </tr>
+  <tr>
+    <td class="ticker">GOOGL</td>
+    <td class="price-hit">$360.13</td>
+    <td>$385 이하</td>
+    <td>$355</td>
+    <td>$450</td>
+  </tr>
+  <tr>
+    <td class="ticker">ORCL</td>
+    <td class="price-hit">$176.28</td>
+    <td>$178 이하</td>
+    <td>$162</td>
+    <td>$225</td>
+  </tr>
+</table>
+
+<div class="approach-section">
+  <h2>⚠️ 트리거 2% 이내 근접</h2>
+  <table class="approach">
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>차이</th></tr>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td>$424.85</td>
+      <td>$420 이하</td>
+      <td>+1.2%</td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>
