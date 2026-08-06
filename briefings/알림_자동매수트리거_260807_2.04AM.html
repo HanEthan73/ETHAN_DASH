@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --border:#30363d;
+    --text:#e6edf3; --sub:#8b949e; --red:#f85149; --green:#3fb950; --yellow:#d29922;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:16px; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  h1{font-size:1.15rem; margin:0 0 4px 0;}
+  .ts{color:var(--sub); font-size:0.85rem; margin-bottom:20px;}
+  .section-title{font-size:1rem; margin:24px 0 10px 0; display:flex; align-items:center; gap:6px;}
+  table{width:100%; border-collapse:collapse; background:var(--card); border-radius:10px; overflow:hidden; margin-bottom:8px;}
+  th,td{padding:10px 8px; text-align:center; font-size:0.9rem; border-bottom:1px solid var(--border);}
+  th{background:#1c2128; color:var(--sub); font-weight:600; font-size:0.8rem;}
+  tr:last-child td{border-bottom:none;}
+  .ticker{font-weight:700;}
+  .triggered{color:var(--red); font-weight:700;}
+  .near{color:var(--yellow); font-weight:700;}
+  .card{background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px; margin-bottom:14px;}
+  .badge{display:inline-block; padding:2px 8px; border-radius:6px; font-size:0.75rem; font-weight:700;}
+  .badge-trigger{background:rgba(248,81,73,0.15); color:var(--red);}
+  .badge-near{background:rgba(210,153,34,0.15); color:var(--yellow);}
+  .foot{color:var(--sub); font-size:0.75rem; margin-top:24px; text-align:center;}
+</style>
+</head>
+<body>
+
+<h1>🚨 자동매수 트리거 도달</h1>
+<div class="ts">2026-08-07 02:04 (KST) 기준</div>
+
+<div class="section-title">✅ 트리거 도달 종목 (2)</div>
+<table>
+<tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+<tr>
+  <td class="ticker">INTC</td>
+  <td class="triggered">$102.01</td>
+  <td>$104.50</td>
+  <td>$95</td>
+  <td>$130</td>
+</tr>
+<tr>
+  <td class="ticker">ORCL</td>
+  <td class="triggered">$143.84</td>
+  <td>$178</td>
+  <td>$162</td>
+  <td>$225</td>
+</tr>
+</table>
+<div class="card">
+  <span class="badge badge-trigger">주의</span>
+  <div style="margin-top:8px; font-size:0.85rem; color:var(--sub);">
+  ORCL은 트리거가($178)뿐 아니라 손절선($162)도 이미 하회한 상태입니다 ($143.84). 매수 판단 시 참고하세요.
+  </div>
+</div>
+
+<div class="section-title">⚠️ 2% 이내 근접 종목 (3)</div>
+<table>
+<tr><th>종목</th><th>현재가</th><th>트리거가</th><th>차이</th></tr>
+<tr>
+  <td class="ticker">AVGO</td>
+  <td class="near">$423.29</td>
+  <td>$420</td>
+  <td class="near">+0.78%</td>
+</tr>
+<tr>
+  <td class="ticker">AMZN</td>
+  <td class="near">$255.08</td>
+  <td>$255</td>
+  <td class="near">+0.03%</td>
+</tr>
+<tr>
+  <td class="ticker">ASTS</td>
+  <td class="near">$68.12</td>
+  <td>$68</td>
+  <td class="near">+0.18%</td>
+</tr>
+</table>
+
+<div class="section-title">📋 전체 미도달 종목</div>
+<table>
+<tr><th>종목</th><th>현재가</th><th>트리거가</th></tr>
+<tr><td class="ticker">MSFT</td><td>$432.92</td><td>$410</td></tr>
+<tr><td class="ticker">GOOGL</td><td>$408.61</td><td>$385</td></tr>
+<tr><td class="ticker">TSM</td><td>$422.31</td><td>$395</td></tr>
+<tr><td class="ticker">MRVL</td><td>$210.59</td><td>$168</td></tr>
+<tr><td class="ticker">PLTR</td><td>~$158</td><td>$122</td></tr>
+</table>
+
+<div class="foot">자동매수 모니터링 에이전트 · 실시간 웹서치 기반 (지연 가능성 있음)</div>
+
+</body>
+</html>
