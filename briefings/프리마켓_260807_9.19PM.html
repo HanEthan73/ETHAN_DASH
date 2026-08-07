@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>프리마켓 브리핑 260807</title>
+<style>
+  :root{
+    --bg:#0b0e14; --card:#131722; --border:#232838; --text:#e8eaf0;
+    --sub:#8a91a8; --green:#3ddc84; --red:#ff5c6c; --yellow:#ffcc4d; --accent:#5b8cff;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Malgun Gothic",sans-serif;
+    padding:16px; max-width:480px; margin:0 auto; font-size:15px; line-height:1.5;
+  }
+  header{margin-bottom:14px;}
+  header .tag{color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.5px;}
+  header h1{font-size:19px; margin-top:4px;}
+  header .time{color:var(--sub); font-size:12px; margin-top:2px;}
+  .summary{
+    background:linear-gradient(135deg,#1a2036,#141826); border:1px solid var(--border);
+    border-radius:12px; padding:14px; margin-bottom:16px; font-size:14px; font-weight:600;
+  }
+  .summary .label{color:var(--accent); font-size:11px; font-weight:700; display:block; margin-bottom:4px;}
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:12px;
+    padding:12px; margin-bottom:14px;
+  }
+  .card h2{font-size:13px; color:var(--sub); margin-bottom:10px; font-weight:700; letter-spacing:.3px;}
+  table{width:100%; border-collapse:collapse; font-size:13px;}
+  th{text-align:left; color:var(--sub); font-weight:600; font-size:11px; padding:4px 4px; border-bottom:1px solid var(--border);}
+  td{padding:7px 4px; border-bottom:1px solid #1c2130; vertical-align:middle;}
+  tr:last-child td{border-bottom:none;}
+  .num{text-align:right; font-variant-numeric:tabular-nums;}
+  .up{color:var(--green); font-weight:600;}
+  .down{color:var(--red); font-weight:600;}
+  .flat{color:var(--sub);}
+  .alert{color:var(--red); font-weight:800;}
+  .ticker{font-weight:700;}
+  .sub{color:var(--sub); font-size:11px;}
+  .pill{
+    display:inline-block; font-size:10px; padding:2px 6px; border-radius:6px; margin-left:4px; font-weight:700;
+  }
+  .pill.ok{background:#12351f; color:var(--green);}
+  .pill.bad{background:#3a161c; color:var(--red);}
+  .section-title{font-size:13px; color:var(--sub); font-weight:700; margin:16px 0 6px; letter-spacing:.3px;}
+  .events{font-size:13px;}
+  .events li{list-style:none; padding:6px 0; border-bottom:1px solid #1c2130;}
+  .events li:last-child{border-bottom:none;}
+  .events b{color:var(--yellow);}
+  footer{margin-top:18px; color:var(--sub); font-size:11px; text-align:center;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">🌙 ETHAN 프리마켓 속보</div>
+  <h1>미장 개장 20분 전 브리핑</h1>
+  <div class="time">2026.08.07 (금) 21:19 KST · 美 동부 08:19 AM (프리마켓)</div>
+</header>
+
+<div class="summary">
+  <span class="label">총평</span>
+  선물 소폭 상승·VIX 15선 안정 속 반도체·AI 인프라주 강세 지속이나, 자동매수 워치리스트 중 INTC·GOOGL·ORCL 3종목은 이미 매수 트리거를 하회 중 — 오늘 미 고용지표(비농업고용) 발표 주목.
+</div>
+
+<div class="card">
+  <h2>📊 매크로 스냅샷</h2>
+  <table>
+    <tr><th>지표</th><th class="num">현재</th><th class="num">등락</th></tr>
+    <tr>
+      <td>나스닥100 선물</td>
+      <td class="num">29,540.75</td>
+      <td class="num up">+0.59%</td>
+    </tr>
+    <tr>
+      <td>S&amp;P500 선물</td>
+      <td class="num">7,749.50</td>
+      <td class="num up">+0.28%</td>
+    </tr>
+    <tr>
+      <td>VIX (공포지수)</td>
+      <td class="num">15.48</td>
+      <td class="num down">-6.18%</td>
+    </tr>
+    <tr>
+      <td>美 10년물 국채금리</td>
+      <td class="num">4.60~4.67%</td>
+      <td class="num flat">주간 -10bp</td>
+    </tr>
+  </table>
+  <div class="sub" style="margin-top:8px;">VIX 안정적 하향 → 리스크온 분위기. 이란-오만 해협 합의 기대감이 금리 하락 요인.</div>
+</div>
+
+<div class="section-title">🔥 프리마켓 급등락 Top</div>
+<div class="card">
+  <table>
+    <tr><th>종목</th><th class="num">등락률</th><th>사유</th></tr>
+    <tr><td class="ticker">DOCS</td><td class="num up">+77.2%</td><td class="sub">어닝 서프라이즈+가이던스 상향</td></tr>
+    <tr><td class="ticker">CELZ</td><td class="num up">+124%</td><td class="sub">소형주 급등</td></tr>
+    <tr><td class="ticker">TTD</td><td class="num down">-27.8%</td><td class="sub">실적 쇼크</td></tr>
+  </table>
+  <div class="sub" style="margin-top:8px;">보유·감시 종목(NVDA·AVGO·ASTS·VRT·현대차) 중 Top무브 진입 종목 없음 — 단, VRT(+2.7%)·MRVL(+3.0%) 프리마켓 강세 주목.</div>
+</div>
+
+<div class="card">
+  <h2>💼 보유 종목 현재가</h2>
+  <table>
+    <tr><th>종목</th><th class="num">현재가</th><th class="num">등락</th></tr>
+    <tr><td class="ticker">NVDA</td><td class="num">$220.18</td><td class="num up">+0.54%</td></tr>
+    <tr><td class="ticker">AVGO</td><td class="num">$424.86</td><td class="num up">+1.02%</td></tr>
+    <tr><td class="ticker">ASTS</td><td class="num">$68.10<span class="sub">(애프터마켓)</span></td><td class="num up">+1.10%</td></tr>
+    <tr><td class="ticker">VRT</td><td class="num">$282.71</td><td class="num up">+2.74%</td></tr>
+    <tr><td class="ticker">MSTX</td><td class="num">$8.59<span class="sub">(종가)</span></td><td class="num down">-3.05%</td></tr>
+    <tr><td class="ticker">현대차</td><td class="num" colspan="2">KRX 마감 — 프리마켓 데이터 없음</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>🔔 자동매수 워치리스트 (트리거가 대비)</h2>
+  <table>
+    <tr><th>종목</th><th class="num">트리거</th><th class="num">현재가</th><th>상태</th></tr>
+    <tr><td class="ticker">AVGO</td><td class="num">$420</td><td class="num">$424.86</td><td><span class="pill ok">상회</span></td></tr>
+    <tr><td class="ticker">MSFT</td><td class="num">$410</td><td class="num">$497.80</td><td><span class="pill ok">상회</span></td></tr>
+    <tr><td class="ticker alert">INTC 🚨</td><td class="num">$104.50</td><td class="num alert">$101.41</td><td><span class="pill bad">하회</span></td></tr>
+    <tr><td class="ticker alert">GOOGL 🚨</td><td class="num">$385</td><td class="num alert">$359.32<span class="sub">*</span></td><td><span class="pill bad">하회</span></td></tr>
+    <tr><td class="ticker">TSM</td><td class="num">$395</td><td class="num">$419.96</td><td><span class="pill ok">상회</span></td></tr>
+    <tr><td class="ticker">MRVL</td><td class="num">$168</td><td class="num">$216.90</td><td><span class="pill ok">상회</span></td></tr>
+    <tr><td class="ticker">AMZN</td><td class="num">$255</td><td class="num">$273.25</td><td><span class="pill ok">상회</span></td></tr>
+    <tr><td class="ticker alert">ORCL 🚨</td><td class="num">$178</td><td class="num alert">$144.34</td><td><span class="pill bad">하회</span></td></tr>
+    <tr><td class="ticker">PLTR</td><td class="num">$122</td><td class="num">$158.00</td><td><span class="pill ok">상회</span></td></tr>
+    <tr><td class="ticker">ASTS</td><td class="num">$68</td><td class="num">$68.10</td><td><span class="pill ok">상회(근접)</span></td></tr>
+  </table>
+  <div class="sub" style="margin-top:8px;">*GOOGL은 8/6 정규장 중 시세(리더십 이슈로 급락) — 최신 프리마켓 갱신치 아님, 개장 후 재확인 필요.</div>
+</div>
+
+<div class="section-title">📅 오늘 주요 이벤트</div>
+<div class="card">
+  <ul class="events">
+    <li><b>美 8월 비농업 고용지표(NFP)</b> 발표 — 금리·증시 변동성 핵심 변수</li>
+    <li>실적 발표: <b>VST(Vistra)</b>, <b>TTWO(Take-Two)</b> 등 100여개 기업</li>
+    <li>ASTS 2Q 실적/컨퍼런스콜은 8/10(월) 예정 — 오늘 아님</li>
+  </ul>
+</div>
+
+<footer>ETHAN 프리마켓 속보 에이전트 · 자동 생성 · 투자 판단은 본인 책임</footer>
+
+</body>
+</html>
