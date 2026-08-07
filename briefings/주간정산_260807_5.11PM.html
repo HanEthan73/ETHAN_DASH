@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주간 수익률 정산 - 2026.08.07</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --border:#30363d;
+    --text:#e6edf3; --sub:#8b949e;
+    --red:#f85149; --green:#3fb950; --yellow:#d29922; --blue:#58a6ff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:16px; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Malgun Gothic",sans-serif;
+    font-size:14px; line-height:1.5;
+  }
+  .wrap{max-width:720px; margin:0 auto;}
+  h1{font-size:18px; margin:4px 0 2px 0; color:var(--text);}
+  .sub{color:var(--sub); font-size:12px; margin-bottom:18px;}
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:10px;
+    padding:14px; margin-bottom:16px;
+  }
+  .card h2{
+    font-size:13px; color:var(--blue); margin:0 0 10px 0;
+    text-transform:uppercase; letter-spacing:.03em;
+  }
+  table{width:100%; border-collapse:collapse; font-size:12.5px;}
+  th, td{
+    padding:8px 6px; text-align:right; border-bottom:1px solid var(--border);
+    white-space:nowrap;
+  }
+  th:first-child, td:first-child{text-align:left;}
+  th{color:var(--sub); font-weight:500; font-size:11.5px;}
+  tr:last-child td{border-bottom:none;}
+  .pos{color:var(--green);} .neg{color:var(--red);} .flat{color:var(--sub);}
+  .note{color:var(--sub); font-size:11px; margin-top:8px; line-height:1.5;}
+  .badge{
+    display:inline-block; padding:2px 8px; border-radius:20px; font-size:11px;
+    font-weight:600;
+  }
+  .badge.green{background:rgba(63,185,80,.15); color:var(--green);}
+  .badge.red{background:rgba(248,81,73,.15); color:var(--red);}
+  .badge.yellow{background:rgba(210,153,34,.15); color:var(--yellow);}
+  .progress-bar{
+    width:100%; height:8px; background:var(--border); border-radius:4px; overflow:hidden; margin-top:6px;
+  }
+  .progress-fill{height:100%; background:var(--blue);}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .stat{background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:10px;}
+  .stat .lbl{color:var(--sub); font-size:11px;}
+  .stat .val{font-size:16px; font-weight:700; margin-top:2px;}
+  .src{font-size:10.5px; color:var(--sub); word-break:break-all;}
+  .src a{color:var(--blue); text-decoration:none;}
+  @media (max-width:420px){
+    table{font-size:11.5px;}
+    th,td{padding:6px 4px;}
+    .grid2{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>주간 수익률 정산</h1>
+  <div class="sub">2026-08-03(월) ~ 2026-08-07(금) · 작성 17:11 KST · 자동생성</div>
+
+  <div class="card">
+    <h2>1. 보유 종목 주간 등락</h2>
+    <table>
+      <tr><th>종목</th><th>평균단가</th><th>현재가</th><th>주간등락</th><th>비고</th></tr>
+      <tr><td>NVDA</td><td>$180 내외</td><td>$213.06</td><td class="neg">-7.10%</td><td>주간 조정</td></tr>
+      <tr><td>AVGO</td><td>미확인</td><td>$421.35</td><td class="flat">데이터 부족*</td><td>월간 +15.57%</td></tr>
+      <tr><td>ASTS</td><td>보유중</td><td>$68.38</td><td class="pos">+19.21%</td><td>위성발사·일본진출 호재</td></tr>
+      <tr><td>VRT</td><td>보유중</td><td>$275.21</td><td class="flat">데이터 부족*</td><td>월간 -10.21%</td></tr>
+      <tr><td>MSTX</td><td>$182.73</td><td>$8.42(추정)</td><td class="neg">누적 -95%↑</td><td>레버리지 감가 지속, 소스 상충</td></tr>
+      <tr><td>현대차</td><td>보유중</td><td>₩410,000</td><td class="flat">데이터 부족*</td><td>8/3 코스피 급락 여파</td></tr>
+    </table>
+    <div class="note">* 신뢰 가능한 주간(월~금) 등락률 소스를 찾지 못해 확인 가능한 최근 데이터로 대체 표기. AVGO·VRT는 최근 1개월 기준치, 현대차는 8/5 종가 기준 단일가.</div>
+  </div>
+
+  <div class="card">
+    <h2>2. 지수 주간 동향</h2>
+    <table>
+      <tr><th>지수</th><th>동향</th></tr>
+      <tr><td>S&amp;P500</td><td class="flat">주 초반 약세 → 금요일 반등, 등락 혼조</td></tr>
+      <tr><td>나스닥</td><td class="flat">6거래일 연속 하락 후 금요일 +1.1% 반등</td></tr>
+      <tr><td>코스피</td><td class="neg">8/3 -5.12% 급락 영향으로 주간 약세</td></tr>
+    </table>
+    <div class="note">코스피는 8/3(월) 외국인 순매도 2.8조원 동반 급락이 주간 흐름을 주도. 이후 6,290~6,415pt 구간 등락.</div>
+  </div>
+
+  <div class="card">
+    <h2>3. Best / Worst</h2>
+    <div class="grid2">
+      <div class="stat">
+        <div class="lbl">이번주 BEST</div>
+        <div class="val pos">ASTS +19.21%</div>
+      </div>
+      <div class="stat">
+        <div class="lbl">이번주 WORST</div>
+        <div class="val neg">MSTX (지속 급락)</div>
+      </div>
+    </div>
+    <div class="note">NVDA -7.10%도 주간 낙폭 상위. MSTX는 MSTR 대비 2배 레버리지 구조상 변동성·감가가 구조적으로 확대되는 상품.</div>
+  </div>
+
+  <div class="card">
+    <h2>4. 자동매수 트리거 회고</h2>
+    <span class="badge yellow">확인 불가</span>
+    <div class="note">에이전트 설정에 종목별 트리거 가격(지정가)이 등록되어 있지 않아 도달 여부를 판정할 수 없음. 정확한 회고를 위해 종목별 트리거 단가 등록 필요.</div>
+  </div>
+
+  <div class="card">
+    <h2>5. 다음주 주목 이벤트</h2>
+    <div class="note" style="font-size:12.5px; color:var(--text);">
+      7월 고용지표 후속 반응, 대형 기술주 실적 후폭풍(MSFT·AMZN 급등 지속 여부), 한국산 12.5% 관세가 현대차 실적에 미치는 영향 확대 여부 주시.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>6. 2억 목표 진행 현황</h2>
+    <div class="grid2">
+      <div class="stat">
+        <div class="lbl">연간 목표</div>
+        <div class="val">₩200,000,000</div>
+      </div>
+      <div class="stat">
+        <div class="lbl">주간 목표</div>
+        <div class="val">₩3,850,000</div>
+      </div>
+      <div class="stat">
+        <div class="lbl">월간 목표</div>
+        <div class="val">₩16,700,000</div>
+      </div>
+      <div class="stat">
+        <div class="lbl">이번주 실적(원화)</div>
+        <div class="val flat">산정 불가</div>
+      </div>
+    </div>
+    <div class="note">
+      보유 수량·실투입 원금 데이터가 에이전트 설정에 없어 종목별 등락률을 원화 손익으로 환산할 수 없음. 방향성만 보면 NVDA(-7.10%)·MSTX(대폭 하락)·현대차(불명확)가 하방 압력, ASTS(+19.21%)가 유일한 상쇄 요인으로 전체 포트폴리오는 이번주 마이너스 방향 추정.<br>
+      정확한 주간 목표 대비 달성률 산출을 위해 종목별 보유 수량 등록을 권장.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>출처</h2>
+    <div class="src">
+      <a href="https://stockinvest.us/stock/NVDA">stockinvest.us/stock/NVDA</a><br>
+      <a href="https://www.investing.com/equities/avago-technologies-historical-data">investing.com AVGO</a><br>
+      <a href="https://stockanalysis.com/stocks/asts/">stockanalysis.com/stocks/asts</a><br>
+      <a href="https://www.macrotrends.net/stocks/charts/VRT/vertiv-holdings/stock-price-history">macrotrends.net VRT</a><br>
+      <a href="https://stockanalysis.com/etf/mstx/">stockanalysis.com/etf/mstx</a><br>
+      <a href="https://www.investing.com/equities/hyundai-motor">investing.com 현대차</a><br>
+      <a href="https://247wallst.com/cards/nasdaq-led-friday-s-rally-with-a-1-1-jump-as-all-three-majo-gspc-market-bell-01kywwcem3j2q2kbbyjtetwpdm">247wallst.com S&amp;P/Nasdaq</a><br>
+      <a href="https://www.businesskorea.co.kr/news/articleView.html?idxno=274066">businesskorea.co.kr 코스피</a><br>
+      <a href="https://www.etnews.com/20260807000062">etnews.com 코스피 8/7</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
