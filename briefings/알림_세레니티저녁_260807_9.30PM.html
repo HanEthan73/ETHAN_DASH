@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity 저녁 인사이트 | @aleabitoreddit | 2026-08-07</title>
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --text: #e8e8f0;
+    --accent: #ffd700;
+    --card-bg: #181828;
+    --border: #2a2a3d;
+    --sub: #9a9ab0;
+    --green: #4ade80;
+    --red: #f87171;
+    --gray: #9a9ab0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 0 0 60px 0;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  header {
+    padding: 32px 20px 24px 20px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 6px 0;
+    font-size: 22px;
+    color: var(--accent);
+    letter-spacing: -0.3px;
+  }
+  header .sub {
+    color: var(--sub);
+    font-size: 13px;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(255,215,0,0.12);
+    color: var(--accent);
+    border: 1px solid rgba(255,215,0,0.3);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 11px;
+    margin-top: 10px;
+  }
+  section { margin: 34px 0; }
+  h2 {
+    font-size: 16px;
+    color: var(--accent);
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+    margin-bottom: 16px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .card .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .time {
+    font-size: 12px;
+    color: var(--sub);
+    font-family: monospace;
+  }
+  .tickers { font-size: 13px; }
+  .tickers span {
+    background: rgba(255,215,0,0.1);
+    color: var(--accent);
+    border-radius: 5px;
+    padding: 2px 7px;
+    margin-right: 5px;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .dir {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 9px;
+    border-radius: 12px;
+  }
+  .dir.buy { background: rgba(74,222,128,0.15); color: var(--green); }
+  .dir.sell { background: rgba(248,113,113,0.15); color: var(--red); }
+  .dir.watch { background: rgba(154,154,176,0.15); color: var(--gray); }
+  .card .orig {
+    font-size: 13.5px;
+    color: #c5c5d8;
+    border-left: 2px solid var(--border);
+    padding-left: 10px;
+    margin: 8px 0;
+  }
+  .card .interp {
+    font-size: 13.5px;
+    color: var(--text);
+    margin-top: 8px;
+  }
+  .card .interp b { color: var(--accent); }
+  .card a {
+    color: var(--accent);
+    font-size: 12px;
+    text-decoration: none;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: #1e1e30;
+    color: var(--accent);
+    font-size: 12px;
+  }
+  td.conf-high { color: var(--green); font-weight: 600; }
+  td.conf-mid { color: var(--accent); font-weight: 600; }
+  td.conf-low { color: var(--sub); font-weight: 600; }
+  .pick-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .pick-card {
+    background: linear-gradient(145deg, #1e1e30, #181828);
+    border: 1px solid rgba(255,215,0,0.25);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .pick-card .ticker {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--accent);
+  }
+  .pick-card .reason {
+    font-size: 13px;
+    color: #c5c5d8;
+    margin-top: 6px;
+  }
+  .compare {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 13.5px;
+    color: #c5c5d8;
+  }
+  .compare .note {
+    color: var(--sub);
+    font-size: 12px;
+    margin-top: 10px;
+    font-style: italic;
+  }
+  footer {
+    text-align: center;
+    color: var(--sub);
+    font-size: 11.5px;
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid var(--border);
+  }
+  .src-note {
+    font-size: 11.5px;
+    color: var(--sub);
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Serenity 저녁 인사이트</h1>
+  <div class="sub">@aleabitoreddit · 2026-08-07 (금) · 저녁 9:30 PM 발행</div>
+  <div class="badge">미국장 개장 후 장중 코멘트 수집</div>
+</header>
+
+<section>
+  <h2>⚠️ 데이터 수집 안내</h2>
+  <div class="card" style="border-color:#4a4a6a;">
+    <div class="interp">
+    금일 실행 시점 기준 Chrome 브라우저 연결이 되어 있지 않아 X(트위터) 원문 페이지 직접 열람이 불가했습니다.
+    대신 Serenity 포스트를 실시간 아카이빙하는 제3자 트래커(serenitystock.com, semiconstocks.com)와 웹 검색을 통해
+    가장 최근 확인된 포스트(8/5 저녁 ~ 8/6 오전, 한국시간)를 수집했습니다. 8/7 오늘 오후~저녁 실시간 포스트는
+    트래커 동기화 지연으로 아직 반영되지 않아, 확보 가능한 최신 5건의 포스트를 기준으로 리포트를 구성했습니다.
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>📌 최근 포스트 인사이트 카드</h2>
+
+  <div class="card">
+    <div class="meta">
+      <span class="time">08/06 09:56 (KST)</span>
+      <span class="tickers"><span>$TSM</span><span>$AAOI</span><span>$AMD</span></span>
+      <span class="dir watch">관망 / 잡담성</span>
+    </div>
+    <div class="orig">"TSM과 AMD가 AAOI보다 발음하기 쉬운 짧은 티커"라며 유머 섞인 코멘트. 명확한 방향성 제시 없음.</div>
+    <div class="interp"><b>Claude 해석:</b> 투자 시그널이라기보다 팔로워 소통용 가벼운 포스트. 종목명 언급만으로 트래커에 잡혔을 뿐, 포지션 변경 근거로 보기 어려움.</div>
+    <a href="https://x.com/aleabitoreddit/status/2085304045099696547" target="_blank">원문 링크 →</a>
+  </div>
+
+  <div class="card">
+    <div class="meta">
+      <span class="time">08/06 04:12 (KST)</span>
+      <span class="tickers"><span>$AEVA</span><span>$SIVE.ST</span></span>
+      <span class="dir buy">매수 우호적</span>
+    </div>
+    <div class="orig">Aeva가 대형 하이퍼스케일러向 JDA(공동개발협약)를 통해 CPO/NPO 광원(optical source) 공급망에 진입, H2 2027 배치 목표. 발표 후 시간외 +18.26% 급등. Sivers(SIVE.ST)는 Aeva向 CW DFB 레이저의 고신뢰 공급사로 지목.</div>
+    <div class="interp"><b>Claude 해석:</b> CPO(공동패키지광학) 밸류체인 내 업스트림 부품사에 대한 신규 강세 테제. Aeva는 신규 TAM 확보 재료, Sivers는 기존 강세 포지션의 연장선(421회 언급 최다 종목).</div>
+    <a href="https://x.com/aleabitoreddit/status/2085217487864643658" target="_blank">원문 링크 →</a>
+  </div>
+
+  <div class="card">
+    <div class="meta">
+      <span class="time">08/06 01:23 (KST)</span>
+      <span class="tickers"><span>$NVDA</span><span>$VIAV</span><span>$FORM</span></span>
+      <span class="dir buy">매수 우호적</span>
+    </div>
+    <div class="orig">엔비디아가 스위치단 CPO(scale-out/scale-across용)의 양산 진입이 예상보다 빠르다고 발표. 이에 따라 VIAV는 CPO 테스트 매출이 본격화되는 시점으로, FORM(FormFactor)은 CPO 테스트 수요 확대 국면 진입으로 평가.</div>
+    <div class="interp"><b>Claude 해석:</b> NVDA 자체는 방향성 언급 없는 팩트 공유지만, CPO 양산 조기화는 테스트/검사 장비주(VIAV, FORM)에 실질적 매출 촉매로 해석 가능. Serenity의 "3단계 로테이션" 프레임 중 Phase 2~3 전환 신호.</div>
+    <a href="https://x.com/aleabitoreddit/status/2085174977272360987" target="_blank">원문 링크 →</a>
+  </div>
+
+  <div class="card">
+    <div class="meta">
+      <span class="time">08/05 00:16 (KST)</span>
+      <span class="tickers"><span>$RKLB</span></span>
+      <span class="dir watch">관망 / 정보성</span>
+    </div>
+    <div class="orig">Rocket Lab이 미 우주군으로부터 $397M 규모 계약(Flatellite 위성, Neutron 로켓 발사) 수주 소식 공유.</div>
+    <div class="interp"><b>Claude 해석:</b> 포지션 언급 없이 뉴스 공유 성격. 다만 132회 누적 언급 종목으로 지속 관찰 대상. AI 인프라와 직접 연관성은 낮고 우주/방산 테마 성격.</div>
+    <a href="https://x.com/aleabitoreddit/status/2084795597417263442" target="_blank">원문 링크 →</a>
+  </div>
+
+  <div class="card">
+    <div class="meta">
+      <span class="time">최근 (일자 미상, 실적 시즌)</span>
+      <span class="tickers"><span>$AMZN</span><span>$META</span><span>$GOOGL</span><span>$MSFT</span></span>
+      <span class="dir buy">업스트림 반도체 우호적</span>
+    </div>
+    <div class="orig">"실적 리캡: AMZN·META·GOOGL·MSFT가 2026년 합산 capex 가이던스를 $720~745B로 상향(기존 $695~725B). 디레버리징과 마진 청산이 계속될 수 있지만, 중장기적으로 업스트림 반도체/네오클라우드에 약세를 유지하기 어렵다"고 언급.</div>
+    <div class="interp"><b>Claude 해석:</b> 빅테크 capex 상향은 Serenity 프레임워크의 핵심 근거(하이퍼스케일러 지출 → 업스트림 병목 수혜). 최근 조정에도 불구하고 구조적 강세 유지 시그널로 해석.</div>
+    <a href="https://x.com/aleabitoreddit/status/2083270545320386734" target="_blank">원문 링크 →</a>
+  </div>
+
+</section>
+
+<section>
+  <h2>📊 주목 종목 요약표</h2>
+  <table>
+    <tr><th>종목</th><th>방향</th><th>핵심 근거</th><th>신뢰도</th></tr>
+    <tr><td>$AEVA</td><td>매수</td><td>하이퍼스케일러向 CPO/NPO 광원 JDA 체결, 신규 TAM 확보, 시간외 +18%</td><td class="conf-high">상</td></tr>
+    <tr><td>$SIVE.ST (Sivers)</td><td>매수</td><td>Aeva向 CW DFB 레이저 고신뢰 공급사, 421회 최다 언급 핵심 포지션</td><td class="conf-high">상</td></tr>
+    <tr><td>$VIAV</td><td>매수</td><td>NVDA CPO 조기 양산에 따른 테스트 매출 본격화 기대</td><td class="conf-mid">중</td></tr>
+    <tr><td>$FORM</td><td>매수</td><td>CPO 테스트 수요 확대 국면, 검사장비 매출 유입 예상</td><td class="conf-mid">중</td></tr>
+    <tr><td>$NVDA</td><td>관망</td><td>스위치측 CPO 양산 조기화 팩트 공유, 방향성 코멘트 없음</td><td class="conf-mid">중</td></tr>
+    <tr><td>$TSM / $AMD</td><td>관망</td><td>유머성 티커 언급, 투자 시그널로 보기 어려움</td><td class="conf-low">하</td></tr>
+    <tr><td>$RKLB</td><td>관망</td><td>우주군 계약 수주 뉴스 공유, 포지션 코멘트 없음</td><td class="conf-mid">중</td></tr>
+    <tr><td>$AXTI</td><td>매수(지속)</td><td>InP 기판 병목 테제 지속, 451회 언급·mention 이후 +25.5%</td><td class="conf-high">상</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>🎯 내일 주목 픽</h2>
+  <div class="pick-grid">
+    <div class="pick-card">
+      <div class="ticker">$AEVA</div>
+      <div class="reason">신규 하이퍼스케일러 JDA로 CPO/NPO 광원 밸류체인 진입. 시간외 +18% 반응, 모멘텀 지속 여부 확인 필요.</div>
+    </div>
+    <div class="pick-card">
+      <div class="ticker">$SIVE.ST</div>
+      <div class="reason">Serenity 최다 언급(421회) 핵심 포지션. Aeva 테제 연동으로 CW 레이저 공급망 수혜 지속 기대.</div>
+    </div>
+    <div class="pick-card">
+      <div class="ticker">$VIAV / $FORM</div>
+      <div class="reason">NVDA CPO 양산 조기화의 직접 수혜주로 언급. 테스트·검사 장비 매출 램프업 초입 국면.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🔄 아침 대비 변화</h2>
+  <div class="compare">
+    본 리포트는 "세레니티 저녁" 알림의 첫 실행분으로, 비교할 당일 아침 픽 데이터가 없습니다.
+    대신 최근 48시간 내 포스트 흐름을 보면, 8/5 우주·위성 테마(RKLB) 언급에서 8/6 새벽~오전 사이
+    CPO(공동패키지광학) 밸류체인 중심으로 논조가 뚜렷하게 이동했습니다. 특히 NVDA의 CPO 양산 조기화 발표를
+    기점으로 광원(AEVA, SIVE) → 테스트/검사(VIAV, FORM)로 이어지는 공급망 순환매 흐름을 강조하는 모습입니다.
+    <div class="note">※ 다음 실행부터는 당일 아침 브리핑 대비 변화를 비교 제공할 예정입니다.</div>
+  </div>
+</section>
+
+<footer>
+  * Not Financial Advice, DYOR. Serenity(@aleabitoreddit) 원문 기반 요약이며 투자 조언이 아닙니다.<br>
+  <span class="src-note">데이터 출처: serenitystock.com, semiconstocks.com (제3자 아카이브, Serenity 본인과 무관) · X 원문 링크 병기</span>
+</footer>
+
+</div>
+</body>
+</html>
