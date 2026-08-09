@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주간 전략 브리핑 260809</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --border:#30363d;
+    --text:#e6edf3; --sub:#8b949e; --accent:#58a6ff;
+    --up:#3fb950; --down:#f85149; --warn:#d29922;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:16px; background:var(--bg); color:var(--text);
+    font-family:-apple-system,"Malgun Gothic","Apple SD Gothic Neo",Segoe UI,sans-serif;
+    line-height:1.55; max-width:820px; margin-left:auto; margin-right:auto;
+  }
+  h1{font-size:1.35rem; margin:0 0 4px;}
+  .meta{color:var(--sub); font-size:0.85rem; margin-bottom:20px;}
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:10px;
+    padding:16px; margin-bottom:16px;
+  }
+  h2{font-size:1.05rem; margin:0 0 12px; color:var(--accent); border-left:3px solid var(--accent); padding-left:8px;}
+  h3{font-size:0.95rem; margin:16px 0 8px; color:var(--text);}
+  table{width:100%; border-collapse:collapse; font-size:0.85rem;}
+  th,td{padding:8px 6px; border-bottom:1px solid var(--border); text-align:left; vertical-align:top;}
+  th{color:var(--sub); font-weight:600; font-size:0.78rem;}
+  tr:last-child td{border-bottom:none;}
+  .up{color:var(--up); font-weight:600;}
+  .down{color:var(--down); font-weight:600;}
+  .warn{color:var(--warn); font-weight:600;}
+  .tag{
+    display:inline-block; font-size:0.72rem; padding:2px 8px; border-radius:20px;
+    background:rgba(88,166,255,0.15); color:var(--accent); margin-left:6px;
+  }
+  .tag.bull{background:rgba(63,185,80,0.15); color:var(--up);}
+  .tag.bear{background:rgba(248,81,73,0.15); color:var(--down);}
+  .tag.flat{background:rgba(210,153,34,0.15); color:var(--warn);}
+  ul{margin:6px 0; padding-left:20px; font-size:0.88rem;}
+  li{margin-bottom:6px;}
+  .note{color:var(--sub); font-size:0.78rem; margin-top:8px;}
+  .footer{color:var(--sub); font-size:0.75rem; text-align:center; margin-top:24px; padding-top:16px; border-top:1px solid var(--border);}
+  .regime-box{display:flex; gap:10px; flex-wrap:wrap;}
+  .regime-item{flex:1; min-width:140px; background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:8px; padding:10px;}
+  .regime-item .label{font-size:0.75rem; color:var(--sub);}
+  .regime-item .value{font-size:1.0rem; font-weight:700; margin-top:2px;}
+  @media (max-width:480px){
+    body{padding:10px;}
+    table{font-size:0.78rem;}
+    th,td{padding:6px 4px;}
+    h1{font-size:1.15rem;}
+  }
+</style>
+</head>
+<body>
+
+<h1>📊 ETHAN 주간 전략 브리핑</h1>
+<div class="meta">2026년 8월 9일(일) 19:08 KST · 대상 주간: 8/10(월) ~ 8/16(일)</div>
+
+<div class="card">
+  <h2>1. 이번 주 시장 리뷰 (8/4~8/8)</h2>
+  <table>
+    <tr><th>지수</th><th>종가</th><th>주간 등락</th><th>비고</th></tr>
+    <tr><td>S&amp;P500</td><td>7,757.64</td><td class="up">+3.6%</td><td>사상 최고치 경신. 7월 고용 예상 밖 부진(-2.3만명)→금리인하 기대 강화</td></tr>
+    <tr><td>나스닥</td><td>26,690.62</td><td class="up">+5.2%</td><td>AI 실적 호조 (PLTR +29.5%, 실적서프라이즈율 85%↑)</td></tr>
+    <tr><td>코스피</td><td>6,258.77</td><td class="down">-5.1%</td><td>7/31 사상최대 일간상승(+17.9%) 후 차익실현, 외국인·기관 대량 순매도, 반도체 -8.7%</td></tr>
+    <tr><td>VIX</td><td>15.15</td><td>-</td><td>낮은 변동성 · 시장 안도 국면 (25 초과 미해당)</td></tr>
+    <tr><td>원/달러</td><td>약 1,420~1,440원</td><td>-</td><td>1,500원 기준선 크게 하회 → 원화자산 비중 축소 조건 미해당</td></tr>
+  </table>
+  <div class="note">참고: 현대차는 8/4~8/7 40만원선 등락 반복 후 395,500원 마감, 지지선 이탈 상태</div>
+</div>
+
+<div class="card">
+  <h2>2. 다음 주 연준·경제지표 일정</h2>
+  <table>
+    <tr><th>일자</th><th>이벤트</th><th>중요도</th></tr>
+    <tr><td colspan="3" style="color:var(--sub)">※ 8월 FOMC 정례회의 없음 (차기 회의: 9/15~16)</td></tr>
+    <tr><td>8/12(수)</td><td>미국 CPI 발표, 연준 인사 발언(Barkin·Schmid)</td><td class="warn">★★★ 이번 주 최대 변수</td></tr>
+    <tr><td>8/13(목)</td><td>PPI, 신규 실업수당 청구건수, 연준 Barkin 추가 발언</td><td class="warn">★★</td></tr>
+    <tr><td>8/14(금)</td><td>소매판매, 산업생산, 가동률, 미시간 소비자심리(예비)</td><td>★★</td></tr>
+    <tr><td>주중</td><td>주택착공·건축허가 (세부일정 유동적)</td><td>★</td></tr>
+  </table>
+  <div class="note">7월 고용 부진 직후 CPI 발표 → 시장 예상 하회 시 9월 인하 기대 강화(추가 상승 여력), 상회 시 밸류에이션 부담 속 조정 가능</div>
+</div>
+
+<div class="card">
+  <h2>3. 보유 종목 실적 일정</h2>
+  <table>
+    <tr><th>종목</th><th>일정</th><th>비고</th></tr>
+    <tr><td><b>ASTS</b></td><td class="warn">8/10(월) 장마감 후</td><td>이번 주 유일한 보유종목 실적, 컨센서스 EPS -0.29 / 매출 $34.5M — 변동성 위험 최고</td></tr>
+    <tr><td>NVDA</td><td>8/26(수) 장마감 후 (2주 후)</td><td>FY27 2Q, 가이던스 매출 약 $91.0B</td></tr>
+    <tr><td>AVGO</td><td>8월 말 예정(잠정)</td><td>정확한 일자 공식 확인 필요</td></tr>
+    <tr><td>VRT</td><td>7/29 발표 완료</td><td>EPS $1.52 (컨센서스 $1.43 상회) — 다음 실적은 10월 예상</td></tr>
+    <tr><td>MSTX</td><td>-</td><td>자체 실적 없음(MSTR 추종 ETF). MSTR은 7/30 EPS -24.45 대형 미스 → 변동성 확대 유의</td></tr>
+    <tr><td>현대차</td><td>7/23 발표 완료</td><td>2분기 매출 사상 최대(49.2조), 다만 수익성 둔화. 다음 실적 10월경</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>4. 자동매수 모니터링 (트리거가 기준)</h2>
+  <table>
+    <tr><th>종목</th><th>트리거가</th><th>현황</th></tr>
+    <tr><td>AVGO</td><td>$420</td><td class="up">8/8 종가 $426.29 — 트리거 상회, 강세 지속</td></tr>
+    <tr><td>MSFT</td><td>$410</td><td>가격 미확인 · 장중 재확인 필요</td></tr>
+    <tr><td>INTC</td><td>$104.50</td><td>가격 미확인 · 장중 재확인 필요</td></tr>
+    <tr><td>GOOGL</td><td>$385</td><td>가격 미확인 · 장중 재확인 필요</td></tr>
+    <tr><td>TSM</td><td>$395</td><td>3분기 실적 10/15 예정</td></tr>
+    <tr><td>MRVL</td><td>$168</td><td>실적 8/27(목) 예정 — 트리거 근접 시 실적 변동성 감안</td></tr>
+    <tr><td>AMZN</td><td>$255</td><td>가격 미확인 · 장중 재확인 필요</td></tr>
+    <tr><td>ORCL</td><td>$178</td><td>가격 미확인 · 장중 재확인 필요</td></tr>
+    <tr><td>PLTR</td><td>$122</td><td>8/3 실적 발표 완료(EPS $0.41 서프라이즈, 당일 +29.5%) — 랠리 지속력 관찰</td></tr>
+    <tr><td>ASTS</td><td>$68</td><td class="warn">8/10 실적 임박 — 트리거 근접 시 실적 확인 후 대응 권고</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>5. 현재 시장 국면 판단</h2>
+  <div class="regime-box">
+    <div class="regime-item"><div class="label">미국 증시</div><div class="value up">강세 <span class="tag bull">BULL</span></div></div>
+    <div class="regime-item"><div class="label">한국 증시</div><div class="value down">조정 <span class="tag bear">조정</span></div></div>
+    <div class="regime-item"><div class="label">VIX 25 기준</div><div class="value">미해당 (15.15)</div></div>
+    <div class="regime-item"><div class="label">원/달러 1,500 기준</div><div class="value">미해당 (~1,430)</div></div>
+  </div>
+  <ul style="margin-top:14px;">
+    <li><b>미국:</b> S&amp;P500·나스닥 사상 최고치, 실적시즌 서프라이즈율 85%↑, VIX 15로 안도 국면 — 원칙상 "지지선 분할매수 + 트레일링 스탑" 구간</li>
+    <li><b>한국:</b> 코스피 급등 후 차익실현 매물 + 외국인·기관 순매도로 조정 국면 진입, 반도체 업종 주도 약세, 코스닥과 디커플링 심화</li>
+    <li><b>환율/VIX 기준 트리거:</b> 둘 다 미해당 — 역발상 매수·원화자산 축소는 아직 시점 아님</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>6. 다음 주 전략 권고</h2>
+  <ul>
+    <li><b>NVDA/AVGO/VRT (미국 보유):</b> 강세 국면 원칙 적용 — 지지선 분할매수 유지, 트레일링 스탑으로 사상최고치 구간 수익 보호. NVDA(8/26)·AVGO(8월말)·MRVL(8/27) 실적 임박 구간 진입 전 포지션 사이즈 재점검 권고</li>
+    <li><b>ASTS:</b> 8/10(월) 실적이 이번 주 최대 이벤트. 발표 전 신규 비중 확대 자제, 발표 후 방향성 확인 후 대응. 자동매수 트리거 $68 접근 시 실적 결과부터 확인</li>
+    <li><b>MSTX:</b> MSTR 실적 대형 미스 여파로 변동성 확대 가능 — 비중 축소 또는 트레일링 스탑 타이트하게 재설정 권고</li>
+    <li><b>현대차:</b> 코스피 조정 국면 + 40만원 지지선 반복 이탈. 신규 매수 보류, 39만원대 지지 확인될 때까지 관망</li>
+    <li><b>AVGO 자동매수:</b> 트리거($420) 이미 상회, 강세 지속 확인 — 분할 매수 실행 검토</li>
+    <li><b>전체 포지션:</b> 8/12(수) CPI가 다음 주 최대 변수. 예상 하회 시 금리인하 기대 강화로 추가 상승 여력, 예상 상회 시 밸류에이션 부담 속 단기 조정 가능 — CPI 발표 전후 현금 비중 소폭 확보 권장</li>
+  </ul>
+  <div class="note">※ 본 브리핑은 자동 수집·요약된 참고 자료이며 투자 판단의 최종 책임은 본인에게 있습니다.</div>
+</div>
+
+<div class="footer">
+  ETHAN 주간 전략 에이전트 · 자동 생성 · 2026-08-09 19:08 KST<br>
+  출처: CNBC, Bloomberg, Yahoo Finance, TipRanks, StockTitan, 머니투데이, Businesskorea 등
+</div>
+
+</body>
+</html>
