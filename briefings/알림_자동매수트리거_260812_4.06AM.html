@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  body { background:#0d1117; color:#e6edf3; font-family:-apple-system,"Malgun Gothic","Apple SD Gothic Neo",sans-serif; margin:0; padding:16px; line-height:1.5; }
+  h1 { font-size:1.25rem; color:#ff7b72; margin-bottom:4px; }
+  .timestamp { color:#8b949e; font-size:0.85rem; margin-bottom:20px; }
+  h2 { font-size:1rem; color:#58a6ff; margin-top:28px; margin-bottom:8px; border-bottom:1px solid #21262d; padding-bottom:6px; }
+  table { width:100%; border-collapse:collapse; background:#161b22; border-radius:8px; overflow:hidden; font-size:0.9rem; }
+  th, td { padding:10px 8px; text-align:center; border-bottom:1px solid #21262d; }
+  th { background:#21262d; color:#c9d1d9; font-weight:600; }
+  td.ticker { font-weight:700; color:#ff7b72; }
+  td.price { color:#3fb950; font-weight:600; }
+  .warn-row td.ticker { color:#d29922; }
+  .note { margin-top:10px; font-size:0.8rem; color:#8b949e; }
+  .risk { margin-top:20px; padding:12px; background:#3d1214; border:1px solid #f85149; border-radius:8px; font-size:0.85rem; color:#ffa198; }
+  .disclaimer { margin-top:24px; padding:10px; background:#161b22; border-radius:6px; font-size:0.75rem; color:#8b949e; }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-08-12 04:06 (KST)</div>
+
+  <h2>트리거 도달 종목</h2>
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+    <tr><td class="ticker">INTC</td><td class="price">$97.4</td><td>$104.50</td><td>$95</td><td>$130</td></tr>
+    <tr><td class="ticker">GOOGL</td><td class="price">$339~357</td><td>$385</td><td>$355</td><td>$450</td></tr>
+    <tr><td class="ticker">ORCL</td><td class="price">$150.5</td><td>$178</td><td>$162</td><td>$225</td></tr>
+  </table>
+  <div class="note">GOOGL은 검색 소스 간 시세 편차가 커(339~357달러) 매수 전 실시간 시세 재확인 권장.</div>
+
+  <div class="risk">
+    ⚠️ ORCL은 현재가($150.5)가 손절가($162)보다 이미 낮습니다. AI 설비투자 우려로 6월 이후 주가가 고점 대비 약 -66% 급락했고, S&P가 신용등급을 BBB-로 강등했습니다. 트리거는 도달했지만 원래 설계된 손익 구조(트리거→손절)가 무너진 상태라 매수 전 재검토 필요.
+  </div>
+
+  <h2>⚠️ 2% 이내 근접 종목</h2>
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>이격률</th></tr>
+    <tr class="warn-row"><td class="ticker">AVGO</td><td class="price">$423.6</td><td>$420</td><td>+0.9%</td></tr>
+    <tr class="warn-row"><td class="ticker">ASTS</td><td class="price">$68.9</td><td>$68</td><td>+1.4%</td></tr>
+  </table>
+  <div class="note">ASTS는 8/10 실적 발표(매출·EPS 미스, BB7 발사 관련 손실) 이후 하락 중.</div>
+
+  <div class="disclaimer">
+    본 시세는 실시간 웹검색 결과를 기반으로 하며 브로커 실시간 호가와 다소 차이가 있을 수 있습니다. 매수 실행 전 실제 거래 플랫폼에서 시세를 재확인하세요.
+  </div>
+</body>
+</html>
