@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 자동매수 트리거 도달</title>
+<style>
+  * { box-sizing: border-box; margin:0; padding:0; }
+  body {
+    background:#0d1117; color:#e6edf3;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    padding:20px 12px; line-height:1.5;
+  }
+  .wrap { max-width:640px; margin:0 auto; }
+  h1 { font-size:1.3rem; color:#ff7b72; margin-bottom:4px; }
+  .sub { color:#8b949e; font-size:0.85rem; margin-bottom:20px; }
+  table { width:100%; border-collapse:collapse; margin-bottom:24px; font-size:0.9rem; }
+  th, td { padding:10px 8px; text-align:center; border-bottom:1px solid #21262d; }
+  th { background:#161b22; color:#58a6ff; font-weight:600; }
+  tr:nth-child(even) td { background:#11151c; }
+  td.ticker { font-weight:700; color:#e6edf3; }
+  td.price { color:#f0883e; font-weight:600; }
+  td.stop { color:#ff7b72; }
+  td.target { color:#3fb950; }
+  .section-title { font-size:1rem; margin:20px 0 8px; color:#e6edf3; border-left:3px solid #ff7b72; padding-left:8px; }
+  .near .section-title { border-left-color:#d29922; }
+  .note { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:10px 12px; font-size:0.82rem; color:#8b949e; margin-top:6px; }
+  .note b { color:#ff7b72; }
+  footer { text-align:center; color:#484f58; font-size:0.75rem; margin-top:30px; }
+  @media (max-width:480px){
+    th, td { padding:8px 4px; font-size:0.8rem; }
+    h1 { font-size:1.1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="sub">2026년 8월 13일 00:04 (KST) 기준 · 실시간 시세 확인</div>
+
+  <div class="section-title">✅ 트리거 도달 종목</div>
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+    <tr><td class="ticker">INTC</td><td class="price">$101.00</td><td>$104.50</td><td class="stop">$95</td><td class="target">$130</td></tr>
+    <tr><td class="ticker">GOOGL</td><td class="price">$357.52</td><td>$385</td><td class="stop">$355</td><td class="target">$450</td></tr>
+    <tr><td class="ticker">ORCL</td><td class="price">$149.25</td><td>$178</td><td class="stop">$162</td><td class="target">$225</td></tr>
+  </table>
+  <div class="note">
+    ⚠️ <b>GOOGL</b>: 현재가($357.52)가 설정된 손절가($355)에 단 $2.52 차이로 근접해 있습니다.<br>
+    ⚠️ <b>ORCL</b>: 현재가($149.25)가 이미 손절가($162)보다 낮은 상태입니다 — 트리거 매수 시 손절 라인을 하회한 상태로 진입하게 됩니다. 매수 전 재검토 권장.
+  </div>
+
+  <div class="section-title near">⚠️ 2% 이내 근접 종목</div>
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>차이</th></tr>
+    <tr><td class="ticker">AVGO</td><td class="price">$421.13</td><td>$420</td><td>+0.27%</td></tr>
+  </table>
+
+  <footer>ETHAN 자동매수 모니터링 · stockanalysis.com 실시간 데이터 기반</footer>
+</div>
+</body>
+</html>
