@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d0f14;
+    color: #e6e8ec;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    padding: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 18px;
+    color: #ff5c5c;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    font-size: 12px;
+    color: #8a8f98;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: 13px;
+    color: #8a8f98;
+    margin: 20px 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161920;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 13px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid #23262f;
+  }
+  th {
+    background: #1c2028;
+    color: #a9afbc;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  tr:last-child td { border-bottom: none; }
+  .ticker { font-weight: 700; color: #ffffff; }
+  .price { color: #ffd166; font-weight: 600; }
+  .stop { color: #ff5c5c; }
+  .target { color: #4ade80; }
+  .near-badge {
+    display: inline-block;
+    background: #3a2f00;
+    color: #ffd166;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    margin-left: 6px;
+  }
+  .footer {
+    margin-top: 24px;
+    font-size: 11px;
+    color: #5c6270;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-08-13 22:10 (KST)</div>
+
+  <div class="section-title">트리거 도달 종목</div>
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+    <tr>
+      <td class="ticker">INTC</td>
+      <td class="price">$100.95</td>
+      <td>$104.50</td>
+      <td class="stop">$95</td>
+      <td class="target">$130</td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td>
+      <td class="price">$346.72</td>
+      <td>$385</td>
+      <td class="stop">$355</td>
+      <td class="target">$450</td>
+    </tr>
+    <tr>
+      <td class="ticker">TSM</td>
+      <td class="price">$387.44</td>
+      <td>$395</td>
+      <td class="stop">$355</td>
+      <td class="target">$455</td>
+    </tr>
+    <tr>
+      <td class="ticker">ORCL</td>
+      <td class="price">$176.28</td>
+      <td>$178</td>
+      <td class="stop">$162</td>
+      <td class="target">$225</td>
+    </tr>
+  </table>
+
+  <div class="section-title">⚠️ 2% 이내 근접 종목</div>
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>차이</th>
+    </tr>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td class="price">$425.10</td>
+      <td>$420</td>
+      <td>+1.2%</td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td class="price">$255.08</td>
+      <td>$255</td>
+      <td>+0.03%<span class="near-badge">임박</span></td>
+    </tr>
+  </table>
+
+  <div class="footer">자동매수 모니터링 에이전트 · 실시간 웹서치 기반 (오차 가능성 있음, 매수 전 재확인 권장)</div>
+</body>
+</html>
