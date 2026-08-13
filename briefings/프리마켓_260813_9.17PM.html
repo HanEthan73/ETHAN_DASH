@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>프리마켓 브리핑 260813</title>
+<style>
+  :root{
+    --bg:#0b0e14; --card:#141922; --border:#232a36;
+    --text:#e6e9ef; --sub:#8b94a7; --up:#ff5c5c; --down:#4d9fff;
+    --alert:#ffb020; --accent:#7c9eff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:16px; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Malgun Gothic",sans-serif;
+    font-size:15px; line-height:1.5; max-width:480px; margin:0 auto;
+  }
+  h1{font-size:18px; margin:0 0 4px; color:var(--accent);}
+  .meta{color:var(--sub); font-size:12px; margin-bottom:16px;}
+  .summary{
+    background:linear-gradient(135deg,#1a2233,#141922);
+    border:1px solid var(--border); border-radius:10px;
+    padding:12px 14px; margin-bottom:18px; font-size:14.5px; font-weight:500;
+  }
+  h2{font-size:14px; color:var(--sub); margin:22px 0 8px; letter-spacing:.3px; text-transform:uppercase;}
+  table{width:100%; border-collapse:collapse; background:var(--card); border-radius:10px; overflow:hidden; border:1px solid var(--border);}
+  th,td{padding:9px 8px; text-align:left; font-size:13px; border-bottom:1px solid var(--border);}
+  th{color:var(--sub); font-weight:600; font-size:11.5px; text-transform:uppercase;}
+  tr:last-child td{border-bottom:none;}
+  .up{color:var(--up); font-weight:600;}
+  .down{color:var(--down); font-weight:600;}
+  .alert{color:var(--alert); font-weight:700;}
+  .tag{display:inline-block; padding:1px 6px; border-radius:5px; font-size:10.5px; font-weight:600;}
+  .tag-hold{background:#2a3550; color:#9db4ff;}
+  .tag-watch{background:#332a1a; color:#e0b060;}
+  .note{color:var(--sub); font-size:11.5px; margin-top:14px; line-height:1.6;}
+  .footer{margin-top:20px; padding-top:12px; border-top:1px solid var(--border); color:var(--sub); font-size:11px; text-align:center;}
+</style>
+</head>
+<body>
+  <h1>🌙 미장 프리마켓 브리핑</h1>
+  <div class="meta">2026.08.13(목) 21:17 KST · 미장 개장 20분 전</div>
+
+  <div class="summary">
+    선물 소폭 상승 속 PPI(21:30 KST) 발표 대기, VIX는 안정권이나 자동매수 워치리스트 4종목(AVGO·INTC·GOOGL·ORCL)이 이미 트리거가를 하회한 상태.
+  </div>
+
+  <h2>시장 지표</h2>
+  <table>
+    <tr><th>항목</th><th>현재</th><th>비고</th></tr>
+    <tr><td>S&amp;P500 선물</td><td class="up">+0.08~0.19%</td><td>완만한 상승</td></tr>
+    <tr><td>나스닥100 선물</td><td class="up">+0.13~0.6%</td><td>기술주 강세</td></tr>
+    <tr><td>VIX</td><td class="down">14.7 (-3.9%)</td><td>변동성 축소</td></tr>
+    <tr><td>10년물 국채</td><td>4.69%</td><td>8/12 종가 기준</td></tr>
+    <tr><td>주요 이벤트</td><td colspan="2">21:30 KST 7월 PPI 발표 (컨센서스 +0.2%)</td></tr>
+  </table>
+
+  <h2>보유종목 · 자동매수 워치리스트</h2>
+  <table>
+    <tr><th>구분</th><th>종목</th><th>현재가</th><th>상태</th></tr>
+    <tr><td><span class="tag tag-hold">보유</span></td><td>NVDA</td><td>$223.40</td><td>-</td></tr>
+    <tr><td><span class="tag tag-hold">보유</span></td><td>AVGO</td><td class="up">$402.40 (+2.6%)</td><td class="alert">🚨 트리거 $420 하회</td></tr>
+    <tr><td><span class="tag tag-hold">보유</span></td><td>ASTS</td><td class="up">$74.31 (+3.7%)</td><td>정상</td></tr>
+    <tr><td><span class="tag tag-hold">보유</span></td><td>VRT</td><td class="up">$294.55 (+4.5%)</td><td>급등(업그레이드)</td></tr>
+    <tr><td><span class="tag tag-hold">보유</span></td><td>MSTX</td><td>-</td><td>MSTR $96.54 참고</td></tr>
+    <tr><td><span class="tag tag-watch">워치</span></td><td>MSFT</td><td>$492.28</td><td>정상 (트리거 $410)</td></tr>
+    <tr><td><span class="tag tag-watch">워치</span></td><td>INTC</td><td>$101.20</td><td class="alert">🚨 트리거 $104.50 하회</td></tr>
+    <tr><td><span class="tag tag-watch">워치</span></td><td>GOOGL</td><td class="down">$346.72 (-3.0%)</td><td class="alert">🚨 트리거 $385 하회</td></tr>
+    <tr><td><span class="tag tag-watch">워치</span></td><td>TSM</td><td>$422.06</td><td>정상 (트리거 $395)</td></tr>
+    <tr><td><span class="tag tag-watch">워치</span></td><td>MRVL</td><td>$213.68</td><td>정상 (트리거 $168)</td></tr>
+    <tr><td><span class="tag tag-watch">워치</span></td><td>AMZN</td><td>$267.28</td><td>정상 (트리거 $255)</td></tr>
+    <tr><td><span class="tag tag-watch">워치</span></td><td>ORCL</td><td>$152.85</td><td class="alert">🚨 트리거 $178 하회</td></tr>
+    <tr><td><span class="tag tag-watch">워치</span></td><td>PLTR</td><td>$171.34</td><td>정상 (트리거 $122)</td></tr>
+    <tr><td><span class="tag tag-watch">워치</span></td><td>ASTS</td><td>$74.31</td><td>정상 (트리거 $68)</td></tr>
+  </table>
+
+  <div class="note">
+    · 프리마켓 상위 종목: AVGO(+2.6%, 브로드컴 상승), VRT(+4.5%, GLJ리서치 업그레이드) ↑ / CBRS(-19%, 실적 쇼크)·CSCO·COHR ↓<br>
+    · 현대차(KRX): 421,500원 (+2.9%)<br>
+    · 데이터 특성상 일부 종목가는 프리마켓/최근 종가가 혼재되어 있어 개장 후 재확인 권장
+  </div>
+
+  <div class="footer">ETHAN 프리마켓 속보 에이전트 · 자동 생성</div>
+</body>
+</html>
