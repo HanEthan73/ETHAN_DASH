@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  :root{
+    --bg:#0d1117;
+    --card:#161b22;
+    --border:#30363d;
+    --text:#e6edf3;
+    --muted:#8b949e;
+    --accent:#f85149;
+    --green:#3fb950;
+    --yellow:#d29922;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:20px 14px 40px;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Malgun Gothic',sans-serif;
+    max-width:640px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  h1{
+    font-size:1.25rem;
+    line-height:1.4;
+    margin:0 0 4px;
+    color:var(--accent);
+  }
+  .timestamp{
+    color:var(--muted);
+    font-size:0.85rem;
+    margin-bottom:20px;
+  }
+  .section-title{
+    font-size:0.95rem;
+    color:var(--muted);
+    margin:24px 0 10px;
+    font-weight:600;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    overflow:hidden;
+    font-size:0.9rem;
+  }
+  th,td{
+    padding:10px 8px;
+    text-align:center;
+    border-bottom:1px solid var(--border);
+    white-space:nowrap;
+  }
+  th{
+    background:#1c2129;
+    color:var(--muted);
+    font-weight:600;
+    font-size:0.8rem;
+  }
+  tr:last-child td{border-bottom:none;}
+  .ticker{font-weight:700;color:var(--text);}
+  .price-hit{color:var(--accent);font-weight:700;}
+  .price-near{color:var(--yellow);font-weight:700;}
+  .stop{color:#ff7b72;}
+  .target{color:var(--green);}
+  .badge{
+    display:inline-block;
+    background:rgba(248,81,73,0.15);
+    color:var(--accent);
+    border:1px solid rgba(248,81,73,0.4);
+    border-radius:6px;
+    padding:2px 8px;
+    font-size:0.75rem;
+    margin-left:6px;
+  }
+  .near-badge{
+    background:rgba(210,153,34,0.15);
+    color:var(--yellow);
+    border:1px solid rgba(210,153,34,0.4);
+  }
+  .footer{
+    margin-top:28px;
+    color:var(--muted);
+    font-size:0.75rem;
+    line-height:1.6;
+    border-top:1px solid var(--border);
+    padding-top:14px;
+  }
+  .scroll-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-08-13 (미국 동부 13:05) · KST 2026-08-14 02:05 · 실시간 시세 기준(stockanalysis.com)</div>
+
+  <div class="section-title">✅ 트리거 도달 종목</div>
+  <div class="scroll-wrap">
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+    <tr>
+      <td class="ticker">GOOGL</td>
+      <td class="price-hit">$343.54</td>
+      <td>$385 이하</td>
+      <td class="stop">$355</td>
+      <td class="target">$450</td>
+    </tr>
+    <tr>
+      <td class="ticker">ORCL</td>
+      <td class="price-hit">$153.74</td>
+      <td>$178 이하</td>
+      <td class="stop">$162</td>
+      <td class="target">$225</td>
+    </tr>
+  </table>
+  </div>
+
+  <div class="section-title">⚠️ 트리거 2% 이내 근접 종목</div>
+  <div class="scroll-wrap">
+  <table>
+    <tr><th>종목</th><th>현재가</th><th>트리거가</th><th>차이</th></tr>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td class="price-near">$421.23</td>
+      <td>$420 이하</td>
+      <td>+0.29%</td>
+    </tr>
+    <tr>
+      <td class="ticker">INTC</td>
+      <td class="price-near">$104.90</td>
+      <td>$104.50 이하</td>
+      <td>+0.38%</td>
+    </tr>
+  </table>
+  </div>
+
+  <div class="footer">
+    ※ ORCL은 현재가($153.74)가 손절가($162)보다도 낮은 상태입니다. 트리거 조건상 매수 신호로는 잡히지만, 실제 매수 판단 시 이 점을 반드시 확인하세요.<br>
+    ※ 본 알림은 자동 모니터링 결과이며 투자 권유가 아닙니다. 실제 매수/매도 실행은 직접 판단·집행하시기 바랍니다.<br>
+    ※ 미검토 종목(트리거 미도달, 근접도 아님): MSFT, TSM, MRVL, AMZN, PLTR, ASTS
+  </div>
+</body>
+</html>
