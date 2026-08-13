@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity 저녁 인사이트 | @aleabitoreddit | 2026-08-13</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0f0f1a;
+    color: #e8e8f0;
+    font-family: -apple-system, "Malgun Gothic", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    line-height: 1.6;
+    padding: 24px;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  header {
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 16px;
+    margin-bottom: 28px;
+  }
+  header h1 {
+    color: #ffd700;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  header p {
+    color: #9a9ab0;
+    font-size: 13px;
+  }
+  h2 {
+    color: #ffd700;
+    font-size: 17px;
+    margin: 32px 0 14px 0;
+    padding-left: 10px;
+    border-left: 3px solid #ffd700;
+  }
+  .card {
+    background: #17172a;
+    border: 1px solid #2a2a42;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .date {
+    color: #7d7d95;
+    font-size: 12px;
+  }
+  .tickers {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .ticker-tag {
+    background: #23233b;
+    color: #ffd700;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid #3a3a5a;
+  }
+  .summary {
+    color: #d5d5e5;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .interp {
+    color: #b8b8cc;
+    font-size: 13px;
+    background: #12121f;
+    border-left: 3px solid #4a4a7a;
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+  .interp b { color: #a8a8e0; }
+  .source-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #6a8cff;
+    text-decoration: none;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #17172a;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 13px;
+  }
+  th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #2a2a42;
+  }
+  th {
+    background: #1e1e34;
+    color: #ffd700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  tr:last-child td { border-bottom: none; }
+  .buy { color: #5ee6a0; font-weight: 700; }
+  .sell { color: #ff6b6b; font-weight: 700; }
+  .hold { color: #9a9ab0; font-weight: 700; }
+  .conf-high { color: #5ee6a0; }
+  .conf-mid { color: #ffd700; }
+  .conf-low { color: #9a9ab0; }
+  .picks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    margin-bottom: 10px;
+  }
+  .pick-card {
+    background: linear-gradient(145deg, #1e1e34, #17172a);
+    border: 1px solid #ffd70055;
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .pick-rank {
+    color: #ffd700;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .pick-ticker {
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    margin: 6px 0;
+  }
+  .pick-desc {
+    font-size: 13px;
+    color: #b8b8cc;
+  }
+  .compare-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #17172a;
+    border: 1px solid #2a2a42;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .compare-ticker { font-weight: 700; color: #fff; min-width: 90px; }
+  .compare-morning { color: #7d7d95; font-size: 13px; }
+  .compare-arrow { color: #ffd700; }
+  .compare-evening { font-size: 13px; }
+  footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid #2a2a42;
+    font-size: 12px;
+    color: #7d7d95;
+    text-align: center;
+    line-height: 1.8;
+  }
+  .note {
+    font-size: 12px;
+    color: #7d7d95;
+    margin-bottom: 16px;
+    background: #17172a;
+    border: 1px dashed #3a3a5a;
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Serenity 저녁 인사이트 | @aleabitoreddit | 2026-08-13</h1>
+  <p>AI/반도체 공급망 투자 인플루언서 (팔로워 약 91만) · 미국장 개장 전후 최신 포스트 요약</p>
+</header>
+
+<div class="note">
+  ※ Chrome 브라우저 연결이 되어 있지 않아 X(트위터) 직접 접속이 불가했습니다. 독립 트래커 serenitystock.com(원문 포스트 링크 및 종목별 스탠스 아카이빙)을 통해 8/11(화)~8/12(수) 최신 10개 포스트를 수집·해석했습니다. 해당 트래커는 8/13(목) 06:03 기준으로 동기화되어 있어, 이번 리포트는 현재까지 확인 가능한 가장 최신 데이터입니다.
+</div>
+
+<h2>섹션 1. 오늘 장중 포스트 인사이트</h2>
+
+<div class="card">
+  <div class="card-top">
+    <span class="date">8/12(수) 12:23 (최근 동기화 기준)</span>
+    <div class="tickers"><span class="ticker-tag">$NBIS</span><span class="ticker-tag">$CRWV</span><span class="ticker-tag">$IREN</span></div>
+  </div>
+  <div class="summary">Nebius(NBIS)에 대해 매우 강한 확신 표명 — 막대한 매출 성장과 극단적인 수요 가시성, AI Cloud 마진 확대를 근거로 제시하며 capex·순손실 우려하는 약세론자들을 반박. CoreWeave(CRWV)는 AI 수요의 방증 지표로 백로그만 언급, IREN은 전력 계약 논쟁 비교 대상으로만 등장.</div>
+  <div class="interp"><b>Claude 해석:</b> 687회 누적 언급으로 Serenity 최고 컨빅션 종목인 NBIS가 이번에도 최상단에 배치됨. Neocloud 테마의 대표주로 확신이 흔들리지 않고 있으며, CRWV·IREN은 직접 매수 시그널이 아닌 비교/맥락용 언급.</div>
+  <a class="source-link" href="https://x.com/aleabitoreddit/status/2087515371750490383" target="_blank">원문 보기 ↗</a>
+</div>
+
+<div class="card">
+  <div class="card-top">
+    <span class="date">8/12(수) 11:44</span>
+    <div class="tickers"><span class="ticker-tag">$AEHR</span></div>
+  </div>
+  <div class="summary">AEHR가 AI 프로세서 웨이퍼 레벨 번인(burn-in) 시스템向 $22M 규모 후속 수주를 확보, 프리마켓 +5.39% 상승.</div>
+  <div class="interp"><b>Claude 해석:</b> 신규 수주라는 명확한 펀더멘털 촉매가 있는 케이스. AI 반도체 테스트 장비 서브테마로, 기존 광학/레이저 종목군과는 결이 다른 분산 아이디어.</div>
+  <a class="source-link" href="https://x.com/aleabitoreddit/status/2087505570941239683" target="_blank">원문 보기 ↗</a>
+</div>
+
+<div class="card">
+  <div class="card-top">
+    <span class="date">8/12(수) 07:54</span>
+    <div class="tickers"><span class="ticker-tag">$SIVE.ST</span><span class="ticker-tag">$LITE</span><span class="ticker-tag">$COHR</span><span class="ticker-tag">$AAOI</span><span class="ticker-tag">$MTSI</span><span class="ticker-tag">$AVGO</span><span class="ticker-tag">$SMTC</span></div>
+  </div>
+  <div class="summary">CW 레이저/CPO 밸류체인 종합 코멘트. Sivers(SIVE.ST)를 서구권 4대 CPO 리더 중 하나(시총 약 $1.5B)로 재확인하며 검증된 병목 플레이로 강조. Lumentum(LITE)은 CPO 스케일업이 정상 궤도이며 중국 경쟁사는 수년 뒤처졌다고 언급. AAOI·MTSI는 레이저 공급 부족/인듐인 DFB 공급난을 확인하는 맥락, COHR·AVGO는 시총 비교 대상, SMTC는 HieFo 인수 이후 특별한 진전 없음.</div>
+  <div class="interp"><b>Claude 해석:</b> 오늘의 핵심 테마는 여전히 CPO/포토닉스 공급망. SIVE.ST와 LITE가 명확한 매수 컨빅션으로 유지되고 있으며, 나머지는 비교·맥락 언급 수준.</div>
+  <a class="source-link" href="https://x.com/aleabitoreddit/status/2087447527595692180" target="_blank">원문 보기 ↗</a>
+</div>
+
+<div class="card">
+  <div class="card-top">
+    <span class="date">8/12(수) 06:22</span>
+    <div class="tickers"><span class="ticker-tag">TYOHY</span></div>
+  </div>
+  <div class="summary">한 투자자가 Taiyo Yuden 지분 6분의 1을 매입한 대규모 베팅을 두고 "전설적인 행보"라며 감탄, 전개를 지켜보는 것이 흥미롭다고 언급.</div>
+  <div class="interp"><b>Claude 해석:</b> 본인의 직접 포지션이 아닌 제3자 베팅에 대한 감상평. 다만 MLCC(적층세라믹콘덴서) 밸류체인에 대한 관심 확대를 시사하는 신규 테마 단초로 해석 가능.</div>
+  <a class="source-link" href="https://x.com/aleabitoreddit/status/2087424400811507963" target="_blank">원문 보기 ↗</a>
+</div>
+
+<div class="card">
+  <div class="card-top">
+    <span class="date">8/12(수) 04:36</span>
+    <div class="tickers"><span class="ticker-tag">6976.T</span></div>
+  </div>
+  <div class="summary">"Leopold"라는 계정의 Taiyo Yuden(6976.T) 포지션에 동의하며, 글로벌 AI 공급망 내 MLCC 제조사로서의 가치를 강조.</div>
+  <div class="interp"><b>Claude 해석:</b> 위 TYOHY 포스트와 같은 맥락의 연속 코멘트. 다만 언급 이후 주가는 -12.6%로 부진해, 아직 시장이 테마에 동의하지 않는 상태.</div>
+  <a class="source-link" href="https://x.com/aleabitoreddit/status/2087397768314999183" target="_blank">원문 보기 ↗</a>
+</div>
+
+<div class="card">
+  <div class="card-top">
+    <span class="date">8/12(수) 01:08</span>
+    <div class="tickers"><span class="ticker-tag">$SMCI</span></div>
+  </div>
+  <div class="summary">SMCI 실적 컨퍼런스콜에서 CEO가 질문을 회피한 점을 비판, 투명성 부족을 지적.</div>
+  <div class="interp"><b>Claude 해석:</b> 명확한 부정적 톤. 다만 언급 이후 주가는 +18.3% 상승해 시장 반응은 Serenity의 우려와 반대로 흘러간 케이스 — 경영진 리스크는 여전히 유효한 관찰 포인트.</div>
+  <a class="source-link" href="https://x.com/aleabitoreddit/status/2087345398130282801" target="_blank">원문 보기 ↗</a>
+</div>
+
+<div class="card">
+  <div class="card-top">
+    <span class="date">8/12(수) 00:06</span>
+    <div class="tickers"><span class="ticker-tag">$AXTI</span></div>
+  </div>
+  <div class="summary">AXTI를 Lumentum向 추가 InP(인듐인) 기판을 공급하는 훌륭한 파트너사로 강조, 레이저 생산능력 부족 국면의 수혜주로 재확인.</div>
+  <div class="interp"><b>Claude 해석:</b> 언급 이후 +8.4% 상승하며 테마가 실제로 작동 중. 포토닉스 상류 공급망(기판 소재)向 핵심 컨빅션 종목.</div>
+  <a class="source-link" href="https://x.com/aleabitoreddit/status/2087329770879197549" target="_blank">원문 보기 ↗</a>
+</div>
+
+<div class="card">
+  <div class="card-top">
+    <span class="date">8/11(화) 20:16</span>
+    <div class="tickers"><span class="ticker-tag">$SIVEF</span></div>
+  </div>
+  <div class="summary">LITE의 강력한 CPO 코멘트가 SIVEF(Sivers 미국 OTC 티커)에도 긍정적 리드스루라고 평가.</div>
+  <div class="interp"><b>Claude 해석:</b> SIVE.ST와 동일 종목의 OTC 상장분. 같은 포토닉스 테마의 파생 언급으로, 유동성이 낮은 OTC 특성상 신뢰도는 상대적으로 낮게 볼 것.</div>
+  <a class="source-link" href="https://x.com/aleabitoreddit/status/2087271842696593764" target="_blank">원문 보기 ↗</a>
+</div>
+
+<div class="card">
+  <div class="card-top">
+    <span class="date">8/11(화) 02:19</span>
+    <div class="tickers"><span class="ticker-tag">$CCXI</span><span class="ticker-tag">$NVDA</span><span class="ticker-tag">$AMZN</span><span class="ticker-tag">UNITREE</span></div>
+  </div>
+  <div class="summary">Agility Robotics 관련 스레드 지속. CCXI를 통해 $2.5B 프리머니 밸류에서 Agility 익스포저를 실제 보유 중이라 재확인. NVDA·AMZN은 Agility 투자자로만 언급. Unitree IPO 리테일 수요 폭발, $30B+ 밸류 시초가 형성 가능성 재언급.</div>
+  <div class="interp"><b>Claude 해석:</b> 아침 리포트와 동일한 스탠스 유지 — CCXI는 Serenity가 실보유를 공개한 몇 안 되는 종목으로 신뢰도가 가장 높음.</div>
+  <a class="source-link" href="https://x.com/aleabitoreddit/status/2087000954742927390" target="_blank">원문 보기 ↗</a>
+</div>
+
+<div class="card">
+  <div class="card-top">
+    <span class="date">8/11(화) 01:29</span>
+    <div class="tickers"><span class="ticker-tag">$AMD</span><span class="ticker-tag">$RIOT</span></div>
+  </div>
+  <div class="summary">AMD가 Riot과의 기존 딜 옵션을 행사해 2027년 5월까지 50MW 전량 확장 목표. RIOT은 Anthropic과 20년간 최대 $9.1B(확장 시 $16.1B) 규모 전력 계약을 체결, 2027년 12월까지 첫 96MW 목표.</div>
+  <div class="interp"><b>Claude 해석:</b> 아침 픽에서 이어지는 흐름 그대로 유지. AI 인프라向 전력(Neocloud/Colo) 테마가 계속 핵심 축으로 작동 중.</div>
+  <a class="source-link" href="https://x.com/aleabitoreddit/status/2086988264448409739" target="_blank">원문 보기 ↗</a>
+</div>
+
+<h2>섹션 2. 주목 종목 요약표</h2>
+
+<table>
+  <tr><th>종목</th><th>방향</th><th>핵심 근거</th><th>신뢰도</th></tr>
+  <tr><td><b>$NBIS</b></td><td class="buy">매수</td><td>매출 성장·수요 가시성·AI Cloud 마진 확대, 누적 687회 언급 최고 컨빅션주</td><td class="conf-high">상</td></tr>
+  <tr><td><b>$SIVE.ST</b></td><td class="buy">매수</td><td>서구권 4대 CPO 리더 중 하나, 레이저 공급 부족 핵심 병목주</td><td class="conf-high">상</td></tr>
+  <tr><td><b>$CCXI</b></td><td class="buy">매수(보유중)</td><td>Agility Robotics 익스포저 실보유 공개, $2.5B 프리머니</td><td class="conf-high">상</td></tr>
+  <tr><td><b>$AXTI</b></td><td class="buy">매수</td><td>Lumentum向 InP 기판 공급, 언급 이후 +8.4%</td><td class="conf-high">상</td></tr>
+  <tr><td><b>$AEHR</b></td><td class="buy">매수(신규 촉매)</td><td>AI 프로세서 번인 시스템 $22M 후속 수주</td><td class="conf-mid">중</td></tr>
+  <tr><td><b>$LITE</b></td><td class="buy">매수</td><td>CPO 스케일업 정상 궤도, 중국 경쟁사 수년 뒤처짐</td><td class="conf-mid">중</td></tr>
+  <tr><td><b>$RIOT / $AMD</b></td><td class="buy">매수</td><td>Anthropic 최대 $16.1B 전력 계약 + AMD 옵션 행사 확장</td><td class="conf-mid">중</td></tr>
+  <tr><td><b>$SMCI</b></td><td class="sell">매도(경계)</td><td>CEO 실적콜 질문 회피, 투명성 우려 (단, 주가는 +18.3%로 역행)</td><td class="conf-low">하</td></tr>
+  <tr><td><b>6976.T / TYOHY</b></td><td class="buy">관심(신규 테마)</td><td>Taiyo Yuden MLCC 밸류체인, 언급 이후 -12.6% 부진</td><td class="conf-low">하</td></tr>
+  <tr><td><b>$CRWV / $IREN / $COHR / $AVGO</b></td><td class="hold">관망</td><td>비교·맥락용 언급, 직접 스탠스 없음</td><td class="conf-low">하</td></tr>
+</table>
+
+<h2>섹션 3. 내일 주목 픽</h2>
+
+<div class="picks">
+  <div class="pick-card">
+    <div class="pick-rank">PICK 1</div>
+    <div class="pick-ticker">$NBIS</div>
+    <div class="pick-desc">누적 687회 언급, Serenity 최고 컨빅션 Neocloud주. 매출·수요·마진 3박자 모두 강세론 유지. 약세론자 반박 톤이 가장 강했던 종목.</div>
+  </div>
+  <div class="pick-card">
+    <div class="pick-rank">PICK 2</div>
+    <div class="pick-ticker">$SIVE.ST</div>
+    <div class="pick-desc">CPO 레이저 공급망 핵심 병목주. 아침 픽에서 이어져 오늘도 재확인된 유일한 연속 최고 컨빅션 종목.</div>
+  </div>
+  <div class="pick-card">
+    <div class="pick-rank">PICK 3</div>
+    <div class="pick-ticker">$AEHR / $AXTI</div>
+    <div class="pick-desc">AEHR는 $22M 신규 수주라는 명확한 펀더멘털 촉매, AXTI는 InP 기판 공급 확대로 +8.4% 실질 반응 확인된 상류 공급망 수혜주.</div>
+  </div>
+</div>
+
+<h2>섹션 4. 아침 대비 변화</h2>
+
+<div class="compare-row">
+  <span class="compare-ticker">$SIVE.ST</span>
+  <span class="compare-morning">아침: PICK 1, 매수(레이저 파티 반등)</span>
+  <span class="compare-arrow">→</span>
+  <span class="compare-evening buy">저녁: 매수 유지, CPO 4대 리더로 재확인 (변화 없음)</span>
+</div>
+<div class="compare-row">
+  <span class="compare-ticker">$CCXI</span>
+  <span class="compare-morning">아침: PICK 2, 매수(실보유 공개)</span>
+  <span class="compare-arrow">→</span>
+  <span class="compare-evening buy">저녁: 동일 스레드 재언급, 스탠스 변화 없음</span>
+</div>
+<div class="compare-row">
+  <span class="compare-ticker">$RIOT / $AMD</span>
+  <span class="compare-morning">아침: PICK 3, 매수(Anthropic 전력 계약)</span>
+  <span class="compare-arrow">→</span>
+  <span class="compare-evening buy">저녁: 동일 근거로 유지, 신규 재료 추가 없음</span>
+</div>
+<div class="compare-row">
+  <span class="compare-ticker">$NBIS</span>
+  <span class="compare-morning">아침: 미언급 (실적 발표 예정 캘린더로만 등장)</span>
+  <span class="compare-arrow">→</span>
+  <span class="compare-evening buy">저녁: 신규 최상단 컨빅션주로 급부상 (오늘의 최대 변화)</span>
+</div>
+<div class="compare-row">
+  <span class="compare-ticker">$SMCI</span>
+  <span class="compare-morning">아침: 미언급</span>
+  <span class="compare-arrow">→</span>
+  <span class="compare-evening sell">저녁: CEO 투명성 비판으로 신규 부정적 코멘트 등장</span>
+</div>
+<div class="compare-row">
+  <span class="compare-ticker">$AAOI</span>
+  <span class="compare-morning">아침: 관망(하), Barron's 반박성 포스트</span>
+  <span class="compare-arrow">→</span>
+  <span class="compare-evening hold">저녁: CPO 그룹 코멘트 내 맥락 언급으로 격하, 신뢰도 유지</span>
+</div>
+
+<footer>
+  * Not Financial Advice, DYOR. Serenity 원문 기반 요약이며 투자 조언이 아닙니다.<br>
+  데이터 출처: serenitystock.com (Serenity 공개 포스트 아카이빙 트래커) · 원문은 각 카드의 링크에서 확인 가능
+</footer>
+
+</body>
+</html>
