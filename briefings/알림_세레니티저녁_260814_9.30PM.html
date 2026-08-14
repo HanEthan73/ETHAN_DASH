@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity 저녁 인사이트 | @aleabitoreddit | 2026-08-14</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0f0f1a;
+    color: #e8e8f0;
+    font-family: 'Segoe UI', 'Malgun Gothic', -apple-system, sans-serif;
+    line-height: 1.6;
+    padding: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  header {
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 16px;
+    margin-bottom: 28px;
+  }
+  header h1 {
+    color: #ffd700;
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+  header p {
+    color: #a0a0b8;
+    font-size: 13px;
+  }
+  section {
+    margin-bottom: 36px;
+  }
+  section h2 {
+    color: #ffd700;
+    font-size: 18px;
+    margin-bottom: 14px;
+    border-left: 4px solid #ffd700;
+    padding-left: 10px;
+  }
+  .card {
+    background: #1a1a2e;
+    border: 1px solid #2a2a42;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .card .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .card .date {
+    color: #8888aa;
+    font-size: 12px;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 12px;
+  }
+  .tag.buy { background: #1e3a2a; color: #4ade80; }
+  .tag.sell { background: #3a1e1e; color: #f87171; }
+  .tag.watch { background: #3a331e; color: #fbbf24; }
+  .ticker {
+    color: #ffd700;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .summary {
+    color: #d0d0e0;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .interpret {
+    background: #14141f;
+    border-left: 3px solid #6366f1;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: #b8b8d0;
+    border-radius: 4px;
+  }
+  .interpret b { color: #a5a5f0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a1a2e;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  th, td {
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 13px;
+    border-bottom: 1px solid #2a2a42;
+  }
+  th {
+    background: #22223a;
+    color: #ffd700;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  td.ticker-cell { color: #ffd700; font-weight: 700; }
+  .conf-high { color: #4ade80; font-weight: 600; }
+  .conf-mid { color: #fbbf24; font-weight: 600; }
+  .conf-low { color: #f87171; font-weight: 600; }
+  .picks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .pick-card {
+    background: linear-gradient(145deg, #1a1a2e, #22223a);
+    border: 1px solid #ffd700;
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .pick-card .rank {
+    color: #ffd700;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .pick-card .ticker-big {
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .pick-card p {
+    font-size: 13px;
+    color: #c8c8dc;
+  }
+  .compare {
+    background: #1a1a2e;
+    border: 1px solid #2a2a42;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .compare .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #22223a;
+    font-size: 13px;
+  }
+  .compare .row:last-child { border-bottom: none; }
+  .compare .lbl { color: #8888aa; min-width: 90px; font-weight: 600; }
+  .compare .am { color: #9ca3ff; flex: 1; }
+  .compare .pm { color: #d0d0e0; flex: 1; }
+  .arrow { color: #ffd700; font-weight: 700; }
+  footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid #2a2a42;
+    font-size: 12px;
+    color: #666680;
+    text-align: center;
+  }
+  .source-note {
+    font-size: 11px;
+    color: #55557a;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🌙 Serenity 저녁 인사이트 | @aleabitoreddit | 2026-08-14</h1>
+  <p>AI/반도체 공급망 투자 인플루언서 · 팔로워 약 91만 · Claude 자동 수집 리포트 (미국장 개장 후 저녁 9:30 실행)</p>
+  <p class="source-note">※ Chrome 브라우저 미연결로 WebSearch + 뉴스매체(BigGo Finance, 24/7 Wall St., Yahoo Finance) + 3rd-party 트래커(trackserenity.com) 기반 수집. X 원문 임베드가 뉴스 기사에 인용된 경우 이를 근거로 재구성했으며, 오늘 저녁 시간대(한국시간) 단독 신규 포스트는 실시간 접속 없이는 확인이 제한적이었음을 밝힙니다.</p>
+</header>
+
+<section>
+  <h2>① 오늘 장중 포스트 인사이트</h2>
+
+  <div class="card">
+    <div class="meta">
+      <span class="date">2026-08-09~10 (주말~월요일 장중)</span>
+      <span class="tag buy">펀더멘털 방어 · 핵심 포스트</span>
+    </div>
+    <div class="ticker">$AAOI · $COHR · $LITE · 메모리 전반($MU/삼성/SK하이닉스)</div>
+    <div class="summary">Citrini 애널리스트 Jukan이 "메모리 매도, 광통신 매수" 단기 전략을 제시(레버리지 ETF 청산, Rubin Ultra의 HBM 축소, 메모리 가격 피크론 근거)하자 Serenity가 정면 반박. "AAOI는 $75일 때나 $140일 때나 같은 회사, 삼성도 시총 9800억달러일 때나 1.5조달러일 때나 같은 회사 — 바뀐 건 밸류에이션과 시장 내러티브뿐"이라며 코히런트·루멘텀의 레이저 부품은 7월 급락 당시에도 이미 향후 2년치 완판 상태였다고 지적. 메모리 저가매수 관점도 재확인.</div>
+    <div class="interpret"><b>Claude 해석:</b> 이번 저녁 리포트의 핵심 근거. Serenity는 "광통신 vs 메모리" 이분법 자체를 노이즈로 규정하고 양쪽 다 매수 유지 — 단기 로테이션에 흔들리지 말라는 메시지. 실제로 오늘(8/14) 미국장에서 광통신 종목들이 큰 폭 조정을 보인 만큼, 이 발언의 정확성이 시험대에 올라 있음.</div>
+  </div>
+
+  <div class="card">
+    <div class="meta">
+      <span class="date">2026-08-12 (Nebius 실적 발표 직후)</span>
+      <span class="tag buy">간접 매수 근거</span>
+    </div>
+    <div class="ticker">$NBIS (Nebius, 참고 종목)</div>
+    <div class="summary">"$NBIS 가이던스가 또 미쳤다"며 매출 $582.3M(+454% YoY, +46% QoQ), AI Cloud 조정 EBITDA 마진 약 50%, 현금 $8.04B 보유를 언급. 2026 매출 가이던스($3.0~3.4B)를 상향 없이 유지한 점에 대해 "이미 워낙 커서 상향까지는 기대 안 했다"고 코멘트.</div>
+    <div class="interpret"><b>Claude 해석:</b> 직접 보유 종목은 아니지만, 하이퍼스케일러/뉴클라우드向 AI 인프라 수요가 여전히 견조하다는 방증으로 활용 — 상류 반도체·광학 부품 수요 논리의 근거 자료로 인용한 것으로 보임.</div>
+  </div>
+
+  <div class="card">
+    <div class="meta">
+      <span class="date">2026-08-12~13 (빅테크 실적 시즌 리캡)</span>
+      <span class="tag buy">매크로 확신 강화</span>
+    </div>
+    <div class="ticker">$AMZN · $META · $GOOGL · $MSFT (capex 리캡)</div>
+    <div class="summary">4대 빅테크의 2026년 합산 capex 가이던스가 $720~745B로 상향(기존 $695~725B). Amazon $220B, Google $195~205B, Meta $130~145B, Microsoft $175B. "디레버리징과 마진콜성 청산이 계속될 순 있지만, 중장기로 업스트림 반도체·뉴클라우드에 대해 어떻게 약세일 수 있는지 모르겠다"고 언급.</div>
+    <div class="interpret"><b>Claude 해석:</b> 단기 변동성과 별개로 수요 사이드(capex)는 계속 확대 중이라는 매크로 근거. Serenity 프레임워크의 최상단 전제(하이퍼스케일러 capex → 공급망 병목)를 재확인하는 포스트.</div>
+  </div>
+
+  <div class="card">
+    <div class="meta">
+      <span class="date">2026-08-07~08</span>
+      <span class="tag buy">증설 모멘텀</span>
+    </div>
+    <div class="ticker">$TSEM (Tower Semi) · $AAOI</div>
+    <div class="summary">같은 날 두 건의 증설 발표를 언급 — Tower Semiconductor(일본 정부 지원)가 300mm 웨이퍼 기반 실리콘포토닉스(SiPho)·SiGe·첨단패키징 능력 확장을 발표(순이익 목표 $1.2B), AAOI도 별도 증설 계획을 공개.</div>
+    <div class="interpret"><b>Claude 해석:</b> 공급망 병목 완화를 위한 업계 전반의 캐파 확대 움직임. 병목 테제가 유효한 만큼 증설 자체는 장기적으로 긍정적이나, 실제 가동까지의 시차(리드타임) 리스크는 별도로 볼 필요.</div>
+  </div>
+
+  <div class="card">
+    <div class="meta">
+      <span class="date">2026-08-09~10 (COHR 실적 전)</span>
+      <span class="tag watch">바닥론</span>
+    </div>
+    <div class="ticker">$INTC ~ $LITE (반도체 전반)</div>
+    <div class="summary">"반도체 섹터가 바닥에 가까워진 것 같다는 게 내 추측이다. $RDDT 상의 다들 계좌가 0이 됐는지가 좋은 지표"라는 반농담조 코멘트.</div>
+    <div class="interpret"><b>Claude 해석:</b> 정성적 바닥 신호(리테일 항복 매물)를 근거로 든 것으로, 정량적 근거는 약함. 참고용으로만 활용 권장.</div>
+  </div>
+
+</section>
+
+<section>
+  <h2>② 오늘 실제 시황 확인 (Claude 팩트체크)</h2>
+  <div class="card">
+    <div class="meta">
+      <span class="date">2026-08-14 미국장</span>
+      <span class="tag sell">광통신 복합 조정</span>
+    </div>
+    <div class="ticker">$AAOI -2.08% · $AXTI -16.67% · $COHR -14.24% · $LITE -8.61%</div>
+    <div class="summary">AAOI 종가 $132.81(장중 $128.80~148.90 변동), 시간외 -1.00%. AXT(AXTI)는 실적 흑자전환·InP 수요 서프라이즈에도 고객 집중도·지정학 리스크 우려로 $73.81까지 급락(-16.67%). COHR도 8/12 실적 발표 후 조정 지속, $325.15(-14.24%). LITE도 -8.61%. 반면 SIVE(스톡홀름)는 -1.41%로 상대적으로 견조.</div>
+    <div class="interpret"><b>Claude 해석:</b> Serenity가 지난 주말 "펀더멘털은 안 변했다"고 방어했던 바로 그 광통신 밸류체인이 오늘 실제로 두 자릿수 조정을 겪음. 실적 자체는 대체로 견조했던 만큼(AXTI 흑자전환, AAOI 8/6 실적 호조) 이번 조정은 "실적 앞두고/직후 차익실현" 성격에 가까워 보이나, Serenity의 "노이즈일 뿐" 주장이 향후 며칠간 재검증받는 국면.</div>
+  </div>
+</section>
+
+<section>
+  <h2>③ 주목 종목 요약표</h2>
+  <table>
+    <thead>
+      <tr><th>종목</th><th>방향</th><th>핵심 근거</th><th>신뢰도</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ticker-cell">$AAOI</td><td>매수</td><td>펀더멘털 최우선 확신 종목. 오늘 -2%는 상대적으로 선방, "$75든 $140이든 같은 회사" 발언</td><td class="conf-high">상</td></tr>
+      <tr><td class="ticker-cell">메모리(MU/삼성/SK하이닉스)</td><td>매수</td><td>Optics vs Memory 논쟁에서 Serenity가 저가매수 관점 재확인, 밸류에이션 저평가 주장</td><td class="conf-mid">중</td></tr>
+      <tr><td class="ticker-cell">$SIVE (Sivers Semi)</td><td>매수</td><td>Phase3 CPO 로테이션 핵심, 오늘 조정폭도 -1.4%로 상대적으로 안정</td><td class="conf-high">상</td></tr>
+      <tr><td class="ticker-cell">$COHR (Coherent)</td><td>매수/관망</td><td>펀더멘털은 견조하나 실적 후 변동성 극심(-14.2%), 단기 노이즈 vs 추세 전환 여부 확인 필요</td><td class="conf-mid">중</td></tr>
+      <tr><td class="ticker-cell">$LITE (Lumentum)</td><td>매수</td><td>CPO 밸류체인 편입, 오늘 -8.6% 조정은 섹터 전반 동반 하락</td><td class="conf-mid">중</td></tr>
+      <tr><td class="ticker-cell">$AXTI</td><td>매수(변동성 주의)</td><td>InP 병목 실적으로 검증되었으나 오늘 -16.7% 급락, 고객 집중도 리스크 부각</td><td class="conf-mid">중</td></tr>
+      <tr><td class="ticker-cell">$NBIS (참고)</td><td>관망</td><td>직접 보유 종목 아님, 하이퍼스케일러 수요 검증용 참고 자료로만 활용</td><td class="conf-low">하</td></tr>
+      <tr><td class="ticker-cell">$TSEM</td><td>관심</td><td>SiPho/SiGe 증설 발표, 장기 병목 완화 긍정적이나 가동 시차 존재</td><td class="conf-low">하</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>④ 내일 주목 픽</h2>
+  <div class="picks">
+    <div class="pick-card">
+      <div class="rank">PICK 1</div>
+      <div class="ticker-big">$AAOI</div>
+      <p>오늘 광통신 복합 조정 속에서도 -2%로 가장 선방한 종목. Serenity의 "밸류에이션은 노이즈, 펀더멘털이 본질" 주장의 시험대이자 여전히 최고 확신 픽. 내일 반등 여부가 이번 주 광통신 vs 메모리 논쟁의 1차 결론이 될 가능성.</p>
+    </div>
+    <div class="pick-card">
+      <div class="rank">PICK 2</div>
+      <div class="ticker-big">메모리 (MU/삼성/SK하이닉스)</div>
+      <p>Jukan의 "메모리 고점론"에 정면 반박한 Serenity의 저가매수 관점. Citi의 Micron 목표가 하향($1,400→$1,150)에도 불구, 밸류에이션 저평가·구조적 수요 확대를 근거로 반등 시나리오 제시 — 역발상 관점에서 주목.</p>
+    </div>
+    <div class="pick-card">
+      <div class="rank">PICK 3</div>
+      <div class="ticker-big">$SIVE (Sivers Semi)</div>
+      <p>오늘 조정 국면에서도 -1.4%로 가장 안정적이었던 Phase3(CPO) 핵심 종목. 아침 브리핑 대비 뷰 변화 없이 매수 기조 유지.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>⑤ 아침 대비 변화</h2>
+  <div class="compare">
+    <div class="row">
+      <span class="lbl">$AXTI</span>
+      <span class="am">아침: InP 병목 검증사례("The Strait of AXTI")로 상위 신뢰도 픽</span>
+      <span class="arrow">→</span>
+      <span class="pm">저녁: 흑자전환·InP 수요 서프라이즈에도 오늘 -16.7% 급락. 고객 집중도·지정학 리스크가 부각되며 단기 변동성 확대. 매수 기조는 유지하되 사이즈 관리 필요성 커짐</span>
+    </div>
+    <div class="row">
+      <span class="lbl">$SIVE</span>
+      <span class="am">아침: Phase3(CPO) 로테이션 핵심, 상위 신뢰도 픽</span>
+      <span class="arrow">→</span>
+      <span class="pm">저녁: 관점 변화 없음. 오늘 조정폭도 -1.4%로 광통신 복합 중 가장 안정적 — 상대적 강세 재확인</span>
+    </div>
+    <div class="row">
+      <span class="lbl">Taiyo Yuden(6976)</span>
+      <span class="am">아침: 기관 대량매도 이후 Serenity 소액 매수로 지지, 변동성 주의</span>
+      <span class="arrow">→</span>
+      <span class="pm">저녁: 추가 코멘트 확인 안됨(한국/일본장 마감). 관망 유지</span>
+    </div>
+    <div class="row">
+      <span class="lbl">신규 부각</span>
+      <span class="am">아침엔 언급 없던 이슈</span>
+      <span class="arrow">→</span>
+      <span class="pm">저녁: "광통신 vs 메모리" 로테이션 논쟁이 주말~월요일 사이 핵심 화두로 부상. Serenity는 양쪽 다 매수 유지하며 이분법 자체를 반박 — 오늘 실제 시황(광통신 급락)이 이 주장의 첫 시험대</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>* Not Financial Advice, DYOR. Serenity 원문 기반 요약이며 투자 조언이 아닙니다.</p>
+  <p class="source-note">Sources: x.com/aleabitoreddit · BigGo Finance · 24/7 Wall St. (Yahoo Finance 배포) · Yahoo Finance 시세 · trackserenity.com · KuCoin News 등 공개 보도 종합</p>
+</footer>
+
+</body>
+</html>
