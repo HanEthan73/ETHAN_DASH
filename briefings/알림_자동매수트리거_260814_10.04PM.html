@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 20px;
+    color: #ff7b72;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    color: #8b949e;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161b22;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+    font-size: 14px;
+  }
+  th {
+    background: #21262d;
+    color: #58a6ff;
+    font-weight: 600;
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+  .ticker {
+    font-weight: 700;
+    color: #f0f6fc;
+  }
+  .stop {
+    color: #ff7b72;
+  }
+  .target {
+    color: #3fb950;
+  }
+  .near {
+    color: #d29922;
+  }
+  .section-title {
+    font-size: 15px;
+    color: #8b949e;
+    margin: 20px 0 8px;
+  }
+  @media (max-width: 480px) {
+    th, td { font-size: 12px; padding: 8px 4px; }
+    h1 { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚨 자동매수 트리거 도달</h1>
+    <div class="timestamp">2026-08-14 22:04 KST</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>트리거가</th>
+          <th>손절</th>
+          <th>목표</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker">AVGO</td>
+          <td>$417.82</td>
+          <td>$420</td>
+          <td class="stop">$390</td>
+          <td class="target">$480</td>
+        </tr>
+        <tr>
+          <td class="ticker">GOOGL</td>
+          <td>$346.36</td>
+          <td>$385</td>
+          <td class="stop">$355</td>
+          <td class="target">$450</td>
+        </tr>
+        <tr>
+          <td class="ticker">ORCL</td>
+          <td>$156.22</td>
+          <td>$178</td>
+          <td class="stop">$162</td>
+          <td class="target">$225</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-title">⚠️ 2% 이내 근접 종목</div>
+    <table>
+      <thead>
+        <tr>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>트리거가</th>
+          <th>차이</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker">INTC</td>
+          <td>$104.56</td>
+          <td>$104.50</td>
+          <td class="near">+0.06 (0.06%)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
