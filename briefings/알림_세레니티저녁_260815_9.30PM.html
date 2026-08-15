@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity 저녁 인사이트 | @aleabitoreddit | 2026-08-15</title>
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --text: #e8e8f0;
+    --accent: #ffd700;
+    --card-bg: #1a1a2e;
+    --border: #2a2a40;
+    --muted: #9a9ab0;
+    --up: #4ade80;
+    --down: #f87171;
+    --flat: #9a9ab0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0 16px 60px;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  header {
+    padding: 28px 0 18px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+  }
+  header h1 {
+    font-size: 22px;
+    margin: 0 0 6px;
+    color: var(--accent);
+  }
+  header .sub {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .note {
+    background: #1e1e33;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 30px;
+  }
+  section { margin-bottom: 40px; }
+  h2 {
+    font-size: 17px;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .card-time {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: monospace;
+  }
+  .tickers {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .card-summary {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+  .card-interp {
+    font-size: 13px;
+    color: #c8c8dc;
+    background: #14141f;
+    border-radius: 5px;
+    padding: 10px 12px;
+    margin-top: 8px;
+  }
+  .card-interp b { color: var(--accent); }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .badge.up { background: rgba(74,222,128,0.15); color: var(--up); }
+  .badge.down { background: rgba(248,113,113,0.15); color: var(--down); }
+  .badge.flat { background: rgba(154,154,176,0.15); color: var(--flat); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  th, td {
+    padding: 10px 10px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  th {
+    color: var(--accent);
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  tr:hover { background: #16162a; }
+  .conf-high { color: var(--up); font-weight: 600; }
+  .conf-mid { color: var(--accent); font-weight: 600; }
+  .conf-low { color: var(--muted); font-weight: 600; }
+
+  .picks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .pick-card {
+    background: linear-gradient(145deg, #1a1a2e, #14141f);
+    border: 1px solid rgba(255,215,0,0.3);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .pick-rank {
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+  .pick-ticker {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 4px 0 8px;
+  }
+  .pick-reason { font-size: 13px; color: var(--text); }
+
+  .compare-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-size: 13.5px;
+  }
+  .compare-box .arrow { color: var(--accent); margin: 0 6px; }
+  .timeline-row {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .timeline-row:last-child { border-bottom: none; }
+  .timeline-time {
+    font-family: monospace;
+    color: var(--muted);
+    min-width: 60px;
+    font-size: 12px;
+  }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>🌙 Serenity 저녁 인사이트 | @aleabitoreddit | 2026-08-15</h1>
+  <div class="sub">저녁 9:30 정기 브리핑 · 미국장 개장 후 장중 코멘트 수집</div>
+</header>
+
+<div class="note">
+  ⚠ 데이터 수집 안내: Chrome 확장 미연결로 X(트위터) 직접 접속이 불가하여, WebSearch 및 보조 트래커(serenitystock.com, buzzberg.ai)를 통해 Serenity의 최신 공개 포스트를 수집했습니다.
+  수집 시점 기준 가장 최신 캡처된 포스트는 8/13(목)~8/14(금) KST 구간이며, 8/15 저녁 시점 실시간 신규 포스트는 위 소스에 아직 반영되지 않았을 수 있습니다. 원문은 각 카드의 X 링크에서 직접 확인 가능합니다.
+</div>
+
+<section>
+  <h2>1. 최신 포스트 인사이트</h2>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-time">08/14 11:29 KST</span>
+      <span class="tickers">$MU · $000660.KS(SK하이닉스) · $SSNLF(삼성전자) · $SNDK</span>
+      <span class="badge flat">관망/불명확</span>
+    </div>
+    <div class="card-summary">"메모리 병목 현상은 한 번도 바뀐 적이 없다" — 마이크론, SK하이닉스, 삼성, 샌디스크를 묶어 메모리 공급 부족 테마를 재확인.</div>
+    <div class="card-interp"><b>Claude 해석:</b> 특정 종목에 대한 신규 매수/매도 시그널이 아니라 기존 메모리 강세 테마의 재확인성 발언. 방향성이 "unclear"로 분류된 만큼 실제 트레이딩 액션보다는 매크로 내러티브 강화 목적으로 보임.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-time">08/14 08:30 KST</span>
+      <span class="tickers">$UMAC · $RCAT · $ONDS</span>
+      <span class="badge flat">중립(수혜 언급)</span>
+    </div>
+    <div class="card-summary">트럼프 행정부의 드론 공급망 관세가 UMAC·RCAT·ONDS 등 美 UAS/부품 공급사에 수혜가 된다고 언급.</div>
+    <div class="card-interp"><b>Claude 해석:</b> 정책 수혜 테마 성격의 짧은 코멘트. 강한 확신(bullish 명시) 표현은 아니었고 "관세 수혜"라는 팩트 전달에 가까움 — 단기 테마주로 분류하되 확신도는 낮게 볼 필요.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-time">08/14 04:06 KST</span>
+      <span class="tickers">$009150(삼성전기) · $161580(필옵틱스) · $LPK.DE · $011790.KS(SKC) · $8027(E&amp;R)</span>
+      <span class="badge up">글래스기판 장비주 강세</span>
+    </div>
+    <div class="card-summary">유리기판(Glass Substrate) 양산 램프업 임박 코멘트. 필옵틱스·LPK·E&amp;R은 양산 램프업 수혜로 강세 시각, SKC(011790)는 Absolics 양산 일정이 2026년 하반기→2027년 상반기로 지연됐다고 지적, 삼성전기(009150)도 투자 시작 시점을 2028년 상반기로 늦췄다고 언급.</div>
+    <div class="card-interp"><b>Claude 해석:</b> 같은 테마 안에서도 종목별 온도차가 뚜렷 — 장비/소재 공급사(필옵틱스, LPK, E&amp;R)는 긍정적으로, 완제품/기판 제조 진영(SKC, 삼성전기)은 일정 지연으로 부정적 뉘앙스. 신규 테마 진입 초기라 변동성 유의.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-time">08/13 14:02 KST</span>
+      <span class="tickers">$SMCI · $NVDA · $DELL</span>
+      <span class="badge up">SMCI 강세</span>
+    </div>
+    <div class="card-summary">SMCI의 FY2027 매출 가이던스($650~720억)가 현재 시총(약 250억) 대비 지나치게 저평가돼 있다고 평가. NVDA·DELL은 비교 참조로만 언급, 자체 방향성 제시 없음.</div>
+    <div class="card-interp"><b>Claude 해석:</b> 밀수 스캔들 등 리스크 요인이 여전한 가운데도 밸류에이션 근거로 매수 관점 유지. NVDA/DELL은 맥락상 언급일 뿐 실제 포지션 코멘트 아님 — 표에는 관망으로 분류.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-time">08/13 11:43 KST</span>
+      <span class="tickers">$UNITREE · $SPCX · $ORCL · Vantage · Anthropic · SHEIN</span>
+      <span class="badge flat">IPO 뉴스 라운드업</span>
+    </div>
+    <div class="card-summary">유니트리(휴머노이드 로봇) $90억 밸류 IPO는 긍정적 촉매로 평가. Vantage Data Centers $1000억 밸류 IPO 추진, SHEIN 이달 19일 상장 예정 소식 전달. Anthropic $2조 밸류에 대해서는 회의적 시각과 함께 자사 Opus 5 소비자용 모델 품질 비판.</div>
+    <div class="card-interp"><b>Claude 해석:</b> IPO 랠리 전반에 대해 선별적 태도 — 로보틱스(유니트리)엔 우호적, 반면 초고밸류 AI 기업(Anthropic)엔 회의적. 개별 상장사 코멘트라기보다 매크로 IPO 환경 점검 성격.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-time">08/13 10:17 KST</span>
+      <span class="tickers">$AAOI · $SIVE.ST · $POET</span>
+      <span class="badge up">포토닉스 강한 확신</span>
+    </div>
+    <div class="card-summary">AAOI를 "명백한 롱"(clear-as-day long)으로 재확인. SIVE는 CW 레이저 부문 기술 모트가 강하다고 평가. POET은 현금 약 8.3억 달러 보유·낮은 EV를 근거로 소규모 투기적 롱 진입, 다만 수요 가시성 부족은 인정.</div>
+    <div class="card-interp"><b>Claude 해석:</b> Serenity의 대표 확신 테마인 광학/포토닉스 밸류체인 재확인. AAOI·SIVE는 고확신, POET은 상대적으로 저확신(투기적) 포지션으로 구분해서 봐야 함.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-time">08/13 09:46 KST</span>
+      <span class="tickers">$IQE.L · $AXTI</span>
+      <span class="badge up">화합물반도체 확신 유지</span>
+    </div>
+    <div class="card-summary">IQE는 2월에 제시했던 논제(부채 제로화, 광학 부문 고성장)가 검증됐다고 평가하며 서방 공급망 내 핵심 병목으로 재확인. AXTI는 여전히 롱 포지션을 유지 중이라고 명시적으로 확인.</div>
+    <div class="card-interp"><b>Claude 해석:</b> 두 종목 모두 장기 확신 종목군 — 신규 진입이 아닌 기존 포지션 재확인 성격. 특히 AXTI는 454회 언급으로 Serenity 최다 언급 종목 중 하나로 신뢰도가 가장 높은 축에 속함.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-time">08/13 02:52 KST</span>
+      <span class="tickers">$SOI.PA (Soitec)</span>
+      <span class="badge flat">리서치 진행중</span>
+    </div>
+    <div class="card-summary">광학 병목 리서치의 일환으로 Soitec(SOI) 언급, 명시적 매수/매도 의견은 없음.</div>
+    <div class="card-interp"><b>Claude 해석:</b> 아직 결론이 난 리서치가 아니므로 관망으로 분류. 향후 포토닉스/SOI 기판 관련 후속 코멘트 주시 필요.</div>
+  </div>
+
+</section>
+
+<section>
+  <h2>2. 주목 종목 요약표</h2>
+  <table>
+    <thead>
+      <tr><th>종목</th><th>방향</th><th>핵심 근거</th><th>신뢰도</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>$AXTI</td><td>매수</td><td>InP 기판 포토닉스 최대 병목, 롱 포지션 명시적 재확인 (언급 454회 · mention 대비 +2.5%)</td><td class="conf-high">상</td></tr>
+      <tr><td>$SIVE.ST (Sivers)</td><td>매수</td><td>CW 레이저 기술 모트, 언급 대비 +23.4%로 모멘텀 강함</td><td class="conf-high">상</td></tr>
+      <tr><td>$AAOI</td><td>매수</td><td>"명백한 롱" 재확인, 언급 대비 +14.0%</td><td class="conf-high">상</td></tr>
+      <tr><td>$IQE.L</td><td>매수</td><td>부채 제로화·서방 공급망 핵심 병목, 언급 대비 +20.1%</td><td class="conf-high">상</td></tr>
+      <tr><td>$SMCI</td><td>매수(관망 병행)</td><td>FY27 매출가이던스 대비 저평가 주장, 단 밀수 이슈 리스크 상존</td><td class="conf-mid">중</td></tr>
+      <tr><td>$POET</td><td>매수(소규모 투기)</td><td>현금여력 양호·저EV, 그러나 수요 가시성 부족 스스로 인정</td><td class="conf-mid">중</td></tr>
+      <tr><td>글래스기판 장비주 (필옵틱스·LPK·E&amp;R)</td><td>매수</td><td>양산 램프업 임박 기대, 단 첫 언급이라 데이터 축적 부족</td><td class="conf-mid">중</td></tr>
+      <tr><td>$011790.KS (SKC)</td><td>관망</td><td>Absolics 양산 일정 지연(H2&#39;26→H1&#39;27)으로 부정적 뉘앙스</td><td class="conf-low">하</td></tr>
+      <tr><td>메모리 (MU·하이닉스·삼성·SNDK)</td><td>관망</td><td>"병목 불변" 재확인 발언이나 방향성 자체는 unclear로 표기</td><td class="conf-mid">중</td></tr>
+      <tr><td>Anthropic (비상장)</td><td>매도(회의적)</td><td>$2조 밸류에 회의적, 소비자용 Opus 5 품질 직접 비판</td><td class="conf-mid">중</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>3. 내일 주목 픽</h2>
+  <div class="picks">
+    <div class="pick-card">
+      <div class="pick-rank">PICK 1</div>
+      <div class="pick-ticker">$AXTI</div>
+      <div class="pick-reason">Serenity 최다 언급 확신 종목 중 하나(454회). InP 기판 공급 병목 테마 중심축이며 최근에도 롱 유지를 재확인. 화합물반도체 밸류체인의 대표 픽.</div>
+    </div>
+    <div class="pick-card">
+      <div class="pick-rank">PICK 2</div>
+      <div class="pick-ticker">$SIVE.ST (Sivers)</div>
+      <div class="pick-reason">CW 레이저 기술 모트 기반 최고 확신 픽. 언급 대비 +23.4%로 트래커 기준 모멘텀이 가장 강한 종목 중 하나.</div>
+    </div>
+    <div class="pick-card">
+      <div class="pick-rank">PICK 3</div>
+      <div class="pick-ticker">글래스기판 장비주 (필옵틱스 · LPK)</div>
+      <div class="pick-reason">양산 램프업 임박이라는 신규 테마의 초입 언급. 확신도는 아직 중간 수준이나 조기 진입 시 상방 여력 존재, 변동성은 유의.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>4. 아침 대비 변화</h2>
+  <div class="compare-box">
+    <div class="timeline-row">
+      <div class="timeline-time">새벽~아침</div>
+      <div>글래스 서브스트레이트 양산 이슈(필옵틱스·LPK 강세 vs SKC·삼성전기 지연 부정적)와 트럼프 드론 관세 수혜주(UMAC·RCAT·ONDS) 등 <b>신규 테마성 코멘트</b> 중심.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="timeline-time">오전~정오</div>
+      <div>SMCI 밸류에이션 강세론, IPO 뉴스(유니트리 긍정 / Anthropic 회의적) 등 <b>매크로·이벤트 코멘트</b>로 확장.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="timeline-time">늦은 오전(11:29)</div>
+      <div>메모리 반도체(MU·하이닉스·삼성·SNDK) "병목 불변" 발언으로 <b>기존 매크로 테마 재확인</b>에 무게중심 이동. 신규 방향 제시보다는 포토닉스(AAOI·SIVE·IQE·AXTI) 등 <b>기존 확신 종목 재확인</b> 성격이 강한 하루였음.</div>
+    </div>
+    <div style="margin-top:12px; color:var(--muted); font-size:12.5px;">
+      ※ 오늘(8/15) 아침 브리핑 원문에 대한 직접 대조 데이터가 이번 실행에서 확보되지 않아, 위 비교는 수집된 최신 포스트들의 시간 흐름(새벽→오전) 기준으로 작성했습니다.
+    </div>
+  </div>
+</section>
+
+<footer>
+  * Not Financial Advice, DYOR. Serenity 원문 기반 요약이며 투자 조언이 아닙니다.<br>
+  Generated by Claude · 2026-08-15 21:30 KST
+</footer>
+
+</div>
+</body>
+</html>
