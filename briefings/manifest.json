@@ -1,5 +1,18 @@
 [
     {
+        "name": "CODEX_알림_오후1차모니터_260829_1.32PM.html",
+        "updatedIso": "2026-08-29T13:32:00+09:00",
+        "updatedDate": "2026-08-29",
+        "updatedTime": "13:32",
+        "updatedEpoch": 1787977920,
+        "displayDate": "2026-08-29",
+        "displayTime": "1.32PM",
+        "displayEpoch": 1787977920,
+        "category": "stock",
+        "label": "CODEX 알림 오후 1차 모니터 260829 1.32PM",
+        "summary": "오후 1차 모니터 | 토요일 매수 0 | PLTR 제외 | TSM·ORCL 월요일 우선 감시"
+    },
+    {
         "name": "CODEX_알림_낮진입전략_260829_12.32PM.html",
         "updatedIso": "2026-08-29T12:32:00+09:00",
         "updatedDate": "2026-08-29",
