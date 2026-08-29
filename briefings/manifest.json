@@ -1,5 +1,18 @@
 [
   {
+    "name": "CODEX_알림_자동매수모니터_260830_12.02AM.html",
+    "updatedIso": "2026-08-30T00:02:00+09:00",
+    "updatedDate": "2026-08-30",
+    "updatedTime": "00:02",
+    "updatedEpoch": 1788015720,
+    "displayDate": "2026-08-30",
+    "displayTime": "12.02AM",
+    "displayEpoch": 1788015720,
+    "category": "stock",
+    "label": "CODEX 알림 자동매수 모니터 260830 12.02AM",
+    "summary": "자동매수 모니터 | 주말 관망 | 실제 매수 0 | No Chase"
+  },
+  {
     "name": "CODEX_알림_저녁브리핑_260829_10.32PM.html",
     "updatedIso": "2026-08-29T22:32:00+09:00",
     "updatedDate": "2026-08-29",
