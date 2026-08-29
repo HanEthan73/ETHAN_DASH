@@ -1,5 +1,18 @@
 [
     {
+        "name": "CODEX_알림_인사이트KB업데이트_260830_7.35AM.html",
+        "updatedIso": "2026-08-30T07:35:00+09:00",
+        "updatedDate": "2026-08-30",
+        "updatedTime": "07:35",
+        "updatedEpoch": 1788042900,
+        "displayDate": "2026-08-30",
+        "displayTime": "7.35AM",
+        "displayEpoch": 1788042900,
+        "category": "insight",
+        "label": "CODEX 알림 인사이트 KB 업데이트 260830 7.35AM",
+        "summary": "인사이트 KB 업데이트 | 주말 관망 | 매수 0 | 조건부 3 대기 3 제외 2 | No Chase"
+    },
+    {
         "name": "CODEX_알림_주식추천전략보고_260829_4.00PM.html",
         "updatedIso": "2026-08-29T16:00:00+09:00",
         "updatedDate": "2026-08-29",
