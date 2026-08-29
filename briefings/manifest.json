@@ -1,5 +1,18 @@
 [
     {
+        "name": "CODEX_알림_한국장마감PLTR모니터_260829_3.32PM.html",
+        "updatedIso": "2026-08-29T15:32:00+09:00",
+        "updatedDate": "2026-08-29",
+        "updatedTime": "15:32",
+        "updatedEpoch": 1787985120,
+        "displayDate": "2026-08-29",
+        "displayTime": "3.32PM",
+        "displayEpoch": 1787985120,
+        "category": "stock",
+        "label": "CODEX 알림 한국장 마감 PLTR 모니터 260829 3.32PM",
+        "summary": "한국장 마감 PLTR 모니터 | KOSPI -1.79% | PLTR $186.29 | No Chase"
+    },
+    {
         "name": "CODEX_알림_낮진입전략_260829_12.32PM.html",
         "updatedIso": "2026-08-29T12:32:00+09:00",
         "updatedDate": "2026-08-29",
