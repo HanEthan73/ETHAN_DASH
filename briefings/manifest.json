@@ -1,4 +1,17 @@
 [
+  {
+    "name": "CODEX_알림_오후1차모니터_260830_1.33PM.html",
+    "updatedIso": "2026-08-30T13:33:00+09:00",
+    "updatedDate": "2026-08-30",
+    "updatedTime": "13:33",
+    "updatedEpoch": 1788064380,
+    "displayDate": "2026-08-30",
+    "displayTime": "1.33PM",
+    "displayEpoch": 1788064380,
+    "category": "stock",
+    "label": "CODEX 알림 오후 1차 모니터 260830 1.33PM",
+    "summary": "오후 1차 모니터 | 주말 휴장 | PLTR 제외 | Gmail 신규 0건"
+  },
     {
         "name": "CODEX_알림_낮진입전략_260830_12.30PM.html",
         "updatedIso": "2026-08-30T12:30:00+09:00",
