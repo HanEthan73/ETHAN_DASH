@@ -13,19 +13,6 @@
         "summary": "주식 추천 전략보고 | 월요일 개장 전 선택 조정 | No Chase | 대기 4 제외 4"
     },
     {
-        "name": "CODEX_알림_인사이트KB업데이트_260831_7.35AM.html",
-        "updatedIso": "2026-08-31T07:35:00+09:00",
-        "updatedDate": "2026-08-31",
-        "updatedTime": "07:35",
-        "updatedEpoch": 1788129300,
-        "displayDate": "2026-08-31",
-        "displayTime": "7.35AM",
-        "displayEpoch": 1788129300,
-        "category": "insight",
-        "label": "CODEX 알림 인사이트KB업데이트 260831 7.35AM",
-        "summary": "인사이트 KB 업데이트 | 개장 전 재검증 | No Chase | 실제 체결 0"
-    },
-    {
         "name": "CODEX_알림_낮진입전략_260830_12.30PM.html",
         "updatedIso": "2026-08-30T12:30:00+09:00",
         "updatedDate": "2026-08-30",
