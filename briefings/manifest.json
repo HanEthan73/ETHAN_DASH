@@ -1,16 +1,16 @@
 [
     {
-        "name": "CODEX_알림_오전종합모니터_260830_9.32AM.html",
-        "updatedIso": "2026-08-30T09:32:00+09:00",
+        "name": "CODEX_알림_낮진입전략_260830_12.30PM.html",
+        "updatedIso": "2026-08-30T12:30:00+09:00",
         "updatedDate": "2026-08-30",
-        "updatedTime": "09:32",
-        "updatedEpoch": 1788049920,
+        "updatedTime": "12:30",
+        "updatedEpoch": 1788060600,
         "displayDate": "2026-08-30",
-        "displayTime": "9.32AM",
-        "displayEpoch": 1788049920,
+        "displayTime": "12.30PM",
+        "displayEpoch": 1788060600,
         "category": "stock",
-        "label": "CODEX 알림 오전 종합 모니터 260830 9.32AM",
-        "summary": "오전 종합 모니터 | 주말 점검형 선택 조정 | No Chase | 실제 체결 0"
+        "label": "CODEX 알림 낮 진입전략 260830 12.30PM",
+        "summary": "낮 진입전략 | 주말 점검형 선택 조정 | No Chase | 매수 0"
     },
     {
         "name": "CODEX_알림_주식추천전략보고_260829_4.00PM.html",
