@@ -1,5 +1,18 @@
 [
     {
+        "name": "CODEX_알림_저녁브리핑_260830_10.31PM.html",
+        "updatedIso": "2026-08-30T22:31:00+09:00",
+        "updatedDate": "2026-08-30",
+        "updatedTime": "22:31",
+        "updatedEpoch": 1788096660,
+        "displayDate": "2026-08-30",
+        "displayTime": "10.31PM",
+        "displayEpoch": 1788096660,
+        "category": "stock",
+        "label": "CODEX 알림 저녁 브리핑 260830 10.31PM",
+        "summary": "저녁 브리핑 | 주말 점검형 선택 조정 | No Chase | 실제 체결 0"
+    },
+    {
         "name": "CODEX_알림_낮진입전략_260830_12.30PM.html",
         "updatedIso": "2026-08-30T12:30:00+09:00",
         "updatedDate": "2026-08-30",
