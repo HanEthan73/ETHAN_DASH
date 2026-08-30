@@ -1,31 +1,5 @@
 [
     {
-        "name": "CODEX_알림_자동매수모니터_260831_12.01AM.html",
-        "updatedIso": "2026-08-31T00:01:00+09:00",
-        "updatedDate": "2026-08-31",
-        "updatedTime": "00:01",
-        "updatedEpoch": 1788102060,
-        "displayDate": "2026-08-31",
-        "displayTime": "12.01AM",
-        "displayEpoch": 1788102060,
-        "category": "stock",
-        "label": "CODEX 알림 자동매수 모니터 260831 12.01AM",
-        "summary": "자동매수 모니터 | 주말 휴장 | 실제 매수 0 | No Chase"
-    },
-    {
-        "name": "CODEX_알림_저녁브리핑_260830_10.31PM.html",
-        "updatedIso": "2026-08-30T22:31:00+09:00",
-        "updatedDate": "2026-08-30",
-        "updatedTime": "22:31",
-        "updatedEpoch": 1788096660,
-        "displayDate": "2026-08-30",
-        "displayTime": "10.31PM",
-        "displayEpoch": 1788096660,
-        "category": "stock",
-        "label": "CODEX 알림 저녁 브리핑 260830 10.31PM",
-        "summary": "저녁 브리핑 | 주말 점검형 선택 조정 | No Chase | 실제 체결 0"
-    },
-    {
         "name": "CODEX_알림_낮진입전략_260830_12.30PM.html",
         "updatedIso": "2026-08-30T12:30:00+09:00",
         "updatedDate": "2026-08-30",
