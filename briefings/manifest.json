@@ -1,5 +1,18 @@
 [
     {
+        "name": "CODEX_알림_인사이트KB업데이트_260901_7.35AM.html",
+        "updatedIso": "2026-09-01T07:35:00+09:00",
+        "updatedDate": "2026-09-01",
+        "updatedTime": "07:35",
+        "updatedEpoch": 1788215700,
+        "displayDate": "2026-09-01",
+        "displayTime": "7.35AM",
+        "displayEpoch": 1788215700,
+        "category": "insight",
+        "label": "CODEX 알림 인사이트 KB 업데이트 260901 7.35AM",
+        "summary": "인사이트 KB 업데이트 | 선별적 방어 | No Chase | 실제 체결 0"
+    },
+    {
         "name": "CODEX_알림_낮진입전략_260831_12.30PM.html",
         "updatedIso": "2026-08-31T12:30:00+09:00",
         "updatedDate": "2026-08-31",
