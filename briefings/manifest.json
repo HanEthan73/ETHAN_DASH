@@ -13,19 +13,6 @@
         "summary": "낮 진입전략 | 지정학 갭 경계 | No Chase | 매수 0"
     },
     {
-        "name": "CODEX_알림_오전종합모니터_260831_9.32AM.html",
-        "updatedIso": "2026-08-31T09:32:00+09:00",
-        "updatedDate": "2026-08-31",
-        "updatedTime": "09:32",
-        "updatedEpoch": 1788136320,
-        "displayDate": "2026-08-31",
-        "displayTime": "9.32AM",
-        "displayEpoch": 1788136320,
-        "category": "stock",
-        "label": "CODEX 알림 오전 종합 모니터 260831 9.32AM",
-        "summary": "오전 종합 모니터 | 지정학 갭 경계 | No Chase | 실제 체결 0"
-    },
-    {
         "name": "CODEX_알림_주식추천전략보고_260831_8.30AM.html",
         "updatedIso": "2026-08-31T08:30:00+09:00",
         "updatedDate": "2026-08-31",
