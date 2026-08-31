@@ -1,31 +1,5 @@
 [
     {
-        "name": "CODEX_알림_주식추천전략보고_260831_4.00PM.html",
-        "updatedIso": "2026-08-31T16:00:00+09:00",
-        "updatedDate": "2026-08-31",
-        "updatedTime": "16:00",
-        "updatedEpoch": 1788159600,
-        "displayDate": "2026-08-31",
-        "displayTime": "4.00PM",
-        "displayEpoch": 1788159600,
-        "category": "stock",
-        "label": "CODEX 알림 주식 추천 전략보고 260831 4.00PM",
-        "summary": "주식 추천 전략보고 | 지정학 갭 경계 | No Chase | 대기 4 제외 4"
-    },
-    {
-        "name": "CODEX_알림_한국장마감PLTR모니터_260831_3.32PM.html",
-        "updatedIso": "2026-08-31T15:32:00+09:00",
-        "updatedDate": "2026-08-31",
-        "updatedTime": "15:32",
-        "updatedEpoch": 1788157920,
-        "displayDate": "2026-08-31",
-        "displayTime": "3.32PM",
-        "displayEpoch": 1788157920,
-        "category": "stock",
-        "label": "CODEX 알림 한국장 마감 PLTR 모니터 260831 3.32PM",
-        "summary": "한국장 반등 | PLTR $128 대기 | No Chase | 체결 0"
-    },
-    {
         "name": "CODEX_알림_낮진입전략_260831_12.30PM.html",
         "updatedIso": "2026-08-31T12:30:00+09:00",
         "updatedDate": "2026-08-31",
