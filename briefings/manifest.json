@@ -1,5 +1,18 @@
 [
     {
+        "name": "CODEX_알림_오전종합모니터_260901_9.30AM.html",
+        "updatedIso": "2026-09-01T09:30:00+09:00",
+        "updatedDate": "2026-09-01",
+        "updatedTime": "09:30",
+        "updatedEpoch": 1788222600,
+        "displayDate": "2026-09-01",
+        "displayTime": "9.30AM",
+        "displayEpoch": 1788222600,
+        "category": "stock",
+        "label": "CODEX 알림 오전 종합 모니터 260901 9.30AM",
+        "summary": "오전 종합 모니터 | 중동 재격화 속 월말 혼조 | No Chase | 실제 체결 0"
+    },
+    {
         "name": "CODEX_알림_주식추천전략보고_260901_8.30AM.html",
         "updatedIso": "2026-09-01T08:30:00+09:00",
         "updatedDate": "2026-09-01",
