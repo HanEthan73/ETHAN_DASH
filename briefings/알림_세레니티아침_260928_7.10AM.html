@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity 아침 인사이트 | @aleabitoreddit | 2026-09-28</title>
+<style>
+  :root{
+    --bg:#0f0f1a;
+    --card:#171725;
+    --card2:#1c1c2e;
+    --text:#e8e8f0;
+    --sub:#a0a0b8;
+    --gold:#ffd700;
+    --green:#3ddc84;
+    --red:#ff5c5c;
+    --gray:#8c8ca0;
+    --border:#2a2a3e;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Segoe UI','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+    line-height:1.6;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:28px 20px 60px;}
+  header{
+    border-bottom:1px solid var(--border);
+    padding-bottom:20px;
+    margin-bottom:28px;
+  }
+  header .tag{
+    display:inline-block;
+    color:var(--gold);
+    font-size:12px;
+    letter-spacing:2px;
+    font-weight:700;
+    border:1px solid var(--gold);
+    border-radius:20px;
+    padding:4px 12px;
+    margin-bottom:12px;
+  }
+  h1{
+    font-size:26px;
+    margin:0 0 8px;
+    color:#fff;
+  }
+  header .meta{
+    color:var(--sub);
+    font-size:13px;
+  }
+  h2{
+    font-size:17px;
+    color:var(--gold);
+    border-left:4px solid var(--gold);
+    padding-left:10px;
+    margin:38px 0 16px;
+  }
+  .notice{
+    background:var(--card2);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px 16px;
+    font-size:12.5px;
+    color:var(--sub);
+    margin-bottom:6px;
+  }
+  .notice b{color:var(--gold);}
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:16px 18px;
+    margin-bottom:14px;
+  }
+  .card .row1{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:8px;
+  }
+  .date{
+    font-size:12px;
+    color:var(--sub);
+    font-weight:600;
+    letter-spacing:0.5px;
+  }
+  .tickers{
+    font-size:13px;
+    color:var(--gold);
+    font-weight:700;
+  }
+  .dir{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    padding:3px 10px;
+    border-radius:20px;
+  }
+  .dir.buy{background:rgba(61,220,132,0.12);color:var(--green);border:1px solid rgba(61,220,132,0.4);}
+  .dir.sell{background:rgba(255,92,92,0.12);color:var(--red);border:1px solid rgba(255,92,92,0.4);}
+  .dir.hold{background:rgba(140,140,160,0.15);color:var(--gray);border:1px solid rgba(140,140,160,0.4);}
+  .orig{
+    font-size:13.5px;
+    color:var(--text);
+    margin:8px 0;
+    padding:10px 12px;
+    background:var(--card2);
+    border-radius:8px;
+    border-left:3px solid var(--border);
+  }
+  .interp{
+    font-size:13px;
+    color:var(--sub);
+  }
+  .interp b{color:#c9c9ff;}
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--card);
+    border-radius:10px;
+    overflow:hidden;
+    font-size:13px;
+  }
+  th,td{
+    padding:11px 12px;
+    text-align:left;
+    border-bottom:1px solid var(--border);
+  }
+  th{
+    background:var(--card2);
+    color:var(--gold);
+    font-size:12px;
+    letter-spacing:0.5px;
+  }
+  tr:last-child td{border-bottom:none;}
+  .conf-high{color:var(--green);font-weight:700;}
+  .conf-mid{color:#f0c46a;font-weight:700;}
+  .conf-low{color:var(--gray);font-weight:700;}
+
+  .picks{display:flex;flex-direction:column;gap:12px;}
+  .pick{
+    background:linear-gradient(135deg, rgba(255,215,0,0.08), var(--card));
+    border:1px solid rgba(255,215,0,0.35);
+    border-radius:12px;
+    padding:16px 18px;
+  }
+  .pick .rank{
+    display:inline-block;
+    width:22px;height:22px;
+    background:var(--gold);
+    color:#151515;
+    border-radius:50%;
+    text-align:center;
+    line-height:22px;
+    font-size:12px;
+    font-weight:800;
+    margin-right:8px;
+  }
+  .pick .ticker{
+    font-size:16px;
+    font-weight:800;
+    color:#fff;
+  }
+  .pick p{margin:8px 0 0;font-size:13.5px;color:var(--sub);}
+
+  footer{
+    margin-top:40px;
+    padding-top:16px;
+    border-top:1px solid var(--border);
+    font-size:11.5px;
+    color:var(--gray);
+    text-align:center;
+    line-height:1.8;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="tag">MORNING INSIGHT · 7:10 AM</span>
+  <h1>Serenity 아침 인사이트</h1>
+  <div class="meta">@aleabitoreddit · 팔로워 약 91만+ · AI/반도체 공급망 투자 인플루언서 · 2026-09-28 (월)</div>
+</header>
+
+<div class="notice">
+  <b>데이터 수집 안내:</b> 이번 회차는 Claude in Chrome 미연결로 X(구 트위터) 직접 접속이 불가하여,
+  공개 검증 가능한 서드파티 트래커(semiconstocks.com, 원문 X 링크 포함), 신디케이션 뉴스(KuCoin/BlockBeats),
+  독립 리서치(Singularity Research Fund 딥다이브)를 교차 검증해 재구성했습니다.
+  확인 가능한 최신 발신 시점은 <b>2026-09-17 (트래커 갱신 2026-09-22)</b>이며, 이후 항목은 최근 확정된 테제 재확인 위주로 구성했습니다.
+  다음 회차부터는 브라우저 재연결 시 실시간 원문 기준으로 수집됩니다.
+</div>
+
+<h2>① 최근 포스트 인사이트</h2>
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09-17 (트래커 갱신 09-22)</span>
+    <span class="dir buy">매수(유지)</span>
+  </div>
+  <div class="tickers">$MU $SNDK</div>
+  <div class="orig">"Not sure how people are bearish on memory" — 인텔 CEO Lip-Bu Tan이 메모리 가격이 5~7배 상승했고 내년은 더 심해질 것이라 발언, 인텔 CPU 수요도 절반밖에 못 채운다고 언급.</div>
+  <div class="interp"><b>Claude 해석 ·</b> 세레니티의 '3단계 로테이션' 테제 중 <b>1단계 메모리</b>가 빅네임(인텔 CEO)의 공개 발언으로 사실 검증됨. 이 발언 직후 9/21 ARM·INTC·AMD가 10~17% 급등하며 시장이 후행 반응.</div>
+</div>
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09-17</span>
+    <span class="dir buy">매수 근거 강화</span>
+  </div>
+  <div class="tickers">메모리 밸류체인 (MU/SNDK 연동)</div>
+  <div class="orig">Winbond이 Infineon의 NOR 플래시 사업부를 $11.2억에 인수한다고 발표 — 레거시 메모리 공급 재편 가속.</div>
+  <div class="interp"><b>Claude 해석 ·</b> 메모리 공급망 재편/합종연횡이 본격화되고 있다는 방증. 타이트한 메모리 공급 내러티브를 뒷받침하는 팩트로, 신규 진입 시그널이라기보단 기존 메모리 롱 포지션에 대한 <b>보강 근거</b>.</div>
+</div>
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09-17</span>
+    <span class="dir buy">매수(유지)</span>
+  </div>
+  <div class="tickers">$NBIS</div>
+  <div class="orig">Nebius가 10월 1일부로 GPU 임대 가격을 재인상한다고 발표.</div>
+  <div class="interp"><b>Claude 해석 ·</b> GPU 가격결정력 강화는 네오클라우드 마진 개선 신호. 세레니티가 반복해온 '넥스트 AWS는 Nebius' 테제와 정합적이며, 3단계 로테이션 중 '컴퓨트를 굴리는' 구간에 해당.</div>
+</div>
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09-21 (시장 반응)</span>
+    <span class="dir hold">관망(검증구간)</span>
+  </div>
+  <div class="tickers">$ARM $INTC $AMD</div>
+  <div class="orig">인텔 CEO 메모리 발언 일주일 뒤 ARM·INTC·AMD가 10~17% 급등 — 메모리/AI 인프라 강세 재료 반영.</div>
+  <div class="interp"><b>Claude 해석 ·</b> 세레니티 분류상 '<b>Victory lap / 시장 검증</b>' 유형 — 이미 알려진 테제가 뒤늦게 가격에 반영되는 구간으로, 신규 진입보다는 밸류에이션·포지셔닝 리셋 여부를 먼저 확인할 시점.</div>
+</div>
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-08-15</span>
+    <span class="dir hold">계좌 근황(참고)</span>
+  </div>
+  <div class="tickers">포트폴리오 전반(AXTI/SIVE/AAOI 등)</div>
+  <div class="orig">7월 급락 이후 '블로업(파산) 루머'를 중국어 포스트로 직접 반박하며 YTD 수익률이 +2,411.84%로 유지되고 있다고 공개.</div>
+  <div class="interp"><b>Claude 해석 ·</b> 자진 신고 손익이라 액면 그대로 신뢰하기는 어렵지만, 7월 드로다운 이후에도 핵심 포지션을 유지·복구했다는 정황. <b>신뢰도 지표로만 참고</b>할 항목.</div>
+</div>
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-07-17</span>
+    <span class="dir hold">리스크 관리</span>
+  </div>
+  <div class="tickers">포트폴리오 전반</div>
+  <div class="orig">AI/메모리/광학 섹터 동반 급락장에서 월간 -49.4% 드로다운을 스스로 공개, 레버리지를 축소했다고 밝힘.</div>
+  <div class="interp"><b>Claude 해석 ·</b> 손실도 투명하게 공개하는 패턴은 신뢰도 참고 요소. 과열 국면에서 레버리지를 낮췄다는 점에서 광학·메모리 섹터의 단기 조정 리스크를 실제로 체감했음을 시사.</div>
+</div>
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-06-08</span>
+    <span class="dir buy">매수(신규 테마)</span>
+  </div>
+  <div class="tickers">300376.SZ(易事特) · 800V DC 전력 테마</div>
+  <div class="orig">'800V DC 전력' 테마 종목 리스트 공개, 중국 A주 이스터(300376.SZ)가 포스트 직후 상한가(+20%) 기록.</div>
+  <div class="interp"><b>Claude 해석 ·</b> 광학/메모리 중심이던 관심사가 <b>AI 데이터센터 전력 인프라</b>로 확장. 미국 상장 대안으로는 XLU·VST·CEG(전력/유틸리티) 참고 가능하나, 원 종목은 국내 접근성·유동성이 낮아 신뢰도는 낮게 책정.</div>
+</div>
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-05-26</span>
+    <span class="dir buy">매수(최고 확신주)</span>
+  </div>
+  <div class="tickers">$SIVE</div>
+  <div class="orig">"SIVE is the most attractive CPO stock for me despite high volatility" — 191번째 SIVE 언급, 시총 $23억, CPO 레이저 공급 chokepoint 강조.</div>
+  <div class="interp"><b>Claude 해석 ·</b> 세레니티 커버리지 중 최다 반복 종목. 3/16 최초 콜(7.37 SEK) 대비 19.6배 상승 — <b>최고 확신주</b>지만 이미 널리 알려진 종목이라 신규 진입 메리트는 초기 대비 낮음.</div>
+</div>
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-06 (일자 특정 어려움)</span>
+    <span class="dir sell">매도(테제 전환)</span>
+  </div>
+  <div class="tickers">$IREN</div>
+  <div class="orig">"$6,000,000,000 dilution... I would not go long until the ATM is finished" — $60억 규모 ATM 증자를 이유로 기존 롱에서 약세로 전환.</div>
+  <div class="interp"><b>Claude 해석 ·</b> 대규모 증자에 따른 희석 리스크를 명확한 매도 근거로 제시. 세레니티는 ATM 소진 전까지 재진입하지 않겠다고 명시 — 테제가 바뀌면 즉시 공개 전환하는 패턴.</div>
+</div>
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-03-16 (베이스라인)</span>
+    <span class="dir buy">매수(최초 진입)</span>
+  </div>
+  <div class="tickers">$SIVE</div>
+  <div class="orig">"I believe SIVE could be the next LITE" — SIVE 최초 공개 롱 진입, 당시가 7.37 SEK.</div>
+  <div class="interp"><b>Claude 해석 ·</b> 현재 최고 확신주(SIVE)의 출발점이 된 콜. CPO 광원(레이저) 공급망 chokepoint 테제의 원형으로, 이후 모든 SIVE 재확인 포스트의 근거가 된 최초 리서치.</div>
+</div>
+
+<h2>② 주목 종목 요약표</h2>
+<table>
+<tr><th>종목</th><th>방향</th><th>핵심 근거</th><th>신뢰도</th></tr>
+<tr><td><b>SIVE</b></td><td>매수(홀드)</td><td>CPO 레이저 공급 chokepoint, 191회 반복 언급, 최초 콜 대비 19.6배</td><td class="conf-high">상</td></tr>
+<tr><td><b>AXTI</b></td><td>매수(홀드)</td><td>InP 기판 독점적 지위, IntelliEPI CEO가 'InP 공급 부족' 발언으로 사후 검증</td><td class="conf-high">상</td></tr>
+<tr><td><b>MU / SNDK</b></td><td>매수</td><td>인텔 CEO 메모리 가격 5~7배 발언, 3단계 로테이션 1단계 재점화, Winbond-Infineon NOR 인수</td><td class="conf-high">상</td></tr>
+<tr><td><b>NBIS</b></td><td>매수</td><td>10/1 GPU 임대가 재인상 → 마진 개선, '넥스트 AWS' 테제</td><td class="conf-mid">중</td></tr>
+<tr><td><b>AAOI</b></td><td>매수(홀드)</td><td>$84 진입, 광트랜시버+ELSFP 겸업, 2027 하반기 매출 10배 전망</td><td class="conf-mid">중</td></tr>
+<tr><td><b>ARM / INTC / AMD</b></td><td>관망</td><td>9/21 10~17% 급등은 이미 알려진 테제의 사후 시장 검증(Victory lap)</td><td class="conf-mid">중</td></tr>
+<tr><td><b>IREN</b></td><td>매도/관망</td><td>$60억 ATM 증자로 희석 리스크, 소진 전까지 재진입 보류 명시</td><td class="conf-mid">중</td></tr>
+<tr><td><b>300376.SZ (易事特)</b></td><td>매수(신규·고변동)</td><td>800V DC 전력 테마, 포스트 직후 상한가(+20%), 다만 접근성·유동성 낮음</td><td class="conf-low">하</td></tr>
+</table>
+
+<h2>③ 오늘의 핵심 픽</h2>
+<div class="picks">
+  <div class="pick">
+    <div><span class="rank">1</span><span class="ticker">SIVE — 최고 확신주</span></div>
+    <p>CPO(공동패키지광학) 차세대 레이저 광원의 공급 chokepoint. 191회 반복 언급 + 최초 콜 대비 19.6배 상승한 세레니티 대표 종목. 다만 이미 시장에 널리 알려져 신규 진입 시점의 비대칭성은 초기 대비 축소.</p>
+  </div>
+  <div class="pick">
+    <div><span class="rank">2</span><span class="ticker">MU / SNDK — 메모리 로테이션 1단계 재점화</span></div>
+    <p>인텔 CEO의 '메모리 5~7배 상승' 공개 발언 + Winbond-Infineon NOR 인수로 공급 타이트 내러티브가 사실로 확인. 9/21 ARM·INTC·AMD 급등이 후행 검증한 만큼 메모리 밸류체인 전반에 대한 관심 지속 근거.</p>
+  </div>
+  <div class="pick">
+    <div><span class="rank">3</span><span class="ticker">NBIS — 네오클라우드 가격결정력 스토리</span></div>
+    <p>10/1 GPU 임대가 재인상 발표로 마진 개선 시그널. '3단계 로테이션'의 컴퓨트 구간이자 세레니티가 지속적으로 강조해온 '차세대 AWS' 테제와 정합.</p>
+  </div>
+</div>
+
+<footer>
+  * Not Financial Advice, DYOR. Serenity(@aleabitoreddit) 원문 기반 요약이며 투자 조언이 아닙니다.<br>
+  본 리포트는 자진 신고된 수익률·포지션을 검증 없이 인용한 서드파티 자료를 포함하며, 생존자 편향·선택 편향 가능성이 있습니다.<br>
+  Claude 자동 생성 · 2026-09-28 07:10 AM
+</footer>
+
+</div>
+</body>
+</html>
