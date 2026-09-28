@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>M2 유동성 월간 업데이트 · 260928</title>
+<style>
+  :root {
+    --bg: #0b0f14;
+    --card: #141a22;
+    --card-border: #232b36;
+    --text: #e8edf3;
+    --sub: #8b97a7;
+    --accent: #3ddc97;
+    --accent2: #ffb454;
+    --danger: #ff6b6b;
+    --neutral: #6fa8ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    line-height: 1.55;
+    padding: 20px 16px 48px;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  header { margin-bottom: 20px; }
+  .badge {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--accent);
+    background: rgba(61,220,151,0.12);
+    border: 1px solid rgba(61,220,151,0.35);
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+  }
+  h1 { font-size: 22px; margin: 0 0 6px; font-weight: 700; }
+  .meta { color: var(--sub); font-size: 13px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 18px 18px;
+    margin-bottom: 16px;
+  }
+  .card h2 {
+    font-size: 15px;
+    margin: 0 0 12px;
+    color: var(--sub);
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+  .headline-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 4px;
+  }
+  .headline-sub { color: var(--sub); font-size: 13px; margin-bottom: 14px; }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 6px;
+  }
+  .stat-box {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 12px;
+  }
+  .stat-label { font-size: 12px; color: var(--sub); margin-bottom: 4px; }
+  .stat-value { font-size: 19px; font-weight: 700; }
+  .up { color: var(--accent); }
+  .down { color: var(--danger); }
+  .trend-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--card-border);
+    font-size: 13px;
+  }
+  .trend-item { text-align: center; flex: 1; }
+  .trend-month { color: var(--sub); font-size: 11px; margin-bottom: 3px; }
+  .trend-val { font-weight: 700; font-size: 14px; }
+  .trend-val.latest { color: var(--accent); }
+  .cycle-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); display: inline-block; }
+  p { margin: 0 0 10px; font-size: 14.5px; color: var(--text); }
+  p.sub { color: var(--sub); font-size: 13px; }
+  ul { margin: 8px 0 0; padding-left: 18px; }
+  li { margin-bottom: 8px; font-size: 14px; }
+  .strategy-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .tag {
+    font-size: 11.5px;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: rgba(111,168,255,0.12);
+    border: 1px solid rgba(111,168,255,0.35);
+    color: var(--neutral);
+  }
+  .tag.active {
+    background: rgba(61,220,151,0.15);
+    border-color: rgba(61,220,151,0.45);
+    color: var(--accent);
+  }
+  footer {
+    margin-top: 24px;
+    font-size: 11.5px;
+    color: var(--sub);
+    text-align: center;
+    line-height: 1.7;
+  }
+  footer a { color: var(--neutral); text-decoration: none; }
+  .source-list { margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="badge">M2 유동성 · 월간 업데이트</span>
+    <h1>미국 M2 통화량 현황 &amp; 투자 사이클 판단</h1>
+    <div class="meta">2026년 9월 28일 기준 · 데이터 기준월: 2026년 8월 (FRED 발표)</div>
+  </header>
+
+  <div class="card">
+    <h2>현재 M2 수치</h2>
+    <div class="headline-value">$23.34조</div>
+    <div class="headline-sub">($23,342.8B, 계절조정) · 2026년 8월 기준</div>
+
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="stat-label">전월 대비 (MoM)</div>
+        <div class="stat-value up">▲ +0.54%</div>
+        <div class="stat-label">(+$124.9B, 7월 $23,217.9B)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">전년 동기 대비 (YoY)</div>
+        <div class="stat-value up">▲ +5.7%</div>
+        <div class="stat-label">4월 저점 대비 가속</div>
+      </div>
+    </div>
+
+    <div class="trend-row">
+      <div class="trend-item"><div class="trend-month">4월</div><div class="trend-val">4.5%</div></div>
+      <div class="trend-item"><div class="trend-month">5월</div><div class="trend-val">5.4%</div></div>
+      <div class="trend-item"><div class="trend-month">6월</div><div class="trend-val">5.3%</div></div>
+      <div class="trend-item"><div class="trend-month">7월</div><div class="trend-val">5.4%</div></div>
+      <div class="trend-item"><div class="trend-month">8월</div><div class="trend-val latest">5.7%</div></div>
+    </div>
+    <p class="sub" style="margin-top:10px;">M2 YoY 증가율(%), 최근 5개월 추이 — 4월 저점(4.5%) 이후 3개월 연속 반등하며 5%대 안착</p>
+  </div>
+
+  <div class="card">
+    <h2>투자 사이클 판단</h2>
+    <div class="cycle-tag"><span class="dot"></span>유동성 팽창 국면</div>
+    <p>M2 YoY +5.7%로 &quot;+5% 이상 &amp; 증가 추세&quot; 기준 충족. 4월 4.5%를 저점으로 5개월째 상승 전환이 이어지며, 유동성 팽창 국면 진입이 뚜렷해지는 구간.</p>
+    <p class="sub">판단 기준: YoY 5%↑ &amp; 상승추세 = 팽창(위험자산 우호) · 2~5% = 중립 · 2%↓ 또는 감소 = 긴축(방어적)</p>
+  </div>
+
+  <div class="card">
+    <h2>보유 종목 시사점</h2>
+    <p>유동성 팽창 국면은 통상 성장주·모멘텀 종목, 고베타 자산의 상대적 강세와 맞물리는 경향. 4전략(VCP·Weinstein·C&amp;H·M2) 중 M2가 팽창 신호를 낼 때는 나머지 3개 기술적 전략(VCP, Weinstein Stage 2, Cup&amp;Handle)에서 포착된 브레이크아웃 신호의 신뢰도가 높아지는 환경으로 해석 가능.</p>
+    <ul>
+      <li>신규 진입: 기술적 셋업(VCP 베이스, Stage 2 전환, C&amp;H 브레이크아웃) 발생 시 유동성 배경이 우호적이므로 공격적 비중 확대 고려 가능</li>
+      <li>기존 보유: 손절선 유지하되 추세 추종 관점에서 보유 지속에 무게</li>
+      <li>주의: M2가 5개월 연속 반등 중이나 아직 인플레이션·금리 경로와의 상충 여부는 별도 점검 필요 (Fed 정책 스탠스 교차 확인 권장)</li>
+    </ul>
+    <div class="strategy-tags">
+      <span class="tag">VCP</span>
+      <span class="tag">Weinstein</span>
+      <span class="tag">Cup&amp;Handle</span>
+      <span class="tag active">M2 ▲팽창</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>다음 달 전망</h2>
+    <p>다음 M2 발표(9월 데이터)는 <strong>2026년 10월 27일</strong> 예정. 최근 추세(4→5개월 연속 상승, 5.3~5.7% 밴드)가 유지될 경우 팽창 국면이 공고화될 가능성이 높으나, 6%에 근접하거나 이를 상회할 경우 인플레이션 재점화 우려로 연결될 수 있어 후속 CPI·PCE 지표와 함께 교차 확인이 필요.</p>
+    <p class="sub">체크포인트: ① 9월 M2 YoY가 5.7% 이상 유지/상승하는지 ② Fed 금리 정책 코멘트 변화 ③ 성장주 대비 방어주 상대강도(RS) 흐름</p>
+  </div>
+
+  <footer>
+    출처: Board of Governors of the Federal Reserve System (H.6 Money Stock Measures), FRED — St. Louis Fed (M2SL)<br>
+    <div class="source-list">
+      <a href="https://fred.stlouisfed.org/series/M2SL">fred.stlouisfed.org/series/M2SL</a><br>
+      <a href="https://tradingeconomics.com/united-states/money-supply-m2">tradingeconomics.com/united-states/money-supply-m2</a>
+    </div>
+    <div style="margin-top:8px;">자동 생성 · ETHAN M2 유동성 월간 업데이트 에이전트</div>
+  </footer>
+
+</div>
+</body>
+</html>
