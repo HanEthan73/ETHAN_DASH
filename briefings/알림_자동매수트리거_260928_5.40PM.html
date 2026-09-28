@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 20px 14px 40px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 {
+    font-size: 1.25rem;
+    color: #ff7b72;
+    margin: 0 0 4px;
+  }
+  .subtitle {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 18px;
+  }
+  .card h2 {
+    font-size: 1rem;
+    margin: 0 0 10px;
+    color: #58a6ff;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  th, td {
+    padding: 8px 6px;
+    text-align: center;
+    border-bottom: 1px solid #21262d;
+    white-space: nowrap;
+  }
+  th {
+    color: #8b949e;
+    font-weight: 600;
+    font-size: 0.78rem;
+  }
+  td.ticker {
+    color: #e6edf3;
+    font-weight: 700;
+  }
+  td.price {
+    color: #3fb950;
+    font-weight: 600;
+  }
+  td.warn {
+    color: #f85149;
+    font-weight: 700;
+  }
+  .note {
+    font-size: 0.78rem;
+    color: #8b949e;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  .badge {
+    display: inline-block;
+    background: #f85149;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .badge-near {
+    background: #d29922;
+  }
+  @media (max-width: 420px) {
+    table { font-size: 0.75rem; }
+    th, td { padding: 6px 4px; }
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="subtitle">2026-09-28 17:40 (KST)</div>
+
+  <div class="card">
+    <h2>트리거 도달 종목 (5)</h2>
+    <table>
+      <tr>
+        <th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th>
+      </tr>
+      <tr>
+        <td class="ticker">AVGO</td><td class="price">$352.81</td><td>$420</td><td class="warn">$390</td><td>$480</td>
+      </tr>
+      <tr>
+        <td class="ticker">GOOGL</td><td class="price">$339.32</td><td>$385</td><td class="warn">$355</td><td>$450</td>
+      </tr>
+      <tr>
+        <td class="ticker">TSM</td><td class="price">$387.44</td><td>$395</td><td>$355</td><td>$455</td>
+      </tr>
+      <tr>
+        <td class="ticker">ORCL</td><td class="price">$176.28</td><td>$178</td><td>$162</td><td>$225</td>
+      </tr>
+      <tr>
+        <td class="ticker">ASTS</td><td class="price">$61.81</td><td>$68</td><td>$45</td><td>$100</td>
+      </tr>
+    </table>
+    <div class="note">
+      ⚠️ <b>AVGO, GOOGL</b>은 현재가가 트리거가뿐 아니라 <b>손절가(stop-loss)보다도 낮은 상태</b>입니다. 단순 매수 트리거가 아니라 이미 손절 구간까지 하락한 것이므로, 매수 판단 전 추세 재확인이 필요합니다.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ 2% 이내 근접 종목 (1)</h2>
+    <table>
+      <tr>
+        <th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th>
+      </tr>
+      <tr>
+        <td class="ticker">AMZN</td><td class="price">$255.08</td><td>$255</td><td>$230</td><td>$320</td>
+      </tr>
+    </table>
+    <div class="note">AMZN은 트리거가 대비 약 0.03% 차이로 사실상 트리거 도달 수준입니다.</div>
+  </div>
+
+  <div class="note">
+    ※ 실시간 검색 기반 참고 가격이며, 실제 매수 판단 전 증권사 앱에서 정확한 시세를 재확인하시기 바랍니다.<br>
+    미도달 종목: MSFT($432.92), INTC($123.00), MRVL($261.94), PLTR($189.67)
+  </div>
+</body>
+</html>
