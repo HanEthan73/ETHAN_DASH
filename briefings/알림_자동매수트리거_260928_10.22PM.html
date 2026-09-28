@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 1.25rem;
+    color: #ff6b6b;
+    margin-bottom: 4px;
+  }
+  .timestamp {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161b22;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #21262d;
+  }
+  th {
+    background: #21262d;
+    color: #58a6ff;
+    font-weight: 600;
+  }
+  td.ticker {
+    font-weight: 700;
+    color: #e6edf3;
+  }
+  td.price {
+    color: #3fb950;
+    font-weight: 600;
+  }
+  td.trigger {
+    color: #f0883e;
+  }
+  td.stop {
+    color: #ff7b72;
+  }
+  td.target {
+    color: #58a6ff;
+  }
+  .section-title {
+    font-size: 1rem;
+    color: #c9d1d9;
+    margin: 24px 0 8px;
+  }
+  .footer {
+    color: #6e7681;
+    font-size: 0.75rem;
+    margin-top: 24px;
+    text-align: center;
+  }
+  @media (max-width: 480px) {
+    th, td { font-size: 0.78rem; padding: 8px 4px; }
+    h1 { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="timestamp">2026-09-28 22:22 (KST)</div>
+
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절</th>
+      <th>목표</th>
+    </tr>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td class="price">$352.81</td>
+      <td class="trigger">$420</td>
+      <td class="stop">$390</td>
+      <td class="target">$480</td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td>
+      <td class="price">$343.92</td>
+      <td class="trigger">$385</td>
+      <td class="stop">$355</td>
+      <td class="target">$450</td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td class="price">$249.67</td>
+      <td class="trigger">$255</td>
+      <td class="stop">$230</td>
+      <td class="target">$320</td>
+    </tr>
+    <tr>
+      <td class="ticker">ORCL</td>
+      <td class="price">$137.10</td>
+      <td class="trigger">$178</td>
+      <td class="stop">$162</td>
+      <td class="target">$225</td>
+    </tr>
+    <tr>
+      <td class="ticker">ASTS</td>
+      <td class="price">$61.81</td>
+      <td class="trigger">$68</td>
+      <td class="stop">$45</td>
+      <td class="target">$100</td>
+    </tr>
+  </table>
+
+  <div class="footer">
+    실시간 웹서치 기반 · AVGO/GOOGL/ORCL/AVGO는 이미 손절가 부근/이하에서 거래 중이니 진입 전 재확인 요망 · ETHAN 자동매수 모니터링
+  </div>
+</body>
+</html>
