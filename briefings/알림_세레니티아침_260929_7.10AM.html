@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity 아침 인사이트 | @aleabitoreddit | 2026-09-29</title>
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --text: #e8e8f0;
+    --accent: #ffd700;
+    --card-bg: #171726;
+    --border: #2a2a3d;
+    --muted: #9a9ab0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 32px 20px 60px; }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 28px;
+  }
+  header .eyebrow {
+    color: var(--accent);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  header h1 {
+    font-size: 26px;
+    margin: 0 0 6px;
+  }
+  header .sub {
+    color: var(--muted);
+    font-size: 14px;
+  }
+  section { margin-bottom: 40px; }
+  h2 {
+    font-size: 18px;
+    color: var(--accent);
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+    margin-bottom: 18px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .card-date { color: var(--muted); font-size: 12px; }
+  .card-ticker { font-weight: 700; font-size: 15px; color: var(--accent); }
+  .card-summary { margin: 0 0 10px; font-size: 14.5px; }
+  .card-direction { font-size: 13.5px; margin-bottom: 8px; }
+  .card-note {
+    font-size: 13.5px;
+    color: var(--muted);
+    background: rgba(255,215,0,0.05);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 0 0 10px;
+  }
+  .tag {
+    display: inline-block;
+    background: var(--accent);
+    color: #1a1a0a;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-right: 6px;
+  }
+  .card-link {
+    font-size: 12.5px;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .card-link:hover { text-decoration: underline; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #1e1e30;
+    color: var(--accent);
+    font-size: 12.5px;
+  }
+  tr:last-child td { border-bottom: none; }
+  .t-ticker { font-weight: 700; white-space: nowrap; }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .dir-buy { background: rgba(70,200,120,0.15); color: #5fd68e; }
+  .dir-sell { background: rgba(230,90,90,0.15); color: #ee8080; }
+  .dir-hold { background: rgba(150,150,170,0.15); color: var(--muted); }
+  .conf-high { background: rgba(255,215,0,0.15); color: var(--accent); }
+  .conf-mid { background: rgba(150,150,170,0.15); color: #c8c8d8; }
+  .conf-low { background: rgba(150,150,170,0.1); color: var(--muted); }
+  .picks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .pick {
+    background: linear-gradient(160deg, #201d10, var(--card-bg));
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .pick-rank {
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+  .pick-ticker { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+  .pick-direction { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+  .pick-reason { font-size: 13.5px; margin: 0; }
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Morning Insight Report</div>
+    <h1>Serenity 아침 인사이트 | @aleabitoreddit | 2026-09-29</h1>
+    <div class="sub">AI/반도체 공급망 투자 인플루언서 Serenity(팔로워 약 91만)의 최근 X 포스트 기반 요약 · Claude 자동 생성</div>
+  </header>
+
+  <section>
+    <h2>1. 최근 포스트 인사이트</h2>
+    
+      <div class="card">
+        <div class="card-head">
+          <span class="card-date">2026-09-25</span>
+          <span class="card-ticker">$SPY</span>
+        </div>
+        <p class="card-summary">인플레이션을 따라잡는 최선의 방법은 SPY 같은 지수 자산이라 주장하며, 샌드위치 가격 상승을 인플레이션 체감 사례로 제시.</p>
+        <div class="card-direction">방향: <strong>매수(거시)</strong></div>
+        <p class="card-note"><span class="tag">Claude 해석</span> 개별 종목이 아닌 매크로/인플레이션 헤지 관점의 발언. 시장 전체에 대한 완만한 강세 톤으로 해석됨.</p>
+        <a class="card-link" href="https://x.com/aleabitoreddit/status/2103490181525631382" target="_blank" rel="noopener">원문 보기 →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-date">2026-09-24</span>
+          <span class="card-ticker">$AKAM · $MU · $AMD</span>
+        </div>
+        <p class="card-summary">Akamai가 Anthropic과 7년간 $11.6B 규모 가속 CPU 컴퓨트 딜 체결, 약 $5.5B 추정 capex 중 2026년 메모리 선구매에만 +$1.7B 배정된 점을 언급.</p>
+        <div class="card-direction">방향: <strong>MU·AMD 매수 / AKAM 관망</strong></div>
+        <p class="card-note"><span class="tag">Claude 해석</span> 메모리(HBM/DRAM) 선구매 capex 확대는 MU에 직접적 수혜, 컴퓨트 수요 확대는 AMD에도 우호적. AKAM은 딜 주체이나 언급 빈도(2회)가 낮아 확신도는 낮음.</p>
+        <a class="card-link" href="https://x.com/aleabitoreddit/status/2103232350348001701" target="_blank" rel="noopener">원문 보기 →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-date">2026-09-24</span>
+          <span class="card-ticker">$QQQ</span>
+        </div>
+        <p class="card-summary">QQQ의 이례적 캔들이 &#x27;미-이란 호르무즈 재개 단계적 합의&#x27; 로이터 보도와 겹친 점을 지적, 트럼프 대통령이 중간선거를 앞두고 강세장을 원할 것이라는 추정 제시.</p>
+        <div class="card-direction">방향: <strong>관망</strong></div>
+        <p class="card-note"><span class="tag">Claude 해석</span> 지정학 변수와 정치 일정이 겹친 단기 이벤트성 코멘트. 방향성 베팅이라기보다 시장 해석 메모에 가까움.</p>
+        <a class="card-link" href="https://x.com/aleabitoreddit/status/2103161145934963178" target="_blank" rel="noopener">원문 보기 →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-date">2026-09-24</span>
+          <span class="card-ticker">$NVDA · $NBIS · $AAOI · $SNDK · $IREN</span>
+        </div>
+        <p class="card-summary">NVDA-Nebius($NBIS) $2B 사모 조달 사례를 들며 소형 AI 인프라 기업들의 자금조달 방식을 비교. AAOI는 2027년 구조적 강세를 보되 반복적 ATM(시장가 증자) 발행을 비판, SNDK는 ATM 자금조달의 기회비용을 부각, IREN은 $6B ATM으로 반년간 주가가 박스권에 갇혔다고 직접 비판.</p>
+        <div class="card-direction">방향: <strong>AAOI 조건부매수 / IREN 매도 / NVDA·NBIS·SNDK 관망</strong></div>
+        <p class="card-note"><span class="tag">Claude 해석</span> 핵심은 &#x27;ATM(증자) 리스크&#x27;라는 공통 테마. 같은 섹터 내에서도 자금조달 방식에 따라 명확히 종목을 구분해 코멘트한 점이 특징적.</p>
+        <a class="card-link" href="https://x.com/aleabitoreddit/status/2103151990146801812" target="_blank" rel="noopener">원문 보기 →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-date">누적(최근 갱신 2026-09-24)</span>
+          <span class="card-ticker">$NBIS</span>
+        </div>
+        <p class="card-summary">역대 최다 언급 종목(703회, 최초 언급 2025-07-21). 최근 성과는 최초 언급 대비 -2.1%로, 고빈도 관심에도 모멘텀은 둔화된 상태.</p>
+        <div class="card-direction">방향: <strong>관망</strong></div>
+        <p class="card-note"><span class="tag">Claude 해석</span> 장기 최선호 종목이지만 최근 가격 흐름은 정체. 신규 매수보다는 보유자 관찰 관점.</p>
+        <a class="card-link" href="https://x.com/aleabitoreddit" target="_blank" rel="noopener">원문 보기 →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-date">누적(최근 갱신 2026-09-23)</span>
+          <span class="card-ticker">$SIVE.ST (Siver Semiconductor)</span>
+        </div>
+        <p class="card-summary">CPO(Co-Packaged Optics/광공동패키징)를 &#x27;2026년 1순위 테마 롱&#x27;으로 지목하며 광통신 슈퍼사이클을 가장 먼저 선점했다고 주장. 최초 진입 시점 7.37 SEK 대비 한때 1,128% 급등한 이력.</p>
+        <div class="card-direction">방향: <strong>매수(테마 핵심주)</strong></div>
+        <p class="card-note"><span class="tag">Claude 해석</span> 누적 468회로 2위 언급 빈도. 다만 최근 성과는 최초 언급 대비 -4.2%로 단기 조정 국면. 장기 테마 컨빅션은 유지되나 진입 타이밍 주의 필요.</p>
+        <a class="card-link" href="https://x.com/aleabitoreddit/status/2054412992000012555" target="_blank" rel="noopener">원문 보기 →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-date">누적(최근 갱신 2026-09-24)</span>
+          <span class="card-ticker">$AXTI</span>
+        </div>
+        <p class="card-summary">화합물반도체 기판/소재 공급망 병목주로 반복 지목. LITE·광학 부품용 소재 공급사로서 AI 인프라 확장의 수혜주로 제시.</p>
+        <div class="card-direction">방향: <strong>매수(테마)</strong></div>
+        <p class="card-note"><span class="tag">Claude 해석</span> 누적 465회 언급, 최초 언급 대비 +4.2%. CPO 테마 3대장(AAOI·LITE·AXTI) 중 최근 상대 성과가 가장 양호.</p>
+        <a class="card-link" href="https://x.com/aleabitoreddit" target="_blank" rel="noopener">원문 보기 →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-date">누적(최근 갱신 2026-09-23)</span>
+          <span class="card-ticker">$LITE</span>
+        </div>
+        <p class="card-summary">광모듈/포토닉스 공급망의 핵심 종목으로 꾸준히 언급. 2025년 슈퍼사이클 초기 국면(~$300대)부터 선제 진입을 주장해온 대표 종목.</p>
+        <div class="card-direction">방향: <strong>매수(테마)</strong></div>
+        <p class="card-note"><span class="tag">Claude 해석</span> 누적 411회 언급, 최초 언급 대비 +3.1%. CPO 테마 포트폴리오의 중심축으로 반복 재확인되는 종목.</p>
+        <a class="card-link" href="https://x.com/aleabitoreddit" target="_blank" rel="noopener">원문 보기 →</a>
+      </div>
+  </section>
+
+  <section>
+    <h2>2. 주목 종목 요약표</h2>
+    <table>
+      <thead>
+        <tr><th>종목</th><th>방향</th><th>핵심 근거</th><th>신뢰도</th></tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td class="t-ticker">MU</td>
+          <td><span class="badge dir-buy">매수</span></td>
+          <td>Akamai-Anthropic $11.6B 컴퓨트 딜 → 2026년 메모리 선구매 capex +$1.7B 직접 수혜</td>
+          <td><span class="badge conf-high">상</span></td>
+        </tr>
+
+        <tr>
+          <td class="t-ticker">AMD</td>
+          <td><span class="badge dir-buy">매수</span></td>
+          <td>동일 딜의 가속 컴퓨트 수혜 + 누적 122회 고빈도 언급</td>
+          <td><span class="badge conf-mid">중</span></td>
+        </tr>
+
+        <tr>
+          <td class="t-ticker">AAOI</td>
+          <td><span class="badge dir-buy">조건부 매수</span></td>
+          <td>CPO 테마 2027년 구조적 강세 전망, 단 반복 ATM 증자가 리스크 요인</td>
+          <td><span class="badge conf-mid">중</span></td>
+        </tr>
+
+        <tr>
+          <td class="t-ticker">IREN</td>
+          <td><span class="badge dir-sell">매도</span></td>
+          <td>$6B ATM 남발로 반년간 박스권 정체, 직접적 부정 코멘트</td>
+          <td><span class="badge conf-mid">중</span></td>
+        </tr>
+
+        <tr>
+          <td class="t-ticker">SIVE.ST</td>
+          <td><span class="badge dir-buy">매수(테마)</span></td>
+          <td>CPO/광통신 1순위 확신주, 누적 468회 언급(단 최근 -4.2%)</td>
+          <td><span class="badge conf-high">상</span></td>
+        </tr>
+
+        <tr>
+          <td class="t-ticker">AXTI</td>
+          <td><span class="badge dir-buy">매수(테마)</span></td>
+          <td>화합물반도체 소재 공급망 병목주, 누적 465회 언급(+4.2%)</td>
+          <td><span class="badge conf-mid">중</span></td>
+        </tr>
+
+        <tr>
+          <td class="t-ticker">LITE</td>
+          <td><span class="badge dir-buy">매수(테마)</span></td>
+          <td>광모듈 슈퍼사이클 핵심축, 누적 411회 언급(+3.1%)</td>
+          <td><span class="badge conf-mid">중</span></td>
+        </tr>
+
+        <tr>
+          <td class="t-ticker">NBIS</td>
+          <td><span class="badge dir-hold">관망</span></td>
+          <td>최다 언급(703회)이나 최근 모멘텀 둔화(-2.1%)</td>
+          <td><span class="badge conf-mid">중</span></td>
+        </tr>
+
+        <tr>
+          <td class="t-ticker">AKAM</td>
+          <td><span class="badge dir-hold">관망</span></td>
+          <td>Akamai 딜 주체사이나 언급 빈도 낮음(2회)</td>
+          <td><span class="badge conf-low">하</span></td>
+        </tr>
+
+        <tr>
+          <td class="t-ticker">QQQ</td>
+          <td><span class="badge dir-hold">관망</span></td>
+          <td>지정학+중간선거 변수, 방향성 불명확</td>
+          <td><span class="badge conf-low">하</span></td>
+        </tr>
+
+        <tr>
+          <td class="t-ticker">NVDA</td>
+          <td><span class="badge dir-hold">관망</span></td>
+          <td>사모조달 사례로만 언급, 직접적 방향성 코멘트 없음</td>
+          <td><span class="badge conf-low">하</span></td>
+        </tr>
+
+        <tr>
+          <td class="t-ticker">SNDK</td>
+          <td><span class="badge dir-hold">관망</span></td>
+          <td>ATM 대비 수익성 부각되었을 뿐 매수 시그널 아님</td>
+          <td><span class="badge conf-low">하</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>3. 오늘의 핵심 픽</h2>
+    <div class="picks">
+      
+      <div class="pick">
+        <div class="pick-rank">PICK 1</div>
+        <div class="pick-ticker">$MU (Micron)</div>
+        <div class="pick-direction">매수 · 신뢰도 상</div>
+        <p class="pick-reason">Akamai-Anthropic $11.6B 컴퓨트 딜에서 2026년 메모리 선구매 capex만 +$1.7B 배정. AI 인프라 확장의 가장 직접적인 수혜 경로로 언급 빈도(194회)와 최신성(9/24) 모두 높음.</p>
+      </div>
+
+      <div class="pick">
+        <div class="pick-rank">PICK 2</div>
+        <div class="pick-ticker">$AAOI (Applied Optoelectronics)</div>
+        <div class="pick-direction">조건부 매수 · 신뢰도 중</div>
+        <p class="pick-reason">CPO/광통신 테마의 핵심 종목으로 2027년까지 구조적 강세를 전망하나, 반복적 ATM(시장가 증자) 발행이 주가 발목을 잡을 수 있다는 명확한 리스크 경고가 병존. ATM 이슈 완화 시 강한 반등 여지.</p>
+      </div>
+
+      <div class="pick">
+        <div class="pick-rank">PICK 3</div>
+        <div class="pick-ticker">$IREN (Iris Energy)</div>
+        <div class="pick-direction">매도/비중축소 · 신뢰도 중</div>
+        <p class="pick-reason">$6B 규모 ATM 증자가 반년째 주가를 박스권에 가두고 있다는 직접적 비판. 같은 섹터 내 AAOI·SNDK와 대비되는 부정적 코멘트로, 자금조달 리스크가 해소되기 전까지는 회피 대상으로 해석.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    * Not Financial Advice, DYOR. Serenity 원문 기반 요약이며 투자 조언이 아닙니다.
+  </footer>
+</div>
+</body>
+</html>
