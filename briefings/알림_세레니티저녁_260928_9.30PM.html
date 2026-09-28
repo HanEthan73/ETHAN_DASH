@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity 저녁 인사이트 | @aleabitoreddit | 2026-09-28</title>
+<style>
+  :root{
+    --bg:#0f0f1a;
+    --card:#171725;
+    --card2:#1c1c2e;
+    --text:#e8e8f0;
+    --sub:#a0a0b8;
+    --gold:#ffd700;
+    --green:#3ddc84;
+    --red:#ff5c5c;
+    --gray:#8c8ca0;
+    --border:#2a2a3e;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Segoe UI','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+    line-height:1.6;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:28px 20px 60px;}
+  header{
+    border-bottom:1px solid var(--border);
+    padding-bottom:20px;
+    margin-bottom:28px;
+  }
+  header .tag{
+    display:inline-block;
+    color:var(--gold);
+    font-size:12px;
+    letter-spacing:2px;
+    font-weight:700;
+    border:1px solid var(--gold);
+    border-radius:20px;
+    padding:4px 12px;
+    margin-bottom:12px;
+  }
+  h1{
+    font-size:26px;
+    margin:0 0 8px;
+    color:#fff;
+  }
+  header .meta{
+    color:var(--sub);
+    font-size:13px;
+  }
+  h2{
+    font-size:17px;
+    color:var(--gold);
+    border-left:4px solid var(--gold);
+    padding-left:10px;
+    margin:38px 0 16px;
+  }
+  .notice{
+    background:var(--card2);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px 16px;
+    font-size:12.5px;
+    color:var(--sub);
+    margin-bottom:6px;
+  }
+  .notice b{color:var(--gold);}
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:16px 18px;
+    margin-bottom:14px;
+  }
+  .card .row1{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:8px;
+  }
+  .date{
+    font-size:12px;
+    color:var(--sub);
+    font-weight:600;
+    letter-spacing:0.5px;
+  }
+  .tickers{
+    font-size:13px;
+    color:var(--gold);
+    font-weight:700;
+  }
+  .dir{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    padding:3px 10px;
+    border-radius:20px;
+  }
+  .dir.buy{background:rgba(61,220,132,0.12);color:var(--green);border:1px solid rgba(61,220,132,0.4);}
+  .dir.sell{background:rgba(255,92,92,0.12);color:var(--red);border:1px solid rgba(255,92,92,0.4);}
+  .dir.hold{background:rgba(140,140,160,0.15);color:var(--gray);border:1px solid rgba(140,140,160,0.4);}
+  .orig{
+    font-size:13.5px;
+    color:var(--text);
+    margin:8px 0;
+    padding:10px 12px;
+    background:var(--card2);
+    border-radius:8px;
+    border-left:3px solid var(--border);
+  }
+  .interp{
+    font-size:13px;
+    color:var(--sub);
+  }
+  .interp b{color:#c9c9ff;}
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--card);
+    border-radius:10px;
+    overflow:hidden;
+    font-size:13px;
+  }
+  th,td{
+    padding:11px 12px;
+    text-align:left;
+    border-bottom:1px solid var(--border);
+  }
+  th{
+    background:var(--card2);
+    color:var(--gold);
+    font-size:12px;
+    letter-spacing:0.5px;
+  }
+  tr:last-child td{border-bottom:none;}
+  .conf-high{color:var(--green);font-weight:700;}
+  .conf-mid{color:#f0c46a;font-weight:700;}
+  .conf-low{color:var(--gray);font-weight:700;}
+
+  .picks{display:flex;flex-direction:column;gap:12px;}
+  .pick{
+    background:linear-gradient(135deg, rgba(255,215,0,0.08), var(--card));
+    border:1px solid rgba(255,215,0,0.35);
+    border-radius:12px;
+    padding:16px 18px;
+  }
+  .pick .rank{
+    display:inline-block;
+    width:22px;height:22px;
+    background:var(--gold);
+    color:#151515;
+    border-radius:50%;
+    text-align:center;
+    line-height:22px;
+    font-size:12px;
+    font-weight:800;
+    margin-right:8px;
+  }
+  .pick .ticker{
+    font-size:16px;
+    font-weight:800;
+    color:#fff;
+  }
+  .pick p{margin:8px 0 0;font-size:13.5px;color:var(--sub);}
+
+  .compare{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:16px 18px;
+    margin-bottom:12px;
+  }
+  .compare .t{font-size:13px;font-weight:800;color:#fff;margin-bottom:6px;}
+  .compare .from{color:var(--sub);font-size:12.5px;}
+  .compare .to{color:var(--text);font-size:13px;margin-top:4px;}
+  .arrow{color:var(--gold);font-weight:800;margin:0 6px;}
+
+  footer{
+    margin-top:40px;
+    padding-top:16px;
+    border-top:1px solid var(--border);
+    font-size:11.5px;
+    color:var(--gray);
+    text-align:center;
+    line-height:1.8;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="tag">EVENING INSIGHT · 9:30 PM</span>
+  <h1>Serenity 저녁 인사이트</h1>
+  <div class="meta">@aleabitoreddit · 팔로워 약 91만+ · AI/반도체 공급망 투자 인플루언서 · 2026-09-28 (월) 저녁</div>
+</header>
+
+<div class="notice">
+  <b>데이터 수집 안내:</b> 이번 회차도 Claude in Chrome 및 인앱 브라우저 모두 X(트위터) 직접 접속이 불가하여
+  (Chrome 미연결 / 인앱 브라우저 접근 거부), WebSearch로 공개 색인된 Serenity 원문 포스트·서드파티 트래커(trackserenity.com)·
+  아카이브 리포지토리(yan-labs/serenity-aleabitoreddit, 6,395건 트윗 아카이브)를 교차 검증해 재구성했습니다.
+  확인 가능한 최신 발신 시점은 <b>2026-09-23~24</b>이며, 미국장 개장 이후(한국시간 저녁) 실시간 신규 포스트는
+  검색 색인에 아직 반영되지 않아 이번 회차는 최근 확정 테제 재확인 위주로 구성했습니다.
+  다음 회차부터는 브라우저 재연결 시 실시간 원문 기준으로 수집됩니다.
+</div>
+
+<h2>① 오늘 포착된 포스트 인사이트</h2>
+
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09-23</span>
+    <span class="dir hold">테제 유지(트래킹 모드)</span>
+  </div>
+  <div class="tickers">$INTC $ARM $MU $SIVE $AAOI $AXTI $NBIS $ESMT $CCXI</div>
+  <div class="orig">"It's mainly thesis tracking mode now since I layed out most of my ideas H1... Only two recent ones were $ESMT for legacy memory trade and $CCXI for humanoids but aside from that it's just seeing if they get validated over time."</div>
+  <div class="interp"><b>Claude 해석 ·</b> 세레니티 본인이 신규 콜보다 <b>기존 테제 검증 국면</b>임을 명시. 유일한 신규 아이디어 2건(ESMT-레거시 메모리, CCXI-휴머노이드)이 이번 회차의 핵심 관전 포인트.</div>
+</div>
+
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09 (최근)</span>
+    <span class="dir buy">매수 근거 강화</span>
+  </div>
+  <div class="tickers">$MU $SNDK (Sk Hynix 연동)</div>
+  <div class="orig">Team Group GM Gerry Chen 발언 인용: "There is zero risk of memory prices dropping." 메모리 모듈 업체들이 2027년 공급 물량 최대 50% 삭감 통보를 받고 있다고 언급.</div>
+  <div class="interp"><b>Claude 해석 ·</b> 아침 회차의 '메모리 로테이션 1단계' 테제를 2027년 공급 삭감이라는 <b>더 구체적인 팩트로 보강</b>. 업계 관계자 직접 인용이라 신뢰도가 높은 편.</div>
+</div>
+
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09-08 전후</span>
+    <span class="dir buy">매수(강한 재확인)</span>
+  </div>
+  <div class="tickers">$NBIS $PLTR</div>
+  <div class="orig">"$NBIS is back, and coming in hot with a new partnership with $PLTR. Palantir also named Nebius its preferred sovereign AI infrastructure partner."</div>
+  <div class="interp"><b>Claude 해석 ·</b> Palantir가 Nebius를 '선호 소버린 AI 인프라 파트너'로 공식 지정 — 아침 픽 2순위였던 NBIS 테제에 <b>기업 간 실제 계약이라는 강력한 검증</b>이 더해짐. 미 정부/엔터프라이즈向 PLTR 관계망 편입 의미가 큼.</div>
+</div>
+
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09 (Q2 실적)</span>
+    <span class="dir buy">매수(펀더멘털 확인)</span>
+  </div>
+  <div class="tickers">$NBIS</div>
+  <div class="orig">"$582.3M revenue (+454% Y/Y, +46% Q/Q) off ~50% adjusted EBITDA margin (AI Cloud). $8.04B cash on hand. Reiterates financial guide (2026 revenue: $3.0–$3.4B)."</div>
+  <div class="interp"><b>Claude 해석 ·</b> 네러티브가 아닌 <b>실적으로 증명</b>된 성장 — 분기 매출 +46% QoQ, EBITDA 마진 50%는 네오클라우드 업계 최상위권. 세레니티가 '넥스트 AWS'로 지목한 근거가 숫자로 확인됨.</div>
+</div>
+
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09-24</span>
+    <span class="dir buy">매수(밸류 코멘트)</span>
+  </div>
+  <div class="tickers">$NBIS ($86.69)</div>
+  <div class="orig">$86.69 기준 "the purest Neocloud and AI-infra asymmetry left" 발언. $IREN에서 $CRWV로, 최종적으로 NBIS로 네오클라우드 테제를 수개월에 걸쳐 압축(consolidate)했다고 언급.</div>
+  <div class="interp"><b>Claude 해석 ·</b> IREN·CRWV 등 경쟁 네오클라우드 후보군을 모두 검토한 뒤 <b>NBIS로 최종 수렴</b>했다는 점이 핵심. 단순 보유가 아니라 비교우위 리서치를 거친 결론이라는 점에서 확신도가 높음.</div>
+</div>
+
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09 (비교)</span>
+    <span class="dir sell">경쟁 구도 확인</span>
+  </div>
+  <div class="tickers">$NBIS vs $IREN</div>
+  <div class="orig">"And 7 months later... $NBIS is all time highs. While $IREN bagholders are still funding the $6,000,000,000 ATM and stuck at the same price. Guess this settles the debate?"</div>
+  <div class="interp"><b>Claude 해석 ·</b> 아침 요약표에서 '매도/관망'으로 분류했던 IREN 대비 NBIS의 <b>상대 성과가 실제로 확인</b>됨(NBIS 사상 최고가 vs IREN 정체). 네오클라우드 내 종목 선별이 중요했음을 보여주는 사후 검증 사례.</div>
+</div>
+
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09 (프리마켓)</span>
+    <span class="dir buy">섹터 전반 반등</span>
+  </div>
+  <div class="tickers">$SIVE $LITE $AAOI $NBIS $IREN $INTC $AMD $MRVL Kioxia Samsung</div>
+  <div class="orig">"Memory names from Kioxia finished up +17.18%. Samsung up +6.15%. Optical networking from $SIVE, $LITE, $AAOI showing signs of recovery, all up 4%+. Neoclouds from $NBIS to $IREN all up 4%+ premarket."</div>
+  <div class="interp"><b>Claude 해석 ·</b> 메모리·광학·네오클라우드 <b>3개 섹터 동반 반등</b> — 세레니티의 '3단계 로테이션' 테마 전반이 한꺼번에 시장 반응을 얻은 구간. 다만 프리마켓 급등은 변동성이 커 추격 매수보다 눌림목 확인이 필요.</div>
+</div>
+
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09 (조정장)</span>
+    <span class="dir hold">리스크 경고(참고)</span>
+  </div>
+  <div class="tickers">$AXTI $SIVE $AAOI $MU $SNDK $DRAM $IQE $TSEM $MRVL $LITE</div>
+  <div class="orig">"Curious if anyone's portfolio is green after today's fun day. $KORU -32.06% $SOXL -22.98% $IQE -13.58% $DRAM -12.6% $AXTI -12.57% $AAOI -11.2% $SIVE -11.7% $SNDK -12.5% $MU -11.8%"</div>
+  <div class="interp"><b>Claude 해석 ·</b> 최근 조정 국면에서 AXTI·SIVE·MU·SNDK 등 핵심 보유 종목들이 <b>동반 10%대 급락</b>을 경험한 이력. 밸류에이션 자체보다 레버리지 상품(SOXL/KORU)發 시장 전반 변동성 리스크로 해석하는 것이 적절.</div>
+</div>
+
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09 (신규)</span>
+    <span class="dir buy">매수(신규 테마 진입)</span>
+  </div>
+  <div class="tickers">$ESMT</div>
+  <div class="orig">레거시 메모리 트레이드의 사이즈 대비 최대 수혜주로 ESMT를 지목, 연환산 P/E 1.9배 수준에서 포지션 진입 언급.</div>
+  <div class="interp"><b>Claude 해석 ·</b> 메모리 로테이션 테제를 대형주(MU/SNDK)에서 <b>레거시 소형주(ESMT)로 확장</b>. 저PER 구간 진입이라는 점에서 밸류 매력은 있으나, 소형주 특성상 유동성·변동성 리스크는 큰 편.</div>
+</div>
+
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09 (신규)</span>
+    <span class="dir buy">매수(신규 테마·최대 비중)</span>
+  </div>
+  <div class="tickers">$CCXI (Agility Robotics → $AGLT)</div>
+  <div class="orig">"For robotics companies, I have a favorable view on Unitree and Agility Robotics... I have largest concentration in Agility Robotics, since I personally prefer US humanoid players." Churchill Capital Corp XI(CCXI)와 SPAC 합병으로 미국 최초 순수 휴머노이드 상장사(예정 티커 AGLT), $2.5B 밸류.</div>
+  <div class="interp"><b>Claude 해석 ·</b> 광학/메모리/네오클라우드 3단 로테이션 프레임 밖에서 등장한 <b>완전히 새로운 테마(휴머노이드)</b>. 세레니티가 개인 최대 비중이라고 밝힌 만큼 확신도는 높으나, SPAC 상장 전 단계라 상장 완료·물량 락업 등 이벤트 리스크 확인 필요.</div>
+</div>
+
+<div class="card">
+  <div class="row1">
+    <span class="date">2026-09 (트렌드 관찰)</span>
+    <span class="dir hold">관망(공급망 관찰)</span>
+  </div>
+  <div class="tickers">휴머노이드 밸류체인 전반</div>
+  <div class="orig">"Mitsubishi Motors joins robotics race... Agility $CCXI x Foxconn/Toyota, Apptronik x $JBL/Mercedes, Highlanders x Mitsubishi, Figure x BMW, Boston Dynamics x Hyundai, Optimus x Tesla, Rainbow Robotics x Samsung — a lot of patterns with humanoid companies pairing with major auto/manufacturing players."</div>
+  <div class="interp"><b>Claude 해석 ·</b> 완성차·제조 대기업들이 휴머노이드 스타트업과 잇따라 파트너십을 맺는 <b>업계 전반의 패턴화</b>를 포착. 개별 종목보다 섹터 자체의 구조적 성장 국면 진입을 시사하는 매크로 관찰.</div>
+</div>
+
+<h2>② 주목 종목 요약표</h2>
+<table>
+<tr><th>종목</th><th>방향</th><th>핵심 근거</th><th>신뢰도</th></tr>
+<tr><td><b>NBIS</b></td><td>매수(강화)</td><td>PLTR 소버린 AI 인프라 파트너 지정 + Q2 매출 +46%QoQ·EBITDA 50% + 사상 최고가, "가장 순수한 네오클라우드 비대칭"</td><td class="conf-high">상</td></tr>
+<tr><td><b>MU / SNDK</b></td><td>매수(유지)</td><td>Team Group GM "메모리 가격 하락 리스크 제로" 발언 + 2027년 공급 최대 50% 삭감 통보</td><td class="conf-high">상</td></tr>
+<tr><td><b>SIVE</b></td><td>매수(홀드·트래킹)</td><td>신규 테제 없이 기존 최고 확신주 유지, 프리마켓 반등 국면 포함</td><td class="conf-high">상</td></tr>
+<tr><td><b>AAOI</b></td><td>매수(홀드)</td><td>$28부터 분할매수 유지, 800G/1.6T 트랜시버 수요 지속, 프리마켓 반등 신호</td><td class="conf-mid">중</td></tr>
+<tr><td><b>ESMT</b></td><td>매수(신규)</td><td>레거시 메모리 트레이드 최대 수혜주 지목, 연환산 P/E 1.9배 저평가 진입</td><td class="conf-mid">중</td></tr>
+<tr><td><b>CCXI(→AGLT, Agility Robotics)</b></td><td>매수(신규·최대비중)</td><td>휴머노이드 개인 최대 포지션, 완성차 대기업(Foxconn/Toyota) 파트너십, SPAC 상장 전</td><td class="conf-mid">중</td></tr>
+<tr><td><b>AXTI</b></td><td>관망</td><td>조정장에서 -12.57% 급락 이력, 테제 자체는 유지되나 신규 촉매 부재</td><td class="conf-mid">중</td></tr>
+<tr><td><b>IREN</b></td><td>매도/관망(유지)</td><td>$60억 ATM 증자 지속, NBIS 대비 상대 부진(사상최고가 vs 정체) 재확인</td><td class="conf-mid">중</td></tr>
+</table>
+
+<h2>③ 내일 주목 픽</h2>
+<div class="picks">
+  <div class="pick">
+    <div><span class="rank">1</span><span class="ticker">NBIS — 네오클라우드 확신도 최상승</span></div>
+    <p>PLTR 파트너십(소버린 AI 인프라 우선 파트너) + Q2 실적(매출 +46% QoQ, EBITDA 마진 50%) + 사상 최고가 경신이 동시에 겹치며 아침 2순위에서 저녁 <b>1순위로 격상</b>. 세레니티 본인이 여러 네오클라우드 후보 중 최종적으로 압축한 종목이라는 점이 핵심.</p>
+  </div>
+  <div class="pick">
+    <div><span class="rank">2</span><span class="ticker">ESMT — 레거시 메모리 신규 아이디어</span></div>
+    <p>대형 메모리주(MU/SNDK) 랠리에 올라타기엔 늦었다고 판단할 경우, 세레니티가 이번 주 유일하게 신규 진입한 레거시 메모리 소형주. 저PER 매력은 있으나 소형주 변동성 리스크 상존.</p>
+  </div>
+  <div class="pick">
+    <div><span class="rank">3</span><span class="ticker">CCXI(Agility Robotics) — 휴머노이드 신규 테마</span></div>
+    <p>3단계 로테이션(광학→메모리→컴퓨트) 밖의 완전히 새로운 축. 세레니티 개인 최대 비중이라는 발언과 완성차 대기업 파트너십 패턴화가 근거. SPAC 합병 완료 시점 등 이벤트 확인 필요.</p>
+  </div>
+</div>
+
+<h2>④ 아침 대비 변화</h2>
+<div class="compare">
+  <div class="t">NBIS — 2순위 → 1순위 (컨빅션 상승)</div>
+  <div class="from">아침: "10/1 GPU 임대가 재인상, 마진 개선 시그널" (중간 신뢰도)</div>
+  <div class="to">저녁: PLTR 공식 파트너십 + Q2 실적 서프라이즈 + 사상 최고가 + IREN 대비 상대우위 확인 → <b>상 신뢰도로 격상, 저녁 픽 1순위</b></div>
+</div>
+<div class="compare">
+  <div class="t">SIVE — 1순위 유지, 다만 신규 촉매 부재</div>
+  <div class="from">아침: 최고 확신주(191회 언급, 19.6배 상승)</div>
+  <div class="to">저녁: 신규 포스트 없이 트래킹 모드 유지 확인, 프리마켓 반등 국면에 포함 — <b>포지션 홀드 관점 그대로</b></div>
+</div>
+<div class="compare">
+  <div class="t">MU/SNDK — 테제 보강</div>
+  <div class="from">아침: 인텔 CEO 발언 + Winbond-Infineon 인수로 공급 타이트 내러티브</div>
+  <div class="to">저녁: 업계 관계자(Team Group GM) 직접 인용 + 2027년 공급 최대 50% 삭감 통보 등 <b>더 구체적인 팩트로 재확인</b></div>
+</div>
+<div class="compare">
+  <div class="t">신규 테마 진입 — ESMT / CCXI</div>
+  <div class="from">아침: 광학·메모리·컴퓨트 3단계 로테이션 프레임 중심</div>
+  <div class="to">저녁: 레거시 메모리(ESMT), 휴머노이드(CCXI/Agility) <b>2개 신규 테마가 세레니티 레이더에 새로 등장</b> — 관심 섹터 확장 국면</div>
+</div>
+
+<footer>
+  * Not Financial Advice, DYOR. Serenity(@aleabitoreddit) 원문 기반 요약이며 투자 조언이 아닙니다.<br>
+  본 리포트는 검색 색인 기반으로 재구성되었으며, 자진 신고된 수익률·포지션을 검증 없이 인용한 서드파티 자료를 포함해 생존자 편향·선택 편향 가능성이 있습니다.<br>
+  Claude 자동 생성 · 2026-09-28 9:30 PM
+</footer>
+
+</div>
+</body>
+</html>
