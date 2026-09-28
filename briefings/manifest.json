@@ -1,5 +1,18 @@
 [
   {
+    "name": "CODEX_알림_자동매수모니터_260929_12.02PM.html",
+    "updatedIso": "2026-09-29T00:05:31.0055626+09:00",
+    "updatedDate": "2026-09-29",
+    "updatedTime": "00:05",
+    "updatedEpoch": 1790607931,
+    "displayDate": "2026-09-29",
+    "displayTime": "00:02 KST",
+    "displayEpoch": 1790607720,
+    "category": "stock",
+    "label": "CODEX 자동매수 모니터 2026-09-29 00:02 KST",
+    "summary": "매수 가능 0 · 대기 5 · 제외 3 | No Chase | 시세 지연·VWAP 미확인"
+  },
+  {
     "name": "CODEX_알림_낮진입전략_260928_12.30PM.html",
     "updatedIso": "2026-09-28T15:18:13+09:00",
     "updatedDate": "2026-09-28",
