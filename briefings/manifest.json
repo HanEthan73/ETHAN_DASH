@@ -1,5 +1,18 @@
 [
   {
+    "name": "CODEX_알림_인사이트KB업데이트_260930_7.35AM.html",
+    "updatedIso": "2026-09-30T07:40:07+09:00",
+    "updatedDate": "2026-09-30",
+    "updatedTime": "07:40",
+    "updatedEpoch": 1790721607,
+    "displayDate": "2026-09-30",
+    "displayTime": "7.35AM",
+    "displayEpoch": 1790721300,
+    "category": "insight",
+    "label": "CODEX 알림 인사이트 KB 업데이트 260930 7.35AM",
+    "summary": "근거 검증 우선 | 전일·당일 학습, 전략 변경, 유지·폐기 규칙, 오늘 체크 | No Chase"
+  },
+  {
     "name": "CODEX_알림_오후1차모니터_260929_1.34PM.html",
     "updatedIso": "2026-09-29T13:34:48+09:00",
     "updatedDate": "2026-09-29",
