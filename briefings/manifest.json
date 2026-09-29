@@ -1,18 +1,5 @@
 [
   {
-    "name": "CODEX_알림_자동매수모니터_260930_12.02PM.html",
-    "updatedIso": "2026-09-30T00:02:40+09:00",
-    "updatedDate": "2026-09-30",
-    "updatedTime": "00:02",
-    "updatedEpoch": 1790694160,
-    "displayDate": "2026-09-30",
-    "displayTime": "00:02 KST",
-    "displayEpoch": 1790694160,
-    "category": "stock",
-    "label": "CODEX 알림 자동매수 모니터 260930 (실제 00시 KST)",
-    "summary": "No Chase · 매수 가능 0 · 대기 6 · 추격 제외 2 · 지연 시세/VWAP 확인 보류"
-  },
-  {
     "name": "CODEX_알림_오후1차모니터_260929_1.34PM.html",
     "updatedIso": "2026-09-29T13:34:48+09:00",
     "updatedDate": "2026-09-29",
