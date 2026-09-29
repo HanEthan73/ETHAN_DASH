@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    margin: 0;
+    padding: 16px;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 18px;
+    color: #ff7b72;
+    margin: 0 0 4px 0;
+  }
+  .subtitle {
+    color: #8b949e;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .warning-box {
+    background: #3d1f1f;
+    border: 1px solid #f85149;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: #ffa198;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161b22;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  th, td {
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid #21262d;
+    font-size: 13px;
+  }
+  th {
+    background: #21262d;
+    color: #58a6ff;
+    font-weight: 600;
+  }
+  tr:last-child td { border-bottom: none; }
+  .ticker { font-weight: 700; color: #f0f6fc; }
+  .below-stop { color: #ff7b72; font-weight: 700; }
+  .price { color: #3fb950; font-weight: 600; }
+  .footer {
+    color: #6e7681;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 16px;
+  }
+  @media (max-width: 480px) {
+    th, td { font-size: 11px; padding: 8px 4px; }
+    h1 { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+  <h1>🚨 자동매수 트리거 도달</h1>
+  <div class="subtitle">2026-09-29 15:11 EDT (한국시간 09-30 04:11) 기준 · 실시간 시세</div>
+
+  <div class="warning-box">
+    ⚠️ AVGO, ORCL은 트리거가뿐 아니라 <b>손절가(Stop)</b>보다도 낮은 가격입니다. 단순 눌림목이 아니라 추세 자체가 꺾였을 가능성이 있으니 매수 전 재검토를 권장합니다.
+  </div>
+
+  <table>
+    <tr>
+      <th>종목</th>
+      <th>현재가</th>
+      <th>트리거가</th>
+      <th>손절가</th>
+      <th>목표가</th>
+      <th>비고</th>
+    </tr>
+    <tr>
+      <td class="ticker">AVGO</td>
+      <td class="price">$356.32</td>
+      <td>$420 이하</td>
+      <td>$390</td>
+      <td>$480</td>
+      <td class="below-stop">손절가 하회</td>
+    </tr>
+    <tr>
+      <td class="ticker">GOOGL</td>
+      <td class="price">$340.90</td>
+      <td>$385 이하</td>
+      <td>$355</td>
+      <td>$450</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td class="ticker">AMZN</td>
+      <td class="price">$248.53</td>
+      <td>$255 이하</td>
+      <td>$230</td>
+      <td>$320</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td class="ticker">ORCL</td>
+      <td class="price">$138.14</td>
+      <td>$178 이하</td>
+      <td>$162</td>
+      <td>$225</td>
+      <td class="below-stop">손절가 하회</td>
+    </tr>
+    <tr>
+      <td class="ticker">ASTS</td>
+      <td class="price">$59.12</td>
+      <td>$68 이하</td>
+      <td>$45</td>
+      <td>$100</td>
+      <td>-</td>
+    </tr>
+  </table>
+
+  <div class="footer">MSFT · INTC · TSM · MRVL · PLTR — 트리거 미도달 (2% 근접 종목 없음)<br>출처: StockAnalysis.com 실시간 시세</div>
+</body>
+</html>
