@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>M2 유동성 월간 업데이트 - 2026.09</title>
+<style>
+  :root{
+    --bg:#0b0e14; --card:#141924; --card2:#1a2130; --border:#242c3d;
+    --text:#e6e9f0; --sub:#8b95a8; --accent:#4f8cff;
+    --green:#2ecc71; --amber:#f5b942; --red:#ff5c5c;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Pretendard','Malgun Gothic',sans-serif;
+    line-height:1.6; padding:16px; max-width:480px; margin:0 auto;
+  }
+  header{margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid var(--border);}
+  header .tag{color:var(--accent); font-size:13px; font-weight:600; letter-spacing:0.5px;}
+  header h1{font-size:22px; margin-top:6px; font-weight:700;}
+  header .date{color:var(--sub); font-size:13px; margin-top:4px;}
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:18px; margin-bottom:14px;
+  }
+  .card h2{font-size:14px; color:var(--sub); font-weight:600; margin-bottom:12px;
+    text-transform:uppercase; letter-spacing:0.5px;}
+  .big-number{font-size:32px; font-weight:800; color:var(--text); margin-bottom:4px;}
+  .big-sub{font-size:13px; color:var(--sub);}
+  .metric-row{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:10px 0; border-bottom:1px solid var(--border);
+  }
+  .metric-row:last-child{border-bottom:none;}
+  .metric-label{font-size:14px; color:var(--sub);}
+  .metric-value{font-size:15px; font-weight:700;}
+  .up{color:var(--green);}
+  .down{color:var(--red);}
+  .badge{
+    display:inline-block; padding:8px 16px; border-radius:20px;
+    font-size:15px; font-weight:800; margin-bottom:10px;
+  }
+  .badge-expand{background:rgba(46,204,113,0.15); color:var(--green); border:1px solid rgba(46,204,113,0.4);}
+  .badge-neutral{background:rgba(245,185,66,0.15); color:var(--amber); border:1px solid rgba(245,185,66,0.4);}
+  .badge-tighten{background:rgba(255,92,92,0.15); color:var(--red); border:1px solid rgba(255,92,92,0.4);}
+  .trend-bar{display:flex; gap:4px; align-items:flex-end; height:60px; margin:14px 0 6px;}
+  .trend-bar .bar{flex:1; background:var(--accent); border-radius:3px 3px 0 0; position:relative; opacity:0.55;}
+  .trend-bar .bar.current{opacity:1;}
+  .trend-bar .bar span{
+    position:absolute; top:-18px; left:50%; transform:translateX(-50%);
+    font-size:10px; color:var(--sub); white-space:nowrap;
+  }
+  .trend-labels{display:flex; gap:4px;}
+  .trend-labels div{flex:1; text-align:center; font-size:10px; color:var(--sub);}
+  p{font-size:14px; color:var(--text); margin-bottom:8px;}
+  ul{padding-left:18px; margin-bottom:6px;}
+  li{font-size:14px; margin-bottom:6px; color:var(--text);}
+  .note{font-size:12px; color:var(--sub); font-style:italic; margin-top:8px;}
+  footer{margin-top:20px; padding-top:14px; border-top:1px solid var(--border);
+    font-size:11px; color:var(--sub); text-align:center;}
+  footer a{color:var(--accent); text-decoration:none;}
+  .strategy-tag{
+    display:inline-block; background:var(--card2); border:1px solid var(--border);
+    border-radius:8px; padding:3px 10px; font-size:11px; color:var(--sub); margin-top:8px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">ETHAN DASH · 유동성 브리핑</div>
+  <h1>M2 통화량 월간 업데이트</h1>
+  <div class="date">2026년 9월 29일 (화) · 2026년 8월 발표 기준</div>
+</header>
+
+<div class="card">
+  <h2>현재 M2 수치</h2>
+  <div class="big-number">$23.34조</div>
+  <div class="big-sub">($23,342.8B, 계절조정, 2026년 8월)</div>
+
+  <div class="trend-bar">
+    <div class="bar" style="height:55%"><span></span></div>
+    <div class="bar" style="height:70%"><span></span></div>
+    <div class="bar" style="height:66%"><span></span></div>
+    <div class="bar" style="height:70%"><span></span></div>
+    <div class="bar current" style="height:100%"><span>5.7%</span></div>
+  </div>
+  <div class="trend-labels">
+    <div>4월</div><div>5월</div><div>6월</div><div>7월</div><div>8월</div>
+  </div>
+  <div class="note">막대 = M2 YoY 증가율 추이 (4.5%→5.4%→5.3%→5.4%→5.7%)</div>
+</div>
+
+<div class="card">
+  <h2>증감률</h2>
+  <div class="metric-row">
+    <span class="metric-label">전월 대비 (MoM)</span>
+    <span class="metric-value up">▲ +$124.9B (+0.54%)</span>
+  </div>
+  <div class="metric-row">
+    <span class="metric-label">전년 동기 대비 (YoY)</span>
+    <span class="metric-value up">▲ +5.7%</span>
+  </div>
+  <div class="metric-row">
+    <span class="metric-label">전월 YoY (7월)</span>
+    <span class="metric-value">+5.4%</span>
+  </div>
+  <div class="metric-row">
+    <span class="metric-label">다음 발표일</span>
+    <span class="metric-value">2026.10.27</span>
+  </div>
+</div>
+
+<div class="card">
+  <h2>투자 사이클 판단</h2>
+  <span class="badge badge-expand">유동성 팽창 (Expansion)</span>
+  <p>M2 YoY +5.7%로 기준선(5%)을 상회하며, 4월 저점(4.5%) 이후 4개월 연속 상승 추세가 이어지고 있습니다. 유동성이 확장 국면에 진입한 것으로 판단되며, 위험자산(주식·성장주) 매수에 우호적인 환경입니다.</p>
+  <div class="strategy-tag">4전략 중 M2 지표 · 중장기 방향성</div>
+</div>
+
+<div class="card">
+  <h2>보유 종목 시사점</h2>
+  <ul>
+    <li><strong>포지션 유지·확대 고려:</strong> 유동성 팽창 국면은 통상 성장주·기술주·소형주에 우호적입니다. Weinstein 2단계(상승) 종목의 비중 확대를 검토할 만한 배경입니다.</li>
+    <li><strong>VCP·C&H 신호와 결합:</strong> M2는 중장기 방향성 지표이므로, 개별 종목의 VCP 베이스나 C&H 패턴 브레이크아웃 신호와 함께 확인 시 매수 신뢰도가 높아집니다.</li>
+    <li><strong>주의:</strong> 유동성 팽창이 반드시 즉각적인 주가 상승을 의미하지는 않으며, 밸류에이션·금리 경로 등 다른 변수와 함께 판단이 필요합니다.</li>
+  </ul>
+  <p class="note">※ 본 시사점은 M2 지표 단독 해석이며, 실제 보유 종목 데이터는 연동되지 않았습니다.</p>
+</div>
+
+<div class="card">
+  <h2>다음 달 전망</h2>
+  <p>8월 YoY 증가율이 5개월 연속 4%대 후반~5%대 흐름을 유지하며 완만히 가속화되는 모습입니다. 10월 27일 9월분 발표 시 YoY 5%대 후반~6%대 진입 여부가 팽창 국면의 지속성을 가늠하는 분기점이 될 전망입니다. 연준의 금리 정책 경로와 재정지출 속도가 다음 M2 흐름의 주요 변수입니다.</p>
+</div>
+
+<footer>
+  데이터 출처: FRED (Federal Reserve Bank of St. Louis), M2SL 시리즈<br>
+  자동 생성 · ETHAN_DASH M2 업데이트 에이전트
+</footer>
+
+</body>
+</html>
