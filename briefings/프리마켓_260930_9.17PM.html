@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>프리마켓 브리핑 260930</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --border:#30363d;
+    --text:#e6edf3; --sub:#8b949e; --green:#3fb950; --red:#f85149;
+    --accent:#58a6ff; --warn:#f0883e;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:16px; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Malgun Gothic",sans-serif;
+    font-size:15px; line-height:1.5; max-width:480px; margin:0 auto;
+  }
+  h1{font-size:18px; margin:0 0 2px 0;}
+  .sub{color:var(--sub); font-size:12px; margin-bottom:14px;}
+  .summary{
+    background:linear-gradient(135deg,#1f2937,#111827); border:1px solid var(--border);
+    border-radius:10px; padding:12px 14px; margin-bottom:16px; font-size:13.5px;
+    font-weight:600; color:#ffd479;
+  }
+  h2{font-size:14px; margin:18px 0 8px 0; color:var(--accent); border-left:3px solid var(--accent); padding-left:8px;}
+  table{width:100%; border-collapse:collapse; font-size:13px; background:var(--card); border-radius:8px; overflow:hidden;}
+  th,td{padding:8px 6px; text-align:center; border-bottom:1px solid var(--border);}
+  th{background:#1c2129; color:var(--sub); font-weight:600; font-size:11.5px;}
+  tr:last-child td{border-bottom:none;}
+  .up{color:var(--green); font-weight:600;}
+  .down{color:var(--red); font-weight:600;}
+  .flat{color:var(--sub);}
+  .alert{color:var(--red); font-weight:700;}
+  .ok{color:var(--sub);}
+  .cards{display:flex; flex-direction:column; gap:6px;}
+  .card{
+    display:flex; justify-content:space-between; align-items:center;
+    background:var(--card); border:1px solid var(--border); border-radius:8px;
+    padding:8px 12px; font-size:13px;
+  }
+  .card .name{font-weight:600;}
+  .card .sub2{color:var(--sub); font-size:11px; margin-left:6px;}
+  ul.events{margin:0; padding-left:18px; font-size:13px; color:var(--text);}
+  ul.events li{margin-bottom:5px;}
+  .footer{margin-top:20px; padding-top:10px; border-top:1px solid var(--border); color:var(--sub); font-size:11px; text-align:center;}
+  .badge{display:inline-block; padding:1px 6px; border-radius:4px; font-size:10.5px; font-weight:700;}
+  .badge-alert{background:rgba(248,81,73,0.15); color:var(--red);}
+  .badge-ok{background:rgba(63,185,80,0.12); color:var(--green);}
+</style>
+</head>
+<body>
+
+<h1>🌙 미장 프리마켓 브리핑</h1>
+<div class="sub">2026-09-30(수) 21:17 KST · 개장 약 70분 전</div>
+
+<div class="summary">
+  📌 총평: 10년물 금리 5.24%대 19년래 고점 속 지수선물 혼조, 반도체 보유주(NVDA·AVGO·VRT·INTC)는 견조하나 ORCL 급락 및 ASTS·GOOGL·AMZN 트리거 하회 — 개장 초반 변동성 유의
+</div>
+
+<h2>① 시장 지표</h2>
+<table>
+<tr><th>지표</th><th>현재</th><th>비고</th></tr>
+<tr><td>나스닥100 선물</td><td class="up">30,561</td><td class="ok">개장가 대비 +0.4%</td></tr>
+<tr><td>S&amp;P500 선물</td><td class="flat">7,747.5</td><td class="ok">보합권</td></tr>
+<tr><td>VIX</td><td class="flat">16.1</td><td class="ok">안정권(저변동성)</td></tr>
+<tr><td>美 10년물 금리</td><td class="alert">5.24%</td><td class="alert">19년래 최고 수준</td></tr>
+</table>
+
+<h2>② 보유종목 현황</h2>
+<div class="cards">
+  <div class="card"><span class="name">NVDA</span><span><span class="up">$230.53</span><span class="sub2">+0.73%</span></span></div>
+  <div class="card"><span class="name">AVGO</span><span><span class="up">$360.19</span><span class="sub2">+0.85%</span></span></div>
+  <div class="card"><span class="name">ASTS</span><span><span class="down">$61.00</span><span class="sub2">-1.80%</span></span></div>
+  <div class="card"><span class="name">VRT</span><span><span class="up">$274.04</span><span class="sub2">+1.92%</span></span></div>
+  <div class="card"><span class="name">현대차</span><span><span class="up">₩386,500</span><span class="sub2">+2.48%</span></span></div>
+</div>
+
+<h2>③ 프리마켓 특이 동향</h2>
+<ul class="events">
+  <li><b>ORCL</b> $142.92 <span class="down">(-4.90%)</span> — 급락, 트리거($178) 하회 지속</li>
+  <li><b>INTC</b> $131.56 <span class="up">(+3.39%)</span> — 보유 반도체주 중 최고 상승률</li>
+  <li><b>VRT</b> $274.04 <span class="up">(+1.92%)</span> — AI 전력인프라 강세 지속</li>
+</ul>
+
+<h2>④ 오늘 주요 이벤트</h2>
+<ul class="events">
+  <li>美 8월 근원 PCE 물가지수 발표 (개장 전)</li>
+  <li>美 2분기 GDP 확정치 발표 (개장 전)</li>
+  <li>ADP 민간고용 발표 (개장 전)</li>
+  <li>Fed 인사 다수 발언 예정</li>
+  <li>Micron(MU) 실적 발표 — 장 마감 후 (반도체 섹터 참고)</li>
+</ul>
+
+<h2>⑤ 자동매수 알림 트리거 체크</h2>
+<table>
+<tr><th>종목</th><th>현재가</th><th>트리거</th><th>상태</th></tr>
+<tr><td>AVGO</td><td>$360.19</td><td>$420</td><td><span class="badge badge-alert">🚨 하회</span></td></tr>
+<tr><td>MSFT</td><td>$508.59</td><td>$410</td><td><span class="badge badge-ok">정상</span></td></tr>
+<tr><td>INTC</td><td>$131.56</td><td>$104.50</td><td><span class="badge badge-ok">정상</span></td></tr>
+<tr><td>GOOGL</td><td>$342.06</td><td>$385</td><td><span class="badge badge-alert">🚨 하회</span></td></tr>
+<tr><td>TSM</td><td>$454.00</td><td>$395</td><td><span class="badge badge-ok">정상</span></td></tr>
+<tr><td>MRVL</td><td>$263.27</td><td>$168</td><td><span class="badge badge-ok">정상</span></td></tr>
+<tr><td>AMZN</td><td>$246.31</td><td>$255</td><td><span class="badge badge-alert">🚨 하회</span></td></tr>
+<tr><td>ORCL</td><td>$142.92</td><td>$178</td><td><span class="badge badge-alert">🚨 하회</span></td></tr>
+<tr><td>PLTR</td><td>$187.56</td><td>$122</td><td><span class="badge badge-ok">정상</span></td></tr>
+<tr><td>ASTS</td><td>$61.00</td><td>$68</td><td><span class="badge badge-alert">🚨 하회</span></td></tr>
+</table>
+
+<div class="footer">
+  ETHAN 대표님 전용 자동 브리핑 · 프리마켓 속보 에이전트<br>
+  데이터 출처: 웹 검색 종합(변동 가능) · 생성 2026-09-30 21:17 KST
+</div>
+
+</body>
+</html>
