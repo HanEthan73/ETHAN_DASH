@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동매수 트리거 알림</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    background:#0d1117; color:#e6edf3; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    margin:0; padding:20px; max-width:720px; margin:0 auto;
+  }
+  h1 { font-size:20px; color:#ff7b72; margin-bottom:4px; }
+  .subtitle { color:#8b949e; font-size:13px; margin-bottom:20px; }
+  table { width:100%; border-collapse:collapse; margin-bottom:24px; font-size:14px; }
+  th, td { padding:10px 8px; text-align:center; border-bottom:1px solid #21262d; }
+  th { background:#161b22; color:#58a6ff; font-weight:600; }
+  td.ticker { font-weight:700; color:#e6edf3; }
+  td.price { color:#f0f6fc; font-weight:600; }
+  td.trigger { color:#8b949e; }
+  td.stop { color:#ff7b72; }
+  td.target { color:#3fb950; }
+  tr:nth-child(even) { background:#0f151c; }
+  .section-title { font-size:15px; color:#8b949e; margin:20px 0 8px; }
+  .footer { color:#484f58; font-size:11px; margin-top:20px; text-align:center; }
+</style>
+</head>
+<body>
+<h1>&#128680; 자동매수 트리거 도달 2026-10-01 00:11</h1>
+<div class="subtitle">ETHAN 자동매수 모니터링</div>
+
+<div class="section-title">도달 종목</div>
+<table>
+<tr><th>종목</th><th>현재가</th><th>트리거가</th><th>손절</th><th>목표</th></tr>
+<tr><td class="ticker">AVGO</td><td class="price">$355.10</td><td class="trigger">$420</td><td class="stop">$390</td><td class="target">$480</td></tr>
+<tr><td class="ticker">GOOGL</td><td class="price">$342.75</td><td class="trigger">$385</td><td class="stop">$355</td><td class="target">$450</td></tr>
+<tr><td class="ticker">AMZN</td><td class="price">$248.42</td><td class="trigger">$255</td><td class="stop">$230</td><td class="target">$320</td></tr>
+<tr><td class="ticker">ORCL</td><td class="price">$137.79</td><td class="trigger">$178</td><td class="stop">$162</td><td class="target">$225</td></tr>
+<tr><td class="ticker">ASTS</td><td class="price">$59.40</td><td class="trigger">$68</td><td class="stop">$45</td><td class="target">$100</td></tr>
+
+</table>
+
+<div class="footer">자동 생성 · 실시간 웹서치 기반</div>
+</body>
+</html>
