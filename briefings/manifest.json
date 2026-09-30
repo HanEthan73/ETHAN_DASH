@@ -1,18 +1,5 @@
 [
   {
-    "name": "CODEX_알림_저녁브리핑_260930_10.33PM.html",
-    "updatedIso": "2026-09-30T22:33:32.363697+09:00",
-    "updatedDate": "2026-09-30",
-    "updatedTime": "22:33",
-    "updatedEpoch": 1790775212,
-    "displayDate": "2026-09-30",
-    "displayTime": "10.33PM",
-    "displayEpoch": 1790775212,
-    "category": "stock",
-    "label": "CODEX 알림 저녁 브리핑 260930 10.33PM",
-    "summary": "방어적 대기 · No Chase · 진입 0 / 대기 7 / 실행 제외 1 · 개장 전 시세 정합성 확인 보류"
-  },
-  {
     "name": "CODEX_알림_오후1차모니터_260930_1.33PM.html",
     "updatedIso": "2026-09-30T13:33:04+09:00",
     "updatedDate": "2026-09-30",
