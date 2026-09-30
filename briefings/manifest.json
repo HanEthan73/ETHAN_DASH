@@ -1,18 +1,5 @@
 [
   {
-    "name": "CODEX_알림_오전종합모니터_260930_9.35AM.html",
-    "updatedIso": "2026-09-30T09:35:09+09:00",
-    "updatedDate": "2026-09-30",
-    "updatedTime": "09:35",
-    "updatedEpoch": 1790728509,
-    "displayDate": "2026-09-30",
-    "displayTime": "9.35AM",
-    "displayEpoch": 1790728509,
-    "category": "stock",
-    "label": "CODEX 알림 오전 종합 모니터 260930 9.35AM",
-    "summary": "No Chase · 매수 승인 0 · MU D-day · NKE D-1 · 금리·지정학 주의"
-  },
-  {
     "name": "CODEX_알림_오후1차모니터_260929_1.34PM.html",
     "updatedIso": "2026-09-29T13:34:48+09:00",
     "updatedDate": "2026-09-29",
