@@ -1,18 +1,5 @@
 [
   {
-    "name": "CODEX_알림_한국장마감PLTR모니터_260930_3.32PM.html",
-    "updatedIso": "2026-09-30T15:32:03.019601+09:00",
-    "updatedDate": "2026-09-30",
-    "updatedTime": "15:32",
-    "updatedEpoch": 1790749923,
-    "displayDate": "2026-09-30",
-    "displayTime": "3.32PM",
-    "displayEpoch": 1790749923,
-    "category": "stock",
-    "label": "CODEX 알림 한국장 마감 및 PLTR 모니터",
-    "summary": "한국장 확정 마감 보류 · PLTR $186.97 · $128 조건 미충족 · No Chase"
-  },
-  {
     "name": "CODEX_알림_오후1차모니터_260930_1.33PM.html",
     "updatedIso": "2026-09-30T13:33:04+09:00",
     "updatedDate": "2026-09-30",
