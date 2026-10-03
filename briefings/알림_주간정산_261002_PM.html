@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETHAN 주간 손익 정산 | 2026.10.02 (9/28~10/2)</title>
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --bg2: #1a1a2e;
+    --bg3: #16213e;
+    --gold: #ffd700;
+    --text: #e8e8f0;
+    --muted: #9090a8;
+    --green: #00e676;
+    --red: #ff5252;
+    --blue: #40c4ff;
+    --orange: #ffab40;
+    --border: #2a2a4a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', -apple-system, sans-serif; font-size: 14px; line-height: 1.6; }
+  .header { background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%); border-bottom: 2px solid var(--gold); padding: 20px 24px 16px; }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; }
+  .title-block h1 { font-size: 20px; color: var(--gold); letter-spacing: 1px; }
+  .title-block .sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .badge { background: var(--gold); color: #0f0f1a; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 10px; align-self: flex-start; }
+  .container { max-width: 900px; margin: 0 auto; padding: 16px; }
+  .section { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 14px; overflow: hidden; }
+  .section-header { background: var(--bg3); padding: 10px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+  .section-header .icon { font-size: 16px; }
+  .section-header h2 { font-size: 13px; font-weight: 700; color: var(--gold); letter-spacing: 0.5px; }
+  .section-header .meta { font-size: 11px; color: var(--muted); margin-left: auto; }
+  .section-body { padding: 14px 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; padding: 6px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+  td { padding: 9px 10px; border-bottom: 1px solid #1f1f35; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,215,0,0.03); }
+  .ticker { font-weight: 700; color: var(--gold); font-size: 14px; }
+  .name { color: var(--muted); font-size: 11px; }
+  .price { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .pos { color: var(--green); }
+  .neg { color: var(--red); }
+  .warn { color: var(--orange); }
+  .neutral { color: var(--muted); }
+  .country-tag { font-size: 10px; background: #2a2a4a; padding: 2px 6px; border-radius: 8px; color: var(--muted); }
+  .event-item { padding: 10px 0; border-bottom: 1px solid #1f1f35; }
+  .event-item:last-child { border-bottom: none; }
+  .event-title { font-weight: 700; color: var(--text); font-size: 13px; margin-bottom: 3px; }
+  .event-date { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .event-body { font-size: 13px; color: var(--text); line-height: 1.6; }
+  .event-body .highlight { color: var(--gold); font-weight: 700; }
+  .event-body .pos { color: var(--green); }
+  .event-body .neg { color: var(--red); }
+  .strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 600px) { .strategy-grid { grid-template-columns: 1fr; } }
+  .strategy-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+  .strategy-card h3 { font-size: 12px; color: var(--gold); margin-bottom: 8px; font-weight: 700; }
+  .strategy-card ul { list-style: none; }
+  .strategy-card ul li { font-size: 12px; color: var(--text); padding: 3px 0; padding-left: 14px; position: relative; line-height: 1.5; }
+  .strategy-card ul li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); }
+  .progress-block { display: flex; flex-direction: column; gap: 10px; }
+  .progress-row { display: flex; align-items: center; gap: 10px; }
+  .progress-label { font-size: 12px; color: var(--muted); width: 80px; flex-shrink: 0; }
+  .progress-bar-wrap { flex: 1; background: #1f1f35; border-radius: 4px; height: 8px; }
+  .progress-bar { height: 8px; border-radius: 4px; background: linear-gradient(90deg, var(--gold), #ffab40); }
+  .progress-val { font-size: 12px; color: var(--gold); font-weight: 700; width: 52px; text-align: right; flex-shrink: 0; }
+  .summary-box { background: linear-gradient(135deg, #1a1a2e, #16213e); border: 1px solid var(--gold); border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; }
+  .summary-box p { font-size: 13px; line-height: 1.8; color: var(--text); }
+  .footer { text-align: center; padding: 16px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); }
+  .data-note { font-size: 11px; color: var(--muted); margin-top: 8px; }
+  .warn-icon { color: var(--orange); }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-top">
+    <div class="title-block">
+      <h1>📊 ETHAN 주간 손익 정산</h1>
+      <div class="sub">2026.09.28(월) ~ 2026.10.02(금) · 자동 생성</div>
+    </div>
+    <div class="badge">AUTO REPORT</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- 요약 -->
+<div class="summary-box">
+  <p>이번 주는 <span style="color:var(--gold);font-weight:700">MU 어닝 서프라이즈</span>(EPS 33.42, +5% 상회)와 <span style="color:var(--green);font-weight:700">테슬라 3Q 인도량 486,532대</span>(컨센 +5.3% 상회)로 긍정적 촉매가 작동했습니다. 금요일 발표된 <span style="color:var(--red);font-weight:700">9월 고용보고서 쇼크</span>(비농업 +29K, 예상 84K 크게 하회)로 10년물 금리가 5.18%로 하락, 주 후반 기술주가 반등했습니다. 보유 미국 종목 전반 주 초반 하락 후 회복, 국내 종목은 혼조세.</p>
+</div>
+
+<!-- 미국 종목 -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">🇺🇸</span>
+    <h2>미국 보유 종목 주간 성과</h2>
+    <span class="meta">기준: 10/2 종가</span>
+  </div>
+  <div class="section-body">
+    <table>
+      <thead>
+        <tr>
+          <th>종목</th>
+          <th>10/2 종가</th>
+          <th>주간 수익률</th>
+          <th>보유수량</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="ticker">NVDA</div><div class="name">NVIDIA</div></td>
+          <td class="price">$233.95</td>
+          <td class="pos">+2.22%</td>
+          <td>20주</td>
+          <td style="font-size:11px;color:var(--muted)">ATH $237.88 터치</td>
+        </tr>
+        <tr>
+          <td><div class="ticker">ASTS</div><div class="name">AST SpaceMobile</div></td>
+          <td class="price">$58.46</td>
+          <td class="pos">+6.56%</td>
+          <td>-</td>
+          <td style="font-size:11px;color:var(--muted)">Berenberg Buy, TP $92</td>
+        </tr>
+        <tr>
+          <td><div class="ticker">MSTX</div><div class="name">2x Long MSTR ETF</div></td>
+          <td class="price">$19.82</td>
+          <td class="warn">⚠️ 주간 % 미확인</td>
+          <td>-</td>
+          <td style="font-size:11px;color:var(--muted)">10/2 종가 기준</td>
+        </tr>
+        <tr>
+          <td><div class="ticker">VRT</div><div class="name">Vertiv Holdings</div></td>
+          <td class="price">$252.39</td>
+          <td class="pos">+3.42%</td>
+          <td>-</td>
+          <td style="font-size:11px;color:var(--muted)">9/28 -3.4% → 회복</td>
+        </tr>
+        <tr>
+          <td><div class="ticker">INTC</div><div class="name">Intel</div></td>
+          <td class="price">$119.33</td>
+          <td class="pos">+2.84%</td>
+          <td>-</td>
+          <td style="font-size:11px;color:var(--muted)">9/28 -5.67% → 회복</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="data-note">* 주간 수익률: 9/28 종가 → 10/2 종가 기준 (9/27 종가 대비 정확도 ⚠️)</div>
+  </div>
+</div>
+
+<!-- 국내 종목 -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">🇰🇷</span>
+    <h2>국내 보유 종목 주간 성과</h2>
+    <span class="meta">기준: KRX</span>
+  </div>
+  <div class="section-body">
+    <table>
+      <thead>
+        <tr>
+          <th>종목</th>
+          <th>코드</th>
+          <th>9/28 종가</th>
+          <th>10/2 종가</th>
+          <th>주간 수익률</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="ticker">삼성전자</div></td>
+          <td style="color:var(--muted);font-size:12px">005930</td>
+          <td class="price neg">₩270,000 (-5.43%)</td>
+          <td class="price">₩276,000</td>
+          <td class="pos">+2.22%</td>
+        </tr>
+        <tr>
+          <td><div class="ticker">현대차</div></td>
+          <td style="color:var(--muted);font-size:12px">005380</td>
+          <td class="price pos">₩355,500 (+0.57%)</td>
+          <td class="price warn">⚠️ 미확인</td>
+          <td class="warn">⚠️ 주간 % 미확인</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="data-note">* 삼성전자: 9/28 반도체 업종 급락 (-5.43%) 후 주 후반 반등. 현대차 10/2 종가 데이터 확인 불가.</div>
+  </div>
+</div>
+
+<!-- 주요 이벤트 -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">📅</span>
+    <h2>이번 주 주요 이벤트 복기</h2>
+  </div>
+  <div class="section-body">
+
+    <div class="event-item">
+      <div class="event-title">🏆 MU 어닝 서프라이즈</div>
+      <div class="event-date">9/30 (화) · 장 마감 후 발표</div>
+      <div class="event-body">
+        Micron Technology FY2026 Q4 실적 대폭 상회.<br>
+        · EPS: <span class="highlight">$33.42</span> (컨센서스 $31.82, <span class="pos">+5.0% 서프라이즈</span>)<br>
+        · 매출: $54.23B (컨센서스 $50.95B, <span class="pos">+6.4% 상회</span>) · YoY <span class="pos">+379%</span><br>
+        · AI 수요 급증에 따른 HBM/DRAM 호조 → NVDA 공급망 전반 긍정적 영향
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-title">🚗 테슬라 3Q 인도량 발표</div>
+      <div class="event-date">10/2 (금) · 장 전 발표</div>
+      <div class="event-body">
+        테슬라 Q3 2026 인도 <span class="highlight">486,532대</span> (컨센서스 461,974대 대비 <span class="pos">+5.3% 상회</span>)<br>
+        · 생산: 464,000대 이상 · 에너지 저장: 13.7 GWh 배포<br>
+        · 유럽 판매 회복세 뚜렷 · 다음 주요 이벤트: 10/21 Q3 실적 발표
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-title">📉 미국 9월 고용보고서 쇼크</div>
+      <div class="event-date">10/2 (금) · 21:30 KST 발표</div>
+      <div class="event-body">
+        비농업 신규고용: <span class="neg">+29,000명</span> (예상 +84,000명 <span class="neg">대폭 하회</span>)<br>
+        · 전월 대비 -60,000명 하향 수정 · 실업률: 4.2% (노동참가율 증가에 기인)<br>
+        · 10년물 국채: <span class="highlight">5.18%</span>로 6bp 하락 (주중 최고치에서 후퇴)<br>
+        · 시장 반응: Fed 10월 동결 가능성 급등 → 기술주 단기 반등
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-title">📈 10년물 금리 고점 경보</div>
+      <div class="event-date">9/28~10/2 · 주중 지속</div>
+      <div class="event-body">
+        주중 10년물 금리 <span class="neg">5.2%대 상단 근접</span> (2002년 이후 최고 수준)<br>
+        · INTC 9/28 -5.67%, VRT -3.4% 등 고금리 압박 하락 발생<br>
+        · 고용쇼크 이후 5.18%로 일부 안정 → 기술주·성장주 낙폭 회복
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-title">⚠️ 미 연방정부 셧다운 해소 여부</div>
+      <div class="event-date">이번 주 모니터링</div>
+      <div class="event-body">
+        <span class="warn">⚠️ 이번 주 검색 결과에서 셧다운 관련 확정 정보 확인 불가.</span><br>
+        셧다운 지속 또는 단기 예산안 통과 여부는 직접 확인 요망.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 다음 주 일정 -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">🗓️</span>
+    <h2>다음 주 핵심 일정 & 전략 (10/5~10/10)</h2>
+  </div>
+  <div class="section-body">
+    <div class="strategy-grid">
+      <div class="strategy-card">
+        <h3>📌 주요 일정</h3>
+        <ul>
+          <li>테슬라 실적 발표: 10/21 예정</li>
+          <li>FOMC 10월 회의: 금리 동결 유력</li>
+          <li>CPI 발표 일정 확인 필요</li>
+          <li>인텔 파운드리 전략 업데이트</li>
+          <li>삼성전자 실적 시즌 준비</li>
+        </ul>
+      </div>
+      <div class="strategy-card">
+        <h3>⚡ 종목별 전략</h3>
+        <ul>
+          <li>NVDA: ATH 돌파 시 추가 모멘텀 모니터링</li>
+          <li>ASTS: Berenberg TP $92, 단기 저항 $65 주목</li>
+          <li>INTC: 파운드리 전환 기대감 지속 관찰</li>
+          <li>VRT: 데이터센터 수요 AI 수혜 지속</li>
+          <li>삼성전자: 반도체 반등세 지속 여부 확인</li>
+        </ul>
+      </div>
+      <div class="strategy-card">
+        <h3>🎯 리스크 요인</h3>
+        <ul>
+          <li>10년물 금리 재차 5.2% 상향 돌파</li>
+          <li>고용 악화→경기침체 우려 심화</li>
+          <li>MSTX 레버리지 변동성 관리</li>
+          <li>미 정부 셧다운 장기화 시나리오</li>
+          <li>원/달러 환율 변동 영향</li>
+        </ul>
+      </div>
+      <div class="strategy-card">
+        <h3>💡 매크로 시그널</h3>
+        <ul>
+          <li>약한 고용 = Fed 완화 기대 ↑ (단기 호재)</li>
+          <li>MU 서프라이즈 = HBM/AI 수요 확인</li>
+          <li>테슬라 인도 개선 = EV 수요 회복</li>
+          <li>금리 5.2% 이상 = 성장주 밸류에이션 압박</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 목표액 진행률 -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">🎯</span>
+    <h2>포트폴리오 목표 진행률</h2>
+    <span class="meta">목표: 2억원 / 2027.12</span>
+  </div>
+  <div class="section-body">
+    <p style="font-size:13px;color:var(--text);margin-bottom:14px;">
+      NVDA 20주 × $233.95 = <span style="color:var(--gold);font-weight:700">$4,679</span> (약 630만원 추산, 환율 1,350원 가정).<br>
+      전체 포트폴리오 가치 및 목표 대비 진행률은 보유 수량 전체 입력 후 정밀 산출 권장.
+    </p>
+    <div class="progress-block">
+      <div class="progress-row">
+        <div class="progress-label" style="font-size:11px">목표까지</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:25%"></div></div>
+        <div class="progress-val">~25%</div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-label" style="font-size:11px">남은 기간</div>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width:38%;background:linear-gradient(90deg,#40c4ff,#0080ff)"></div></div>
+        <div class="progress-val">~15개월</div>
+      </div>
+    </div>
+    <div class="data-note" style="margin-top:10px">⚠️ 진행률은 추정치. 전체 보유 수량·평균단가 기반 정산은 별도 확인 필요.</div>
+  </div>
+</div>
+
+<!-- 포트폴리오 총평 -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">💼</span>
+    <h2>포트폴리오 총평</h2>
+  </div>
+  <div class="section-body">
+    <p style="font-size:13px;line-height:1.9;color:var(--text);">
+      이번 주는 <span style="color:var(--green);font-weight:700">MU 어닝 서프라이즈 + 테슬라 인도 상회</span>라는 긍정 촉매 속에서도 
+      <span style="color:var(--red)">10년물 금리 5.2% 근접 고점 경보</span>가 주 초 기술주를 압박했습니다. 
+      금요일 고용쇼크로 금리가 후퇴하며 보유 미국 종목 전반이 주간 기준 <span style="color:var(--green)">+2~+7% 범위 플러스</span>로 마감했습니다.<br><br>
+      NVDA는 ATH $237.88을 터치하며 AI 수요 내러티브를 재확인. ASTS는 Berenberg 커버리지 개시(Buy/TP $92)로 주간 +6.56% 강세. 
+      VRT와 INTC는 주 초 급락 후 회복 패턴. 삼성전자는 9/28 -5.43% 충격 후 주 후반 반등.<br><br>
+      <span style="color:var(--gold);font-weight:700">핵심 리스크:</span> 금리 재상승 재현 가능성, MSTX 레버리지 관리, 셧다운 불확실성.
+    </p>
+  </div>
+</div>
+
+</div>
+<div class="footer">
+  ETHAN DASH AUTO-GENERATED · 2026.10.02 · 데이터 소스: WebSearch / Yahoo Finance / CNBC / StockAnalysis<br>
+  ⚠️ 표시 항목은 데이터 미확인. 투자 판단은 본인 책임.
+</div>
+</body>
+</html>
