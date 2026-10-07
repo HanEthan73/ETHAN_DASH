@@ -10,7 +10,8 @@
     "displayEpoch": 1791198660,
     "category": "stock",
     "label": "알림 저녁진입타이밍브리핑",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_오후3시브리핑_261005_3.08PM.html",
@@ -23,7 +24,8 @@
     "displayEpoch": 1791180480,
     "category": "stock",
     "label": "알림 오후3시브리핑",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_진입타이밍브리핑_261005_11.08AM.html",
@@ -36,7 +38,8 @@
     "displayEpoch": 1791166080,
     "category": "stock",
     "label": "알림 진입타이밍브리핑",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_저녁브리핑_261004_11.12PM.html",
@@ -49,7 +52,8 @@
     "displayEpoch": 1791123120,
     "category": "stock",
     "label": "알림 저녁브리핑",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_한국장인사이트저녁_261004_9.40PM.html",
@@ -62,7 +66,8 @@
     "displayEpoch": 1791117600,
     "category": "stock",
     "label": "알림 한국장인사이트저녁",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_세레니티저녁_261004_9.30PM.html",
@@ -75,7 +80,8 @@
     "displayEpoch": 1791117000,
     "category": "stock",
     "label": "알림 세레니티저녁",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "주간전략_261004_7.05PM.html",
@@ -101,7 +107,8 @@
     "displayEpoch": 1791065400,
     "category": "stock",
     "label": "알림 세레니티아침",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_저녁브리핑_261003_11.10PM.html",
@@ -114,7 +121,8 @@
     "displayEpoch": 1791036600,
     "category": "stock",
     "label": "알림 저녁브리핑 261003 11.10PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_한국장인사이트저녁_261003_9.40PM.html",
@@ -127,7 +135,8 @@
     "displayEpoch": 1791031200,
     "category": "stock",
     "label": "알림 한국장인사이트저녁 261003 9.40PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_세레니티저녁_261003_9.30PM.html",
@@ -140,7 +149,8 @@
     "displayEpoch": 1791030600,
     "category": "stock",
     "label": "알림 세레니티저녁 261003 9.30PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_한국장인사이트아침_261003_7.15AM.html",
@@ -153,7 +163,8 @@
     "displayEpoch": 1790979300,
     "category": "stock",
     "label": "알림 한국장인사이트아침 261003 7.15AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_세레니티아침_261003_7.10AM.html",
@@ -166,7 +177,8 @@
     "displayEpoch": 1790979000,
     "category": "stock",
     "label": "알림 세레니티아침 261003 7.10AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_한국장인사이트저녁_261002_9.40PM.html",
@@ -179,7 +191,8 @@
     "displayEpoch": 1790944800,
     "category": "stock",
     "label": "알림 한국장인사이트저녁 261002 9.40PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_세레니티저녁_261002_9.30PM.html",
@@ -192,7 +205,8 @@
     "displayEpoch": 1790944200,
     "category": "stock",
     "label": "알림 세레니티저녁 261002 9.30PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_저녁브리핑_261002_PM.html",
@@ -205,7 +219,8 @@
     "displayEpoch": 1790910000,
     "category": "stock",
     "label": "알림 저녁브리핑 261002 PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_주간정산_261002_PM.html",
@@ -218,7 +233,8 @@
     "displayEpoch": 1790910000,
     "category": "stock",
     "label": "알림 주간정산 261002 PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_저녁브리핑_261001_11.12PM.html",
@@ -231,7 +247,8 @@
     "displayEpoch": 1790863920,
     "category": "stock",
     "label": "알림 저녁브리핑 261001 11.12PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_한국장인사이트저녁_261001_9.40PM.html",
@@ -244,7 +261,8 @@
     "displayEpoch": 1790858400,
     "category": "stock",
     "label": "알림 한국장인사이트저녁 261001 9.40PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_세레니티저녁_261001_9.30PM.html",
@@ -257,7 +275,8 @@
     "displayEpoch": 1790857800,
     "category": "stock",
     "label": "알림 세레니티저녁 261001 9.30PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_저녁진입브리핑_261001_8.09PM.html",
@@ -270,7 +289,8 @@
     "displayEpoch": 1790852940,
     "category": "stock",
     "label": "알림 저녁진입브리핑 261001 8.09PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_오후3시브리핑_261001_3.08PM.html",
@@ -283,7 +303,8 @@
     "displayEpoch": 1790834880,
     "category": "stock",
     "label": "알림 오후3시브리핑 261001 3.08PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_진입타이밍브리핑_261001_12.00PM.html",
@@ -296,7 +317,8 @@
     "displayEpoch": 1790823600,
     "category": "stock",
     "label": "알림 진입타이밍브리핑 261001 12.00PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "M2업데이트_261001_9.08AM.html",
@@ -322,7 +344,8 @@
     "displayEpoch": 1790806500,
     "category": "stock",
     "label": "알림 한국장인사이트아침 261001 7.15AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_세레니티아침_261001_7.10AM.html",
@@ -335,7 +358,8 @@
     "displayEpoch": 1790806200,
     "category": "stock",
     "label": "알림 세레니티아침 261001 7.10AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_개장전속보_261001_7.05AM.html",
@@ -348,7 +372,8 @@
     "displayEpoch": 1790805900,
     "category": "stock",
     "label": "알림 개장전속보 261001 7.05AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "매수알림_20261001_04.html",
@@ -387,7 +412,8 @@
     "displayEpoch": 1790781060,
     "category": "stock",
     "label": "알림 매수트리거 261001 12.11AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_저녁브리핑_260930_11.13PM.html",
@@ -400,7 +426,8 @@
     "displayEpoch": 1790777580,
     "category": "stock",
     "label": "알림 저녁브리핑 260930 11.13PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "CODEX_알림_저녁브리핑_260930_10.33PM.html",
@@ -439,7 +466,8 @@
     "displayEpoch": 1790772000,
     "category": "stock",
     "label": "알림 한국장인사이트저녁 260930 9.40PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_세레니티저녁_260930_9.30PM.html",
@@ -452,7 +480,8 @@
     "displayEpoch": 1790771400,
     "category": "stock",
     "label": "알림 세레니티저녁 260930 9.30PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "프리마켓_260930_9.17PM.html",
@@ -478,7 +507,8 @@
     "displayEpoch": 1790766900,
     "category": "stock",
     "label": "알림 저녁브리핑 260930 8.15PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_오후브리핑_260930_5.08PM.html",
@@ -491,7 +521,8 @@
     "displayEpoch": 1790755680,
     "category": "stock",
     "label": "알림 오후브리핑 260930 5.08PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "CODEX_알림_주식추천전략보고_260930_4.00PM.html",
@@ -582,7 +613,8 @@
     "displayEpoch": 1790734080,
     "category": "stock",
     "label": "알림 진입타이밍브리핑 260930 11.08AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "CODEX_알림_오전종합모니터_260930_9.35AM.html",
@@ -634,7 +666,8 @@
     "displayEpoch": 1790720100,
     "category": "stock",
     "label": "알림 한국장인사이트아침 260930 7.15AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_세레니티아침_260930_7.10AM.html",
@@ -647,7 +680,8 @@
     "displayEpoch": 1790719800,
     "category": "stock",
     "label": "알림 세레니티아침 260930 7.10AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_개장전속보_260930_6.50AM.html",
@@ -660,7 +694,8 @@
     "displayEpoch": 1790718600,
     "category": "stock",
     "label": "알림 개장전속보 260930 6.50AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_자동매수트리거_260930_2.10AM.html",
@@ -673,7 +708,8 @@
     "displayEpoch": 1790701800,
     "category": "stock",
     "label": "알림 자동매수트리거 260930 2.10AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "매수알림_20260930_00.html",
@@ -712,7 +748,8 @@
     "displayEpoch": 1790685600,
     "category": "stock",
     "label": "알림 한국장인사이트저녁 260929 9.40PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_세레니티저녁_260929_9.30PM.html",
@@ -725,7 +762,8 @@
     "displayEpoch": 1790685000,
     "category": "stock",
     "label": "알림 세레니티저녁 260929 9.30PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "프리마켓_260929_9.20PM.html",
@@ -751,7 +789,8 @@
     "displayEpoch": 1790683200,
     "category": "stock",
     "label": "알림 저녁브리핑 260929 9.00PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_실적경보_260929_08.07PM.html",
@@ -764,7 +803,8 @@
     "displayEpoch": 1790680020,
     "category": "stock",
     "label": "알림 실적경보 260929 08.07PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_저녁브리핑_260929_6.10PM.html",
@@ -777,7 +817,8 @@
     "displayEpoch": 1790673000,
     "category": "stock",
     "label": "알림 저녁브리핑 260929 6.10PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "CODEX_알림_주식추천전략보고_260929_4.00PM.html",
@@ -816,7 +857,8 @@
     "displayEpoch": 1790661600,
     "category": "stock",
     "label": "알림 오후브리핑 260929 3.00PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "매수알림_20260929_15.html",
@@ -894,7 +936,8 @@
     "displayEpoch": 1790647680,
     "category": "stock",
     "label": "알림 진입타이밍전략 260929 11.08AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "CODEX_알림_오전종합모니터_260929_9.35AM.html",
@@ -959,7 +1002,8 @@
     "displayEpoch": 1790633700,
     "category": "stock",
     "label": "알림 한국장인사이트아침 260929 7.15AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_아침브리핑_260929_7.12AM.html",
@@ -972,7 +1016,8 @@
     "displayEpoch": 1790633520,
     "category": "stock",
     "label": "알림 아침브리핑 260929 7.12AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_세레니티아침_260929_7.10AM.html",
@@ -985,7 +1030,8 @@
     "displayEpoch": 1790633400,
     "category": "stock",
     "label": "알림 세레니티아침 260929 7.10AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_개장전속보_260929_7.04AM.html",
@@ -998,7 +1044,8 @@
     "displayEpoch": 1790633040,
     "category": "stock",
     "label": "알림 개장전속보 260929 7.04AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_자동매수트리거_260929_12.10AM.html",
@@ -1011,7 +1058,8 @@
     "displayEpoch": 1790608200,
     "category": "stock",
     "label": "알림 자동매수트리거 260929 12.10AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "CODEX_알림_저녁브리핑_260928_10.34PM.html",
@@ -1050,7 +1098,8 @@
     "displayEpoch": 1790601720,
     "category": "stock",
     "label": "알림 자동매수트리거 260928 10.22PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_한국장인사이트저녁_260928_9.40PM.html",
@@ -1063,7 +1112,8 @@
     "displayEpoch": 1790599200,
     "category": "stock",
     "label": "알림 한국장인사이트저녁 260928 9.40PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_세레니티저녁_260928_9.30PM.html",
@@ -1076,7 +1126,8 @@
     "displayEpoch": 1790598600,
     "category": "stock",
     "label": "알림 세레니티저녁 260928 9.30PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_저녁브리핑_260928_9.00PM.html",
@@ -1089,7 +1140,8 @@
     "displayEpoch": 1790596800,
     "category": "stock",
     "label": "알림 저녁브리핑 260928 9.00PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "M2업데이트_260928_8.15PM.html",
@@ -1141,7 +1193,8 @@
     "displayEpoch": 1790591820,
     "category": "stock",
     "label": "알림 저녁브리핑 260928 7.37PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_진입타이밍브리핑_260928_7.36PM.html",
@@ -1154,7 +1207,8 @@
     "displayEpoch": 1790591760,
     "category": "stock",
     "label": "알림 진입타이밍브리핑 260928 7.36PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_저녁브리핑_260928_6.00PM.html",
@@ -1167,7 +1221,8 @@
     "displayEpoch": 1790586000,
     "category": "stock",
     "label": "알림 저녁브리핑 260928 6.00PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "프리마켓_260928_5.47PM.html",
@@ -1193,7 +1248,8 @@
     "displayEpoch": 1790584980,
     "category": "stock",
     "label": "알림 개장전속보 260928 5.43PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_자동매수트리거_260928_5.40PM.html",
@@ -1206,7 +1262,8 @@
     "displayEpoch": 1790584800,
     "category": "stock",
     "label": "알림 자동매수트리거 260928 5.40PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_오후브리핑_260928_5.32PM.html",
@@ -1219,7 +1276,8 @@
     "displayEpoch": 1790584320,
     "category": "stock",
     "label": "알림 오후브리핑 260928 5.32PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_저녁브리핑_260928_5.28PM.html",
@@ -1232,7 +1290,8 @@
     "displayEpoch": 1790584080,
     "category": "stock",
     "label": "알림 저녁브리핑 260928 5.28PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_아침브리핑_260928_3.32PM.html",
@@ -1245,7 +1304,8 @@
     "displayEpoch": 1790577120,
     "category": "stock",
     "label": "알림 아침브리핑 260928 3.32PM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "CODEX_알림_낮진입전략_260928_12.30PM.html",
@@ -1310,7 +1370,8 @@
     "displayEpoch": 1790547300,
     "category": "stock",
     "label": "알림 한국장인사이트아침 260928 7.15AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "알림_세레니티아침_260928_7.10AM.html",
@@ -1323,7 +1384,8 @@
     "displayEpoch": 1790547000,
     "category": "stock",
     "label": "알림 세레니티아침 260928 7.10AM",
-    "summary": ""
+    "summary": "",
+    "source": "Claude Dispatch"
   },
   {
     "name": "CODEX_알림_오전종합모니터_260901_9.30AM.html",

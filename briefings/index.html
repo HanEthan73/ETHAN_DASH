@@ -628,6 +628,7 @@ function applyManifestMeta(file, meta) {
     updatedEpoch: meta.updatedEpoch,
     displayEpoch: meta.displayEpoch,
     label: meta.label || meta.displayLabel || file.label,
+    source: meta.source || file.source || null,
     category: meta.category || file.category || inferCategory(file.name, file.label)
   };
 }
@@ -1247,7 +1248,7 @@ function render() {
         `</div>` +
         `<div class="file-meta">` +
           `<span class="file-time">${f.timeStr}</span>` +
-          `<span class="type-badge ${f.badge}">${f.label}</span>` +
+          `<span class="type-badge ${f.badge}">${f.source || f.label}</span>` +
         `</div>` +
         `<span class="file-arrow">›</span>`;
       body.appendChild(row);
@@ -1356,7 +1357,7 @@ function selectCalendarDate(dateKey) {
     `<a class="file-row${f.isAlert ? ' alert-file' : ''}" href="${f.name}">` +
       `<span class="file-icon">${f.icon}</span>` +
       `<div class="file-info"><div class="file-label">${f.label}</div><div class="file-name">${f.name}</div></div>` +
-      `<div class="file-meta"><span class="file-time">${f.timeStr}</span><span class="type-badge ${f.badge}">${f.label}</span></div>` +
+      `<div class="file-meta"><span class="file-time">${f.timeStr}</span><span class="type-badge ${f.badge}">${f.source || f.label}</span></div>` +
       `<span class="file-arrow">›</span>` +
     `</a>`
   ).join('');
