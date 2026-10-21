@@ -1,5 +1,19 @@
 [
   {
+    "name": "알림_세레니티아침_261022_9.00AM.html",
+    "updatedIso": "2026-10-22T09:00:00+09:00",
+    "updatedDate": "2026-10-22",
+    "updatedTime": "09:00",
+    "updatedEpoch": 1792627200,
+    "displayDate": "2026-10-22",
+    "displayTime": "9.00AM",
+    "displayEpoch": 1792627200,
+    "category": "stock",
+    "label": "알림 세레니티아침",
+    "summary": "",
+    "source": "Claude Dispatch"
+  },
+  {
     "name": "알림_세레니티저녁_261021_9.30PM.html",
     "updatedIso": "2026-10-21T21:30:00+09:00",
     "updatedDate": "2026-10-21",
