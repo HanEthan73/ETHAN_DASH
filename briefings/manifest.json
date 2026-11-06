@@ -14,6 +14,20 @@
     "source": "Claude Dispatch"
   },
   {
+    "name": "알림_세레니티저녁_261105_9.30PM.html",
+    "updatedIso": "2026-11-05T21:30:00+09:00",
+    "updatedDate": "2026-11-05",
+    "updatedTime": "21:30",
+    "updatedEpoch": 1793881800,
+    "displayDate": "2026-11-05",
+    "displayTime": "9.30PM",
+    "displayEpoch": 1793881800,
+    "category": "stock",
+    "label": "알림 세레니티저녁",
+    "summary": "",
+    "source": "Claude Dispatch"
+  },
+  {
     "name": "알림_세레니티저녁_261104_9.30PM.html",
     "updatedIso": "2026-11-04T21:30:00+09:00",
     "updatedDate": "2026-11-04",
