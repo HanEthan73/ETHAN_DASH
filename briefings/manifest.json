@@ -1,5 +1,19 @@
 [
   {
+    "name": "알림_세레니티저녁_261108_9.30PM.html",
+    "updatedIso": "2026-11-08T21:30:00+09:00",
+    "updatedDate": "2026-11-08",
+    "updatedTime": "21:30",
+    "updatedEpoch": 1794141000,
+    "displayDate": "2026-11-08",
+    "displayTime": "9.30PM",
+    "displayEpoch": 1794141000,
+    "category": "stock",
+    "label": "알림 세레니티저녁",
+    "summary": "급락=디레버리징 규정, 메모리·광학 롱 재확인, 우주 테마 관찰",
+    "source": "Claude Dispatch"
+  },
+  {
     "name": "알림_세레니티아침_261108_9.00AM.html",
     "updatedIso": "2026-11-08T09:00:00+09:00",
     "updatedDate": "2026-11-08",
