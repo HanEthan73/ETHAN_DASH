@@ -1,4 +1,18 @@
 [
+{
+  "name": "CODEX_알림_낮진입전략_261108_12.30PM.html",
+  "updatedIso": "2026-11-08T00:56:20+09:00",
+  "updatedDate": "2026-11-08",
+  "updatedTime": "00:56",
+  "updatedEpoch": 1794066980,
+  "displayDate": "2026-11-08",
+  "displayTime": "12.30PM",
+  "displayEpoch": 1794066980,
+  "category": "stock",
+  "label": "CODEX 낮 진입전략",
+  "summary": "주말 사전 점검 · No Chase · 신규 진입 승인 0 · 조건부 3차 계획",
+  "source": "CODEX"
+},
   {
     "name": "알림_세레니티저녁_261108_9.30PM.html",
     "updatedIso": "2026-11-08T21:30:00+09:00",
