@@ -1,18 +1,32 @@
 [
-{
-  "name": "CODEX_알림_한국장마감PLTR모니터_261108_3.30PM.html",
-  "updatedIso": "2026-11-08T00:55:16.824655+09:00",
-  "updatedDate": "2026-11-08",
-  "updatedTime": "00:55",
-  "updatedEpoch": 1794066916,
-  "displayDate": "2026-11-08",
-  "displayTime": "3.30PM",
-  "displayEpoch": 1794066916,
-  "category": "stock",
-  "label": "CODEX 알림 한국장 마감 및 PLTR 모니터",
-  "summary": "주말 휴장 · PLTR $160.38 · $128 조건 미충족 · No Chase",
-  "source": "Codex"
-},
+  {
+    "name": "알림_세레니티아침_261108_9.00AM.html",
+    "updatedIso": "2026-11-08T09:00:00+09:00",
+    "updatedDate": "2026-11-08",
+    "updatedTime": "09:00",
+    "updatedEpoch": 1794096000,
+    "displayDate": "2026-11-08",
+    "displayTime": "9.00AM",
+    "displayEpoch": 1794096000,
+    "category": "stock",
+    "label": "알림 세레니티아침",
+    "summary": "메모리 계약 방어·롱 유지(버티기 톤) · 11/9 증시안정조치 · 11/10 CPI · 이란 공습",
+    "source": "Claude Dispatch"
+  },
+  {
+    "name": "CODEX_알림_한국장마감PLTR모니터_261108_3.30PM.html",
+    "updatedIso": "2026-11-08T00:55:16.824655+09:00",
+    "updatedDate": "2026-11-08",
+    "updatedTime": "00:55",
+    "updatedEpoch": 1794066916,
+    "displayDate": "2026-11-08",
+    "displayTime": "3.30PM",
+    "displayEpoch": 1794066916,
+    "category": "stock",
+    "label": "CODEX 알림 한국장 마감 및 PLTR 모니터",
+    "summary": "주말 휴장 · PLTR $160.38 · $128 조건 미충족 · No Chase",
+    "source": "Codex"
+  },
   {
     "name": "알림_세레니티저녁_261107_9.30PM.html",
     "updatedIso": "2026-11-07T21:30:00+09:00",
